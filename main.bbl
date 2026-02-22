@@ -1,0 +1,907 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{castaneda2022}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=9437fb4b99b6366da7a364af5b994518}{%
+           family={Castañeda\bibnamedelima Vargas},
+           familyi={C\bibinitperiod\bibinitdelim V\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=b7b5e1a73a54fd2cc09c85788b154f06}{%
+           family={Aguirre\bibnamedelima Cuartas},
+           familyi={A\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Universidad de San Buenaventura}%
+      }
+      \strng{namehash}{b4a0c3b681ae6bdd27c9818a6026dbd2}
+      \strng{fullhash}{b4a0c3b681ae6bdd27c9818a6026dbd2}
+      \strng{fullhashraw}{b4a0c3b681ae6bdd27c9818a6026dbd2}
+      \strng{bibnamehash}{b4a0c3b681ae6bdd27c9818a6026dbd2}
+      \strng{authorbibnamehash}{b4a0c3b681ae6bdd27c9818a6026dbd2}
+      \strng{authornamehash}{b4a0c3b681ae6bdd27c9818a6026dbd2}
+      \strng{authorfullhash}{b4a0c3b681ae6bdd27c9818a6026dbd2}
+      \strng{authorfullhashraw}{b4a0c3b681ae6bdd27c9818a6026dbd2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Análisis de variabilidad de precios en materiales e insumos para la construcción: Caso de estudio departamento Valle del Cauca año 2022}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://bibliotecadigital.usb.edu.co/server/api/core/bitstreams/feafeb7d-f783-4ccf-a6bb-2475283da2f2/content
+      \endverb
+      \verb{url}
+      \verb https://bibliotecadigital.usb.edu.co/server/api/core/bitstreams/feafeb7d-f783-4ccf-a6bb-2475283da2f2/content
+      \endverb
+    \endentry
+    \entry{almada2022}{article}{}{}
+      \name{author}{7}{}{%
+        {{hash=7fdd81c8285892ec75dd3c60fafa6972}{%
+           family={Almada\bibnamedelimb de\bibnamedelima Bernal},
+           familyi={A\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim B\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=b19dc6deb3fa11327bc72b2703f6abf4}{%
+           family={Bernal},
+           familyi={B\bibinitperiod},
+           given={M.\bibnamedelimi A.},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=159477731095a7d2cb37d8b26037e2cd}{%
+           family={Ledesma\bibnamedelima Martínez},
+           familyi={L\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={L.\bibnamedelimi J.},
+           giveni={L\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=dbbb0509f9ba8863a4e004cbce088310}{%
+           family={Núñez\bibnamedelima González},
+           familyi={N\bibinitperiod\bibinitdelim G\bibinitperiod},
+           given={E.\bibnamedelimi G.},
+           giveni={E\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=1eaaac94a74ab4e6494e2243a667f44a}{%
+           family={Vera\bibnamedelima Aguilera},
+           familyi={V\bibinitperiod\bibinitdelim A\bibinitperiod},
+           given={F.\bibnamedelimi R.},
+           giveni={F\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=44e1489602b08f4f48b3c1af75a0cb28}{%
+           family={González},
+           familyi={G\bibinitperiod},
+           given={K.\bibnamedelimi D.},
+           giveni={K\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=5690d755fb61579cad3f37095745fc27}{%
+           family={Bareiro},
+           familyi={B\bibinitperiod},
+           given={L.\bibnamedelimi P.},
+           giveni={L\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{ef9b9b8c7230195ef3dbae5d7dcca7e3}
+      \strng{fullhash}{12deeca4d8bc4cfce32726a9e50b2fb8}
+      \strng{fullhashraw}{12deeca4d8bc4cfce32726a9e50b2fb8}
+      \strng{bibnamehash}{12deeca4d8bc4cfce32726a9e50b2fb8}
+      \strng{authorbibnamehash}{12deeca4d8bc4cfce32726a9e50b2fb8}
+      \strng{authornamehash}{ef9b9b8c7230195ef3dbae5d7dcca7e3}
+      \strng{authorfullhash}{12deeca4d8bc4cfce32726a9e50b2fb8}
+      \strng{authorfullhashraw}{12deeca4d8bc4cfce32726a9e50b2fb8}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista UNIDA Científica}
+      \field{title}{Variación de precios de materiales e insumos para la construcción en Ciudad del Este, 2022}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://revistacientifica.unida.edu.py/publicaciones/index.php/cientifica/article/view/207/161
+      \endverb
+      \verb{url}
+      \verb https://revistacientifica.unida.edu.py/publicaciones/index.php/cientifica/article/view/207/161
+      \endverb
+    \endentry
+    \entry{newbold1983arima}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=22ddadabe7942d404c287252f9388594}{%
+           family={Newbold},
+           familyi={N\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{22ddadabe7942d404c287252f9388594}
+      \strng{fullhash}{22ddadabe7942d404c287252f9388594}
+      \strng{fullhashraw}{22ddadabe7942d404c287252f9388594}
+      \strng{bibnamehash}{22ddadabe7942d404c287252f9388594}
+      \strng{authorbibnamehash}{22ddadabe7942d404c287252f9388594}
+      \strng{authornamehash}{22ddadabe7942d404c287252f9388594}
+      \strng{authorfullhash}{22ddadabe7942d404c287252f9388594}
+      \strng{authorfullhashraw}{22ddadabe7942d404c287252f9388594}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of forecasting}
+      \field{number}{1}
+      \field{title}{ARIMA model building and the time series analysis approach to forecasting}
+      \field{volume}{2}
+      \field{year}{1983}
+      \field{pages}{23\bibrangedash 35}
+      \range{pages}{13}
+    \endentry
+    \entry{lee2011short}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=0ff3535c60b27d80e0b9f70f3aef39cb}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Cheng-Ming},
+           giveni={C\bibinithyphendelim M\bibinitperiod}}}%
+        {{hash=66910e5ea7dac190bb4bed12c61b88e5}{%
+           family={Ko},
+           familyi={K\bibinitperiod},
+           given={Chia-Nan},
+           giveni={C\bibinithyphendelim N\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{2ca560a6c7f3ef36162c02f8f080280a}
+      \strng{fullhash}{2ca560a6c7f3ef36162c02f8f080280a}
+      \strng{fullhashraw}{2ca560a6c7f3ef36162c02f8f080280a}
+      \strng{bibnamehash}{2ca560a6c7f3ef36162c02f8f080280a}
+      \strng{authorbibnamehash}{2ca560a6c7f3ef36162c02f8f080280a}
+      \strng{authornamehash}{2ca560a6c7f3ef36162c02f8f080280a}
+      \strng{authorfullhash}{2ca560a6c7f3ef36162c02f8f080280a}
+      \strng{authorfullhashraw}{2ca560a6c7f3ef36162c02f8f080280a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Expert Systems with Applications}
+      \field{number}{5}
+      \field{title}{Short-term load forecasting using lifting scheme and ARIMA models}
+      \field{volume}{38}
+      \field{year}{2011}
+      \field{pages}{5902\bibrangedash 5911}
+      \range{pages}{10}
+    \endentry
+    \entry{vagropoulos2016comparison}{inproceedings}{}{}
+      \name{author}{5}{}{%
+        {{hash=0270d47228629c84ab9715247efc1f3c}{%
+           family={Vagropoulos},
+           familyi={V\bibinitperiod},
+           given={Stylianos\bibnamedelima I},
+           giveni={S\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+        {{hash=9f1a005ded5279f4c01f6e2538776042}{%
+           family={Chouliaras},
+           familyi={C\bibinitperiod},
+           given={GI},
+           giveni={G\bibinitperiod}}}%
+        {{hash=8922615cd806e8857bac1a8299b7baef}{%
+           family={Kardakos},
+           familyi={K\bibinitperiod},
+           given={Evaggelos\bibnamedelima G},
+           giveni={E\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=c2259f28c4ed4d5ee913c4c991396ec6}{%
+           family={Simoglou},
+           familyi={S\bibinitperiod},
+           given={Christos\bibnamedelima K},
+           giveni={C\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=1fb992775b7345c73f7a9eeebbe94b95}{%
+           family={Bakirtzis},
+           familyi={B\bibinitperiod},
+           given={Anastasios\bibnamedelima G},
+           giveni={A\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{7655bedd4412994d021785e9c95cb5a3}
+      \strng{fullhash}{aa8a807c0044cdaa92053dcfc0c1afc5}
+      \strng{fullhashraw}{aa8a807c0044cdaa92053dcfc0c1afc5}
+      \strng{bibnamehash}{aa8a807c0044cdaa92053dcfc0c1afc5}
+      \strng{authorbibnamehash}{aa8a807c0044cdaa92053dcfc0c1afc5}
+      \strng{authornamehash}{7655bedd4412994d021785e9c95cb5a3}
+      \strng{authorfullhash}{aa8a807c0044cdaa92053dcfc0c1afc5}
+      \strng{authorfullhashraw}{aa8a807c0044cdaa92053dcfc0c1afc5}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2016 IEEE international energy conference (ENERGYCON)}
+      \field{title}{Comparison of SARIMAX, SARIMA, modified SARIMA and ANN-based models for short-term PV generation forecasting}
+      \field{year}{2016}
+      \field{pages}{1\bibrangedash 6}
+      \range{pages}{6}
+    \endentry
+    \entry{murphy2012machine}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=99413be56c82adf72b6474dcdf8d3023}{%
+           family={Murphy},
+           familyi={M\bibinitperiod},
+           given={Kevin\bibnamedelima P},
+           giveni={K\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {MIT press}%
+      }
+      \strng{namehash}{99413be56c82adf72b6474dcdf8d3023}
+      \strng{fullhash}{99413be56c82adf72b6474dcdf8d3023}
+      \strng{fullhashraw}{99413be56c82adf72b6474dcdf8d3023}
+      \strng{bibnamehash}{99413be56c82adf72b6474dcdf8d3023}
+      \strng{authorbibnamehash}{99413be56c82adf72b6474dcdf8d3023}
+      \strng{authornamehash}{99413be56c82adf72b6474dcdf8d3023}
+      \strng{authorfullhash}{99413be56c82adf72b6474dcdf8d3023}
+      \strng{authorfullhashraw}{99413be56c82adf72b6474dcdf8d3023}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Machine learning: a probabilistic perspective}
+      \field{year}{2012}
+    \endentry
+    \entry{chollet2021deep}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=5836fc1fa037e340c8b5591da3207608}{%
+           family={Chollet},
+           familyi={C\bibinitperiod},
+           given={Francois},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {simon}%
+        {schuster}%
+      }
+      \strng{namehash}{5836fc1fa037e340c8b5591da3207608}
+      \strng{fullhash}{5836fc1fa037e340c8b5591da3207608}
+      \strng{fullhashraw}{5836fc1fa037e340c8b5591da3207608}
+      \strng{bibnamehash}{5836fc1fa037e340c8b5591da3207608}
+      \strng{authorbibnamehash}{5836fc1fa037e340c8b5591da3207608}
+      \strng{authornamehash}{5836fc1fa037e340c8b5591da3207608}
+      \strng{authorfullhash}{5836fc1fa037e340c8b5591da3207608}
+      \strng{authorfullhashraw}{5836fc1fa037e340c8b5591da3207608}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Deep learning with Python}
+      \field{year}{2021}
+    \endentry
+    \entry{allix2003epistemology}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=d5fe3b74b81dfadf246d49c38c73107c}{%
+           family={Allix},
+           familyi={A\bibinitperiod},
+           given={Nicholas\bibnamedelima M},
+           giveni={N\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{8c2c5e4a58ade313d97c7855abe686ba}
+      \strng{fullhash}{8c2c5e4a58ade313d97c7855abe686ba}
+      \strng{fullhashraw}{8c2c5e4a58ade313d97c7855abe686ba}
+      \strng{bibnamehash}{8c2c5e4a58ade313d97c7855abe686ba}
+      \strng{authorbibnamehash}{8c2c5e4a58ade313d97c7855abe686ba}
+      \strng{authornamehash}{8c2c5e4a58ade313d97c7855abe686ba}
+      \strng{authorfullhash}{8c2c5e4a58ade313d97c7855abe686ba}
+      \strng{authorfullhashraw}{8c2c5e4a58ade313d97c7855abe686ba}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of knowledge Management practice}
+      \field{number}{1}
+      \field{title}{Epistemology and knowledge management concepts and practices}
+      \field{volume}{4}
+      \field{year}{2003}
+      \field{pages}{1\bibrangedash 24}
+      \range{pages}{24}
+    \endentry
+    \entry{mathur1999socialization}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=4e810056cd72c8a6f040967175e6cbb1}{%
+           family={Mathur},
+           familyi={M\bibinitperiod},
+           given={Anil},
+           giveni={A\bibinitperiod}}}%
+        {{hash=e829d34337a98cb922480218397b97b9}{%
+           family={Moschis},
+           familyi={M\bibinitperiod},
+           given={George\bibnamedelima P},
+           giveni={G\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {MCB UP Ltd}%
+      }
+      \strng{namehash}{2f2da85dc690a2c485e893f0ae090a52}
+      \strng{fullhash}{2f2da85dc690a2c485e893f0ae090a52}
+      \strng{fullhashraw}{2f2da85dc690a2c485e893f0ae090a52}
+      \strng{bibnamehash}{2f2da85dc690a2c485e893f0ae090a52}
+      \strng{authorbibnamehash}{2f2da85dc690a2c485e893f0ae090a52}
+      \strng{authornamehash}{2f2da85dc690a2c485e893f0ae090a52}
+      \strng{authorfullhash}{2f2da85dc690a2c485e893f0ae090a52}
+      \strng{authorfullhashraw}{2f2da85dc690a2c485e893f0ae090a52}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Marketing Practice: Applied Marketing Science}
+      \field{number}{6/7/8}
+      \field{title}{Socialization influences on preparation for later life}
+      \field{volume}{5}
+      \field{year}{1999}
+      \field{pages}{163\bibrangedash 176}
+      \range{pages}{14}
+    \endentry
+    \entry{kaelbling1996reinforcement}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=72fdc7bf3120e1cff12e3ecf7e892b9a}{%
+           family={Kaelbling},
+           familyi={K\bibinitperiod},
+           given={Leslie\bibnamedelima Pack},
+           giveni={L\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=211e529e9f10ad1bfacff2284da10ea7}{%
+           family={Littman},
+           familyi={L\bibinitperiod},
+           given={Michael\bibnamedelima L},
+           giveni={M\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=e7235f20cee7d299f1ca6ba250cc615e}{%
+           family={Moore},
+           familyi={M\bibinitperiod},
+           given={Andrew\bibnamedelima W},
+           giveni={A\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{1f7c44e9457ba86dd71b2dd3eaa61346}
+      \strng{fullhash}{1f7c44e9457ba86dd71b2dd3eaa61346}
+      \strng{fullhashraw}{1f7c44e9457ba86dd71b2dd3eaa61346}
+      \strng{bibnamehash}{1f7c44e9457ba86dd71b2dd3eaa61346}
+      \strng{authorbibnamehash}{1f7c44e9457ba86dd71b2dd3eaa61346}
+      \strng{authornamehash}{1f7c44e9457ba86dd71b2dd3eaa61346}
+      \strng{authorfullhash}{1f7c44e9457ba86dd71b2dd3eaa61346}
+      \strng{authorfullhashraw}{1f7c44e9457ba86dd71b2dd3eaa61346}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of artificial intelligence research}
+      \field{title}{Reinforcement learning: A survey}
+      \field{volume}{4}
+      \field{year}{1996}
+      \field{pages}{237\bibrangedash 285}
+      \range{pages}{49}
+    \endentry
+    \entry{martinez2014metodologia}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=dd5184e4a1ad6e56d8df265bf981ab2d}{%
+           family={Martínez\bibnamedelima Lozano},
+           familyi={M\bibinitperiod\bibinitdelim L\bibinitperiod},
+           given={Miguel},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Facultad de Ing. Eléctrica Universidad Tecnológica de La Habana, José~…}%
+      }
+      \strng{namehash}{dd5184e4a1ad6e56d8df265bf981ab2d}
+      \strng{fullhash}{dd5184e4a1ad6e56d8df265bf981ab2d}
+      \strng{fullhashraw}{dd5184e4a1ad6e56d8df265bf981ab2d}
+      \strng{bibnamehash}{dd5184e4a1ad6e56d8df265bf981ab2d}
+      \strng{authorbibnamehash}{dd5184e4a1ad6e56d8df265bf981ab2d}
+      \strng{authornamehash}{dd5184e4a1ad6e56d8df265bf981ab2d}
+      \strng{authorfullhash}{dd5184e4a1ad6e56d8df265bf981ab2d}
+      \strng{authorfullhashraw}{dd5184e4a1ad6e56d8df265bf981ab2d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Ingeniería Energética}
+      \field{number}{1}
+      \field{title}{Metodología basada en redes neurales para interpretación de la resistividad del suelo en zonas urbanas}
+      \field{volume}{35}
+      \field{year}{2014}
+      \field{pages}{59\bibrangedash 69}
+      \range{pages}{11}
+    \endentry
+    \entry{villada2016redes}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=8f43e42f8d6f4a68da5fde2633290208}{%
+           family={Villada},
+           familyi={V\bibinitperiod},
+           given={Fernando},
+           giveni={F\bibinitperiod}}}%
+        {{hash=c20574aec5b25659da11e2733044d687}{%
+           family={Muñoz},
+           familyi={M\bibinitperiod},
+           given={Nicolás},
+           giveni={N\bibinitperiod}}}%
+        {{hash=624b83e9cf318d9dd501304a9af56bb7}{%
+           family={García-Quintero},
+           familyi={G\bibinithyphendelim Q\bibinitperiod},
+           given={Edwin},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {SciELO Chile}%
+      }
+      \strng{namehash}{16d35e401e1678c57bf7d045aee7332f}
+      \strng{fullhash}{16d35e401e1678c57bf7d045aee7332f}
+      \strng{fullhashraw}{16d35e401e1678c57bf7d045aee7332f}
+      \strng{bibnamehash}{16d35e401e1678c57bf7d045aee7332f}
+      \strng{authorbibnamehash}{16d35e401e1678c57bf7d045aee7332f}
+      \strng{authornamehash}{16d35e401e1678c57bf7d045aee7332f}
+      \strng{authorfullhash}{16d35e401e1678c57bf7d045aee7332f}
+      \strng{authorfullhashraw}{16d35e401e1678c57bf7d045aee7332f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Información tecnológica}
+      \field{number}{5}
+      \field{title}{Redes neuronales artificiales aplicadas a la predicción del precio del oro}
+      \field{volume}{27}
+      \field{year}{2016}
+      \field{pages}{143\bibrangedash 150}
+      \range{pages}{8}
+    \endentry
+    \entry{lazzeri2020machine}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=16b97a1002ffd8cdaeaa980d13de34f2}{%
+           family={Lazzeri},
+           familyi={L\bibinitperiod},
+           given={Francesca},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {John Wiley \& Sons}%
+      }
+      \strng{namehash}{16b97a1002ffd8cdaeaa980d13de34f2}
+      \strng{fullhash}{16b97a1002ffd8cdaeaa980d13de34f2}
+      \strng{fullhashraw}{16b97a1002ffd8cdaeaa980d13de34f2}
+      \strng{bibnamehash}{16b97a1002ffd8cdaeaa980d13de34f2}
+      \strng{authorbibnamehash}{16b97a1002ffd8cdaeaa980d13de34f2}
+      \strng{authornamehash}{16b97a1002ffd8cdaeaa980d13de34f2}
+      \strng{authorfullhash}{16b97a1002ffd8cdaeaa980d13de34f2}
+      \strng{authorfullhashraw}{16b97a1002ffd8cdaeaa980d13de34f2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Machine learning for time series forecasting with Python}
+      \field{year}{2020}
+    \endentry
+    \entry{mandua}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=d32fda4dc8ce3b990eed257e63c98487}{%
+           family={{Revista Mandu’a}},
+           familyi={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{d32fda4dc8ce3b990eed257e63c98487}
+      \strng{fullhash}{d32fda4dc8ce3b990eed257e63c98487}
+      \strng{fullhashraw}{d32fda4dc8ce3b990eed257e63c98487}
+      \strng{bibnamehash}{d32fda4dc8ce3b990eed257e63c98487}
+      \strng{authorbibnamehash}{d32fda4dc8ce3b990eed257e63c98487}
+      \strng{authornamehash}{d32fda4dc8ce3b990eed257e63c98487}
+      \strng{authorfullhash}{d32fda4dc8ce3b990eed257e63c98487}
+      \strng{authorfullhashraw}{d32fda4dc8ce3b990eed257e63c98487}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Consultado en octubre de 2025}
+      \field{title}{Ediciones}
+      \verb{urlraw}
+      \verb https://www.mandua.com.py/ediciones
+      \endverb
+      \verb{url}
+      \verb https://www.mandua.com.py/ediciones
+      \endverb
+    \endentry
+    \entry{dmh}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=21ed8e3a5cd9cb550907e5f1afd1f96a}{%
+           family={{Dirección de Meteorología e Hidrología}},
+           familyi={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{21ed8e3a5cd9cb550907e5f1afd1f96a}
+      \strng{fullhash}{21ed8e3a5cd9cb550907e5f1afd1f96a}
+      \strng{fullhashraw}{21ed8e3a5cd9cb550907e5f1afd1f96a}
+      \strng{bibnamehash}{21ed8e3a5cd9cb550907e5f1afd1f96a}
+      \strng{authorbibnamehash}{21ed8e3a5cd9cb550907e5f1afd1f96a}
+      \strng{authornamehash}{21ed8e3a5cd9cb550907e5f1afd1f96a}
+      \strng{authorfullhash}{21ed8e3a5cd9cb550907e5f1afd1f96a}
+      \strng{authorfullhashraw}{21ed8e3a5cd9cb550907e5f1afd1f96a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Consultado en octubre de 2025}
+      \field{title}{Nivel del Río}
+      \verb{urlraw}
+      \verb https://www.meteorologia.gov.py/nivel-rio/vermas_convencional.php?code=2000086218
+      \endverb
+      \verb{url}
+      \verb https://www.meteorologia.gov.py/nivel-rio/vermas_convencional.php?code=2000086218
+      \endverb
+    \endentry
+    \entry{EstudioClimaParaguay2019}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=86d4670d682627610ad049e8db511edb}{%
+           family={Grassi},
+           familyi={G\bibinitperiod},
+           given={Benjamín},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Asunción, Paraguay}%
+      }
+      \list{publisher}{1}{%
+        {Ministerio del Ambiente y Desarrollo Sostenible - Secretaría Técnica de Planificación (MADES-STP)}%
+      }
+      \strng{namehash}{86d4670d682627610ad049e8db511edb}
+      \strng{fullhash}{86d4670d682627610ad049e8db511edb}
+      \strng{fullhashraw}{86d4670d682627610ad049e8db511edb}
+      \strng{bibnamehash}{86d4670d682627610ad049e8db511edb}
+      \strng{authorbibnamehash}{86d4670d682627610ad049e8db511edb}
+      \strng{authornamehash}{86d4670d682627610ad049e8db511edb}
+      \strng{authorfullhash}{86d4670d682627610ad049e8db511edb}
+      \strng{authorfullhashraw}{86d4670d682627610ad049e8db511edb}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Informe oficial}
+      \field{title}{Estudio del Clima Paraguay 2019}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://transparenciaclimatica.mades.gov.py/wp-content/uploads/2025/10/Estudio-del-Clima-Paraguay-2019.pdf
+      \endverb
+      \verb{url}
+      \verb https://transparenciaclimatica.mades.gov.py/wp-content/uploads/2025/10/Estudio-del-Clima-Paraguay-2019.pdf
+      \endverb
+    \endentry
+    \entry{conesa2011interpolacion}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=c0bf58f44127db9e1095f5065a83cd7e}{%
+           family={Conesa},
+           familyi={C\bibinitperiod},
+           given={Juan\bibnamedelima A},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{c0bf58f44127db9e1095f5065a83cd7e}
+      \strng{fullhash}{c0bf58f44127db9e1095f5065a83cd7e}
+      \strng{fullhashraw}{c0bf58f44127db9e1095f5065a83cd7e}
+      \strng{bibnamehash}{c0bf58f44127db9e1095f5065a83cd7e}
+      \strng{authorbibnamehash}{c0bf58f44127db9e1095f5065a83cd7e}
+      \strng{authornamehash}{c0bf58f44127db9e1095f5065a83cd7e}
+      \strng{authorfullhash}{c0bf58f44127db9e1095f5065a83cd7e}
+      \strng{authorfullhashraw}{c0bf58f44127db9e1095f5065a83cd7e}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Tecnicas de Cálculo en Ingeniería Química}
+      \field{title}{Interpolación}
+      \field{year}{2011}
+    \endentry
+    \entry{edylur}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=b282c3ef27e72c9469dae95a7d7a38e2}{%
+           family={{Depósito de Materiales de Construcción Edylur}},
+           familyi={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{b282c3ef27e72c9469dae95a7d7a38e2}
+      \strng{fullhash}{b282c3ef27e72c9469dae95a7d7a38e2}
+      \strng{fullhashraw}{b282c3ef27e72c9469dae95a7d7a38e2}
+      \strng{bibnamehash}{b282c3ef27e72c9469dae95a7d7a38e2}
+      \strng{authorbibnamehash}{b282c3ef27e72c9469dae95a7d7a38e2}
+      \strng{authornamehash}{b282c3ef27e72c9469dae95a7d7a38e2}
+      \strng{authorfullhash}{b282c3ef27e72c9469dae95a7d7a38e2}
+      \strng{authorfullhashraw}{b282c3ef27e72c9469dae95a7d7a38e2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Consultado en octubre de 2025}
+      \field{title}{Sitio institucional}
+      \verb{urlraw}
+      \verb https://sites.google.com/view/edylur/edylur?authuser=0
+      \endverb
+      \verb{url}
+      \verb https://sites.google.com/view/edylur/edylur?authuser=0
+      \endverb
+    \endentry
+    \entry{siami2018}{misc}{}{}
+      \name{author}{3}{}{%
+        {{hash=4aed9cc70509a23736576ce6e392d34d}{%
+           family={Siami-Namini},
+           familyi={S\bibinithyphendelim N\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=9a85576c679754e7acf10c26e5b5d905}{%
+           family={Tavakoli},
+           familyi={T\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+        {{hash=91187b04b1f4876550e118787c09af00}{%
+           family={Siami\bibnamedelima Namin},
+           familyi={S\bibinitperiod\bibinitdelim N\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{8c04a4e9d58d1f1c089fcfa7b752053a}
+      \strng{fullhash}{8c04a4e9d58d1f1c089fcfa7b752053a}
+      \strng{fullhashraw}{8c04a4e9d58d1f1c089fcfa7b752053a}
+      \strng{bibnamehash}{8c04a4e9d58d1f1c089fcfa7b752053a}
+      \strng{authorbibnamehash}{8c04a4e9d58d1f1c089fcfa7b752053a}
+      \strng{authornamehash}{8c04a4e9d58d1f1c089fcfa7b752053a}
+      \strng{authorfullhash}{8c04a4e9d58d1f1c089fcfa7b752053a}
+      \strng{authorfullhashraw}{8c04a4e9d58d1f1c089fcfa7b752053a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{arXiv preprint}
+      \field{title}{Forecasting economics and financial time series: ARIMA vs. LSTM}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/1803.06386
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/1803.06386
+      \endverb
+    \endentry
+    \entry{kratzert2018}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=36882b813c3d8e15715dfa679abeaf77}{%
+           family={Kratzert},
+           familyi={K\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=1aedc5da4ec457079728f954cac90801}{%
+           family={Klotz},
+           familyi={K\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=505ade1026670c5e9db8056643d3f2e2}{%
+           family={Brenner},
+           familyi={B\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=e4c9a8d65b60afe172f9b76fedf0c5db}{%
+           family={Schulz},
+           familyi={S\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=67eed9a763828f8510ead534591a2d63}{%
+           family={Hochreiter},
+           familyi={H\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{be0444b81a77c885ffa563343109486c}
+      \strng{fullhash}{d1aa634d5ae65de06ea6f2c0c199cfec}
+      \strng{fullhashraw}{d1aa634d5ae65de06ea6f2c0c199cfec}
+      \strng{bibnamehash}{d1aa634d5ae65de06ea6f2c0c199cfec}
+      \strng{authorbibnamehash}{d1aa634d5ae65de06ea6f2c0c199cfec}
+      \strng{authornamehash}{be0444b81a77c885ffa563343109486c}
+      \strng{authorfullhash}{d1aa634d5ae65de06ea6f2c0c199cfec}
+      \strng{authorfullhashraw}{d1aa634d5ae65de06ea6f2c0c199cfec}
+      \field{extraname}{1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Hydrology and Earth System Sciences}
+      \field{title}{Rainfall–runoff modelling using Long Short-Term Memory (LSTM) networks}
+      \field{volume}{22}
+      \field{year}{2018}
+      \field{pages}{6005\bibrangedash 6022}
+      \range{pages}{18}
+      \verb{urlraw}
+      \verb https://www.hydrol-earth-syst-sci.net/22/6005/2018/
+      \endverb
+      \verb{url}
+      \verb https://www.hydrol-earth-syst-sci.net/22/6005/2018/
+      \endverb
+    \endentry
+    \entry{kratzert2019}{misc}{}{}
+      \name{author}{5}{}{%
+        {{hash=36882b813c3d8e15715dfa679abeaf77}{%
+           family={Kratzert},
+           familyi={K\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=ce0e1cff947d45d6c9c67e91b4953779}{%
+           family={Herrnegger},
+           familyi={H\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=1aedc5da4ec457079728f954cac90801}{%
+           family={Klotz},
+           familyi={K\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=67eed9a763828f8510ead534591a2d63}{%
+           family={Hochreiter},
+           familyi={H\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=fc829e3df067d033bc42a17aa22d6dc6}{%
+           family={Klambauer},
+           familyi={K\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{be0444b81a77c885ffa563343109486c}
+      \strng{fullhash}{49b119450a5cd74df6992e31324c95dc}
+      \strng{fullhashraw}{49b119450a5cd74df6992e31324c95dc}
+      \strng{bibnamehash}{49b119450a5cd74df6992e31324c95dc}
+      \strng{authorbibnamehash}{49b119450a5cd74df6992e31324c95dc}
+      \strng{authornamehash}{be0444b81a77c885ffa563343109486c}
+      \strng{authorfullhash}{49b119450a5cd74df6992e31324c95dc}
+      \strng{authorfullhashraw}{49b119450a5cd74df6992e31324c95dc}
+      \field{extraname}{2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{arXiv preprint}
+      \field{title}{Neural Hydrology: Interpreting LSTMs in Hydrology}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/1903.07980
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/1903.07980
+      \endverb
+    \endentry
+    \entry{YUNITA2025103462}{article}{}{}
+      \name{author}{7}{}{%
+        {{hash=183ea4f9df61912b94d78ce554b9b998}{%
+           family={Yunita},
+           familyi={Y\bibinitperiod},
+           given={Ariana},
+           giveni={A\bibinitperiod}}}%
+        {{hash=23d03bc35f9e271956ced88ce7ae4c9c}{%
+           family={Pratama},
+           familyi={P\bibinitperiod},
+           given={MHD\bibnamedelima Iqbal},
+           giveni={M\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+        {{hash=4d90537dafd41abc8a6222a1a8234d7d}{%
+           family={Almuzakki},
+           familyi={A\bibinitperiod},
+           given={Muhammad\bibnamedelima Zaki},
+           giveni={M\bibinitperiod\bibinitdelim Z\bibinitperiod}}}%
+        {{hash=263165be811a19a31f42c87c793fbf6c}{%
+           family={Ramadhan},
+           familyi={R\bibinitperiod},
+           given={Hani},
+           giveni={H\bibinitperiod}}}%
+        {{hash=2a75d533f60bd72e3c9d79c60418545e}{%
+           family={Akhir},
+           familyi={A\bibinitperiod},
+           given={Emelia\bibnamedelimb Akashah\bibnamedelima P.},
+           giveni={E\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=2c7a012425780a7d1587946f784e272d}{%
+           family={{Firdausiah Mansur}},
+           familyi={F\bibinitperiod},
+           given={Andi\bibnamedelima Besse},
+           giveni={A\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=aedde617eede86c877ccc7b127059584}{%
+           family={Basori},
+           familyi={B\bibinitperiod},
+           given={Ahmad\bibnamedelima Hoirul},
+           giveni={A\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{873bf99bdfc624539a9710810460bc46}
+      \strng{fullhash}{8efe34702caa33058c9b5f4c4c596306}
+      \strng{fullhashraw}{8efe34702caa33058c9b5f4c4c596306}
+      \strng{bibnamehash}{8efe34702caa33058c9b5f4c4c596306}
+      \strng{authorbibnamehash}{8efe34702caa33058c9b5f4c4c596306}
+      \strng{authornamehash}{873bf99bdfc624539a9710810460bc46}
+      \strng{authorfullhash}{8efe34702caa33058c9b5f4c4c596306}
+      \strng{authorfullhashraw}{8efe34702caa33058c9b5f4c4c596306}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Recurrent Neural Networks (RNNs), Long Short-Term Memory (LSTM) networks, and Gated Recurrent Units (GRUs) have gained significant popularity in time series forecasting across diverse domains including healthcare, astronomy, and engineering. However, the inherent variability in model performance due to random weight initialization raises questions about the reliability and consistency of these architectures for time series analysis. This study addresses this concern by conducting a comprehensive benchmark evaluation of nine neural network architectures: vanilla RNN, LSTM, GRU, and six hybrid configurations (RNN-LSTM, RNN-GRU, LSTM-RNN, GRU-RNN, LSTM-GRU, and GRU-LSTM). Performance evaluation was conducted using Monte Carlo simulation with 100 iterations across three real-world datasets: sunspot activity, Indonesian COVID-19 cases, and dissolved oxygen concentration measurements. Statistical analysis employed the Friedman test to assess performance differences across architectures. Results showed no statistically significant differences among the nine architectures. Despite the lack of statistical significance, consistent performance patterns emerged favoring LSTM-based hybrid architectures. The LSTM-GRU and LSTM-RNN configurations demonstrated superior performance across multiple evaluation metrics, with LSTM-RNN excelling in sunspot and dissolved oxygen forecasting, while standalone LSTM showed optimal performance for COVID-19 prediction. These findings provide evidence-based guidance for architecture selection in time series forecasting applications, suggesting that while statistical equivalence exists among architectures, LSTM-based hybrids offer practical advantages in terms of consistency and robustness across diverse temporal patterns.}
+      \field{issn}{2215-0161}
+      \field{journaltitle}{MethodsX}
+      \field{title}{Performance analysis of neural network architectures for time series forecasting: A comparative study of RNN, LSTM, GRU, and hybrid models}
+      \field{volume}{15}
+      \field{year}{2025}
+      \field{pages}{103462}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.mex.2025.103462
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S2215016125003073
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S2215016125003073
+      \endverb
+      \keyw{Neural network,Recurrent neural network,Long short term memory,Gated-recurrent unit,Monte carlo simulation}
+    \endentry
+    \entry{liu2023}{misc}{}{}
+      \name{author}{7}{}{%
+        {{hash=7bb074c37d04e2fb30a473aa12102ae1}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=4bb50fe66ba20b054f7511fe5ca8a3b4}{%
+           family={Read},
+           familyi={R\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=5981403acb567341634a11f1a57027ee}{%
+           family={Rakovec},
+           familyi={R\bibinitperiod},
+           given={O.},
+           giveni={O\bibinitperiod}}}%
+        {{hash=36882b813c3d8e15715dfa679abeaf77}{%
+           family={Kratzert},
+           familyi={K\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=67eed9a763828f8510ead534591a2d63}{%
+           family={Hochreiter},
+           familyi={H\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=bf1787feda59f8255e40eb7e4fc855e4}{%
+           family={Nearing},
+           familyi={N\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=86c6b1889f4025da917318172a7c2c4f}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={X.},
+           giveni={X\bibinitperiod}}}%
+      }
+      \strng{namehash}{2c4910df36bec2da172306358e36f666}
+      \strng{fullhash}{a89472add4b3ee8b11f642b0672b42b6}
+      \strng{fullhashraw}{a89472add4b3ee8b11f642b0672b42b6}
+      \strng{bibnamehash}{a89472add4b3ee8b11f642b0672b42b6}
+      \strng{authorbibnamehash}{a89472add4b3ee8b11f642b0672b42b6}
+      \strng{authornamehash}{2c4910df36bec2da172306358e36f666}
+      \strng{authorfullhash}{a89472add4b3ee8b11f642b0672b42b6}
+      \strng{authorfullhashraw}{a89472add4b3ee8b11f642b0672b42b6}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{arXiv preprint}
+      \field{title}{Probing the limit of hydrologic predictability with the Transformer network}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2306.12384
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2306.12384
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

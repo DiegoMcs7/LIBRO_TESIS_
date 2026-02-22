@@ -1,0 +1,211 @@
+{
+  "mejor_rmse_metros": 0.037063146331653155,
+  "mejores_params": {
+    "n_layers": 1,
+    "hidden_size": 512,
+    "bidirectional": false,
+    "dropout_rate": 0.05,
+    "fc_activation": "linear",
+    "lookback": 30,
+    "strategy": "recursive",
+    "optimizer": "Adam",
+    "learning_rate": 0.006078600333304834,
+    "weight_decay": 4.7044698257916004e-07,
+    "batch_size": 256,
+    "scheduler": "CosineAnnealingLR"
+  },
+  "n_trials_completados": 300,
+  "tiempo_minutos": 277.74177580277126,
+  "top_10": [
+    {
+      "rank": 1,
+      "trial": 260,
+      "rmse": 0.037063146331653155,
+      "params": {
+        "n_layers": 1,
+        "hidden_size": 512,
+        "bidirectional": false,
+        "dropout_rate": 0.05,
+        "fc_activation": "linear",
+        "lookback": 30,
+        "strategy": "recursive",
+        "optimizer": "Adam",
+        "learning_rate": 0.006078600333304834,
+        "weight_decay": 4.7044698257916004e-07,
+        "batch_size": 256,
+        "scheduler": "CosineAnnealingLR"
+      }
+    },
+    {
+      "rank": 2,
+      "trial": 237,
+      "rmse": 0.03747734879562883,
+      "params": {
+        "n_layers": 1,
+        "hidden_size": 512,
+        "bidirectional": false,
+        "dropout_rate": 0.05,
+        "fc_activation": "linear",
+        "lookback": 30,
+        "strategy": "recursive",
+        "optimizer": "AdamW",
+        "learning_rate": 0.004480268835083945,
+        "weight_decay": 3.874692153298279e-06,
+        "batch_size": 128,
+        "scheduler": "CosineAnnealingLR"
+      }
+    },
+    {
+      "rank": 3,
+      "trial": 246,
+      "rmse": 0.03788635030701622,
+      "params": {
+        "n_layers": 1,
+        "hidden_size": 512,
+        "bidirectional": false,
+        "dropout_rate": 0.05,
+        "fc_activation": "linear",
+        "lookback": 30,
+        "strategy": "recursive",
+        "optimizer": "AdamW",
+        "learning_rate": 0.004181537742804351,
+        "weight_decay": 3.250906580408827e-07,
+        "batch_size": 64,
+        "scheduler": "CosineAnnealingLR"
+      }
+    },
+    {
+      "rank": 4,
+      "trial": 183,
+      "rmse": 0.03790460726747057,
+      "params": {
+        "n_layers": 1,
+        "hidden_size": 512,
+        "bidirectional": false,
+        "dropout_rate": 0.05,
+        "fc_activation": "linear",
+        "lookback": 30,
+        "strategy": "recursive",
+        "optimizer": "AdamW",
+        "learning_rate": 0.002116182925561896,
+        "weight_decay": 2.8744663785720056e-06,
+        "batch_size": 128,
+        "scheduler": "CosineAnnealingLR"
+      }
+    },
+    {
+      "rank": 5,
+      "trial": 231,
+      "rmse": 0.03843084683834162,
+      "params": {
+        "n_layers": 1,
+        "hidden_size": 512,
+        "bidirectional": false,
+        "dropout_rate": 0.05,
+        "fc_activation": "linear",
+        "lookback": 30,
+        "strategy": "recursive",
+        "optimizer": "AdamW",
+        "learning_rate": 0.002078821439001207,
+        "weight_decay": 4.0340516542713125e-06,
+        "batch_size": 128,
+        "scheduler": "CosineAnnealingLR"
+      }
+    },
+    {
+      "rank": 6,
+      "trial": 247,
+      "rmse": 0.03859042780781991,
+      "params": {
+        "n_layers": 1,
+        "hidden_size": 512,
+        "bidirectional": false,
+        "dropout_rate": 0.05,
+        "fc_activation": "linear",
+        "lookback": 30,
+        "strategy": "recursive",
+        "optimizer": "Adam",
+        "learning_rate": 0.005229666915056213,
+        "weight_decay": 3.552540250045283e-07,
+        "batch_size": 64,
+        "scheduler": "CosineAnnealingLR"
+      }
+    },
+    {
+      "rank": 7,
+      "trial": 295,
+      "rmse": 0.03862361672435579,
+      "params": {
+        "n_layers": 1,
+        "hidden_size": 512,
+        "bidirectional": false,
+        "dropout_rate": 0.0,
+        "fc_activation": "linear",
+        "lookback": 30,
+        "strategy": "recursive",
+        "optimizer": "Adam",
+        "learning_rate": 0.005865055168504506,
+        "weight_decay": 2.4646037463501845e-06,
+        "batch_size": 64,
+        "scheduler": "CosineAnnealingLR"
+      }
+    },
+    {
+      "rank": 8,
+      "trial": 139,
+      "rmse": 0.03863625577860025,
+      "params": {
+        "n_layers": 1,
+        "hidden_size": 512,
+        "bidirectional": false,
+        "dropout_rate": 0.05,
+        "fc_activation": "linear",
+        "lookback": 30,
+        "strategy": "recursive",
+        "optimizer": "AdamW",
+        "learning_rate": 0.0019527329754921957,
+        "weight_decay": 2.07786803253216e-06,
+        "batch_size": 128,
+        "scheduler": "CosineAnnealingLR"
+      }
+    },
+    {
+      "rank": 9,
+      "trial": 268,
+      "rmse": 0.03878699841246466,
+      "params": {
+        "n_layers": 1,
+        "hidden_size": 512,
+        "bidirectional": false,
+        "dropout_rate": 0.0,
+        "fc_activation": "linear",
+        "lookback": 30,
+        "strategy": "recursive",
+        "optimizer": "Adam",
+        "learning_rate": 0.006332495650403624,
+        "weight_decay": 5.794688121915466e-07,
+        "batch_size": 256,
+        "scheduler": "CosineAnnealingLR"
+      }
+    },
+    {
+      "rank": 10,
+      "trial": 199,
+      "rmse": 0.03888482575381019,
+      "params": {
+        "n_layers": 1,
+        "hidden_size": 512,
+        "bidirectional": false,
+        "dropout_rate": 0.05,
+        "fc_activation": "linear",
+        "lookback": 30,
+        "strategy": "recursive",
+        "optimizer": "AdamW",
+        "learning_rate": 0.00422667651994423,
+        "weight_decay": 3.62253129124326e-06,
+        "batch_size": 128,
+        "scheduler": "CosineAnnealingLR"
+      }
+    }
+  ]
+}

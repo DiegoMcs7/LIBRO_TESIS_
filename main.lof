@@ -1,0 +1,33 @@
+\babel@toc {spanish}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Estructura general de una Red Neuronal Artificial}}{10}{figure.caption.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Estructura de una Red Neuronal Recurrente (RNN)}}{11}{figure.caption.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Arquitectura de una Red Neuronal Recurrente (RNN)}}{11}{figure.caption.3}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Estructura interna de una celda de memoria LSTM.}}{14}{figure.caption.4}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Estructura interna de una celda de memoria GRU.}}{16}{figure.caption.5}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Serie histórica completa del nivel diario del río Paraguay (1990--2025).}}{22}{figure.caption.6}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Partición cronológica de la serie: entrenamiento (azul), validación (naranja) y prueba (verde).}}{22}{figure.caption.7}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Historia de optimización de Optuna (izquierda) e importancia relativa de hiperparámetros (derecha).}}{23}{figure.caption.8}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Curva de aprendizaje del modelo LSTM: RMSE de entrenamiento y validación por época.}}{24}{figure.caption.10}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces RMSE por paso de predicción ($t+1$) en el conjunto de prueba.}}{25}{figure.caption.12}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Distribución de errores del modelo LSTM en validación: histograma (izquierda) y gráfico Q-Q (derecha).}}{25}{figure.caption.13}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Serie histórica del nivel del río Paraguay y predicción LSTM a 730 días (julio 2025 -- julio 2027).}}{26}{figure.caption.14}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Zoom en la transición entre datos reales y predicción LSTM: últimos 6 meses reales y primeros 6 meses proyectados.}}{27}{figure.caption.15}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Comparación entre la predicción LSTM a 730 días y la climatología histórica de referencia estacional.}}{27}{figure.caption.16}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Series temporales del precio mensual del cemento (Gs.) y del nivel del río Paraguay (m), período 2014--2025.}}{28}{figure.caption.17}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Descomposición estacional de la serie de precio del cemento: tendencia, estacionalidad y componente residual.}}{29}{figure.caption.18}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Funciones de autocorrelación (ACF) y autocorrelación parcial (PACF) de la serie del precio del cemento en niveles y en primeras diferencias.}}{30}{figure.caption.19}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Matriz de correlación entre el precio del cemento, el nivel del río Paraguay y la variable de cuarentena.}}{31}{figure.caption.20}%
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Patrón estacional del precio mensual del cemento a lo largo del año.}}{31}{figure.caption.21}%
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Ajuste in-sample del modelo SARIMAX: valores reales versus valores ajustados sobre el período de entrenamiento.}}{33}{figure.caption.23}%
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Comparación entre los valores reales y predichos del precio del cemento en el conjunto de prueba (15 meses).}}{34}{figure.caption.24}%
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Validación cruzada por ventana deslizante (\textit {rolling forecast}): predicciones puntuales versus valores reales en cada paso de avance.}}{35}{figure.caption.26}%
+\contentsline {figure}{\numberline {5.18}{\ignorespaces Diagnóstico de residuos del modelo SARIMAX: gráfico de residuos, histograma, gráfico Q-Q y función de autocorrelación.}}{36}{figure.caption.28}%
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Pronóstico del precio del cemento a 24 meses (agosto 2025 -- julio 2027) con intervalos de confianza al 95\%.}}{37}{figure.caption.29}%
+\contentsline {figure}{\numberline {5.20}{\ignorespaces Pronóstico completo del precio del cemento: serie histórica observada y proyección SARIMAX a 24 meses.}}{37}{figure.caption.30}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }

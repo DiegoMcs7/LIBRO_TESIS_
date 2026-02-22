@@ -1,0 +1,28 @@
+{
+  "framework": "TensorFlow 2.19.0 / Keras",
+  "arquitectura": "LSTM (ver docstring del m\u00f3dulo: por qu\u00e9 no Transformer)",
+  "rmse_train_escalado": 0.024,
+  "rmse_val_escalado": 0.0187,
+  "rmse_test_escalado": 0.0221,
+  "rmse_train_metros": 0.0479,
+  "rmse_val_metros": 0.0373,
+  "rmse_test_metros": 0.0457,
+  "rmse_vs_reales_metros": null,
+  "n_parametros": 1075713,
+  "epocas_entrenadas": 99,
+  "mejores_params_optuna": {
+    "n_layers": 1,
+    "hidden_size": 512,
+    "bidirectional": false,
+    "dropout_rate": 0.05,
+    "fc_activation": "linear",
+    "lookback": 30,
+    "strategy": "recursive",
+    "optimizer": "Adam",
+    "learning_rate": 0.006078600333304834,
+    "weight_decay": 4.7044698257916004e-07,
+    "batch_size": 256,
+    "scheduler": "CosineAnnealingLR"
+  },
+  "dias_prediccion": 730
+}

@@ -1,0 +1,135 @@
+\documentclass[12pt, oneside]{book}
+\input{preambulo.tex}
+
+\begin{document}
+\frontmatter
+
+% -- Portada --
+\input{portada.tex}
+
+% -- Página de cortesía --
+\newpage
+\thispagestyle{empty}
+\null
+\clearpage 
+	
+% -- Carátula --
+\newpage
+\setcounter{page}{1}
+\input{caratula.tex}
+
+% -- Título --
+\newpage
+\input{caratula2.tex}
+
+% ------------------
+% -- Dedicatoria --
+% ------------------
+\newpage
+\input{dedicatoria.tex}
+
+% ------------------
+% -- Agradecimientos --
+% ------------------
+\newpage
+\input{agradecimientos.tex}
+
+% ------------------
+% -- Resumen en inglés --
+% ------------------
+\newpage
+\input{resumen_en.tex}
+
+% ------------------
+% -- Resumen en español --
+% ------------------
+\newpage
+\input{resumen_es.tex}
+
+% ------------------
+% -- Índice de Contenidos --
+% ------------------
+\newpage
+\tableofcontents
+
+% ------------------
+% -- Lista de Figuras --
+% ------------------
+\newpage
+\listoffigures
+
+% ------------------
+% -- Lista de Tablas --
+% ------------------
+\newpage
+\listoftables
+
+% ------------------
+% -- Lista de Símbolos --
+% ------------------
+\newpage
+\input{lista_simbolos.tex}
+
+% ------------------
+% -- Capítulos principales --
+% ------------------
+\mainmatter
+\chapterformatdefault
+
+% 1. Introducción
+\chapter{Introducción}
+\thispagestyle{empty}
+\input{introduccion.tex}
+
+% 2. Trabajos Relacionados
+\chapter{Trabajos Relacionados}
+\thispagestyle{empty}
+\input{trabajos_relacionados.tex}
+
+% 2. Trabajos Relacionados
+\chapter{Fundamento Teórico}
+\thispagestyle{empty}
+\input{fundamento}
+
+% 3. Metodología
+\chapter{Metodología}
+\thispagestyle{empty}
+\input{metodologia.tex}
+
+% 4. Resultados
+\chapter{Resultados}
+\thispagestyle{empty}
+\input{resultados.tex}
+
+% 5. Discusión
+\chapter{Discusión}
+\thispagestyle{empty}
+\input{discusion.tex}
+
+% 6. Conclusión y Trabajos Futuros
+\vspace{0.5cm}
+\chapter{Conclusiones y Trabajos Futuros} 
+\label{chp:conclusion}
+\thispagestyle{empty}
+\input{conclusion.tex}
+% ----------------
+% -- REFERENCIAS --
+% ----------------
+
+\chapter*{REFERENCIAS}
+\printbibliography[heading=none]
+
+% --------------
+% -- APÉNDICE --
+% --------------
+\appendix
+\chapter*{APÉNDICE}
+\renewcommand{\thechapter}{A}
+\input{apendice.tex}
+
+% ------------------
+% -- Índice alfabético --
+% ------------------
+\printindex
+
+\end{document}

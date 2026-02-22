@@ -1,0 +1,44 @@
+\vspace{0.5cm}
+\section{Introducción}
+\justify
+Quienes trabajan en construcción en Paraguay saben que presupuestar una obra es, en buena medida, un ejercicio de incertidumbre. El cemento, el ladrillo y la cal hidratada son insumos ineludibles, pero sus precios cambian por razones que van desde fluctuaciones del mercado internacional hasta fenómenos climáticos locales. Esa volatilidad complica la planificación, encarece los proyectos y, en casos extremos, compromete su viabilidad.
+
+\justify
+Dos episodios recientes ilustran bien el problema. Durante la pandemia de COVID-19, el parate económico y las interrupciones logísticas derivaron en aumentos notables en los precios de materiales esenciales como el cemento y los ladrillos, tal como documentó la revista Unida Científica (citada por Zuba, 2021). Poco después, en 2021, la bajante histórica del río Paraguay obligó a la Industria Nacional del Cemento (INC) a abandonar el transporte fluvial y recurrir a la vía terrestre para suplir el déficit de materia prima, lo que se tradujo en sobrecostos logísticos directos para el sector.
+
+\justify
+Lo que hace especialmente difícil anticipar estos movimientos es que los factores que los generan son heterogéneos: conviven shocks sanitarios, variaciones hidrológicas y presiones del mercado regional. Ante ese escenario, los enfoques descriptivos tienen un alcance limitado. Se necesitan modelos capaces de integrar esa complejidad y proyectar la evolución de los precios con suficiente anticipación para que la información sea útil.
+
+\section{Justificación y Motivación}
+\justify
+La literatura sobre precios de materiales de construcción en Paraguay y América Latina muestra un patrón llamativo: abundan los análisis descriptivos de lo que ya ocurrió, pero escasean los modelos que permitan anticipar lo que viene. Esa brecha no es menor. Para una empresa constructora, conocer con razonable anticipación que el precio del cemento podría subir en los próximos meses puede definir si un proyecto se adjudica a un precio sostenible o si termina generando pérdidas.
+
+\justify
+Otro vacío identificado es el tratamiento de variables externas. El nivel del río Paraguay y los períodos de confinamiento son factores que claramente afectan la logística y la disponibilidad de insumos, pero raramente se incorporan de forma explícita en los modelos predictivos existentes. Incluirlos no es solo un refinamiento técnico: es reconocer que los precios responden a la realidad geográfica y socioeconómica del país.
+
+\justify
+Este trabajo parte de esa doble motivación. Por un lado, busca generar evidencia concreta sobre qué tan bien pueden predecirse los precios de estos materiales cuando se utilizan modelos de aprendizaje profundo frente a enfoques estadísticos clásicos. Por otro, propone una metodología reproducible —construida sobre datos públicos y herramientas de acceso libre— que pueda ser adoptada o extendida tanto por investigadores como por actores del sector privado y público.
+
+\section{Objetivos}
+\subsection{Objetivo General}
+\justify
+Desarrollar y comparar modelos predictivos basados en métodos estadísticos y de aprendizaje profundo para estimar la evolución de los precios del cemento, la cal hidratada y el ladrillo común en Paraguay, incorporando variables exógenas como el confinamiento por COVID-19 y el nivel del río Paraguay.
+
+\subsection{Objetivos Específicos}
+\begin{itemize}
+\item Recopilar y procesar series temporales de precios de materiales de construcción y del nivel del río Paraguay para el período enero 2014 – julio 2025.
+\item Implementar un modelo LSTM univariado para la predicción del nivel mensual del río Paraguay.
+\item Desarrollar modelos SARIMAX, LSTM y GRU multivariados para la predicción de precios de materiales de construcción.
+\item Evaluar el desempeño de los modelos mediante métricas de error (RMSE) y comparar su capacidad predictiva bajo distintos escenarios experimentales (con y sin confinamiento por COVID-19).
+\item Analizar el impacto de las variables exógenas sobre la dinámica de precios y discutir su relevancia en el contexto económico y logístico nacional.
+\end{itemize}
+
+\section{Organización del Libro}
+\begin{itemize}
+\item \textbf{Capítulo 2:} presenta los trabajos relacionados, incluyendo una revisión de investigaciones previas sobre la predicción de precios de materiales de construcción y las limitaciones identificadas en dichos estudios.
+\item \textbf{Capítulo 3:} desarrolla el fundamento teórico de los modelos empleados, describiendo los conceptos matemáticos de ARIMA, SARIMA, SARIMAX y las arquitecturas de redes neuronales recurrentes LSTM y GRU.
+\item \textbf{Capítulo 4:} describe la metodología aplicada, detallando la recolección y preprocesamiento de datos, la formulación del modelo LSTM univariado para el nivel del río Paraguay y los modelos predictivos de precios (SARIMAX, LSTM y GRU).
+\item \textbf{Capítulo 5:} expone los resultados obtenidos, tanto en la predicción del nivel del río como en la estimación de precios de los tres materiales analizados.
+\item \textbf{Capítulo 6:} desarrolla la discusión comparativa de los resultados, evaluando el desempeño de cada modelo y su capacidad predictiva frente a las variables exógenas consideradas.
+\item \textbf{Capítulo 7:} presenta las conclusiones generales y propone líneas de trabajo futuro orientadas a la mejora del enfoque predictivo y su extensión a otros materiales o indicadores económicos del sector construcción.
+\end{itemize}

@@ -1,0 +1,14 @@
+\babel@toc {spanish}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Hiperparámetros óptimos del modelo LSTM para la predicción del nivel del río Paraguay.}}{23}{table.caption.9}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Métricas de evaluación RMSE del modelo LSTM en los conjuntos de entrenamiento, validación y prueba.}}{24}{table.caption.11}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces Parámetros estimados del modelo SARIMAX$(0,1,0)(0,0,0)_{12}$ para la predicción del precio del cemento.}}{32}{table.caption.22}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces Métricas de evaluación del modelo SARIMAX sobre el conjunto de prueba (15 meses).}}{32}{table.caption.25}%
+\contentsline {table}{\numberline {5.5}{\ignorespaces Métricas de validación cruzada por ventana deslizante del modelo SARIMAX.}}{32}{table.caption.27}%
+\contentsline {table}{\numberline {5.6}{\ignorespaces Pronóstico mensual del precio del cemento (Gs.) para el período agosto 2025 -- julio 2026, con intervalo de confianza al 95\,\%.}}{35}{table.caption.31}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
