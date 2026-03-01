@@ -1,0 +1,31 @@
+
+LIMITACIONES IDENTIFICADAS:
+
+1. TAMANO DEL DATASET
+   - ~139 registros mensuales limitan generalizacion del modelo.
+   - Series cortas son desafiantes para GRU profundos.
+
+2. HORIZONTE DE 24 MESES
+   - Predicciones de largo plazo acumulan errores en estrategia recursiva.
+   - IC via MC Dropout puede subestimar incertidumbre real.
+
+3. NIVEL DEL RIO COMO EXOGENO
+   - El nivel del rio futuro se asume conocido (prediccion pre-calculada).
+   - Incertidumbre del rio no se propaga a incertidumbre del precio.
+
+4. ESTACIONARIEDAD
+   - No se aplica diferenciacion; MinMaxScaler no corrige no-estacionariedad.
+   - Recomendacion futura: probar modelo con diferenciacion de orden 1.
+
+5. SIN VARIABLES MACROECONOMICAS
+   - No se incluyen tipo de cambio, salarios, inflacion, construccion.
+
+6. SIN BASELINE FORMAL
+   - RMSE del GRU no se compara con ARIMA o modelos naive.
+   - Recomendacion: agregar ARIMA(1,1,1) como punto de referencia.
+
+RECOMENDACIONES FUTURAS:
+   - Ensemble GRU + ARIMA + Exponential Smoothing
+   - Attention Mechanism si dataset crece
+   - Quantile Regression para IC parametricos
+   - Datos diarios para mayor resolucion

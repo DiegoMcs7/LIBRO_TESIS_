@@ -28,7 +28,7 @@ La partición de los datos siguió un criterio cronológico estricto: 80\% para 
 \subsection{Optimización de Hiperparámetros con Optuna}
 
 \justify
-La búsqueda de hiperparámetros se realizó con Optuna, usando el sampler TPE (\textit{Tree-structured Parzen Estimator}) y poda de trials con \textit{MedianPruner} para detener tempranamente las configuraciones claramente inferiores. Se evaluaron 300 trials en Kaggle con dos GPUs bajo la estrategia \texttt{MirroredStrategy} de TensorFlow, proceso que demandó 277,74 minutos en total (cerca de 4,6 horas). El mejor resultado surgió recién en el trial 260, con un RMSE de validación de 0,0371 m — lo que muestra que la búsqueda bayesiana siguió encontrando mejoras bien avanzado el proceso.
+La búsqueda de hiperparámetros se realizó con Optuna, usando el sampler TPE (\textit{Tree-structured Parzen Estimator}) y poda de trials con \textit{MedianPruner} para detener tempranamente las configuraciones claramente inferiores. Se evaluaron 500 trials en Kaggle con dos GPUs bajo la estrategia \texttt{MirroredStrategy} de TensorFlow, proceso que demandó 661,13 minutos en total (cerca de 11 horas). El mejor resultado surgió recién en el trial 346, con un RMSE de validación de 0,0419 m — lo que muestra que la búsqueda bayesiana siguió encontrando mejoras bien avanzado el proceso.
 
 \justify
 La Figura \ref{fig:optuna_historia} muestra la evolución del RMSE de validación a lo largo de los 300 trials (panel izquierdo) y la importancia relativa de cada hiperparámetro en el proceso de optimización (panel derecho). Se observa que el RMSE desciende rápidamente durante los primeros 50 trials y se estabiliza posteriormente, lo que indica que la búsqueda bayesiana convergió de forma eficiente hacia el óptimo. En cuanto a la importancia de hiperparámetros, el número de capas (\texttt{n\_layers}) resultó ser el factor más influyente, seguido por la estrategia de predicción (\texttt{strategy}), la tasa de aprendizaje y la tasa de \textit{dropout}.
@@ -56,24 +56,24 @@ Los hiperparámetros óptimos obtenidos se resumen en la Tabla \ref{tab:hiperpar
         Bidireccional              & No \\
         Tasa de \textit{dropout}   & 0,05 \\
         Activación capa densa      & Lineal \\
-        Ventana de lookback        & 30 días \\
+        Ventana de lookback        & 180 días \\
         Estrategia de predicción   & Recursiva \\
         Optimizador                & Adam \\
-        Tasa de aprendizaje        & 0,006079 \\
-        \textit{Weight decay}      & $4{,}70 \times 10^{-7}$ \\
-        Tamaño de lote (\textit{batch size}) & 256 \\
+        Tasa de aprendizaje        & 0,004414 \\
+        \textit{Weight decay}      & $2{,}17 \times 10^{-6}$ \\
+        Tamaño de lote (\textit{batch size}) & 32 \\
         Planificador de LR         & CosineAnnealingLR \\
         \bottomrule
     \end{tabular}
 \end{table}
 
 \justify
-La configuración óptima corresponde a un modelo LSTM de una sola capa con 512 unidades ocultas, lo que refleja que la complejidad de la dinámica hidrológica del río Paraguay puede capturarse eficientemente con una arquitectura relativamente compacta. La estrategia recursiva de predicción (\textit{unistep}) fue preferida sobre la estrategia directa, indicando que el modelo aprovecha mejor la retroalimentación acumulada paso a paso para proyecciones a largo plazo. El total de parámetros entrenables del modelo final es de 1.075.713.
+La configuración óptima corresponde a un modelo LSTM de una sola capa con 512 unidades ocultas, lo que refleja que la complejidad de la dinámica hidrológica del río Paraguay puede capturarse eficientemente con una arquitectura relativamente compacta. La estrategia recursiva de predicción (\textit{unistep}) fue preferida sobre la estrategia directa, indicando que el modelo aprovecha mejor la retroalimentación acumulada paso a paso para proyecciones a largo plazo. El total de parámetros entrenables del modelo final es de 1.079.809.
 
 \subsection{Entrenamiento del Modelo Final}
 
 \justify
-El modelo final fue entrenado durante 99 épocas sobre el conjunto de entrenamiento, utilizando los hiperparámetros óptimos obtenidos por Optuna. La Figura \ref{fig:curva_aprendizaje} presenta la evolución del RMSE de entrenamiento y validación en función del número de épocas.
+El modelo final fue entrenado durante 71 épocas sobre el conjunto de entrenamiento, utilizando los hiperparámetros óptimos obtenidos por Optuna. La Figura \ref{fig:curva_aprendizaje} presenta la evolución del RMSE de entrenamiento y validación en función del número de épocas.
 
 \begin{figure}[ht]
     \centering
@@ -98,18 +98,18 @@ La Tabla \ref{tab:metricas_lstm_rio} presenta el RMSE obtenido en los tres subco
         \toprule
         \textbf{Conjunto} & \textbf{RMSE (escala normalizada)} & \textbf{RMSE (metros)} \\
         \midrule
-        Entrenamiento  & 0,0240 & 0,0479 \\
-        Validación     & 0,0187 & 0,0373 \\
-        Prueba         & 0,0221 & 0,0457 \\
+        Entrenamiento  & 0,0292 & 0,0526 \\
+        Validación     & 0,0268 & 0,0469 \\
+        Prueba         & 0,0246 & 0,0449 \\
         \bottomrule
     \end{tabular}
 \end{table}
 
 \justify
-El error no supera los 5 cm en ninguno de los tres conjuntos, lo cual es llamativo si se considera que la serie oscila históricamente entre $-2$ y $+8$ metros. Dicho de otro modo, el modelo se equivoca menos del 0,5\% del rango total de la variable. Más revelador aún es que el RMSE de validación (0,0373 m) resulte incluso menor que el de entrenamiento (0,0479 m): eso descarta que el modelo haya memorizado los datos de entrenamiento en lugar de aprender patrones generalizables.
+El error se mantiene por debajo de los 5,3 cm en los tres conjuntos, lo cual es llamativo si se considera que la serie oscila históricamente entre $-2$ y $+8$ metros. Dicho de otro modo, el modelo se equivoca menos del 0,6\% del rango total de la variable. Más revelador aún es que el RMSE de validación (0,0469 m) resulte incluso menor que el de entrenamiento (0,0526 m): eso descarta que el modelo haya memorizado los datos de entrenamiento en lugar de aprender patrones generalizables.
 
 \justify
-Dado que el modelo emplea una estrategia de predicción recursiva unistep, cada predicción corresponde a un único paso adelante ($t+1$). La Figura \ref{fig:rmse_por_paso} ilustra este único punto de evaluación en el conjunto de prueba, con un RMSE de 0,0457 m.
+Dado que el modelo emplea una estrategia de predicción recursiva unistep, cada predicción corresponde a un único paso adelante ($t+1$). La Figura \ref{fig:rmse_por_paso} ilustra este único punto de evaluación en el conjunto de prueba, con un RMSE de 0,0449 m.
 
 \begin{figure}[ht]
     \centering
@@ -149,7 +149,7 @@ La Figura \ref{fig:historico_prediccion} muestra la serie histórica completa (e
 \end{figure}
 
 \justify
-La Figura \ref{fig:zoom_transicion} presenta en detalle la zona de transición entre los datos reales (últimos 6 meses, en azul) y el inicio de la predicción (primeros 6 meses proyectados, en rojo). La continuidad y suavidad de la curva en el punto de inicio de la predicción confirman que el modelo aprendió correctamente la dinámica temporal del río, sin discontinuidades abruptas. A partir de julio de 2025, el modelo proyecta un descenso del nivel desde aproximadamente 3,1 m hasta valores en torno a 0,9 m hacia finales de octubre de 2025, seguido de una recuperación hacia niveles de 2,3 m en enero de 2026, en concordancia con el ciclo estacional típico del río Paraguay.
+La Figura \ref{fig:zoom_transicion} presenta en detalle la zona de transición entre los datos reales (últimos 6 meses, en azul) y el inicio de la predicción (primeros 6 meses proyectados, en rojo). La continuidad y suavidad de la curva en el punto de inicio de la predicción confirman que el modelo aprendió correctamente la dinámica temporal del río, sin discontinuidades abruptas. A partir de julio de 2025, el modelo proyecta un descenso del nivel desde aproximadamente 3,1 m hasta valores en torno a 0,85 m hacia mediados de octubre de 2025, seguido de una recuperación hacia niveles de 1,9 m en enero de 2026, en concordancia con el ciclo estacional típico del río Paraguay.
 
 \begin{figure}[ht]
     \centering
@@ -184,7 +184,7 @@ La serie histórica empleada abarca registros mensuales del precio del cemento e
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth]{dataset-sarimax/graficos/01_series_temporales.png}
+    \includegraphics[width=\textwidth]{dataset-sarimax-cemento/graficos/01_series_temporales.png}
     \caption{Series temporales del precio mensual del cemento (Gs.) y del nivel del río Paraguay (m), período 2014--2025.}
     \label{fig:sarimax_series}
 \end{figure}
@@ -194,7 +194,7 @@ La Figura \ref{fig:sarimax_series} muestra la evolución conjunta del precio del
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth]{dataset-sarimax/graficos/02_descomposicion_estacional.png}
+    \includegraphics[width=\textwidth]{dataset-sarimax-cemento/graficos/02_descomposicion_estacional.png}
     \caption{Descomposición estacional de la serie de precio del cemento: tendencia, estacionalidad y componente residual.}
     \label{fig:sarimax_descomposicion}
 \end{figure}
@@ -204,7 +204,7 @@ La Figura \ref{fig:sarimax_descomposicion} presenta la descomposición clásica 
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth]{dataset-sarimax/graficos/03_acf_pacf.png}
+    \includegraphics[width=\textwidth]{dataset-sarimax-cemento/graficos/03_acf_pacf.png}
     \caption{Funciones de autocorrelación (ACF) y autocorrelación parcial (PACF) de la serie del precio del cemento en niveles y en primeras diferencias.}
     \label{fig:sarimax_acf_pacf}
 \end{figure}
@@ -214,7 +214,7 @@ La Figura \ref{fig:sarimax_acf_pacf} muestra las funciones ACF y PACF de la seri
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{dataset-sarimax/graficos/04_correlacion.png}
+    \includegraphics[width=0.8\textwidth]{dataset-sarimax-cemento/graficos/04_correlacion.png}
     \caption{Matriz de correlación entre el precio del cemento, el nivel del río Paraguay y la variable de cuarentena.}
     \label{fig:sarimax_correlacion}
 \end{figure}
@@ -224,7 +224,7 @@ La Figura \ref{fig:sarimax_correlacion} presenta la matriz de correlación entre
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth]{dataset-sarimax/graficos/05_patron_estacional.png}
+    \includegraphics[width=\textwidth]{dataset-sarimax-cemento/graficos/05_patron_estacional.png}
     \caption{Patrón estacional del precio mensual del cemento a lo largo del año.}
     \label{fig:sarimax_estacional}
 \end{figure}
@@ -238,7 +238,7 @@ La Figura \ref{fig:sarimax_estacional} ilustra el patrón estacional del precio 
 La selección del orden óptimo del modelo SARIMAX se realizó mediante una búsqueda exhaustiva sobre el espacio de parámetros $(p, d, q) \times (P, D, Q)_{12}$, minimizando el Criterio de Información de Akaike (AIC). El modelo seleccionado corresponde al orden SARIMAX$(0,1,0)(0,0,0)_{12}$, equivalente a un paseo aleatorio con variables exógenas, con un AIC de 2566{,}18 y un BIC de 2574{,}94.
 
 \justify
-Los parámetros estimados del modelo se resumen en la Tabla \ref{tab:sarimax_params}. El coeficiente asociado al nivel del río (\texttt{Nivel\_Rio}) resultó negativo ($-56{,}18$~Gs./m) aunque estadísticamente no significativo ($p=0{,}893$), lo que puede atribuirse a la escasa variabilidad de esta variable en el subconjunto de ajuste o a la dominancia de la tendencia de largo plazo en la serie. La variable \texttt{Cuarentena} tampoco alcanzó significancia estadística en el marco paramétrico del modelo integrado, dado que su efecto queda parcialmente absorbido por la diferenciación de la serie.
+Los parámetros estimados del modelo se resumen en la Tabla \ref{tab:sarimax_params}. El coeficiente asociado al nivel del río (\texttt{Nivel\_Rio}) resultó negativo ($-55{,}34$~Gs./m) aunque estadísticamente no significativo ($p=0{,}895$), lo que puede atribuirse a la escasa variabilidad de esta variable en el subconjunto de ajuste o a la dominancia de la tendencia de largo plazo en la serie. La variable \texttt{Cuarentena} tampoco alcanzó significancia estadística en el marco paramétrico del modelo integrado, dado que su efecto queda parcialmente absorbido por la diferenciación de la serie.
 
 \begin{table}[ht]
     \centering
@@ -248,9 +248,9 @@ Los parámetros estimados del modelo se resumen en la Tabla \ref{tab:sarimax_par
         \toprule
         \textbf{Parámetro} & \textbf{Coeficiente} & \textbf{Error est.} & \textbf{z} & \textbf{p-valor} \\
         \midrule
-        \texttt{Nivel\_Rio}  & $-56{,}178$ & $418{,}775$ & $-0{,}134$ & $0{,}893$ \\
-        \texttt{Cuarentena}  & $-23{,}837$ & $9{,}35 \times 10^{5}$ & $-2{,}55 \times 10^{-5}$ & $1{,}000$ \\
-        $\sigma^{2}$         & $7{,}80 \times 10^{6}$ & $2{,}15 \times 10^{5}$ & $36{,}225$ & $0{,}000$ \\
+        \texttt{Nivel\_Rio}  & $-55{,}340$ & $418{,}862$ & $-0{,}132$ & $0{,}895$ \\
+        \texttt{Cuarentena}  & $-23{,}482$ & $9{,}49 \times 10^{5}$ & $-2{,}47 \times 10^{-5}$ & $1{,}000$ \\
+        $\sigma^{2}$         & $7{,}80 \times 10^{6}$ & $2{,}15 \times 10^{5}$ & $36{,}223$ & $0{,}000$ \\
         \midrule
         \multicolumn{2}{l}{AIC} & \multicolumn{3}{r}{2566{,}18} \\
         \multicolumn{2}{l}{BIC} & \multicolumn{3}{r}{2574{,}94} \\
@@ -263,7 +263,7 @@ Los parámetros estimados del modelo se resumen en la Tabla \ref{tab:sarimax_par
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth]{dataset-sarimax/graficos/11_ajuste_insample.png}
+    \includegraphics[width=\textwidth]{dataset-sarimax-cemento/graficos/11_ajuste_insample.png}
     \caption{Ajuste in-sample del modelo SARIMAX: valores reales versus valores ajustados sobre el período de entrenamiento.}
     \label{fig:sarimax_insample}
 \end{figure}
@@ -273,7 +273,7 @@ La Figura \ref{fig:sarimax_insample} muestra el ajuste del modelo sobre los dato
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth]{dataset-sarimax/graficos/08_comparacion_real_predicho.png}
+    \includegraphics[width=\textwidth]{dataset-sarimax-cemento/graficos/08_comparacion_real_predicho.png}
     \caption{Comparación entre los valores reales y predichos del precio del cemento en el conjunto de prueba (15 meses).}
     \label{fig:sarimax_comparacion}
 \end{figure}
@@ -289,10 +289,10 @@ La Figura \ref{fig:sarimax_comparacion} presenta la comparación entre los valor
         \toprule
         \textbf{Métrica} & \textbf{Valor} \\
         \midrule
-        RMSE (Raíz del Error Cuadrático Medio) & 103{,}31~Gs. \\
-        MAE  (Error Absoluto Medio)            & 71{,}85~Gs. \\
-        MAPE (Error Porcentual Medio Absoluto) & 0{,}13\,\% \\
-        SMAPE (Error Porcentual Simétrico)     & 0{,}13\,\% \\
+        RMSE (Raíz del Error Cuadrático Medio) & 95{,}38~Gs. \\
+        MAE  (Error Absoluto Medio)            & 67{,}56~Gs. \\
+        MAPE (Error Porcentual Medio Absoluto) & 0{,}12\,\% \\
+        SMAPE (Error Porcentual Simétrico)     & 0{,}12\,\% \\
         Error Absoluto Máximo                  & 234{,}47~Gs. \\
         $R^{2}$ (Coeficiente de Determinación) & 0{,}0000 \\
         \bottomrule
@@ -300,7 +300,7 @@ La Figura \ref{fig:sarimax_comparacion} presenta la comparación entre los valor
 \end{table}
 
 \justify
-El MAPE de 0{,}13\,\% sobre el conjunto de prueba merece una lectura cuidadosa. Tomado en aislamiento, parece un resultado excelente: las predicciones se alejan menos de dos décimas de punto porcentual del valor real. El RMSE de 103{,}31~Gs. y el MAE de 71{,}85~Gs. también son bajos respecto al rango histórico de la serie (Gs.~48.000--76.036). Sin embargo, el $R^{2}=0$ en el mismo período llama la atención: ¿cómo puede el modelo tener un error relativo tan bajo y al mismo tiempo un $R^{2}$ nulo?
+El MAPE de 0{,}12\,\% sobre el conjunto de prueba merece una lectura cuidadosa. Tomado en aislamiento, parece un resultado excelente: las predicciones se alejan poco más de una décima de punto porcentual del valor real. El RMSE de 95{,}38~Gs. y el MAE de 67{,}56~Gs. también son bajos respecto al rango histórico de la serie (Gs.~48.000--76.036). Sin embargo, el $R^{2}=0$ en el mismo período llama la atención: ¿cómo puede el modelo tener un error relativo tan bajo y al mismo tiempo un $R^{2}$ nulo?
 
 \justify
 La explicación es que, en el período de prueba, el precio del cemento se mantuvo prácticamente estable — varianza muy baja — de modo que cualquier predicción constante cercana al nivel reciente resultará en errores absolutos pequeños, pero sin diferenciarse del simple promedio histórico en términos de varianza explicada. En otras palabras, el contexto del mercado durante ese período limitó lo que cualquier modelo, no solo el SARIMAX, podía demostrar. El comportamiento es además coherente con el orden $(0,1,0)$ seleccionado: sin términos AR ni MA, el modelo proyecta básicamente el último valor observado, que es la estrategia óptima cuando la serie diferenciada se comporta como ruido blanco. La validación cruzada, que sí abarca períodos con mayor variabilidad, ofrece una imagen más completa del desempeño real.
@@ -309,7 +309,7 @@ La explicación es que, en el período de prueba, el precio del cemento se mantu
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth]{dataset-sarimax/graficos/10_rolling_forecast_cv.png}
+    \includegraphics[width=\textwidth]{dataset-sarimax-cemento/graficos/10_rolling_forecast_cv.png}
     \caption{Validación cruzada por ventana deslizante (\textit{rolling forecast}): predicciones puntuales versus valores reales en cada paso de avance.}
     \label{fig:sarimax_rolling}
 \end{figure}
@@ -340,7 +340,7 @@ Aquí el panorama cambia. Con un $R^{2}=0{,}7586$, el modelo explica el 75{,}86\
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth]{dataset-sarimax/graficos/07_diagnostico_residuos.png}
+    \includegraphics[width=\textwidth]{dataset-sarimax-cemento/graficos/07_diagnostico_residuos.png}
     \caption{Diagnóstico de residuos del modelo SARIMAX: gráfico de residuos, histograma, gráfico Q-Q y función de autocorrelación.}
     \label{fig:sarimax_residuos}
 \end{figure}
@@ -352,14 +352,14 @@ La Figura \ref{fig:sarimax_residuos} presenta el diagnóstico completo de los re
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth]{dataset-sarimax/graficos/09_pronostico_intervalo_confianza.png}
+    \includegraphics[width=\textwidth]{dataset-sarimax-cemento/graficos/09_pronostico_intervalo_confianza.png}
     \caption{Pronóstico del precio del cemento a 24 meses (agosto 2025 -- julio 2027) con intervalos de confianza al 95\%.}
     \label{fig:sarimax_pronostico_ic}
 \end{figure}
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth]{dataset-sarimax/graficos/06_pronostico_completo.png}
+    \includegraphics[width=\textwidth]{dataset-sarimax-cemento/graficos/06_pronostico_completo.png}
     \caption{Pronóstico completo del precio del cemento: serie histórica observada y proyección SARIMAX a 24 meses.}
     \label{fig:sarimax_pronostico_completo}
 \end{figure}
@@ -368,7 +368,7 @@ La Figura \ref{fig:sarimax_residuos} presenta el diagnóstico completo de los re
 Una vez validado el modelo, se generó el pronóstico del precio mensual del cemento para el horizonte de 24 meses comprendido entre agosto de 2025 y julio de 2027, utilizando como variable exógena los niveles del río Paraguay proyectados por el modelo LSTM. Las Figuras \ref{fig:sarimax_pronostico_ic} y \ref{fig:sarimax_pronostico_completo} presentan el pronóstico puntual y el intervalo de confianza al 95\,\%, así como la vista conjunta con la serie histórica completa.
 
 \justify
-El pronóstico puntual converge rápidamente hacia un valor estable de aproximadamente Gs.~55.010, consistente con la naturaleza del modelo SARIMAX$(0,1,0)$, cuyas predicciones corresponden a la última observación más la contribución de las variables exógenas proyectadas. El intervalo de confianza al 95\,\% se amplía progresivamente con el horizonte de predicción: para agosto de 2025 el rango es de Gs.~[49.535 -- 60.483], mientras que para julio de 2027 se extiende a Gs.~[28.195 -- 81.829]. Este ensanchamiento, inherente a los modelos integrados en horizontes largos, refleja la incertidumbre acumulada de la proyección y proporciona los límites inferior y superior necesarios para la planificación conservadora y optimista de presupuestos de obra.
+El pronóstico puntual converge rápidamente hacia un valor estable de aproximadamente Gs.~55.010, consistente con la naturaleza del modelo SARIMAX$(0,1,0)$, cuyas predicciones corresponden a la última observación más la contribución de las variables exógenas proyectadas. El intervalo de confianza al 95\,\% se amplía progresivamente con el horizonte de predicción: para agosto de 2025 el rango es de Gs.~[49.535 -- 60.483], mientras que para julio de 2027 se extiende a Gs.~[28.089 -- 81.724]. Este ensanchamiento, inherente a los modelos integrados en horizontes largos, refleja la incertidumbre acumulada de la proyección y proporciona los límites inferior y superior necesarios para la planificación conservadora y optimista de presupuestos de obra.
 
 \justify
 La Tabla \ref{tab:sarimax_pronostico} sintetiza los valores pronosticados para los primeros doce meses del horizonte de predicción.
@@ -382,17 +382,243 @@ La Tabla \ref{tab:sarimax_pronostico} sintetiza los valores pronosticados para l
         \textbf{Mes} & \textbf{Pronóstico (Gs.)} & \textbf{IC Inferior} & \textbf{IC Superior} \\
         \midrule
         Agosto 2025      & 55.009 & 49.535 & 60.483 \\
-        Septiembre 2025  & 55.013 & 47.271 & 62.754 \\
-        Octubre 2025     & 55.010 & 45.529 & 64.492 \\
-        Noviembre 2025   & 55.010 & 44.062 & 65.958 \\
-        Diciembre 2025   & 55.010 & 42.770 & 67.251 \\
-        Enero 2026       & 55.011 & 41.602 & 68.419 \\
-        Febrero 2026     & 55.011 & 40.528 & 69.494 \\
-        Marzo 2026       & 55.011 & 39.528 & 70.494 \\
-        Abril 2026       & 55.011 & 38.589 & 71.433 \\
-        Mayo 2026        & 55.011 & 37.701 & 72.322 \\
-        Junio 2026       & 55.011 & 36.856 & 73.167 \\
-        Julio 2026       & 55.011 & 36.049 & 73.974 \\
+        Septiembre 2025  & 55.053 & 47.311 & 62.794 \\
+        Octubre 2025     & 55.069 & 45.587 & 64.550 \\
+        Noviembre 2025   & 55.055 & 44.107 & 66.003 \\
+        Diciembre 2025   & 55.059 & 42.819 & 67.299 \\
+        Enero 2026       & 55.037 & 41.628 & 68.445 \\
+        Febrero 2026     & 55.033 & 40.550 & 69.516 \\
+        Marzo 2026       & 55.041 & 39.558 & 70.524 \\
+        Abril 2026       & 55.022 & 38.600 & 71.444 \\
+        Mayo 2026        & 54.942 & 37.632 & 72.253 \\
+        Junio 2026       & 54.918 & 36.763 & 73.073 \\
+        Julio 2026       & 54.946 & 35.983 & 73.908 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+% ============================================================
+\section{Resultados del Modelo SARIMAX para la Predicción del Precio del Ladrillo}
+\vspace{0.3cm}
+\justify
+Además del cemento, se modeló el precio del ladrillo —segundo insumo clave en la construcción— utilizando la misma metodología SARIMAX con variables exógenas. La serie histórica, las variables explicativas y el procedimiento de selección del modelo siguen la estructura descrita para el cemento, lo que permite una comparación directa entre ambos materiales.
+
+\subsection{Serie Histórica y Análisis Exploratorio}
+
+\justify
+La serie histórica comprende registros mensuales del precio del ladrillo en Guaraníes (Gs.) desde enero de 2014 hasta julio de 2025, totalizando 139 observaciones. La variable endógena es el precio del ladrillo (\texttt{Precio\_Ladrillo}), mientras que las variables exógenas son el nivel promedio mensual del río Paraguay (\texttt{Nivel\_Rio}), obtenido de las predicciones del modelo LSTM, y la variable binaria de cuarentena (\texttt{Cuarentena}). Los estadísticos descriptivos de la serie son: precio mínimo de Gs.~428, precio máximo de Gs.~700, precio promedio de Gs.~592 y desviación estándar de Gs.~76{,}47.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{dataset-sarimax-ladrillo/graficos/01_series_temporales.png}
+    \caption{Series temporales del precio mensual del ladrillo (Gs.) y del nivel del río Paraguay (m), período 2014--2025.}
+    \label{fig:sarimax_ladrillo_series}
+\end{figure}
+
+\justify
+La Figura \ref{fig:sarimax_ladrillo_series} muestra la evolución conjunta del precio del ladrillo y del nivel del río Paraguay. Se observa una tendencia ascendente en el precio del ladrillo a lo largo del período analizado, con incrementos escalonados que reflejan los ajustes de precio característicos de este mercado. El precio pasó de aproximadamente Gs.~428 en los primeros años a Gs.~700 hacia el final del período.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{dataset-sarimax-ladrillo/graficos/02_descomposicion_estacional.png}
+    \caption{Descomposición estacional de la serie de precio del ladrillo: tendencia, estacionalidad y componente residual.}
+    \label{fig:sarimax_ladrillo_descomposicion}
+\end{figure}
+
+\justify
+La Figura \ref{fig:sarimax_ladrillo_descomposicion} presenta la descomposición clásica de la serie del ladrillo. La componente de tendencia confirma el crecimiento sostenido del precio, con una aceleración a partir de 2020. La componente estacional muestra patrones de amplitud moderada con período anual, y los residuos no evidencian estructura sistemática.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{dataset-sarimax-ladrillo/graficos/03_acf_pacf.png}
+    \caption{Funciones de autocorrelación (ACF) y autocorrelación parcial (PACF) de la serie del precio del ladrillo en niveles y en primeras diferencias.}
+    \label{fig:sarimax_ladrillo_acf_pacf}
+\end{figure}
+
+\justify
+La Figura \ref{fig:sarimax_ladrillo_acf_pacf} muestra las funciones ACF y PACF de la serie original y de su primera diferencia. Al igual que en el caso del cemento, la serie en niveles presenta una ACF con decaimiento lento, indicando no estacionariedad. Tras la primera diferencia, la ACF decae hacia cero, justificando el orden de integración $d=1$.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{dataset-sarimax-ladrillo/graficos/04_correlacion.png}
+    \caption{Matriz de correlación entre el precio del ladrillo, el nivel del río Paraguay y la variable de cuarentena.}
+    \label{fig:sarimax_ladrillo_correlacion}
+\end{figure}
+
+\justify
+La Figura \ref{fig:sarimax_ladrillo_correlacion} muestra la matriz de correlación entre las variables del modelo. La correlación entre el precio del ladrillo y el nivel del río es de magnitud moderada y negativa, coherente con los resultados obtenidos para el cemento y con la hipótesis logística que sustenta la inclusión de esta variable exógena.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{dataset-sarimax-ladrillo/graficos/05_patron_estacional.png}
+    \caption{Patrón estacional del precio mensual del ladrillo a lo largo del año.}
+    \label{fig:sarimax_ladrillo_estacional}
+\end{figure}
+
+\justify
+La Figura \ref{fig:sarimax_ladrillo_estacional} ilustra el patrón estacional del precio del ladrillo. Se observan variaciones de amplitud moderada, con precios ligeramente superiores en los meses de mayor demanda de la construcción.
+
+\subsection{Selección y Parámetros del Modelo}
+
+\justify
+La selección del orden óptimo del modelo SARIMAX se realizó mediante búsqueda exhaustiva sobre el espacio de parámetros $(p, d, q) \times (P, D, Q)_{12}$, minimizando el AIC. El modelo seleccionado corresponde al orden SARIMAX$(0,1,0)(0,0,0)_{12}$, coincidiendo con el resultado obtenido para el cemento, con un AIC de 1109{,}56 y un BIC de 1118{,}32.
+
+\justify
+Los parámetros estimados del modelo se resumen en la Tabla \ref{tab:sarimax_ladrillo_params}. El coeficiente asociado al nivel del río (\texttt{Nivel\_Rio}) resultó negativo ($-1{,}93$~Gs./m) y estadísticamente no significativo ($p=0{,}302$). La variable \texttt{Cuarentena} tampoco alcanzó significancia estadística ($p=0{,}999$), comportamiento análogo al observado en el modelo del cemento.
+
+\begin{table}[ht]
+    \centering
+    \caption{Parámetros estimados del modelo SARIMAX$(0,1,0)(0,0,0)_{12}$ para la predicción del precio del ladrillo.}
+    \label{tab:sarimax_ladrillo_params}
+    \begin{tabular}{lrrrr}
+        \toprule
+        \textbf{Parámetro} & \textbf{Coeficiente} & \textbf{Error est.} & \textbf{z} & \textbf{p-valor} \\
+        \midrule
+        \texttt{Nivel\_Rio}  & $-1{,}931$ & $1{,}873$ & $-1{,}031$ & $0{,}302$ \\
+        \texttt{Cuarentena}  & $-0{,}819$ & $643{,}258$ & $-0{,}001$ & $0{,}999$ \\
+        $\sigma^{2}$         & $184{,}44$ & $6{,}384$ & $28{,}890$ & $0{,}000$ \\
+        \midrule
+        \multicolumn{2}{l}{AIC} & \multicolumn{3}{r}{1109{,}56} \\
+        \multicolumn{2}{l}{BIC} & \multicolumn{3}{r}{1118{,}32} \\
+        \multicolumn{2}{l}{Log-verosimilitud} & \multicolumn{3}{r}{$-551{,}78$} \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\justify
+La coincidencia en el orden del modelo seleccionado —SARIMAX$(0,1,0)$ tanto para el cemento como para el ladrillo— sugiere que ambas series de precios comparten una dinámica subyacente similar: en su forma diferenciada, se comportan como ruido blanco con contribución marginal de las variables exógenas. Este resultado es coherente con mercados de insumos de construcción en los que los ajustes de precio son infrecuentes y se mantienen estables durante períodos prolongados.
+
+\subsection{Ajuste In-Sample y Evaluación sobre el Conjunto de Prueba}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{dataset-sarimax-ladrillo/graficos/11_ajuste_insample.png}
+    \caption{Ajuste in-sample del modelo SARIMAX: valores reales versus valores ajustados para el precio del ladrillo.}
+    \label{fig:sarimax_ladrillo_insample}
+\end{figure}
+
+\justify
+La Figura \ref{fig:sarimax_ladrillo_insample} muestra el ajuste del modelo sobre los datos de entrenamiento. El modelo sigue adecuadamente la trayectoria histórica del precio del ladrillo, incluyendo los incrementos escalonados registrados a lo largo del período.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{dataset-sarimax-ladrillo/graficos/08_comparacion_real_predicho.png}
+    \caption{Comparación entre los valores reales y predichos del precio del ladrillo en el conjunto de prueba (15 meses).}
+    \label{fig:sarimax_ladrillo_comparacion}
+\end{figure}
+
+\justify
+La Figura \ref{fig:sarimax_ladrillo_comparacion} presenta la comparación entre los valores reales y los predichos por el modelo sobre el conjunto de prueba de 15 meses. Las métricas de evaluación se resumen en la Tabla \ref{tab:sarimax_ladrillo_metricas_prueba}.
+
+\begin{table}[ht]
+    \centering
+    \caption{Métricas de evaluación del modelo SARIMAX sobre el conjunto de prueba del ladrillo (15 meses).}
+    \label{tab:sarimax_ladrillo_metricas_prueba}
+    \begin{tabular}{lc}
+        \toprule
+        \textbf{Métrica} & \textbf{Valor} \\
+        \midrule
+        RMSE (Raíz del Error Cuadrático Medio) & 3{,}33~Gs. \\
+        MAE  (Error Absoluto Medio)            & 2{,}36~Gs. \\
+        MAPE (Error Porcentual Medio Absoluto) & 0{,}36\,\% \\
+        SMAPE (Error Porcentual Simétrico)     & 0{,}36\,\% \\
+        Error Absoluto Máximo                  & 8{,}18~Gs. \\
+        $R^{2}$ (Coeficiente de Determinación) & 0{,}0000 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\justify
+Al igual que en el caso del cemento, el MAPE de 0{,}36\,\% indica predicciones puntuales con un error relativo muy bajo, pero el $R^{2}=0$ refleja que durante el período de prueba el precio del ladrillo se mantuvo prácticamente estable, de modo que el modelo no puede diferenciarse de una predicción constante en términos de varianza explicada. El patrón es consistente con la naturaleza del modelo $(0,1,0)$: el pronóstico corresponde al último valor observado ajustado por las variables exógenas.
+
+\subsection{Validación Cruzada por Ventana Deslizante}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{dataset-sarimax-ladrillo/graficos/10_rolling_forecast_cv.png}
+    \caption{Validación cruzada por ventana deslizante del modelo SARIMAX para el precio del ladrillo.}
+    \label{fig:sarimax_ladrillo_rolling}
+\end{figure}
+
+\justify
+La validación cruzada por ventana deslizante ofrece un panorama más representativo del desempeño del modelo. La Figura \ref{fig:sarimax_ladrillo_rolling} muestra las predicciones un paso adelante a lo largo de todo el período evaluado. Las métricas obtenidas se presentan en la Tabla \ref{tab:sarimax_ladrillo_metricas_cv}.
+
+\begin{table}[ht]
+    \centering
+    \caption{Métricas de validación cruzada por ventana deslizante del modelo SARIMAX para el ladrillo.}
+    \label{tab:sarimax_ladrillo_metricas_cv}
+    \begin{tabular}{lc}
+        \toprule
+        \textbf{Métrica} & \textbf{Valor} \\
+        \midrule
+        RMSE & 9{,}52~Gs. \\
+        MAE  & 3{,}69~Gs. \\
+        MAPE & 0{,}55\,\% \\
+        $R^{2}$ & 0{,}8193 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\justify
+El $R^{2}=0{,}8193$ indica que el modelo explica el 81{,}93\,\% de la varianza del precio del ladrillo a lo largo del período histórico completo, superando incluso al resultado obtenido para el cemento ($R^{2}=0{,}7586$). El MAPE de 0{,}55\,\%, inferior al umbral del 5\,\% habitual para series de precios de materiales, confirma la utilidad práctica del modelo para la estimación presupuestaria.
+
+\subsection{Análisis de Residuos}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{dataset-sarimax-ladrillo/graficos/07_diagnostico_residuos.png}
+    \caption{Diagnóstico de residuos del modelo SARIMAX para el precio del ladrillo.}
+    \label{fig:sarimax_ladrillo_residuos}
+\end{figure}
+
+\justify
+La Figura \ref{fig:sarimax_ladrillo_residuos} presenta el diagnóstico de los residuos. El test de Ljung-Box no rechaza la hipótesis nula de ausencia de autocorrelación serial para los rezagos 10 ($Q=1{,}80$, $p=0{,}998$) y 20 ($Q=3{,}72$, $p=1{,}000$), confirmando que los residuos se comportan como ruido blanco. El test de Shapiro-Wilk rechaza la normalidad ($W=0{,}1936$, $p<0{,}001$), resultado atribuible a la presencia de observaciones extremas que introducen una curtosis de 26{,}69 y una asimetría de 3{,}25. Al igual que en el modelo del cemento, esta no normalidad no invalida las estimaciones puntuales pero impone cautela en la interpretación de los intervalos de confianza.
+
+\subsection{Pronóstico a 24 Meses con Intervalos de Confianza}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{dataset-sarimax-ladrillo/graficos/09_pronostico_intervalo_confianza.png}
+    \caption{Pronóstico del precio del ladrillo a 24 meses (agosto 2025 -- julio 2027) con intervalos de confianza al 95\,\%.}
+    \label{fig:sarimax_ladrillo_pronostico_ic}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{dataset-sarimax-ladrillo/graficos/06_pronostico_completo.png}
+    \caption{Pronóstico completo del precio del ladrillo: serie histórica observada y proyección SARIMAX a 24 meses.}
+    \label{fig:sarimax_ladrillo_pronostico_completo}
+\end{figure}
+
+\justify
+Una vez validado el modelo, se generó el pronóstico del precio mensual del ladrillo para el horizonte de 24 meses comprendido entre agosto de 2025 y julio de 2027. Las Figuras \ref{fig:sarimax_ladrillo_pronostico_ic} y \ref{fig:sarimax_ladrillo_pronostico_completo} presentan el pronóstico puntual y el intervalo de confianza al 95\,\%, junto con la serie histórica completa.
+
+\justify
+El pronóstico puntual converge hacia un valor estable de aproximadamente Gs.~650, consistente con la naturaleza del modelo SARIMAX$(0,1,0)$. El intervalo de confianza al 95\,\% se amplía progresivamente con el horizonte de predicción: para agosto de 2025 el rango es de Gs.~[624 -- 677], mientras que para julio de 2027 se extiende a Gs.~[516 -- 777]. Este ensanchamiento, análogo al observado en el modelo del cemento, refleja la incertidumbre acumulada inherente a las proyecciones de largo plazo.
+
+\justify
+La Tabla \ref{tab:sarimax_ladrillo_pronostico} sintetiza los valores pronosticados para los primeros doce meses del horizonte de predicción.
+
+\begin{table}[ht]
+    \centering
+    \caption{Pronóstico mensual del precio del ladrillo (Gs.) para el período agosto 2025 -- julio 2026, con intervalo de confianza al 95\,\%.}
+    \label{tab:sarimax_ladrillo_pronostico}
+    \begin{tabular}{lccc}
+        \toprule
+        \textbf{Mes} & \textbf{Pronóstico (Gs.)} & \textbf{IC Inferior} & \textbf{IC Superior} \\
+        \midrule
+        Agosto 2025      & 650 & 624 & 677 \\
+        Septiembre 2025  & 652 & 614 & 689 \\
+        Octubre 2025     & 652 & 606 & 698 \\
+        Noviembre 2025   & 652 & 599 & 705 \\
+        Diciembre 2025   & 652 & 593 & 712 \\
+        Enero 2026       & 651 & 586 & 716 \\
+        Febrero 2026     & 651 & 581 & 722 \\
+        Marzo 2026       & 651 & 576 & 727 \\
+        Abril 2026       & 651 & 571 & 731 \\
+        Mayo 2026        & 648 & 564 & 732 \\
+        Junio 2026       & 647 & 559 & 735 \\
+        Julio 2026       & 648 & 556 & 740 \\
         \bottomrule
     \end{tabular}
 \end{table}

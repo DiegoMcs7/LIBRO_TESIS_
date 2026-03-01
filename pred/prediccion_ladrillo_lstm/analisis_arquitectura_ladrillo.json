@@ -1,0 +1,279 @@
+{
+  "arquitectura": {
+    "tipo": "LSTM Secuencial (Keras)",
+    "capas": [
+      "LSTM (variable: 1-3 capas)",
+      "Dropout (variable: 0.0-0.5, step=0.05)",
+      "Dense (1 unidad, activación linear)"
+    ],
+    "activaciones": [
+      "tanh (LSTM por defecto)",
+      "linear (Dense output layer)"
+    ],
+    "regularizacion": "L2 via AdamW weight_decay (1e-7 a 1e-3, log-scale)",
+    "attention": false,
+    "bidireccional": true,
+    "batch_normalization": false,
+    "hidden_units_per_layer": [32, 64, 128, 256, 512],
+    "capas_lstm_rango": "1-3 capas",
+    "return_sequences": "True para capas intermedias, False para la última LSTM"
+  },
+  "preprocesamiento": {
+    "escaladores": [
+      "MinMaxScaler(feature_range=(-1, 1)) para Precio_Promedio_Polinomial_2",
+      "MinMaxScaler(feature_range=(-1, 1)) para Nivel_Rio",
+      "Nota: COVID es binaria (0/1), no se escala"
+    ],
+    "lookback": "Variable optimizada por Optuna: [3, 4, 5, 6, 8, 10, 12, 18, 24] meses",
+    "features": [
+      "Cuarentena_Covid (binaria 0/1)",
+      "Nivel_Rio (mínimo mensual del río Paraguay)",
+      "Precio_Promedio_Polinomial_2 (target)"
+    ],
+    "split": {
+      "train": "70% (n_train)",
+      "val": "15% (n_val)",
+      "test": "15% (n_test)",
+      "metodo": "Temporal split (no shuffled, respeta orden cronológico)"
+    },
+    "manejo_nulos": "Interpolación lineal para valores faltantes en Nivel_Rio",
+    "outliers": "No se menciona detección/tratamiento de outliers explícitamente",
+    "covariables_exogenas": [
+      "Nivel del río (histórico + predicho por modelo río)",
+      "COVID-19 binaria (2020-03-11 a 2022-02-22)"
+    ],
+    "datos_totales": "~139 meses de datos históricos"
+  },
+  "entrenamiento": {
+    "epochs_optuna": 150,
+    "epochs_final": 500,
+    "batch_size": "Optimizado [2, 4, 8, 16, 32]",
+    "optimizer": "Adam / AdamW / RMSprop",
+    "learning_rate": "1e-5 a 1e-2 (log-scale), optimizado por Optuna",
+    "weight_decay": "1e-7 a 1e-3 (log-scale, solo AdamW)",
+    "callbacks": [
+      "EarlyStopping: monitor='val_loss', patience=variable, restore_best_weights=True",
+      "ReduceLROnPlateau: factor=0.5, patience=variable, min_lr=1e-6",
+      "OptunaPruningCallback (solo en Optuna, no en entrenamiento final)",
+      "CosineAnnealingLR (opcional, schedulers alternativos)"
+    ],
+    "early_stopping": true,
+    "patience_optuna": 20,
+    "patience_final": 30,
+    "learning_rate_scheduler": "ReduceLROnPlateau / CosineAnnealingLR / StepLR / none (optimizado)"
+  },
+  "optuna": {
+    "n_trials": 300,
+    "hiperparametros_optimizados": [
+      "lookback (9 valores categóricos)",
+      "n_layers (1-3)",
+      "hidden_size (32, 64, 128, 256, 512)",
+      "bidirectional (True/False)",
+      "dropout_rate (0.0-0.5, step=0.05)",
+      "optimizer (Adam, AdamW, RMSprop)",
+      "learning_rate (1e-5 a 1e-2, log)",
+      "weight_decay (1e-7 a 1e-3, log)",
+      "batch_size (2, 4, 8, 16, 32)",
+      "scheduler (ReduceLROnPlateau, CosineAnnealingLR, StepLR, none)"
+    ],
+    "sampler": "TPESampler(seed=42, n_startup_trials=20)",
+    "pruner": "MedianPruner(n_startup_trials=10, n_warmup_steps=10, n_consecutive_failures=5)",
+    "storage": "optuna.create_study() en memoria (no persistido a base de datos)",
+    "metrica_objetivo": "RMSE_val promedio en walk-forward validation (3 folds)",
+    "n_folds_wf": 3,
+    "wf_min_train_ratio": 0.55
+  },
+  "metricas_usadas": [
+    "RMSE (Root Mean Squared Error) — primaria",
+    "MAE (Mean Absolute Error) — vs precios reales",
+    "NSE (Nash-Sutcliffe Efficiency) — vs precios reales",
+    "Loss (MSE) — monitoreado en callbacks"
+  ],
+  "forecast": {
+    "horizonte": "24 meses",
+    "estrategia": "Recursiva/Iterativa (predicción paso a paso)",
+    "detalles": "Cada predicción futura usa la predicción anterior como entrada (feedback)",
+    "intervalos_confianza": false,
+    "salida": "Valores como enteros (int(round(...)))"
+  },
+  "reproducibilidad": {
+    "semillas_fijas": true,
+    "seed_value": 42,
+    "configuracion_detallada": [
+      "random.seed(42)",
+      "np.random.seed(42)",
+      "os.environ['PYTHONHASHSEED']='42'",
+      "tf.random.set_seed(42)",
+      "tf.keras.utils.set_random_seed(42)"
+    ],
+    "logging": "Prints extensos en stdout (no logging formal con logging.py)",
+    "config_yaml": false,
+    "hardware": "Kaggle + MirroredStrategy (2 GPUs, fallback a CPU)"
+  },
+  "problemas_detectados": [
+    {
+      "severidad": "CRÍTICO",
+      "problema": "Data Leakage Bidireccional",
+      "descripcion": "El modelo usa Bidirectional LSTM. En validación (folds y test), esto procesa información futura (futuro respecto al punto predicho), causando fuga de información. Para series temporales, se debe usar unidirectional LSTM únicamente.",
+      "linea_aproximada": "134, 643-649"
+    },
+    {
+      "severidad": "CRÍTICO",
+      "problema": "Forecast Recursivo Sin Incertidumbre",
+      "descripcion": "Las predicciones futuras (24 meses) son determinísticas. Sin intervalos de confianza, Bootstrap, o estimación de varianza, el usuario no conoce la incertidumbre. Errores acumulados en predicciones recursivas pueden ser grandes.",
+      "linea_aproximada": "1272-1344"
+    },
+    {
+      "severidad": "CRÍTICO",
+      "problema": "Validación Insuficiente",
+      "descripcion": "Walk-forward tiene solo 3 folds. Con ~139 meses de datos y lookbacks de hasta 24 meses, 3 folds es marginal. Recomendado: 5-10 folds.",
+      "linea_aproximada": "228"
+    },
+    {
+      "severidad": "ALTO",
+      "problema": "Storage Optuna No Persistido",
+      "descripcion": "El estudio Optuna no se guarda (no usa RDBStorage). Si el notebook falla, se pierde todo el registro de 300 trials. Recomendado: optuna.create_study(storage='sqlite:///...') para persistencia.",
+      "linea_aproximada": "933"
+    },
+    {
+      "severidad": "ALTO",
+      "problema": "Sin Análisis de Residuos",
+      "descripcion": "No hay gráficos/pruebas de normalidad, autocorrelación (ACF/PACF), heteroscedasticidad de residuos. Necesario para validar supuestos del modelo.",
+      "linea_aproximada": "No aplica (sección ausente)"
+    },
+    {
+      "severidad": "ALTO",
+      "problema": "Sin Test de Estacionariedad",
+      "descripcion": "No hay pruebas ADF/KPSS para verificar si las series son estacionarias. MinMaxScaler sin diferenciación puede ser problemático.",
+      "linea_aproximada": "No aplica (sección ausente)"
+    },
+    {
+      "severidad": "ALTO",
+      "problema": "Outliers No Tratados",
+      "descripcion": "Sin detección/tratamiento de outliers (IQR, Z-score). El precio del ladrillo puede tener spikes.",
+      "linea_aproximada": "No aplica (sección ausente)"
+    },
+    {
+      "severidad": "MEDIO",
+      "problema": "Magic Numbers",
+      "descripcion": "TRAIN_RATIO=0.70, VAL_RATIO=0.15, MAX_EPOCHS_OPTUNA=150, MAX_EPOCHS_FINAL=500, PATIENCE_OPTUNA=20, PATIENCE_FINAL=30 no están justificados documentalmente.",
+      "linea_aproximada": "196-241"
+    },
+    {
+      "severidad": "MEDIO",
+      "problema": "Logging No Profesional",
+      "descripcion": "Usa print() en lugar de logging.getLogger(). En producción, esto es difícil de capturar.",
+      "linea_aproximada": "Extenso en todo el archivo"
+    },
+    {
+      "severidad": "MEDIO",
+      "problema": "Sin Validación de Datos",
+      "descripcion": "No hay checks de rango válido (ej. precio < 0 es inválido). No hay validación de columnas faltantes.",
+      "linea_aproximada": "286-322"
+    },
+    {
+      "severidad": "MEDIO",
+      "problema": "Escaladores Guardados pero No Documentados",
+      "descripcion": "scaler_precio.pkl y scaler_nivel.pkl se guardan, pero sin metadatos (rango original, fecha de fit).",
+      "linea_aproximada": "522-525"
+    },
+    {
+      "severidad": "BAJO",
+      "problema": "Predicción Futura Asume Nivel del Río Conocido",
+      "descripcion": "Para 24 meses futuros, necesita predicción del nivel del río. Si hay < 24 meses disponibles, usa último valor conocido (forward fill). Esto reduce confianza.",
+      "linea_aproximada": "332-339"
+    },
+    {
+      "severidad": "BAJO",
+      "problema": "Sin Cross-Validation Temporal en Entrenamiento Final",
+      "descripcion": "El modelo final se entrena solo en train+val+test sin validación adicional.",
+      "linea_aproximada": "1057-1084"
+    },
+    {
+      "severidad": "BAJO",
+      "problema": "Métricas NSE/MAE Solo para Precios Reales Cargados",
+      "descripcion": "Si no existe precios_reales_ladrillo.txt, no se calcula NSE/MAE vs reales.",
+      "linea_aproximada": "1448-1470"
+    },
+    {
+      "severidad": "BAJO",
+      "problema": "Sin Análisis de Feature Importance",
+      "descripcion": "LSTM es 'caja negra'. No hay interpretación de cuál feature (COVID, Río, Precio rezagado) influye más.",
+      "linea_aproximada": "No aplica (sección ausente)"
+    },
+    {
+      "severidad": "BAJO",
+      "problema": "Falta de Documentación de Decisiones Arquitecturales",
+      "descripcion": "Aunque hay comentarios sobre LSTM vs Transformer, faltan justificaciones para la regularización L2, rango (-1,1), etc.",
+      "linea_aproximada": "24-87"
+    }
+  ],
+  "recomendaciones_prioritarias": [
+    {
+      "prioridad": 1,
+      "accion": "REEMPLAZAR Bidirectional LSTM con unidirectional en validación/test",
+      "detalle": "Mantenerlo solo en training si es absolutamente necesario. Eliminar data leakage.",
+      "complejidad": "Media"
+    },
+    {
+      "prioridad": 2,
+      "accion": "AGREGAR intervalos de confianza mediante Bootstrap o cuantiles de predicción",
+      "detalle": "Implementar uncertainty estimation para 24 meses futuros.",
+      "complejidad": "Alta"
+    },
+    {
+      "prioridad": 3,
+      "accion": "AUMENTAR folds de walk-forward de 3 a 5-10",
+      "detalle": "Mejorar validez estadística de la búsqueda de hiperparámetros.",
+      "complejidad": "Media"
+    },
+    {
+      "prioridad": 4,
+      "accion": "PERSISTIR estudio Optuna a SQLite",
+      "detalle": "Cambiar storage de en-memoria a 'sqlite:///study.db'.",
+      "complejidad": "Baja"
+    },
+    {
+      "prioridad": 5,
+      "accion": "AGREGAR análisis de residuos (ACF/PACF, normalidad, heteroscedasticidad)",
+      "detalle": "Crear gráficos y pruebas estadísticas de residuos.",
+      "complejidad": "Media"
+    },
+    {
+      "prioridad": 6,
+      "accion": "IMPLEMENTAR pruebas ADF/KPSS de estacionariedad",
+      "detalle": "Verificar si las series requieren diferenciación.",
+      "complejidad": "Baja"
+    },
+    {
+      "prioridad": 7,
+      "accion": "USAR logging formal (logging module) en lugar de print()",
+      "detalle": "Refactorizar prints a logging.info(), logging.warning(), etc.",
+      "complejidad": "Media"
+    },
+    {
+      "prioridad": 8,
+      "accion": "DOCUMENTAR y JUSTIFICAR todos los magic numbers",
+      "detalle": "Crear ablation studies si es posible para validar TRAIN_RATIO, EPOCHS, etc.",
+      "complejidad": "Media"
+    }
+  ],
+  "resumen_ejecutivo": {
+    "fortalezas": [
+      "Búsqueda exhaustiva de hiperparámetros (300 trials)",
+      "Walk-forward validation implementada",
+      "Múltiples escaladores (precio + nivel)",
+      "Semillas fijas para reproducibilidad",
+      "3 métricas principales (RMSE, MAE, NSE)"
+    ],
+    "debilidades_criticas": [
+      "Data leakage bidireccional",
+      "Forecast sin intervalos de confianza",
+      "Validación con pocos folds (3)",
+      "Optuna no persistido"
+    ],
+    "aplicabilidad_tesis": "El modelo es competente pero necesita correcciones antes de presentación en una tesis. Los problemas detectados son corregibles con esfuerzo moderado.",
+    "tiempo_estimado_correcciones": "3-5 días laborales (prioridades 1-4)",
+    "fecha_analisis": "2026-02-27"
+  }
+}
