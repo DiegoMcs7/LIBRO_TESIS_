@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(miktex packages:*)",
+      "Bash(pdflatex:*)",
+      "Bash(ls:*)",
+      "Bash(python3:*)",
+      "Bash(grep:*)"
+    ]
+  }
+}

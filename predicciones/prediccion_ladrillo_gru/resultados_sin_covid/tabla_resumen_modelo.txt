@@ -1,0 +1,14 @@
+
+Tabla Resumen — Modelo GRU Final
+  Arquitectura  : TensorFlow/Keras — GRU
+  Parametros    : 3,969
+  Split         : 95/20/22 meses (train/val/test)
+  Features      : 7 (Precio, Nivel Rio, COVID, lag1, roll3, sin, cos)
+
+  Metrica             Train        Val       Test
+  ──────────────────────────────────────────────
+  RMSE (Gs.)          14.36      11.41       3.43
+  ──────────────────────────────────────────────
+
+  Horizonte      : 24 meses (recursiva)
+  IC             : 95% Monte Carlo Dropout (N=100)

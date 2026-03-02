@@ -1,0 +1,13 @@
+% TABLA RESUMEN MODELO GRU - AUTO-GENERADA
+\begin{table}[htbp]
+\centering
+\caption{Desempeno del Modelo GRU — Train / Validacion / Test}
+\label{tab:gru-metricas}
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Metrica} & \textbf{Train} & \textbf{Val} & \textbf{Test} \\
+\midrule
+RMSE (Gs.) & 4911.67 & 2862.84 & 2709.13 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,202 @@
+{
+  "mejor_rmse_validacion_gs": 14.344981104683143,
+  "mejores_params": {
+    "lookback": 4,
+    "n_layers": 1,
+    "hidden_size": 64,
+    "bidirectional": true,
+    "dropout_rate": 0.2,
+    "recurrent_dropout": 0.05,
+    "optimizer": "Adam",
+    "learning_rate": 0.0063174007442069685,
+    "weight_decay": 7.352364276160885e-06,
+    "batch_size": 4,
+    "scheduler": "StepLR"
+  },
+  "n_trials_completados": 261,
+  "n_trials_podados": 0,
+  "n_trials_fallidos": 0,
+  "tiempo_minutos": 480.9012166817983,
+  "top_10": [
+    {
+      "rank": 1,
+      "trial": 171,
+      "rmse_gs": 14.344981104683143,
+      "params": {
+        "lookback": 4,
+        "n_layers": 1,
+        "hidden_size": 64,
+        "bidirectional": true,
+        "dropout_rate": 0.2,
+        "recurrent_dropout": 0.05,
+        "optimizer": "Adam",
+        "learning_rate": 0.0063174007442069685,
+        "weight_decay": 7.352364276160885e-06,
+        "batch_size": 4,
+        "scheduler": "StepLR"
+      }
+    },
+    {
+      "rank": 2,
+      "trial": 246,
+      "rmse_gs": 14.500090274104883,
+      "params": {
+        "lookback": 4,
+        "n_layers": 1,
+        "hidden_size": 64,
+        "bidirectional": false,
+        "dropout_rate": 0.2,
+        "recurrent_dropout": 0.05,
+        "optimizer": "AdamW",
+        "learning_rate": 0.00652693247595781,
+        "weight_decay": 9.534010895795526e-07,
+        "batch_size": 4,
+        "scheduler": "none"
+      }
+    },
+    {
+      "rank": 3,
+      "trial": 57,
+      "rmse_gs": 14.732725246942406,
+      "params": {
+        "lookback": 4,
+        "n_layers": 1,
+        "hidden_size": 64,
+        "bidirectional": false,
+        "dropout_rate": 0.1,
+        "recurrent_dropout": 0.1,
+        "optimizer": "Adam",
+        "learning_rate": 0.007823110649005538,
+        "weight_decay": 1.4777026861402435e-07,
+        "batch_size": 4,
+        "scheduler": "CosineAnnealingLR"
+      }
+    },
+    {
+      "rank": 4,
+      "trial": 116,
+      "rmse_gs": 14.741997730992649,
+      "params": {
+        "lookback": 4,
+        "n_layers": 1,
+        "hidden_size": 64,
+        "bidirectional": false,
+        "dropout_rate": 0.2,
+        "recurrent_dropout": 0.0,
+        "optimizer": "Adam",
+        "learning_rate": 0.007114432840105234,
+        "weight_decay": 1.8947843543247944e-06,
+        "batch_size": 4,
+        "scheduler": "StepLR"
+      }
+    },
+    {
+      "rank": 5,
+      "trial": 235,
+      "rmse_gs": 14.774972163323136,
+      "params": {
+        "lookback": 4,
+        "n_layers": 1,
+        "hidden_size": 64,
+        "bidirectional": false,
+        "dropout_rate": 0.2,
+        "recurrent_dropout": 0.05,
+        "optimizer": "Adam",
+        "learning_rate": 0.006631844491796262,
+        "weight_decay": 1.4073322454401967e-06,
+        "batch_size": 4,
+        "scheduler": "none"
+      }
+    },
+    {
+      "rank": 6,
+      "trial": 290,
+      "rmse_gs": 14.871407699869152,
+      "params": {
+        "lookback": 4,
+        "n_layers": 1,
+        "hidden_size": 64,
+        "bidirectional": false,
+        "dropout_rate": 0.2,
+        "recurrent_dropout": 0.05,
+        "optimizer": "Adam",
+        "learning_rate": 0.007551879538446225,
+        "weight_decay": 0.00037017153080066604,
+        "batch_size": 4,
+        "scheduler": "none"
+      }
+    },
+    {
+      "rank": 7,
+      "trial": 165,
+      "rmse_gs": 14.933350035063285,
+      "params": {
+        "lookback": 4,
+        "n_layers": 1,
+        "hidden_size": 64,
+        "bidirectional": false,
+        "dropout_rate": 0.25,
+        "recurrent_dropout": 0.0,
+        "optimizer": "Adam",
+        "learning_rate": 0.006407968111947836,
+        "weight_decay": 3.7665165285131564e-06,
+        "batch_size": 4,
+        "scheduler": "StepLR"
+      }
+    },
+    {
+      "rank": 8,
+      "trial": 101,
+      "rmse_gs": 15.109418181596473,
+      "params": {
+        "lookback": 4,
+        "n_layers": 1,
+        "hidden_size": 64,
+        "bidirectional": false,
+        "dropout_rate": 0.2,
+        "recurrent_dropout": 0.05,
+        "optimizer": "Adam",
+        "learning_rate": 0.007385994571574439,
+        "weight_decay": 9.85489008645906e-07,
+        "batch_size": 4,
+        "scheduler": "StepLR"
+      }
+    },
+    {
+      "rank": 9,
+      "trial": 243,
+      "rmse_gs": 15.202991398156508,
+      "params": {
+        "lookback": 4,
+        "n_layers": 1,
+        "hidden_size": 64,
+        "bidirectional": false,
+        "dropout_rate": 0.2,
+        "recurrent_dropout": 0.05,
+        "optimizer": "Adam",
+        "learning_rate": 0.007238456248855211,
+        "weight_decay": 8.023160814612235e-07,
+        "batch_size": 4,
+        "scheduler": "none"
+      }
+    },
+    {
+      "rank": 10,
+      "trial": 234,
+      "rmse_gs": 15.297237412610357,
+      "params": {
+        "lookback": 4,
+        "n_layers": 1,
+        "hidden_size": 64,
+        "bidirectional": false,
+        "dropout_rate": 0.2,
+        "recurrent_dropout": 0.05,
+        "optimizer": "Adam",
+        "learning_rate": 0.0053647838896401295,
+        "weight_decay": 1.3147714269193664e-06,
+        "batch_size": 4,
+        "scheduler": "none"
+      }
+    }
+  ]
+}

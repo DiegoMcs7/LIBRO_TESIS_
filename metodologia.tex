@@ -5,10 +5,10 @@
 Para este estudio se consideraron los precios promedio mensuales de tres materiales de construcción representativos del mercado nacional: cemento de la marca Yguazú, cal hidratada de la marca Impacal y ladrillo común de la marca Tobatí.
 
 \justify
-Los datos fueron obtenidos de la revista técnica Mandu’a \cite{mandua}, especializada en el sector de la construcción, de distribución gratuita y publicación mensual. Esta fuente constituye un referente técnico en Paraguay para el seguimiento de precios de materiales y tendencias del mercado.
+Los datos fueron obtenidos de la revista técnica Mandu'a \cite{mandua}, especializada en el sector de la construcción, de distribución gratuita y publicación mensual. Esta fuente constituye un referente técnico en Paraguay para el seguimiento de precios de materiales y tendencias del mercado.
 
 \justify
-Adicionalmente, se incorporó como variable exógena el nivel del río Paraguay, cuyos registros diarios fueron extraídos de la página oficial de la Dirección de Meteorología e Hidrología \cite{dmh}. 
+Adicionalmente, se incorporó como variable exógena el nivel del río Paraguay, cuyos registros diarios fueron extraídos de la página oficial de la Dirección de Meteorología e Hidrología \cite{dmh}.
 
 \justify
 Tras la recopilación de los datos diarios, se extrajo para cada mes el nivel mínimo registrado, generando así una serie mensual del nivel del río que mantiene correspondencia temporal con la serie mensual de precios de los materiales de construcción.
@@ -22,7 +22,7 @@ El trabajo se desarrolló en tres etapas principales:
 \end{itemize}
 
 \justify
-El conjunto de datos para los precios del cemento, la cal hidratada y el ladrillo común comprenden el período enero de 2014 a julio de 2025. Este intervalo se definió debido a que la Revista Técnica Mandu’a \cite{mandua} pone a disposición registros históricos únicamente desde el año 2014 en su sitio web.
+El conjunto de datos para los precios del cemento, la cal hidratada y el ladrillo común comprenden el período enero de 2014 a julio de 2025. Este intervalo se definió debido a que la Revista Técnica Mandu'a \cite{mandua} pone a disposición registros históricos únicamente desde el año 2014 en su sitio web.
 
 \justify
 En cuanto al nivel del río Paraguay en el puerto de Asunción se utilizaron registros desde enero de 1990 hasta julio de 2025. Este intervalo se eligió siguiendo las recomendaciones de la Organización Meteorológica Mundial (OMM), que establece que para estudios hidrológicos y climáticos es adecuado considerar un período de al menos 30 años, lo que permite capturar la variabilidad natural de largo plazo y obtener una representación más robusta del comportamiento histórico del río \cite{EstudioClimaParaguay2019}.
@@ -35,64 +35,80 @@ Durante la recolección de los datos de precios se identificó que, para algunos
 \item Interpolación polinómica de orden 2 y orden 3, que ajusta curvas polinómicas de segundo y tercer grado respectivamente, permitiendo capturar tendencias locales más suavizadas.
 \item Interpolación spline cúbica y de orden 3, que genera curvas suaves mediante funciones polinómicas por tramos, adecuadas para representar variaciones continuas sin generar quiebres abruptos.
 \item Interpolación basada en el tiempo (time-based), que utiliza el índice temporal como referencia para la estimación de los valores faltantes.
-seleccionados.
 \end{itemize}
 
 \justify
 Una vez realizado el análisis comparativo de los métodos de interpolación, se seleccionó la interpolación polinómica cuadrática para el tratamiento de los precios faltantes, dado que este método mostró la mejor aproximación a los valores reales proporcionados por la empresa de compra y venta de materiales de construcción Edylur \cite{edylur}. Esta técnica permitió preservar la suavidad de la serie y capturar adecuadamente las tendencias locales sin generar variaciones abruptas, asegurando así la coherencia y estabilidad de las series temporales utilizadas por los modelos SARIMAX, LSTM y GRU en las etapas posteriores del estudio.
-\section{Modelado y Predicción de Series Temporales}
 
+% ============================================================
+\section{Modelos para predicción del nivel del río}
+% ============================================================
 \justify
-El problema de predicción que aborda este trabajo tiene una particularidad que condiciona las decisiones metodológicas: las series de precios son cortas (poco más de 130 observaciones mensuales), no lineales, y están influenciadas por variables externas de naturaleza distinta — una hidrológica y otra socioeconómica. Esa combinación descarta algunos enfoques sencillos y justifica el uso paralelo de un modelo estadístico clásico y dos arquitecturas de redes neuronales recurrentes.
+El problema de predicción que aborda este trabajo tiene una particularidad que condiciona las decisiones metodológicas: las series de precios son cortas (poco más de 130 observaciones mensuales), no lineales, y están influenciadas por variables externas de naturaleza distinta —una hidrológica y otra socioeconómica. Esa combinación descarta algunos enfoques sencillos y justifica el uso paralelo de un modelo estadístico clásico y dos arquitecturas de redes neuronales recurrentes.
 
 \justify
 La estrategia adoptada fue secuencial: primero se proyectó el nivel del río Paraguay a través de un LSTM univariado —aprovechando la serie histórica diaria desde 1990—, y luego esa proyección se incorporó como variable exógena en los modelos de predicción de precios. Esta cadena permite que la información hidrológica sea explícita en el proceso de pronóstico, en lugar de quedar implícita o ignorada.
 
-\subsection{Modelo Long Short-Term Memory (LSTM) para la predicción del Nivel del Río Paraguay}
+\subsection{Long Short-Term Memory (LSTM)}
 \justify
-Para predecir el nivel mensual del río Paraguay se utilizó un modelo LSTM univariado unistep, reconocido por su eficacia en series temporales hidrológicas. Estudios muestran que LSTM supera a modelos clásicos como ARIMA, reduciendo errores hasta en un 87\% en series no lineales \cite{siami2018}, y presenta alta precisión en predicciones fluviales \cite{kratzert2018}\cite{kratzert2019}. Frente a GRU, LSTM es más efectivo en dependencias de largo plazo \cite{YUNITA2025103462}, y también supera a arquitecturas Transformer en métricas como NSE y KGE para predicción diaria \cite{liu2023}. Con cerca de 8.000 observaciones diarias y un horizonte de 24 meses, LSTM ofrece un balance adecuado entre precisión y robustez para este dominio.
+Para predecir el nivel diario del río Paraguay se utilizó un modelo LSTM univariado unistep, reconocido por su eficacia en series temporales hidrológicas. Estudios muestran que LSTM supera a modelos clásicos como ARIMA, reduciendo errores hasta en un 87\% en series no lineales \cite{siami2018}, y presenta alta precisión en predicciones fluviales \cite{kratzert2018}\cite{kratzert2019}. Frente a GRU, LSTM es más efectivo en dependencias de largo plazo \cite{YUNITA2025103462}, y también supera a arquitecturas Transformer en métricas como NSE y KGE para predicción diaria \cite{liu2023}. Con cerca de 8.000 observaciones diarias y un horizonte de 24 meses, LSTM ofrece un balance adecuado entre precisión y robustez para este dominio.
+
 \justify
-Los datos se escalaron en el rango [-1, 1] mediante el método MinMaxScaler, con el objetivo de mejorar la estabilidad numérica y favorecer la convergencia durante el entrenamiento.
+Los datos se escalaron en el rango $[-1, 1]$ mediante el método MinMaxScaler, con el objetivo de mejorar la estabilidad numérica y favorecer la convergencia durante el entrenamiento.
+
 \justify
-Se generaron secuencias supervisadas utilizando una ventana deslizante, lo que permitió al modelo capturar los patrones de dependencia temporal del nivel del río. Finalmente, los datos se dividieron cronológicamente en tres subconjuntos: 80\% para entrenamiento, 10\% para validación y 10\% para prueba, asegurando que el conjunto de prueba representara las observaciones más recientes de la serie.1
+Se generaron secuencias supervisadas utilizando una ventana deslizante, lo que permitió al modelo capturar los patrones de dependencia temporal del nivel del río. Finalmente, los datos se dividieron cronológicamente en tres subconjuntos: 80\% para entrenamiento, 10\% para validación y 10\% para prueba, asegurando que el conjunto de prueba representara las observaciones más recientes de la serie.
+
 \justify
 Los hiperparámetros del modelo, incluyendo el número de neuronas, la tasa de aprendizaje y el número de épocas, fueron seleccionados mediante la librería Optuna, que permite realizar una búsqueda automática y eficiente del conjunto de parámetros que minimiza el error de validación.
 
-\subsection{Modelo Seasonal AutoRegressive Integrated Moving Average with eXogenous variables (SARIMAX) para la predicción de precios de Materiales de Construcción}
+% ============================================================
+\section{Modelos de predicción de precios}
+% ============================================================
+\justify
+Con la proyección del nivel del río Paraguay disponible, se procedió a construir los modelos de predicción de precios de materiales de construcción. Se aplicaron tres enfoques complementarios: el modelo estadístico clásico SARIMAX y las dos arquitecturas de redes neuronales recurrentes LSTM y GRU. Esta comparación permitió evaluar tanto la capacidad interpretativa del modelo econométrico como la flexibilidad no lineal de los modelos de aprendizaje profundo.
+
+\subsection{Seasonal AutoRegressive Integrated Moving Average with eXogenous variables (SARIMAX)}
+\justify
+Se aplicó el modelo SARIMAX para predecir los precios mensuales del cemento y del ladrillo común, considerando como variables exógenas el nivel mensual del río Paraguay —estimado previamente mediante el modelo LSTM univariado— y la variable binaria de cuarentena por COVID-19, que representa los períodos de restricción sanitaria durante la pandemia.
 
 \justify
-Se aplicó el modelo SARIMAX para predecir los precios mensuales del cemento, la cal hidratada y el ladrillo común, considerando como variables exógenas el nivel mensual del río Paraguay —estimado previamente mediante un modelo LSTM univariado— y el confinamiento por covid-19 representada de forma binaria, que representa los períodos de restricción sanitaria durante la pandemia.
+Para cada material de construcción, el conjunto de datos se dividió en entrenamiento y prueba, utilizando los últimos 15 meses como segmento de evaluación. La selección de los parámetros óptimos $(p, d, q)(P, D, Q, s)$ se realizó mediante la función \texttt{pmdarima.auto\_arima}, que efectúa una búsqueda iterativa de combinaciones de órdenes con el fin de minimizar el AIC y optimizar el desempeño del modelo.
 
 \justify
-Para cada material de construcción, el conjunto de datos se dividió en entrenamiento y prueba, utilizando los últimos 12 meses como segmento de validación. La selección de los parámetros óptimos (p,d,q)(P,D,Q,s) se realizó mediante la función pmdarima.auto\_arima, que efectúa una búsqueda iterativa de combinaciones de órdenes con el fin de minimizar el AIC y optimizar el desempeño del modelo en términos de RMSE [15].
+Adicionalmente, se realizó una validación cruzada por ventana deslizante (\textit{rolling forecast}) para obtener una estimación más robusta del desempeño real del modelo a lo largo de todo el período histórico disponible.
+
+\subsection{Long Short-Term Memory (LSTM)}
+\justify
+Para la predicción de los precios mensuales del cemento y del ladrillo común se implementaron modelos basados en la arquitectura LSTM. Estos modelos son ampliamente utilizados en el tratamiento de series temporales no lineales, ya que permiten capturar dependencias de largo y corto plazo en los datos.
 
 \justify
-A fin de evaluar el impacto del confinamiento por covid-19, se elaboraron predicciones a 24 meses bajo dos escenarios comparativos:
+Los modelos reciben como entrada las siguientes 7 variables: precio promedio polinomial de grado 2, nivel mensual del río Paraguay, indicador de cuarentena COVID-19, rezago de un mes (\textit{lag\_1}), media móvil de 3 meses (\textit{rolling\_mean\_3}), y las componentes sinusoidal y cosenoidal del mes (\textit{mes\_sin}, \textit{mes\_cos}). Las series se escalaron en el rango $[-1, 1]$ mediante MinMaxScaler.
+
+\justify
+Los datos fueron divididos cronológicamente: 95 meses para entrenamiento, 20 meses para validación y 22 meses para prueba. La búsqueda de hiperparámetros se realizó con Optuna, y los intervalos de confianza al 95\% se estimaron mediante Monte Carlo Dropout ($N=100$ simulaciones).
+
+\subsection{Gated Recurrent Unit (GRU)}
+\justify
+Como arquitectura complementaria al LSTM, se evaluó la GRU (\textit{Gated Recurrent Unit}), propuesta por Cho et al.\ (2014) como una simplificación de la celda LSTM. Mientras que la LSTM emplea tres compuertas (entrada, olvido y salida), la GRU utiliza únicamente dos —la compuerta de actualización (\textit{update gate}) y la compuerta de reinicio (\textit{reset gate})—, lo que reduce el número de parámetros entrenables y puede favorecer la convergencia en datasets de tamaño moderado.
+
+\justify
+Los modelos GRU se entrenaron sobre los mismos datos, con las mismas variables de entrada, la misma partición temporal y la misma metodología de búsqueda de hiperparámetros con Optuna que se describió para los modelos LSTM. Las 7 \textit{features} de entrada son idénticas, y la implementación también se realizó con TensorFlow 2.19.0 / Keras.
+
+% ============================================================
+\section{Escenarios de experimentación}
+% ============================================================
+\justify
+Para evaluar el efecto del shock pandémico sobre los precios de los materiales de construcción, se definieron dos escenarios de experimentación que se aplicaron de manera independiente a cada combinación modelo--material:
 
 \begin{itemize}
-\item Escenario 1 – Sin confinamiento: la variable exógena Confinamiento\_Covid se fijó en 0 para todo el horizonte de predicción.
+\item \textbf{Escenario sin efecto pandémico}: la variable exógena binaria \texttt{Cuarentena\_Covid} se fija en 0 durante todo el horizonte de pronóstico a 24 meses, simulando condiciones normales de mercado sin disrupciones sanitarias. En este escenario, el modelo también fue entrenado sin la señal pandémica activa, buscando optimizar los hiperparámetros para la dinámica de precios en condiciones estables.
 
-\item Escenario 2 – Con confinamiento: la variable exógena Confinamiento\_Covid se fijó en 1 para todo el período proyectado.
+\item \textbf{Escenario con efecto pandémico}: la variable exógena \texttt{Cuarentena\_Covid} se activa (valor 1) tanto durante el entrenamiento del modelo como durante todo el horizonte de pronóstico a 24 meses. Este escenario hipotético permite evaluar la respuesta del modelo ante disrupciones prolongadas de tipo pandémico y comparar las proyecciones con las del escenario base.
 \end{itemize}
 
 \justify
-Esta estrategia permitió analizar el efecto potencial de eventos disruptivos —como restricciones sanitarias o logísticas— sobre la evolución de los precios de los materiales de construcción en Paraguay, integrando en el modelo tanto la influencia hidrológica como la económica.
-
-\subsection{Modelos Long Short-Term Memory (LSTM) y Gated Recurrent Unit (GRU) para la predicción de precios de Materiales de Construcción}
+Dado que cada escenario implica una distribución de datos de entrenamiento distinta, los hiperparámetros fueron optimizados de forma independiente para cada combinación escenario--modelo--material mediante Optuna, resultando en arquitecturas potencialmente diferentes para cada caso. Esta separación garantiza que los resultados de cada escenario reflejen fielmente la dinámica aprendida bajo las condiciones específicas de ese escenario, sin cruzar información entre ellos.
 
 \justify
-Para la predicción de los precios mensuales del cemento, la cal hidratada y el ladrillo común, se implementaron modelos basados en redes neuronales recurrentes (RNN), específicamente las arquitecturas Long Short-Term Memory (LSTM) y Gated Recurrent Unit (GRU). Estos modelos son ampliamente utilizados en el tratamiento de series temporales no lineales, ya que permiten capturar dependencias de largo y corto plazo en los datos.
-
-\justify
-Ambos modelos se entrenaron utilizando las mismas variables:
-
-\begin{itemize}
-\item Variable objetivo: el precio promedio mensual de cada material.
-
-\item Variables exógenas: el nivel mensual del río Paraguay y el confinamiento por COVID-19 (representado mediante una variable binaria).
-\end{itemize}
-\justify
-El conjunto de datos, previamente interpolado y con el nivel del río consolidado y proyectado, fue escalado en el rango [-1, 1] mediante el método MinMaxScaler, con el fin de mejorar la estabilidad numérica y la convergencia durante el entrenamiento.
-
-\justify
-Se generaron secuencias supervisadas utilizando una ventana deslizante de 8 meses, lo que permitió que los modelos aprendieran los patrones de dependencia temporal entre las variables. Posteriormente, los datos fueron divididos cronológicamente en tres subconjuntos: 80\% para entrenamiento, 10\% para validación, y 10\% para prueba, garantizando que el conjunto de prueba representara las observaciones más recientes de la serie.
+En el caso del modelo SARIMAX, la comparación entre escenarios se realizó a través del coeficiente estimado para la variable \texttt{Cuarentena}, que cuantifica directamente el efecto lineal del período pandémico sobre el precio en el marco del modelo estadístico.

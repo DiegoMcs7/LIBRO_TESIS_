@@ -1,0 +1,37 @@
+{
+  "framework": "TensorFlow 2.19.0 / Keras",
+  "arquitectura": "GRU",
+  "rmse_train_gs": 14.36,
+  "rmse_val_gs": 11.41,
+  "rmse_test_gs": 3.43,
+  "rmse_vs_reales_gs": null,
+  "n_features": 7,
+  "features": [
+    "Cuarentena_Covid",
+    "Nivel_Rio",
+    "Precio_Promedio_Polinomial_2",
+    "lag_1",
+    "rolling_mean_3",
+    "mes_sin",
+    "mes_cos"
+  ],
+  "n_parametros": 3969,
+  "epocas_entrenadas": 97,
+  "mejores_params_optuna": {
+    "lookback": 4,
+    "n_layers": 1,
+    "hidden_size": 32,
+    "bidirectional": false,
+    "dropout_rate": 0.05,
+    "recurrent_dropout": 0.1,
+    "optimizer": "RMSprop",
+    "learning_rate": 0.006115539888508588,
+    "weight_decay": 1.518387774590625e-05,
+    "batch_size": 32,
+    "scheduler": "CosineAnnealingLR"
+  },
+  "meses_prediccion": 24,
+  "precio_pred_min_gs": 643,
+  "precio_pred_max_gs": 654,
+  "hash_dataset": "6dfdab0aa135e9eebea5c605af33066f"
+}

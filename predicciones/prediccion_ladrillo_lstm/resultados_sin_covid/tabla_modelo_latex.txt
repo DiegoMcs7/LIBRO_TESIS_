@@ -1,0 +1,13 @@
+% TABLA RESUMEN MODELO LSTM - AUTO-GENERADA
+\begin{table}[htbp]
+\centering
+\caption{Desempeno del Modelo LSTM — Train / Validacion / Test}
+\label{tab:lstm-metricas}
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Metrica} & \textbf{Train} & \textbf{Val} & \textbf{Test} \\
+\midrule
+RMSE (Gs.) & 13.76 & 12.53 & 6.32 \\
+\bottomrule
+\end{tabular}
+\end{table}

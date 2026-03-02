@@ -1,0 +1,40 @@
+{
+  "mejor_rmse_validacion_gs": 6305.318405883259,
+  "mejores_params": {
+    "lookback": 6,
+    "n_layers": 1,
+    "hidden_size": 64,
+    "bidirectional": false,
+    "dropout_rate": 0.0,
+    "recurrent_dropout": 0.0,
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "weight_decay": 1e-05,
+    "batch_size": 4,
+    "scheduler": "none"
+  },
+  "n_trials_completados": 1,
+  "n_trials_podados": 0,
+  "n_trials_fallidos": 0,
+  "tiempo_minutos": 0.6318461139996846,
+  "top_10": [
+    {
+      "rank": 1,
+      "trial": 0,
+      "rmse_gs": 6305.318405883259,
+      "params": {
+        "lookback": 6,
+        "n_layers": 1,
+        "hidden_size": 64,
+        "bidirectional": false,
+        "dropout_rate": 0.0,
+        "recurrent_dropout": 0.0,
+        "optimizer": "Adam",
+        "learning_rate": 0.001,
+        "weight_decay": 1e-05,
+        "batch_size": 4,
+        "scheduler": "none"
+      }
+    }
+  ]
+}
