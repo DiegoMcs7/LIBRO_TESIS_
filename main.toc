@@ -126,9 +126,9 @@
 \contentsline {section}{\numberline {6.2}Evaluaci\'{o}n del desempe\~{n}o del modelo Long Short-Term Memory (LSTM)}{110}{section.6.2}%
 \contentsline {section}{\numberline {6.3}Evaluaci\'{o}n del desempe\~{n}o del modelo Gated Recurrent Unit (GRU)}{112}{section.6.3}%
 \contentsline {section}{\numberline {6.4}Comparaci\'{o}n entre modelos}{113}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Impacto de la variable de cuarentena por COVID-19}{115}{section.6.5}%
+\contentsline {section}{\numberline {6.5}Impacto de la variable de cuarentena por COVID-19}{114}{section.6.5}%
 \contentsline {section}{\numberline {6.6}Limitaciones del estudio}{116}{section.6.6}%
 \contentsline {chapter}{\numberline {7}Conclusiones y Trabajos Futuros}{118}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Conclusiones finales}{118}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Trabajos futuros}{118}{section.7.2}%
+\contentsline {section}{\numberline {7.2}Trabajos futuros}{119}{section.7.2}%
 \contentsline {section}{\numberline {A.1}A}{122}{section.Alph0.1}%

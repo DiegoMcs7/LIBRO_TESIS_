@@ -1,23 +1,45 @@
-                           
-  3. Metodología                                                                                                           
-                                                                                                                           
-  3.1. Recolección y preprocesamiento de datos                                                                             
-  3.2. Modelos para predicción del nivel del río                                                                           
-  3.2.1 Long Short-Term Memory (LSTM)                                                                                      
-  3.3. Modelos de predicción de precios                                                                                    
-  3.3.1 Seasonal Auto Regressive Integrated Moving Average with Exogenous Variables (SARIMAX)                              
-  3.3.2 Long Short-Term Memory (LSTM)                                                                                      
-  3.3.3 Gated Recurrent Unit (GRU)                                                                                         
-  3.4. Escenarios de experimentación                                                                                                                                                                                                          
-  4. Resultados                                                                                                                                                                                                                
-  4.1. Predicción del nivel del río Paraguay con Long Short-Term Memory (LSTM)                                             
-  4.2. Predicción de los precios del cemento y del ladrillo común con Seasonal Autoregressive Integrated Moving            
-  Average with Exogenous Variables (SARIMAX)                                                                               
-  4.3. Predicción de los precios del cemento y del ladrillo común con Long Short-Term Memory (LSTM)                        
-  4.4. Predicción de los precios del cemento y del ladrillo común con Gated Recurrent Unit (GRU)                                                                                                                                          
- 5. Discusión
+Dedicatoria
+Agradecimientos
+Resumen
+Lista de Tablas
+Lista de Figuras
+Acrónimos
+
+1. Introducción
+
+2. Trabajos Relacionados
+
+2.1. Investigaciones sobre precios de materiales de construcción
+2.2. Limitaciones de los estudios previos
+
+3. Metodología
+
+3.1. Recolección y preprocesamiento de datos
+3.2. Modelos para predicción del nivel del río
+3.2.1 Long Short-Term Memory (LSTM)
+3.3. Modelos de predicción de precios
+3.3.1 Seasonal Auto Regressive Integrated Moving Average with Exogenous Variables (SARIMAX)
+3.3.2 Long Short-Term Memory (LSTM)
+3.3.3 Gated Recurrent Unit (GRU)
+3.4. Escenarios de experimentación
+
+4. Resultados
+
+4.1. Predicción del nivel del río Paraguay con Long Short-Term Memory (LSTM)
+4.2. Predicción de los precios del cemento y del ladrillo común con Seasonal Autoregressive Integrated Moving Average with Exogenous Variables (SARIMAX)
+4.3. Predicción de los precios del cemento y del ladrillo común con Long Short-Term Memory (LSTM)
+4.4. Predicción de los precios del cemento y del ladrillo común con Gated Recurrent Unit (GRU)
+
+5. Discusión
 
 5.1. Evaluación del desempeño del modelo Seasonal Autoregressive Integrated Moving Average with Exogenous Variables (SARIMAX)
 5.2. Evaluación del desempeño del modelo Long Short-Term Memory (LSTM)
 5.3. Evaluación del desempeño del modelo Gated Recurrent Unit (GRU)
 5.4. Comparación general de resultados
+
+6. Conclusión y Trabajos Futuros
+
+6.1. Conclusiones finales
+6.2. Trabajos futuros
+
+Referencia
