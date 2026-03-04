@@ -83,17 +83,17 @@ Adicionalmente, se realizó una validación cruzada por ventana deslizante (\tex
 Para la predicción de los precios mensuales del cemento y del ladrillo común se implementaron modelos basados en la arquitectura LSTM. Estos modelos son ampliamente utilizados en el tratamiento de series temporales no lineales, ya que permiten capturar dependencias de largo y corto plazo en los datos.
 
 \justify
-Los modelos reciben como entrada las siguientes 7 variables: precio promedio polinomial de grado 2, nivel mensual del río Paraguay, indicador de cuarentena COVID-19, rezago de un mes (\textit{lag\_1}), media móvil de 3 meses (\textit{rolling\_mean\_3}), y las componentes sinusoidal y cosenoidal del mes (\textit{mes\_sin}, \textit{mes\_cos}). Las series se escalaron en el rango $[-1, 1]$ mediante MinMaxScaler.
+Los modelos reciben como entrada las siguientes 6 variables: precio promedio polinomial de grado 2, nivel mensual del río Paraguay, indicador de cuarentena COVID-19, las componentes sinusoidal y cosenoidal del mes (\textit{mes\_sin}, \textit{mes\_cos}) y el año normalizado (\textit{anio\_norm}). Las series se escalaron en el rango $[-1, 1]$ mediante MinMaxScaler.
 
 \justify
-Los datos fueron divididos cronológicamente: 95 meses para entrenamiento, 20 meses para validación y 22 meses para prueba. La búsqueda de hiperparámetros se realizó con Optuna, y los intervalos de confianza al 95\% se estimaron mediante Monte Carlo Dropout ($N=100$ simulaciones).
+Los datos fueron divididos cronológicamente: 97 meses para entrenamiento, 20 meses para validación y 22 meses para prueba. La búsqueda de hiperparámetros se realizó con Optuna, y los intervalos de confianza al 95\% se estimaron mediante Monte Carlo Dropout ($N=100$ simulaciones).
 
 \subsection{Gated Recurrent Unit (GRU)}
 \justify
 Como arquitectura complementaria al LSTM, se evaluó la GRU (\textit{Gated Recurrent Unit}), propuesta por Cho et al.\ (2014) como una simplificación de la celda LSTM. Mientras que la LSTM emplea tres compuertas (entrada, olvido y salida), la GRU utiliza únicamente dos —la compuerta de actualización (\textit{update gate}) y la compuerta de reinicio (\textit{reset gate})—, lo que reduce el número de parámetros entrenables y puede favorecer la convergencia en datasets de tamaño moderado.
 
 \justify
-Los modelos GRU se entrenaron sobre los mismos datos, con las mismas variables de entrada, la misma partición temporal y la misma metodología de búsqueda de hiperparámetros con Optuna que se describió para los modelos LSTM. Las 7 \textit{features} de entrada son idénticas, y la implementación también se realizó con TensorFlow 2.19.0 / Keras.
+Los modelos GRU se entrenaron sobre los mismos datos, con las mismas variables de entrada, la misma partición temporal y la misma metodología de búsqueda de hiperparámetros con Optuna que se describió para los modelos LSTM. Las 6 \textit{features} de entrada son idénticas, y la implementación también se realizó con TensorFlow 2.19.0 / Keras.
 
 % ============================================================
 \section{Escenarios de experimentación}

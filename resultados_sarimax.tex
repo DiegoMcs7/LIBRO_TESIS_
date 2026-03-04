@@ -78,8 +78,8 @@ El modelo final, reentrenado con el 100\,\% de los datos, obtuvo AIC = 2566{,}18
         \toprule
         \textbf{Parámetro} & \textbf{Coef.} & \textbf{Error est.} & \textbf{z} & \textbf{p-valor} \\
         \midrule
-        \texttt{Nivel\_Rio}  & $-55{,}34$ & $418{,}86$ & $-0{,}132$ & $0{,}895$ \\
-        \texttt{Cuarentena}  & $-23{,}48$ & $9{,}49 \times 10^{5}$ & $-2{,}47 \times 10^{-5}$ & $1{,}000$ \\
+        \texttt{Nivel\_Rio}  & $-55{,}79$ & $418{,}82$ & $-0{,}133$ & $0{,}894$ \\
+        \texttt{Cuarentena}  & $-23{,}67$ & $9{,}42 \times 10^{5}$ & $-2{,}51 \times 10^{-5}$ & $1{,}000$ \\
         $\sigma^{2}$         & $7{,}80 \times 10^{6}$ & $2{,}15 \times 10^{5}$ & $36{,}223$ & $0{,}000$ \\
         \midrule
         \multicolumn{2}{l}{AIC} & \multicolumn{3}{r}{2566{,}18} \\
@@ -90,7 +90,7 @@ El modelo final, reentrenado con el 100\,\% de los datos, obtuvo AIC = 2566{,}18
 \end{table}
 
 \justify
-El coeficiente de \texttt{Nivel\_Rio} resultó negativo ($-55{,}34$ Gs./m) pero estadísticamente no significativo ($p = 0{,}895$), lo que puede atribuirse a la dominancia de la tendencia de largo plazo sobre la señal hidrológica en este material. La variable \texttt{Cuarentena} tampoco alcanzó significancia estadística ($p = 1{,}000$), ya que su efecto queda absorbido por la diferenciación de la serie. El orden $(0,1,0)$ implica que, sin términos AR ni MA, el modelo proyecta básicamente el último valor observado ajustado por las variables exógenas.
+El coeficiente de \texttt{Nivel\_Rio} resultó negativo ($-55{,}79$ Gs./m) pero estadísticamente no significativo ($p = 0{,}894$), lo que puede atribuirse a la dominancia de la tendencia de largo plazo sobre la señal hidrológica en este material. La variable \texttt{Cuarentena} tampoco alcanzó significancia estadística ($p = 1{,}000$), ya que su efecto queda absorbido por la diferenciación de la serie. El orden $(0,1,0)$ implica que, sin términos AR ni MA, el modelo proyecta básicamente el último valor observado ajustado por las variables exógenas.
 
 \subsubsection{Modelo SARIMAX: Evaluación}
 
@@ -113,13 +113,13 @@ La Figura \ref{fig:sarimax_comparacion} presenta la comparación entre los valor
         \textbf{Conjunto} & \textbf{RMSE (Gs.)} \\
         \midrule
         Validación (20 obs., feb. 2022 a sep. 2023) & 4.170{,}12 \\
-        Prueba (22 obs., oct. 2023 a jul. 2025)     & 4.842{,}33 \\
+        Prueba (22 obs., oct. 2023 a jul. 2025)     & 4.840{,}06 \\
         \bottomrule
     \end{tabular}
 \end{table}
 
 \justify
-El RMSE de validación (4.170~Gs.) refleja el período de mayor volatilidad de precios pos-pandemia, cuando el modelo de orden $(0,1,0)$ tiene más dificultades para seguir variaciones abruptas. El RMSE de prueba (4.842~Gs.) corresponde a un período más estable pero con una tendencia sostenida; en ese contexto, el error equivale a aproximadamente el 8,8\,\% de la media histórica de la serie.
+El RMSE de validación (4.170~Gs.) refleja el período de mayor volatilidad de precios pos-pandemia, cuando el modelo de orden $(0,1,0)$ tiene más dificultades para seguir variaciones abruptas. El RMSE de prueba (4.840~Gs.) corresponde a un período más estable pero con una tendencia sostenida; en ese contexto, el error equivale a aproximadamente el 8,7\,\% de la media histórica de la serie.
 
 \subsubsection{Modelo SARIMAX: Análisis de Residuos}
 
@@ -146,7 +146,7 @@ La Figura \ref{fig:sarimax_residuos} presenta el diagnóstico completo de los re
 Una vez validado, el modelo fue reentrenado con el 100\,\% de las observaciones para generar el pronóstico mensual del precio del cemento desde agosto de 2025 hasta julio de 2027. La Figura \ref{fig:sarimax_pronostico_completo} muestra el pronóstico junto con la serie histórica completa.
 
 \justify
-El pronóstico puntual converge hacia un valor estable de aproximadamente Gs.~55.000, lo cual es consistente con la naturaleza del modelo SARIMAX$(0,1,0)$. El intervalo de confianza al 95\,\% se amplía progresivamente: en agosto de 2025 el rango es Gs.~[49.535; 60.483], mientras que en julio de 2027 se extiende hasta Gs.~[28.089; 81.724]. La Tabla \ref{tab:sarimax_pronostico} detalla los valores del primer año de pronóstico.
+El pronóstico puntual converge hacia un valor estable de aproximadamente Gs.~55.000, lo cual es consistente con la naturaleza del modelo SARIMAX$(0,1,0)$. El intervalo de confianza al 95\,\% se amplía progresivamente: en agosto de 2025 el rango es Gs.~[49.556; 60.504], mientras que en julio de 2027 se extiende hasta Gs.~[28.111; 81.746]. La Tabla \ref{tab:sarimax_pronostico} detalla los valores del primer año de pronóstico.
 
 \begin{table}[ht]
     \centering
@@ -156,18 +156,18 @@ El pronóstico puntual converge hacia un valor estable de aproximadamente Gs.~55
         \toprule
         \textbf{Mes} & \textbf{Pronóstico (Gs.)} & \textbf{IC Inferior} & \textbf{IC Superior} \\
         \midrule
-        Agosto 2025      & 55.009 & 49.535 & 60.483 \\
-        Septiembre 2025  & 55.053 & 47.311 & 62.794 \\
-        Octubre 2025     & 55.069 & 45.587 & 64.550 \\
-        Noviembre 2025   & 55.055 & 44.107 & 66.003 \\
-        Diciembre 2025   & 55.059 & 42.819 & 67.299 \\
-        Enero 2026       & 55.037 & 41.628 & 68.445 \\
-        Febrero 2026     & 55.033 & 40.550 & 69.516 \\
-        Marzo 2026       & 55.041 & 39.558 & 70.524 \\
-        Abril 2026       & 55.022 & 38.600 & 71.444 \\
-        Mayo 2026        & 54.942 & 37.632 & 72.253 \\
-        Junio 2026       & 54.918 & 36.763 & 73.073 \\
-        Julio 2026       & 54.946 & 35.983 & 73.908 \\
+        Agosto 2025      & 55.030 & 49.556 & 60.504 \\
+        Septiembre 2025  & 55.074 & 47.332 & 62.815 \\
+        Octubre 2025     & 55.090 & 45.609 & 64.572 \\
+        Noviembre 2025   & 55.078 & 44.130 & 66.026 \\
+        Diciembre 2025   & 55.082 & 42.842 & 67.322 \\
+        Enero 2026       & 55.060 & 41.651 & 68.468 \\
+        Febrero 2026     & 55.056 & 40.573 & 69.539 \\
+        Marzo 2026       & 55.064 & 39.581 & 70.547 \\
+        Abril 2026       & 55.045 & 38.623 & 71.467 \\
+        Mayo 2026        & 54.965 & 37.654 & 72.275 \\
+        Junio 2026       & 54.940 & 36.785 & 73.096 \\
+        Julio 2026       & 54.968 & 36.006 & 73.931 \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -192,7 +192,7 @@ Con el objetivo de cuantificar la influencia de la variable \texttt{Cuarentena} 
 \end{figure}
 
 \justify
-La diferencia entre ambos escenarios es de apenas Gs.~23{,}48 por mes, un valor prácticamente nulo frente al nivel de precios de la serie (Gs.~55.000). Este resultado es coherente con el coeficiente estimado para \texttt{Cuarentena} ($-23{,}48$ Gs., $p = 1{,}000$), que no alcanzó significancia estadística. El modelo lineal integrado no captura el efecto estructural de la pandemia sobre los precios, dado que ese impacto queda absorbido por la diferenciación de la serie ($d = 1$). Esta limitación del SARIMAX ante perturbaciones externas persistentes es una de las motivaciones para explorar los modelos de aprendizaje profundo en las secciones siguientes.
+La diferencia entre ambos escenarios es de apenas Gs.~23{,}67 por mes, un valor prácticamente nulo frente al nivel de precios de la serie (Gs.~55.000). Este resultado es coherente con el coeficiente estimado para \texttt{Cuarentena} ($-23{,}67$ Gs., $p = 1{,}000$), que no alcanzó significancia estadística. El modelo lineal integrado no captura el efecto estructural de la pandemia sobre los precios, dado que ese impacto queda absorbido por la diferenciación de la serie ($d = 1$). Esta limitación del SARIMAX ante perturbaciones externas persistentes es una de las motivaciones para explorar los modelos de aprendizaje profundo en las secciones siguientes.
 
 % ============================================================
 \subsection{Predicción del Precio del Ladrillo}
@@ -259,7 +259,7 @@ La Figura \ref{fig:sarimax_ladrillo_estacional} ilustra el patrón estacional de
 La partición del dataset fue idéntica a la del cemento: 70\,\%/15\,\%/15\,\%, con entrenamiento de 97 observaciones (enero 2014 a enero 2022), validación de 20 observaciones (febrero 2022 a septiembre 2023) y prueba de 22 observaciones (octubre 2023 a julio 2025). La búsqueda con \texttt{auto\_arima} sobre el conjunto de entrenamiento seleccionó el modelo SARIMAX$(0,1,0)(0,0,0)_{12}$ con constante, con AIC = 800{,}84.
 
 \justify
-El modelo final, reentrenado con el 100\,\% de los datos, obtuvo AIC = 1109{,}56, BIC = 1118{,}32 y log-verosimilitud = $-551{,}78$. Sus parámetros estimados se presentan en la Tabla \ref{tab:sarimax_ladrillo_params}.
+El modelo final, reentrenado con el 100\,\% de los datos, obtuvo AIC = 1109{,}55, BIC = 1118{,}31 y log-verosimilitud = $-551{,}77$. Sus parámetros estimados se presentan en la Tabla \ref{tab:sarimax_ladrillo_params}.
 
 \begin{table}[ht]
     \centering
@@ -269,19 +269,19 @@ El modelo final, reentrenado con el 100\,\% de los datos, obtuvo AIC = 1109{,}56
         \toprule
         \textbf{Parámetro} & \textbf{Coef.} & \textbf{Error est.} & \textbf{z} & \textbf{p-valor} \\
         \midrule
-        \texttt{Nivel\_Rio}  & $-1{,}931$ & $1{,}873$ & $-1{,}031$ & $0{,}302$ \\
-        \texttt{Cuarentena}  & $-0{,}819$ & $643{,}258$ & $-0{,}001$ & $0{,}999$ \\
-        $\sigma^{2}$         & $184{,}44$ & $6{,}384$ & $28{,}890$ & $0{,}000$ \\
+        \texttt{Nivel\_Rio}  & $-1{,}947$ & $1{,}871$ & $-1{,}040$ & $0{,}298$ \\
+        \texttt{Cuarentena}  & $-0{,}826$ & $637{,}975$ & $-0{,}001$ & $0{,}999$ \\
+        $\sigma^{2}$         & $184{,}41$ & $6{,}382$ & $28{,}896$ & $0{,}000$ \\
         \midrule
-        \multicolumn{2}{l}{AIC} & \multicolumn{3}{r}{1109{,}56} \\
-        \multicolumn{2}{l}{BIC} & \multicolumn{3}{r}{1118{,}32} \\
-        \multicolumn{2}{l}{Log-verosimilitud} & \multicolumn{3}{r}{$-551{,}78$} \\
+        \multicolumn{2}{l}{AIC} & \multicolumn{3}{r}{1109{,}55} \\
+        \multicolumn{2}{l}{BIC} & \multicolumn{3}{r}{1118{,}31} \\
+        \multicolumn{2}{l}{Log-verosimilitud} & \multicolumn{3}{r}{$-551{,}77$} \\
         \bottomrule
     \end{tabular}
 \end{table}
 
 \justify
-El coeficiente de \texttt{Nivel\_Rio} resultó negativo ($-1{,}931$ Gs./m) y no significativo ($p = 0{,}302$), y el de \texttt{Cuarentena} tampoco alcanzó significancia ($p = 0{,}999$). La coincidencia del orden del modelo con el del cemento (SARIMAX$(0,1,0)$ para ambos materiales) sugiere que las dos series comparten una dinámica subyacente similar: en su forma diferenciada se comportan como ruido blanco con una contribución marginal de las variables exógenas.
+El coeficiente de \texttt{Nivel\_Rio} resultó negativo ($-1{,}947$ Gs./m) y no significativo ($p = 0{,}298$), y el de \texttt{Cuarentena} tampoco alcanzó significancia ($p = 0{,}999$). La coincidencia del orden del modelo con el del cemento (SARIMAX$(0,1,0)$ para ambos materiales) sugiere que las dos series comparten una dinámica subyacente similar: en su forma diferenciada se comportan como ruido blanco con una contribución marginal de las variables exógenas.
 
 \subsubsection{Modelo SARIMAX: Evaluación}
 
@@ -304,13 +304,13 @@ La Figura \ref{fig:sarimax_ladrillo_comparacion} presenta la comparación entre 
         \textbf{Conjunto} & \textbf{RMSE (Gs.)} \\
         \midrule
         Validación (20 obs., feb. 2022 a sep. 2023) & 14{,}92 \\
-        Prueba (22 obs., oct. 2023 a jul. 2025)     & 4{,}54 \\
+        Prueba (22 obs., oct. 2023 a jul. 2025)     & 4{,}55 \\
         \bottomrule
     \end{tabular}
 \end{table}
 
 \justify
-El RMSE de validación (14{,}92~Gs.) cubre el período de mayores incrementos de precio, donde los ajustes escalonados elevan el error puntual. El RMSE de prueba (4{,}54~Gs.) corresponde a un período de precios relativamente estables, donde el modelo de orden $(0,1,0)$ proyecta bien al replicar el último valor observado. Este resultado representa menos del 0{,}8\,\% de la media histórica de la serie.
+El RMSE de validación (14{,}92~Gs.) cubre el período de mayores incrementos de precio, donde los ajustes escalonados elevan el error puntual. El RMSE de prueba (4{,}55~Gs.) corresponde a un período de precios relativamente estables, donde el modelo de orden $(0,1,0)$ proyecta bien al replicar el último valor observado. Este resultado representa menos del 0{,}8\,\% de la media histórica de la serie.
 
 \subsubsection{Modelo SARIMAX: Análisis de Residuos}
 
@@ -322,7 +322,7 @@ El RMSE de validación (14{,}92~Gs.) cubre el período de mayores incrementos de
 \end{figure}
 
 \justify
-La Figura \ref{fig:sarimax_ladrillo_residuos} presenta el diagnóstico de los residuos del modelo final. El test de Ljung-Box al primer rezago no rechaza la hipótesis nula de ausencia de autocorrelación serial ($Q = 0{,}09$, $p = 0{,}77$), confirmando que los residuos se comportan como ruido blanco. El test de Jarque-Bera rechaza la normalidad ($JB = 3444{,}19$, $p < 0{,}001$), con una curtosis de 26{,}69 y una asimetría de 3{,}25, producidas por los valores extremos asociados a los ajustes bruscos de precio durante la pandemia. Al igual que en el caso del cemento, esta no normalidad no invalida las predicciones puntuales pero limita la interpretación formal de los intervalos de confianza.
+La Figura \ref{fig:sarimax_ladrillo_residuos} presenta el diagnóstico de los residuos del modelo final. El test de Ljung-Box al primer rezago no rechaza la hipótesis nula de ausencia de autocorrelación serial ($Q = 0{,}09$, $p = 0{,}77$), confirmando que los residuos se comportan como ruido blanco. El test de Jarque-Bera rechaza la normalidad ($JB = 3444{,}75$, $p < 0{,}001$), con una curtosis de 26{,}69 y una asimetría de 3{,}25, producidas por los valores extremos asociados a los ajustes bruscos de precio durante la pandemia. Al igual que en el caso del cemento, esta no normalidad no invalida las predicciones puntuales pero limita la interpretación formal de los intervalos de confianza.
 
 \subsubsection{Modelo SARIMAX: Pronóstico a 24 Meses}
 
@@ -337,7 +337,7 @@ La Figura \ref{fig:sarimax_ladrillo_residuos} presenta el diagnóstico de los re
 El modelo reentrenado con el 100\,\% de las observaciones generó el pronóstico mensual del precio del ladrillo desde agosto de 2025 hasta julio de 2027. La Figura \ref{fig:sarimax_ladrillo_pronostico_completo} presenta el pronóstico junto con la serie histórica completa.
 
 \justify
-El pronóstico puntual converge hacia un valor estable de aproximadamente Gs.~650. El intervalo de confianza al 95\,\% se amplía con el horizonte: en agosto de 2025 el rango es Gs.~[624; 677] y en julio de 2027 se extiende a Gs.~[516; 777]. La Tabla \ref{tab:sarimax_ladrillo_pronostico} detalla los valores del primer año.
+El pronóstico puntual converge hacia un valor estable de aproximadamente Gs.~651. El intervalo de confianza al 95\,\% se amplía con el horizonte: en agosto de 2025 el rango es Gs.~[624; 678] y en julio de 2027 se extiende a Gs.~[517; 778]. La Tabla \ref{tab:sarimax_ladrillo_pronostico} detalla los valores del primer año.
 
 \begin{table}[ht]
     \centering
@@ -347,18 +347,18 @@ El pronóstico puntual converge hacia un valor estable de aproximadamente Gs.~65
         \toprule
         \textbf{Mes} & \textbf{Pronóstico (Gs.)} & \textbf{IC Inferior} & \textbf{IC Superior} \\
         \midrule
-        Agosto 2025      & 650 & 624 & 677 \\
-        Septiembre 2025  & 652 & 614 & 689 \\
-        Octubre 2025     & 652 & 606 & 698 \\
-        Noviembre 2025   & 652 & 599 & 705 \\
-        Diciembre 2025   & 652 & 593 & 712 \\
-        Enero 2026       & 651 & 586 & 716 \\
-        Febrero 2026     & 651 & 581 & 722 \\
-        Marzo 2026       & 651 & 576 & 727 \\
-        Abril 2026       & 651 & 571 & 731 \\
-        Mayo 2026        & 648 & 564 & 732 \\
-        Junio 2026       & 647 & 559 & 735 \\
-        Julio 2026       & 648 & 556 & 740 \\
+        Agosto 2025      & 651 & 624 & 678 \\
+        Septiembre 2025  & 653 & 615 & 690 \\
+        Octubre 2025     & 653 & 607 & 699 \\
+        Noviembre 2025   & 653 & 599 & 706 \\
+        Diciembre 2025   & 653 & 593 & 712 \\
+        Enero 2026       & 652 & 587 & 717 \\
+        Febrero 2026     & 652 & 582 & 722 \\
+        Marzo 2026       & 652 & 577 & 728 \\
+        Abril 2026       & 652 & 572 & 731 \\
+        Mayo 2026        & 649 & 565 & 733 \\
+        Junio 2026       & 648 & 560 & 736 \\
+        Julio 2026       & 649 & 557 & 741 \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -383,4 +383,4 @@ Al igual que para el cemento, se generaron dos proyecciones paralelas para el pr
 \end{figure}
 
 \justify
-La diferencia entre ambos escenarios es de apenas Gs.~0{,}82 por mes, aún más reducida que la del cemento y completamente despreciable frente al nivel de precios de la serie (Gs.~650). Este resultado es coherente con el coeficiente estimado para \texttt{Cuarentena} ($-0{,}819$ Gs., $p = 0{,}999$). La insensibilidad ante el \textit{shock} pandémico se repite en ambos materiales, lo que confirma que la estructura lineal integrada del SARIMAX captura adecuadamente la tendencia general pero carece de la flexibilidad necesaria para representar perturbaciones externas de efecto no lineal o asimétrico sobre los precios.
+La diferencia entre ambos escenarios es de apenas Gs.~0{,}83 por mes, aún más reducida que la del cemento y completamente despreciable frente al nivel de precios de la serie (Gs.~651). Este resultado es coherente con el coeficiente estimado para \texttt{Cuarentena} ($-0{,}826$ Gs., $p = 0{,}999$). La insensibilidad ante el \textit{shock} pandémico se repite en ambos materiales, lo que confirma que la estructura lineal integrada del SARIMAX captura adecuadamente la tendencia general pero carece de la flexibilidad necesaria para representar perturbaciones externas de efecto no lineal o asimétrico sobre los precios.

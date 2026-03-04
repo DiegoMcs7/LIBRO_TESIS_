@@ -124,7 +124,7 @@ El RMSE de validación (Gs.~3.264,19) es inferior al de prueba (Gs.~4.964,27) y 
 \end{figure}
 
 \justify
-El test de Ljung-Box sobre los residuos del conjunto de prueba arroja un $p$-valor de 0,002 a 10 rezagos (rechaza $H_0$) y un $p$-valor de 0,077 a 20 rezagos (no rechaza $H_0$). Este resultado intermedio indica que el modelo captura la mayor parte de la estructura temporal, aunque persiste cierta dependencia serial de bajo orden en los primeros rezagos que no logra absorber completamente.
+El test de Ljung-Box sobre los residuos del conjunto de prueba arroja un $p$-valor de 0,055 a 10 rezagos y de 0,170 a 20 rezagos, ambos superiores al umbral de 0,05. Este resultado indica que los residuos se comportan como ruido blanco, confirmando que el modelo GRU ha capturado adecuadamente la estructura temporal de la serie del cemento.
 
 \clearpage
 \paragraph{Pronóstico a 24 Meses}
@@ -257,7 +257,7 @@ El RMSE de prueba del escenario con pandemia (Gs.~4.964{,}27) es idéntico al de
 \end{figure}
 
 \justify
-El test de Ljung-Box sobre los residuos del conjunto de prueba arroja un $p$-valor de 0,080 a 10 rezagos y de 0,151 a 20 rezagos, ambos superiores al umbral de 0,05. Esto confirma que los residuos del modelo GRU del cemento bajo el escenario con pandemia se comportan como ruido blanco, resultado más favorable que el obtenido en el escenario sin pandemia (donde existía autocorrelación a 10 rezagos). La inclusión de la variable pandémica parece haber reducido la autocorrelación residual, posiblemente al absorber parte de la estructura temporal que el modelo sin ese indicador no podía explicar.
+El test de Ljung-Box sobre los residuos del conjunto de prueba arroja un $p$-valor de 0,055 a 10 rezagos y de 0,170 a 20 rezagos, valores idénticos a los del escenario sin pandemia. Ambos superan el umbral de 0,05, confirmando que los residuos se comportan como ruido blanco. La coincidencia de estos valores con los del escenario sin pandemia es esperable, dado que la búsqueda de Optuna convergió a la misma configuración en ambos escenarios.
 
 \clearpage
 \paragraph{Pronóstico a 24 Meses}
@@ -402,7 +402,7 @@ El RMSE de validación (Gs.~11{,}53) y el de prueba (Gs.~11{,}88) son coherentes
 \end{figure}
 
 \justify
-El test de Ljung-Box sobre los residuos del conjunto de prueba no rechaza la hipótesis nula de ausencia de autocorrelación serial en ninguno de los rezagos evaluados: $p=0{,}442$ a 10 rezagos y $p=0{,}081$ a 20 rezagos, ambos superiores al umbral de 0{,}05. Este resultado confirma que los residuos se comportan como ruido blanco y que la estructura temporal de la serie ha sido capturada adecuadamente, un resultado notable para el modelo más compacto del estudio.
+El test de Ljung-Box sobre los residuos del conjunto de prueba arroja un $p$-valor de 0,011 a 10 rezagos (rechaza $H_0$) y de 0,119 a 20 rezagos (no rechaza $H_0$). Este resultado mixto indica que existe cierta autocorrelación residual en los primeros rezagos que el modelo no logra absorber completamente, aunque la estructura de dependencia se diluye al considerar horizontes más amplios.
 
 \clearpage
 \paragraph{Pronóstico a 24 Meses}
@@ -535,7 +535,7 @@ El RMSE de prueba del escenario con pandemia (Gs.~11{,}88) es idéntico al del e
 \end{figure}
 
 \justify
-El test de Ljung-Box sobre los residuos del conjunto de prueba muestra un $p$-valor de 0,009 a 10 rezagos (rechaza $H_0$) y de $1{,}13 \times 10^{-9}$ a 20 rezagos (rechaza fuertemente $H_0$). Este resultado indica la presencia de autocorrelación residual significativa en el modelo con pandemia, en contraste con el comportamiento de ruido blanco logrado por el modelo sin pandemia. La mayor autocorrelación residual sugiere que la configuración predeterminada del escenario con pandemia no captura tan eficientemente la estructura temporal de la serie del ladrillo como lo hace el modelo más compacto y propiamente optimizado.
+El test de Ljung-Box sobre los residuos del conjunto de prueba arroja un $p$-valor de 0,011 a 10 rezagos (rechaza $H_0$) y de 0,119 a 20 rezagos (no rechaza $H_0$), valores idénticos a los del escenario sin pandemia. Este resultado mixto es esperable, dado que la búsqueda de Optuna convergió a la misma configuración en ambos escenarios. La autocorrelación a 10 rezagos indica cierta estructura temporal residual de corto plazo que el modelo no logra absorber completamente.
 
 \clearpage
 \paragraph{Pronóstico a 24 Meses}

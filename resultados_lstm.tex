@@ -149,7 +149,7 @@ El RMSE de validación (Gs.~3.409,77) es el valor más bajo de los tres conjunto
 \end{figure}
 
 \justify
-El test de Ljung-Box sobre los residuos del conjunto de prueba arrojó un $p$-valor de 0,017 a 10 rezagos y de 0,042 a 20 rezagos, ambos por debajo del umbral de 0,05. Esto indica la presencia de autocorrelación residual estadísticamente significativa, aunque los valores son cercanos al límite de significancia. El modelo captura la tendencia general de la serie pero deja cierta estructura temporal en los residuos.
+El test de Ljung-Box sobre los residuos del conjunto de prueba arrojó un $p$-valor de 0,026 a 10 rezagos y de 0,0035 a 20 rezagos, ambos por debajo del umbral de 0,05. Esto indica la presencia de autocorrelación residual estadísticamente significativa. El rechazo más fuerte a 20 rezagos sugiere patrones de dependencia en rezagos distantes que el modelo no logra absorber completamente.
 
 \clearpage
 \paragraph{Pronóstico a 24 Meses}
@@ -289,7 +289,7 @@ El RMSE de prueba del escenario con pandemia (Gs.~4.394,96) es inferior al del e
 \end{figure}
 
 \justify
-El test de Ljung-Box sobre los residuos del conjunto de prueba no rechaza la hipótesis nula de ausencia de autocorrelación en ninguno de los rezagos evaluados, resultado más favorable que el obtenido en el escenario sin pandemia. La inclusión de la variable pandémica en el entrenamiento parece haber permitido al modelo absorber una mayor proporción de la estructura temporal de la serie.
+El test de Ljung-Box sobre los residuos del conjunto de prueba arrojó un $p$-valor de $5{,}69 \times 10^{-5}$ a 10 rezagos y de 0,0037 a 20 rezagos, ambos por debajo del umbral de 0,05. Esto indica la presencia de autocorrelación residual estadísticamente significativa en ambos horizontes de rezagos, un resultado incluso más pronunciado que el del escenario sin pandemia a 10 rezagos. El modelo bidireccional, pese a su mayor complejidad, no logra eliminar la estructura temporal de los residuos.
 
 \clearpage
 \paragraph{Pronóstico a 24 Meses}
@@ -458,7 +458,7 @@ El RMSE de prueba de 6,62~Gs.\ representa un error relativo inferior al 2,5\,\% 
 \end{figure}
 
 \justify
-El test de Ljung-Box sobre los residuos del conjunto de prueba muestra un $p$-valor de 0,237 a 10 rezagos (no rechaza $H_0$) y un $p$-valor de $1{,}05 \times 10^{-5}$ a 20 rezagos (rechaza $H_0$). Esto indica que los residuos se comportan como ruido blanco en el corto plazo, aunque existen patrones de dependencia en rezagos más distantes, posiblemente asociados a estacionalidad no capturada completamente.
+El test de Ljung-Box sobre los residuos del conjunto de prueba arrojó un $p$-valor de $2{,}8 \times 10^{-10}$ a 10 rezagos y de $5{,}5 \times 10^{-10}$ a 20 rezagos, ambos rechazando fuertemente la hipótesis nula de ausencia de autocorrelación. Este resultado indica que los residuos presentan una autocorrelación severa en ambos horizontes de rezagos, lo que sugiere la presencia de patrones temporales sistemáticos que el modelo no logra capturar, posiblemente asociados a la dinámica escalonada del precio del ladrillo.
 
 \clearpage
 \paragraph{Pronóstico a 24 Meses}
@@ -595,7 +595,7 @@ El RMSE de prueba de 6,22~Gs.\ es ligeramente inferior al del escenario sin pand
 \end{figure}
 
 \justify
-El test de Ljung-Box sobre los residuos del conjunto de prueba muestra un $p$-valor de 0,077 a 10 rezagos (no rechaza $H_0$) y un $p$-valor de $6{,}70 \times 10^{-9}$ a 20 rezagos (rechaza fuertemente $H_0$). Al igual que en el escenario sin pandemia, los residuos se comportan como ruido blanco en los primeros rezagos pero muestran dependencia en rezagos más distantes.
+El test de Ljung-Box sobre los residuos del conjunto de prueba arrojó un $p$-valor de $2{,}4 \times 10^{-11}$ a 10 rezagos y de $7{,}5 \times 10^{-13}$ a 20 rezagos, ambos rechazando fuertemente la hipótesis nula. Al igual que en el escenario sin pandemia, los residuos presentan autocorrelación severa en ambos horizontes de rezagos, confirmando que el modelo LSTM del ladrillo ---independientemente del escenario--- deja estructura temporal significativa sin capturar.
 
 \clearpage
 \paragraph{Pronóstico a 24 Meses}
