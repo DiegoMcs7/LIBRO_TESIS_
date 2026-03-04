@@ -1,7 +1,7 @@
 {
-  "train_lag10_p": 0.003322994538107309,
-  "train_lag20_p": 0.07753303716369475,
-  "test_lag10_p": 0.010523409393832466,
-  "test_lag20_p": 0.11925909466638017,
+  "train_lag10_p": 0.0017357824335727777,
+  "train_lag20_p": 0.04309161678450763,
+  "test_lag10_p": 0.0026808441448492068,
+  "test_lag20_p": 0.012448883470527484,
   "interpretacion": "p > 0.05 = ruido blanco (residuos sin autocorrelacion)"
 }

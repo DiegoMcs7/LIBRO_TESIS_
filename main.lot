@@ -6,28 +6,28 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {5.1}{\ignorespaces Hiperparámetros óptimos del modelo LSTM para la predicción del nivel del río Paraguay.}}{24}{table.caption.9}%
 \contentsline {table}{\numberline {5.2}{\ignorespaces Métricas de evaluación RMSE del modelo LSTM en los conjuntos de entrenamiento, validación y prueba.}}{25}{table.caption.11}%
-\contentsline {table}{\numberline {5.3}{\ignorespaces Parámetros estimados del modelo SARIMAX$(0,1,0)(0,0,0)_{12}$ para el precio del cemento (modelo final, 139 obs.).}}{34}{table.caption.23}%
-\contentsline {table}{\numberline {5.4}{\ignorespaces RMSE del modelo SARIMAX para el precio del cemento en los conjuntos de validación y prueba.}}{35}{table.caption.25}%
-\contentsline {table}{\numberline {5.5}{\ignorespaces Pronóstico mensual del precio del cemento (Gs.) para el período agosto 2025 a julio 2026, con intervalo de confianza al 95\,\%.}}{35}{table.caption.28}%
-\contentsline {table}{\numberline {5.6}{\ignorespaces Parámetros estimados del modelo SARIMAX$(0,1,0)(0,0,0)_{12}$ para el precio del ladrillo (modelo final, 139 obs.).}}{35}{table.caption.36}%
-\contentsline {table}{\numberline {5.7}{\ignorespaces RMSE del modelo SARIMAX para el precio del ladrillo en los conjuntos de validación y prueba.}}{38}{table.caption.38}%
-\contentsline {table}{\numberline {5.8}{\ignorespaces Pronóstico mensual del precio del ladrillo (Gs.) para el período agosto 2025 a julio 2026, con intervalo de confianza al 95\,\%.}}{40}{table.caption.41}%
-\contentsline {table}{\numberline {5.9}{\ignorespaces Hiperparámetros del modelo LSTM para cemento --- escenario sin pandemia (Optuna: 182 ensayos).}}{49}{table.caption.47}%
-\contentsline {table}{\numberline {5.10}{\ignorespaces Desempeño del modelo LSTM para cemento --- escenario sin pandemia: RMSE en train, val y test.}}{50}{table.caption.49}%
-\contentsline {table}{\numberline {5.11}{\ignorespaces Hiperparámetros del modelo LSTM para cemento --- escenario con pandemia (Optuna: 261 ensayos).}}{56}{table.caption.59}%
-\contentsline {table}{\numberline {5.12}{\ignorespaces Desempeño del modelo LSTM para cemento --- escenario con pandemia: RMSE en train, val y test.}}{57}{table.caption.61}%
-\contentsline {table}{\numberline {5.13}{\ignorespaces Hiperparámetros óptimos del modelo LSTM para ladrillo --- escenario sin pandemia (Optuna: 261 ensayos).}}{66}{table.caption.74}%
-\contentsline {table}{\numberline {5.14}{\ignorespaces Desempeño del modelo LSTM para ladrillo --- escenario sin pandemia: RMSE en train, val y test.}}{67}{table.caption.76}%
-\contentsline {table}{\numberline {5.15}{\ignorespaces Hiperparámetros del modelo LSTM para ladrillo --- escenario con pandemia.}}{73}{table.caption.86}%
-\contentsline {table}{\numberline {5.16}{\ignorespaces Desempeño del modelo LSTM para ladrillo --- escenario con pandemia: RMSE en train, val y test.}}{74}{table.caption.88}%
-\contentsline {table}{\numberline {5.17}{\ignorespaces Hiperparámetros del modelo GRU para cemento --- escenario sin pandemia.}}{80}{table.caption.98}%
-\contentsline {table}{\numberline {5.18}{\ignorespaces Desempeño del modelo GRU para cemento --- escenario sin pandemia: RMSE en train, val y test.}}{80}{table.caption.100}%
-\contentsline {table}{\numberline {5.19}{\ignorespaces Hiperparámetros del modelo GRU para cemento --- escenario con pandemia.}}{87}{table.caption.110}%
-\contentsline {table}{\numberline {5.20}{\ignorespaces Desempeño del modelo GRU para cemento --- escenario con pandemia: RMSE en train, val y test.}}{88}{table.caption.112}%
-\contentsline {table}{\numberline {5.21}{\ignorespaces Hiperparámetros del modelo GRU para ladrillo --- escenario sin pandemia (Optuna: 261 ensayos, 194{,}9 min).}}{95}{table.caption.122}%
-\contentsline {table}{\numberline {5.22}{\ignorespaces Desempeño del modelo GRU para ladrillo --- escenario sin pandemia: RMSE en train, val y test.}}{96}{table.caption.124}%
-\contentsline {table}{\numberline {5.23}{\ignorespaces Hiperparámetros del modelo GRU para ladrillo --- escenario con pandemia.}}{102}{table.caption.134}%
-\contentsline {table}{\numberline {5.24}{\ignorespaces Desempeño del modelo GRU para ladrillo --- escenario con pandemia: RMSE en train, val y test.}}{102}{table.caption.136}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces Parámetros estimados del modelo SARIMAX$(0,1,0)(0,0,0)_{12}$ para el precio del cemento (modelo final, 139 obs.).}}{33}{table.caption.22}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces RMSE del modelo SARIMAX para el precio del cemento en los conjuntos de validación y prueba.}}{34}{table.caption.24}%
+\contentsline {table}{\numberline {5.5}{\ignorespaces Pronóstico mensual del precio del cemento (Gs.) para el período agosto 2025 a julio 2026, con intervalo de confianza al 95\,\%.}}{34}{table.caption.27}%
+\contentsline {table}{\numberline {5.6}{\ignorespaces Parámetros estimados del modelo SARIMAX$(0,1,0)(0,0,0)_{12}$ para el precio del ladrillo (modelo final, 139 obs.).}}{37}{table.caption.35}%
+\contentsline {table}{\numberline {5.7}{\ignorespaces RMSE del modelo SARIMAX para el precio del ladrillo en los conjuntos de validación y prueba.}}{38}{table.caption.37}%
+\contentsline {table}{\numberline {5.8}{\ignorespaces Pronóstico mensual del precio del ladrillo (Gs.) para el período agosto 2025 a julio 2026, con intervalo de confianza al 95\,\%.}}{40}{table.caption.40}%
+\contentsline {table}{\numberline {5.9}{\ignorespaces Hiperparámetros del modelo LSTM para cemento --- escenario sin pandemia (Optuna: 182 ensayos).}}{48}{table.caption.46}%
+\contentsline {table}{\numberline {5.10}{\ignorespaces Desempeño del modelo LSTM para cemento --- escenario sin pandemia: RMSE en train, val y test.}}{49}{table.caption.48}%
+\contentsline {table}{\numberline {5.11}{\ignorespaces Hiperparámetros del modelo LSTM para cemento --- escenario con pandemia (Optuna: 261 ensayos).}}{55}{table.caption.58}%
+\contentsline {table}{\numberline {5.12}{\ignorespaces Desempeño del modelo LSTM para cemento --- escenario con pandemia: RMSE en train, val y test.}}{56}{table.caption.60}%
+\contentsline {table}{\numberline {5.13}{\ignorespaces Hiperparámetros óptimos del modelo LSTM para ladrillo --- escenario sin pandemia (Optuna: 261 ensayos).}}{65}{table.caption.73}%
+\contentsline {table}{\numberline {5.14}{\ignorespaces Desempeño del modelo LSTM para ladrillo --- escenario sin pandemia: RMSE en train, val y test.}}{66}{table.caption.75}%
+\contentsline {table}{\numberline {5.15}{\ignorespaces Hiperparámetros del modelo LSTM para ladrillo --- escenario con pandemia.}}{72}{table.caption.85}%
+\contentsline {table}{\numberline {5.16}{\ignorespaces Desempeño del modelo LSTM para ladrillo --- escenario con pandemia: RMSE en train, val y test.}}{73}{table.caption.87}%
+\contentsline {table}{\numberline {5.17}{\ignorespaces Hiperparámetros del modelo GRU para cemento --- escenario sin pandemia.}}{79}{table.caption.97}%
+\contentsline {table}{\numberline {5.18}{\ignorespaces Desempeño del modelo GRU para cemento --- escenario sin pandemia: RMSE en train, val y test.}}{79}{table.caption.99}%
+\contentsline {table}{\numberline {5.19}{\ignorespaces Hiperparámetros del modelo GRU para cemento --- escenario con pandemia.}}{90}{table.caption.109}%
+\contentsline {table}{\numberline {5.20}{\ignorespaces Desempeño del modelo GRU para cemento --- escenario con pandemia: RMSE en train, val y test.}}{91}{table.caption.111}%
+\contentsline {table}{\numberline {5.21}{\ignorespaces Hiperparámetros del modelo GRU para ladrillo --- escenario sin pandemia (Optuna: 261 ensayos, 194{,}9 min).}}{98}{table.caption.121}%
+\contentsline {table}{\numberline {5.22}{\ignorespaces Desempeño del modelo GRU para ladrillo --- escenario sin pandemia: RMSE en train, val y test.}}{99}{table.caption.123}%
+\contentsline {table}{\numberline {5.23}{\ignorespaces Hiperparámetros del modelo GRU para ladrillo --- escenario con pandemia.}}{105}{table.caption.133}%
+\contentsline {table}{\numberline {5.24}{\ignorespaces Desempeño del modelo GRU para ladrillo --- escenario con pandemia: RMSE en train, val y test.}}{105}{table.caption.135}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Comparaci\'{o}n integral de los modelos evaluados para la predicci\'{o}n de precios de materiales de construcci\'{o}n.}}{113}{table.caption.146}%
+\contentsline {table}{\numberline {6.1}{\ignorespaces Comparaci\'{o}n integral de los modelos evaluados para la predicci\'{o}n de precios de materiales de construcci\'{o}n.}}{116}{table.caption.145}%
 \addvspace {10\p@ }

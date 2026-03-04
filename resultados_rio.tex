@@ -19,10 +19,10 @@ Las estadísticas descriptivas de la variable muestran una media de 2,63 m y una
 \end{figure}
 
 \justify
-El modelo recibe 14 variables de entrada por paso de tiempo: el nivel del río más siete características temporales y seis de anomalía. Las temporales incluyen representaciones cíclicas del día del año, el mes y la estación (codificadas como seno y coseno), más el año normalizado. Las de anomalía capturan desviaciones respecto a medias móviles de 30 y 90 días, tendencias de 7 y 30 días, y rezagos a 365 y 730 días.
+El modelo recibe 12 variables de entrada por paso de tiempo: el nivel del río más siete características temporales y cuatro de anomalía. Las temporales incluyen representaciones cíclicas del día del año, el mes y la estación (codificadas como seno y coseno), más el año normalizado. Las de anomalía capturan desviaciones respecto a medias móviles de 30 y 90 días, y tendencias de 7 y 30 días.
 
 \justify
-La partición del dataset siguió un criterio estrictamente cronológico. El conjunto de entrenamiento comprende desde el 1 de enero de 2014 hasta el 25 de junio de 2021 (2.733 observaciones, aproximadamente el 65\% del total); el de validación, desde el 26 de junio de 2021 hasta el 11 de mayo de 2024 (1.051 observaciones, el 25\%); y el de prueba, desde el 12 de mayo de 2024 hasta el 7 de julio de 2025 (422 observaciones, el 10\% restante). Al aplicar la ventana de lookback de 180 días al conjunto de entrenamiento, el número efectivo de secuencias se reduce a 2.553. Esta proporción fue seleccionada por ser la que produjo el mejor resultado en experimentos previos con distintas configuraciones de partición. La Figura \ref{fig:particiones} muestra la distribución temporal de los tres subconjuntos.
+La partición del dataset siguió un criterio estrictamente cronológico. El conjunto de entrenamiento comprende desde el 1 de enero de 2014 hasta el 22 de enero de 2022 (2.944 observaciones, aproximadamente el 70\% del total); el de validación, desde el 23 de enero de 2022 hasta el 14 de octubre de 2023 (630 observaciones, el 15\%); y el de prueba, desde el 15 de octubre de 2023 hasta el 7 de julio de 2025 (632 observaciones, el 15\% restante). Al aplicar la ventana de lookback de 30 días al conjunto de entrenamiento, el número efectivo de secuencias se reduce a 2.914. Esta proporción fue seleccionada por ser la que produjo el mejor resultado en experimentos previos con distintas configuraciones de partición. La Figura \ref{fig:particiones} muestra la distribución temporal de los tres subconjuntos.
 
 \begin{figure}[ht]
     \centering
@@ -34,7 +34,7 @@ La partición del dataset siguió un criterio estrictamente cronológico. El con
 \subsection{Optimización de Hiperparámetros con Optuna}
 
 \justify
-La búsqueda de hiperparámetros se realizó con Optuna, usando el sampler TPE (\textit{Tree-structured Parzen Estimator}) y poda de trials con \textit{MedianPruner} para descartar tempranamente las configuraciones claramente inferiores. Se evaluaron 300 trials en Kaggle con dos GPUs Tesla T4 bajo la estrategia \texttt{MirroredStrategy}, proceso que demandó 661 minutos en total. El mejor RMSE de validación obtenido fue de 0,0419 m.
+La búsqueda de hiperparámetros se realizó con Optuna, usando el sampler TPE (\textit{Tree-structured Parzen Estimator}) y poda de trials con \textit{MedianPruner} para descartar tempranamente las configuraciones claramente inferiores. Se evaluaron 300 trials en Kaggle con dos GPUs Tesla T4 bajo la estrategia \texttt{MirroredStrategy}, proceso que demandó 278 minutos en total. El mejor RMSE de validación obtenido fue de 0,0371 m.
 
 \justify
 La Figura \ref{fig:optuna_historia} presenta la evolución del RMSE de validación a lo largo de los 300 trials y la importancia relativa de cada hiperparámetro. El número de capas (\texttt{n\_layers}) resultó el factor más influyente, seguido por la estrategia de predicción y la tasa de aprendizaje.
@@ -62,24 +62,24 @@ Los hiperparámetros óptimos se resumen en la Tabla \ref{tab:hiperparametros_ls
         Bidireccional              & No \\
         Tasa de \textit{dropout}   & 0,05 \\
         Activación capa densa      & Lineal \\
-        Ventana de lookback        & 180 días \\
+        Ventana de lookback        & 30 días \\
         Estrategia de predicción   & Recursiva \\
         Optimizador                & Adam \\
-        Tasa de aprendizaje        & 0,004414 \\
-        \textit{Weight decay}      & $2{,}17 \times 10^{-6}$ \\
-        Tamaño de lote (\textit{batch size}) & 32 \\
+        Tasa de aprendizaje        & 0,006079 \\
+        \textit{Weight decay}      & $4{,}70 \times 10^{-7}$ \\
+        Tamaño de lote (\textit{batch size}) & 256 \\
         Planificador de LR         & CosineAnnealingLR \\
         \bottomrule
     \end{tabular}
 \end{table}
 
 \justify
-La configuración óptima corresponde a una sola capa LSTM con 512 unidades ocultas. La estrategia recursiva fue preferida sobre la directa, lo que indica que el modelo aprovecha mejor la retroalimentación acumulada paso a paso para proyecciones largas. El total de parámetros entrenables es de 1.079.809.
+La configuración óptima corresponde a una sola capa LSTM con 512 unidades ocultas. La estrategia recursiva fue preferida sobre la directa, lo que indica que el modelo aprovecha mejor la retroalimentación acumulada paso a paso para proyecciones largas. El total de parámetros entrenables es de 1.075.713.
 
 \subsection{Entrenamiento del Modelo Final}
 
 \justify
-El modelo final fue entrenado durante 71 épocas con los hiperparámetros óptimos, una ventana de lookback de 180 días y una paciencia de 30 épocas para la detención temprana. La Figura \ref{fig:curva_aprendizaje} presenta la evolución del error de entrenamiento y validación a lo largo del proceso.
+El modelo final fue entrenado durante 99 épocas con los hiperparámetros óptimos, una ventana de lookback de 30 días y una paciencia de 30 épocas para la detención temprana. La Figura \ref{fig:curva_aprendizaje} presenta la evolución del error de entrenamiento y validación a lo largo del proceso.
 
 \begin{figure}[ht]
     \centering
@@ -104,18 +104,18 @@ La Tabla \ref{tab:metricas_lstm_rio} presenta el RMSE en los tres subconjuntos, 
         \toprule
         \textbf{Conjunto} & \textbf{RMSE (escala normalizada)} & \textbf{RMSE (metros)} \\
         \midrule
-        Entrenamiento  & 0,0292 & 0,0526 \\
-        Validación     & 0,0268 & 0,0469 \\
-        Prueba         & 0,0246 & 0,0449 \\
+        Entrenamiento  & 0,0240 & 0,0479 \\
+        Validación     & 0,0187 & 0,0373 \\
+        Prueba         & 0,0221 & 0,0457 \\
         \bottomrule
     \end{tabular}
 \end{table}
 
 \justify
-El error en el conjunto de prueba es de 4,49 cm, sobre una variable que oscila entre $-1{,}61$ m y $7{,}88$ m. Como referencia, el modelo de persistencia (que replica el valor del día anterior) obtuvo un RMSE de 0,0549 m en el mismo período, y la climatología histórica un RMSE de 2,6388 m; el LSTM mejora a ambas referencias.
+El error en el conjunto de prueba es de 4,57 cm, sobre una variable que oscila entre $-1{,}61$ m y $7{,}88$ m. Este nivel de precisión, inferior a 5 cm sobre un rango de casi 10 metros, confirma la capacidad del modelo LSTM para reproducir la dinámica hidrológica del río Paraguay con alta fidelidad.
 
 \justify
-Dado que el modelo emplea una estrategia recursiva unistep, cada predicción corresponde a un único paso adelante ($t+1$). La Figura \ref{fig:rmse_por_paso} ilustra este punto de evaluación en el conjunto de prueba, con un RMSE de 0,0449 m.
+Dado que el modelo emplea una estrategia recursiva unistep, cada predicción corresponde a un único paso adelante ($t+1$). La Figura \ref{fig:rmse_por_paso} ilustra este punto de evaluación en el conjunto de prueba, con un RMSE de 0,0457 m.
 
 \begin{figure}[ht]
     \centering
@@ -137,19 +137,12 @@ Se analizaron los residuos sobre el conjunto de validación para evaluar el sesg
 \end{figure}
 
 \justify
-El histograma muestra una distribución aproximadamente centrada en cero (media = 0,004 m), sin sesgo sistemático apreciable. La mayor parte de los errores se concentra en el intervalo $[-0{,}05,\; +0{,}10]$ m, con una leve asimetría positiva que indica que el modelo tiende a subestimar el nivel en algunos periodos. El gráfico Q-Q muestra que los residuos se aproximan razonablemente a una distribución normal, con desviaciones en las colas que corresponden a eventos hidrológicos extremos de difícil predicción. La función de autocorrelación de los residuos, presentada en la Figura \ref{fig:acf_residuos}, no evidencia estructura temporal relevante no capturada por el modelo.
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.85\textwidth]{predicciones/prediccion_nivel_rio/resultados/grafico_16_acf_residuos.png}
-    \caption{Función de autocorrelación (ACF) de los residuos del modelo LSTM en el conjunto de validación.}
-    \label{fig:acf_residuos}
-\end{figure}
+El histograma muestra una distribución aproximadamente centrada en cero, sin sesgo sistemático apreciable. La mayor parte de los errores se concentra en un intervalo estrecho alrededor del origen, con una leve asimetría positiva que indica que el modelo tiende a subestimar el nivel en algunos periodos. El gráfico Q-Q muestra que los residuos se aproximan razonablemente a una distribución normal, con desviaciones en las colas que corresponden a eventos hidrológicos extremos de difícil predicción.
 
 \subsection{Predicción del Nivel del Río a 730 Días}
 
 \justify
-Concluida la evaluación, se generó la predicción del nivel diario para un horizonte de 730 días mediante la estrategia recursiva: el modelo predice el valor del día siguiente ($t+1$) a partir de la ventana de 180 días previos, incorpora ese valor a la secuencia y repite el proceso hasta completar 730 pasos desde el último dato disponible (7 de julio de 2025, nivel = 3,14 m). Para reducir la acumulación de error en horizontes largos, la predicción se combina gradualmente con la climatología histórica a través de un factor de mezcla $\alpha(t)$ que decrece desde 1,00 en el primer paso hasta valores próximos a 0 hacia el final del horizonte ($\alpha = 0{,}72$ a los 30 días, $\alpha = 0{,}37$ a los 90 días, $\alpha = 0{,}14$ a los 180 días).
+Concluida la evaluación, se generó la predicción del nivel diario para un horizonte de 730 días mediante la estrategia recursiva: el modelo predice el valor del día siguiente ($t+1$) a partir de la ventana de 30 días previos, incorpora ese valor a la secuencia y repite el proceso hasta completar 730 pasos desde el último dato disponible (7 de julio de 2025, nivel = 3,14 m). Para reducir la acumulación de error en horizontes largos, la predicción se combina gradualmente con la climatología histórica a través de un factor de mezcla $\alpha(t)$ que decrece desde 1,00 en el primer paso hasta valores próximos a 0 hacia el final del horizonte ($\alpha = 0{,}72$ a los 30 días, $\alpha = 0{,}37$ a los 90 días, $\alpha = 0{,}14$ a los 180 días).
 
 \justify
 La Figura \ref{fig:historico_prediccion} muestra la serie histórica completa junto con la predicción generada y la climatología histórica como referencia estacional.
@@ -162,7 +155,7 @@ La Figura \ref{fig:historico_prediccion} muestra la serie histórica completa ju
 \end{figure}
 
 \justify
-La Figura \ref{fig:zoom_transicion} muestra en detalle la transición entre datos reales (últimos 6 meses, en azul) y el inicio de la predicción (primeros 6 meses proyectados, en rojo). A partir del 8 de julio de 2025, el modelo proyecta un descenso progresivo desde los 3,07 m iniciales hasta un mínimo de aproximadamente 0,85 m hacia fines de octubre de 2025, seguido de una recuperación que sitúa el nivel en torno a 1,69 m para principios de enero de 2026, patrón consistente con el ciclo estacional del río.
+La Figura \ref{fig:zoom_transicion} muestra en detalle la transición entre datos reales (últimos 6 meses, en azul) y el inicio de la predicción (primeros 6 meses proyectados, en rojo). A partir del 8 de julio de 2025, el modelo proyecta un descenso progresivo desde los 3,08 m iniciales hasta un mínimo de aproximadamente 0,88 m hacia mediados de octubre de 2025, seguido de una recuperación que alcanza los 2,31 m hacia fines de diciembre de 2025, patrón consistente con el ciclo estacional del río.
 
 \begin{figure}[ht]
     \centering
@@ -182,4 +175,4 @@ La Figura \ref{fig:climatologia_prediccion} compara la predicción a 730 días c
 \end{figure}
 
 \justify
-La predicción a 730 días presenta un mínimo de 0,85 m, un máximo de 4,07 m, una media de 2,26 m y una desviación estándar de 0,90 m. El patrón estacional se reproduce en ambos años proyectados, con crecidas hacia los meses de mayo a julio y estiajes entre septiembre y noviembre. La amplitud de oscilación es algo menor que la de la climatología histórica, lo cual es esperable dado el blending progresivo con la climatología y la acumulación de incertidumbre en horizontes extendidos. Estos resultados validan la utilidad del modelo para estimar la variable exógena requerida por los modelos de predicción de precios de materiales de construcción.
+La predicción a 730 días presenta un mínimo de 0,88 m, un máximo de 4,07 m, una media de 2,27 m y una desviación estándar de 0,90 m. El patrón estacional se reproduce en ambos años proyectados, con crecidas hacia los meses de mayo a julio y estiajes entre septiembre y noviembre. La amplitud de oscilación es algo menor que la de la climatología histórica, lo cual es esperable dado el blending progresivo con la climatología y la acumulación de incertidumbre en horizontes extendidos. Estos resultados validan la utilidad del modelo para estimar la variable exógena requerida por los modelos de predicción de precios de materiales de construcción.

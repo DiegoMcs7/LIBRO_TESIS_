@@ -1,201 +1,201 @@
 {
-  "mejor_rmse_validacion_gs": 11.412145208176113,
+  "mejor_rmse_validacion_gs": 11.55831454563583,
   "mejores_params": {
     "lookback": 3,
     "n_layers": 1,
     "hidden_size": 64,
     "bidirectional": false,
     "dropout_rate": 0.05,
-    "recurrent_dropout": 0.2,
+    "recurrent_dropout": 0.05,
     "optimizer": "Adam",
-    "learning_rate": 0.008440969369384689,
-    "weight_decay": 1.0410794633475033e-06,
+    "learning_rate": 0.009764003446064724,
+    "weight_decay": 0.00035526062050604583,
     "batch_size": 8,
-    "scheduler": "StepLR"
+    "scheduler": "none"
   },
-  "n_trials_completados": 261,
+  "n_trials_completados": 220,
   "n_trials_podados": 0,
   "n_trials_fallidos": 0,
-  "tiempo_minutos": 171.1666674931844,
+  "tiempo_minutos": 159.90521772305172,
   "top_10": [
     {
       "rank": 1,
-      "trial": 291,
-      "rmse_gs": 11.412145208176113,
+      "trial": 123,
+      "rmse_gs": 11.55831454563583,
       "params": {
         "lookback": 3,
         "n_layers": 1,
         "hidden_size": 64,
         "bidirectional": false,
         "dropout_rate": 0.05,
-        "recurrent_dropout": 0.2,
+        "recurrent_dropout": 0.05,
         "optimizer": "Adam",
-        "learning_rate": 0.008440969369384689,
-        "weight_decay": 1.0410794633475033e-06,
+        "learning_rate": 0.009764003446064724,
+        "weight_decay": 0.00035526062050604583,
         "batch_size": 8,
-        "scheduler": "StepLR"
+        "scheduler": "none"
       }
     },
     {
       "rank": 2,
-      "trial": 89,
-      "rmse_gs": 11.439273195508399,
+      "trial": 190,
+      "rmse_gs": 11.574365515492323,
       "params": {
-        "lookback": 3,
+        "lookback": 4,
         "n_layers": 1,
         "hidden_size": 64,
         "bidirectional": false,
         "dropout_rate": 0.05,
-        "recurrent_dropout": 0.2,
-        "optimizer": "Adam",
-        "learning_rate": 0.0060461651660711,
-        "weight_decay": 0.00011873669334930621,
+        "recurrent_dropout": 0.05,
+        "optimizer": "AdamW",
+        "learning_rate": 0.006228624149717569,
+        "weight_decay": 0.0005170077265830662,
         "batch_size": 8,
-        "scheduler": "CosineAnnealingLR"
+        "scheduler": "none"
       }
     },
     {
       "rank": 3,
-      "trial": 277,
-      "rmse_gs": 11.44983704282975,
+      "trial": 178,
+      "rmse_gs": 11.600107513611684,
       "params": {
         "lookback": 3,
         "n_layers": 1,
         "hidden_size": 64,
         "bidirectional": false,
         "dropout_rate": 0.05,
-        "recurrent_dropout": 0.2,
-        "optimizer": "Adam",
-        "learning_rate": 0.008096644282325158,
-        "weight_decay": 2.929529063136041e-07,
+        "recurrent_dropout": 0.05,
+        "optimizer": "AdamW",
+        "learning_rate": 0.006318047121242472,
+        "weight_decay": 0.0005413499822230786,
         "batch_size": 8,
-        "scheduler": "CosineAnnealingLR"
+        "scheduler": "none"
       }
     },
     {
       "rank": 4,
-      "trial": 201,
-      "rmse_gs": 11.532516609798792,
+      "trial": 240,
+      "rmse_gs": 11.705423791552674,
       "params": {
-        "lookback": 3,
+        "lookback": 5,
         "n_layers": 1,
         "hidden_size": 64,
         "bidirectional": false,
         "dropout_rate": 0.05,
-        "recurrent_dropout": 0.2,
-        "optimizer": "Adam",
-        "learning_rate": 0.007617183509542448,
-        "weight_decay": 7.854402655020813e-05,
+        "recurrent_dropout": 0.05,
+        "optimizer": "AdamW",
+        "learning_rate": 0.008172102291242952,
+        "weight_decay": 0.0007170895356435747,
         "batch_size": 8,
-        "scheduler": "CosineAnnealingLR"
+        "scheduler": "none"
       }
     },
     {
       "rank": 5,
-      "trial": 142,
-      "rmse_gs": 11.539793304489507,
+      "trial": 145,
+      "rmse_gs": 11.81161533539131,
       "params": {
         "lookback": 3,
         "n_layers": 1,
         "hidden_size": 64,
         "bidirectional": false,
         "dropout_rate": 0.05,
-        "recurrent_dropout": 0.2,
-        "optimizer": "Adam",
-        "learning_rate": 0.0071451620508753,
-        "weight_decay": 0.00018761146151873723,
+        "recurrent_dropout": 0.05,
+        "optimizer": "AdamW",
+        "learning_rate": 0.007611318696868053,
+        "weight_decay": 0.0005723572546825737,
         "batch_size": 8,
-        "scheduler": "CosineAnnealingLR"
+        "scheduler": "none"
       }
     },
     {
       "rank": 6,
-      "trial": 94,
-      "rmse_gs": 11.583511413715337,
+      "trial": 143,
+      "rmse_gs": 11.85769645275498,
       "params": {
         "lookback": 3,
         "n_layers": 1,
         "hidden_size": 64,
         "bidirectional": false,
         "dropout_rate": 0.05,
-        "recurrent_dropout": 0.2,
-        "optimizer": "Adam",
-        "learning_rate": 0.006646674304065688,
-        "weight_decay": 6.200349925451485e-05,
+        "recurrent_dropout": 0.05,
+        "optimizer": "AdamW",
+        "learning_rate": 0.006523843809590786,
+        "weight_decay": 0.0007510063251151216,
         "batch_size": 8,
-        "scheduler": "CosineAnnealingLR"
+        "scheduler": "none"
       }
     },
     {
       "rank": 7,
-      "trial": 199,
-      "rmse_gs": 11.58483209151577,
+      "trial": 212,
+      "rmse_gs": 11.87541491274179,
       "params": {
         "lookback": 3,
         "n_layers": 1,
         "hidden_size": 64,
         "bidirectional": false,
         "dropout_rate": 0.05,
-        "recurrent_dropout": 0.2,
-        "optimizer": "Adam",
-        "learning_rate": 0.008697361459163656,
-        "weight_decay": 9.767376817112973e-05,
+        "recurrent_dropout": 0.05,
+        "optimizer": "AdamW",
+        "learning_rate": 0.006801124850253616,
+        "weight_decay": 0.0005442979989161252,
         "batch_size": 8,
-        "scheduler": "CosineAnnealingLR"
+        "scheduler": "none"
       }
     },
     {
       "rank": 8,
-      "trial": 278,
-      "rmse_gs": 11.613201884235338,
+      "trial": 154,
+      "rmse_gs": 11.892309631668665,
       "params": {
         "lookback": 3,
         "n_layers": 1,
         "hidden_size": 64,
         "bidirectional": false,
         "dropout_rate": 0.05,
-        "recurrent_dropout": 0.2,
-        "optimizer": "Adam",
-        "learning_rate": 0.009976831488771933,
-        "weight_decay": 3.0227673339501793e-07,
+        "recurrent_dropout": 0.05,
+        "optimizer": "AdamW",
+        "learning_rate": 0.006924631327545467,
+        "weight_decay": 0.0008132962884912454,
         "batch_size": 8,
-        "scheduler": "CosineAnnealingLR"
+        "scheduler": "none"
       }
     },
     {
       "rank": 9,
-      "trial": 148,
-      "rmse_gs": 11.675488310598467,
+      "trial": 235,
+      "rmse_gs": 11.893696562302685,
       "params": {
-        "lookback": 3,
+        "lookback": 5,
         "n_layers": 1,
         "hidden_size": 64,
         "bidirectional": false,
         "dropout_rate": 0.05,
-        "recurrent_dropout": 0.2,
-        "optimizer": "Adam",
-        "learning_rate": 0.004773413474471758,
-        "weight_decay": 0.0001368222650829092,
+        "recurrent_dropout": 0.05,
+        "optimizer": "AdamW",
+        "learning_rate": 0.006505284388948893,
+        "weight_decay": 0.0006575518695054219,
         "batch_size": 8,
-        "scheduler": "CosineAnnealingLR"
+        "scheduler": "none"
       }
     },
     {
       "rank": 10,
-      "trial": 143,
-      "rmse_gs": 11.824216655517944,
+      "trial": 201,
+      "rmse_gs": 11.89503318371474,
       "params": {
         "lookback": 3,
         "n_layers": 1,
         "hidden_size": 64,
         "bidirectional": false,
         "dropout_rate": 0.05,
-        "recurrent_dropout": 0.2,
-        "optimizer": "Adam",
-        "learning_rate": 0.007300902450055956,
-        "weight_decay": 0.0001267829837153321,
+        "recurrent_dropout": 0.05,
+        "optimizer": "AdamW",
+        "learning_rate": 0.006868277132935888,
+        "weight_decay": 0.0007903596085989219,
         "batch_size": 8,
-        "scheduler": "CosineAnnealingLR"
+        "scheduler": "none"
       }
     }
   ]

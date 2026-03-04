@@ -30,7 +30,7 @@
     "scheduler": "StepLR"
   },
   "meses_prediccion": 24,
-  "precio_pred_min_gs": 662,
+  "precio_pred_min_gs": 661,
   "precio_pred_max_gs": 726,
-  "hash_dataset": "f5a36f74a1f42bff59bbbdf7f05d9666"
+  "hash_dataset": "9646ca4939e57aba2c45c7384e807d4e"
 }

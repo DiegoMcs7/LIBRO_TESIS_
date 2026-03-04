@@ -1,9 +1,9 @@
 {
   "framework": "TensorFlow 2.19.0 / Keras",
   "arquitectura": "GRU",
-  "rmse_train_gs": 15.56,
-  "rmse_val_gs": 11.53,
-  "rmse_test_gs": 11.88,
+  "rmse_train_gs": 15.5,
+  "rmse_val_gs": 11.54,
+  "rmse_test_gs": 11.11,
   "rmse_vs_reales_gs": null,
   "n_features": 6,
   "features": [
@@ -15,22 +15,22 @@
     "anio_norm"
   ],
   "n_parametros": 13889,
-  "epocas_entrenadas": 62,
+  "epocas_entrenadas": 61,
   "mejores_params_optuna": {
     "lookback": 3,
     "n_layers": 1,
     "hidden_size": 64,
     "bidirectional": false,
     "dropout_rate": 0.05,
-    "recurrent_dropout": 0.2,
+    "recurrent_dropout": 0.05,
     "optimizer": "Adam",
-    "learning_rate": 0.008440969369384689,
-    "weight_decay": 1.0410794633475033e-06,
+    "learning_rate": 0.009764003446064724,
+    "weight_decay": 0.00035526062050604583,
     "batch_size": 8,
-    "scheduler": "StepLR"
+    "scheduler": "none"
   },
   "meses_prediccion": 24,
-  "precio_pred_min_gs": 662,
-  "precio_pred_max_gs": 761,
-  "hash_dataset": "f5a36f74a1f42bff59bbbdf7f05d9666"
+  "precio_pred_min_gs": 659,
+  "precio_pred_max_gs": 763,
+  "hash_dataset": "9646ca4939e57aba2c45c7384e807d4e"
 }

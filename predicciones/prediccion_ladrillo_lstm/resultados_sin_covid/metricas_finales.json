@@ -1,9 +1,9 @@
 {
   "framework": "TensorFlow 2.19.0 / Keras",
   "arquitectura": "LSTM",
-  "rmse_train_gs": 15.69,
-  "rmse_val_gs": 12.87,
-  "rmse_test_gs": 6.62,
+  "rmse_train_gs": 14.41,
+  "rmse_val_gs": 14.26,
+  "rmse_test_gs": 7.68,
   "rmse_vs_reales_gs": null,
   "n_features": 6,
   "features": [
@@ -14,23 +14,23 @@
     "mes_cos",
     "anio_norm"
   ],
-  "n_parametros": 36481,
-  "epocas_entrenadas": 90,
+  "n_parametros": 18241,
+  "epocas_entrenadas": 56,
   "mejores_params_optuna": {
-    "lookback": 3,
+    "lookback": 6,
     "n_layers": 1,
     "hidden_size": 64,
-    "bidirectional": true,
-    "dropout_rate": 0.35000000000000003,
-    "recurrent_dropout": 0.2,
-    "optimizer": "RMSprop",
-    "learning_rate": 0.0026621662365124968,
-    "weight_decay": 9.632108623467832e-05,
-    "batch_size": 16,
-    "scheduler": "StepLR"
+    "bidirectional": false,
+    "dropout_rate": 0.05,
+    "recurrent_dropout": 0.05,
+    "optimizer": "AdamW",
+    "learning_rate": 0.00859913854639079,
+    "weight_decay": 0.0005028918268052488,
+    "batch_size": 8,
+    "scheduler": "none"
   },
   "meses_prediccion": 24,
-  "precio_pred_min_gs": 657,
-  "precio_pred_max_gs": 706,
-  "hash_dataset": "f5a36f74a1f42bff59bbbdf7f05d9666"
+  "precio_pred_min_gs": 646,
+  "precio_pred_max_gs": 686,
+  "hash_dataset": "9646ca4939e57aba2c45c7384e807d4e"
 }

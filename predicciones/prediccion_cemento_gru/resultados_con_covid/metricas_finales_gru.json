@@ -30,7 +30,7 @@
     "scheduler": "ReduceLROnPlateau"
   },
   "meses_prediccion": 24,
-  "precio_pred_min_gs": 59915,
-  "precio_pred_max_gs": 65337,
-  "hash_dataset": "a260f84b94e41c84aa68cd4f055e3577"
+  "precio_pred_min_gs": 59825,
+  "precio_pred_max_gs": 65334,
+  "hash_dataset": "0699db5175adfa459788d7afb821ccde"
 }

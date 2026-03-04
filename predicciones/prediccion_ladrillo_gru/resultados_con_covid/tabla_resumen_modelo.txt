@@ -7,7 +7,7 @@ Tabla Resumen — Modelo GRU Final
 
   Metrica             Train        Val       Test
   ──────────────────────────────────────────────
-  RMSE (Gs.)          15.56      11.53      11.88
+  RMSE (Gs.)          15.50      11.54      11.11
   ──────────────────────────────────────────────
 
   Horizonte      : 24 meses (recursiva)

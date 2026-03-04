@@ -1,201 +1,201 @@
 {
-  "mejor_rmse_validacion_gs": 12.998979948289806,
+  "mejor_rmse_validacion_gs": 13.088880148990569,
   "mejores_params": {
     "lookback": 3,
     "n_layers": 1,
     "hidden_size": 64,
     "bidirectional": true,
-    "dropout_rate": 0.25,
-    "recurrent_dropout": 0.05,
+    "dropout_rate": 0.35000000000000003,
+    "recurrent_dropout": 0.2,
     "optimizer": "RMSprop",
-    "learning_rate": 0.0023754380711837704,
-    "weight_decay": 7.452150620233481e-07,
+    "learning_rate": 0.0026621662365124968,
+    "weight_decay": 9.632108623467832e-05,
     "batch_size": 16,
-    "scheduler": "none"
+    "scheduler": "StepLR"
   },
-  "n_trials_completados": 249,
+  "n_trials_completados": 261,
   "n_trials_podados": 0,
   "n_trials_fallidos": 0,
-  "tiempo_minutos": 170.92718597253165,
+  "tiempo_minutos": 186.83880781332653,
   "top_10": [
     {
       "rank": 1,
-      "trial": 276,
-      "rmse_gs": 12.998979948289806,
+      "trial": 245,
+      "rmse_gs": 13.088880148990569,
       "params": {
         "lookback": 3,
         "n_layers": 1,
         "hidden_size": 64,
         "bidirectional": true,
-        "dropout_rate": 0.25,
-        "recurrent_dropout": 0.05,
+        "dropout_rate": 0.35000000000000003,
+        "recurrent_dropout": 0.2,
         "optimizer": "RMSprop",
-        "learning_rate": 0.0023754380711837704,
-        "weight_decay": 7.452150620233481e-07,
+        "learning_rate": 0.0026621662365124968,
+        "weight_decay": 9.632108623467832e-05,
         "batch_size": 16,
-        "scheduler": "none"
+        "scheduler": "StepLR"
       }
     },
     {
       "rank": 2,
-      "trial": 237,
-      "rmse_gs": 13.26843039521471,
+      "trial": 271,
+      "rmse_gs": 13.13115882517601,
       "params": {
         "lookback": 3,
         "n_layers": 1,
         "hidden_size": 64,
         "bidirectional": true,
-        "dropout_rate": 0.25,
-        "recurrent_dropout": 0.05,
+        "dropout_rate": 0.3,
+        "recurrent_dropout": 0.2,
         "optimizer": "RMSprop",
-        "learning_rate": 0.002977693567269604,
-        "weight_decay": 9.69498658405763e-07,
+        "learning_rate": 0.0027769128048100566,
+        "weight_decay": 1.6938861390439834e-07,
         "batch_size": 16,
-        "scheduler": "none"
+        "scheduler": "StepLR"
       }
     },
     {
       "rank": 3,
-      "trial": 222,
-      "rmse_gs": 13.297606660443622,
+      "trial": 173,
+      "rmse_gs": 13.295630412300497,
       "params": {
         "lookback": 3,
         "n_layers": 1,
         "hidden_size": 64,
         "bidirectional": true,
-        "dropout_rate": 0.25,
-        "recurrent_dropout": 0.05,
+        "dropout_rate": 0.3,
+        "recurrent_dropout": 0.2,
         "optimizer": "RMSprop",
-        "learning_rate": 0.0033092183840081634,
-        "weight_decay": 8.27066528305303e-07,
+        "learning_rate": 0.002851563051930814,
+        "weight_decay": 0.00019180931279620295,
         "batch_size": 16,
-        "scheduler": "none"
+        "scheduler": "StepLR"
       }
     },
     {
       "rank": 4,
-      "trial": 182,
-      "rmse_gs": 13.449421116705642,
+      "trial": 295,
+      "rmse_gs": 13.303038864095917,
       "params": {
         "lookback": 3,
         "n_layers": 1,
         "hidden_size": 64,
         "bidirectional": true,
-        "dropout_rate": 0.25,
-        "recurrent_dropout": 0.05,
+        "dropout_rate": 0.3,
+        "recurrent_dropout": 0.2,
         "optimizer": "RMSprop",
-        "learning_rate": 0.002787766939820176,
-        "weight_decay": 6.65883212504533e-07,
+        "learning_rate": 0.0034592271587362065,
+        "weight_decay": 2.8436776870439144e-07,
         "batch_size": 16,
-        "scheduler": "none"
+        "scheduler": "StepLR"
       }
     },
     {
       "rank": 5,
-      "trial": 273,
-      "rmse_gs": 13.461151372977994,
+      "trial": 242,
+      "rmse_gs": 13.337013938939306,
       "params": {
         "lookback": 3,
         "n_layers": 1,
         "hidden_size": 64,
         "bidirectional": true,
-        "dropout_rate": 0.25,
-        "recurrent_dropout": 0.05,
+        "dropout_rate": 0.3,
+        "recurrent_dropout": 0.2,
         "optimizer": "RMSprop",
-        "learning_rate": 0.0033600536455693965,
-        "weight_decay": 7.923942762635068e-07,
+        "learning_rate": 0.002764539263752067,
+        "weight_decay": 0.00012476901196023808,
         "batch_size": 16,
-        "scheduler": "none"
+        "scheduler": "StepLR"
       }
     },
     {
       "rank": 6,
-      "trial": 227,
-      "rmse_gs": 13.48123240955256,
+      "trial": 241,
+      "rmse_gs": 13.496562300575219,
       "params": {
         "lookback": 3,
         "n_layers": 1,
         "hidden_size": 64,
         "bidirectional": true,
-        "dropout_rate": 0.25,
-        "recurrent_dropout": 0.05,
+        "dropout_rate": 0.3,
+        "recurrent_dropout": 0.2,
         "optimizer": "RMSprop",
-        "learning_rate": 0.003134656287190208,
-        "weight_decay": 5.298186419602876e-07,
+        "learning_rate": 0.0032847394847627656,
+        "weight_decay": 0.00010371822822067012,
         "batch_size": 16,
-        "scheduler": "none"
+        "scheduler": "StepLR"
       }
     },
     {
       "rank": 7,
-      "trial": 219,
-      "rmse_gs": 13.640499836378256,
+      "trial": 298,
+      "rmse_gs": 13.49970099016454,
       "params": {
         "lookback": 3,
         "n_layers": 1,
         "hidden_size": 64,
         "bidirectional": true,
-        "dropout_rate": 0.25,
-        "recurrent_dropout": 0.05,
+        "dropout_rate": 0.3,
+        "recurrent_dropout": 0.2,
         "optimizer": "RMSprop",
-        "learning_rate": 0.003969567436198488,
-        "weight_decay": 5.19291954767942e-07,
+        "learning_rate": 0.0022219291383963587,
+        "weight_decay": 2.1507209634960004e-06,
         "batch_size": 16,
-        "scheduler": "none"
+        "scheduler": "StepLR"
       }
     },
     {
       "rank": 8,
-      "trial": 189,
-      "rmse_gs": 13.689720172994127,
+      "trial": 264,
+      "rmse_gs": 13.622074723810615,
       "params": {
         "lookback": 3,
         "n_layers": 1,
         "hidden_size": 64,
         "bidirectional": true,
-        "dropout_rate": 0.25,
-        "recurrent_dropout": 0.05,
+        "dropout_rate": 0.3,
+        "recurrent_dropout": 0.2,
         "optimizer": "RMSprop",
-        "learning_rate": 0.003203293303209365,
-        "weight_decay": 7.222095227064762e-07,
+        "learning_rate": 0.002803536402796422,
+        "weight_decay": 0.0001153303797516613,
         "batch_size": 16,
-        "scheduler": "none"
+        "scheduler": "StepLR"
       }
     },
     {
       "rank": 9,
-      "trial": 128,
-      "rmse_gs": 13.846518530767336,
+      "trial": 191,
+      "rmse_gs": 13.629462549789281,
       "params": {
-        "lookback": 5,
+        "lookback": 3,
         "n_layers": 1,
         "hidden_size": 64,
-        "bidirectional": false,
-        "dropout_rate": 0.25,
-        "recurrent_dropout": 0.05,
-        "optimizer": "AdamW",
-        "learning_rate": 0.009996623295554306,
-        "weight_decay": 0.0005308539041455813,
-        "batch_size": 8,
+        "bidirectional": true,
+        "dropout_rate": 0.3,
+        "recurrent_dropout": 0.2,
+        "optimizer": "RMSprop",
+        "learning_rate": 0.0030985198102142916,
+        "weight_decay": 0.0002442740344366325,
+        "batch_size": 16,
         "scheduler": "StepLR"
       }
     },
     {
       "rank": 10,
-      "trial": 262,
-      "rmse_gs": 13.90909026845223,
+      "trial": 213,
+      "rmse_gs": 13.679553575427079,
       "params": {
         "lookback": 3,
         "n_layers": 1,
         "hidden_size": 64,
         "bidirectional": true,
-        "dropout_rate": 0.25,
-        "recurrent_dropout": 0.05,
+        "dropout_rate": 0.3,
+        "recurrent_dropout": 0.2,
         "optimizer": "RMSprop",
-        "learning_rate": 0.003040730749603372,
-        "weight_decay": 7.592508269582378e-07,
+        "learning_rate": 0.0034060787570447666,
+        "weight_decay": 0.00016052410010729837,
         "batch_size": 16,
-        "scheduler": "ReduceLROnPlateau"
+        "scheduler": "StepLR"
       }
     }
   ]

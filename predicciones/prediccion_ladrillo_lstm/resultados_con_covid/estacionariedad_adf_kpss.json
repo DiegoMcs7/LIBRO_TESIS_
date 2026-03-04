@@ -8,9 +8,9 @@
   },
   "nivel": {
     "nombre": "Nivel del Rio",
-    "adf_p": 0.091687556615422,
+    "adf_p": 0.08694955025831796,
     "kpss_p": 0.01,
-    "adf_diff_p": 9.56100252771775e-10,
+    "adf_diff_p": 1.4130308221655853e-09,
     "conclusion": "NO ESTACIONARIA (ADF+KPSS coinciden)"
   }
 }

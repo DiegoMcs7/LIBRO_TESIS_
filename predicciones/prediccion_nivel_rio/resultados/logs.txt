@@ -1,0 +1,1641 @@
+13.1s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+13.1s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+13.1s 3 0.00s - to python to disable frozen modules.
+13.1s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+13.9s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+13.9s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+13.9s 7 0.00s - to python to disable frozen modules.
+13.9s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+21.8s 9 2026-02-21 02:38:15.389952: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+21.8s 10 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+21.8s 11 E0000 00:00:1771641495.800697      25 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+21.8s 12 E0000 00:00:1771641495.905763      25 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+21.8s 13 W0000 00:00:1771641496.803900      25 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+21.8s 14 W0000 00:00:1771641496.803949      25 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+21.8s 15 W0000 00:00:1771641496.803951      25 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+21.8s 16 W0000 00:00:1771641496.803954      25 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+22.0s 17 2026-02-21 02:38:15.389952: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+22.0s 18 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+22.0s 19 E0000 00:00:1771641495.800697      25 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+22.0s 20 E0000 00:00:1771641495.905763      25 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+22.0s 21 W0000 00:00:1771641496.803900      25 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+22.0s 22 W0000 00:00:1771641496.803949      25 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+22.0s 23 W0000 00:00:1771641496.803951      25 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+22.0s 24 W0000 00:00:1771641496.803954      25 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+22.0s 25 
+22.0s 26 2026-02-21 02:38:15.389952: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+22.0s 27 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+22.0s 28 E0000 00:00:1771641495.800697      25 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+22.0s 29 E0000 00:00:1771641495.905763      25 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+22.0s 30 W0000 00:00:1771641496.803900      25 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+22.0s 31 W0000 00:00:1771641496.803949      25 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+22.0s 32 W0000 00:00:1771641496.803951      25 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+22.0s 33 W0000 00:00:1771641496.803954      25 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+43.0s 34 I0000 00:00:1771641518.068568      25 gpu_device.cc:2019] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 13757 MB memory:  -> device: 0, name: Tesla T4, pci bus id: 0000:00:04.0, compute capability: 7.5
+43.0s 35 ======================================================================
+43.0s 36 CONFIGURACIÓN DE HARDWARE
+43.0s 37 ======================================================================
+43.0s 38 GPUs detectadas: 2
+43.0s 39 GPU 0: Tesla T4
+43.0s 40 GPU 1: Tesla T4
+43.0s 41 INFO:tensorflow:Using MirroredStrategy with devices ('/job:localhost/replica:0/task:0/device:GPU:0', '/job:localhost/replica:0/task:0/device:GPU:1')
+43.0s 42 I0000 00:00:1771641518.071307      25 gpu_device.cc:2019] Created device /job:localhost/replica:0/task:0/device:GPU:1 with 13757 MB memory:  -> device: 1, name: Tesla T4, pci bus id: 0000:00:05.0, compute capability: 7.5
+43.3s 43 I0000 00:00:1771641518.068568      25 gpu_device.cc:2019] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 13757 MB memory:  -> device: 0, name: Tesla T4, pci bus id: 0000:00:04.0, compute capability: 7.5
+43.3s 44 I0000 00:00:1771641518.071307      25 gpu_device.cc:2019] Created device /job:localhost/replica:0/task:0/device:GPU:1 with 13757 MB memory:  -> device: 1, name: Tesla T4, pci bus id: 0000:00:05.0, compute capability: 7.5
+43.3s 45 
+43.3s 46 I0000 00:00:1771641518.068568      25 gpu_device.cc:2019] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 13757 MB memory:  -> device: 0, name: Tesla T4, pci bus id: 0000:00:04.0, compute capability: 7.5
+43.3s 47 I0000 00:00:1771641518.071307      25 gpu_device.cc:2019] Created device /job:localhost/replica:0/task:0/device:GPU:1 with 13757 MB memory:  -> device: 1, name: Tesla T4, pci bus id: 0000:00:05.0, compute capability: 7.5
+43.3s 48 Estrategia: MirroredStrategy (2 GPUs en paralelo)
+43.3s 49 Multi-GPU activo: True
+43.3s 50 ======================================================================
+43.3s 51 
+43.3s 52 ======================================================================
+43.3s 53 ANÁLISIS EXPLORATORIO DE DATOS (EDA)
+43.3s 54 ======================================================================
+43.3s 55 
+43.3s 56 Archivo cargado: /kaggle/input/data-tesis/Nivel_Rio.csv
+43.3s 57 Columnas originales: ['Fecha', 'Nivel', 'Pagina']
+43.3s 58 Forma inicial      : (8001, 3)
+43.3s 59 Duplicados de fecha eliminados: 3824
+43.3s 60 
+43.3s 61 Forma final del dataset: (4177, 3)
+43.3s 62 Rango de fechas: 2014-01-01 → 2025-07-07
+43.3s 63 Días en el calendario : 4206
+43.3s 64 Días con registro     : 4177
+43.3s 65 Días faltantes aprox. : 29
+43.3s 66 
+43.3s 67 Valores nulos:
+43.3s 68 Fecha    0
+43.3s 69 Nivel    0
+43.3s 70 dtype: int64
+43.3s 71 
+43.3s 72 Estadísticas descriptivas del Nivel del Río (metros):
+43.3s 73 count    4177.000
+43.3s 74 mean        2.625
+43.3s 75 std         2.169
+43.3s 76 min        -1.610
+43.3s 77 25%         0.870
+43.3s 78 50%         2.300
+43.3s 79 75%         4.340
+43.3s 80 max         7.880
+43.3s 81 Name: Nivel, dtype: float64
+43.3s 82 
+43.3s 83 Outliers detectados (IQR × 3): 0
+43.3s 84 
+43.3s 85 --- DataFrame para el Modelo ---
+43.3s 86 Nivel
+43.3s 87 0   0.70
+43.3s 88 1   0.70
+43.3s 89 2   0.74
+43.3s 90 3   1.00
+43.3s 91 4   1.30
+43.3s 92 
+43.3s 93 Forma del array 'data': (4177, 1)
+44.1s 94 Gráfico guardado: grafico_00_serie_historica.png
+44.1s 95 
+44.1s 96 ======================================================================
+44.1s 97 IMPUTACIÓN DE VALORES FALTANTES
+44.1s 98 ======================================================================
+44.1s 99 
+44.1s 100 Días faltantes en el calendario: 29
+44.1s 101 Imputación por interpolación lineal aplicada.
+44.1s 102 Nulos restantes tras imputación: 0
+44.1s 103 Total de registros: 4206
+44.1s 104 
+44.1s 105 ======================================================================
+44.1s 106 GENERACIÓN DE FEATURES TEMPORALES
+44.1s 107 ======================================================================
+44.1s 108 
+44.1s 109 Features temporales añadidas : ['dia_anio_sin', 'dia_anio_cos', 'mes_sin', 'mes_cos', 'estacion_sin', 'estacion_cos', 'anio_norm']
+44.1s 110 Features de anomalía añadidas: ['nivel_anom30', 'nivel_anom90', 'nivel_tend7', 'nivel_tend30']
+44.1s 111 Total de features de entrada al LSTM por timestep: 12
+44.1s 112 (1 nivel + 7 temporales + 4 anomalía = 12)
+44.1s 113 
+44.1s 114 ======================================================================
+44.1s 115 DIVISIÓN TEMPORAL Y NORMALIZACIÓN
+44.1s 116 ======================================================================
+44.1s 117 
+44.1s 118 Total de registros: 4206
+44.1s 119 Tamaño set de entrenamiento: (2944, 13)
+44.1s 120 Tamaño set de validación:    (630, 13)
+44.1s 121 Tamaño set de prueba:        (632, 13)
+44.1s 122 
+44.1s 123 Rango train : 2014-01-01 → 2022-01-22
+44.1s 124 Rango val   : 2022-01-23   → 2023-10-14
+44.1s 125 Rango test  : 2023-10-15  → 2025-07-07
+44.7s 126 Gráfico guardado: grafico_01_particiones.png
+44.7s 127 
+44.7s 128 --- Verificación Visual de Escalado ---
+45.0s 129 Gráfico guardado: grafico_02_distribucion_features.png
+45.0s 130 Scalers guardados (scaler_nivel, scaler_temp, scaler_anom).
+45.0s 131 
+45.0s 132 ======================================================================
+45.0s 133 CREACIÓN DE SECUENCIAS SUPERVISADAS
+45.0s 134 ======================================================================
+45.0s 135 
+45.0s 136 --- Información de los Datasets ---
+45.0s 137 Set de entrenamiento - x_tr: (2883, 60, 12), y_tr: (2883, 2)
+45.0s 138 Set de validación - x_vl: (629, 60, 12), y_vl: (629, 2)
+45.0s 139 Set de prueba - x_ts: (631, 60, 12), y_ts: (631, 2)
+45.0s 140 ----------------------------------
+45.0s 141 
+45.0s 142 ======================================================================
+45.0s 143 DEFINICIÓN DEL MODELO LSTM (TensorFlow/Keras)
+45.0s 144 ======================================================================
+45.0s 145 
+45.0s 146 ======================================================================
+45.0s 147 CONFIGURACIÓN DE OPTUNA
+45.0s 148 ======================================================================
+45.0s 149 
+45.0s 150 Parámetros de Optuna:
+45.0s 151 Trials totales    : 300
+45.0s 152 Épocas máx/trial  : 100
+45.0s 153 Paciencia ES      : 12
+45.0s 154 Sampler           : TPE (Tree-structured Parzen Estimator)
+45.0s 155 Pruner            : MedianPruner
+45.0s 156 Métrica objetivo  : RMSE en metros (minimizar)
+45.0s 157 
+45.0s 158 Iniciando optimización de hiperparámetros con Optuna...
+45.0s 159 Se ejecutarán 300 trials. Este proceso puede tardar varios minutos.
+47.6s 160 INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+47.7s 161 INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+47.8s 162 INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+47.8s 163 INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+48.3s 164 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+49.7s 165 I0000 00:00:1771641524.800448      75 cuda_dnn.cc:529] Loaded cuDNN version 91002
+49.7s 166 I0000 00:00:1771641524.806883      76 cuda_dnn.cc:529] Loaded cuDNN version 91002
+49.9s 167 I0000 00:00:1771641524.800448      75 cuda_dnn.cc:529] Loaded cuDNN version 91002
+49.9s 168 I0000 00:00:1771641524.806883      76 cuda_dnn.cc:529] Loaded cuDNN version 91002
+49.9s 169 
+49.9s 170 I0000 00:00:1771641524.800448      75 cuda_dnn.cc:529] Loaded cuDNN version 91002
+49.9s 171 I0000 00:00:1771641524.806883      76 cuda_dnn.cc:529] Loaded cuDNN version 91002
+51.8s 172 INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+51.8s 173 INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+52.0s 174 INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+52.0s 175 INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+52.0s 176 INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+52.0s 177 INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+142.0s 178 INFO:tensorflow:Collective all_reduce tensors: 8 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+163.3s 179 INFO:tensorflow:Collective all_reduce tensors: 28 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+251.0s 180 INFO:tensorflow:Collective all_reduce tensors: 28 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+477.8s 181 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+540.8s 182 INFO:tensorflow:Collective all_reduce tensors: 28 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+595.4s 183 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+631.5s 184 INFO:tensorflow:Collective all_reduce tensors: 13 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+700.6s 185 INFO:tensorflow:Collective all_reduce tensors: 14 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+738.4s 186 INFO:tensorflow:Collective all_reduce tensors: 16 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+768.7s 187 INFO:tensorflow:Collective all_reduce tensors: 22 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+998.4s 188 INFO:tensorflow:Collective all_reduce tensors: 11 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+1063.6s 189 INFO:tensorflow:Collective all_reduce tensors: 28 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+1398.4s 190 INFO:tensorflow:Collective all_reduce tensors: 14 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+1435.8s 191 INFO:tensorflow:Collective all_reduce tensors: 10 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+1460.8s 192 INFO:tensorflow:Collective all_reduce tensors: 16 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+1512.0s 193 INFO:tensorflow:Collective all_reduce tensors: 16 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+1558.5s 194 INFO:tensorflow:Collective all_reduce tensors: 11 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+1609.8s 195 INFO:tensorflow:Collective all_reduce tensors: 16 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+1633.7s 196 INFO:tensorflow:Collective all_reduce tensors: 22 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+1668.0s 197 INFO:tensorflow:Collective all_reduce tensors: 10 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+1721.4s 198 INFO:tensorflow:Collective all_reduce tensors: 13 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+1918.3s 199 INFO:tensorflow:Collective all_reduce tensors: 16 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+1959.9s 200 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+2033.8s 201 INFO:tensorflow:Collective all_reduce tensors: 22 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+2193.4s 202 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+2239.8s 203 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+2289.1s 204 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+2339.2s 205 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+2400.0s 206 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+2469.1s 207 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+2532.4s 208 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+2580.5s 209 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+2639.0s 210 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+2696.1s 211 INFO:tensorflow:Collective all_reduce tensors: 10 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+2718.9s 212 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+2749.1s 213 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+2784.0s 214 INFO:tensorflow:Collective all_reduce tensors: 10 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+2806.9s 215 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+2856.2s 216 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+2937.8s 217 INFO:tensorflow:Collective all_reduce tensors: 10 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+3013.2s 218 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+3118.4s 219 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+3166.0s 220 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+3225.9s 221 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+3276.9s 222 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+3320.5s 223 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+3372.1s 224 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+3427.8s 225 INFO:tensorflow:Collective all_reduce tensors: 10 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+3456.0s 226 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+3542.4s 227 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+3603.7s 228 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+3721.3s 229 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+3813.4s 230 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+3949.1s 231 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+3983.9s 232 INFO:tensorflow:Collective all_reduce tensors: 8 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+4035.8s 233 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+4088.8s 234 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+4123.8s 235 INFO:tensorflow:Collective all_reduce tensors: 8 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+4152.1s 236 INFO:tensorflow:Collective all_reduce tensors: 10 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+4330.7s 237 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+4420.8s 238 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+4612.6s 239 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+4743.0s 240 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+4881.0s 241 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+5000.4s 242 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+5031.3s 243 INFO:tensorflow:Collective all_reduce tensors: 10 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+5047.0s 244 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+5080.8s 245 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+5098.4s 246 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+5282.7s 247 INFO:tensorflow:Collective all_reduce tensors: 8 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+5313.7s 248 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+5410.1s 249 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+5484.6s 250 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+5584.8s 251 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+5622.8s 252 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+5638.3s 253 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+5668.5s 254 INFO:tensorflow:Collective all_reduce tensors: 10 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+5694.1s 255 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+5883.5s 256 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+5945.6s 257 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+5982.3s 258 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+6073.7s 259 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+6138.2s 260 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+6234.4s 261 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+6289.8s 262 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+6357.0s 263 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+6417.2s 264 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+6442.2s 265 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+6482.5s 266 INFO:tensorflow:Collective all_reduce tensors: 10 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+6512.9s 267 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+6564.8s 268 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+6646.6s 269 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+6715.3s 270 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+6755.3s 271 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+6828.3s 272 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+6873.6s 273 INFO:tensorflow:Collective all_reduce tensors: 10 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+6920.2s 274 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+6937.1s 275 INFO:tensorflow:Collective all_reduce tensors: 13 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+6975.5s 276 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+7065.9s 277 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+7082.8s 278 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+7124.6s 279 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+7180.1s 280 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+7233.9s 281 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+7286.3s 282 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+7322.4s 283 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+7339.0s 284 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+7381.3s 285 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+7401.7s 286 INFO:tensorflow:Collective all_reduce tensors: 16 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+7431.7s 287 INFO:tensorflow:Collective all_reduce tensors: 8 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+7458.7s 288 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+7496.7s 289 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+7572.8s 290 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+7629.8s 291 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+7654.6s 292 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+7776.1s 293 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+7828.1s 294 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+7907.6s 295 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+7923.3s 296 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+7966.1s 297 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+8011.0s 298 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+8036.1s 299 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+8105.5s 300 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+8159.7s 301 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+8194.4s 302 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+8249.7s 303 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+8307.4s 304 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+8368.8s 305 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+8399.9s 306 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+8434.5s 307 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+8498.2s 308 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+8556.3s 309 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+8610.0s 310 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+8661.8s 311 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+8681.5s 312 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+8730.1s 313 INFO:tensorflow:Collective all_reduce tensors: 11 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+8755.3s 314 INFO:tensorflow:Collective all_reduce tensors: 8 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+8791.5s 315 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+8807.9s 316 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+8900.2s 317 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+8957.3s 318 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+9009.5s 319 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+9087.6s 320 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+9141.8s 321 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+9196.8s 322 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+9238.9s 323 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+9281.5s 324 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+9297.8s 325 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+9357.9s 326 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+9403.8s 327 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+9450.2s 328 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+9507.9s 329 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+9565.5s 330 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+9612.3s 331 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+9644.9s 332 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+9690.0s 333 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+9743.7s 334 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+9804.5s 335 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+9847.4s 336 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+9904.2s 337 INFO:tensorflow:Collective all_reduce tensors: 8 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+9965.7s 338 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+10009.6s 339 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+10054.5s 340 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+10105.3s 341 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+10139.7s 342 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+10177.2s 343 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+10193.8s 344 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+10229.8s 345 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+10267.8s 346 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+10284.5s 347 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+10373.9s 348 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+10419.6s 349 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+10467.8s 350 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+10519.4s 351 INFO:tensorflow:Collective all_reduce tensors: 14 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+10583.9s 352 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+10639.6s 353 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+10732.8s 354 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+10751.2s 355 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+10772.3s 356 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+10817.0s 357 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+10883.6s 358 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+10928.7s 359 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+10972.8s 360 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+11058.6s 361 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+11147.9s 362 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+11178.8s 363 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+11228.4s 364 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+11245.8s 365 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+11262.4s 366 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+11302.3s 367 INFO:tensorflow:Collective all_reduce tensors: 8 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+11387.3s 368 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+11446.2s 369 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+11483.7s 370 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+11546.4s 371 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+11593.1s 372 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+11675.3s 373 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+11716.8s 374 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+11776.2s 375 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+11795.4s 376 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+11872.0s 377 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+11890.2s 378 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+11956.9s 379 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+11999.8s 380 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+12054.5s 381 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+12109.6s 382 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+12160.7s 383 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+12218.8s 384 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+12267.1s 385 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+12301.8s 386 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+12387.2s 387 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+12444.6s 388 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+12488.9s 389 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+12545.7s 390 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+12612.9s 391 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+12702.8s 392 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+12751.4s 393 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+12822.6s 394 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+12839.5s 395 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+12906.8s 396 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+12946.3s 397 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+12963.5s 398 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+13010.8s 399 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+13049.0s 400 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+13099.4s 401 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+13159.8s 402 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+13198.8s 403 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+13244.7s 404 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+13318.6s 405 INFO:tensorflow:Collective all_reduce tensors: 8 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+13359.4s 406 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+13406.5s 407 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+13470.8s 408 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+13550.1s 409 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+13595.9s 410 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+13648.8s 411 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+13700.2s 412 INFO:tensorflow:Collective all_reduce tensors: 11 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+13726.7s 413 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+13745.6s 414 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+13842.0s 415 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+13906.6s 416 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+13942.7s 417 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+13960.5s 418 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+14000.2s 419 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+14043.9s 420 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+14105.1s 421 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+14156.5s 422 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+14195.6s 423 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+14263.2s 424 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+14327.7s 425 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+14348.2s 426 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+14412.5s 427 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+14502.2s 428 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+14521.7s 429 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+14542.2s 430 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+14591.8s 431 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+14638.7s 432 INFO:tensorflow:Collective all_reduce tensors: 8 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+14684.4s 433 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+14740.7s 434 INFO:tensorflow:Collective all_reduce tensors: 8 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+14818.3s 435 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+14886.2s 436 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+14929.5s 437 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+15006.5s 438 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+15023.8s 439 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+15064.8s 440 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+15120.0s 441 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+15156.3s 442 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+15214.1s 443 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+15230.7s 444 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+15274.0s 445 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+15328.9s 446 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+15361.9s 447 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+15378.7s 448 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+15395.4s 449 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+15433.4s 450 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+15465.8s 451 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+15523.2s 452 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+15544.0s 453 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+15560.4s 454 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+15620.9s 455 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+15638.4s 456 INFO:tensorflow:Collective all_reduce tensors: 8 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+15798.4s 457 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+15817.7s 458 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+15835.5s 459 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+15852.4s 460 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+15922.5s 461 INFO:tensorflow:Collective all_reduce tensors: 7 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+15966.7s 462 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+16029.9s 463 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+16081.0s 464 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+16131.5s 465 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+16195.3s 466 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+16215.8s 467 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+16276.3s 468 INFO:tensorflow:Collective all_reduce tensors: 8 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+16323.1s 469 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+16369.8s 470 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+16432.7s 471 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+16453.2s 472 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+16512.5s 473 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+16577.2s 474 INFO:tensorflow:Collective all_reduce tensors: 14 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+16614.2s 475 INFO:tensorflow:Collective all_reduce tensors: 8 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+16657.3s 476 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+16709.8s 477 
+16709.8s 478 ======================================================================
+16709.8s 479 RESULTADOS DE LA OPTIMIZACIÓN OPTUNA
+16709.8s 480 ======================================================================
+16709.8s 481 
+16709.8s 482 Tiempo de optimización : 277.7 minutos
+16709.8s 483 Trials completados     : 300
+16709.8s 484 Trials podados (pruned): 69
+16709.8s 485 Trials fallidos        : 0
+16709.8s 486 
+16709.8s 487 Mejores hiperparámetros encontrados:
+16709.8s 488 n_layers            : 1
+16709.8s 489 hidden_size         : 512
+16709.8s 490 bidirectional       : False
+16709.8s 491 dropout_rate        : 0.05
+16709.8s 492 fc_activation       : linear
+16709.8s 493 lookback            : 30
+16709.8s 494 strategy            : recursive
+16709.8s 495 optimizer           : Adam
+16709.8s 496 learning_rate       : 0.006078600333304834
+16709.8s 497 weight_decay        : 4.7044698257916004e-07
+16709.8s 498 batch_size          : 256
+16709.8s 499 scheduler           : CosineAnnealingLR
+16709.8s 500 
+16709.8s 501 Mejor RMSE de validación (Optuna): 0.0371 m
+16709.8s 502 
+16709.8s 503 --- Top 10 Trials de Optuna ---
+16709.8s 504 Rank  1 | Trial #260 | RMSE: 0.0371 m | hidden=512, layers=1, lookback=30, strategy=recursive, lr=6.08e-03
+16709.8s 505 Rank  2 | Trial #237 | RMSE: 0.0375 m | hidden=512, layers=1, lookback=30, strategy=recursive, lr=4.48e-03
+16709.8s 506 Rank  3 | Trial #246 | RMSE: 0.0379 m | hidden=512, layers=1, lookback=30, strategy=recursive, lr=4.18e-03
+16709.8s 507 Rank  4 | Trial #183 | RMSE: 0.0379 m | hidden=512, layers=1, lookback=30, strategy=recursive, lr=2.12e-03
+16709.8s 508 Rank  5 | Trial #231 | RMSE: 0.0384 m | hidden=512, layers=1, lookback=30, strategy=recursive, lr=2.08e-03
+16709.8s 509 Rank  6 | Trial #247 | RMSE: 0.0386 m | hidden=512, layers=1, lookback=30, strategy=recursive, lr=5.23e-03
+16709.8s 510 Rank  7 | Trial #295 | RMSE: 0.0386 m | hidden=512, layers=1, lookback=30, strategy=recursive, lr=5.87e-03
+16709.8s 511 Rank  8 | Trial #139 | RMSE: 0.0386 m | hidden=512, layers=1, lookback=30, strategy=recursive, lr=1.95e-03
+16709.8s 512 Rank  9 | Trial #268 | RMSE: 0.0388 m | hidden=512, layers=1, lookback=30, strategy=recursive, lr=6.33e-03
+16709.8s 513 Rank 10 | Trial #199 | RMSE: 0.0389 m | hidden=512, layers=1, lookback=30, strategy=recursive, lr=4.23e-03
+16709.8s 514 Estudio Optuna guardado: optuna_estudio.pkl
+16717.5s 515 Gráfico guardado: grafico_03_optuna_historia.png
+16717.5s 516 
+16717.5s 517 ======================================================================
+16717.5s 518 ENTRENAMIENTO DEL MODELO FINAL (TensorFlow/Keras)
+16717.5s 519 ======================================================================
+16717.5s 520 
+16717.5s 521 Creando datasets finales (lookback=30, horizon=1)...
+16717.5s 522 Train: (2914, 30, 12) | Val: (630, 30, 12) | Test: (632, 30, 12)
+16717.5s 523 
+16717.5s 524 Iniciando entrenamiento final...
+16717.5s 525 Épocas máximas : 300
+16717.5s 526 Paciencia ES   : 30
+16718.1s 527 Epoch 1/300
+16718.6s 528 INFO:tensorflow:Collective all_reduce tensors: 5 all_reduces, num_devices = 2, group_size = 2, implementation = CommunicationImplementation.NCCL, num_packs = 1
+16720.8s 529 12/12 - 3s - 229ms/step - loss: 1.0772 - val_loss: 0.4716
+16720.8s 530 Epoch 2/300
+16721.8s 531 12/12 - 1s - 79ms/step - loss: 0.2275 - val_loss: 0.2882
+16721.8s 532 Epoch 3/300
+16722.7s 533 12/12 - 1s - 77ms/step - loss: 0.1055 - val_loss: 0.1973
+16722.7s 534 Epoch 4/300
+16723.6s 535 12/12 - 1s - 75ms/step - loss: 0.0908 - val_loss: 0.0528
+16723.6s 536 Epoch 5/300
+16724.5s 537 12/12 - 1s - 73ms/step - loss: 0.0605 - val_loss: 0.0460
+16724.5s 538 Epoch 6/300
+16725.4s 539 12/12 - 1s - 72ms/step - loss: 0.0700 - val_loss: 0.0734
+16725.4s 540 Epoch 7/300
+16726.3s 541 12/12 - 1s - 73ms/step - loss: 0.0592 - val_loss: 0.0894
+16726.3s 542 Epoch 8/300
+16727.1s 543 12/12 - 1s - 72ms/step - loss: 0.0552 - val_loss: 0.0527
+16727.1s 544 Epoch 9/300
+16728.0s 545 12/12 - 1s - 73ms/step - loss: 0.0515 - val_loss: 0.0417
+16728.0s 546 Epoch 10/300
+16728.9s 547 12/12 - 1s - 73ms/step - loss: 0.0541 - val_loss: 0.0329
+16728.9s 548 Epoch 11/300
+16729.8s 549 12/12 - 1s - 73ms/step - loss: 0.0573 - val_loss: 0.0354
+16729.8s 550 Epoch 12/300
+16730.7s 551 12/12 - 1s - 73ms/step - loss: 0.0545 - val_loss: 0.0450
+16730.7s 552 Epoch 13/300
+16731.6s 553 12/12 - 1s - 75ms/step - loss: 0.0551 - val_loss: 0.0570
+16731.6s 554 Epoch 14/300
+16732.4s 555 12/12 - 1s - 73ms/step - loss: 0.0543 - val_loss: 0.0398
+16732.4s 556 Epoch 15/300
+16733.3s 557 12/12 - 1s - 71ms/step - loss: 0.0470 - val_loss: 0.0538
+16733.3s 558 Epoch 16/300
+16734.2s 559 12/12 - 1s - 72ms/step - loss: 0.0471 - val_loss: 0.0320
+16734.2s 560 Epoch 17/300
+16735.0s 561 12/12 - 1s - 72ms/step - loss: 0.0457 - val_loss: 0.0438
+16735.0s 562 Epoch 18/300
+16735.9s 563 12/12 - 1s - 73ms/step - loss: 0.0463 - val_loss: 0.0301
+16735.9s 564 Epoch 19/300
+16736.8s 565 12/12 - 1s - 70ms/step - loss: 0.0473 - val_loss: 0.0411
+16736.8s 566 Epoch 20/300
+16737.7s 567 12/12 - 1s - 72ms/step - loss: 0.0532 - val_loss: 0.0523
+16737.7s 568 Epoch 21/300
+16738.5s 569 12/12 - 1s - 71ms/step - loss: 0.0472 - val_loss: 0.0600
+16738.5s 570 Epoch 22/300
+16739.4s 571 12/12 - 1s - 70ms/step - loss: 0.0467 - val_loss: 0.0394
+16739.4s 572 Epoch 23/300
+16740.2s 573 12/12 - 1s - 70ms/step - loss: 0.0422 - val_loss: 0.0313
+16740.2s 574 Epoch 24/300
+16741.1s 575 12/12 - 1s - 71ms/step - loss: 0.0452 - val_loss: 0.0397
+16741.1s 576 Epoch 25/300
+16741.9s 577 12/12 - 1s - 72ms/step - loss: 0.0413 - val_loss: 0.0361
+16741.9s 578 Epoch 26/300
+16742.8s 579 12/12 - 1s - 70ms/step - loss: 0.0493 - val_loss: 0.0371
+16742.8s 580 Epoch 27/300
+16743.6s 581 12/12 - 1s - 69ms/step - loss: 0.0419 - val_loss: 0.0374
+16743.6s 582 Epoch 28/300
+16744.5s 583 12/12 - 1s - 70ms/step - loss: 0.0398 - val_loss: 0.0349
+16744.5s 584 Epoch 29/300
+16745.3s 585 12/12 - 1s - 72ms/step - loss: 0.0399 - val_loss: 0.0295
+16745.4s 586 Epoch 30/300
+16746.2s 587 12/12 - 1s - 70ms/step - loss: 0.0411 - val_loss: 0.0636
+16746.2s 588 Epoch 31/300
+16747.1s 589 12/12 - 1s - 70ms/step - loss: 0.0492 - val_loss: 0.0300
+16747.1s 590 Epoch 32/300
+16747.9s 591 12/12 - 1s - 73ms/step - loss: 0.0418 - val_loss: 0.0265
+16747.9s 592 Epoch 33/300
+16748.8s 593 12/12 - 1s - 70ms/step - loss: 0.0397 - val_loss: 0.0306
+16748.8s 594 Epoch 34/300
+16749.6s 595 12/12 - 1s - 70ms/step - loss: 0.0422 - val_loss: 0.0377
+16749.6s 596 Epoch 35/300
+16750.5s 597 12/12 - 1s - 71ms/step - loss: 0.0459 - val_loss: 0.0248
+16750.5s 598 Epoch 36/300
+16751.3s 599 12/12 - 1s - 71ms/step - loss: 0.0497 - val_loss: 0.0268
+16751.3s 600 Epoch 37/300
+16752.2s 601 12/12 - 1s - 72ms/step - loss: 0.0439 - val_loss: 0.0342
+16752.2s 602 Epoch 38/300
+16753.1s 603 12/12 - 1s - 71ms/step - loss: 0.0379 - val_loss: 0.0298
+16753.1s 604 Epoch 39/300
+16753.9s 605 12/12 - 1s - 70ms/step - loss: 0.0396 - val_loss: 0.0350
+16753.9s 606 Epoch 40/300
+16754.8s 607 12/12 - 1s - 72ms/step - loss: 0.0443 - val_loss: 0.0235
+16754.8s 608 Epoch 41/300
+16755.6s 609 12/12 - 1s - 70ms/step - loss: 0.0391 - val_loss: 0.0460
+16755.6s 610 Epoch 42/300
+16756.5s 611 12/12 - 1s - 71ms/step - loss: 0.0399 - val_loss: 0.0281
+16756.5s 612 Epoch 43/300
+16757.3s 613 12/12 - 1s - 71ms/step - loss: 0.0398 - val_loss: 0.0356
+16757.4s 614 Epoch 44/300
+16758.2s 615 12/12 - 1s - 70ms/step - loss: 0.0398 - val_loss: 0.0289
+16758.2s 616 Epoch 45/300
+16759.1s 617 12/12 - 1s - 71ms/step - loss: 0.0395 - val_loss: 0.0327
+16759.1s 618 Epoch 46/300
+16759.9s 619 12/12 - 1s - 72ms/step - loss: 0.0373 - val_loss: 0.0248
+16759.9s 620 Epoch 47/300
+16760.8s 621 12/12 - 1s - 75ms/step - loss: 0.0406 - val_loss: 0.0227
+16760.8s 622 Epoch 48/300
+16761.7s 623 12/12 - 1s - 73ms/step - loss: 0.0528 - val_loss: 0.0360
+16761.7s 624 Epoch 49/300
+16762.6s 625 12/12 - 1s - 70ms/step - loss: 0.0505 - val_loss: 0.0618
+16762.6s 626 Epoch 50/300
+16763.4s 627 12/12 - 1s - 70ms/step - loss: 0.0515 - val_loss: 0.0320
+16763.4s 628 Epoch 51/300
+16764.3s 629 12/12 - 1s - 70ms/step - loss: 0.0367 - val_loss: 0.0295
+16764.3s 630 Epoch 52/300
+16765.1s 631 12/12 - 1s - 70ms/step - loss: 0.0459 - val_loss: 0.0486
+16765.1s 632 Epoch 53/300
+16766.0s 633 12/12 - 1s - 70ms/step - loss: 0.0514 - val_loss: 0.0363
+16766.0s 634 Epoch 54/300
+16766.8s 635 12/12 - 1s - 71ms/step - loss: 0.0410 - val_loss: 0.0274
+16766.8s 636 Epoch 55/300
+16767.7s 637 12/12 - 1s - 71ms/step - loss: 0.0359 - val_loss: 0.0242
+16767.7s 638 Epoch 56/300
+16768.5s 639 12/12 - 1s - 72ms/step - loss: 0.0360 - val_loss: 0.0276
+16768.6s 640 Epoch 57/300
+16769.4s 641 12/12 - 1s - 71ms/step - loss: 0.0361 - val_loss: 0.0308
+16769.4s 642 Epoch 58/300
+16770.3s 643 12/12 - 1s - 70ms/step - loss: 0.0411 - val_loss: 0.0422
+16770.3s 644 Epoch 59/300
+16771.1s 645 12/12 - 1s - 72ms/step - loss: 0.0404 - val_loss: 0.0371
+16771.1s 646 Epoch 60/300
+16772.0s 647 12/12 - 1s - 71ms/step - loss: 0.0473 - val_loss: 0.0528
+16772.0s 648 Epoch 61/300
+16772.8s 649 12/12 - 1s - 70ms/step - loss: 0.0491 - val_loss: 0.0246
+16772.8s 650 Epoch 62/300
+16773.7s 651 12/12 - 1s - 70ms/step - loss: 0.0399 - val_loss: 0.0401
+16773.7s 652 Epoch 63/300
+16774.5s 653 12/12 - 1s - 70ms/step - loss: 0.0464 - val_loss: 0.0471
+16774.5s 654 Epoch 64/300
+16775.4s 655 12/12 - 1s - 70ms/step - loss: 0.0457 - val_loss: 0.0245
+16775.4s 656 Epoch 65/300
+16776.2s 657 12/12 - 1s - 69ms/step - loss: 0.0422 - val_loss: 0.0408
+16776.2s 658 Epoch 66/300
+16777.1s 659 12/12 - 1s - 70ms/step - loss: 0.0437 - val_loss: 0.0290
+16777.1s 660 Epoch 67/300
+16777.9s 661 12/12 - 1s - 71ms/step - loss: 0.0359 - val_loss: 0.0262
+16777.9s 662 Epoch 68/300
+16778.8s 663 12/12 - 1s - 69ms/step - loss: 0.0366 - val_loss: 0.0234
+16778.8s 664 Epoch 69/300
+16779.6s 665 12/12 - 1s - 72ms/step - loss: 0.0355 - val_loss: 0.0201
+16779.6s 666 Epoch 70/300
+16780.5s 667 12/12 - 1s - 71ms/step - loss: 0.0349 - val_loss: 0.0306
+16780.5s 668 Epoch 71/300
+16781.4s 669 12/12 - 1s - 75ms/step - loss: 0.0375 - val_loss: 0.0240
+16781.4s 670 Epoch 72/300
+16782.3s 671 12/12 - 1s - 71ms/step - loss: 0.0393 - val_loss: 0.0466
+16782.3s 672 Epoch 73/300
+16783.1s 673 12/12 - 1s - 70ms/step - loss: 0.0388 - val_loss: 0.0326
+16783.1s 674 Epoch 74/300
+16784.0s 675 12/12 - 1s - 71ms/step - loss: 0.0438 - val_loss: 0.0285
+16784.0s 676 Epoch 75/300
+16784.8s 677 12/12 - 1s - 72ms/step - loss: 0.0330 - val_loss: 0.0216
+16784.9s 678 Epoch 76/300
+16785.7s 679 12/12 - 1s - 71ms/step - loss: 0.0336 - val_loss: 0.0227
+16785.7s 680 Epoch 77/300
+16786.6s 681 12/12 - 1s - 72ms/step - loss: 0.0326 - val_loss: 0.0240
+16786.6s 682 Epoch 78/300
+16787.4s 683 12/12 - 1s - 72ms/step - loss: 0.0354 - val_loss: 0.0322
+16787.5s 684 Epoch 79/300
+16788.3s 685 12/12 - 1s - 71ms/step - loss: 0.0359 - val_loss: 0.0206
+16788.3s 686 Epoch 80/300
+16789.2s 687 12/12 - 1s - 70ms/step - loss: 0.0360 - val_loss: 0.0289
+16789.2s 688 Epoch 81/300
+16790.0s 689 12/12 - 1s - 71ms/step - loss: 0.0335 - val_loss: 0.0306
+16790.0s 690 Epoch 82/300
+16790.9s 691 12/12 - 1s - 70ms/step - loss: 0.0327 - val_loss: 0.0285
+16790.9s 692 Epoch 83/300
+16791.7s 693 12/12 - 1s - 74ms/step - loss: 0.0363 - val_loss: 0.0268
+16791.8s 694 Epoch 84/300
+16792.6s 695 12/12 - 1s - 72ms/step - loss: 0.0442 - val_loss: 0.0355
+16792.6s 696 Epoch 85/300
+16793.5s 697 12/12 - 1s - 71ms/step - loss: 0.0407 - val_loss: 0.0342
+16793.5s 698 Epoch 86/300
+16794.3s 699 12/12 - 1s - 71ms/step - loss: 0.0455 - val_loss: 0.0296
+16794.3s 700 Epoch 87/300
+16795.2s 701 12/12 - 1s - 70ms/step - loss: 0.0351 - val_loss: 0.0214
+16795.2s 702 Epoch 88/300
+16796.1s 703 12/12 - 1s - 71ms/step - loss: 0.0338 - val_loss: 0.0219
+16796.1s 704 Epoch 89/300
+16796.9s 705 12/12 - 1s - 72ms/step - loss: 0.0341 - val_loss: 0.0240
+16796.9s 706 Epoch 90/300
+16797.8s 707 12/12 - 1s - 72ms/step - loss: 0.0349 - val_loss: 0.0249
+16797.8s 708 Epoch 91/300
+16798.6s 709 12/12 - 1s - 71ms/step - loss: 0.0353 - val_loss: 0.0292
+16798.6s 710 Epoch 92/300
+16799.5s 711 12/12 - 1s - 70ms/step - loss: 0.0387 - val_loss: 0.0373
+16799.5s 712 Epoch 93/300
+16800.4s 713 12/12 - 1s - 71ms/step - loss: 0.0425 - val_loss: 0.0273
+16800.4s 714 Epoch 94/300
+16801.2s 715 12/12 - 1s - 74ms/step - loss: 0.0342 - val_loss: 0.0239
+16801.2s 716 Epoch 95/300
+16802.1s 717 12/12 - 1s - 73ms/step - loss: 0.0375 - val_loss: 0.0361
+16802.1s 718 Epoch 96/300
+16803.0s 719 12/12 - 1s - 72ms/step - loss: 0.0435 - val_loss: 0.0416
+16803.0s 720 Epoch 97/300
+16803.9s 721 12/12 - 1s - 71ms/step - loss: 0.0344 - val_loss: 0.0225
+16803.9s 722 Epoch 98/300
+16804.7s 723 12/12 - 1s - 71ms/step - loss: 0.0323 - val_loss: 0.0243
+16804.7s 724 Epoch 99/300
+16805.6s 725 12/12 - 1s - 70ms/step - loss: 0.0386 - val_loss: 0.0284
+16805.6s 726 
+16805.6s 727 --- Resumen del Modelo Final ---
+16805.6s 728 Framework              : TensorFlow 2.19.0 / Keras
+16805.6s 729 Arquitectura           : LSTM (por qué no Transformer → ver docstring del módulo)
+16805.6s 730 Capas LSTM           : 1
+16805.6s 731 Unidades por capa    : 512
+16805.6s 732 Bidireccional        : False
+16805.6s 733 Dropout              : 0.05
+16805.6s 734 Activación FC        : linear
+16805.6s 735 Lookback (ventana)   : 30 días
+16805.6s 736 Horizon (pasos/call) : 1
+16805.6s 737 Estrategia pred.     : recursive
+16805.6s 738 Parámetros entrenables : 1,075,713
+16805.6s 739 Épocas entrenadas      : 99
+16805.6s 740 Optimizador            : Adam
+16805.6s 741 Learning rate          : 6.08e-03
+16805.6s 742 Scheduler              : CosineAnnealingLR
+16806.1s 743 Gráfico guardado: grafico_04_curva_aprendizaje.png
+16806.1s 744 Modelo final guardado: modelo_lstm_final.keras
+16806.1s 745 
+16806.1s 746 ======================================================================
+16806.1s 747 EVALUACIÓN DEL MODELO
+16806.1s 748 ======================================================================
+16809.4s 749 Gráfico guardado: grafico_05_rmse_por_paso.png
+16809.4s 750 
+16809.4s 751 --- Desempeño del Modelo ---
+16809.4s 752 RMSE por cada paso de predicción en el conjunto de prueba:
+16809.4s 753 RMSE Paso t+1: 0.046
+16809.4s 754 
+16809.4s 755 Comparativo desempeños generales:
+16809.4s 756 RMSE train:         0.024
+16809.4s 757 RMSE val:           0.019
+16809.4s 758 RMSE test promedio: 0.022
+16809.4s 759 ----------------------------
+16809.4s 760 
+16811.0s 761 RMSE final en train (metros)      : 0.0479 m
+16811.0s 762 RMSE final en validación (metros) : 0.0373 m
+16811.0s 763 RMSE final en test (metros)       : 0.0457 m
+16812.1s 764 Gráfico guardado: grafico_06_distribucion_errores.png
+16812.1s 765 
+16812.1s 766 ======================================================================
+16812.1s 767 PREDICCIÓN A 730 DÍAS
+16812.1s 768 ======================================================================
+16812.1s 769 
+16812.1s 770 Calculando climatología histórica (mediana por día del año)...
+16812.1s 771 Climatología calculada: 366 días del año
+16812.1s 772 Nivel mínimo climatológico : 1.51 m
+16812.1s 773 Nivel máximo climatológico : 4.19 m
+16812.1s 774 Nivel medio climatológico  : 2.63 m
+16812.1s 775 Tau de blending            : 90 días
+16812.1s 776 α(t= 30d) = 0.72  → 72% LSTM
+16812.1s 777 α(t= 90d) = 0.37  → 37% LSTM
+16812.1s 778 α(t=180d) = 0.14  → 14% LSTM
+16812.1s 779 α(t=365d) = 0.02  → 2% LSTM
+16812.1s 780 
+16812.1s 781 Anomalia inicial del nivel del río:
+16812.1s 782 Nivel actual (último día real) : 3.14 m
+16812.1s 783 Climatología (día 188)         : 3.95 m
+16812.1s 784 Anomalía                       : -0.81 m (SEQUÍA vs. promedio histórico)
+16812.1s 785 Tau anomalía                   : 365 días
+16812.1s 786 β(t= 90d): anomalía desplaza clim en -0.64 m
+16812.1s 787 β(t=365d): anomalía desplaza clim en -0.30 m
+16812.1s 788 β(t=730d): anomalía desplaza clim en -0.11 m
+16812.1s 789 Iniciando predicción iterativa...
+16812.5s 790 Paso 1/730: Fecha=2025-07-08, Nivel=3.08 m  [LSTM=3.08 | clim_adj=3.14 | α=1.00 | β=1.00]
+16812.8s 791 Paso 2/730: Fecha=2025-07-09, Nivel=3.01
+16813.2s 792 Paso 3/730: Fecha=2025-07-10, Nivel=2.94
+16813.5s 793 Paso 4/730: Fecha=2025-07-11, Nivel=2.88
+16813.8s 794 Paso 5/730: Fecha=2025-07-12, Nivel=2.82
+16814.1s 795 Paso 6/730: Fecha=2025-07-13, Nivel=2.76
+16814.4s 796 Paso 7/730: Fecha=2025-07-14, Nivel=2.71
+16814.8s 797 Paso 8/730: Fecha=2025-07-15, Nivel=2.68
+16815.1s 798 Paso 9/730: Fecha=2025-07-16, Nivel=2.66
+16815.4s 799 Paso 10/730: Fecha=2025-07-17, Nivel=2.65
+16815.7s 800 Paso 11/730: Fecha=2025-07-18, Nivel=2.65
+16816.0s 801 Paso 12/730: Fecha=2025-07-19, Nivel=2.65
+16816.4s 802 Paso 13/730: Fecha=2025-07-20, Nivel=2.66
+16816.7s 803 Paso 14/730: Fecha=2025-07-21, Nivel=2.66
+16817.0s 804 Paso 15/730: Fecha=2025-07-22, Nivel=2.66
+16817.3s 805 Paso 16/730: Fecha=2025-07-23, Nivel=2.66
+16817.6s 806 Paso 17/730: Fecha=2025-07-24, Nivel=2.66
+16817.9s 807 Paso 18/730: Fecha=2025-07-25, Nivel=2.64
+16818.3s 808 Paso 19/730: Fecha=2025-07-26, Nivel=2.63
+16818.6s 809 Paso 20/730: Fecha=2025-07-27, Nivel=2.60
+16818.9s 810 Paso 21/730: Fecha=2025-07-28, Nivel=2.58
+16819.2s 811 Paso 22/730: Fecha=2025-07-29, Nivel=2.55
+16819.5s 812 Paso 23/730: Fecha=2025-07-30, Nivel=2.53
+16819.8s 813 Paso 24/730: Fecha=2025-07-31, Nivel=2.50
+16820.1s 814 Paso 25/730: Fecha=2025-08-01, Nivel=2.47
+16820.4s 815 Paso 26/730: Fecha=2025-08-02, Nivel=2.45
+16820.7s 816 Paso 27/730: Fecha=2025-08-03, Nivel=2.44
+16821.0s 817 Paso 28/730: Fecha=2025-08-04, Nivel=2.42
+16821.3s 818 Paso 29/730: Fecha=2025-08-05, Nivel=2.40
+16821.7s 819 Paso 30/730: Fecha=2025-08-06, Nivel=2.39
+16822.0s 820 Paso 31/730: Fecha=2025-08-07, Nivel=2.38 m  [LSTM=2.34 | clim_adj=2.47 | α=0.72 | β=0.92]
+16822.3s 821 Paso 32/730: Fecha=2025-08-08, Nivel=2.36
+16822.6s 822 Paso 33/730: Fecha=2025-08-09, Nivel=2.36
+16822.9s 823 Paso 34/730: Fecha=2025-08-10, Nivel=2.36
+16823.3s 824 Paso 35/730: Fecha=2025-08-11, Nivel=2.36
+16823.6s 825 Paso 36/730: Fecha=2025-08-12, Nivel=2.36
+16823.9s 826 Paso 37/730: Fecha=2025-08-13, Nivel=2.35
+16824.2s 827 Paso 38/730: Fecha=2025-08-14, Nivel=2.35
+16824.6s 828 Paso 39/730: Fecha=2025-08-15, Nivel=2.35
+16824.9s 829 Paso 40/730: Fecha=2025-08-16, Nivel=2.34
+16825.2s 830 Paso 41/730: Fecha=2025-08-17, Nivel=2.33
+16825.6s 831 Paso 42/730: Fecha=2025-08-18, Nivel=2.32
+16825.9s 832 Paso 43/730: Fecha=2025-08-19, Nivel=2.30
+16826.2s 833 Paso 44/730: Fecha=2025-08-20, Nivel=2.28
+16826.5s 834 Paso 45/730: Fecha=2025-08-21, Nivel=2.26
+16826.9s 835 Paso 46/730: Fecha=2025-08-22, Nivel=2.24
+16827.2s 836 Paso 47/730: Fecha=2025-08-23, Nivel=2.22
+16827.6s 837 Paso 48/730: Fecha=2025-08-24, Nivel=2.19
+16827.9s 838 Paso 49/730: Fecha=2025-08-25, Nivel=2.16
+16828.2s 839 Paso 50/730: Fecha=2025-08-26, Nivel=2.13
+16828.5s 840 Paso 51/730: Fecha=2025-08-27, Nivel=2.10
+16828.9s 841 Paso 52/730: Fecha=2025-08-28, Nivel=2.06
+16829.2s 842 Paso 53/730: Fecha=2025-08-29, Nivel=2.03
+16829.5s 843 Paso 54/730: Fecha=2025-08-30, Nivel=2.00
+16829.9s 844 Paso 55/730: Fecha=2025-08-31, Nivel=1.97
+16830.2s 845 Paso 56/730: Fecha=2025-09-01, Nivel=1.95
+16830.6s 846 Paso 57/730: Fecha=2025-09-02, Nivel=1.93
+16830.9s 847 Paso 58/730: Fecha=2025-09-03, Nivel=1.92
+16831.2s 848 Paso 59/730: Fecha=2025-09-04, Nivel=1.89
+16831.6s 849 Paso 60/730: Fecha=2025-09-05, Nivel=1.87
+16831.9s 850 Paso 61/730: Fecha=2025-09-06, Nivel=1.85 m  [LSTM=1.84 | clim_adj=1.87 | α=0.51 | β=0.85]
+16832.2s 851 Paso 62/730: Fecha=2025-09-07, Nivel=1.84
+16832.6s 852 Paso 63/730: Fecha=2025-09-08, Nivel=1.82
+16832.9s 853 Paso 64/730: Fecha=2025-09-09, Nivel=1.79
+16833.2s 854 Paso 65/730: Fecha=2025-09-10, Nivel=1.77
+16833.6s 855 Paso 66/730: Fecha=2025-09-11, Nivel=1.74
+16833.9s 856 Paso 67/730: Fecha=2025-09-12, Nivel=1.71
+16834.2s 857 Paso 68/730: Fecha=2025-09-13, Nivel=1.68
+16834.6s 858 Paso 69/730: Fecha=2025-09-14, Nivel=1.66
+16834.9s 859 Paso 70/730: Fecha=2025-09-15, Nivel=1.63
+16835.2s 860 Paso 71/730: Fecha=2025-09-16, Nivel=1.60
+16835.5s 861 Paso 72/730: Fecha=2025-09-17, Nivel=1.57
+16835.9s 862 Paso 73/730: Fecha=2025-09-18, Nivel=1.54
+16836.2s 863 Paso 74/730: Fecha=2025-09-19, Nivel=1.52
+16836.5s 864 Paso 75/730: Fecha=2025-09-20, Nivel=1.49
+16836.9s 865 Paso 76/730: Fecha=2025-09-21, Nivel=1.46
+16837.2s 866 Paso 77/730: Fecha=2025-09-22, Nivel=1.42
+16837.5s 867 Paso 78/730: Fecha=2025-09-23, Nivel=1.39
+16837.8s 868 Paso 79/730: Fecha=2025-09-24, Nivel=1.36
+16838.2s 869 Paso 80/730: Fecha=2025-09-25, Nivel=1.34
+16838.5s 870 Paso 81/730: Fecha=2025-09-26, Nivel=1.30
+16838.8s 871 Paso 82/730: Fecha=2025-09-27, Nivel=1.27
+16839.1s 872 Paso 83/730: Fecha=2025-09-28, Nivel=1.24
+16839.5s 873 Paso 84/730: Fecha=2025-09-29, Nivel=1.21
+16839.8s 874 Paso 85/730: Fecha=2025-09-30, Nivel=1.18
+16840.1s 875 Paso 86/730: Fecha=2025-10-01, Nivel=1.15
+16840.5s 876 Paso 87/730: Fecha=2025-10-02, Nivel=1.13
+16840.8s 877 Paso 88/730: Fecha=2025-10-03, Nivel=1.11
+16841.1s 878 Paso 89/730: Fecha=2025-10-04, Nivel=1.08
+16841.4s 879 Paso 90/730: Fecha=2025-10-05, Nivel=1.05
+16841.8s 880 Paso 91/730: Fecha=2025-10-06, Nivel=1.03 m  [LSTM=1.02 | clim_adj=1.03 | α=0.37 | β=0.78]
+16842.1s 881 Paso 92/730: Fecha=2025-10-07, Nivel=1.00
+16842.5s 882 Paso 93/730: Fecha=2025-10-08, Nivel=0.98
+16842.8s 883 Paso 94/730: Fecha=2025-10-09, Nivel=0.96
+16843.1s 884 Paso 95/730: Fecha=2025-10-10, Nivel=0.94
+16843.4s 885 Paso 96/730: Fecha=2025-10-11, Nivel=0.92
+16843.8s 886 Paso 97/730: Fecha=2025-10-12, Nivel=0.90
+16844.1s 887 Paso 98/730: Fecha=2025-10-13, Nivel=0.89
+16844.4s 888 Paso 99/730: Fecha=2025-10-14, Nivel=0.88
+16844.7s 889 Paso 100/730: Fecha=2025-10-15, Nivel=0.88
+16845.0s 890 Paso 101/730: Fecha=2025-10-16, Nivel=0.88
+16845.4s 891 Paso 102/730: Fecha=2025-10-17, Nivel=0.90
+16845.7s 892 Paso 103/730: Fecha=2025-10-18, Nivel=0.92
+16846.0s 893 Paso 104/730: Fecha=2025-10-19, Nivel=0.95
+16846.3s 894 Paso 105/730: Fecha=2025-10-20, Nivel=0.98
+16846.7s 895 Paso 106/730: Fecha=2025-10-21, Nivel=1.00
+16847.0s 896 Paso 107/730: Fecha=2025-10-22, Nivel=1.04
+16847.3s 897 Paso 108/730: Fecha=2025-10-23, Nivel=1.07
+16847.7s 898 Paso 109/730: Fecha=2025-10-24, Nivel=1.11
+16848.0s 899 Paso 110/730: Fecha=2025-10-25, Nivel=1.14
+16848.3s 900 Paso 111/730: Fecha=2025-10-26, Nivel=1.17
+16848.6s 901 Paso 112/730: Fecha=2025-10-27, Nivel=1.20
+16849.0s 902 Paso 113/730: Fecha=2025-10-28, Nivel=1.24
+16849.3s 903 Paso 114/730: Fecha=2025-10-29, Nivel=1.27
+16849.6s 904 Paso 115/730: Fecha=2025-10-30, Nivel=1.30
+16850.0s 905 Paso 116/730: Fecha=2025-10-31, Nivel=1.32
+16850.3s 906 Paso 117/730: Fecha=2025-11-01, Nivel=1.34
+16850.6s 907 Paso 118/730: Fecha=2025-11-02, Nivel=1.36
+16851.0s 908 Paso 119/730: Fecha=2025-11-03, Nivel=1.39
+16851.3s 909 Paso 120/730: Fecha=2025-11-04, Nivel=1.40
+16851.7s 910 Paso 121/730: Fecha=2025-11-05, Nivel=1.41 m  [LSTM=1.39 | clim_adj=1.42 | α=0.26 | β=0.72]
+16852.0s 911 Paso 122/730: Fecha=2025-11-06, Nivel=1.43
+16852.3s 912 Paso 123/730: Fecha=2025-11-07, Nivel=1.46
+16852.7s 913 Paso 124/730: Fecha=2025-11-08, Nivel=1.49
+16853.0s 914 Paso 125/730: Fecha=2025-11-09, Nivel=1.51
+16853.3s 915 Paso 126/730: Fecha=2025-11-10, Nivel=1.55
+16853.7s 916 Paso 127/730: Fecha=2025-11-11, Nivel=1.57
+16854.0s 917 Paso 128/730: Fecha=2025-11-12, Nivel=1.60
+16854.3s 918 Paso 129/730: Fecha=2025-11-13, Nivel=1.62
+16854.7s 919 Paso 130/730: Fecha=2025-11-14, Nivel=1.63
+16855.0s 920 Paso 131/730: Fecha=2025-11-15, Nivel=1.63
+16855.3s 921 Paso 132/730: Fecha=2025-11-16, Nivel=1.63
+16855.7s 922 Paso 133/730: Fecha=2025-11-17, Nivel=1.62
+16856.0s 923 Paso 134/730: Fecha=2025-11-18, Nivel=1.60
+16856.3s 924 Paso 135/730: Fecha=2025-11-19, Nivel=1.59
+16856.7s 925 Paso 136/730: Fecha=2025-11-20, Nivel=1.56
+16857.0s 926 Paso 137/730: Fecha=2025-11-21, Nivel=1.53
+16857.3s 927 Paso 138/730: Fecha=2025-11-22, Nivel=1.48
+16857.7s 928 Paso 139/730: Fecha=2025-11-23, Nivel=1.44
+16858.0s 929 Paso 140/730: Fecha=2025-11-24, Nivel=1.39
+16858.3s 930 Paso 141/730: Fecha=2025-11-25, Nivel=1.34
+16858.7s 931 Paso 142/730: Fecha=2025-11-26, Nivel=1.28
+16859.0s 932 Paso 143/730: Fecha=2025-11-27, Nivel=1.23
+16859.3s 933 Paso 144/730: Fecha=2025-11-28, Nivel=1.18
+16859.7s 934 Paso 145/730: Fecha=2025-11-29, Nivel=1.14
+16860.0s 935 Paso 146/730: Fecha=2025-11-30, Nivel=1.10
+16860.3s 936 Paso 147/730: Fecha=2025-12-01, Nivel=1.07
+16860.7s 937 Paso 148/730: Fecha=2025-12-02, Nivel=1.04
+16861.0s 938 Paso 149/730: Fecha=2025-12-03, Nivel=1.03
+16861.3s 939 Paso 150/730: Fecha=2025-12-04, Nivel=1.04
+16861.7s 940 Paso 151/730: Fecha=2025-12-05, Nivel=1.06 m  [LSTM=1.05 | clim_adj=1.06 | α=0.19 | β=0.66]
+16862.0s 941 Paso 152/730: Fecha=2025-12-06, Nivel=1.08
+16862.3s 942 Paso 153/730: Fecha=2025-12-07, Nivel=1.10
+16862.6s 943 Paso 154/730: Fecha=2025-12-08, Nivel=1.12
+16863.0s 944 Paso 155/730: Fecha=2025-12-09, Nivel=1.16
+16863.3s 945 Paso 156/730: Fecha=2025-12-10, Nivel=1.19
+16863.6s 946 Paso 157/730: Fecha=2025-12-11, Nivel=1.23
+16863.9s 947 Paso 158/730: Fecha=2025-12-12, Nivel=1.27
+16864.3s 948 Paso 159/730: Fecha=2025-12-13, Nivel=1.32
+16864.6s 949 Paso 160/730: Fecha=2025-12-14, Nivel=1.38
+16864.9s 950 Paso 161/730: Fecha=2025-12-15, Nivel=1.46
+16865.2s 951 Paso 162/730: Fecha=2025-12-16, Nivel=1.56
+16865.6s 952 Paso 163/730: Fecha=2025-12-17, Nivel=1.66
+16865.9s 953 Paso 164/730: Fecha=2025-12-18, Nivel=1.76
+16866.2s 954 Paso 165/730: Fecha=2025-12-19, Nivel=1.85
+16866.5s 955 Paso 166/730: Fecha=2025-12-20, Nivel=1.95
+16866.9s 956 Paso 167/730: Fecha=2025-12-21, Nivel=2.04
+16867.2s 957 Paso 168/730: Fecha=2025-12-22, Nivel=2.13
+16867.5s 958 Paso 169/730: Fecha=2025-12-23, Nivel=2.22
+16867.9s 959 Paso 170/730: Fecha=2025-12-24, Nivel=2.31
+16868.2s 960 Paso 171/730: Fecha=2025-12-25, Nivel=2.27
+16868.5s 961 Paso 172/730: Fecha=2025-12-26, Nivel=2.27
+16868.9s 962 Paso 173/730: Fecha=2025-12-27, Nivel=2.26
+16869.2s 963 Paso 174/730: Fecha=2025-12-28, Nivel=2.24
+16869.5s 964 Paso 175/730: Fecha=2025-12-29, Nivel=2.21
+16869.8s 965 Paso 176/730: Fecha=2025-12-30, Nivel=2.15
+16870.2s 966 Paso 177/730: Fecha=2025-12-31, Nivel=2.08
+16870.5s 967 Paso 178/730: Fecha=2026-01-01, Nivel=1.95
+16870.8s 968 Paso 179/730: Fecha=2026-01-02, Nivel=1.85
+16871.1s 969 Paso 180/730: Fecha=2026-01-03, Nivel=1.78
+16871.5s 970 Paso 181/730: Fecha=2026-01-04, Nivel=1.70 m  [LSTM=1.70 | clim_adj=1.70 | α=0.14 | β=0.61]
+16871.8s 971 Paso 182/730: Fecha=2026-01-05, Nivel=1.61
+16872.1s 972 Paso 183/730: Fecha=2026-01-06, Nivel=1.52
+16872.4s 973 Paso 184/730: Fecha=2026-01-07, Nivel=1.43
+16872.8s 974 Paso 185/730: Fecha=2026-01-08, Nivel=1.49
+16873.1s 975 Paso 186/730: Fecha=2026-01-09, Nivel=1.50
+16873.4s 976 Paso 187/730: Fecha=2026-01-10, Nivel=1.50
+16873.7s 977 Paso 188/730: Fecha=2026-01-11, Nivel=1.52
+16874.0s 978 Paso 189/730: Fecha=2026-01-12, Nivel=1.53
+16874.4s 979 Paso 190/730: Fecha=2026-01-13, Nivel=1.54
+16874.7s 980 Paso 191/730: Fecha=2026-01-14, Nivel=1.54
+16875.0s 981 Paso 192/730: Fecha=2026-01-15, Nivel=1.54
+16875.3s 982 Paso 193/730: Fecha=2026-01-16, Nivel=1.52
+16875.7s 983 Paso 194/730: Fecha=2026-01-17, Nivel=1.51
+16876.0s 984 Paso 195/730: Fecha=2026-01-18, Nivel=1.49
+16876.3s 985 Paso 196/730: Fecha=2026-01-19, Nivel=1.48
+16876.6s 986 Paso 197/730: Fecha=2026-01-20, Nivel=1.48
+16876.9s 987 Paso 198/730: Fecha=2026-01-21, Nivel=1.47
+16877.3s 988 Paso 199/730: Fecha=2026-01-22, Nivel=1.46
+16877.6s 989 Paso 200/730: Fecha=2026-01-23, Nivel=1.46
+16877.9s 990 Paso 201/730: Fecha=2026-01-24, Nivel=1.45
+16878.3s 991 Paso 202/730: Fecha=2026-01-25, Nivel=1.45
+16878.6s 992 Paso 203/730: Fecha=2026-01-26, Nivel=1.45
+16878.9s 993 Paso 204/730: Fecha=2026-01-27, Nivel=1.45
+16879.2s 994 Paso 205/730: Fecha=2026-01-28, Nivel=1.45
+16879.6s 995 Paso 206/730: Fecha=2026-01-29, Nivel=1.46
+16879.9s 996 Paso 207/730: Fecha=2026-01-30, Nivel=1.47
+16880.2s 997 Paso 208/730: Fecha=2026-01-31, Nivel=1.48
+16880.6s 998 Paso 209/730: Fecha=2026-02-01, Nivel=1.49
+16880.9s 999 Paso 210/730: Fecha=2026-02-02, Nivel=1.49
+16881.2s 1000 Paso 211/730: Fecha=2026-02-03, Nivel=1.49 m  [LSTM=1.48 | clim_adj=1.50 | α=0.10 | β=0.56]
+16881.6s 1001 Paso 212/730: Fecha=2026-02-04, Nivel=1.50
+16881.9s 1002 Paso 213/730: Fecha=2026-02-05, Nivel=1.51
+16882.2s 1003 Paso 214/730: Fecha=2026-02-06, Nivel=1.53
+16882.6s 1004 Paso 215/730: Fecha=2026-02-07, Nivel=1.54
+16882.9s 1005 Paso 216/730: Fecha=2026-02-08, Nivel=1.55
+16883.2s 1006 Paso 217/730: Fecha=2026-02-09, Nivel=1.55
+16883.5s 1007 Paso 218/730: Fecha=2026-02-10, Nivel=1.56
+16883.9s 1008 Paso 219/730: Fecha=2026-02-11, Nivel=1.56
+16884.2s 1009 Paso 220/730: Fecha=2026-02-12, Nivel=1.56
+16884.5s 1010 Paso 221/730: Fecha=2026-02-13, Nivel=1.56
+16884.9s 1011 Paso 222/730: Fecha=2026-02-14, Nivel=1.56
+16885.2s 1012 Paso 223/730: Fecha=2026-02-15, Nivel=1.56
+16885.5s 1013 Paso 224/730: Fecha=2026-02-16, Nivel=1.57
+16885.8s 1014 Paso 225/730: Fecha=2026-02-17, Nivel=1.59
+16886.1s 1015 Paso 226/730: Fecha=2026-02-18, Nivel=1.60
+16886.5s 1016 Paso 227/730: Fecha=2026-02-19, Nivel=1.61
+16886.8s 1017 Paso 228/730: Fecha=2026-02-20, Nivel=1.62
+16887.1s 1018 Paso 229/730: Fecha=2026-02-21, Nivel=1.62
+16887.4s 1019 Paso 230/730: Fecha=2026-02-22, Nivel=1.62
+16887.8s 1020 Paso 231/730: Fecha=2026-02-23, Nivel=1.62
+16888.1s 1021 Paso 232/730: Fecha=2026-02-24, Nivel=1.62
+16888.4s 1022 Paso 233/730: Fecha=2026-02-25, Nivel=1.62
+16888.7s 1023 Paso 234/730: Fecha=2026-02-26, Nivel=1.62
+16889.1s 1024 Paso 235/730: Fecha=2026-02-27, Nivel=1.62
+16889.4s 1025 Paso 236/730: Fecha=2026-02-28, Nivel=1.61
+16889.7s 1026 Paso 237/730: Fecha=2026-03-01, Nivel=1.60
+16890.1s 1027 Paso 238/730: Fecha=2026-03-02, Nivel=1.59
+16890.4s 1028 Paso 239/730: Fecha=2026-03-03, Nivel=1.57
+16890.7s 1029 Paso 240/730: Fecha=2026-03-04, Nivel=1.55
+16891.0s 1030 Paso 241/730: Fecha=2026-03-05, Nivel=1.52 m  [LSTM=1.51 | clim_adj=1.53 | α=0.07 | β=0.52]
+16891.4s 1031 Paso 242/730: Fecha=2026-03-06, Nivel=1.50
+16891.7s 1032 Paso 243/730: Fecha=2026-03-07, Nivel=1.47
+16892.1s 1033 Paso 244/730: Fecha=2026-03-08, Nivel=1.45
+16892.4s 1034 Paso 245/730: Fecha=2026-03-09, Nivel=1.43
+16892.7s 1035 Paso 246/730: Fecha=2026-03-10, Nivel=1.41
+16893.0s 1036 Paso 247/730: Fecha=2026-03-11, Nivel=1.38
+16893.4s 1037 Paso 248/730: Fecha=2026-03-12, Nivel=1.36
+16893.7s 1038 Paso 249/730: Fecha=2026-03-13, Nivel=1.35
+16894.0s 1039 Paso 250/730: Fecha=2026-03-14, Nivel=1.35
+16894.3s 1040 Paso 251/730: Fecha=2026-03-15, Nivel=1.35
+16894.6s 1041 Paso 252/730: Fecha=2026-03-16, Nivel=1.35
+16895.0s 1042 Paso 253/730: Fecha=2026-03-17, Nivel=1.36
+16895.3s 1043 Paso 254/730: Fecha=2026-03-18, Nivel=1.36
+16895.6s 1044 Paso 255/730: Fecha=2026-03-19, Nivel=1.38
+16895.9s 1045 Paso 256/730: Fecha=2026-03-20, Nivel=1.39
+16896.2s 1046 Paso 257/730: Fecha=2026-03-21, Nivel=1.40
+16896.5s 1047 Paso 258/730: Fecha=2026-03-22, Nivel=1.42
+16896.9s 1048 Paso 259/730: Fecha=2026-03-23, Nivel=1.44
+16897.2s 1049 Paso 260/730: Fecha=2026-03-24, Nivel=1.46
+16897.5s 1050 Paso 261/730: Fecha=2026-03-25, Nivel=1.50
+16897.9s 1051 Paso 262/730: Fecha=2026-03-26, Nivel=1.53
+16898.2s 1052 Paso 263/730: Fecha=2026-03-27, Nivel=1.56
+16898.5s 1053 Paso 264/730: Fecha=2026-03-28, Nivel=1.58
+16898.8s 1054 Paso 265/730: Fecha=2026-03-29, Nivel=1.60
+16899.2s 1055 Paso 266/730: Fecha=2026-03-30, Nivel=1.63
+16899.5s 1056 Paso 267/730: Fecha=2026-03-31, Nivel=1.66
+16899.8s 1057 Paso 268/730: Fecha=2026-04-01, Nivel=1.69
+16900.1s 1058 Paso 269/730: Fecha=2026-04-02, Nivel=1.71
+16900.5s 1059 Paso 270/730: Fecha=2026-04-03, Nivel=1.74
+16900.8s 1060 Paso 271/730: Fecha=2026-04-04, Nivel=1.77 m  [LSTM=1.74 | clim_adj=1.77 | α=0.05 | β=0.48]
+16901.1s 1061 Paso 272/730: Fecha=2026-04-05, Nivel=1.80
+16901.4s 1062 Paso 273/730: Fecha=2026-04-06, Nivel=1.83
+16901.8s 1063 Paso 274/730: Fecha=2026-04-07, Nivel=1.85
+16902.1s 1064 Paso 275/730: Fecha=2026-04-08, Nivel=1.87
+16902.5s 1065 Paso 276/730: Fecha=2026-04-09, Nivel=1.90
+16902.8s 1066 Paso 277/730: Fecha=2026-04-10, Nivel=1.92
+16903.1s 1067 Paso 278/730: Fecha=2026-04-11, Nivel=1.95
+16903.5s 1068 Paso 279/730: Fecha=2026-04-12, Nivel=1.98
+16903.8s 1069 Paso 280/730: Fecha=2026-04-13, Nivel=2.02
+16904.1s 1070 Paso 281/730: Fecha=2026-04-14, Nivel=2.07
+16904.4s 1071 Paso 282/730: Fecha=2026-04-15, Nivel=2.12
+16904.7s 1072 Paso 283/730: Fecha=2026-04-16, Nivel=2.18
+16905.1s 1073 Paso 284/730: Fecha=2026-04-17, Nivel=2.23
+16905.4s 1074 Paso 285/730: Fecha=2026-04-18, Nivel=2.29
+16905.7s 1075 Paso 286/730: Fecha=2026-04-19, Nivel=2.36
+16906.0s 1076 Paso 287/730: Fecha=2026-04-20, Nivel=2.43
+16906.4s 1077 Paso 288/730: Fecha=2026-04-21, Nivel=2.50
+16906.7s 1078 Paso 289/730: Fecha=2026-04-22, Nivel=2.57
+16907.0s 1079 Paso 290/730: Fecha=2026-04-23, Nivel=2.64
+16907.3s 1080 Paso 291/730: Fecha=2026-04-24, Nivel=2.71
+16907.6s 1081 Paso 292/730: Fecha=2026-04-25, Nivel=2.78
+16908.0s 1082 Paso 293/730: Fecha=2026-04-26, Nivel=2.85
+16908.3s 1083 Paso 294/730: Fecha=2026-04-27, Nivel=2.92
+16908.6s 1084 Paso 295/730: Fecha=2026-04-28, Nivel=2.98
+16908.9s 1085 Paso 296/730: Fecha=2026-04-29, Nivel=3.03
+16909.2s 1086 Paso 297/730: Fecha=2026-04-30, Nivel=3.08
+16909.6s 1087 Paso 298/730: Fecha=2026-05-01, Nivel=3.13
+16909.9s 1088 Paso 299/730: Fecha=2026-05-02, Nivel=3.17
+16910.2s 1089 Paso 300/730: Fecha=2026-05-03, Nivel=3.21
+16910.5s 1090 Paso 301/730: Fecha=2026-05-04, Nivel=3.26 m  [LSTM=3.22 | clim_adj=3.26 | α=0.04 | β=0.44]
+16910.9s 1091 Paso 302/730: Fecha=2026-05-05, Nivel=3.30
+16911.2s 1092 Paso 303/730: Fecha=2026-05-06, Nivel=3.33
+16911.5s 1093 Paso 304/730: Fecha=2026-05-07, Nivel=3.37
+16911.9s 1094 Paso 305/730: Fecha=2026-05-08, Nivel=3.41
+16912.2s 1095 Paso 306/730: Fecha=2026-05-09, Nivel=3.45
+16912.5s 1096 Paso 307/730: Fecha=2026-05-10, Nivel=3.49
+16912.8s 1097 Paso 308/730: Fecha=2026-05-11, Nivel=3.52
+16913.2s 1098 Paso 309/730: Fecha=2026-05-12, Nivel=3.55
+16913.5s 1099 Paso 310/730: Fecha=2026-05-13, Nivel=3.58
+16913.8s 1100 Paso 311/730: Fecha=2026-05-14, Nivel=3.60
+16914.1s 1101 Paso 312/730: Fecha=2026-05-15, Nivel=3.63
+16914.5s 1102 Paso 313/730: Fecha=2026-05-16, Nivel=3.66
+16914.8s 1103 Paso 314/730: Fecha=2026-05-17, Nivel=3.68
+16915.1s 1104 Paso 315/730: Fecha=2026-05-18, Nivel=3.70
+16915.4s 1105 Paso 316/730: Fecha=2026-05-19, Nivel=3.72
+16915.7s 1106 Paso 317/730: Fecha=2026-05-20, Nivel=3.73
+16916.0s 1107 Paso 318/730: Fecha=2026-05-21, Nivel=3.75
+16916.4s 1108 Paso 319/730: Fecha=2026-05-22, Nivel=3.76
+16916.7s 1109 Paso 320/730: Fecha=2026-05-23, Nivel=3.77
+16917.0s 1110 Paso 321/730: Fecha=2026-05-24, Nivel=3.79
+16917.3s 1111 Paso 322/730: Fecha=2026-05-25, Nivel=3.80
+16917.6s 1112 Paso 323/730: Fecha=2026-05-26, Nivel=3.81
+16918.0s 1113 Paso 324/730: Fecha=2026-05-27, Nivel=3.82
+16918.3s 1114 Paso 325/730: Fecha=2026-05-28, Nivel=3.83
+16918.6s 1115 Paso 326/730: Fecha=2026-05-29, Nivel=3.85
+16918.9s 1116 Paso 327/730: Fecha=2026-05-30, Nivel=3.85
+16919.3s 1117 Paso 328/730: Fecha=2026-05-31, Nivel=3.86
+16919.6s 1118 Paso 329/730: Fecha=2026-06-01, Nivel=3.86
+16919.9s 1119 Paso 330/730: Fecha=2026-06-02, Nivel=3.86
+16920.2s 1120 Paso 331/730: Fecha=2026-06-03, Nivel=3.86 m  [LSTM=3.84 | clim_adj=3.86 | α=0.03 | β=0.40]
+16920.5s 1121 Paso 332/730: Fecha=2026-06-04, Nivel=3.87
+16920.9s 1122 Paso 333/730: Fecha=2026-06-05, Nivel=3.86
+16921.2s 1123 Paso 334/730: Fecha=2026-06-06, Nivel=3.86
+16921.5s 1124 Paso 335/730: Fecha=2026-06-07, Nivel=3.85
+16921.8s 1125 Paso 336/730: Fecha=2026-06-08, Nivel=3.85
+16922.2s 1126 Paso 337/730: Fecha=2026-06-09, Nivel=3.84
+16922.5s 1127 Paso 338/730: Fecha=2026-06-10, Nivel=3.83
+16922.8s 1128 Paso 339/730: Fecha=2026-06-11, Nivel=3.82
+16923.1s 1129 Paso 340/730: Fecha=2026-06-12, Nivel=3.82
+16923.4s 1130 Paso 341/730: Fecha=2026-06-13, Nivel=3.80
+16923.7s 1131 Paso 342/730: Fecha=2026-06-14, Nivel=3.79
+16924.1s 1132 Paso 343/730: Fecha=2026-06-15, Nivel=3.78
+16924.4s 1133 Paso 344/730: Fecha=2026-06-16, Nivel=3.77
+16924.7s 1134 Paso 345/730: Fecha=2026-06-17, Nivel=3.76
+16925.0s 1135 Paso 346/730: Fecha=2026-06-18, Nivel=3.75
+16925.4s 1136 Paso 347/730: Fecha=2026-06-19, Nivel=3.74
+16925.7s 1137 Paso 348/730: Fecha=2026-06-20, Nivel=3.72
+16926.0s 1138 Paso 349/730: Fecha=2026-06-21, Nivel=3.71
+16926.3s 1139 Paso 350/730: Fecha=2026-06-22, Nivel=3.70
+16926.6s 1140 Paso 351/730: Fecha=2026-06-23, Nivel=3.69
+16926.9s 1141 Paso 352/730: Fecha=2026-06-24, Nivel=3.68
+16930.1s 1142 Paso 353/730: Fecha=2026-06-25, Nivel=3.66
+16931.7s 1143 Paso 354/730: Fecha=2026-06-26, Nivel=3.65
+16932.0s 1144 Paso 355/730: Fecha=2026-06-27, Nivel=3.63
+16932.3s 1145 Paso 356/730: Fecha=2026-06-28, Nivel=3.61
+16932.7s 1146 Paso 357/730: Fecha=2026-06-29, Nivel=3.59
+16933.0s 1147 Paso 358/730: Fecha=2026-06-30, Nivel=3.57
+16933.4s 1148 Paso 359/730: Fecha=2026-07-01, Nivel=3.59
+16933.7s 1149 Paso 360/730: Fecha=2026-07-02, Nivel=3.60
+16934.0s 1150 Paso 361/730: Fecha=2026-07-03, Nivel=3.62 m  [LSTM=3.58 | clim_adj=3.62 | α=0.02 | β=0.37]
+16934.4s 1151 Paso 362/730: Fecha=2026-07-04, Nivel=3.63
+16934.7s 1152 Paso 363/730: Fecha=2026-07-05, Nivel=3.64
+16935.0s 1153 Paso 364/730: Fecha=2026-07-06, Nivel=3.65
+16935.4s 1154 Paso 365/730: Fecha=2026-07-07, Nivel=3.65
+16935.7s 1155 Paso 366/730: Fecha=2026-07-08, Nivel=3.65
+16936.0s 1156 Paso 367/730: Fecha=2026-07-09, Nivel=3.65
+16936.3s 1157 Paso 368/730: Fecha=2026-07-10, Nivel=3.65
+16936.7s 1158 Paso 369/730: Fecha=2026-07-11, Nivel=3.65
+16937.0s 1159 Paso 370/730: Fecha=2026-07-12, Nivel=3.64
+16937.3s 1160 Paso 371/730: Fecha=2026-07-13, Nivel=3.64
+16937.6s 1161 Paso 372/730: Fecha=2026-07-14, Nivel=3.63
+16938.0s 1162 Paso 373/730: Fecha=2026-07-15, Nivel=3.63
+16938.3s 1163 Paso 374/730: Fecha=2026-07-16, Nivel=3.59
+16938.6s 1164 Paso 375/730: Fecha=2026-07-17, Nivel=3.55
+16939.0s 1165 Paso 376/730: Fecha=2026-07-18, Nivel=3.50
+16939.3s 1166 Paso 377/730: Fecha=2026-07-19, Nivel=3.46
+16939.6s 1167 Paso 378/730: Fecha=2026-07-20, Nivel=3.42
+16939.9s 1168 Paso 379/730: Fecha=2026-07-21, Nivel=3.38
+16940.3s 1169 Paso 380/730: Fecha=2026-07-22, Nivel=3.34
+16940.6s 1170 Paso 381/730: Fecha=2026-07-23, Nivel=3.30
+16940.9s 1171 Paso 382/730: Fecha=2026-07-24, Nivel=3.27
+16941.3s 1172 Paso 383/730: Fecha=2026-07-25, Nivel=3.24
+16941.6s 1173 Paso 384/730: Fecha=2026-07-26, Nivel=3.21
+16942.0s 1174 Paso 385/730: Fecha=2026-07-27, Nivel=3.19
+16942.3s 1175 Paso 386/730: Fecha=2026-07-28, Nivel=3.16
+16942.6s 1176 Paso 387/730: Fecha=2026-07-29, Nivel=3.13
+16943.0s 1177 Paso 388/730: Fecha=2026-07-30, Nivel=3.10
+16943.3s 1178 Paso 389/730: Fecha=2026-07-31, Nivel=3.07
+16943.6s 1179 Paso 390/730: Fecha=2026-08-01, Nivel=3.05
+16944.0s 1180 Paso 391/730: Fecha=2026-08-02, Nivel=3.03 m  [LSTM=3.00 | clim_adj=3.03 | α=0.01 | β=0.34]
+16944.3s 1181 Paso 392/730: Fecha=2026-08-03, Nivel=3.01
+16944.6s 1182 Paso 393/730: Fecha=2026-08-04, Nivel=2.99
+16944.9s 1183 Paso 394/730: Fecha=2026-08-05, Nivel=2.97
+16945.3s 1184 Paso 395/730: Fecha=2026-08-06, Nivel=2.95
+16945.6s 1185 Paso 396/730: Fecha=2026-08-07, Nivel=2.94
+16946.0s 1186 Paso 397/730: Fecha=2026-08-08, Nivel=2.93
+16946.3s 1187 Paso 398/730: Fecha=2026-08-09, Nivel=2.92
+16946.6s 1188 Paso 399/730: Fecha=2026-08-10, Nivel=2.91
+16946.9s 1189 Paso 400/730: Fecha=2026-08-11, Nivel=2.90
+16947.2s 1190 Paso 401/730: Fecha=2026-08-12, Nivel=2.90
+16947.6s 1191 Paso 402/730: Fecha=2026-08-13, Nivel=2.89
+16947.9s 1192 Paso 403/730: Fecha=2026-08-14, Nivel=2.88
+16948.2s 1193 Paso 404/730: Fecha=2026-08-15, Nivel=2.87
+16948.6s 1194 Paso 405/730: Fecha=2026-08-16, Nivel=2.86
+16948.9s 1195 Paso 406/730: Fecha=2026-08-17, Nivel=2.84
+16949.2s 1196 Paso 407/730: Fecha=2026-08-18, Nivel=2.83
+16949.5s 1197 Paso 408/730: Fecha=2026-08-19, Nivel=2.81
+16949.9s 1198 Paso 409/730: Fecha=2026-08-20, Nivel=2.79
+16950.2s 1199 Paso 410/730: Fecha=2026-08-21, Nivel=2.77
+16950.5s 1200 Paso 411/730: Fecha=2026-08-22, Nivel=2.74
+16950.8s 1201 Paso 412/730: Fecha=2026-08-23, Nivel=2.71
+16951.2s 1202 Paso 413/730: Fecha=2026-08-24, Nivel=2.69
+16951.5s 1203 Paso 414/730: Fecha=2026-08-25, Nivel=2.65
+16951.9s 1204 Paso 415/730: Fecha=2026-08-26, Nivel=2.62
+16952.2s 1205 Paso 416/730: Fecha=2026-08-27, Nivel=2.59
+16952.5s 1206 Paso 417/730: Fecha=2026-08-28, Nivel=2.56
+16952.8s 1207 Paso 418/730: Fecha=2026-08-29, Nivel=2.52
+16953.2s 1208 Paso 419/730: Fecha=2026-08-30, Nivel=2.49
+16953.5s 1209 Paso 420/730: Fecha=2026-08-31, Nivel=2.46
+16953.8s 1210 Paso 421/730: Fecha=2026-09-01, Nivel=2.44 m  [LSTM=2.39 | clim_adj=2.44 | α=0.01 | β=0.32]
+16954.2s 1211 Paso 422/730: Fecha=2026-09-02, Nivel=2.41
+16954.5s 1212 Paso 423/730: Fecha=2026-09-03, Nivel=2.38
+16954.8s 1213 Paso 424/730: Fecha=2026-09-04, Nivel=2.36
+16955.2s 1214 Paso 425/730: Fecha=2026-09-05, Nivel=2.33
+16955.5s 1215 Paso 426/730: Fecha=2026-09-06, Nivel=2.31
+16955.8s 1216 Paso 427/730: Fecha=2026-09-07, Nivel=2.29
+16956.2s 1217 Paso 428/730: Fecha=2026-09-08, Nivel=2.26
+16956.5s 1218 Paso 429/730: Fecha=2026-09-09, Nivel=2.23
+16956.9s 1219 Paso 430/730: Fecha=2026-09-10, Nivel=2.20
+16957.2s 1220 Paso 431/730: Fecha=2026-09-11, Nivel=2.18
+16957.5s 1221 Paso 432/730: Fecha=2026-09-12, Nivel=2.15
+16957.9s 1222 Paso 433/730: Fecha=2026-09-13, Nivel=2.12
+16958.2s 1223 Paso 434/730: Fecha=2026-09-14, Nivel=2.09
+16958.5s 1224 Paso 435/730: Fecha=2026-09-15, Nivel=2.06
+16958.9s 1225 Paso 436/730: Fecha=2026-09-16, Nivel=2.03
+16959.2s 1226 Paso 437/730: Fecha=2026-09-17, Nivel=2.01
+16959.5s 1227 Paso 438/730: Fecha=2026-09-18, Nivel=1.98
+16959.8s 1228 Paso 439/730: Fecha=2026-09-19, Nivel=1.94
+16960.1s 1229 Paso 440/730: Fecha=2026-09-20, Nivel=1.91
+16960.5s 1230 Paso 441/730: Fecha=2026-09-21, Nivel=1.88
+16960.8s 1231 Paso 442/730: Fecha=2026-09-22, Nivel=1.85
+16961.1s 1232 Paso 443/730: Fecha=2026-09-23, Nivel=1.82
+16961.4s 1233 Paso 444/730: Fecha=2026-09-24, Nivel=1.79
+16961.8s 1234 Paso 445/730: Fecha=2026-09-25, Nivel=1.76
+16962.1s 1235 Paso 446/730: Fecha=2026-09-26, Nivel=1.73
+16962.5s 1236 Paso 447/730: Fecha=2026-09-27, Nivel=1.70
+16962.8s 1237 Paso 448/730: Fecha=2026-09-28, Nivel=1.67
+16963.1s 1238 Paso 449/730: Fecha=2026-09-29, Nivel=1.63
+16963.4s 1239 Paso 450/730: Fecha=2026-09-30, Nivel=1.60
+16963.8s 1240 Paso 451/730: Fecha=2026-10-01, Nivel=1.58 m  [LSTM=1.55 | clim_adj=1.58 | α=0.01 | β=0.29]
+16964.1s 1241 Paso 452/730: Fecha=2026-10-02, Nivel=1.55
+16964.4s 1242 Paso 453/730: Fecha=2026-10-03, Nivel=1.52
+16964.8s 1243 Paso 454/730: Fecha=2026-10-04, Nivel=1.49
+16965.1s 1244 Paso 455/730: Fecha=2026-10-05, Nivel=1.46
+16965.5s 1245 Paso 456/730: Fecha=2026-10-06, Nivel=1.44
+16965.8s 1246 Paso 457/730: Fecha=2026-10-07, Nivel=1.41
+16966.2s 1247 Paso 458/730: Fecha=2026-10-08, Nivel=1.38
+16966.5s 1248 Paso 459/730: Fecha=2026-10-09, Nivel=1.36
+16966.9s 1249 Paso 460/730: Fecha=2026-10-10, Nivel=1.34
+16967.2s 1250 Paso 461/730: Fecha=2026-10-11, Nivel=1.32
+16967.5s 1251 Paso 462/730: Fecha=2026-10-12, Nivel=1.30
+16967.9s 1252 Paso 463/730: Fecha=2026-10-13, Nivel=1.29
+16968.2s 1253 Paso 464/730: Fecha=2026-10-14, Nivel=1.28
+16968.6s 1254 Paso 465/730: Fecha=2026-10-15, Nivel=1.28
+16968.9s 1255 Paso 466/730: Fecha=2026-10-16, Nivel=1.29
+16969.2s 1256 Paso 467/730: Fecha=2026-10-17, Nivel=1.30
+16969.6s 1257 Paso 468/730: Fecha=2026-10-18, Nivel=1.32
+16969.9s 1258 Paso 469/730: Fecha=2026-10-19, Nivel=1.35
+16970.3s 1259 Paso 470/730: Fecha=2026-10-20, Nivel=1.37
+16970.6s 1260 Paso 471/730: Fecha=2026-10-21, Nivel=1.40
+16970.9s 1261 Paso 472/730: Fecha=2026-10-22, Nivel=1.44
+16971.3s 1262 Paso 473/730: Fecha=2026-10-23, Nivel=1.47
+16971.6s 1263 Paso 474/730: Fecha=2026-10-24, Nivel=1.50
+16972.0s 1264 Paso 475/730: Fecha=2026-10-25, Nivel=1.53
+16972.3s 1265 Paso 476/730: Fecha=2026-10-26, Nivel=1.56
+16972.6s 1266 Paso 477/730: Fecha=2026-10-27, Nivel=1.60
+16973.0s 1267 Paso 478/730: Fecha=2026-10-28, Nivel=1.63
+16973.3s 1268 Paso 479/730: Fecha=2026-10-29, Nivel=1.66
+16973.7s 1269 Paso 480/730: Fecha=2026-10-30, Nivel=1.69
+16974.0s 1270 Paso 481/730: Fecha=2026-10-31, Nivel=1.71 m  [LSTM=1.68 | clim_adj=1.71 | α=0.00 | β=0.27]
+16974.4s 1271 Paso 482/730: Fecha=2026-11-01, Nivel=1.73
+16974.7s 1272 Paso 483/730: Fecha=2026-11-02, Nivel=1.75
+16975.0s 1273 Paso 484/730: Fecha=2026-11-03, Nivel=1.76
+16975.4s 1274 Paso 485/730: Fecha=2026-11-04, Nivel=1.78
+16975.7s 1275 Paso 486/730: Fecha=2026-11-05, Nivel=1.79
+16976.1s 1276 Paso 487/730: Fecha=2026-11-06, Nivel=1.81
+16976.4s 1277 Paso 488/730: Fecha=2026-11-07, Nivel=1.84
+16976.8s 1278 Paso 489/730: Fecha=2026-11-08, Nivel=1.86
+16977.1s 1279 Paso 490/730: Fecha=2026-11-09, Nivel=1.89
+16977.5s 1280 Paso 491/730: Fecha=2026-11-10, Nivel=1.92
+16977.8s 1281 Paso 492/730: Fecha=2026-11-11, Nivel=1.94
+16978.1s 1282 Paso 493/730: Fecha=2026-11-12, Nivel=1.97
+16978.5s 1283 Paso 494/730: Fecha=2026-11-13, Nivel=1.98
+16978.8s 1284 Paso 495/730: Fecha=2026-11-14, Nivel=1.99
+16979.2s 1285 Paso 496/730: Fecha=2026-11-15, Nivel=1.99
+16979.5s 1286 Paso 497/730: Fecha=2026-11-16, Nivel=1.99
+16979.8s 1287 Paso 498/730: Fecha=2026-11-17, Nivel=1.98
+16980.1s 1288 Paso 499/730: Fecha=2026-11-18, Nivel=1.96
+16980.5s 1289 Paso 500/730: Fecha=2026-11-19, Nivel=1.94
+16980.9s 1290 Paso 501/730: Fecha=2026-11-20, Nivel=1.92
+16981.2s 1291 Paso 502/730: Fecha=2026-11-21, Nivel=1.88
+16981.6s 1292 Paso 503/730: Fecha=2026-11-22, Nivel=1.84
+16981.9s 1293 Paso 504/730: Fecha=2026-11-23, Nivel=1.79
+16982.2s 1294 Paso 505/730: Fecha=2026-11-24, Nivel=1.74
+16982.5s 1295 Paso 506/730: Fecha=2026-11-25, Nivel=1.69
+16982.9s 1296 Paso 507/730: Fecha=2026-11-26, Nivel=1.63
+16983.2s 1297 Paso 508/730: Fecha=2026-11-27, Nivel=1.58
+16983.6s 1298 Paso 509/730: Fecha=2026-11-28, Nivel=1.53
+16983.9s 1299 Paso 510/730: Fecha=2026-11-29, Nivel=1.49
+16984.2s 1300 Paso 511/730: Fecha=2026-11-30, Nivel=1.45 m  [LSTM=1.43 | clim_adj=1.45 | α=0.00 | β=0.25]
+16984.6s 1301 Paso 512/730: Fecha=2026-12-01, Nivel=1.42
+16984.9s 1302 Paso 513/730: Fecha=2026-12-02, Nivel=1.39
+16985.2s 1303 Paso 514/730: Fecha=2026-12-03, Nivel=1.38
+16985.6s 1304 Paso 515/730: Fecha=2026-12-04, Nivel=1.39
+16985.9s 1305 Paso 516/730: Fecha=2026-12-05, Nivel=1.40
+16986.2s 1306 Paso 517/730: Fecha=2026-12-06, Nivel=1.43
+16986.6s 1307 Paso 518/730: Fecha=2026-12-07, Nivel=1.44
+16986.9s 1308 Paso 519/730: Fecha=2026-12-08, Nivel=1.47
+16987.2s 1309 Paso 520/730: Fecha=2026-12-09, Nivel=1.50
+16987.6s 1310 Paso 521/730: Fecha=2026-12-10, Nivel=1.54
+16987.9s 1311 Paso 522/730: Fecha=2026-12-11, Nivel=1.57
+16988.2s 1312 Paso 523/730: Fecha=2026-12-12, Nivel=1.61
+16988.6s 1313 Paso 524/730: Fecha=2026-12-13, Nivel=1.66
+16988.9s 1314 Paso 525/730: Fecha=2026-12-14, Nivel=1.72
+16989.3s 1315 Paso 526/730: Fecha=2026-12-15, Nivel=1.81
+16989.6s 1316 Paso 527/730: Fecha=2026-12-16, Nivel=1.90
+16989.9s 1317 Paso 528/730: Fecha=2026-12-17, Nivel=1.99
+16990.3s 1318 Paso 529/730: Fecha=2026-12-18, Nivel=2.09
+16990.6s 1319 Paso 530/730: Fecha=2026-12-19, Nivel=2.19
+16990.9s 1320 Paso 531/730: Fecha=2026-12-20, Nivel=2.28
+16991.3s 1321 Paso 532/730: Fecha=2026-12-21, Nivel=2.37
+16991.6s 1322 Paso 533/730: Fecha=2026-12-22, Nivel=2.46
+16992.0s 1323 Paso 534/730: Fecha=2026-12-23, Nivel=2.56
+16992.3s 1324 Paso 535/730: Fecha=2026-12-24, Nivel=2.64
+16992.6s 1325 Paso 536/730: Fecha=2026-12-25, Nivel=2.58
+16992.9s 1326 Paso 537/730: Fecha=2026-12-26, Nivel=2.59
+16993.3s 1327 Paso 538/730: Fecha=2026-12-27, Nivel=2.59
+16993.6s 1328 Paso 539/730: Fecha=2026-12-28, Nivel=2.57
+16994.0s 1329 Paso 540/730: Fecha=2026-12-29, Nivel=2.53
+16994.3s 1330 Paso 541/730: Fecha=2026-12-30, Nivel=2.46 m  [LSTM=2.47 | clim_adj=2.46 | α=0.00 | β=0.23]
+16994.6s 1331 Paso 542/730: Fecha=2026-12-31, Nivel=2.40
+16994.9s 1332 Paso 543/730: Fecha=2027-01-01, Nivel=2.26
+16995.3s 1333 Paso 544/730: Fecha=2027-01-02, Nivel=2.18
+16995.6s 1334 Paso 545/730: Fecha=2027-01-03, Nivel=2.10
+16996.0s 1335 Paso 546/730: Fecha=2027-01-04, Nivel=2.01
+16996.3s 1336 Paso 547/730: Fecha=2027-01-05, Nivel=1.92
+16996.6s 1337 Paso 548/730: Fecha=2027-01-06, Nivel=1.83
+16996.9s 1338 Paso 549/730: Fecha=2027-01-07, Nivel=1.75
+16997.3s 1339 Paso 550/730: Fecha=2027-01-08, Nivel=1.82
+16997.6s 1340 Paso 551/730: Fecha=2027-01-09, Nivel=1.81
+16997.9s 1341 Paso 552/730: Fecha=2027-01-10, Nivel=1.82
+16998.3s 1342 Paso 553/730: Fecha=2027-01-11, Nivel=1.83
+16998.6s 1343 Paso 554/730: Fecha=2027-01-12, Nivel=1.84
+16998.9s 1344 Paso 555/730: Fecha=2027-01-13, Nivel=1.85
+16999.3s 1345 Paso 556/730: Fecha=2027-01-14, Nivel=1.85
+16999.6s 1346 Paso 557/730: Fecha=2027-01-15, Nivel=1.84
+16999.9s 1347 Paso 558/730: Fecha=2027-01-16, Nivel=1.83
+17000.3s 1348 Paso 559/730: Fecha=2027-01-17, Nivel=1.81
+17000.6s 1349 Paso 560/730: Fecha=2027-01-18, Nivel=1.80
+17000.9s 1350 Paso 561/730: Fecha=2027-01-19, Nivel=1.79
+17001.3s 1351 Paso 562/730: Fecha=2027-01-20, Nivel=1.78
+17001.6s 1352 Paso 563/730: Fecha=2027-01-21, Nivel=1.78
+17002.0s 1353 Paso 564/730: Fecha=2027-01-22, Nivel=1.76
+17002.3s 1354 Paso 565/730: Fecha=2027-01-23, Nivel=1.76
+17002.6s 1355 Paso 566/730: Fecha=2027-01-24, Nivel=1.75
+17003.0s 1356 Paso 567/730: Fecha=2027-01-25, Nivel=1.75
+17003.3s 1357 Paso 568/730: Fecha=2027-01-26, Nivel=1.75
+17003.7s 1358 Paso 569/730: Fecha=2027-01-27, Nivel=1.75
+17004.0s 1359 Paso 570/730: Fecha=2027-01-28, Nivel=1.75
+17004.3s 1360 Paso 571/730: Fecha=2027-01-29, Nivel=1.76 m  [LSTM=1.73 | clim_adj=1.76 | α=0.00 | β=0.21]
+17004.7s 1361 Paso 572/730: Fecha=2027-01-30, Nivel=1.77
+17005.0s 1362 Paso 573/730: Fecha=2027-01-31, Nivel=1.77
+17005.4s 1363 Paso 574/730: Fecha=2027-02-01, Nivel=1.78
+17005.7s 1364 Paso 575/730: Fecha=2027-02-02, Nivel=1.78
+17006.0s 1365 Paso 576/730: Fecha=2027-02-03, Nivel=1.79
+17006.4s 1366 Paso 577/730: Fecha=2027-02-04, Nivel=1.79
+17006.7s 1367 Paso 578/730: Fecha=2027-02-05, Nivel=1.80
+17007.0s 1368 Paso 579/730: Fecha=2027-02-06, Nivel=1.82
+17007.4s 1369 Paso 580/730: Fecha=2027-02-07, Nivel=1.83
+17007.7s 1370 Paso 581/730: Fecha=2027-02-08, Nivel=1.84
+17008.0s 1371 Paso 582/730: Fecha=2027-02-09, Nivel=1.84
+17008.4s 1372 Paso 583/730: Fecha=2027-02-10, Nivel=1.84
+17008.7s 1373 Paso 584/730: Fecha=2027-02-11, Nivel=1.84
+17009.1s 1374 Paso 585/730: Fecha=2027-02-12, Nivel=1.85
+17009.4s 1375 Paso 586/730: Fecha=2027-02-13, Nivel=1.85
+17009.7s 1376 Paso 587/730: Fecha=2027-02-14, Nivel=1.85
+17010.0s 1377 Paso 588/730: Fecha=2027-02-15, Nivel=1.85
+17010.4s 1378 Paso 589/730: Fecha=2027-02-16, Nivel=1.85
+17010.7s 1379 Paso 590/730: Fecha=2027-02-17, Nivel=1.87
+17011.1s 1380 Paso 591/730: Fecha=2027-02-18, Nivel=1.88
+17011.4s 1381 Paso 592/730: Fecha=2027-02-19, Nivel=1.89
+17011.8s 1382 Paso 593/730: Fecha=2027-02-20, Nivel=1.90
+17012.1s 1383 Paso 594/730: Fecha=2027-02-21, Nivel=1.89
+17012.4s 1384 Paso 595/730: Fecha=2027-02-22, Nivel=1.89
+17012.8s 1385 Paso 596/730: Fecha=2027-02-23, Nivel=1.89
+17013.2s 1386 Paso 597/730: Fecha=2027-02-24, Nivel=1.89
+17013.5s 1387 Paso 598/730: Fecha=2027-02-25, Nivel=1.90
+17013.8s 1388 Paso 599/730: Fecha=2027-02-26, Nivel=1.90
+17014.2s 1389 Paso 600/730: Fecha=2027-02-27, Nivel=1.89
+17014.5s 1390 Paso 601/730: Fecha=2027-02-28, Nivel=1.88 m  [LSTM=1.87 | clim_adj=1.88 | α=0.00 | β=0.19]
+17014.9s 1391 Paso 602/730: Fecha=2027-03-01, Nivel=1.87
+17015.2s 1392 Paso 603/730: Fecha=2027-03-02, Nivel=1.86
+17015.5s 1393 Paso 604/730: Fecha=2027-03-03, Nivel=1.84
+17015.9s 1394 Paso 605/730: Fecha=2027-03-04, Nivel=1.82
+17016.2s 1395 Paso 606/730: Fecha=2027-03-05, Nivel=1.79
+17016.6s 1396 Paso 607/730: Fecha=2027-03-06, Nivel=1.77
+17017.0s 1397 Paso 608/730: Fecha=2027-03-07, Nivel=1.74
+17017.3s 1398 Paso 609/730: Fecha=2027-03-08, Nivel=1.72
+17017.6s 1399 Paso 610/730: Fecha=2027-03-09, Nivel=1.70
+17018.0s 1400 Paso 611/730: Fecha=2027-03-10, Nivel=1.67
+17018.3s 1401 Paso 612/730: Fecha=2027-03-11, Nivel=1.65
+17018.7s 1402 Paso 613/730: Fecha=2027-03-12, Nivel=1.63
+17019.0s 1403 Paso 614/730: Fecha=2027-03-13, Nivel=1.62
+17019.4s 1404 Paso 615/730: Fecha=2027-03-14, Nivel=1.61
+17019.7s 1405 Paso 616/730: Fecha=2027-03-15, Nivel=1.61
+17020.1s 1406 Paso 617/730: Fecha=2027-03-16, Nivel=1.61
+17020.4s 1407 Paso 618/730: Fecha=2027-03-17, Nivel=1.62
+17020.7s 1408 Paso 619/730: Fecha=2027-03-18, Nivel=1.62
+17021.1s 1409 Paso 620/730: Fecha=2027-03-19, Nivel=1.63
+17021.4s 1410 Paso 621/730: Fecha=2027-03-20, Nivel=1.65
+17021.8s 1411 Paso 622/730: Fecha=2027-03-21, Nivel=1.66
+17022.1s 1412 Paso 623/730: Fecha=2027-03-22, Nivel=1.68
+17022.5s 1413 Paso 624/730: Fecha=2027-03-23, Nivel=1.70
+17022.8s 1414 Paso 625/730: Fecha=2027-03-24, Nivel=1.72
+17023.1s 1415 Paso 626/730: Fecha=2027-03-25, Nivel=1.75
+17023.5s 1416 Paso 627/730: Fecha=2027-03-26, Nivel=1.78
+17023.8s 1417 Paso 628/730: Fecha=2027-03-27, Nivel=1.81
+17024.1s 1418 Paso 629/730: Fecha=2027-03-28, Nivel=1.83
+17024.5s 1419 Paso 630/730: Fecha=2027-03-29, Nivel=1.85
+17024.8s 1420 Paso 631/730: Fecha=2027-03-30, Nivel=1.88 m  [LSTM=1.85 | clim_adj=1.88 | α=0.00 | β=0.18]
+17025.1s 1421 Paso 632/730: Fecha=2027-03-31, Nivel=1.91
+17025.5s 1422 Paso 633/730: Fecha=2027-04-01, Nivel=1.94
+17025.8s 1423 Paso 634/730: Fecha=2027-04-02, Nivel=1.96
+17026.2s 1424 Paso 635/730: Fecha=2027-04-03, Nivel=1.99
+17026.5s 1425 Paso 636/730: Fecha=2027-04-04, Nivel=2.02
+17026.8s 1426 Paso 637/730: Fecha=2027-04-05, Nivel=2.04
+17027.2s 1427 Paso 638/730: Fecha=2027-04-06, Nivel=2.07
+17027.5s 1428 Paso 639/730: Fecha=2027-04-07, Nivel=2.10
+17027.8s 1429 Paso 640/730: Fecha=2027-04-08, Nivel=2.12
+17028.2s 1430 Paso 641/730: Fecha=2027-04-09, Nivel=2.14
+17028.5s 1431 Paso 642/730: Fecha=2027-04-10, Nivel=2.16
+17028.8s 1432 Paso 643/730: Fecha=2027-04-11, Nivel=2.19
+17029.1s 1433 Paso 644/730: Fecha=2027-04-12, Nivel=2.23
+17029.5s 1434 Paso 645/730: Fecha=2027-04-13, Nivel=2.26
+17029.8s 1435 Paso 646/730: Fecha=2027-04-14, Nivel=2.31
+17030.1s 1436 Paso 647/730: Fecha=2027-04-15, Nivel=2.36
+17030.4s 1437 Paso 648/730: Fecha=2027-04-16, Nivel=2.42
+17030.7s 1438 Paso 649/730: Fecha=2027-04-17, Nivel=2.47
+17031.1s 1439 Paso 650/730: Fecha=2027-04-18, Nivel=2.53
+17031.4s 1440 Paso 651/730: Fecha=2027-04-19, Nivel=2.60
+17031.8s 1441 Paso 652/730: Fecha=2027-04-20, Nivel=2.67
+17032.1s 1442 Paso 653/730: Fecha=2027-04-21, Nivel=2.74
+17032.4s 1443 Paso 654/730: Fecha=2027-04-22, Nivel=2.81
+17032.8s 1444 Paso 655/730: Fecha=2027-04-23, Nivel=2.88
+17033.1s 1445 Paso 656/730: Fecha=2027-04-24, Nivel=2.95
+17033.5s 1446 Paso 657/730: Fecha=2027-04-25, Nivel=3.01
+17033.8s 1447 Paso 658/730: Fecha=2027-04-26, Nivel=3.08
+17034.1s 1448 Paso 659/730: Fecha=2027-04-27, Nivel=3.15
+17034.4s 1449 Paso 660/730: Fecha=2027-04-28, Nivel=3.21
+17034.8s 1450 Paso 661/730: Fecha=2027-04-29, Nivel=3.26 m  [LSTM=3.23 | clim_adj=3.26 | α=0.00 | β=0.16]
+17035.1s 1451 Paso 662/730: Fecha=2027-04-30, Nivel=3.31
+17035.4s 1452 Paso 663/730: Fecha=2027-05-01, Nivel=3.35
+17035.8s 1453 Paso 664/730: Fecha=2027-05-02, Nivel=3.40
+17036.1s 1454 Paso 665/730: Fecha=2027-05-03, Nivel=3.44
+17036.4s 1455 Paso 666/730: Fecha=2027-05-04, Nivel=3.48
+17036.7s 1456 Paso 667/730: Fecha=2027-05-05, Nivel=3.52
+17037.1s 1457 Paso 668/730: Fecha=2027-05-06, Nivel=3.56
+17037.4s 1458 Paso 669/730: Fecha=2027-05-07, Nivel=3.60
+17037.7s 1459 Paso 670/730: Fecha=2027-05-08, Nivel=3.64
+17038.0s 1460 Paso 671/730: Fecha=2027-05-09, Nivel=3.67
+17038.4s 1461 Paso 672/730: Fecha=2027-05-10, Nivel=3.71
+17038.7s 1462 Paso 673/730: Fecha=2027-05-11, Nivel=3.74
+17039.0s 1463 Paso 674/730: Fecha=2027-05-12, Nivel=3.77
+17039.4s 1464 Paso 675/730: Fecha=2027-05-13, Nivel=3.80
+17039.7s 1465 Paso 676/730: Fecha=2027-05-14, Nivel=3.82
+17040.0s 1466 Paso 677/730: Fecha=2027-05-15, Nivel=3.85
+17040.4s 1467 Paso 678/730: Fecha=2027-05-16, Nivel=3.88
+17040.7s 1468 Paso 679/730: Fecha=2027-05-17, Nivel=3.90
+17041.0s 1469 Paso 680/730: Fecha=2027-05-18, Nivel=3.92
+17041.4s 1470 Paso 681/730: Fecha=2027-05-19, Nivel=3.94
+17041.7s 1471 Paso 682/730: Fecha=2027-05-20, Nivel=3.95
+17042.1s 1472 Paso 683/730: Fecha=2027-05-21, Nivel=3.97
+17042.4s 1473 Paso 684/730: Fecha=2027-05-22, Nivel=3.98
+17042.7s 1474 Paso 685/730: Fecha=2027-05-23, Nivel=3.99
+17043.1s 1475 Paso 686/730: Fecha=2027-05-24, Nivel=4.00
+17043.4s 1476 Paso 687/730: Fecha=2027-05-25, Nivel=4.01
+17043.7s 1477 Paso 688/730: Fecha=2027-05-26, Nivel=4.03
+17044.1s 1478 Paso 689/730: Fecha=2027-05-27, Nivel=4.04
+17044.4s 1479 Paso 690/730: Fecha=2027-05-28, Nivel=4.05
+17044.7s 1480 Paso 691/730: Fecha=2027-05-29, Nivel=4.06 m  [LSTM=4.02 | clim_adj=4.06 | α=0.00 | β=0.15]
+17045.0s 1481 Paso 692/730: Fecha=2027-05-30, Nivel=4.07
+17045.4s 1482 Paso 693/730: Fecha=2027-05-31, Nivel=4.07
+17045.7s 1483 Paso 694/730: Fecha=2027-06-01, Nivel=4.07
+17046.0s 1484 Paso 695/730: Fecha=2027-06-02, Nivel=4.07
+17046.4s 1485 Paso 696/730: Fecha=2027-06-03, Nivel=4.07
+17046.7s 1486 Paso 697/730: Fecha=2027-06-04, Nivel=4.07
+17047.0s 1487 Paso 698/730: Fecha=2027-06-05, Nivel=4.07
+17047.3s 1488 Paso 699/730: Fecha=2027-06-06, Nivel=4.07
+17047.7s 1489 Paso 700/730: Fecha=2027-06-07, Nivel=4.06
+17048.0s 1490 Paso 701/730: Fecha=2027-06-08, Nivel=4.06
+17048.3s 1491 Paso 702/730: Fecha=2027-06-09, Nivel=4.05
+17048.6s 1492 Paso 703/730: Fecha=2027-06-10, Nivel=4.04
+17049.0s 1493 Paso 704/730: Fecha=2027-06-11, Nivel=4.03
+17049.3s 1494 Paso 705/730: Fecha=2027-06-12, Nivel=4.02
+17049.6s 1495 Paso 706/730: Fecha=2027-06-13, Nivel=4.01
+17049.9s 1496 Paso 707/730: Fecha=2027-06-14, Nivel=3.99
+17050.3s 1497 Paso 708/730: Fecha=2027-06-15, Nivel=3.98
+17050.6s 1498 Paso 709/730: Fecha=2027-06-16, Nivel=3.97
+17050.9s 1499 Paso 710/730: Fecha=2027-06-17, Nivel=3.96
+17051.2s 1500 Paso 711/730: Fecha=2027-06-18, Nivel=3.95
+17051.6s 1501 Paso 712/730: Fecha=2027-06-19, Nivel=3.94
+17051.9s 1502 Paso 713/730: Fecha=2027-06-20, Nivel=3.92
+17052.2s 1503 Paso 714/730: Fecha=2027-06-21, Nivel=3.91
+17052.6s 1504 Paso 715/730: Fecha=2027-06-22, Nivel=3.90
+17052.9s 1505 Paso 716/730: Fecha=2027-06-23, Nivel=3.89
+17053.2s 1506 Paso 717/730: Fecha=2027-06-24, Nivel=3.87
+17053.6s 1507 Paso 718/730: Fecha=2027-06-25, Nivel=3.86
+17053.9s 1508 Paso 719/730: Fecha=2027-06-26, Nivel=3.84
+17054.2s 1509 Paso 720/730: Fecha=2027-06-27, Nivel=3.83
+17054.5s 1510 Paso 721/730: Fecha=2027-06-28, Nivel=3.81 m  [LSTM=3.78 | clim_adj=3.81 | α=0.00 | β=0.14]
+17054.9s 1511 Paso 722/730: Fecha=2027-06-29, Nivel=3.79
+17055.2s 1512 Paso 723/730: Fecha=2027-06-30, Nivel=3.77
+17055.5s 1513 Paso 724/730: Fecha=2027-07-01, Nivel=3.78
+17055.9s 1514 Paso 725/730: Fecha=2027-07-02, Nivel=3.80
+17056.2s 1515 Paso 726/730: Fecha=2027-07-03, Nivel=3.81
+17056.5s 1516 Paso 727/730: Fecha=2027-07-04, Nivel=3.82
+17056.9s 1517 Paso 728/730: Fecha=2027-07-05, Nivel=3.83
+17057.2s 1518 Paso 729/730: Fecha=2027-07-06, Nivel=3.84
+17057.5s 1519 Paso 730/730: Fecha=2027-07-07, Nivel=3.84
+17057.5s 1520 
+17057.5s 1521 Predicción completada: 730 días predichos.
+17057.5s 1522 
+17057.5s 1523 --- Predicciones del Nivel del Río ---
+17057.5s 1524 Fecha  Nivel_Predicho
+17057.5s 1525 0 2025-07-08        3.077355
+17057.5s 1526 1 2025-07-09        3.011350
+17057.5s 1527 2 2025-07-10        2.941318
+17057.5s 1528 3 2025-07-11        2.876019
+17057.5s 1529 4 2025-07-12        2.816201
+17057.5s 1530 
+17057.5s 1531 Las predicciones se han guardado en: /kaggle/working/predicciones_nivel_rio.csv
+17057.5s 1532 
+17057.5s 1533 Estadísticas de la predicción a 730 días:
+17057.5s 1534 Mínimo  : 0.88 m
+17057.5s 1535 Máximo  : 4.07 m
+17057.5s 1536 Media   : 2.27 m
+17057.5s 1537 Desv.Est: 0.90 m
+17057.5s 1538 
+17057.5s 1539 ======================================================================
+17057.5s 1540 COMPARACIÓN CON RESULTADOS REALES
+17057.5s 1541 ======================================================================
+17057.5s 1542 Archivo no encontrado: /kaggle/input/data-tesis/resultados_reales.txt
+17057.5s 1543 
+17057.5s 1544 ======================================================================
+17057.5s 1545 GENERANDO VISUALIZACIONES FINALES
+17057.5s 1546 ======================================================================
+17058.2s 1547 Gráfico guardado: grafico_08_historico_mas_prediccion.png
+17058.6s 1548 Gráfico guardado: grafico_09_zoom_transicion.png
+17059.5s 1549 Gráfico guardado: grafico_11_climatologia_prediccion.png
+17060.5s 1550 Gráfico guardado: grafico_10_panel_resumen.png
+17060.5s 1551 
+17060.5s 1552 ======================================================================
+17060.5s 1553 GUARDANDO RESULTADOS
+17060.5s 1554 ======================================================================
+17060.5s 1555 
+17060.5s 1556 Predicciones guardadas en: /kaggle/working/predicciones_nivel_rio.csv
+17060.5s 1557 Métricas guardadas: metricas_finales.json
+17060.5s 1558 
+17060.5s 1559 ======================================================================
+17060.5s 1560 RESUMEN FINAL DE EJECUCIÓN
+17060.5s 1561 ======================================================================
+17060.5s 1562 
+17060.5s 1563 Tiempo total de ejecución: 283.7 minutos (17019 segundos)
+17060.5s 1564 
+17060.5s 1565 --- Mejores hiperparámetros encontrados por Optuna ---
+17060.5s 1566 n_layers            : 1
+17060.5s 1567 hidden_size         : 512
+17060.5s 1568 bidirectional       : False
+17060.5s 1569 dropout_rate        : 0.05
+17060.5s 1570 fc_activation       : linear
+17060.5s 1571 lookback            : 30
+17060.5s 1572 strategy            : recursive
+17060.5s 1573 optimizer           : Adam
+17060.5s 1574 learning_rate       : 0.006078600333304834
+17060.5s 1575 weight_decay        : 4.7044698257916004e-07
+17060.5s 1576 batch_size          : 256
+17060.5s 1577 scheduler           : CosineAnnealingLR
+17060.5s 1578 
+17060.5s 1579 --- RMSE Final ---
+17060.5s 1580 RMSE train (escalado)      : 0.0240
+17060.5s 1581 RMSE val   (escalado)      : 0.0187
+17060.5s 1582 RMSE test  (escalado)      : 0.0221
+17060.5s 1583 RMSE train (metros)        : 0.0479 m
+17060.5s 1584 RMSE val   (metros)        : 0.0373 m
+17060.5s 1585 RMSE test  (metros)        : 0.0457 m
+17060.5s 1586 
+17060.5s 1587 --- Resumen del modelo ---
+17060.5s 1588 Framework              : TensorFlow 2.19.0 / Keras
+17060.5s 1589 Arquitectura           : LSTM (no Transformer — ver razones en docstring)
+17060.5s 1590 Parámetros entrenables : 1,075,713
+17060.5s 1591 Épocas entrenadas      : 99
+17060.5s 1592 
+17060.5s 1593 --- Top 10 Trials de Optuna ---
+17060.5s 1594 Rank  1 | Trial #260 | RMSE: 0.0371 m | hidden=512, layers=1, lookback=30, strategy=recursive
+17060.5s 1595 Rank  2 | Trial #237 | RMSE: 0.0375 m | hidden=512, layers=1, lookback=30, strategy=recursive
+17060.5s 1596 Rank  3 | Trial #246 | RMSE: 0.0379 m | hidden=512, layers=1, lookback=30, strategy=recursive
+17060.5s 1597 Rank  4 | Trial #183 | RMSE: 0.0379 m | hidden=512, layers=1, lookback=30, strategy=recursive
+17060.5s 1598 Rank  5 | Trial #231 | RMSE: 0.0384 m | hidden=512, layers=1, lookback=30, strategy=recursive
+17060.5s 1599 Rank  6 | Trial #247 | RMSE: 0.0386 m | hidden=512, layers=1, lookback=30, strategy=recursive
+17060.5s 1600 Rank  7 | Trial #295 | RMSE: 0.0386 m | hidden=512, layers=1, lookback=30, strategy=recursive
+17060.5s 1601 Rank  8 | Trial #139 | RMSE: 0.0386 m | hidden=512, layers=1, lookback=30, strategy=recursive
+17060.5s 1602 Rank  9 | Trial #268 | RMSE: 0.0388 m | hidden=512, layers=1, lookback=30, strategy=recursive
+17060.5s 1603 Rank 10 | Trial #199 | RMSE: 0.0389 m | hidden=512, layers=1, lookback=30, strategy=recursive
+17060.5s 1604 
+17060.5s 1605 --- Archivos generados en /kaggle/working/ ---
+17060.5s 1606 __notebook__.ipynb                                         344.8 KB
+17060.5s 1607 grafico_00_serie_historica.png                             227.5 KB
+17060.5s 1608 grafico_01_particiones.png                                 208.1 KB
+17060.5s 1609 grafico_02_distribucion_features.png                        97.6 KB
+17060.5s 1610 grafico_03_optuna_historia.png                             150.0 KB
+17060.5s 1611 grafico_04_curva_aprendizaje.png                            75.3 KB
+17060.5s 1612 grafico_05_rmse_por_paso.png                                37.5 KB
+17060.5s 1613 grafico_06_distribucion_errores.png                        125.9 KB
+17060.5s 1614 grafico_08_historico_mas_prediccion.png                    347.4 KB
+17060.5s 1615 grafico_09_zoom_transicion.png                             118.9 KB
+17060.5s 1616 grafico_10_panel_resumen.png                               265.9 KB
+17060.5s 1617 grafico_11_climatologia_prediccion.png                     294.6 KB
+17060.5s 1618 metricas_finales.json                                        0.8 KB
+17060.5s 1619 modelo_lstm_final.keras                                  12631.8 KB
+17060.5s 1620 optuna_estudio.pkl                                         355.9 KB
+17060.5s 1621 optuna_resultados.json                                       5.5 KB
+17060.5s 1622 predicciones_nivel_rio.csv                                  11.4 KB
+17060.5s 1623 scaler_anom.pkl                                              1.0 KB
+17060.5s 1624 scaler_nivel.pkl                                             0.7 KB
+17060.5s 1625 scaler_temp.pkl                                              1.1 KB
+17060.5s 1626 
+17060.5s 1627 ======================================================================
+17060.5s 1628 FIN DEL SCRIPT
+17060.5s 1629 ======================================================================
+17066.5s 1630 /usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+17066.5s 1631 cells[i][c] = re.sub('\\\\\|', '|', cell)
+17066.7s 1632 /usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+17066.7s 1633 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+17067.5s 1634 /usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=["remove_papermill_header.RemovePapermillHeader"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.
+17067.5s 1635 warn(
+17067.5s 1636 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+17068.0s 1637 [NbConvertApp] Writing 263287 bytes to __notebook__.ipynb
+17070.4s 1638 /usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=["nbconvert.preprocessors.ExtractOutputPreprocessor"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.
+17070.4s 1639 warn(
+17070.5s 1640 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+17071.7s 1641 [NbConvertApp] Writing 802820 bytes to __results__.html
