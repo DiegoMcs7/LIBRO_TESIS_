@@ -1,0 +1,35 @@
+\babel@toc {spanish}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Hiperparámetros óptimos del modelo LSTM para la predicción del nivel del río Paraguay.}}{24}{table.caption.9}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Métricas de evaluación RMSE del modelo LSTM en los conjuntos de entrenamiento, validación y prueba.}}{25}{table.caption.11}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces Parámetros estimados del modelo SARIMAX$(0,1,0)(0,0,0)_{12}$ para la predicción del precio del cemento.}}{34}{table.caption.22}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces Métricas de evaluación del modelo SARIMAX sobre el conjunto de prueba (15 meses).}}{34}{table.caption.25}%
+\contentsline {table}{\numberline {5.5}{\ignorespaces Métricas de validación cruzada por ventana deslizante del modelo SARIMAX.}}{35}{table.caption.27}%
+\contentsline {table}{\numberline {5.6}{\ignorespaces Pronóstico mensual del precio del cemento (Gs.) para el período agosto 2025 -- julio 2026, con intervalo de confianza al 95\,\%.}}{41}{table.caption.31}%
+\contentsline {table}{\numberline {5.7}{\ignorespaces Parámetros estimados del modelo SARIMAX$(0,1,0)(0,0,0)_{12}$ para la predicción del precio del ladrillo.}}{41}{table.caption.39}%
+\contentsline {table}{\numberline {5.8}{\ignorespaces Métricas de evaluación del modelo SARIMAX sobre el conjunto de prueba del ladrillo (15 meses).}}{42}{table.caption.42}%
+\contentsline {table}{\numberline {5.9}{\ignorespaces Métricas de validación cruzada por ventana deslizante del modelo SARIMAX para el ladrillo.}}{43}{table.caption.44}%
+\contentsline {table}{\numberline {5.10}{\ignorespaces Pronóstico mensual del precio del ladrillo (Gs.) para el período agosto 2025 -- julio 2026, con intervalo de confianza al 95\,\%.}}{44}{table.caption.48}%
+\contentsline {table}{\numberline {5.11}{\ignorespaces Hiperparámetros óptimos del modelo LSTM para cemento, seleccionados por Optuna.}}{45}{table.caption.54}%
+\contentsline {table}{\numberline {5.12}{\ignorespaces Desempeño del modelo LSTM para cemento: RMSE en entrenamiento, validación y prueba.}}{46}{table.caption.56}%
+\contentsline {table}{\numberline {5.13}{\ignorespaces Hiperparámetros óptimos del modelo LSTM para ladrillo --- escenario sin pandemia (Optuna: 261 ensayos).}}{66}{table.caption.72}%
+\contentsline {table}{\numberline {5.14}{\ignorespaces Desempeño del modelo LSTM para ladrillo --- escenario sin pandemia: RMSE en train, val y test.}}{67}{table.caption.74}%
+\contentsline {table}{\numberline {5.15}{\ignorespaces Hiperparámetros del modelo LSTM para ladrillo --- escenario con pandemia.}}{73}{table.caption.84}%
+\contentsline {table}{\numberline {5.16}{\ignorespaces Desempeño del modelo LSTM para ladrillo --- escenario con pandemia: RMSE en train, val y test.}}{74}{table.caption.86}%
+\contentsline {table}{\numberline {5.17}{\ignorespaces Hiperparámetros del modelo GRU para cemento --- escenario sin pandemia.}}{80}{table.caption.96}%
+\contentsline {table}{\numberline {5.18}{\ignorespaces Desempeño del modelo GRU para cemento --- escenario sin pandemia: RMSE en train, val y test.}}{80}{table.caption.98}%
+\contentsline {table}{\numberline {5.19}{\ignorespaces Pronóstico GRU del precio del cemento (Gs.) --- escenario sin pandemia, agosto 2025 -- julio 2026.}}{86}{table.caption.108}%
+\contentsline {table}{\numberline {5.20}{\ignorespaces Hiperparámetros del modelo GRU para cemento --- escenario con pandemia.}}{87}{table.caption.109}%
+\contentsline {table}{\numberline {5.21}{\ignorespaces Desempeño del modelo GRU para cemento --- escenario con pandemia: RMSE en train, val y test.}}{88}{table.caption.111}%
+\contentsline {table}{\numberline {5.22}{\ignorespaces Hiperparámetros del modelo GRU para ladrillo --- escenario sin pandemia (Optuna: 266 ensayos, 465{,}7 min).}}{95}{table.caption.121}%
+\contentsline {table}{\numberline {5.23}{\ignorespaces Desempeño del modelo GRU para ladrillo --- escenario sin pandemia: RMSE en train, val y test.}}{95}{table.caption.123}%
+\contentsline {table}{\numberline {5.24}{\ignorespaces Pronóstico GRU del precio del ladrillo (Gs.) --- escenario sin pandemia, agosto 2025 -- julio 2026.}}{101}{table.caption.133}%
+\contentsline {table}{\numberline {5.25}{\ignorespaces Hiperparámetros del modelo GRU para ladrillo --- escenario con pandemia.}}{102}{table.caption.134}%
+\contentsline {table}{\numberline {5.26}{\ignorespaces Desempeño del modelo GRU para ladrillo --- escenario con pandemia: RMSE en train, val y test.}}{102}{table.caption.136}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {6.1}{\ignorespaces Comparaci\'{o}n integral de los modelos evaluados para la predicci\'{o}n de precios de materiales de construcci\'{o}n.}}{113}{table.caption.146}%
+\addvspace {10\p@ }
