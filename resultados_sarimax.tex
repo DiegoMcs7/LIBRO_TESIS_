@@ -122,9 +122,6 @@ La Figura \ref{fig:sarimax_comparacion} presenta la comparación entre los valor
         \textbf{Métrica} & \textbf{Valor} \\
         \midrule
         RMSE (Raíz del Error Cuadrático Medio) & 95{,}38~Gs. \\
-        MAE  (Error Absoluto Medio)            & 67{,}56~Gs. \\
-        MAPE (Error Porcentual Medio Absoluto) & 0{,}12\,\% \\
-        SMAPE (Error Porcentual Simétrico)     & 0{,}12\,\% \\
         Error Absoluto Máximo                  & 234{,}47~Gs. \\
         $R^{2}$ (Coeficiente de Determinación) & 0{,}0000 \\
         \bottomrule
@@ -132,7 +129,7 @@ La Figura \ref{fig:sarimax_comparacion} presenta la comparación entre los valor
 \end{table}
 
 \justify
-El MAPE de 0{,}12\,\% sobre el conjunto de prueba merece una lectura cuidadosa. Tomado en aislamiento, parece un resultado excelente: las predicciones se alejan poco más de una décima de punto porcentual del valor real. El RMSE de 95{,}38~Gs. y el MAE de 67{,}56~Gs. también son bajos respecto al rango histórico de la serie (Gs.~48.000--76.036). Sin embargo, el $R^{2}=0$ en el mismo período llama la atención: ¿cómo puede el modelo tener un error relativo tan bajo y al mismo tiempo un $R^{2}$ nulo?
+El RMSE de 95{,}38~Gs. sobre el conjunto de prueba es bajo respecto al rango histórico de la serie (Gs.~48.000 a Gs.~76.036). Sin embargo, el $R^{2}=0$ en el mismo período llama la atención: ¿cómo puede el modelo tener un error absoluto tan reducido y al mismo tiempo un $R^{2}$ nulo?
 
 \justify
 La explicación es que, en el período de prueba, el precio del cemento se mantuvo prácticamente estable — varianza muy baja — de modo que cualquier predicción constante cercana al nivel reciente resultará en errores absolutos pequeños, pero sin diferenciarse del simple promedio histórico en términos de varianza explicada. En otras palabras, el contexto del mercado durante ese período limitó lo que cualquier modelo, no solo el SARIMAX, podía demostrar. El comportamiento es además coherente con el orden $(0,1,0)$ seleccionado: sin términos AR ni MA, el modelo proyecta básicamente el último valor observado, que es la estrategia óptima cuando la serie diferenciada se comporta como ruido blanco. La validación cruzada, que sí abarca períodos con mayor variabilidad, ofrece una imagen más completa del desempeño real.
@@ -158,15 +155,13 @@ Con el fin de obtener una estimación más robusta de la capacidad predictiva de
         \textbf{Métrica} & \textbf{Valor} \\
         \midrule
         RMSE & 1.920{,}78~Gs. \\
-        MAE  & 1.013{,}86~Gs. \\
-        MAPE & 1{,}70\,\% \\
         $R^{2}$ & 0{,}7586 \\
         \bottomrule
     \end{tabular}
 \end{table}
 
 \justify
-Aquí el panorama cambia. Con un $R^{2}=0{,}7586$, el modelo explica el 75{,}86\,\% de la varianza del precio a lo largo de todo el período histórico disponible, incluyendo los años de alta volatilidad. El MAPE de 1{,}70\,\% —muy por debajo del umbral del 5\,\% que suele citarse como referencia para series de precios de materiales— confirma que el SARIMAX tiene utilidad práctica real para la gestión de presupuestos de obra, al menos en escenarios de proyección a un paso adelante.
+Aquí el panorama cambia. Con un $R^{2}=0{,}7586$, el modelo explica el 75{,}86\,\% de la varianza del precio a lo largo de todo el período histórico disponible, incluyendo los años de alta volatilidad. El RMSE de 1.920{,}78~Gs. se mantiene dentro de un rango razonable para la gestión de presupuestos de obra, al menos en escenarios de proyección a un paso adelante.
 
 \subsubsection{Modelo SARIMAX: Análisis de Residuos}
 
@@ -373,9 +368,6 @@ La Figura \ref{fig:sarimax_ladrillo_comparacion} presenta la comparación entre 
         \textbf{Métrica} & \textbf{Valor} \\
         \midrule
         RMSE (Raíz del Error Cuadrático Medio) & 3{,}33~Gs. \\
-        MAE  (Error Absoluto Medio)            & 2{,}36~Gs. \\
-        MAPE (Error Porcentual Medio Absoluto) & 0{,}36\,\% \\
-        SMAPE (Error Porcentual Simétrico)     & 0{,}36\,\% \\
         Error Absoluto Máximo                  & 8{,}18~Gs. \\
         $R^{2}$ (Coeficiente de Determinación) & 0{,}0000 \\
         \bottomrule
@@ -383,7 +375,7 @@ La Figura \ref{fig:sarimax_ladrillo_comparacion} presenta la comparación entre 
 \end{table}
 
 \justify
-Al igual que en el caso del cemento, el MAPE de 0{,}36\,\% indica predicciones puntuales con un error relativo muy bajo, pero el $R^{2}=0$ refleja que durante el período de prueba el precio del ladrillo se mantuvo prácticamente estable, de modo que el modelo no puede diferenciarse de una predicción constante en términos de varianza explicada. El patrón es consistente con la naturaleza del modelo $(0,1,0)$: el pronóstico corresponde al último valor observado ajustado por las variables exógenas.
+Al igual que en el caso del cemento, el RMSE de 3{,}33~Gs. indica predicciones puntuales con un error absoluto reducido, pero el $R^{2}=0$ refleja que durante el período de prueba el precio del ladrillo se mantuvo prácticamente estable, de modo que el modelo no puede diferenciarse de una predicción constante en términos de varianza explicada. El patrón es consistente con la naturaleza del modelo $(0,1,0)$: el pronóstico corresponde al último valor observado ajustado por las variables exógenas.
 
 \subsubsection{Modelo SARIMAX: Validación Cruzada}
 
@@ -406,15 +398,13 @@ La validación cruzada por ventana deslizante ofrece un panorama más representa
         \textbf{Métrica} & \textbf{Valor} \\
         \midrule
         RMSE & 9{,}52~Gs. \\
-        MAE  & 3{,}69~Gs. \\
-        MAPE & 0{,}55\,\% \\
         $R^{2}$ & 0{,}8193 \\
         \bottomrule
     \end{tabular}
 \end{table}
 
 \justify
-El $R^{2}=0{,}8193$ indica que el modelo explica el 81{,}93\,\% de la varianza del precio del ladrillo a lo largo del período histórico completo, superando incluso al resultado obtenido para el cemento ($R^{2}=0{,}7586$). El MAPE de 0{,}55\,\%, inferior al umbral del 5\,\% habitual para series de precios de materiales, confirma la utilidad práctica del modelo para la estimación presupuestaria.
+El $R^{2}=0{,}8193$ indica que el modelo explica el 81{,}93\,\% de la varianza del precio del ladrillo a lo largo del período histórico completo, superando al resultado obtenido para el cemento ($R^{2}=0{,}7586$). El RMSE de 9{,}52~Gs. confirma la utilidad práctica del modelo para la estimación presupuestaria en escenarios estables.
 
 \subsubsection{Modelo SARIMAX: Análisis de Residuos}
 
