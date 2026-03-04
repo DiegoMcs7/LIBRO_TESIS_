@@ -8,7 +8,7 @@
 Como alternativa al modelo LSTM, se evaluó la arquitectura \textit{Gated Recurrent Unit} (GRU), propuesta por Cho et al.\ (2014) como una simplificación de las redes LSTM. A diferencia de la celda LSTM, que emplea tres compuertas (entrada, olvido y salida), la celda GRU utiliza únicamente dos ---la de actualización (\textit{update gate}) y la de reinicio (\textit{reset gate})---, lo que reduce el número de parámetros entrenables y puede favorecer la convergencia en \textit{datasets} de tamaño moderado.
 
 \justify
-Al igual que para el LSTM, para cada material se entrenaron dos modelos GRU independientes: uno para el escenario sin efecto pandémico y otro para el escenario con efecto pandémico. Los hiperparámetros de cada modelo fueron optimizados de forma independiente con Optuna. La implementación se realizó con TensorFlow 2.19.0 / Keras, con la misma partición temporal (95 / 20 / 22 meses), las mismas 7 variables de entrada y los mismos intervalos de confianza al 95\,\% estimados por Monte Carlo Dropout ($N=100$ simulaciones). Dado que cada escenario puede resultar en arquitecturas distintas, los resultados de cada uno se presentan por separado.
+Al igual que para el LSTM, para cada material se entrenaron dos modelos GRU independientes: uno para el escenario sin efecto pandémico y otro para el escenario con efecto pandémico. Los hiperparámetros de cada modelo fueron optimizados de forma independiente con Optuna. La implementación se realizó con TensorFlow 2.19.0 / Keras, con la misma partición temporal (97 / 20 / 22 meses), las mismas 6 variables de entrada y los mismos intervalos de confianza al 95\,\% estimados por Monte Carlo Dropout ($N=100$ simulaciones). Dado que cada escenario puede resultar en arquitecturas distintas, los resultados de cada uno se presentan por separado.
 
 % ============================================================
 % 4.4.1 — CEMENTO GRU
@@ -16,7 +16,7 @@ Al igual que para el LSTM, para cada material se entrenaron dos modelos GRU inde
 \subsection{Predicción del Precio del Cemento}
 
 \justify
-Para el cemento, ambos escenarios resultaron en modelos GRU con diferente configuración de hiperparámetros y distintas métricas de evaluación. A continuación se presenta cada escenario con su propia descripción completa.
+Para el cemento, la búsqueda con Optuna convergió a la misma configuración en ambos escenarios, con idéntica arquitectura y métricas de evaluación. Las diferencias entre escenarios se manifiestan únicamente en el pronóstico a 24 meses, ya que el valor de la variable pandémica difiere durante la predicción futura. A continuación se presenta cada escenario por separado.
 
 % ------ CEMENTO GRU SIN COVID ------
 \subsubsection{Escenario sin Efecto Pandémico}
@@ -24,7 +24,7 @@ Para el cemento, ambos escenarios resultaron en modelos GRU con diferente config
 \paragraph{Hiperparámetros y Arquitectura}
 
 \justify
-La búsqueda de hiperparámetros con Optuna para el escenario sin pandemia seleccionó una capa GRU unidireccional con 64 unidades ocultas, ventana de entrada (\textit{lookback}) de 6 meses, optimizador Adam con tasa de aprendizaje $\eta = 0{,}00732$ y \textit{weight decay} de $2{,}60 \times 10^{-7}$, \textit{batch size} de 2, \textit{dropout} de 0{,}1, \textit{dropout} recurrente de 0{,}0, y \textit{scheduler} ReduceLROnPlateau. La arquitectura resultante totaliza 14.081 parámetros entrenables. La Tabla~\ref{tab:gru_cemento_sc_arq} resume los hiperparámetros seleccionados.
+La búsqueda con Optuna (261 ensayos, 154,3 min) para el escenario sin pandemia seleccionó una capa GRU unidireccional con 64 unidades ocultas, ventana de entrada (\textit{lookback}) de 4 meses, optimizador AdamW con tasa de aprendizaje $\eta = 0{,}006946$ y \textit{weight decay} de $2{,}26 \times 10^{-4}$, \textit{batch size} de 8, \textit{dropout} de 0{,}1, \textit{dropout} recurrente de 0{,}1, y \textit{scheduler} ReduceLROnPlateau. La arquitectura resultante totaliza 13.889 parámetros entrenables. La Tabla~\ref{tab:gru_cemento_sc_arq} resume los hiperparámetros seleccionados.
 
 \begin{table}[htbp]
     \centering
@@ -36,12 +36,12 @@ La búsqueda de hiperparámetros con Optuna para el escenario sin pandemia selec
         \midrule
         Capas GRU              & 1 (unidireccional) \\
         Unidades ocultas       & 64 \\
-        Lookback               & 6 meses \\
-        Optimizador            & Adam ($\eta=0{,}00732$, WD $=2{,}60 \times 10^{-7}$) \\
-        Batch size             & 2 \\
-        Dropout / Rec.\ dropout & 0{,}1 / 0{,}0 \\
+        Lookback               & 4 meses \\
+        Optimizador            & AdamW ($\eta=0{,}006946$, WD $=2{,}26 \times 10^{-4}$) \\
+        Batch size             & 8 \\
+        Dropout / Rec.\ dropout & 0{,}1 / 0{,}1 \\
         Scheduler              & ReduceLROnPlateau \\
-        Parámetros entrenables & 14.081 \\
+        Parámetros entrenables & 13.889 \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -49,7 +49,7 @@ La búsqueda de hiperparámetros con Optuna para el escenario sin pandemia selec
 \paragraph{Curva de Aprendizaje}
 
 \justify
-El modelo GRU del cemento para el escenario sin pandemia convergió en 35 épocas con \textit{early stopping}. La Figura~\ref{fig:gru_cemento_curva_sc} muestra las curvas de pérdida de entrenamiento y validación. Se observa un descenso rápido de ambas curvas durante las primeras 10 épocas, seguido de una estabilización gradual sin signos evidentes de sobreajuste.
+El modelo GRU del cemento para el escenario sin pandemia convergió en 31 épocas con \textit{early stopping}. La Figura~\ref{fig:gru_cemento_curva_sc} muestra las curvas de pérdida de entrenamiento y validación. Se observa un descenso simultáneo de ambas curvas sin divergencia significativa, lo que indica ausencia de sobreajuste.
 
 \begin{figure}[htbp]
     \centering
@@ -68,13 +68,13 @@ El modelo GRU del cemento para el escenario sin pandemia convergió en 35 época
         \toprule
         \textbf{Métrica} & \textbf{Train} & \textbf{Val} & \textbf{Test} \\
         \midrule
-        RMSE (Gs.) & 4.911{,}67 & 2.862{,}84 & 2.709{,}13 \\
+        RMSE (Gs.) & 6.330{,}42 & 3.264{,}19 & 4.964{,}27 \\
         \bottomrule
     \end{tabular}
 \end{table}
 
 \justify
-El RMSE sobre el conjunto de prueba (Gs.~2.709{,}13) es inferior al RMSE de entrenamiento (Gs.~4.911{,}67) y al de validación (Gs.~2.862{,}84), patrón que indica ausencia de sobreajuste. En términos relativos al rango histórico de la serie (Gs.~48.000--76.036), el RMSE de prueba representa aproximadamente el 9,5\,\% del rango, resultado superior al obtenido por el modelo LSTM del mismo material en el mismo escenario (RMSE test: Gs.~1.619,75).
+El RMSE de validación (Gs.~3.264,19) es inferior al de prueba (Gs.~4.964,27) y al de entrenamiento (Gs.~6.330,42), lo que sugiere que el período de prueba presenta una variabilidad similar a la de validación. En términos relativos al rango histórico de la serie (Gs.~48.000--76.036), el RMSE de prueba representa aproximadamente el 17,7\,\% del rango, resultado comparable al obtenido por el modelo LSTM del mismo escenario (RMSE test: Gs.~5.432,05).
 
 \paragraph{Evaluación sobre el Conjunto de Prueba}
 
@@ -151,31 +151,7 @@ El test de Ljung-Box sobre los residuos del conjunto de prueba arroja un $p$-val
 \end{figure}
 
 \justify
-El modelo GRU proyecta, bajo el escenario sin pandemia, una tendencia ascendente del precio del cemento durante los primeros meses, alcanzando un máximo de Gs.~61.845 en diciembre de 2025, seguida de un descenso gradual hacia Gs.~55.712 en mayo de 2026 y una leve recuperación posterior. El rango de predicción para todo el horizonte se sitúa entre Gs.~55.600 y Gs.~61.845. La Tabla~\ref{tab:gru_cemento_pred_sc} sintetiza los valores pronosticados para los primeros doce meses.
-
-\begin{table}[htbp]
-    \centering
-    \caption{Pronóstico GRU del precio del cemento (Gs.) --- escenario sin pandemia, agosto 2025 -- julio 2026.}
-    \label{tab:gru_cemento_pred_sc}
-    \begin{tabular}{lr}
-        \toprule
-        \textbf{Mes} & \textbf{Precio Predicho (Gs.)} \\
-        \midrule
-        Agosto 2025      & 57.693 \\
-        Septiembre 2025  & 59.720 \\
-        Octubre 2025     & 61.126 \\
-        Noviembre 2025   & 61.824 \\
-        Diciembre 2025   & 61.845 \\
-        Enero 2026       & 61.009 \\
-        Febrero 2026     & 59.763 \\
-        Marzo 2026       & 58.206 \\
-        Abril 2026       & 56.642 \\
-        Mayo 2026        & 55.712 \\
-        Junio 2026       & 56.018 \\
-        Julio 2026       & 56.846 \\
-        \bottomrule
-    \end{tabular}
-\end{table}
+El modelo GRU proyecta, bajo el escenario sin pandemia, un rango de precios del cemento de Gs.~59.915 a Gs.~63.852 a lo largo del horizonte de 24 meses. La proyección muestra una trayectoria relativamente estable, dentro de una banda contenida respecto al nivel histórico reciente.
 
 % ------ CEMENTO GRU CON COVID ------
 \clearpage
@@ -184,7 +160,7 @@ El modelo GRU proyecta, bajo el escenario sin pandemia, una tendencia ascendente
 \paragraph{Hiperparámetros y Arquitectura}
 
 \justify
-Para el escenario con efecto pandémico, la búsqueda con Optuna convergió a una configuración diferente: una capa GRU unidireccional con 64 unidades ocultas, sin \textit{dropout} ni planificador de tasa de aprendizaje. El optimizador fue Adam con $\eta = 0{,}001$ y regularización L2 $\lambda=10^{-5}$, \textit{lookback} de 6 meses y \textit{batch size} de 4. La arquitectura resultante totaliza los mismos 14.081 parámetros entrenables, pero con una dinámica de entrenamiento más simple. La Tabla~\ref{tab:gru_cemento_cc_arq} resume estos parámetros.
+Para el escenario con efecto pandémico, la búsqueda con Optuna (261 ensayos, 151,75 min) convergió a la misma configuración que el escenario sin pandemia: una capa GRU unidireccional con 64 unidades ocultas, ventana de entrada (\textit{lookback}) de 4 meses, optimizador AdamW con tasa de aprendizaje $\eta = 0{,}006946$ y \textit{weight decay} de $2{,}26 \times 10^{-4}$, \textit{batch size} de 8, \textit{dropout} de 0{,}1, \textit{dropout} recurrente de 0{,}1 y \textit{scheduler} ReduceLROnPlateau. Los 13.889 parámetros entrenables son idénticos al escenario sin pandemia. La Tabla~\ref{tab:gru_cemento_cc_arq} resume estos parámetros.
 
 \begin{table}[htbp]
     \centering
@@ -196,12 +172,12 @@ Para el escenario con efecto pandémico, la búsqueda con Optuna convergió a un
         \midrule
         Capas GRU              & 1 (unidireccional) \\
         Unidades ocultas       & 64 \\
-        Lookback               & 6 meses \\
-        Optimizador            & Adam ($\eta=0{,}001$, WD $=10^{-5}$) \\
-        Batch size             & 4 \\
-        Dropout / Rec.\ dropout & 0{,}0 / 0{,}0 \\
-        Scheduler              & Ninguno \\
-        Parámetros entrenables & 14.081 \\
+        Lookback               & 4 meses \\
+        Optimizador            & AdamW ($\eta=0{,}006946$, WD $=2{,}26 \times 10^{-4}$) \\
+        Batch size             & 8 \\
+        Dropout / Rec.\ dropout & 0{,}1 / 0{,}1 \\
+        Scheduler              & ReduceLROnPlateau \\
+        Parámetros entrenables & 13.889 \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -225,13 +201,13 @@ Para el escenario con efecto pandémico, la búsqueda con Optuna convergió a un
         \toprule
         \textbf{Métrica} & \textbf{Train} & \textbf{Val} & \textbf{Test} \\
         \midrule
-        RMSE (Gs.) & 5.343{,}63 & 4.130{,}82 & 1.694{,}23 \\
+        RMSE (Gs.) & 6.330{,}42 & 3.264{,}19 & 4.964{,}27 \\
         \bottomrule
     \end{tabular}
 \end{table}
 
 \justify
-El RMSE de prueba para el escenario con pandemia (Gs.~1.694{,}23) resulta notablemente inferior al obtenido en el escenario sin pandemia (Gs.~2.709{,}13), lo que indica que la inclusión de la variable pandémica en el entrenamiento mejora el ajuste del modelo sobre el período de evaluación. Sin embargo, el RMSE de entrenamiento (Gs.~5.343{,}63) es más elevado que en el escenario sin pandemia (Gs.~4.911{,}67), lo que puede atribuirse a la mayor variabilidad introducida por los datos pandémicos en el conjunto de entrenamiento.
+El RMSE de prueba del escenario con pandemia (Gs.~4.964{,}27) es idéntico al del escenario sin pandemia, resultado esperable dado que la búsqueda de hiperparámetros convergió a la misma configuración. El RMSE de validación de Gs.~3.264{,}19 también coincide, confirmando que ambos modelos son funcionalmente equivalentes salvo por el valor de la variable indicadora de pandemia durante la predicción futura. En términos relativos al rango histórico del cemento, el RMSE de prueba representa aproximadamente el 17{,}7\,\% del rango, resultado similar al obtenido en el escenario sin pandemia.
 
 \paragraph{Evaluación sobre el Conjunto de Prueba}
 
@@ -308,7 +284,7 @@ El test de Ljung-Box sobre los residuos del conjunto de prueba arroja un $p$-val
 \end{figure}
 
 \justify
-Bajo el escenario con efecto pandémico, el modelo GRU proyecta para el cemento precios considerablemente inferiores al escenario sin pandemia, con el rango completo entre Gs.~46.048 y Gs.~53.874. La diferencia es sustancial: mientras que sin pandemia el precio asciende hasta Gs.~61.845, con pandemia el modelo proyecta una trayectoria descendente que alcanza un mínimo de Gs.~46.048. La GRU interpreta la señal de cuarentena activa como un factor de contracción de la demanda, lo que contrasta con la interpretación alcista que el LSTM asignó al mismo escenario. Este resultado es un hallazgo relevante de la comparación entre arquitecturas: ambas redes aprendieron aspectos diferentes del fenómeno pandémico a partir de los mismos datos históricos.
+Bajo el escenario con efecto pandémico, el modelo GRU proyecta para el cemento un rango de precios de Gs.~59.915 a Gs.~65.337 a lo largo del horizonte de 24 meses. Esta proyección es levemente superior al límite máximo del escenario sin pandemia (Gs.~63.852), lo que sugiere que la variable pandémica empuja marginalmente los precios al alza en el largo plazo según la interpretación del modelo. La diferencia entre escenarios es acotada, lo que indica que el GRU capturó el efecto pandémico sobre el cemento como un factor de impacto moderado.
 
 % ============================================================
 % 4.4.2 — LADRILLO GRU
@@ -589,4 +565,4 @@ El test de Ljung-Box sobre los residuos del conjunto de prueba muestra un $p$-va
 Bajo el escenario con efecto pandémico, el rango de precios proyectado para el ladrillo se sitúa entre Gs.~662 y Gs.~761. El límite superior es ligeramente mayor que en el escenario sin pandemia (Gs.~726), lo que indica que el modelo captura un efecto alcista acumulado de la variable pandémica sobre el precio del ladrillo hacia el final del horizonte de predicción.
 
 \justify
-La divergencia en la interpretación del efecto pandémico entre los modelos GRU del cemento y del ladrillo es uno de los hallazgos más relevantes del estudio. Para el cemento, la GRU asoció la pandemia con una contracción de precios (rango Gs.~46.048--53.874 con pandemia versus Gs.~55.600--61.845 sin pandemia); para el ladrillo, el modelo capturó un efecto alcista moderado (Gs.~662--761 con pandemia versus Gs.~662--726 sin pandemia). Para el cemento, la pandemia fue interpretada como un factor de contracción de la demanda; para el ladrillo, como un leve impulso ascendente, lo que es más consistente con la evolución observada de los precios durante 2020--2022.
+Una observación relevante al comparar los modelos GRU del cemento y del ladrillo es que el efecto pandémico fue interpretado de forma distinta para cada material. Para el cemento, la inclusión de la variable pandémica desplaza marginalmente el pronóstico al alza (Gs.~59.915--65.337 con pandemia versus Gs.~59.915--63.852 sin pandemia); para el ladrillo, el efecto también es alcista aunque levemente mayor (Gs.~662--761 con pandemia versus Gs.~662--726 sin pandemia). En ambos casos, el modelo GRU capturó la señal pandémica como un impulso moderado de precios hacia el final del horizonte de predicción.
