@@ -1,22 +1,28 @@
 \section{Predicción del Nivel del Río Paraguay con Long Short-Term Memory (LSTM)}
 \vspace{0.3cm}
 \justify
-El primer problema a resolver antes de predecir precios era obtener una proyección confiable del nivel del río Paraguay, variable exógena central en los modelos posteriores. Para ello se entrenó un modelo LSTM univariado con TensorFlow 2.19.0 / Keras, siguiendo tres pasos: búsqueda automática de hiperparámetros con Optuna, entrenamiento del modelo final con la configuración óptima encontrada, y generación del pronóstico a 730 días consecutivos. Lo que sigue describe esos tres pasos y sus resultados.
+Antes de construir los modelos de predicción de precios, se necesitaba contar con una proyección confiable del nivel del río Paraguay, variable que opera como entrada exógena en los modelos posteriores. Para esto se entrenó un modelo LSTM con TensorFlow 2.19.0 y Keras, siguiendo tres etapas: búsqueda automática de hiperparámetros con Optuna, entrenamiento del modelo final con la configuración óptima y generación del pronóstico a 730 días consecutivos.
 
 \subsection{Serie Histórica y Partición de los Datos}
 
 \justify
-La serie cubre registros diarios del nivel del río Paraguay en el Puerto de Asunción desde enero de 1990 hasta julio de 2025, con aproximadamente 8.000 observaciones. La Figura \ref{fig:serie_historica} revela de inmediato su complejidad: ciclos de crecida y estiaje que se alternan cada año, pero con amplitudes muy distintas entre períodos, y eventos extremos que superaron los 6 metros. Es precisamente esa variabilidad interanual, difícil de capturar con un modelo lineal simple, la que motivó el uso de LSTM.
+La serie contiene registros diarios del nivel del río Paraguay en el Puerto de Asunción, abarcando el período de enero de 2014 a julio de 2025. El archivo original tenía 8.001 filas por haberse obtenido mediante scraping de múltiples páginas, de las cuales 3.824 eran duplicados de fecha. Tras su eliminación quedaron 4.177 registros únicos. Los 29 días faltantes dentro del rango fueron imputados por interpolación lineal, resultando en una serie continua de 4.206 observaciones.
+
+\justify
+Las estadísticas descriptivas de la variable muestran una media de 2,63 m y una desviación estándar de 2,17 m, con valores entre $-1{,}61$ m y $7{,}88$ m. La Figura \ref{fig:serie_historica} muestra la serie completa, donde se aprecia la alternancia entre períodos de crecida y estiaje con amplitudes marcadamente distintas entre años.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_nivel_rio/resultados/grafico_00_serie_historica.png}
-    \caption{Serie histórica completa del nivel diario del río Paraguay (1990--2025).}
+    \caption{Serie histórica completa del nivel diario del río Paraguay (2014--2025).}
     \label{fig:serie_historica}
 \end{figure}
 
 \justify
-La partición de los datos siguió un criterio cronológico estricto: 80\% para entrenamiento, 10\% para validación y 10\% para prueba, asignando siempre las observaciones más recientes al conjunto de evaluación final. Mezclar aleatoriamente datos pasados y futuros habría producido resultados artificialmente optimistas —el modelo «vería» el futuro durante el entrenamiento—, de modo que esta decisión no es un tecnicismo menor sino una condición necesaria para que las métricas reflejen el desempeño real. La Figura \ref{fig:particiones} muestra cómo quedó distribuida la serie en cada subconjunto.
+El modelo recibe 14 variables de entrada por paso de tiempo: el nivel del río más siete características temporales y seis de anomalía. Las temporales incluyen representaciones cíclicas del día del año, el mes y la estación (codificadas como seno y coseno), más el año normalizado. Las de anomalía capturan desviaciones respecto a medias móviles de 30 y 90 días, tendencias de 7 y 30 días, y rezagos a 365 y 730 días.
+
+\justify
+La partición del dataset siguió un criterio estrictamente cronológico. El conjunto de entrenamiento comprende desde el 1 de enero de 2014 hasta el 25 de junio de 2021 (2.733 observaciones, aproximadamente el 65\% del total); el de validación, desde el 26 de junio de 2021 hasta el 11 de mayo de 2024 (1.051 observaciones, el 25\%); y el de prueba, desde el 12 de mayo de 2024 hasta el 7 de julio de 2025 (422 observaciones, el 10\% restante). Al aplicar la ventana de lookback de 180 días al conjunto de entrenamiento, el número efectivo de secuencias se reduce a 2.553. Esta proporción fue seleccionada por ser la que produjo el mejor resultado en experimentos previos con distintas configuraciones de partición. La Figura \ref{fig:particiones} muestra la distribución temporal de los tres subconjuntos.
 
 \begin{figure}[ht]
     \centering
@@ -28,10 +34,10 @@ La partición de los datos siguió un criterio cronológico estricto: 80\% para 
 \subsection{Optimización de Hiperparámetros con Optuna}
 
 \justify
-La búsqueda de hiperparámetros se realizó con Optuna, usando el sampler TPE (\textit{Tree-structured Parzen Estimator}) y poda de trials con \textit{MedianPruner} para detener tempranamente las configuraciones claramente inferiores. Se evaluaron 500 trials en Kaggle con dos GPUs bajo la estrategia \texttt{MirroredStrategy} de TensorFlow, proceso que demandó 661,13 minutos en total (cerca de 11 horas). El mejor resultado surgió recién en el trial 346, con un RMSE de validación de 0,0419 m — lo que muestra que la búsqueda bayesiana siguió encontrando mejoras bien avanzado el proceso.
+La búsqueda de hiperparámetros se realizó con Optuna, usando el sampler TPE (\textit{Tree-structured Parzen Estimator}) y poda de trials con \textit{MedianPruner} para descartar tempranamente las configuraciones claramente inferiores. Se evaluaron 300 trials en Kaggle con dos GPUs Tesla T4 bajo la estrategia \texttt{MirroredStrategy}, proceso que demandó 661 minutos en total. El mejor RMSE de validación obtenido fue de 0,0419 m.
 
 \justify
-La Figura \ref{fig:optuna_historia} muestra la evolución del RMSE de validación a lo largo de los 300 trials (panel izquierdo) y la importancia relativa de cada hiperparámetro en el proceso de optimización (panel derecho). Se observa que el RMSE desciende rápidamente durante los primeros 50 trials y se estabiliza posteriormente, lo que indica que la búsqueda bayesiana convergió de forma eficiente hacia el óptimo. En cuanto a la importancia de hiperparámetros, el número de capas (\texttt{n\_layers}) resultó ser el factor más influyente, seguido por la estrategia de predicción (\texttt{strategy}), la tasa de aprendizaje y la tasa de \textit{dropout}.
+La Figura \ref{fig:optuna_historia} presenta la evolución del RMSE de validación a lo largo de los 300 trials y la importancia relativa de cada hiperparámetro. El número de capas (\texttt{n\_layers}) resultó el factor más influyente, seguido por la estrategia de predicción y la tasa de aprendizaje.
 
 \begin{figure}[ht]
     \centering
@@ -41,7 +47,7 @@ La Figura \ref{fig:optuna_historia} muestra la evolución del RMSE de validació
 \end{figure}
 
 \justify
-Los hiperparámetros óptimos obtenidos se resumen en la Tabla \ref{tab:hiperparametros_lstm_rio}.
+Los hiperparámetros óptimos se resumen en la Tabla \ref{tab:hiperparametros_lstm_rio}.
 
 \begin{table}[ht]
     \centering
@@ -68,12 +74,12 @@ Los hiperparámetros óptimos obtenidos se resumen en la Tabla \ref{tab:hiperpar
 \end{table}
 
 \justify
-La configuración óptima corresponde a un modelo LSTM de una sola capa con 512 unidades ocultas, lo que refleja que la complejidad de la dinámica hidrológica del río Paraguay puede capturarse eficientemente con una arquitectura relativamente compacta. La estrategia recursiva de predicción (\textit{unistep}) fue preferida sobre la estrategia directa, indicando que el modelo aprovecha mejor la retroalimentación acumulada paso a paso para proyecciones a largo plazo. El total de parámetros entrenables del modelo final es de 1.079.809.
+La configuración óptima corresponde a una sola capa LSTM con 512 unidades ocultas. La estrategia recursiva fue preferida sobre la directa, lo que indica que el modelo aprovecha mejor la retroalimentación acumulada paso a paso para proyecciones largas. El total de parámetros entrenables es de 1.079.809.
 
 \subsection{Entrenamiento del Modelo Final}
 
 \justify
-El modelo final fue entrenado durante 71 épocas sobre el conjunto de entrenamiento, utilizando los hiperparámetros óptimos obtenidos por Optuna. La Figura \ref{fig:curva_aprendizaje} presenta la evolución del RMSE de entrenamiento y validación en función del número de épocas.
+El modelo final fue entrenado durante 71 épocas con los hiperparámetros óptimos, una ventana de lookback de 180 días y una paciencia de 30 épocas para la detención temprana. La Figura \ref{fig:curva_aprendizaje} presenta la evolución del error de entrenamiento y validación a lo largo del proceso.
 
 \begin{figure}[ht]
     \centering
@@ -83,12 +89,12 @@ El modelo final fue entrenado durante 71 épocas sobre el conjunto de entrenamie
 \end{figure}
 
 \justify
-Se observa una convergencia rápida durante las primeras 10 épocas, con una caída pronunciada del error desde valores superiores a 1,0 hasta valores inferiores a 0,10. A partir de la época 10, ambas curvas se estabilizan y convergen hacia valores similares, con el RMSE de validación ligeramente por debajo del de entrenamiento en la mayor parte del recorrido. Este comportamiento indica que el modelo generaliza correctamente sin presentar sobreajuste (\textit{overfitting}) ni subajuste (\textit{underfitting}) significativos.
+Durante las primeras épocas, la pérdida cae rápidamente desde valores en torno a 0,30 hasta situarse por debajo de 0,10. A partir de la época 15 aproximadamente, el error de entrenamiento se estabiliza alrededor de 0,04 a 0,05, mientras el de validación oscila en rangos similares sin mostrar una tendencia ascendente sostenida, lo que indica que no se produjo sobreajuste significativo.
 
 \subsection{Métricas de Evaluación}
 
 \justify
-La Tabla \ref{tab:metricas_lstm_rio} presenta el RMSE obtenido en los tres subconjuntos de datos, tanto en la escala normalizada empleada durante el entrenamiento como en la escala original en metros.
+La Tabla \ref{tab:metricas_lstm_rio} presenta el RMSE en los tres subconjuntos, tanto en escala normalizada como en metros.
 
 \begin{table}[ht]
     \centering
@@ -106,10 +112,10 @@ La Tabla \ref{tab:metricas_lstm_rio} presenta el RMSE obtenido en los tres subco
 \end{table}
 
 \justify
-El error se mantiene por debajo de los 5,3 cm en los tres conjuntos, lo cual es llamativo si se considera que la serie oscila históricamente entre $-2$ y $+8$ metros. Dicho de otro modo, el modelo se equivoca menos del 0,6\% del rango total de la variable. Más revelador aún es que el RMSE de validación (0,0469 m) resulte incluso menor que el de entrenamiento (0,0526 m): eso descarta que el modelo haya memorizado los datos de entrenamiento en lugar de aprender patrones generalizables.
+El error en el conjunto de prueba es de 4,49 cm, sobre una variable que oscila entre $-1{,}61$ m y $7{,}88$ m. Como referencia, el modelo de persistencia (que replica el valor del día anterior) obtuvo un RMSE de 0,0549 m en el mismo período, y la climatología histórica un RMSE de 2,6388 m; el LSTM mejora a ambas referencias.
 
 \justify
-Dado que el modelo emplea una estrategia de predicción recursiva unistep, cada predicción corresponde a un único paso adelante ($t+1$). La Figura \ref{fig:rmse_por_paso} ilustra este único punto de evaluación en el conjunto de prueba, con un RMSE de 0,0449 m.
+Dado que el modelo emplea una estrategia recursiva unistep, cada predicción corresponde a un único paso adelante ($t+1$). La Figura \ref{fig:rmse_por_paso} ilustra este punto de evaluación en el conjunto de prueba, con un RMSE de 0,0449 m.
 
 \begin{figure}[ht]
     \centering
@@ -121,7 +127,7 @@ Dado que el modelo emplea una estrategia de predicción recursiva unistep, cada 
 \subsection{Análisis de la Distribución de Errores}
 
 \justify
-Con el fin de evaluar el sesgo y la distribución estadística de los errores del modelo, se analizaron los residuos sobre el conjunto de validación. La Figura \ref{fig:distribucion_errores} presenta el histograma de errores (diferencia entre el valor real y el predicho) y el gráfico Q-Q de normalidad.
+Se analizaron los residuos sobre el conjunto de validación para evaluar el sesgo y la distribución estadística de los errores. La Figura \ref{fig:distribucion_errores} presenta el histograma de errores y el gráfico Q-Q de normalidad.
 
 \begin{figure}[ht]
     \centering
@@ -131,15 +137,22 @@ Con el fin de evaluar el sesgo y la distribución estadística de los errores de
 \end{figure}
 
 \justify
-El histograma de errores revela una distribución aproximadamente centrada en cero, con una media de 0,004 m, lo que indica que el modelo no introduce un sesgo sistemático significativo. La mayor parte de los errores se concentran en el intervalo $[-0{,}05, +0{,}10]$ metros, con una leve asimetría positiva que sugiere que el modelo tiende a subestimar ligeramente el nivel del río en algunos periodos. El gráfico Q-Q muestra que los residuos se aproximan razonablemente a una distribución normal, con desviaciones en las colas —especialmente en el extremo positivo— que corresponden a eventos hidrológicos extremos de difícil predicción.
+El histograma muestra una distribución aproximadamente centrada en cero (media = 0,004 m), sin sesgo sistemático apreciable. La mayor parte de los errores se concentra en el intervalo $[-0{,}05,\; +0{,}10]$ m, con una leve asimetría positiva que indica que el modelo tiende a subestimar el nivel en algunos periodos. El gráfico Q-Q muestra que los residuos se aproximan razonablemente a una distribución normal, con desviaciones en las colas que corresponden a eventos hidrológicos extremos de difícil predicción. La función de autocorrelación de los residuos, presentada en la Figura \ref{fig:acf_residuos}, no evidencia estructura temporal relevante no capturada por el modelo.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.85\textwidth]{predicciones/prediccion_nivel_rio/resultados/grafico_16_acf_residuos.png}
+    \caption{Función de autocorrelación (ACF) de los residuos del modelo LSTM en el conjunto de validación.}
+    \label{fig:acf_residuos}
+\end{figure}
 
 \subsection{Predicción del Nivel del Río a 730 Días}
 
 \justify
-Tras la evaluación del modelo, se procedió a generar la predicción del nivel diario del río Paraguay para un horizonte de 730 días (2 años), aplicando la estrategia recursiva: el modelo predice el valor del día siguiente ($t+1$), el cual es reincorporado como entrada para predecir el día subsiguiente, repitiendo este proceso 730 veces a partir del último dato conocido (julio de 2025).
+Concluida la evaluación, se generó la predicción del nivel diario para un horizonte de 730 días mediante la estrategia recursiva: el modelo predice el valor del día siguiente ($t+1$) a partir de la ventana de 180 días previos, incorpora ese valor a la secuencia y repite el proceso hasta completar 730 pasos desde el último dato disponible (7 de julio de 2025, nivel = 3,14 m). Para reducir la acumulación de error en horizontes largos, la predicción se combina gradualmente con la climatología histórica a través de un factor de mezcla $\alpha(t)$ que decrece desde 1,00 en el primer paso hasta valores próximos a 0 hacia el final del horizonte ($\alpha = 0{,}72$ a los 30 días, $\alpha = 0{,}37$ a los 90 días, $\alpha = 0{,}14$ a los 180 días).
 
 \justify
-La Figura \ref{fig:historico_prediccion} muestra la serie histórica completa (en azul) junto con la predicción generada (en rojo discontinuo) y la climatología histórica como referencia estacional (en gris discontinuo).
+La Figura \ref{fig:historico_prediccion} muestra la serie histórica completa junto con la predicción generada y la climatología histórica como referencia estacional.
 
 \begin{figure}[ht]
     \centering
@@ -149,7 +162,7 @@ La Figura \ref{fig:historico_prediccion} muestra la serie histórica completa (e
 \end{figure}
 
 \justify
-La Figura \ref{fig:zoom_transicion} presenta en detalle la zona de transición entre los datos reales (últimos 6 meses, en azul) y el inicio de la predicción (primeros 6 meses proyectados, en rojo). La continuidad y suavidad de la curva en el punto de inicio de la predicción confirman que el modelo aprendió correctamente la dinámica temporal del río, sin discontinuidades abruptas. A partir de julio de 2025, el modelo proyecta un descenso del nivel desde aproximadamente 3,1 m hasta valores en torno a 0,85 m hacia mediados de octubre de 2025, seguido de una recuperación hacia niveles de 1,9 m en enero de 2026, en concordancia con el ciclo estacional típico del río Paraguay.
+La Figura \ref{fig:zoom_transicion} muestra en detalle la transición entre datos reales (últimos 6 meses, en azul) y el inicio de la predicción (primeros 6 meses proyectados, en rojo). A partir del 8 de julio de 2025, el modelo proyecta un descenso progresivo desde los 3,07 m iniciales hasta un mínimo de aproximadamente 0,85 m hacia fines de octubre de 2025, seguido de una recuperación que sitúa el nivel en torno a 1,69 m para principios de enero de 2026, patrón consistente con el ciclo estacional del río.
 
 \begin{figure}[ht]
     \centering
@@ -159,7 +172,7 @@ La Figura \ref{fig:zoom_transicion} presenta en detalle la zona de transición e
 \end{figure}
 
 \justify
-Finalmente, la Figura \ref{fig:climatologia_prediccion} compara la predicción LSTM a 730 días con la climatología histórica del río Paraguay, tanto en la vista temporal de la proyección (panel izquierdo) como en el ciclo estacional anual suavizado (panel derecho).
+La Figura \ref{fig:climatologia_prediccion} compara la predicción a 730 días con la climatología histórica tanto en la vista temporal de la proyección como en el ciclo estacional anual suavizado.
 
 \begin{figure}[ht]
     \centering
@@ -169,4 +182,4 @@ Finalmente, la Figura \ref{fig:climatologia_prediccion} compara la predicción L
 \end{figure}
 
 \justify
-La predicción generada por el modelo sigue el patrón estacional característico del río Paraguay, con crecidas proyectadas principalmente entre mayo y agosto de cada año, y estiajes hacia los meses de septiembre a noviembre. Si bien la predicción LSTM muestra una amplitud de oscilación algo más atenuada que la climatología histórica —comportamiento esperable en horizontes de proyección extendidos bajo la estrategia recursiva—, reproduce correctamente los ciclos de ascenso y descenso, lo que valida la utilidad del modelo para la estimación de la variable exógena requerida por los modelos de predicción de precios de materiales de construcción.
+La predicción a 730 días presenta un mínimo de 0,85 m, un máximo de 4,07 m, una media de 2,26 m y una desviación estándar de 0,90 m. El patrón estacional se reproduce en ambos años proyectados, con crecidas hacia los meses de mayo a julio y estiajes entre septiembre y noviembre. La amplitud de oscilación es algo menor que la de la climatología histórica, lo cual es esperable dado el blending progresivo con la climatología y la acumulación de incertidumbre en horizontes extendidos. Estos resultados validan la utilidad del modelo para estimar la variable exógena requerida por los modelos de predicción de precios de materiales de construcción.

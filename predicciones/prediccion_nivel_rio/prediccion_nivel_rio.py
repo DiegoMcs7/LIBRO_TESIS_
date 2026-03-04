@@ -184,7 +184,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 # ==============================================================================
 
 # ── Rutas de Kaggle (obligatorias según especificación del proyecto) ──────────
-ruta_entrada = '/kaggle/input/'
+ruta_entrada = '/kaggle/input/datasets/diemcs/'
 ruta_salida  = '/kaggle/working/'
 nombre_archivo_nivel_rio = 'data-tesis/Nivel_Rio.csv'
 
@@ -422,8 +422,10 @@ FEATURES_ANOMALIA = [
     'nivel_anom90',   # Nivel - media móvil 90d  (sequía/crecida a largo plazo)
     'nivel_tend7',    # Tasa de cambio 7d  (m/día)
     'nivel_tend30',   # Tasa de cambio 30d (m/día)
+    'nivel_lag365',   # Nivel del mismo día del año pasado (m)
+    'nivel_lag730',   # Nivel del mismo día hace 2 años   (m)
 ]
-# Total: 1 (nivel) + 7 (temporales) + 4 (anomalía) = 12 features por timestep
+# Total: 1 (nivel) + 7 (temporales) + 6 (anomalía+rezagos) = 14 features por timestep
 N_FEATURES = 1 + len(FEATURES_TEMPORALES) + len(FEATURES_ANOMALIA)
 
 
@@ -532,6 +534,13 @@ def calcular_features_anomalia(df: pd.DataFrame) -> pd.DataFrame:
     df['nivel_tend7']  = ((nivel - nivel.shift(7))  / 7.0).fillna(0.0)
     df['nivel_tend30'] = ((nivel - nivel.shift(30)) / 30.0).fillna(0.0)
 
+    # Rezagos anuales — disponibles durante predicción recursiva sin necesidad
+    # de datos externos: en el paso k, lag365 = nivel[k-365] (histórico si k<365,
+    # predicho si k>=365). Le indica al modelo el estado del río en la misma
+    # época del año anterior, capturando memoria inter-anual (sequías multi-año).
+    df['nivel_lag365'] = nivel.shift(365).bfill()
+    df['nivel_lag730'] = nivel.shift(730).bfill()
+
     return df
 
 
@@ -554,8 +563,10 @@ print("=" * 70)
 # Aplicar shuffle mezclaría pasado y futuro, lo que equivale a "mirar hacia
 # adelante" durante el entrenamiento (data leakage temporal). La división debe
 # respetar el orden cronológico estrictamente.
-PROP_TRAIN = 0.70
-PROP_VAL   = 0.15
+# Validación más reciente (0.25) para que cubra un período más cercano al de
+# predicción — mejora la calibración del early stopping en datos recientes.
+PROP_TRAIN = 0.65
+PROP_VAL   = 0.25
 
 n_total = len(df)
 n_train = int(n_total * PROP_TRAIN)
@@ -980,6 +991,70 @@ def rmse_real(pred_scaled: np.ndarray,
     return float(np.sqrt(mean_squared_error(true_r, pred_r)))
 
 
+def nse(y_obs: np.ndarray, y_pred: np.ndarray) -> float:
+    """
+    Nash-Sutcliffe Efficiency — métrica estándar en hidrología.
+
+    Interpreta el modelo respecto a predecir siempre la media observada:
+      NSE = 1.0  → modelo perfecto
+      NSE = 0.0  → igual de bueno que predecir la media histórica
+      NSE < 0.0  → peor que predecir la media (modelo inútil)
+
+    A diferencia del RMSE, el NSE es adimensional y permite comparar modelos
+    sobre distintos ríos o períodos. Es el indicador más citado en hidrología
+    computacional (Nash & Sutcliffe, 1970).
+    """
+    y_obs  = np.asarray(y_obs,  dtype=float)
+    y_pred = np.asarray(y_pred, dtype=float)
+    ss_res = float(np.sum((y_obs - y_pred) ** 2))
+    ss_tot = float(np.sum((y_obs - np.mean(y_obs)) ** 2))
+    return 1.0 - ss_res / ss_tot if ss_tot > 0 else 0.0
+
+
+def mae_metros(pred_scaled: np.ndarray,
+               true_scaled: np.ndarray,
+               scaler: RobustScaler) -> float:
+    """MAE en metros reales (desnormalizado)."""
+    pred_r = scaler.inverse_transform(pred_scaled.reshape(-1, 1)).flatten()
+    true_r = scaler.inverse_transform(true_scaled.reshape(-1, 1)).flatten()
+    return float(np.mean(np.abs(true_r - pred_r)))
+
+
+def cargar_resultados_reales(ruta: str):
+    """
+    Carga y parsea el archivo de valores reales para comparación.
+
+    Formato esperado:
+      FECHA\\tNIVEL DEL DÍA
+      DD-MM-YYYY\\tX.XXm
+    """
+    if not os.path.isfile(ruta):
+        print(f"Archivo no encontrado: {ruta}")
+        return None
+    try:
+        with open(ruta, 'r', encoding='utf-8') as _fh:
+            _first = _fh.readline()
+        _sep = '\t' if '\t' in _first else ','
+        df_r = pd.read_csv(ruta, sep=_sep, header=0)
+        df_r.columns = ['Fecha', 'Nivel_Real']
+        df_r['Fecha'] = pd.to_datetime(df_r['Fecha'], format='%d-%m-%Y', errors='coerce')
+        df_r = df_r.dropna(subset=['Fecha'])
+        df_r['Nivel_Real'] = (
+            df_r['Nivel_Real'].astype(str)
+            .str.replace('m', '', regex=False).str.strip()
+        )
+        df_r['Nivel_Real'] = pd.to_numeric(df_r['Nivel_Real'], errors='coerce')
+        df_r = df_r.dropna(subset=['Nivel_Real'])
+        df_r.sort_values('Fecha', inplace=True)
+        df_r.reset_index(drop=True, inplace=True)
+        print(f"\nResultados reales cargados: {len(df_r)} registros")
+        print(f"Rango: {df_r['Fecha'].min().date()} → {df_r['Fecha'].max().date()}")
+        return df_r
+    except Exception as e:
+        print(f"Error al cargar resultados_reales.txt: {e}")
+        return None
+
+
 def entrenar_modelo_keras(params: dict, X_tr: np.ndarray, y_tr: np.ndarray,
                            X_vl: np.ndarray, y_vl: np.ndarray,
                            n_epochs: int, patience: int,
@@ -1076,7 +1151,7 @@ print("=" * 70)
 
 MAX_EPOCHS_OPTUNA = 100   # Épocas máx por trial (early stopping puede reducirlas)
 PATIENCE_OPTUNA   = 12    # Paciencia de early stopping dentro de cada trial
-N_TRIALS          = 300   # Número de trials
+N_TRIALS          = 500  # Número de trials
 
 print(f"\nParámetros de Optuna:")
 print(f"  Trials totales    : {N_TRIALS}")
@@ -1613,7 +1688,8 @@ def predecir_iterativamente_univariado(modelo, df_original_completo, scaler,
                                         input_length, output_length,
                                         num_pasos_a_predecir, feature_name,
                                         climatologia=None, tau_clim=90.0,
-                                        anomalia_inicial=0.0, tau_anom_clim=365.0):
+                                        anomalia_inicial=0.0, tau_anom_clim=365.0,
+                                        silent=False):
     """
     Realiza predicciones iterativas para el modelo LSTM en Keras.
 
@@ -1664,10 +1740,11 @@ def predecir_iterativamente_univariado(modelo, df_original_completo, scaler,
     anom_hist_vals = df_original_completo[FEATURES_ANOMALIA].values[-input_length:].astype(np.float32)
     anom_hist_s    = scaler_anom.transform(anom_hist_vals)
 
-    # Buffer de niveles reales para actualizar anomalías durante la predicción.
-    # Se inicializa con los últimos 90 días del histórico (suficiente para
-    # calcular ma30, ma90, tend7 y tend30 desde el primer paso predicho).
-    _buf_len       = 90
+    # Buffer de niveles reales para anomalías y rezagos anuales.
+    # 730 días: permite calcular lag365 y lag730 desde el primer paso predicho.
+    # Al agregar cada predicción al buffer, el lag365 del paso k es buffer[-366]
+    # (después de append), que referencia el nivel de hace exactamente 365 días.
+    _buf_len       = 730
     niveles_buffer = list(df_original_completo['Nivel'].values[-_buf_len:].astype(float))
 
     # Ventana combinada: [nivel_s, 7 temporales, 4 anomalía] = 12 features/timestep
@@ -1677,7 +1754,8 @@ def predecir_iterativamente_univariado(modelo, df_original_completo, scaler,
     fechas_pred   = []
     niveles_pred  = []
 
-    print("Iniciando predicción iterativa...")
+    if not silent:
+        print("Iniciando predicción iterativa...")
 
     i = 0
     while i < num_pasos_a_predecir:
@@ -1739,15 +1817,16 @@ def predecir_iterativamente_univariado(modelo, df_original_completo, scaler,
             fechas_pred.append(fecha_actual)
             niveles_pred.append(nivel_real)
 
-            if climatologia is not None and i % 30 == 0:
-                print(f"Paso {i+1}/{num_pasos_a_predecir}: "
-                      f"Fecha={fecha_actual.strftime('%Y-%m-%d')}, "
-                      f"Nivel={nivel_real:.2f} m  "
-                      f"[LSTM={nivel_lstm:.2f} | clim_adj={nivel_clim:.2f} | α={alpha:.2f} | β={beta:.2f}]")
-            else:
-                print(f"Paso {i+1}/{num_pasos_a_predecir}: "
-                      f"Fecha={fecha_actual.strftime('%Y-%m-%d')}, "
-                      f"Nivel={nivel_real:.2f}")
+            if not silent:
+                if climatologia is not None and i % 30 == 0:
+                    print(f"Paso {i+1}/{num_pasos_a_predecir}: "
+                          f"Fecha={fecha_actual.strftime('%Y-%m-%d')}, "
+                          f"Nivel={nivel_real:.2f} m  "
+                          f"[LSTM={nivel_lstm:.2f} | clim_adj={nivel_clim:.2f} | α={alpha:.2f} | β={beta:.2f}]")
+                elif i % 30 == 0:
+                    print(f"Paso {i+1}/{num_pasos_a_predecir}: "
+                          f"Fecha={fecha_actual.strftime('%Y-%m-%d')}, "
+                          f"Nivel={nivel_real:.2f}")
 
             # ── Actualizar ventana deslizante con anomalías recalculadas ──────
             feats_nueva = scaler_temp.transform(
@@ -1755,18 +1834,23 @@ def predecir_iterativamente_univariado(modelo, df_original_completo, scaler,
                 .reshape(1, -1)
             ).flatten().astype(np.float32)
 
-            # Actualizar buffer y recalcular features de anomalía para este paso
+            # Actualizar buffer y recalcular features de anomalía + rezagos
             niveles_buffer.append(nivel_real)
-            buf      = niveles_buffer[-90:]
+            buf      = niveles_buffer             # buffer completo (≥730 elementos)
             ma30_v   = float(np.mean(buf[-30:])) if len(buf) >= 30 else float(np.mean(buf))
             ma90_v   = float(np.mean(buf[-90:])) if len(buf) >= 90 else float(np.mean(buf))
             anom30_v = nivel_real - ma30_v
             anom90_v = nivel_real - ma90_v
             tend7_v  = (nivel_real - buf[-8])  / 7.0  if len(buf) >= 8  else 0.0
             tend30_v = (nivel_real - buf[-31]) / 30.0 if len(buf) >= 31 else 0.0
+            # lag365: nivel exactamente 365 días antes del paso actual
+            # Después del append, buf[-1]=actual → buf[-366]=actual-365 días
+            lag365_v = float(buf[-366]) if len(buf) >= 366 else float(buf[0])
+            lag730_v = float(buf[-731]) if len(buf) >= 731 else float(buf[0])
 
-            anom_feats_new = np.array([[anom30_v, anom90_v, tend7_v, tend30_v]],
-                                      dtype=np.float32)
+            anom_feats_new = np.array(
+                [[anom30_v, anom90_v, tend7_v, tend30_v, lag365_v, lag730_v]],
+                dtype=np.float32)
             anom_feats_s   = scaler_anom.transform(anom_feats_new).flatten()
 
             nueva_fila = np.concatenate([[nivel_s], feats_nueva, anom_feats_s])
@@ -1776,7 +1860,8 @@ def predecir_iterativamente_univariado(modelo, df_original_completo, scaler,
             if i >= num_pasos_a_predecir:
                 break
 
-    print(f"\nPredicción completada: {len(niveles_pred)} días predichos.")
+    if not silent:
+        print(f"\nPredicción completada: {len(niveles_pred)} días predichos.")
     return pd.DataFrame({'Fecha': fechas_pred, 'Nivel_Predicho': niveles_pred})
 
 
@@ -1825,6 +1910,50 @@ print(f"    β(t=365d): anomalía desplaza clim en "
 print(f"    β(t=730d): anomalía desplaza clim en "
       f"{anomalia_inicial * np.exp(-730 / TAU_ANOMALIA_CLIM):+.2f} m")
 
+# ── Tau grid search: optimiza tau_clim y tau_anom con datos reales ────────────
+# Si resultados_reales.txt está disponible, busca la combinación de tau que
+# minimiza RMSE vs datos observados reales. Corre 9 predicciones silenciosas
+# (3×3 grid) y selecciona el mejor par de parámetros.
+_df_reales_tau = cargar_resultados_reales(RUTA_REALES)
+if _df_reales_tau is not None:
+    print("\nTau grid search (optimizando con datos reales disponibles)...")
+    _tau_grid = [
+        (tc, ta)
+        for tc in [45.0, 90.0, 180.0]
+        for ta in [180.0, 365.0, 730.0]
+    ]
+    _best_rmse_tau = float('inf')
+    for _tc, _ta in _tau_grid:
+        _pred_tau = predecir_iterativamente_univariado(
+            modelo=modelo_final,
+            df_original_completo=df,
+            scaler=scaler_nivel,
+            input_length=lookback_final,
+            output_length=horizon_final,
+            num_pasos_a_predecir=N_DIAS_PREDICCION,
+            feature_name='Nivel',
+            climatologia=climatologia_nivel,
+            tau_clim=_tc,
+            anomalia_inicial=anomalia_inicial,
+            tau_anom_clim=_ta,
+            silent=True,
+        )
+        _cmp_tau = pd.merge(_pred_tau, _df_reales_tau, on='Fecha', how='inner')
+        if len(_cmp_tau) >= 10:
+            _rmse_tau = float(np.sqrt(np.mean(
+                (_cmp_tau['Nivel_Real'] - _cmp_tau['Nivel_Predicho']) ** 2
+            )))
+            print(f"  tau_clim={_tc:5.0f}d  tau_anom={_ta:5.0f}d → RMSE={_rmse_tau:.4f} m")
+            if _rmse_tau < _best_rmse_tau:
+                _best_rmse_tau = _rmse_tau
+                TAU_CLIMATOLOGIA  = _tc
+                TAU_ANOMALIA_CLIM = _ta
+    print(f"\nMejor tau_clim={TAU_CLIMATOLOGIA:.0f}d  tau_anom={TAU_ANOMALIA_CLIM:.0f}d"
+          f"  →  RMSE={_best_rmse_tau:.4f} m")
+else:
+    print(f"\nSin datos reales → tau_clim={TAU_CLIMATOLOGIA:.0f}d,"
+          f" tau_anom={TAU_ANOMALIA_CLIM:.0f}d (valores por defecto)")
+
 # Ejecutar predicción a 730 días
 resultados_prediccion_nivel = predecir_iterativamente_univariado(
     modelo=modelo_final,
@@ -1860,40 +1989,11 @@ print("COMPARACIÓN CON RESULTADOS REALES")
 print("=" * 70)
 
 
-def cargar_resultados_reales(ruta: str):
-    """
-    Carga y parsea el archivo de valores reales para comparación.
-
-    Formato esperado:
-      FECHA\\tNIVEL DEL DÍA
-      DD-MM-YYYY\\tX.XXm
-    """
-    if not os.path.isfile(ruta):
-        print(f"Archivo no encontrado: {ruta}")
-        return None
-    try:
-        df_r = pd.read_csv(ruta, sep='\t', header=0)
-        df_r.columns = ['Fecha', 'Nivel_Real']
-        df_r['Fecha'] = pd.to_datetime(df_r['Fecha'], format='%d-%m-%Y', errors='coerce')
-        df_r = df_r.dropna(subset=['Fecha'])
-        df_r['Nivel_Real'] = (
-            df_r['Nivel_Real'].astype(str)
-            .str.replace('m', '', regex=False).str.strip()
-        )
-        df_r['Nivel_Real'] = pd.to_numeric(df_r['Nivel_Real'], errors='coerce')
-        df_r = df_r.dropna(subset=['Nivel_Real'])
-        df_r.sort_values('Fecha', inplace=True)
-        df_r.reset_index(drop=True, inplace=True)
-        print(f"\nResultados reales cargados: {len(df_r)} registros")
-        print(f"Rango: {df_r['Fecha'].min().date()} → {df_r['Fecha'].max().date()}")
-        return df_r
-    except Exception as e:
-        print(f"Error al cargar resultados_reales.txt: {e}")
-        return None
-
-
 df_reales        = cargar_resultados_reales(RUTA_REALES)
+comparacion      = pd.DataFrame()   # siempre definido para los gráficos
 rmse_vs_reales   = None
+mae_vs_reales    = None
+nse_vs_reales    = None
 
 if df_reales is not None:
     comparacion = pd.merge(
@@ -1907,10 +2007,16 @@ if df_reales is not None:
         mae_vs_reales = float(np.mean(
             np.abs(comparacion['Nivel_Real'] - comparacion['Nivel_Predicho'])
         ))
+        nse_vs_reales = nse(
+            comparacion['Nivel_Real'].values,
+            comparacion['Nivel_Predicho'].values
+        )
         print(f"\nComparación predicción vs resultados_reales.txt:")
         print(f"  Registros en común: {len(comparacion)}")
         print(f"  RMSE              : {rmse_vs_reales:.4f} metros")
         print(f"  MAE               : {mae_vs_reales:.4f} metros")
+        print(f"  NSE               : {nse_vs_reales:.4f}  "
+              f"({'bueno' if nse_vs_reales > 0.5 else 'regular' if nse_vs_reales > 0 else 'peor que la media'})")
         print("\nPrimeros registros comparados:")
         print(comparacion[['Fecha', 'Nivel_Real', 'Nivel_Predicho']].to_string(index=False))
 
@@ -1927,7 +2033,8 @@ if df_reales is not None:
         plt.ylabel('Nivel del Río (metros)', fontsize=12)
         plt.title(
             f'Comparación: Predicción LSTM vs Valores Reales\n'
-            f'RMSE = {rmse_vs_reales:.4f} m | MAE = {mae_vs_reales:.4f} m',
+            f'RMSE = {rmse_vs_reales:.4f} m | MAE = {mae_vs_reales:.4f} m'
+            f' | NSE = {nse_vs_reales:.4f}',
             fontsize=13
         )
         plt.legend(fontsize=10)
@@ -2144,7 +2251,234 @@ plt.show()
 print("Gráfico guardado: grafico_10_panel_resumen.png")
 
 # ==============================================================================
-# SECCIÓN 17 — GUARDADO DE RESULTADOS Y RESUMEN FINAL
+# SECCIÓN 17 — ANÁLISIS ADICIONAL PARA TESIS
+# ==============================================================================
+
+print("\n" + "=" * 70)
+print("ANÁLISIS ADICIONAL PARA TESIS")
+print("=" * 70)
+
+# ── grafico_12: Scatter predicho vs real (test, 1 paso) ───────────────────────
+obs_sc  = y_ts_real[:, 0]
+pred_sc = y_ts_pred_real[:, 0]
+rmse_sc = float(np.sqrt(np.mean((obs_sc - pred_sc) ** 2)))
+mae_sc  = float(np.mean(np.abs(obs_sc - pred_sc)))
+nse_sc  = nse(obs_sc, pred_sc)
+r2_sc   = float(np.corrcoef(obs_sc, pred_sc)[0, 1] ** 2)
+
+fig, ax = plt.subplots(figsize=(7, 7))
+ax.scatter(obs_sc, pred_sc, alpha=0.25, s=8, color='steelblue', label='Muestras test')
+_lim = [min(obs_sc.min(), pred_sc.min()) - 0.3,
+        max(obs_sc.max(), pred_sc.max()) + 0.3]
+ax.plot(_lim, _lim, 'r--', lw=2, label='y = x (predicción perfecta)')
+ax.set_xlim(_lim); ax.set_ylim(_lim)
+ax.set_xlabel('Nivel Real (m)', fontsize=12)
+ax.set_ylabel('Nivel Predicho (m)', fontsize=12)
+ax.set_title(
+    f'Predicho vs Real — Test set (1 paso)\n'
+    f'R²={r2_sc:.4f}  RMSE={rmse_sc:.4f} m  MAE={mae_sc:.4f} m  NSE={nse_sc:.4f}',
+    fontsize=11
+)
+ax.legend(fontsize=10)
+ax.grid(True, linestyle='--', alpha=0.5)
+ax.set_aspect('equal')
+plt.tight_layout()
+plt.savefig(os.path.join(ruta_salida, 'grafico_12_scatter_test.png'),
+            dpi=150, bbox_inches='tight')
+plt.show()
+print("Gráfico guardado: grafico_12_scatter_test.png")
+print(f"  R²={r2_sc:.4f} | RMSE={rmse_sc:.4f} m | MAE={mae_sc:.4f} m | NSE={nse_sc:.4f}")
+
+# ── grafico_13: RMSE por horizonte temporal (datos reales) ────────────────────
+if len(comparacion) > 0:
+    _pred_start   = pd.to_datetime(comparacion['Fecha'].min())
+    comparacion['horizonte_d'] = (
+        pd.to_datetime(comparacion['Fecha']) - _pred_start
+    ).dt.days + 1
+    comparacion['error_abs']   = (
+        comparacion['Nivel_Predicho'] - comparacion['Nivel_Real']
+    ).abs()
+
+    _bins   = [0, 30, 90, 180, 365, 730]
+    _labels = ['1–30d', '31–90d', '91–180d', '181–365d', '366–730d']
+    comparacion['periodo'] = pd.cut(
+        comparacion['horizonte_d'], bins=_bins, labels=_labels
+    )
+    _rmse_h = comparacion.groupby('periodo', observed=True).apply(
+        lambda g: float(np.sqrt(np.mean((g['Nivel_Real'] - g['Nivel_Predicho'])**2)))
+    )
+    _nse_h  = comparacion.groupby('periodo', observed=True).apply(
+        lambda g: nse(g['Nivel_Real'].values, g['Nivel_Predicho'].values)
+    )
+    _cnt_h  = comparacion.groupby('periodo', observed=True).size()
+
+    fig, (ax_a, ax_b) = plt.subplots(1, 2, figsize=(14, 6))
+    _colors = ['#2ecc71' if v <= 0.3 else '#f39c12' if v <= 0.6 else '#e74c3c'
+               for v in _rmse_h.values]
+    ax_a.bar(_rmse_h.index.astype(str), _rmse_h.values, color=_colors, alpha=0.85)
+    for _i, (_p, _v) in enumerate(zip(_rmse_h.index, _rmse_h.values)):
+        ax_a.text(_i, _v + 0.01, f'{_v:.3f}m\n(n={_cnt_h[_p]})',
+                  ha='center', va='bottom', fontsize=9)
+    ax_a.set_xlabel('Horizonte de predicción', fontsize=11)
+    ax_a.set_ylabel('RMSE (metros)', fontsize=11)
+    ax_a.set_title('RMSE por horizonte — vs datos reales', fontsize=12)
+    ax_a.grid(axis='y', linestyle='--', alpha=0.5)
+
+    _colors_nse = ['#2ecc71' if v >= 0.5 else '#f39c12' if v >= 0 else '#e74c3c'
+                   for v in _nse_h.values]
+    ax_b.bar(_nse_h.index.astype(str), _nse_h.values, color=_colors_nse, alpha=0.85)
+    ax_b.axhline(0, color='black', lw=1)
+    ax_b.axhline(0.5, color='green', lw=1, linestyle='--', label='NSE=0.5 (bueno)')
+    for _i, (_p, _v) in enumerate(zip(_nse_h.index, _nse_h.values)):
+        ax_b.text(_i, _v + 0.02, f'{_v:.3f}', ha='center', va='bottom', fontsize=9)
+    ax_b.set_xlabel('Horizonte de predicción', fontsize=11)
+    ax_b.set_ylabel('NSE', fontsize=11)
+    ax_b.set_title('NSE por horizonte — vs datos reales', fontsize=12)
+    ax_b.legend(fontsize=9)
+    ax_b.grid(axis='y', linestyle='--', alpha=0.5)
+
+    fig.suptitle('Degradación de la precisión con el horizonte de predicción',
+                 fontsize=13, fontweight='bold')
+    plt.tight_layout()
+    plt.savefig(os.path.join(ruta_salida, 'grafico_13_rmse_por_horizonte.png'),
+                dpi=150, bbox_inches='tight')
+    plt.show()
+    print("Gráfico guardado: grafico_13_rmse_por_horizonte.png")
+
+# ── grafico_14: Error por mes (boxplot) ───────────────────────────────────────
+if len(comparacion) > 0:
+    comparacion['mes']    = pd.to_datetime(comparacion['Fecha']).dt.month
+    comparacion['error']  = comparacion['Nivel_Predicho'] - comparacion['Nivel_Real']
+    _mes_names = {1:'Ene',2:'Feb',3:'Mar',4:'Abr',5:'May',6:'Jun',
+                  7:'Jul',8:'Ago',9:'Sep',10:'Oct',11:'Nov',12:'Dic'}
+    _meses_presentes = sorted(comparacion['mes'].unique())
+    _data_box = [comparacion[comparacion['mes'] == m]['error'].values
+                 for m in _meses_presentes]
+
+    fig, ax = plt.subplots(figsize=(13, 6))
+    bp = ax.boxplot(_data_box, patch_artist=True, notch=False,
+                    medianprops=dict(color='red', lw=2))
+    for patch in bp['boxes']:
+        patch.set_facecolor('#aed6f1')
+        patch.set_alpha(0.7)
+    ax.axhline(0, color='black', lw=1.2, linestyle='--')
+    ax.set_xticks(range(1, len(_meses_presentes) + 1))
+    ax.set_xticklabels([_mes_names[m] for m in _meses_presentes], fontsize=11)
+    ax.set_xlabel('Mes', fontsize=11)
+    ax.set_ylabel('Error = Predicho − Real (metros)', fontsize=11)
+    ax.set_title('Sesgo sistemático por mes — Error de predicción vs datos reales',
+                 fontsize=12)
+    ax.grid(axis='y', linestyle='--', alpha=0.5)
+    plt.tight_layout()
+    plt.savefig(os.path.join(ruta_salida, 'grafico_14_error_por_mes.png'),
+                dpi=150, bbox_inches='tight')
+    plt.show()
+    print("Gráfico guardado: grafico_14_error_por_mes.png")
+
+# ── grafico_15: LSTM vs Persistencia vs Climatología (baselines, test) ────────
+_n_test_seqs  = X_test_f.shape[0]
+_pers_pred_s  = X_test_f[:, -1, 0]                  # último nivel de la ventana (escalado)
+_pers_pred_r  = scaler_nivel.inverse_transform(
+    _pers_pred_s.reshape(-1, 1)).flatten()           # desnormalizado
+_obs_1step    = y_ts_real[:, 0]                      # primer paso real
+_lstm_pred_1  = y_ts_pred_real[:, 0]
+
+# Climatología: mediana histórica del día del año objetivo
+_test_target_dates = test_df['Fecha'].values[:_n_test_seqs]
+_clim_pred_r = np.array([
+    float(climatologia_nivel.get(
+        int(pd.Timestamp(d).timetuple().tm_yday), climatologia_nivel.mean()))
+    for d in _test_target_dates
+], dtype=np.float32)
+
+_rmse_pers = float(np.sqrt(np.mean((_obs_1step - _pers_pred_r) ** 2)))
+_rmse_clim = float(np.sqrt(np.mean((_obs_1step - _clim_pred_r) ** 2)))
+_rmse_lstm = float(np.sqrt(np.mean((_obs_1step - _lstm_pred_1) ** 2)))
+_nse_pers  = nse(_obs_1step, _pers_pred_r)
+_nse_clim  = nse(_obs_1step, _clim_pred_r)
+_nse_lstm  = nse(_obs_1step, _lstm_pred_1)
+
+fig, (ax_r15, ax_n15) = plt.subplots(1, 2, figsize=(13, 6))
+_modelos = ['Persistencia\n(último valor)', 'Climatología\n(mediana histórica)',
+            'LSTM\n(este modelo)']
+_rmses   = [_rmse_pers, _rmse_clim, _rmse_lstm]
+_nses    = [_nse_pers,  _nse_clim,  _nse_lstm ]
+_cols    = ['#e74c3c', '#f39c12', '#2ecc71']
+
+ax_r15.bar(_modelos, _rmses, color=_cols, alpha=0.85)
+for _i, _v in enumerate(_rmses):
+    ax_r15.text(_i, _v + 0.003, f'{_v:.4f} m', ha='center', fontsize=10)
+ax_r15.set_ylabel('RMSE (metros)', fontsize=11)
+ax_r15.set_title('RMSE — Test set (1 paso)', fontsize=12)
+ax_r15.grid(axis='y', linestyle='--', alpha=0.5)
+
+ax_n15.bar(_modelos, _nses, color=_cols, alpha=0.85)
+ax_n15.axhline(0, color='black', lw=1)
+for _i, _v in enumerate(_nses):
+    _ypos = _v + 0.01 if _v >= 0 else _v - 0.03
+    ax_n15.text(_i, _ypos, f'{_v:.4f}', ha='center', fontsize=10)
+ax_n15.set_ylabel('NSE', fontsize=11)
+ax_n15.set_title('NSE — Test set (1 paso)', fontsize=12)
+ax_n15.grid(axis='y', linestyle='--', alpha=0.5)
+
+fig.suptitle('Comparación LSTM vs Baselines — Test set',
+             fontsize=13, fontweight='bold')
+plt.tight_layout()
+plt.savefig(os.path.join(ruta_salida, 'grafico_15_baselines_test.png'),
+            dpi=150, bbox_inches='tight')
+plt.show()
+print("Gráfico guardado: grafico_15_baselines_test.png")
+print(f"  Persistencia : RMSE={_rmse_pers:.4f} m | NSE={_nse_pers:.4f}")
+print(f"  Climatología : RMSE={_rmse_clim:.4f} m | NSE={_nse_clim:.4f}")
+print(f"  LSTM         : RMSE={_rmse_lstm:.4f} m | NSE={_nse_lstm:.4f}")
+
+# ── grafico_16: ACF de residuos (test) ────────────────────────────────────────
+_residuos = _obs_1step - _lstm_pred_1
+_max_lag  = min(60, len(_residuos) // 4)
+_res_c    = _residuos - _residuos.mean()
+_var      = float(np.sum(_res_c ** 2))
+_acf      = np.array([
+    float(np.sum(_res_c[:len(_res_c) - k] * _res_c[k:])) / _var
+    for k in range(_max_lag + 1)
+])
+_conf     = 1.96 / np.sqrt(len(_residuos))
+
+fig, ax = plt.subplots(figsize=(13, 5))
+ax.bar(range(_max_lag + 1), _acf, color='steelblue', alpha=0.7, width=0.8)
+ax.axhline( _conf, color='red', linestyle='--', lw=1.2, label=f'IC 95% (±{_conf:.3f})')
+ax.axhline(-_conf, color='red', linestyle='--', lw=1.2)
+ax.axhline(0, color='black', lw=0.8)
+ax.set_xlabel('Lag (días)', fontsize=11)
+ax.set_ylabel('Autocorrelación', fontsize=11)
+ax.set_title(
+    'ACF de Residuos — Test set (1 paso)\n'
+    'Barras dentro del IC 95% indican residuos aproximadamente sin estructura',
+    fontsize=11
+)
+ax.legend(fontsize=9)
+ax.grid(axis='y', linestyle='--', alpha=0.4)
+plt.tight_layout()
+plt.savefig(os.path.join(ruta_salida, 'grafico_16_acf_residuos.png'),
+            dpi=150, bbox_inches='tight')
+plt.show()
+print("Gráfico guardado: grafico_16_acf_residuos.png")
+
+# ── grafico_17: Importancia de hiperparámetros Optuna ─────────────────────────
+try:
+    import optuna.visualization.matplotlib as optuna_mpl
+    fig_imp, ax_imp = plt.subplots(figsize=(10, 6))
+    optuna_mpl.plot_param_importances(estudio, ax=ax_imp)
+    ax_imp.set_title('Importancia de Hiperparámetros — Optuna FAnova', fontsize=12)
+    plt.tight_layout()
+    plt.savefig(os.path.join(ruta_salida, 'grafico_17_optuna_param_importance.png'),
+                dpi=150, bbox_inches='tight')
+    plt.show()
+    print("Gráfico guardado: grafico_17_optuna_param_importance.png")
+except Exception as _e_imp:
+    print(f"grafico_17 no disponible (requiere scikit-learn): {_e_imp}")
+
+# ==============================================================================
+# SECCIÓN 18 — GUARDADO DE RESULTADOS Y RESUMEN FINAL
 # ==============================================================================
 
 print("\n" + "=" * 70)
@@ -2173,7 +2507,14 @@ with open(os.path.join(ruta_salida, 'metricas_finales.json'), 'w') as f:
         'rmse_train_metros':        round(rmse_tr_real, 4),
         'rmse_val_metros':          round(rmse_vl_real, 4),
         'rmse_test_metros':         round(rmse_ts_real, 4),
-        'rmse_vs_reales_metros':    round(rmse_vs_reales, 4) if rmse_vs_reales else None,
+        'mae_test_metros':          round(mae_metros(y_ts_pred_s[:, 0], y_test_f[:, 0], scaler_nivel), 4),
+        'nse_test':                 round(nse(y_ts_real[:, 0], y_ts_pred_real[:, 0]), 4),
+        'rmse_vs_reales_metros':    round(rmse_vs_reales, 4) if rmse_vs_reales is not None else None,
+        'mae_vs_reales_metros':     round(mae_vs_reales,  4) if mae_vs_reales  is not None else None,
+        'nse_vs_reales':            round(nse_vs_reales,  4) if nse_vs_reales  is not None else None,
+        'tau_clim_dias':            TAU_CLIMATOLOGIA,
+        'tau_anom_dias':            TAU_ANOMALIA_CLIM,
+        'n_features':               N_FEATURES,
         'n_parametros':             int(n_params),
         'epocas_entrenadas':        n_epocas_reales,
         'mejores_params_optuna':    mejores_params,

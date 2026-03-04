@@ -101,8 +101,6 @@
 \abx@aux@segm{0}{0}{dmh}
 \abx@aux@cite{0}{mandua}
 \abx@aux@segm{0}{0}{mandua}
-\abx@aux@cite{0}{EstudioClimaParaguay2019}
-\abx@aux@segm{0}{0}{EstudioClimaParaguay2019}
 \@writefile{toc}{\contentsline {chapter}{\numberline {4}Metodología}{17}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -133,19 +131,19 @@
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {5.1}Predicción del Nivel del Río Paraguay con Long Short-Term Memory (LSTM)}{22}{section.5.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Serie Histórica y Partición de los Datos}{22}{subsection.5.1.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Serie histórica completa del nivel diario del río Paraguay (1990--2025).}}{23}{figure.caption.6}\protected@file@percent }
-\newlabel{fig:serie_historica}{{5.1}{23}{Serie histórica completa del nivel diario del río Paraguay (1990--2025)}{figure.caption.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Serie histórica completa del nivel diario del río Paraguay (2014--2025).}}{23}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:serie_historica}{{5.1}{23}{Serie histórica completa del nivel diario del río Paraguay (2014--2025)}{figure.caption.6}{}}
 \newlabel{fig:serie_historica@cref}{{[figure][1][5]5.1}{[1][22][]23}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Partición cronológica de la serie: entrenamiento (azul), validación (naranja) y prueba (verde).}}{23}{figure.caption.7}\protected@file@percent }
 \newlabel{fig:particiones}{{5.2}{23}{Partición cronológica de la serie: entrenamiento (azul), validación (naranja) y prueba (verde)}{figure.caption.7}{}}
-\newlabel{fig:particiones@cref}{{[figure][2][5]5.2}{[1][22][]23}{}{}{}}
+\newlabel{fig:particiones@cref}{{[figure][2][5]5.2}{[1][23][]23}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Optimización de Hiperparámetros con Optuna}{23}{subsection.5.1.2}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Historia de optimización de Optuna (izquierda) e importancia relativa de hiperparámetros (derecha).}}{24}{figure.caption.8}\protected@file@percent }
 \newlabel{fig:optuna_historia}{{5.3}{24}{Historia de optimización de Optuna (izquierda) e importancia relativa de hiperparámetros (derecha)}{figure.caption.8}{}}
-\newlabel{fig:optuna_historia@cref}{{[figure][3][5]5.3}{[1][23][]24}{}{}{}}
+\newlabel{fig:optuna_historia@cref}{{[figure][3][5]5.3}{[1][24][]24}{}{}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Hiperparámetros óptimos del modelo LSTM para la predicción del nivel del río Paraguay.}}{24}{table.caption.9}\protected@file@percent }
 \newlabel{tab:hiperparametros_lstm_rio}{{5.1}{24}{Hiperparámetros óptimos del modelo LSTM para la predicción del nivel del río Paraguay}{table.caption.9}{}}
-\newlabel{tab:hiperparametros_lstm_rio@cref}{{[table][1][5]5.1}{[1][23][]24}{}{}{}}
+\newlabel{tab:hiperparametros_lstm_rio@cref}{{[table][1][5]5.1}{[1][24][]24}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}Entrenamiento del Modelo Final}{24}{subsection.5.1.3}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Curva de aprendizaje del modelo LSTM: RMSE de entrenamiento y validación por época.}}{25}{figure.caption.10}\protected@file@percent }
 \newlabel{fig:curva_aprendizaje}{{5.4}{25}{Curva de aprendizaje del modelo LSTM: RMSE de entrenamiento y validación por época}{figure.caption.10}{}}
@@ -162,476 +160,479 @@
 \newlabel{fig:distribucion_errores}{{5.6}{26}{Distribución de errores del modelo LSTM en validación: histograma (izquierda) y gráfico Q-Q (derecha)}{figure.caption.13}{}}
 \newlabel{fig:distribucion_errores@cref}{{[figure][6][5]5.6}{[1][26][]26}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1.6}Predicción del Nivel del Río a 730 Días}{26}{subsection.5.1.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Serie histórica del nivel del río Paraguay y predicción LSTM a 730 días (julio 2025 -- julio 2027).}}{27}{figure.caption.14}\protected@file@percent }
-\newlabel{fig:historico_prediccion}{{5.7}{27}{Serie histórica del nivel del río Paraguay y predicción LSTM a 730 días (julio 2025 -- julio 2027)}{figure.caption.14}{}}
-\newlabel{fig:historico_prediccion@cref}{{[figure][7][5]5.7}{[1][27][]27}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces Zoom en la transición entre datos reales y predicción LSTM: últimos 6 meses reales y primeros 6 meses proyectados.}}{28}{figure.caption.15}\protected@file@percent }
-\newlabel{fig:zoom_transicion}{{5.8}{28}{Zoom en la transición entre datos reales y predicción LSTM: últimos 6 meses reales y primeros 6 meses proyectados}{figure.caption.15}{}}
-\newlabel{fig:zoom_transicion@cref}{{[figure][8][5]5.8}{[1][27][]28}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces Comparación entre la predicción LSTM a 730 días y la climatología histórica de referencia estacional.}}{28}{figure.caption.16}\protected@file@percent }
-\newlabel{fig:climatologia_prediccion}{{5.9}{28}{Comparación entre la predicción LSTM a 730 días y la climatología histórica de referencia estacional}{figure.caption.16}{}}
-\newlabel{fig:climatologia_prediccion@cref}{{[figure][9][5]5.9}{[1][27][]28}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Predicción de los Precios del Cemento y del Ladrillo Común con Seasonal Autoregressive Integrated Moving Average with Exogenous Variables (SARIMAX)}{28}{section.5.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Función de autocorrelación (ACF) de los residuos del modelo LSTM en el conjunto de validación.}}{27}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:acf_residuos}{{5.7}{27}{Función de autocorrelación (ACF) de los residuos del modelo LSTM en el conjunto de validación}{figure.caption.14}{}}
+\newlabel{fig:acf_residuos@cref}{{[figure][7][5]5.7}{[1][26][]27}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces Serie histórica del nivel del río Paraguay y predicción LSTM a 730 días (julio 2025 -- julio 2027).}}{27}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:historico_prediccion}{{5.8}{27}{Serie histórica del nivel del río Paraguay y predicción LSTM a 730 días (julio 2025 -- julio 2027)}{figure.caption.15}{}}
+\newlabel{fig:historico_prediccion@cref}{{[figure][8][5]5.8}{[1][27][]27}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces Zoom en la transición entre datos reales y predicción LSTM: últimos 6 meses reales y primeros 6 meses proyectados.}}{28}{figure.caption.16}\protected@file@percent }
+\newlabel{fig:zoom_transicion}{{5.9}{28}{Zoom en la transición entre datos reales y predicción LSTM: últimos 6 meses reales y primeros 6 meses proyectados}{figure.caption.16}{}}
+\newlabel{fig:zoom_transicion@cref}{{[figure][9][5]5.9}{[1][27][]28}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.10}{\ignorespaces Comparación entre la predicción LSTM a 730 días y la climatología histórica de referencia estacional.}}{28}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:climatologia_prediccion}{{5.10}{28}{Comparación entre la predicción LSTM a 730 días y la climatología histórica de referencia estacional}{figure.caption.17}{}}
+\newlabel{fig:climatologia_prediccion@cref}{{[figure][10][5]5.10}{[1][28][]28}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Predicción de los Precios del Cemento y del Ladrillo Común con Seasonal Autoregressive Integrated Moving Average with Exogenous Variables (SARIMAX)}{29}{section.5.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Predicción del Precio del Cemento}{29}{subsection.5.2.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1.1}Serie Histórica y Análisis Exploratorio}{29}{subsubsection.5.2.1.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.10}{\ignorespaces Series temporales del precio mensual del cemento (Gs.) y del nivel del río Paraguay (m), período 2014--2025.}}{30}{figure.caption.17}\protected@file@percent }
-\newlabel{fig:sarimax_series}{{5.10}{30}{Series temporales del precio mensual del cemento (Gs.) y del nivel del río Paraguay (m), período 2014--2025}{figure.caption.17}{}}
-\newlabel{fig:sarimax_series@cref}{{[figure][10][5]5.10}{[1][29][]30}{}{}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1.2}Modelo SARIMAX: Selección y Parámetros}{30}{subsubsection.5.2.1.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1.3}Modelo SARIMAX: Ajuste y Evaluación}{30}{subsubsection.5.2.1.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces Descomposición estacional de la serie de precio del cemento: tendencia, estacionalidad y componente residual.}}{31}{figure.caption.18}\protected@file@percent }
-\newlabel{fig:sarimax_descomposicion}{{5.11}{31}{Descomposición estacional de la serie de precio del cemento: tendencia, estacionalidad y componente residual}{figure.caption.18}{}}
-\newlabel{fig:sarimax_descomposicion@cref}{{[figure][11][5]5.11}{[1][29][]31}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.12}{\ignorespaces Funciones de autocorrelación (ACF) y autocorrelación parcial (PACF) de la serie del precio del cemento en niveles y en primeras diferencias.}}{32}{figure.caption.19}\protected@file@percent }
-\newlabel{fig:sarimax_acf_pacf}{{5.12}{32}{Funciones de autocorrelación (ACF) y autocorrelación parcial (PACF) de la serie del precio del cemento en niveles y en primeras diferencias}{figure.caption.19}{}}
-\newlabel{fig:sarimax_acf_pacf@cref}{{[figure][12][5]5.12}{[1][29][]32}{}{}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1.4}Modelo SARIMAX: Validación Cruzada}{32}{subsubsection.5.2.1.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1.5}Modelo SARIMAX: Análisis de Residuos}{32}{subsubsection.5.2.1.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.13}{\ignorespaces Matriz de correlación entre el precio del cemento, el nivel del río Paraguay y la variable de cuarentena.}}{33}{figure.caption.20}\protected@file@percent }
-\newlabel{fig:sarimax_correlacion}{{5.13}{33}{Matriz de correlación entre el precio del cemento, el nivel del río Paraguay y la variable de cuarentena}{figure.caption.20}{}}
-\newlabel{fig:sarimax_correlacion@cref}{{[figure][13][5]5.13}{[1][29][]33}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.14}{\ignorespaces Patrón estacional del precio mensual del cemento a lo largo del año.}}{33}{figure.caption.21}\protected@file@percent }
-\newlabel{fig:sarimax_estacional}{{5.14}{33}{Patrón estacional del precio mensual del cemento a lo largo del año}{figure.caption.21}{}}
-\newlabel{fig:sarimax_estacional@cref}{{[figure][14][5]5.14}{[1][29][]33}{}{}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1.6}Modelo SARIMAX: Pronóstico a 24 Meses}{33}{subsubsection.5.2.1.6}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.3}{\ignorespaces Parámetros estimados del modelo SARIMAX$(0,1,0)(0,0,0)_{12}$ para la predicción del precio del cemento.}}{34}{table.caption.22}\protected@file@percent }
-\newlabel{tab:sarimax_params}{{5.3}{34}{Parámetros estimados del modelo SARIMAX$(0,1,0)(0,0,0)_{12}$ para la predicción del precio del cemento}{table.caption.22}{}}
-\newlabel{tab:sarimax_params@cref}{{[table][3][5]5.3}{[1][30][]34}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.4}{\ignorespaces Métricas de evaluación del modelo SARIMAX sobre el conjunto de prueba (15 meses).}}{34}{table.caption.25}\protected@file@percent }
-\newlabel{tab:sarimax_metricas_prueba}{{5.4}{34}{Métricas de evaluación del modelo SARIMAX sobre el conjunto de prueba (15 meses)}{table.caption.25}{}}
-\newlabel{tab:sarimax_metricas_prueba@cref}{{[table][4][5]5.4}{[1][31][]34}{}{}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1.7}Modelo SARIMAX: Escenarios con y sin Efecto Pandémico}{34}{subsubsection.5.2.1.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Predicción del Precio del Ladrillo}{34}{subsection.5.2.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.15}{\ignorespaces Ajuste in-sample del modelo SARIMAX: valores reales versus valores ajustados sobre el período de entrenamiento.}}{35}{figure.caption.23}\protected@file@percent }
-\newlabel{fig:sarimax_insample}{{5.15}{35}{Ajuste in-sample del modelo SARIMAX: valores reales versus valores ajustados sobre el período de entrenamiento}{figure.caption.23}{}}
-\newlabel{fig:sarimax_insample@cref}{{[figure][15][5]5.15}{[1][30][]35}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.5}{\ignorespaces Métricas de validación cruzada por ventana deslizante del modelo SARIMAX.}}{35}{table.caption.27}\protected@file@percent }
-\newlabel{tab:sarimax_metricas_cv}{{5.5}{35}{Métricas de validación cruzada por ventana deslizante del modelo SARIMAX}{table.caption.27}{}}
-\newlabel{tab:sarimax_metricas_cv@cref}{{[table][5][5]5.5}{[1][32][]35}{}{}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2.1}Serie Histórica y Análisis Exploratorio}{35}{subsubsection.5.2.2.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.16}{\ignorespaces Comparación entre los valores reales y predichos del precio del cemento en el conjunto de prueba (15 meses).}}{36}{figure.caption.24}\protected@file@percent }
-\newlabel{fig:sarimax_comparacion}{{5.16}{36}{Comparación entre los valores reales y predichos del precio del cemento en el conjunto de prueba (15 meses)}{figure.caption.24}{}}
-\newlabel{fig:sarimax_comparacion@cref}{{[figure][16][5]5.16}{[1][30][]36}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.17}{\ignorespaces Validación cruzada por ventana deslizante (\textit  {rolling forecast}): predicciones puntuales versus valores reales en cada paso de avance.}}{37}{figure.caption.26}\protected@file@percent }
-\newlabel{fig:sarimax_rolling}{{5.17}{37}{Validación cruzada por ventana deslizante (\textit {rolling forecast}): predicciones puntuales versus valores reales en cada paso de avance}{figure.caption.26}{}}
-\newlabel{fig:sarimax_rolling@cref}{{[figure][17][5]5.17}{[1][31][]37}{}{}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2.2}Modelo SARIMAX: Selección y Parámetros}{37}{subsubsection.5.2.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2.3}Modelo SARIMAX: Ajuste y Evaluación}{37}{subsubsection.5.2.2.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.18}{\ignorespaces Diagnóstico de residuos del modelo SARIMAX: gráfico de residuos, histograma, gráfico Q-Q y función de autocorrelación.}}{38}{figure.caption.28}\protected@file@percent }
-\newlabel{fig:sarimax_residuos}{{5.18}{38}{Diagnóstico de residuos del modelo SARIMAX: gráfico de residuos, histograma, gráfico Q-Q y función de autocorrelación}{figure.caption.28}{}}
-\newlabel{fig:sarimax_residuos@cref}{{[figure][18][5]5.18}{[1][32][]38}{}{}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2.4}Modelo SARIMAX: Validación Cruzada}{38}{subsubsection.5.2.2.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.19}{\ignorespaces Pronóstico del precio del cemento a 24 meses (agosto 2025 -- julio 2027) con intervalos de confianza al 95\%.}}{39}{figure.caption.29}\protected@file@percent }
-\newlabel{fig:sarimax_pronostico_ic}{{5.19}{39}{Pronóstico del precio del cemento a 24 meses (agosto 2025 -- julio 2027) con intervalos de confianza al 95\%}{figure.caption.29}{}}
-\newlabel{fig:sarimax_pronostico_ic@cref}{{[figure][19][5]5.19}{[1][33][]39}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces Series temporales del precio mensual del cemento (Gs.) y del nivel del río Paraguay (m), período 2014--2025.}}{30}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:sarimax_series}{{5.11}{30}{Series temporales del precio mensual del cemento (Gs.) y del nivel del río Paraguay (m), período 2014--2025}{figure.caption.18}{}}
+\newlabel{fig:sarimax_series@cref}{{[figure][11][5]5.11}{[1][29][]30}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.12}{\ignorespaces Descomposición estacional de la serie de precio del cemento: tendencia, estacionalidad y componente residual.}}{31}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:sarimax_descomposicion}{{5.12}{31}{Descomposición estacional de la serie de precio del cemento: tendencia, estacionalidad y componente residual}{figure.caption.19}{}}
+\newlabel{fig:sarimax_descomposicion@cref}{{[figure][12][5]5.12}{[1][29][]31}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1.2}Modelo SARIMAX: Selección y Parámetros}{31}{subsubsection.5.2.1.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.13}{\ignorespaces Funciones de autocorrelación (ACF) y autocorrelación parcial (PACF) de la serie del precio del cemento en niveles y en primeras diferencias.}}{32}{figure.caption.20}\protected@file@percent }
+\newlabel{fig:sarimax_acf_pacf}{{5.13}{32}{Funciones de autocorrelación (ACF) y autocorrelación parcial (PACF) de la serie del precio del cemento en niveles y en primeras diferencias}{figure.caption.20}{}}
+\newlabel{fig:sarimax_acf_pacf@cref}{{[figure][13][5]5.13}{[1][29][]32}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1.3}Modelo SARIMAX: Ajuste y Evaluación}{32}{subsubsection.5.2.1.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.14}{\ignorespaces Matriz de correlación entre el precio del cemento, el nivel del río Paraguay y la variable de cuarentena.}}{33}{figure.caption.21}\protected@file@percent }
+\newlabel{fig:sarimax_correlacion}{{5.14}{33}{Matriz de correlación entre el precio del cemento, el nivel del río Paraguay y la variable de cuarentena}{figure.caption.21}{}}
+\newlabel{fig:sarimax_correlacion@cref}{{[figure][14][5]5.14}{[1][30][]33}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.15}{\ignorespaces Patrón estacional del precio mensual del cemento a lo largo del año.}}{33}{figure.caption.22}\protected@file@percent }
+\newlabel{fig:sarimax_estacional}{{5.15}{33}{Patrón estacional del precio mensual del cemento a lo largo del año}{figure.caption.22}{}}
+\newlabel{fig:sarimax_estacional@cref}{{[figure][15][5]5.15}{[1][30][]33}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1.4}Modelo SARIMAX: Validación Cruzada}{33}{subsubsection.5.2.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1.5}Modelo SARIMAX: Análisis de Residuos}{33}{subsubsection.5.2.1.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.3}{\ignorespaces Parámetros estimados del modelo SARIMAX$(0,1,0)(0,0,0)_{12}$ para la predicción del precio del cemento.}}{34}{table.caption.23}\protected@file@percent }
+\newlabel{tab:sarimax_params}{{5.3}{34}{Parámetros estimados del modelo SARIMAX$(0,1,0)(0,0,0)_{12}$ para la predicción del precio del cemento}{table.caption.23}{}}
+\newlabel{tab:sarimax_params@cref}{{[table][3][5]5.3}{[1][31][]34}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.4}{\ignorespaces Métricas de evaluación del modelo SARIMAX sobre el conjunto de prueba (15 meses).}}{34}{table.caption.26}\protected@file@percent }
+\newlabel{tab:sarimax_metricas_prueba}{{5.4}{34}{Métricas de evaluación del modelo SARIMAX sobre el conjunto de prueba (15 meses)}{table.caption.26}{}}
+\newlabel{tab:sarimax_metricas_prueba@cref}{{[table][4][5]5.4}{[1][32][]34}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1.6}Modelo SARIMAX: Pronóstico a 24 Meses}{34}{subsubsection.5.2.1.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.16}{\ignorespaces Ajuste in-sample del modelo SARIMAX: valores reales versus valores ajustados sobre el período de entrenamiento.}}{35}{figure.caption.24}\protected@file@percent }
+\newlabel{fig:sarimax_insample}{{5.16}{35}{Ajuste in-sample del modelo SARIMAX: valores reales versus valores ajustados sobre el período de entrenamiento}{figure.caption.24}{}}
+\newlabel{fig:sarimax_insample@cref}{{[figure][16][5]5.16}{[1][31][]35}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.5}{\ignorespaces Métricas de validación cruzada por ventana deslizante del modelo SARIMAX.}}{35}{table.caption.28}\protected@file@percent }
+\newlabel{tab:sarimax_metricas_cv}{{5.5}{35}{Métricas de validación cruzada por ventana deslizante del modelo SARIMAX}{table.caption.28}{}}
+\newlabel{tab:sarimax_metricas_cv@cref}{{[table][5][5]5.5}{[1][33][]35}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1.7}Modelo SARIMAX: Escenarios con y sin Efecto Pandémico}{35}{subsubsection.5.2.1.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.17}{\ignorespaces Comparación entre los valores reales y predichos del precio del cemento en el conjunto de prueba (15 meses).}}{36}{figure.caption.25}\protected@file@percent }
+\newlabel{fig:sarimax_comparacion}{{5.17}{36}{Comparación entre los valores reales y predichos del precio del cemento en el conjunto de prueba (15 meses)}{figure.caption.25}{}}
+\newlabel{fig:sarimax_comparacion@cref}{{[figure][17][5]5.17}{[1][32][]36}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Predicción del Precio del Ladrillo}{36}{subsection.5.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2.1}Serie Histórica y Análisis Exploratorio}{36}{subsubsection.5.2.2.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.18}{\ignorespaces Validación cruzada por ventana deslizante (\textit  {rolling forecast}): predicciones puntuales versus valores reales en cada paso de avance.}}{37}{figure.caption.27}\protected@file@percent }
+\newlabel{fig:sarimax_rolling}{{5.18}{37}{Validación cruzada por ventana deslizante (\textit {rolling forecast}): predicciones puntuales versus valores reales en cada paso de avance}{figure.caption.27}{}}
+\newlabel{fig:sarimax_rolling@cref}{{[figure][18][5]5.18}{[1][32][]37}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.19}{\ignorespaces Diagnóstico de residuos del modelo SARIMAX: gráfico de residuos, histograma, gráfico Q-Q y función de autocorrelación.}}{38}{figure.caption.29}\protected@file@percent }
+\newlabel{fig:sarimax_residuos}{{5.19}{38}{Diagnóstico de residuos del modelo SARIMAX: gráfico de residuos, histograma, gráfico Q-Q y función de autocorrelación}{figure.caption.29}{}}
+\newlabel{fig:sarimax_residuos@cref}{{[figure][19][5]5.19}{[1][33][]38}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2.2}Modelo SARIMAX: Selección y Parámetros}{38}{subsubsection.5.2.2.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.20}{\ignorespaces Pronóstico del precio del cemento a 24 meses (agosto 2025 -- julio 2027) con intervalos de confianza al 95\%.}}{39}{figure.caption.30}\protected@file@percent }
+\newlabel{fig:sarimax_pronostico_ic}{{5.20}{39}{Pronóstico del precio del cemento a 24 meses (agosto 2025 -- julio 2027) con intervalos de confianza al 95\%}{figure.caption.30}{}}
+\newlabel{fig:sarimax_pronostico_ic@cref}{{[figure][20][5]5.20}{[1][34][]39}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2.3}Modelo SARIMAX: Ajuste y Evaluación}{39}{subsubsection.5.2.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2.4}Modelo SARIMAX: Validación Cruzada}{39}{subsubsection.5.2.2.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2.5}Modelo SARIMAX: Análisis de Residuos}{39}{subsubsection.5.2.2.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2.6}Modelo SARIMAX: Pronóstico a 24 Meses}{39}{subsubsection.5.2.2.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.20}{\ignorespaces Pronóstico completo del precio del cemento: serie histórica observada y proyección SARIMAX a 24 meses.}}{40}{figure.caption.30}\protected@file@percent }
-\newlabel{fig:sarimax_pronostico_completo}{{5.20}{40}{Pronóstico completo del precio del cemento: serie histórica observada y proyección SARIMAX a 24 meses}{figure.caption.30}{}}
-\newlabel{fig:sarimax_pronostico_completo@cref}{{[figure][20][5]5.20}{[1][33][]40}{}{}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2.7}Modelo SARIMAX: Escenarios con y sin Efecto Pandémico}{40}{subsubsection.5.2.2.7}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.6}{\ignorespaces Pronóstico mensual del precio del cemento (Gs.) para el período agosto 2025 -- julio 2026, con intervalo de confianza al 95\,\%.}}{41}{table.caption.31}\protected@file@percent }
-\newlabel{tab:sarimax_pronostico}{{5.6}{41}{Pronóstico mensual del precio del cemento (Gs.) para el período agosto 2025 -- julio 2026, con intervalo de confianza al 95\,\%}{table.caption.31}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.21}{\ignorespaces Pronóstico completo del precio del cemento: serie histórica observada y proyección SARIMAX a 24 meses.}}{40}{figure.caption.31}\protected@file@percent }
+\newlabel{fig:sarimax_pronostico_completo}{{5.21}{40}{Pronóstico completo del precio del cemento: serie histórica observada y proyección SARIMAX a 24 meses}{figure.caption.31}{}}
+\newlabel{fig:sarimax_pronostico_completo@cref}{{[figure][21][5]5.21}{[1][34][]40}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2.6}Modelo SARIMAX: Pronóstico a 24 Meses}{40}{subsubsection.5.2.2.6}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.6}{\ignorespaces Pronóstico mensual del precio del cemento (Gs.) para el período agosto 2025 -- julio 2026, con intervalo de confianza al 95\,\%.}}{41}{table.caption.32}\protected@file@percent }
+\newlabel{tab:sarimax_pronostico}{{5.6}{41}{Pronóstico mensual del precio del cemento (Gs.) para el período agosto 2025 -- julio 2026, con intervalo de confianza al 95\,\%}{table.caption.32}{}}
 \newlabel{tab:sarimax_pronostico@cref}{{[table][6][5]5.6}{[1][34][]41}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.7}{\ignorespaces Parámetros estimados del modelo SARIMAX$(0,1,0)(0,0,0)_{12}$ para la predicción del precio del ladrillo.}}{41}{table.caption.39}\protected@file@percent }
-\newlabel{tab:sarimax_ladrillo_params}{{5.7}{41}{Parámetros estimados del modelo SARIMAX$(0,1,0)(0,0,0)_{12}$ para la predicción del precio del ladrillo}{table.caption.39}{}}
-\newlabel{tab:sarimax_ladrillo_params@cref}{{[table][7][5]5.7}{[1][37][]41}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Predicción de los Precios del Cemento y del Ladrillo Común con Long Short-Term Memory (LSTM)}{41}{section.5.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Predicción del Precio del Cemento}{41}{subsection.5.3.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.21}{\ignorespaces Pronóstico SARIMAX del precio del cemento a 24 meses -- escenario sin efecto pandémico.}}{42}{figure.caption.32}\protected@file@percent }
-\newlabel{fig:sarimax_cemento_sin_covid}{{5.21}{42}{Pronóstico SARIMAX del precio del cemento a 24 meses -- escenario sin efecto pandémico}{figure.caption.32}{}}
-\newlabel{fig:sarimax_cemento_sin_covid@cref}{{[figure][21][5]5.21}{[1][34][]42}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.8}{\ignorespaces Métricas de evaluación del modelo SARIMAX sobre el conjunto de prueba del ladrillo (15 meses).}}{42}{table.caption.42}\protected@file@percent }
-\newlabel{tab:sarimax_ladrillo_metricas_prueba}{{5.8}{42}{Métricas de evaluación del modelo SARIMAX sobre el conjunto de prueba del ladrillo (15 meses)}{table.caption.42}{}}
-\newlabel{tab:sarimax_ladrillo_metricas_prueba@cref}{{[table][8][5]5.8}{[1][38][]42}{}{}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1.1}Análisis Exploratorio de la Serie}{42}{subsubsection.5.3.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1.2}Hiperparámetros y Arquitectura}{42}{subsubsection.5.3.1.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1.3}Curva de Aprendizaje}{42}{subsubsection.5.3.1.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.22}{\ignorespaces Pronóstico SARIMAX del precio del cemento a 24 meses -- escenario con efecto pandémico.}}{43}{figure.caption.33}\protected@file@percent }
-\newlabel{fig:sarimax_cemento_con_covid}{{5.22}{43}{Pronóstico SARIMAX del precio del cemento a 24 meses -- escenario con efecto pandémico}{figure.caption.33}{}}
-\newlabel{fig:sarimax_cemento_con_covid@cref}{{[figure][22][5]5.22}{[1][34][]43}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.9}{\ignorespaces Métricas de validación cruzada por ventana deslizante del modelo SARIMAX para el ladrillo.}}{43}{table.caption.44}\protected@file@percent }
-\newlabel{tab:sarimax_ladrillo_metricas_cv}{{5.9}{43}{Métricas de validación cruzada por ventana deslizante del modelo SARIMAX para el ladrillo}{table.caption.44}{}}
-\newlabel{tab:sarimax_ladrillo_metricas_cv@cref}{{[table][9][5]5.9}{[1][38][]43}{}{}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1.4}Métricas de Evaluación}{43}{subsubsection.5.3.1.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1.5}Evaluación sobre el Conjunto de Prueba}{43}{subsubsection.5.3.1.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.23}{\ignorespaces Series temporales del precio mensual del ladrillo (Gs.) y del nivel del río Paraguay (m), período 2014--2025.}}{44}{figure.caption.34}\protected@file@percent }
-\newlabel{fig:sarimax_ladrillo_series}{{5.23}{44}{Series temporales del precio mensual del ladrillo (Gs.) y del nivel del río Paraguay (m), período 2014--2025}{figure.caption.34}{}}
-\newlabel{fig:sarimax_ladrillo_series@cref}{{[figure][23][5]5.23}{[1][35][]44}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.10}{\ignorespaces Pronóstico mensual del precio del ladrillo (Gs.) para el período agosto 2025 -- julio 2026, con intervalo de confianza al 95\,\%.}}{44}{table.caption.48}\protected@file@percent }
-\newlabel{tab:sarimax_ladrillo_pronostico}{{5.10}{44}{Pronóstico mensual del precio del ladrillo (Gs.) para el período agosto 2025 -- julio 2026, con intervalo de confianza al 95\,\%}{table.caption.48}{}}
-\newlabel{tab:sarimax_ladrillo_pronostico@cref}{{[table][10][5]5.10}{[1][39][]44}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.24}{\ignorespaces Descomposición estacional de la serie de precio del ladrillo: tendencia, estacionalidad y componente residual.}}{45}{figure.caption.35}\protected@file@percent }
-\newlabel{fig:sarimax_ladrillo_descomposicion}{{5.24}{45}{Descomposición estacional de la serie de precio del ladrillo: tendencia, estacionalidad y componente residual}{figure.caption.35}{}}
-\newlabel{fig:sarimax_ladrillo_descomposicion@cref}{{[figure][24][5]5.24}{[1][36][]45}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.11}{\ignorespaces Hiperparámetros óptimos del modelo LSTM para cemento, seleccionados por Optuna.}}{45}{table.caption.54}\protected@file@percent }
-\newlabel{tab:lstm_cemento_hiper}{{5.11}{45}{Hiperparámetros óptimos del modelo LSTM para cemento, seleccionados por Optuna}{table.caption.54}{}}
-\newlabel{tab:lstm_cemento_hiper@cref}{{[table][11][5]5.11}{[1][42][]45}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.25}{\ignorespaces Funciones de autocorrelación (ACF) y autocorrelación parcial (PACF) de la serie del precio del ladrillo en niveles y en primeras diferencias.}}{46}{figure.caption.36}\protected@file@percent }
-\newlabel{fig:sarimax_ladrillo_acf_pacf}{{5.25}{46}{Funciones de autocorrelación (ACF) y autocorrelación parcial (PACF) de la serie del precio del ladrillo en niveles y en primeras diferencias}{figure.caption.36}{}}
-\newlabel{fig:sarimax_ladrillo_acf_pacf@cref}{{[figure][25][5]5.25}{[1][36][]46}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.26}{\ignorespaces Matriz de correlación entre el precio del ladrillo, el nivel del río Paraguay y la variable de cuarentena.}}{46}{figure.caption.37}\protected@file@percent }
-\newlabel{fig:sarimax_ladrillo_correlacion}{{5.26}{46}{Matriz de correlación entre el precio del ladrillo, el nivel del río Paraguay y la variable de cuarentena}{figure.caption.37}{}}
-\newlabel{fig:sarimax_ladrillo_correlacion@cref}{{[figure][26][5]5.26}{[1][36][]46}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.12}{\ignorespaces Desempeño del modelo LSTM para cemento: RMSE en entrenamiento, validación y prueba.}}{46}{table.caption.56}\protected@file@percent }
-\newlabel{tab:lstm_cemento_metricas}{{5.12}{46}{Desempeño del modelo LSTM para cemento: RMSE en entrenamiento, validación y prueba}{table.caption.56}{}}
-\newlabel{tab:lstm_cemento_metricas@cref}{{[table][12][5]5.12}{[1][43][]46}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.27}{\ignorespaces Patrón estacional del precio mensual del ladrillo a lo largo del año.}}{47}{figure.caption.38}\protected@file@percent }
-\newlabel{fig:sarimax_ladrillo_estacional}{{5.27}{47}{Patrón estacional del precio mensual del ladrillo a lo largo del año}{figure.caption.38}{}}
-\newlabel{fig:sarimax_ladrillo_estacional@cref}{{[figure][27][5]5.27}{[1][36][]47}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.28}{\ignorespaces Ajuste in-sample del modelo SARIMAX: valores reales versus valores ajustados para el precio del ladrillo.}}{47}{figure.caption.40}\protected@file@percent }
-\newlabel{fig:sarimax_ladrillo_insample}{{5.28}{47}{Ajuste in-sample del modelo SARIMAX: valores reales versus valores ajustados para el precio del ladrillo}{figure.caption.40}{}}
-\newlabel{fig:sarimax_ladrillo_insample@cref}{{[figure][28][5]5.28}{[1][37][]47}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.29}{\ignorespaces Comparación entre los valores reales y predichos del precio del ladrillo en el conjunto de prueba (15 meses).}}{48}{figure.caption.41}\protected@file@percent }
-\newlabel{fig:sarimax_ladrillo_comparacion}{{5.29}{48}{Comparación entre los valores reales y predichos del precio del ladrillo en el conjunto de prueba (15 meses)}{figure.caption.41}{}}
-\newlabel{fig:sarimax_ladrillo_comparacion@cref}{{[figure][29][5]5.29}{[1][37][]48}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.30}{\ignorespaces Validación cruzada por ventana deslizante del modelo SARIMAX para el precio del ladrillo.}}{49}{figure.caption.43}\protected@file@percent }
-\newlabel{fig:sarimax_ladrillo_rolling}{{5.30}{49}{Validación cruzada por ventana deslizante del modelo SARIMAX para el precio del ladrillo}{figure.caption.43}{}}
-\newlabel{fig:sarimax_ladrillo_rolling@cref}{{[figure][30][5]5.30}{[1][38][]49}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.31}{\ignorespaces Diagnóstico de residuos del modelo SARIMAX para el precio del ladrillo.}}{50}{figure.caption.45}\protected@file@percent }
-\newlabel{fig:sarimax_ladrillo_residuos}{{5.31}{50}{Diagnóstico de residuos del modelo SARIMAX para el precio del ladrillo}{figure.caption.45}{}}
-\newlabel{fig:sarimax_ladrillo_residuos@cref}{{[figure][31][5]5.31}{[1][39][]50}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.32}{\ignorespaces Pronóstico del precio del ladrillo a 24 meses (agosto 2025 -- julio 2027) con intervalos de confianza al 95\,\%.}}{50}{figure.caption.46}\protected@file@percent }
-\newlabel{fig:sarimax_ladrillo_pronostico_ic}{{5.32}{50}{Pronóstico del precio del ladrillo a 24 meses (agosto 2025 -- julio 2027) con intervalos de confianza al 95\,\%}{figure.caption.46}{}}
-\newlabel{fig:sarimax_ladrillo_pronostico_ic@cref}{{[figure][32][5]5.32}{[1][39][]50}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.33}{\ignorespaces Pronóstico completo del precio del ladrillo: serie histórica observada y proyección SARIMAX a 24 meses.}}{51}{figure.caption.47}\protected@file@percent }
-\newlabel{fig:sarimax_ladrillo_pronostico_completo}{{5.33}{51}{Pronóstico completo del precio del ladrillo: serie histórica observada y proyección SARIMAX a 24 meses}{figure.caption.47}{}}
-\newlabel{fig:sarimax_ladrillo_pronostico_completo@cref}{{[figure][33][5]5.33}{[1][39][]51}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.34}{\ignorespaces Pronóstico SARIMAX del precio del ladrillo a 24 meses -- escenario sin efecto pandémico.}}{51}{figure.caption.49}\protected@file@percent }
-\newlabel{fig:sarimax_ladrillo_sin_covid}{{5.34}{51}{Pronóstico SARIMAX del precio del ladrillo a 24 meses -- escenario sin efecto pandémico}{figure.caption.49}{}}
-\newlabel{fig:sarimax_ladrillo_sin_covid@cref}{{[figure][34][5]5.34}{[1][40][]51}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.35}{\ignorespaces Pronóstico SARIMAX del precio del ladrillo a 24 meses -- escenario con efecto pandémico.}}{52}{figure.caption.50}\protected@file@percent }
-\newlabel{fig:sarimax_ladrillo_con_covid}{{5.35}{52}{Pronóstico SARIMAX del precio del ladrillo a 24 meses -- escenario con efecto pandémico}{figure.caption.50}{}}
-\newlabel{fig:sarimax_ladrillo_con_covid@cref}{{[figure][35][5]5.35}{[1][40][]52}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.36}{\ignorespaces Serie histórica mensual del precio del cemento (Gs.), período 2014--2025.}}{52}{figure.caption.51}\protected@file@percent }
-\newlabel{fig:lstm_cemento_eda_serie}{{5.36}{52}{Serie histórica mensual del precio del cemento (Gs.), período 2014--2025}{figure.caption.51}{}}
-\newlabel{fig:lstm_cemento_eda_serie@cref}{{[figure][36][5]5.36}{[1][42][]52}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.37}{\ignorespaces Descomposición STL de la serie del precio del cemento: tendencia, estacionalidad y residuo.}}{53}{figure.caption.52}\protected@file@percent }
-\newlabel{fig:lstm_cemento_eda_stl}{{5.37}{53}{Descomposición STL de la serie del precio del cemento: tendencia, estacionalidad y residuo}{figure.caption.52}{}}
-\newlabel{fig:lstm_cemento_eda_stl@cref}{{[figure][37][5]5.37}{[1][42][]53}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.38}{\ignorespaces Mapa de calor de correlaciones entre las variables de entrada del modelo LSTM para cemento.}}{54}{figure.caption.53}\protected@file@percent }
-\newlabel{fig:lstm_cemento_eda_corr}{{5.38}{54}{Mapa de calor de correlaciones entre las variables de entrada del modelo LSTM para cemento}{figure.caption.53}{}}
-\newlabel{fig:lstm_cemento_eda_corr@cref}{{[figure][38][5]5.38}{[1][42][]54}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.39}{\ignorespaces Curva de aprendizaje del modelo LSTM para cemento: RMSE de entrenamiento y validación por época.}}{54}{figure.caption.55}\protected@file@percent }
-\newlabel{fig:lstm_cemento_curva}{{5.39}{54}{Curva de aprendizaje del modelo LSTM para cemento: RMSE de entrenamiento y validación por época}{figure.caption.55}{}}
-\newlabel{fig:lstm_cemento_curva@cref}{{[figure][39][5]5.39}{[1][42][]54}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.40}{\ignorespaces Predicción del modelo LSTM vs.\ valores reales del precio del cemento en el conjunto de prueba (22 meses).}}{55}{figure.caption.57}\protected@file@percent }
-\newlabel{fig:lstm_cemento_test_serie}{{5.40}{55}{Predicción del modelo LSTM vs.\ valores reales del precio del cemento en el conjunto de prueba (22 meses)}{figure.caption.57}{}}
-\newlabel{fig:lstm_cemento_test_serie@cref}{{[figure][40][5]5.40}{[1][43][]55}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.41}{\ignorespaces Diagrama de dispersión: precio predicho vs.\ precio real del cemento en el conjunto de prueba.}}{55}{figure.caption.58}\protected@file@percent }
-\newlabel{fig:lstm_cemento_scatter}{{5.41}{55}{Diagrama de dispersión: precio predicho vs.\ precio real del cemento en el conjunto de prueba}{figure.caption.58}{}}
-\newlabel{fig:lstm_cemento_scatter@cref}{{[figure][41][5]5.41}{[1][43][]55}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.42}{\ignorespaces Predicción del modelo LSTM para cemento sobre los tres subconjuntos: entrenamiento, validación y prueba.}}{56}{figure.caption.59}\protected@file@percent }
-\newlabel{fig:lstm_cemento_splits}{{5.42}{56}{Predicción del modelo LSTM para cemento sobre los tres subconjuntos: entrenamiento, validación y prueba}{figure.caption.59}{}}
-\newlabel{fig:lstm_cemento_splits@cref}{{[figure][42][5]5.42}{[1][43][]56}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.7}{\ignorespaces Parámetros estimados del modelo SARIMAX$(0,1,0)(0,0,0)_{12}$ para la predicción del precio del ladrillo.}}{41}{table.caption.40}\protected@file@percent }
+\newlabel{tab:sarimax_ladrillo_params}{{5.7}{41}{Parámetros estimados del modelo SARIMAX$(0,1,0)(0,0,0)_{12}$ para la predicción del precio del ladrillo}{table.caption.40}{}}
+\newlabel{tab:sarimax_ladrillo_params@cref}{{[table][7][5]5.7}{[1][38][]41}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2.7}Modelo SARIMAX: Escenarios con y sin Efecto Pandémico}{41}{subsubsection.5.2.2.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.22}{\ignorespaces Pronóstico SARIMAX del precio del cemento a 24 meses -- escenario sin efecto pandémico.}}{42}{figure.caption.33}\protected@file@percent }
+\newlabel{fig:sarimax_cemento_sin_covid}{{5.22}{42}{Pronóstico SARIMAX del precio del cemento a 24 meses -- escenario sin efecto pandémico}{figure.caption.33}{}}
+\newlabel{fig:sarimax_cemento_sin_covid@cref}{{[figure][22][5]5.22}{[1][35][]42}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.8}{\ignorespaces Métricas de evaluación del modelo SARIMAX sobre el conjunto de prueba del ladrillo (15 meses).}}{42}{table.caption.43}\protected@file@percent }
+\newlabel{tab:sarimax_ladrillo_metricas_prueba}{{5.8}{42}{Métricas de evaluación del modelo SARIMAX sobre el conjunto de prueba del ladrillo (15 meses)}{table.caption.43}{}}
+\newlabel{tab:sarimax_ladrillo_metricas_prueba@cref}{{[table][8][5]5.8}{[1][39][]42}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Predicción de los Precios del Cemento y del Ladrillo Común con Long Short-Term Memory (LSTM)}{42}{section.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Predicción del Precio del Cemento}{42}{subsection.5.3.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.23}{\ignorespaces Pronóstico SARIMAX del precio del cemento a 24 meses -- escenario con efecto pandémico.}}{43}{figure.caption.34}\protected@file@percent }
+\newlabel{fig:sarimax_cemento_con_covid}{{5.23}{43}{Pronóstico SARIMAX del precio del cemento a 24 meses -- escenario con efecto pandémico}{figure.caption.34}{}}
+\newlabel{fig:sarimax_cemento_con_covid@cref}{{[figure][23][5]5.23}{[1][35][]43}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.9}{\ignorespaces Métricas de validación cruzada por ventana deslizante del modelo SARIMAX para el ladrillo.}}{43}{table.caption.45}\protected@file@percent }
+\newlabel{tab:sarimax_ladrillo_metricas_cv}{{5.9}{43}{Métricas de validación cruzada por ventana deslizante del modelo SARIMAX para el ladrillo}{table.caption.45}{}}
+\newlabel{tab:sarimax_ladrillo_metricas_cv@cref}{{[table][9][5]5.9}{[1][39][]43}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1.1}Análisis Exploratorio de la Serie}{43}{subsubsection.5.3.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1.2}Hiperparámetros y Arquitectura}{43}{subsubsection.5.3.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1.3}Curva de Aprendizaje}{43}{subsubsection.5.3.1.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.24}{\ignorespaces Series temporales del precio mensual del ladrillo (Gs.) y del nivel del río Paraguay (m), período 2014--2025.}}{44}{figure.caption.35}\protected@file@percent }
+\newlabel{fig:sarimax_ladrillo_series}{{5.24}{44}{Series temporales del precio mensual del ladrillo (Gs.) y del nivel del río Paraguay (m), período 2014--2025}{figure.caption.35}{}}
+\newlabel{fig:sarimax_ladrillo_series@cref}{{[figure][24][5]5.24}{[1][36][]44}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1.4}Métricas de Evaluación}{44}{subsubsection.5.3.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1.5}Evaluación sobre el Conjunto de Prueba}{44}{subsubsection.5.3.1.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.25}{\ignorespaces Descomposición estacional de la serie de precio del ladrillo: tendencia, estacionalidad y componente residual.}}{45}{figure.caption.36}\protected@file@percent }
+\newlabel{fig:sarimax_ladrillo_descomposicion}{{5.25}{45}{Descomposición estacional de la serie de precio del ladrillo: tendencia, estacionalidad y componente residual}{figure.caption.36}{}}
+\newlabel{fig:sarimax_ladrillo_descomposicion@cref}{{[figure][25][5]5.25}{[1][37][]45}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.10}{\ignorespaces Pronóstico mensual del precio del ladrillo (Gs.) para el período agosto 2025 -- julio 2026, con intervalo de confianza al 95\,\%.}}{45}{table.caption.49}\protected@file@percent }
+\newlabel{tab:sarimax_ladrillo_pronostico}{{5.10}{45}{Pronóstico mensual del precio del ladrillo (Gs.) para el período agosto 2025 -- julio 2026, con intervalo de confianza al 95\,\%}{table.caption.49}{}}
+\newlabel{tab:sarimax_ladrillo_pronostico@cref}{{[table][10][5]5.10}{[1][41][]45}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.26}{\ignorespaces Funciones de autocorrelación (ACF) y autocorrelación parcial (PACF) de la serie del precio del ladrillo en niveles y en primeras diferencias.}}{46}{figure.caption.37}\protected@file@percent }
+\newlabel{fig:sarimax_ladrillo_acf_pacf}{{5.26}{46}{Funciones de autocorrelación (ACF) y autocorrelación parcial (PACF) de la serie del precio del ladrillo en niveles y en primeras diferencias}{figure.caption.37}{}}
+\newlabel{fig:sarimax_ladrillo_acf_pacf@cref}{{[figure][26][5]5.26}{[1][37][]46}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.27}{\ignorespaces Matriz de correlación entre el precio del ladrillo, el nivel del río Paraguay y la variable de cuarentena.}}{46}{figure.caption.38}\protected@file@percent }
+\newlabel{fig:sarimax_ladrillo_correlacion}{{5.27}{46}{Matriz de correlación entre el precio del ladrillo, el nivel del río Paraguay y la variable de cuarentena}{figure.caption.38}{}}
+\newlabel{fig:sarimax_ladrillo_correlacion@cref}{{[figure][27][5]5.27}{[1][37][]46}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.28}{\ignorespaces Patrón estacional del precio mensual del ladrillo a lo largo del año.}}{47}{figure.caption.39}\protected@file@percent }
+\newlabel{fig:sarimax_ladrillo_estacional}{{5.28}{47}{Patrón estacional del precio mensual del ladrillo a lo largo del año}{figure.caption.39}{}}
+\newlabel{fig:sarimax_ladrillo_estacional@cref}{{[figure][28][5]5.28}{[1][37][]47}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.29}{\ignorespaces Ajuste in-sample del modelo SARIMAX: valores reales versus valores ajustados para el precio del ladrillo.}}{47}{figure.caption.41}\protected@file@percent }
+\newlabel{fig:sarimax_ladrillo_insample}{{5.29}{47}{Ajuste in-sample del modelo SARIMAX: valores reales versus valores ajustados para el precio del ladrillo}{figure.caption.41}{}}
+\newlabel{fig:sarimax_ladrillo_insample@cref}{{[figure][29][5]5.29}{[1][38][]47}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.30}{\ignorespaces Comparación entre los valores reales y predichos del precio del ladrillo en el conjunto de prueba (15 meses).}}{48}{figure.caption.42}\protected@file@percent }
+\newlabel{fig:sarimax_ladrillo_comparacion}{{5.30}{48}{Comparación entre los valores reales y predichos del precio del ladrillo en el conjunto de prueba (15 meses)}{figure.caption.42}{}}
+\newlabel{fig:sarimax_ladrillo_comparacion@cref}{{[figure][30][5]5.30}{[1][39][]48}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.11}{\ignorespaces Hiperparámetros óptimos del modelo LSTM para cemento, seleccionados por Optuna.}}{48}{table.caption.55}\protected@file@percent }
+\newlabel{tab:lstm_cemento_hiper}{{5.11}{48}{Hiperparámetros óptimos del modelo LSTM para cemento, seleccionados por Optuna}{table.caption.55}{}}
+\newlabel{tab:lstm_cemento_hiper@cref}{{[table][11][5]5.11}{[1][43][]48}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.31}{\ignorespaces Validación cruzada por ventana deslizante del modelo SARIMAX para el precio del ladrillo.}}{49}{figure.caption.44}\protected@file@percent }
+\newlabel{fig:sarimax_ladrillo_rolling}{{5.31}{49}{Validación cruzada por ventana deslizante del modelo SARIMAX para el precio del ladrillo}{figure.caption.44}{}}
+\newlabel{fig:sarimax_ladrillo_rolling@cref}{{[figure][31][5]5.31}{[1][39][]49}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.12}{\ignorespaces Desempeño del modelo LSTM para cemento: RMSE en entrenamiento, validación y prueba.}}{49}{table.caption.57}\protected@file@percent }
+\newlabel{tab:lstm_cemento_metricas}{{5.12}{49}{Desempeño del modelo LSTM para cemento: RMSE en entrenamiento, validación y prueba}{table.caption.57}{}}
+\newlabel{tab:lstm_cemento_metricas@cref}{{[table][12][5]5.12}{[1][43][]49}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.32}{\ignorespaces Diagnóstico de residuos del modelo SARIMAX para el precio del ladrillo.}}{50}{figure.caption.46}\protected@file@percent }
+\newlabel{fig:sarimax_ladrillo_residuos}{{5.32}{50}{Diagnóstico de residuos del modelo SARIMAX para el precio del ladrillo}{figure.caption.46}{}}
+\newlabel{fig:sarimax_ladrillo_residuos@cref}{{[figure][32][5]5.32}{[1][39][]50}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.33}{\ignorespaces Pronóstico del precio del ladrillo a 24 meses (agosto 2025 -- julio 2027) con intervalos de confianza al 95\,\%.}}{50}{figure.caption.47}\protected@file@percent }
+\newlabel{fig:sarimax_ladrillo_pronostico_ic}{{5.33}{50}{Pronóstico del precio del ladrillo a 24 meses (agosto 2025 -- julio 2027) con intervalos de confianza al 95\,\%}{figure.caption.47}{}}
+\newlabel{fig:sarimax_ladrillo_pronostico_ic@cref}{{[figure][33][5]5.33}{[1][40][]50}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.34}{\ignorespaces Pronóstico completo del precio del ladrillo: serie histórica observada y proyección SARIMAX a 24 meses.}}{51}{figure.caption.48}\protected@file@percent }
+\newlabel{fig:sarimax_ladrillo_pronostico_completo}{{5.34}{51}{Pronóstico completo del precio del ladrillo: serie histórica observada y proyección SARIMAX a 24 meses}{figure.caption.48}{}}
+\newlabel{fig:sarimax_ladrillo_pronostico_completo@cref}{{[figure][34][5]5.34}{[1][40][]51}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.35}{\ignorespaces Pronóstico SARIMAX del precio del ladrillo a 24 meses -- escenario sin efecto pandémico.}}{51}{figure.caption.50}\protected@file@percent }
+\newlabel{fig:sarimax_ladrillo_sin_covid}{{5.35}{51}{Pronóstico SARIMAX del precio del ladrillo a 24 meses -- escenario sin efecto pandémico}{figure.caption.50}{}}
+\newlabel{fig:sarimax_ladrillo_sin_covid@cref}{{[figure][35][5]5.35}{[1][41][]51}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.36}{\ignorespaces Pronóstico SARIMAX del precio del ladrillo a 24 meses -- escenario con efecto pandémico.}}{52}{figure.caption.51}\protected@file@percent }
+\newlabel{fig:sarimax_ladrillo_con_covid}{{5.36}{52}{Pronóstico SARIMAX del precio del ladrillo a 24 meses -- escenario con efecto pandémico}{figure.caption.51}{}}
+\newlabel{fig:sarimax_ladrillo_con_covid@cref}{{[figure][36][5]5.36}{[1][41][]52}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.37}{\ignorespaces Serie histórica mensual del precio del cemento (Gs.), período 2014--2025.}}{52}{figure.caption.52}\protected@file@percent }
+\newlabel{fig:lstm_cemento_eda_serie}{{5.37}{52}{Serie histórica mensual del precio del cemento (Gs.), período 2014--2025}{figure.caption.52}{}}
+\newlabel{fig:lstm_cemento_eda_serie@cref}{{[figure][37][5]5.37}{[1][43][]52}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.38}{\ignorespaces Descomposición STL de la serie del precio del cemento: tendencia, estacionalidad y residuo.}}{53}{figure.caption.53}\protected@file@percent }
+\newlabel{fig:lstm_cemento_eda_stl}{{5.38}{53}{Descomposición STL de la serie del precio del cemento: tendencia, estacionalidad y residuo}{figure.caption.53}{}}
+\newlabel{fig:lstm_cemento_eda_stl@cref}{{[figure][38][5]5.38}{[1][43][]53}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.39}{\ignorespaces Mapa de calor de correlaciones entre las variables de entrada del modelo LSTM para cemento.}}{54}{figure.caption.54}\protected@file@percent }
+\newlabel{fig:lstm_cemento_eda_corr}{{5.39}{54}{Mapa de calor de correlaciones entre las variables de entrada del modelo LSTM para cemento}{figure.caption.54}{}}
+\newlabel{fig:lstm_cemento_eda_corr@cref}{{[figure][39][5]5.39}{[1][43][]54}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.40}{\ignorespaces Curva de aprendizaje del modelo LSTM para cemento: RMSE de entrenamiento y validación por época.}}{54}{figure.caption.56}\protected@file@percent }
+\newlabel{fig:lstm_cemento_curva}{{5.40}{54}{Curva de aprendizaje del modelo LSTM para cemento: RMSE de entrenamiento y validación por época}{figure.caption.56}{}}
+\newlabel{fig:lstm_cemento_curva@cref}{{[figure][40][5]5.40}{[1][43][]54}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.41}{\ignorespaces Predicción del modelo LSTM vs.\ valores reales del precio del cemento en el conjunto de prueba (22 meses).}}{55}{figure.caption.58}\protected@file@percent }
+\newlabel{fig:lstm_cemento_test_serie}{{5.41}{55}{Predicción del modelo LSTM vs.\ valores reales del precio del cemento en el conjunto de prueba (22 meses)}{figure.caption.58}{}}
+\newlabel{fig:lstm_cemento_test_serie@cref}{{[figure][41][5]5.41}{[1][44][]55}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.42}{\ignorespaces Diagrama de dispersión: precio predicho vs.\ precio real del cemento en el conjunto de prueba.}}{55}{figure.caption.59}\protected@file@percent }
+\newlabel{fig:lstm_cemento_scatter}{{5.42}{55}{Diagrama de dispersión: precio predicho vs.\ precio real del cemento en el conjunto de prueba}{figure.caption.59}{}}
+\newlabel{fig:lstm_cemento_scatter@cref}{{[figure][42][5]5.42}{[1][44][]55}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.43}{\ignorespaces Predicción del modelo LSTM para cemento sobre los tres subconjuntos: entrenamiento, validación y prueba.}}{56}{figure.caption.60}\protected@file@percent }
+\newlabel{fig:lstm_cemento_splits}{{5.43}{56}{Predicción del modelo LSTM para cemento sobre los tres subconjuntos: entrenamiento, validación y prueba}{figure.caption.60}{}}
+\newlabel{fig:lstm_cemento_splits@cref}{{[figure][43][5]5.43}{[1][44][]56}{}{}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1.6}Análisis de Residuos}{57}{subsubsection.5.3.1.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.43}{\ignorespaces Serie temporal de residuos del modelo LSTM para cemento sobre el conjunto de prueba.}}{57}{figure.caption.60}\protected@file@percent }
-\newlabel{fig:lstm_cemento_residuos}{{5.43}{57}{Serie temporal de residuos del modelo LSTM para cemento sobre el conjunto de prueba}{figure.caption.60}{}}
-\newlabel{fig:lstm_cemento_residuos@cref}{{[figure][43][5]5.43}{[1][57][]57}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.44}{\ignorespaces Histograma de residuos del modelo LSTM para cemento.}}{57}{figure.caption.61}\protected@file@percent }
-\newlabel{fig:lstm_cemento_residuos_hist}{{5.44}{57}{Histograma de residuos del modelo LSTM para cemento}{figure.caption.61}{}}
-\newlabel{fig:lstm_cemento_residuos_hist@cref}{{[figure][44][5]5.44}{[1][57][]57}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.45}{\ignorespaces ACF y PACF de los residuos del modelo LSTM para cemento.}}{58}{figure.caption.62}\protected@file@percent }
-\newlabel{fig:lstm_cemento_acf_residuos}{{5.45}{58}{ACF y PACF de los residuos del modelo LSTM para cemento}{figure.caption.62}{}}
-\newlabel{fig:lstm_cemento_acf_residuos@cref}{{[figure][45][5]5.45}{[1][57][]58}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.44}{\ignorespaces Serie temporal de residuos del modelo LSTM para cemento sobre el conjunto de prueba.}}{57}{figure.caption.61}\protected@file@percent }
+\newlabel{fig:lstm_cemento_residuos}{{5.44}{57}{Serie temporal de residuos del modelo LSTM para cemento sobre el conjunto de prueba}{figure.caption.61}{}}
+\newlabel{fig:lstm_cemento_residuos@cref}{{[figure][44][5]5.44}{[1][57][]57}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.45}{\ignorespaces Histograma de residuos del modelo LSTM para cemento.}}{57}{figure.caption.62}\protected@file@percent }
+\newlabel{fig:lstm_cemento_residuos_hist}{{5.45}{57}{Histograma de residuos del modelo LSTM para cemento}{figure.caption.62}{}}
+\newlabel{fig:lstm_cemento_residuos_hist@cref}{{[figure][45][5]5.45}{[1][57][]57}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.46}{\ignorespaces ACF y PACF de los residuos del modelo LSTM para cemento.}}{58}{figure.caption.63}\protected@file@percent }
+\newlabel{fig:lstm_cemento_acf_residuos}{{5.46}{58}{ACF y PACF de los residuos del modelo LSTM para cemento}{figure.caption.63}{}}
+\newlabel{fig:lstm_cemento_acf_residuos@cref}{{[figure][46][5]5.46}{[1][57][]58}{}{}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1.7}Pronóstico a 24 Meses --- Escenario sin Pandemia}{59}{subsubsection.5.3.1.7}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.46}{\ignorespaces Pronóstico LSTM a 24 meses del precio del cemento --- escenario sin pandemia, con intervalos de confianza al 95\,\%.}}{59}{figure.caption.63}\protected@file@percent }
-\newlabel{fig:lstm_cemento_pred_sin_covid}{{5.46}{59}{Pronóstico LSTM a 24 meses del precio del cemento --- escenario sin pandemia, con intervalos de confianza al 95\,\%}{figure.caption.63}{}}
-\newlabel{fig:lstm_cemento_pred_sin_covid@cref}{{[figure][46][5]5.46}{[1][59][]59}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.47}{\ignorespaces Detalle de la transición entre datos históricos y pronóstico LSTM del cemento --- escenario sin pandemia.}}{59}{figure.caption.64}\protected@file@percent }
-\newlabel{fig:lstm_cemento_zoom_sin_covid}{{5.47}{59}{Detalle de la transición entre datos históricos y pronóstico LSTM del cemento --- escenario sin pandemia}{figure.caption.64}{}}
-\newlabel{fig:lstm_cemento_zoom_sin_covid@cref}{{[figure][47][5]5.47}{[1][59][]59}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.48}{\ignorespaces Intervalo de confianza Monte Carlo Dropout del pronóstico LSTM para cemento --- escenario sin pandemia.}}{60}{figure.caption.65}\protected@file@percent }
-\newlabel{fig:lstm_cemento_ic_mc_sin_covid}{{5.48}{60}{Intervalo de confianza Monte Carlo Dropout del pronóstico LSTM para cemento --- escenario sin pandemia}{figure.caption.65}{}}
-\newlabel{fig:lstm_cemento_ic_mc_sin_covid@cref}{{[figure][48][5]5.48}{[1][59][]60}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.47}{\ignorespaces Pronóstico LSTM a 24 meses del precio del cemento --- escenario sin pandemia, con intervalos de confianza al 95\,\%.}}{59}{figure.caption.64}\protected@file@percent }
+\newlabel{fig:lstm_cemento_pred_sin_covid}{{5.47}{59}{Pronóstico LSTM a 24 meses del precio del cemento --- escenario sin pandemia, con intervalos de confianza al 95\,\%}{figure.caption.64}{}}
+\newlabel{fig:lstm_cemento_pred_sin_covid@cref}{{[figure][47][5]5.47}{[1][59][]59}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.48}{\ignorespaces Detalle de la transición entre datos históricos y pronóstico LSTM del cemento --- escenario sin pandemia.}}{59}{figure.caption.65}\protected@file@percent }
+\newlabel{fig:lstm_cemento_zoom_sin_covid}{{5.48}{59}{Detalle de la transición entre datos históricos y pronóstico LSTM del cemento --- escenario sin pandemia}{figure.caption.65}{}}
+\newlabel{fig:lstm_cemento_zoom_sin_covid@cref}{{[figure][48][5]5.48}{[1][59][]59}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.49}{\ignorespaces Intervalo de confianza Monte Carlo Dropout del pronóstico LSTM para cemento --- escenario sin pandemia.}}{60}{figure.caption.66}\protected@file@percent }
+\newlabel{fig:lstm_cemento_ic_mc_sin_covid}{{5.49}{60}{Intervalo de confianza Monte Carlo Dropout del pronóstico LSTM para cemento --- escenario sin pandemia}{figure.caption.66}{}}
+\newlabel{fig:lstm_cemento_ic_mc_sin_covid@cref}{{[figure][49][5]5.49}{[1][59][]60}{}{}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1.8}Pronóstico a 24 Meses --- Escenario con Efecto Pandémico}{61}{subsubsection.5.3.1.8}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.49}{\ignorespaces Pronóstico LSTM a 24 meses del precio del cemento --- escenario con efecto pandémico, con intervalos de confianza al 95\,\%.}}{61}{figure.caption.66}\protected@file@percent }
-\newlabel{fig:lstm_cemento_pred_con_covid}{{5.49}{61}{Pronóstico LSTM a 24 meses del precio del cemento --- escenario con efecto pandémico, con intervalos de confianza al 95\,\%}{figure.caption.66}{}}
-\newlabel{fig:lstm_cemento_pred_con_covid@cref}{{[figure][49][5]5.49}{[1][61][]61}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.50}{\ignorespaces Detalle de la transición entre datos históricos y pronóstico LSTM del cemento --- escenario con efecto pandémico.}}{61}{figure.caption.67}\protected@file@percent }
-\newlabel{fig:lstm_cemento_zoom_con_covid}{{5.50}{61}{Detalle de la transición entre datos históricos y pronóstico LSTM del cemento --- escenario con efecto pandémico}{figure.caption.67}{}}
-\newlabel{fig:lstm_cemento_zoom_con_covid@cref}{{[figure][50][5]5.50}{[1][61][]61}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.51}{\ignorespaces Intervalo de confianza Monte Carlo Dropout del pronóstico LSTM para cemento --- escenario con efecto pandémico.}}{62}{figure.caption.68}\protected@file@percent }
-\newlabel{fig:lstm_cemento_ic_mc_con_covid}{{5.51}{62}{Intervalo de confianza Monte Carlo Dropout del pronóstico LSTM para cemento --- escenario con efecto pandémico}{figure.caption.68}{}}
-\newlabel{fig:lstm_cemento_ic_mc_con_covid@cref}{{[figure][51][5]5.51}{[1][61][]62}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.50}{\ignorespaces Pronóstico LSTM a 24 meses del precio del cemento --- escenario con efecto pandémico, con intervalos de confianza al 95\,\%.}}{61}{figure.caption.67}\protected@file@percent }
+\newlabel{fig:lstm_cemento_pred_con_covid}{{5.50}{61}{Pronóstico LSTM a 24 meses del precio del cemento --- escenario con efecto pandémico, con intervalos de confianza al 95\,\%}{figure.caption.67}{}}
+\newlabel{fig:lstm_cemento_pred_con_covid@cref}{{[figure][50][5]5.50}{[1][61][]61}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.51}{\ignorespaces Detalle de la transición entre datos históricos y pronóstico LSTM del cemento --- escenario con efecto pandémico.}}{61}{figure.caption.68}\protected@file@percent }
+\newlabel{fig:lstm_cemento_zoom_con_covid}{{5.51}{61}{Detalle de la transición entre datos históricos y pronóstico LSTM del cemento --- escenario con efecto pandémico}{figure.caption.68}{}}
+\newlabel{fig:lstm_cemento_zoom_con_covid@cref}{{[figure][51][5]5.51}{[1][61][]61}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.52}{\ignorespaces Intervalo de confianza Monte Carlo Dropout del pronóstico LSTM para cemento --- escenario con efecto pandémico.}}{62}{figure.caption.69}\protected@file@percent }
+\newlabel{fig:lstm_cemento_ic_mc_con_covid}{{5.52}{62}{Intervalo de confianza Monte Carlo Dropout del pronóstico LSTM para cemento --- escenario con efecto pandémico}{figure.caption.69}{}}
+\newlabel{fig:lstm_cemento_ic_mc_con_covid@cref}{{[figure][52][5]5.52}{[1][61][]62}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Predicción del Precio del Ladrillo}{63}{subsection.5.3.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.2.1}Análisis Exploratorio de la Serie}{63}{subsubsection.5.3.2.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.52}{\ignorespaces Serie histórica mensual del precio del ladrillo (Gs.), período 2014--2025.}}{63}{figure.caption.69}\protected@file@percent }
-\newlabel{fig:lstm_ladrillo_eda_serie}{{5.52}{63}{Serie histórica mensual del precio del ladrillo (Gs.), período 2014--2025}{figure.caption.69}{}}
-\newlabel{fig:lstm_ladrillo_eda_serie@cref}{{[figure][52][5]5.52}{[1][63][]63}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.53}{\ignorespaces Descomposición STL de la serie del precio del ladrillo: tendencia, estacionalidad y residuo.}}{64}{figure.caption.70}\protected@file@percent }
-\newlabel{fig:lstm_ladrillo_eda_stl}{{5.53}{64}{Descomposición STL de la serie del precio del ladrillo: tendencia, estacionalidad y residuo}{figure.caption.70}{}}
-\newlabel{fig:lstm_ladrillo_eda_stl@cref}{{[figure][53][5]5.53}{[1][63][]64}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.54}{\ignorespaces Mapa de calor de correlaciones entre las variables de entrada del modelo LSTM para ladrillo.}}{65}{figure.caption.71}\protected@file@percent }
-\newlabel{fig:lstm_ladrillo_eda_corr}{{5.54}{65}{Mapa de calor de correlaciones entre las variables de entrada del modelo LSTM para ladrillo}{figure.caption.71}{}}
-\newlabel{fig:lstm_ladrillo_eda_corr@cref}{{[figure][54][5]5.54}{[1][63][]65}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.53}{\ignorespaces Serie histórica mensual del precio del ladrillo (Gs.), período 2014--2025.}}{63}{figure.caption.70}\protected@file@percent }
+\newlabel{fig:lstm_ladrillo_eda_serie}{{5.53}{63}{Serie histórica mensual del precio del ladrillo (Gs.), período 2014--2025}{figure.caption.70}{}}
+\newlabel{fig:lstm_ladrillo_eda_serie@cref}{{[figure][53][5]5.53}{[1][63][]63}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.54}{\ignorespaces Descomposición STL de la serie del precio del ladrillo: tendencia, estacionalidad y residuo.}}{64}{figure.caption.71}\protected@file@percent }
+\newlabel{fig:lstm_ladrillo_eda_stl}{{5.54}{64}{Descomposición STL de la serie del precio del ladrillo: tendencia, estacionalidad y residuo}{figure.caption.71}{}}
+\newlabel{fig:lstm_ladrillo_eda_stl@cref}{{[figure][54][5]5.54}{[1][63][]64}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.55}{\ignorespaces Mapa de calor de correlaciones entre las variables de entrada del modelo LSTM para ladrillo.}}{65}{figure.caption.72}\protected@file@percent }
+\newlabel{fig:lstm_ladrillo_eda_corr}{{5.55}{65}{Mapa de calor de correlaciones entre las variables de entrada del modelo LSTM para ladrillo}{figure.caption.72}{}}
+\newlabel{fig:lstm_ladrillo_eda_corr@cref}{{[figure][55][5]5.55}{[1][63][]65}{}{}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.2.2}Escenario sin Efecto Pandémico}{66}{subsubsection.5.3.2.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.3.2.2.1}Hiperparámetros y Arquitectura}{66}{paragraph.5.3.2.2.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.13}{\ignorespaces Hiperparámetros óptimos del modelo LSTM para ladrillo --- escenario sin pandemia (Optuna: 261 ensayos).}}{66}{table.caption.72}\protected@file@percent }
-\newlabel{tab:lstm_ladrillo_sc_hiper}{{5.13}{66}{Hiperparámetros óptimos del modelo LSTM para ladrillo --- escenario sin pandemia (Optuna: 261 ensayos)}{table.caption.72}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.13}{\ignorespaces Hiperparámetros óptimos del modelo LSTM para ladrillo --- escenario sin pandemia (Optuna: 261 ensayos).}}{66}{table.caption.73}\protected@file@percent }
+\newlabel{tab:lstm_ladrillo_sc_hiper}{{5.13}{66}{Hiperparámetros óptimos del modelo LSTM para ladrillo --- escenario sin pandemia (Optuna: 261 ensayos)}{table.caption.73}{}}
 \newlabel{tab:lstm_ladrillo_sc_hiper@cref}{{[table][13][5]5.13}{[1][66][]66}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.3.2.2.2}Curva de Aprendizaje}{66}{paragraph.5.3.2.2.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.55}{\ignorespaces Curva de aprendizaje del modelo LSTM para ladrillo --- escenario sin pandemia.}}{66}{figure.caption.73}\protected@file@percent }
-\newlabel{fig:lstm_ladrillo_curva_sc}{{5.55}{66}{Curva de aprendizaje del modelo LSTM para ladrillo --- escenario sin pandemia}{figure.caption.73}{}}
-\newlabel{fig:lstm_ladrillo_curva_sc@cref}{{[figure][55][5]5.55}{[1][66][]66}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.56}{\ignorespaces Curva de aprendizaje del modelo LSTM para ladrillo --- escenario sin pandemia.}}{66}{figure.caption.74}\protected@file@percent }
+\newlabel{fig:lstm_ladrillo_curva_sc}{{5.56}{66}{Curva de aprendizaje del modelo LSTM para ladrillo --- escenario sin pandemia}{figure.caption.74}{}}
+\newlabel{fig:lstm_ladrillo_curva_sc@cref}{{[figure][56][5]5.56}{[1][66][]66}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.3.2.2.3}Métricas de Evaluación}{66}{paragraph.5.3.2.2.3}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.14}{\ignorespaces Desempeño del modelo LSTM para ladrillo --- escenario sin pandemia: RMSE en train, val y test.}}{67}{table.caption.74}\protected@file@percent }
-\newlabel{tab:lstm_ladrillo_sc_metricas}{{5.14}{67}{Desempeño del modelo LSTM para ladrillo --- escenario sin pandemia: RMSE en train, val y test}{table.caption.74}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.14}{\ignorespaces Desempeño del modelo LSTM para ladrillo --- escenario sin pandemia: RMSE en train, val y test.}}{67}{table.caption.75}\protected@file@percent }
+\newlabel{tab:lstm_ladrillo_sc_metricas}{{5.14}{67}{Desempeño del modelo LSTM para ladrillo --- escenario sin pandemia: RMSE en train, val y test}{table.caption.75}{}}
 \newlabel{tab:lstm_ladrillo_sc_metricas@cref}{{[table][14][5]5.14}{[1][66][]67}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.3.2.2.4}Evaluación sobre el Conjunto de Prueba}{67}{paragraph.5.3.2.2.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.56}{\ignorespaces Predicción LSTM vs.\ valores reales del precio del ladrillo --- escenario sin pandemia, conjunto de prueba.}}{67}{figure.caption.75}\protected@file@percent }
-\newlabel{fig:lstm_ladrillo_test_sc}{{5.56}{67}{Predicción LSTM vs.\ valores reales del precio del ladrillo --- escenario sin pandemia, conjunto de prueba}{figure.caption.75}{}}
-\newlabel{fig:lstm_ladrillo_test_sc@cref}{{[figure][56][5]5.56}{[1][67][]67}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.57}{\ignorespaces Diagrama de dispersión: precio predicho vs.\ real del ladrillo --- escenario sin pandemia.}}{68}{figure.caption.76}\protected@file@percent }
-\newlabel{fig:lstm_ladrillo_scatter_sc}{{5.57}{68}{Diagrama de dispersión: precio predicho vs.\ real del ladrillo --- escenario sin pandemia}{figure.caption.76}{}}
-\newlabel{fig:lstm_ladrillo_scatter_sc@cref}{{[figure][57][5]5.57}{[1][67][]68}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.58}{\ignorespaces Ajuste del modelo LSTM del ladrillo sobre las tres particiones --- escenario sin pandemia.}}{68}{figure.caption.77}\protected@file@percent }
-\newlabel{fig:lstm_ladrillo_splits_sc}{{5.58}{68}{Ajuste del modelo LSTM del ladrillo sobre las tres particiones --- escenario sin pandemia}{figure.caption.77}{}}
-\newlabel{fig:lstm_ladrillo_splits_sc@cref}{{[figure][58][5]5.58}{[1][67][]68}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.57}{\ignorespaces Predicción LSTM vs.\ valores reales del precio del ladrillo --- escenario sin pandemia, conjunto de prueba.}}{67}{figure.caption.76}\protected@file@percent }
+\newlabel{fig:lstm_ladrillo_test_sc}{{5.57}{67}{Predicción LSTM vs.\ valores reales del precio del ladrillo --- escenario sin pandemia, conjunto de prueba}{figure.caption.76}{}}
+\newlabel{fig:lstm_ladrillo_test_sc@cref}{{[figure][57][5]5.57}{[1][67][]67}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.58}{\ignorespaces Diagrama de dispersión: precio predicho vs.\ real del ladrillo --- escenario sin pandemia.}}{68}{figure.caption.77}\protected@file@percent }
+\newlabel{fig:lstm_ladrillo_scatter_sc}{{5.58}{68}{Diagrama de dispersión: precio predicho vs.\ real del ladrillo --- escenario sin pandemia}{figure.caption.77}{}}
+\newlabel{fig:lstm_ladrillo_scatter_sc@cref}{{[figure][58][5]5.58}{[1][67][]68}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.59}{\ignorespaces Ajuste del modelo LSTM del ladrillo sobre las tres particiones --- escenario sin pandemia.}}{68}{figure.caption.78}\protected@file@percent }
+\newlabel{fig:lstm_ladrillo_splits_sc}{{5.59}{68}{Ajuste del modelo LSTM del ladrillo sobre las tres particiones --- escenario sin pandemia}{figure.caption.78}{}}
+\newlabel{fig:lstm_ladrillo_splits_sc@cref}{{[figure][59][5]5.59}{[1][67][]68}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.3.2.2.5}Análisis de Residuos}{69}{paragraph.5.3.2.2.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.59}{\ignorespaces Residuos del modelo LSTM para ladrillo sobre el conjunto de prueba --- escenario sin pandemia.}}{69}{figure.caption.78}\protected@file@percent }
-\newlabel{fig:lstm_ladrillo_res_sc}{{5.59}{69}{Residuos del modelo LSTM para ladrillo sobre el conjunto de prueba --- escenario sin pandemia}{figure.caption.78}{}}
-\newlabel{fig:lstm_ladrillo_res_sc@cref}{{[figure][59][5]5.59}{[1][69][]69}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.60}{\ignorespaces Histograma de residuos del modelo LSTM para ladrillo --- escenario sin pandemia.}}{69}{figure.caption.79}\protected@file@percent }
-\newlabel{fig:lstm_ladrillo_reshist_sc}{{5.60}{69}{Histograma de residuos del modelo LSTM para ladrillo --- escenario sin pandemia}{figure.caption.79}{}}
-\newlabel{fig:lstm_ladrillo_reshist_sc@cref}{{[figure][60][5]5.60}{[1][69][]69}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.61}{\ignorespaces ACF y PACF de los residuos del modelo LSTM para ladrillo --- escenario sin pandemia.}}{70}{figure.caption.80}\protected@file@percent }
-\newlabel{fig:lstm_ladrillo_resacf_sc}{{5.61}{70}{ACF y PACF de los residuos del modelo LSTM para ladrillo --- escenario sin pandemia}{figure.caption.80}{}}
-\newlabel{fig:lstm_ladrillo_resacf_sc@cref}{{[figure][61][5]5.61}{[1][69][]70}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.60}{\ignorespaces Residuos del modelo LSTM para ladrillo sobre el conjunto de prueba --- escenario sin pandemia.}}{69}{figure.caption.79}\protected@file@percent }
+\newlabel{fig:lstm_ladrillo_res_sc}{{5.60}{69}{Residuos del modelo LSTM para ladrillo sobre el conjunto de prueba --- escenario sin pandemia}{figure.caption.79}{}}
+\newlabel{fig:lstm_ladrillo_res_sc@cref}{{[figure][60][5]5.60}{[1][69][]69}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.61}{\ignorespaces Histograma de residuos del modelo LSTM para ladrillo --- escenario sin pandemia.}}{69}{figure.caption.80}\protected@file@percent }
+\newlabel{fig:lstm_ladrillo_reshist_sc}{{5.61}{69}{Histograma de residuos del modelo LSTM para ladrillo --- escenario sin pandemia}{figure.caption.80}{}}
+\newlabel{fig:lstm_ladrillo_reshist_sc@cref}{{[figure][61][5]5.61}{[1][69][]69}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.62}{\ignorespaces ACF y PACF de los residuos del modelo LSTM para ladrillo --- escenario sin pandemia.}}{70}{figure.caption.81}\protected@file@percent }
+\newlabel{fig:lstm_ladrillo_resacf_sc}{{5.62}{70}{ACF y PACF de los residuos del modelo LSTM para ladrillo --- escenario sin pandemia}{figure.caption.81}{}}
+\newlabel{fig:lstm_ladrillo_resacf_sc@cref}{{[figure][62][5]5.62}{[1][69][]70}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.3.2.2.6}Pronóstico a 24 Meses}{71}{paragraph.5.3.2.2.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.62}{\ignorespaces Pronóstico LSTM a 24 meses del precio del ladrillo --- escenario sin pandemia, con IC al 95\,\%.}}{71}{figure.caption.81}\protected@file@percent }
-\newlabel{fig:lstm_ladrillo_pred_sin_covid}{{5.62}{71}{Pronóstico LSTM a 24 meses del precio del ladrillo --- escenario sin pandemia, con IC al 95\,\%}{figure.caption.81}{}}
-\newlabel{fig:lstm_ladrillo_pred_sin_covid@cref}{{[figure][62][5]5.62}{[1][71][]71}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.63}{\ignorespaces Detalle de la transición histórico--pronóstico LSTM del ladrillo --- escenario sin pandemia.}}{71}{figure.caption.82}\protected@file@percent }
-\newlabel{fig:lstm_ladrillo_zoom_sin_covid}{{5.63}{71}{Detalle de la transición histórico--pronóstico LSTM del ladrillo --- escenario sin pandemia}{figure.caption.82}{}}
-\newlabel{fig:lstm_ladrillo_zoom_sin_covid@cref}{{[figure][63][5]5.63}{[1][71][]71}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.64}{\ignorespaces IC Monte Carlo Dropout del pronóstico LSTM para ladrillo --- escenario sin pandemia.}}{72}{figure.caption.83}\protected@file@percent }
-\newlabel{fig:lstm_ladrillo_ic_mc_sin_covid}{{5.64}{72}{IC Monte Carlo Dropout del pronóstico LSTM para ladrillo --- escenario sin pandemia}{figure.caption.83}{}}
-\newlabel{fig:lstm_ladrillo_ic_mc_sin_covid@cref}{{[figure][64][5]5.64}{[1][71][]72}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.63}{\ignorespaces Pronóstico LSTM a 24 meses del precio del ladrillo --- escenario sin pandemia, con IC al 95\,\%.}}{71}{figure.caption.82}\protected@file@percent }
+\newlabel{fig:lstm_ladrillo_pred_sin_covid}{{5.63}{71}{Pronóstico LSTM a 24 meses del precio del ladrillo --- escenario sin pandemia, con IC al 95\,\%}{figure.caption.82}{}}
+\newlabel{fig:lstm_ladrillo_pred_sin_covid@cref}{{[figure][63][5]5.63}{[1][71][]71}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.64}{\ignorespaces Detalle de la transición histórico--pronóstico LSTM del ladrillo --- escenario sin pandemia.}}{71}{figure.caption.83}\protected@file@percent }
+\newlabel{fig:lstm_ladrillo_zoom_sin_covid}{{5.64}{71}{Detalle de la transición histórico--pronóstico LSTM del ladrillo --- escenario sin pandemia}{figure.caption.83}{}}
+\newlabel{fig:lstm_ladrillo_zoom_sin_covid@cref}{{[figure][64][5]5.64}{[1][71][]71}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.65}{\ignorespaces IC Monte Carlo Dropout del pronóstico LSTM para ladrillo --- escenario sin pandemia.}}{72}{figure.caption.84}\protected@file@percent }
+\newlabel{fig:lstm_ladrillo_ic_mc_sin_covid}{{5.65}{72}{IC Monte Carlo Dropout del pronóstico LSTM para ladrillo --- escenario sin pandemia}{figure.caption.84}{}}
+\newlabel{fig:lstm_ladrillo_ic_mc_sin_covid@cref}{{[figure][65][5]5.65}{[1][71][]72}{}{}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.2.3}Escenario con Efecto Pandémico}{73}{subsubsection.5.3.2.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.3.2.3.1}Hiperparámetros y Arquitectura}{73}{paragraph.5.3.2.3.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.15}{\ignorespaces Hiperparámetros del modelo LSTM para ladrillo --- escenario con pandemia.}}{73}{table.caption.84}\protected@file@percent }
-\newlabel{tab:lstm_ladrillo_cc_hiper}{{5.15}{73}{Hiperparámetros del modelo LSTM para ladrillo --- escenario con pandemia}{table.caption.84}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.15}{\ignorespaces Hiperparámetros del modelo LSTM para ladrillo --- escenario con pandemia.}}{73}{table.caption.85}\protected@file@percent }
+\newlabel{tab:lstm_ladrillo_cc_hiper}{{5.15}{73}{Hiperparámetros del modelo LSTM para ladrillo --- escenario con pandemia}{table.caption.85}{}}
 \newlabel{tab:lstm_ladrillo_cc_hiper@cref}{{[table][15][5]5.15}{[1][73][]73}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.3.2.3.2}Curva de Aprendizaje}{73}{paragraph.5.3.2.3.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.65}{\ignorespaces Curva de aprendizaje del modelo LSTM para ladrillo --- escenario con pandemia.}}{73}{figure.caption.85}\protected@file@percent }
-\newlabel{fig:lstm_ladrillo_curva_cc}{{5.65}{73}{Curva de aprendizaje del modelo LSTM para ladrillo --- escenario con pandemia}{figure.caption.85}{}}
-\newlabel{fig:lstm_ladrillo_curva_cc@cref}{{[figure][65][5]5.65}{[1][73][]73}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.66}{\ignorespaces Curva de aprendizaje del modelo LSTM para ladrillo --- escenario con pandemia.}}{73}{figure.caption.86}\protected@file@percent }
+\newlabel{fig:lstm_ladrillo_curva_cc}{{5.66}{73}{Curva de aprendizaje del modelo LSTM para ladrillo --- escenario con pandemia}{figure.caption.86}{}}
+\newlabel{fig:lstm_ladrillo_curva_cc@cref}{{[figure][66][5]5.66}{[1][73][]73}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.3.2.3.3}Métricas de Evaluación}{73}{paragraph.5.3.2.3.3}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.16}{\ignorespaces Desempeño del modelo LSTM para ladrillo --- escenario con pandemia: RMSE en train, val y test.}}{74}{table.caption.86}\protected@file@percent }
-\newlabel{tab:lstm_ladrillo_cc_metricas}{{5.16}{74}{Desempeño del modelo LSTM para ladrillo --- escenario con pandemia: RMSE en train, val y test}{table.caption.86}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.16}{\ignorespaces Desempeño del modelo LSTM para ladrillo --- escenario con pandemia: RMSE en train, val y test.}}{74}{table.caption.87}\protected@file@percent }
+\newlabel{tab:lstm_ladrillo_cc_metricas}{{5.16}{74}{Desempeño del modelo LSTM para ladrillo --- escenario con pandemia: RMSE en train, val y test}{table.caption.87}{}}
 \newlabel{tab:lstm_ladrillo_cc_metricas@cref}{{[table][16][5]5.16}{[1][73][]74}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.3.2.3.4}Evaluación sobre el Conjunto de Prueba}{74}{paragraph.5.3.2.3.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.66}{\ignorespaces Predicción LSTM vs.\ valores reales del precio del ladrillo --- escenario con pandemia, conjunto de prueba.}}{74}{figure.caption.87}\protected@file@percent }
-\newlabel{fig:lstm_ladrillo_test_cc}{{5.66}{74}{Predicción LSTM vs.\ valores reales del precio del ladrillo --- escenario con pandemia, conjunto de prueba}{figure.caption.87}{}}
-\newlabel{fig:lstm_ladrillo_test_cc@cref}{{[figure][66][5]5.66}{[1][73][]74}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.67}{\ignorespaces Diagrama de dispersión: precio predicho vs.\ real del ladrillo --- escenario con pandemia.}}{75}{figure.caption.88}\protected@file@percent }
-\newlabel{fig:lstm_ladrillo_scatter_cc}{{5.67}{75}{Diagrama de dispersión: precio predicho vs.\ real del ladrillo --- escenario con pandemia}{figure.caption.88}{}}
-\newlabel{fig:lstm_ladrillo_scatter_cc@cref}{{[figure][67][5]5.67}{[1][74][]75}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.68}{\ignorespaces Ajuste del modelo LSTM del ladrillo sobre las tres particiones --- escenario con pandemia.}}{75}{figure.caption.89}\protected@file@percent }
-\newlabel{fig:lstm_ladrillo_splits_cc}{{5.68}{75}{Ajuste del modelo LSTM del ladrillo sobre las tres particiones --- escenario con pandemia}{figure.caption.89}{}}
-\newlabel{fig:lstm_ladrillo_splits_cc@cref}{{[figure][68][5]5.68}{[1][74][]75}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.67}{\ignorespaces Predicción LSTM vs.\ valores reales del precio del ladrillo --- escenario con pandemia, conjunto de prueba.}}{74}{figure.caption.88}\protected@file@percent }
+\newlabel{fig:lstm_ladrillo_test_cc}{{5.67}{74}{Predicción LSTM vs.\ valores reales del precio del ladrillo --- escenario con pandemia, conjunto de prueba}{figure.caption.88}{}}
+\newlabel{fig:lstm_ladrillo_test_cc@cref}{{[figure][67][5]5.67}{[1][73][]74}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.68}{\ignorespaces Diagrama de dispersión: precio predicho vs.\ real del ladrillo --- escenario con pandemia.}}{75}{figure.caption.89}\protected@file@percent }
+\newlabel{fig:lstm_ladrillo_scatter_cc}{{5.68}{75}{Diagrama de dispersión: precio predicho vs.\ real del ladrillo --- escenario con pandemia}{figure.caption.89}{}}
+\newlabel{fig:lstm_ladrillo_scatter_cc@cref}{{[figure][68][5]5.68}{[1][74][]75}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.69}{\ignorespaces Ajuste del modelo LSTM del ladrillo sobre las tres particiones --- escenario con pandemia.}}{75}{figure.caption.90}\protected@file@percent }
+\newlabel{fig:lstm_ladrillo_splits_cc}{{5.69}{75}{Ajuste del modelo LSTM del ladrillo sobre las tres particiones --- escenario con pandemia}{figure.caption.90}{}}
+\newlabel{fig:lstm_ladrillo_splits_cc@cref}{{[figure][69][5]5.69}{[1][74][]75}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.3.2.3.5}Análisis de Residuos}{76}{paragraph.5.3.2.3.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.69}{\ignorespaces Residuos del modelo LSTM para ladrillo sobre el conjunto de prueba --- escenario con pandemia.}}{76}{figure.caption.90}\protected@file@percent }
-\newlabel{fig:lstm_ladrillo_res_cc}{{5.69}{76}{Residuos del modelo LSTM para ladrillo sobre el conjunto de prueba --- escenario con pandemia}{figure.caption.90}{}}
-\newlabel{fig:lstm_ladrillo_res_cc@cref}{{[figure][69][5]5.69}{[1][76][]76}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.70}{\ignorespaces Histograma de residuos del modelo LSTM para ladrillo --- escenario con pandemia.}}{76}{figure.caption.91}\protected@file@percent }
-\newlabel{fig:lstm_ladrillo_reshist_cc}{{5.70}{76}{Histograma de residuos del modelo LSTM para ladrillo --- escenario con pandemia}{figure.caption.91}{}}
-\newlabel{fig:lstm_ladrillo_reshist_cc@cref}{{[figure][70][5]5.70}{[1][76][]76}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.71}{\ignorespaces ACF y PACF de los residuos del modelo LSTM para ladrillo --- escenario con pandemia.}}{77}{figure.caption.92}\protected@file@percent }
-\newlabel{fig:lstm_ladrillo_resacf_cc}{{5.71}{77}{ACF y PACF de los residuos del modelo LSTM para ladrillo --- escenario con pandemia}{figure.caption.92}{}}
-\newlabel{fig:lstm_ladrillo_resacf_cc@cref}{{[figure][71][5]5.71}{[1][76][]77}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.70}{\ignorespaces Residuos del modelo LSTM para ladrillo sobre el conjunto de prueba --- escenario con pandemia.}}{76}{figure.caption.91}\protected@file@percent }
+\newlabel{fig:lstm_ladrillo_res_cc}{{5.70}{76}{Residuos del modelo LSTM para ladrillo sobre el conjunto de prueba --- escenario con pandemia}{figure.caption.91}{}}
+\newlabel{fig:lstm_ladrillo_res_cc@cref}{{[figure][70][5]5.70}{[1][76][]76}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.71}{\ignorespaces Histograma de residuos del modelo LSTM para ladrillo --- escenario con pandemia.}}{76}{figure.caption.92}\protected@file@percent }
+\newlabel{fig:lstm_ladrillo_reshist_cc}{{5.71}{76}{Histograma de residuos del modelo LSTM para ladrillo --- escenario con pandemia}{figure.caption.92}{}}
+\newlabel{fig:lstm_ladrillo_reshist_cc@cref}{{[figure][71][5]5.71}{[1][76][]76}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.72}{\ignorespaces ACF y PACF de los residuos del modelo LSTM para ladrillo --- escenario con pandemia.}}{77}{figure.caption.93}\protected@file@percent }
+\newlabel{fig:lstm_ladrillo_resacf_cc}{{5.72}{77}{ACF y PACF de los residuos del modelo LSTM para ladrillo --- escenario con pandemia}{figure.caption.93}{}}
+\newlabel{fig:lstm_ladrillo_resacf_cc@cref}{{[figure][72][5]5.72}{[1][76][]77}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.3.2.3.6}Pronóstico a 24 Meses}{78}{paragraph.5.3.2.3.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.72}{\ignorespaces Pronóstico LSTM a 24 meses del precio del ladrillo --- escenario con pandemia, con IC al 95\,\%.}}{78}{figure.caption.93}\protected@file@percent }
-\newlabel{fig:lstm_ladrillo_pred_con_covid}{{5.72}{78}{Pronóstico LSTM a 24 meses del precio del ladrillo --- escenario con pandemia, con IC al 95\,\%}{figure.caption.93}{}}
-\newlabel{fig:lstm_ladrillo_pred_con_covid@cref}{{[figure][72][5]5.72}{[1][78][]78}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.73}{\ignorespaces Detalle de la transición histórico--pronóstico LSTM del ladrillo --- escenario con pandemia.}}{78}{figure.caption.94}\protected@file@percent }
-\newlabel{fig:lstm_ladrillo_zoom_con_covid}{{5.73}{78}{Detalle de la transición histórico--pronóstico LSTM del ladrillo --- escenario con pandemia}{figure.caption.94}{}}
-\newlabel{fig:lstm_ladrillo_zoom_con_covid@cref}{{[figure][73][5]5.73}{[1][78][]78}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.74}{\ignorespaces IC Monte Carlo Dropout del pronóstico LSTM para ladrillo --- escenario con pandemia.}}{79}{figure.caption.95}\protected@file@percent }
-\newlabel{fig:lstm_ladrillo_ic_mc_con_covid}{{5.74}{79}{IC Monte Carlo Dropout del pronóstico LSTM para ladrillo --- escenario con pandemia}{figure.caption.95}{}}
-\newlabel{fig:lstm_ladrillo_ic_mc_con_covid@cref}{{[figure][74][5]5.74}{[1][78][]79}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.73}{\ignorespaces Pronóstico LSTM a 24 meses del precio del ladrillo --- escenario con pandemia, con IC al 95\,\%.}}{78}{figure.caption.94}\protected@file@percent }
+\newlabel{fig:lstm_ladrillo_pred_con_covid}{{5.73}{78}{Pronóstico LSTM a 24 meses del precio del ladrillo --- escenario con pandemia, con IC al 95\,\%}{figure.caption.94}{}}
+\newlabel{fig:lstm_ladrillo_pred_con_covid@cref}{{[figure][73][5]5.73}{[1][78][]78}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.74}{\ignorespaces Detalle de la transición histórico--pronóstico LSTM del ladrillo --- escenario con pandemia.}}{78}{figure.caption.95}\protected@file@percent }
+\newlabel{fig:lstm_ladrillo_zoom_con_covid}{{5.74}{78}{Detalle de la transición histórico--pronóstico LSTM del ladrillo --- escenario con pandemia}{figure.caption.95}{}}
+\newlabel{fig:lstm_ladrillo_zoom_con_covid@cref}{{[figure][74][5]5.74}{[1][78][]78}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.75}{\ignorespaces IC Monte Carlo Dropout del pronóstico LSTM para ladrillo --- escenario con pandemia.}}{79}{figure.caption.96}\protected@file@percent }
+\newlabel{fig:lstm_ladrillo_ic_mc_con_covid}{{5.75}{79}{IC Monte Carlo Dropout del pronóstico LSTM para ladrillo --- escenario con pandemia}{figure.caption.96}{}}
+\newlabel{fig:lstm_ladrillo_ic_mc_con_covid@cref}{{[figure][75][5]5.75}{[1][78][]79}{}{}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5.4}Predicción de los Precios del Cemento y del Ladrillo Común con Gated Recurrent Unit (GRU)}{79}{section.5.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.4.1}Predicción del Precio del Cemento}{79}{subsection.5.4.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {5.4.1.1}Escenario sin Efecto Pandémico}{79}{subsubsection.5.4.1.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.4.1.1.1}Hiperparámetros y Arquitectura}{79}{paragraph.5.4.1.1.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.17}{\ignorespaces Hiperparámetros del modelo GRU para cemento --- escenario sin pandemia.}}{80}{table.caption.96}\protected@file@percent }
-\newlabel{tab:gru_cemento_sc_arq}{{5.17}{80}{Hiperparámetros del modelo GRU para cemento --- escenario sin pandemia}{table.caption.96}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.17}{\ignorespaces Hiperparámetros del modelo GRU para cemento --- escenario sin pandemia.}}{80}{table.caption.97}\protected@file@percent }
+\newlabel{tab:gru_cemento_sc_arq}{{5.17}{80}{Hiperparámetros del modelo GRU para cemento --- escenario sin pandemia}{table.caption.97}{}}
 \newlabel{tab:gru_cemento_sc_arq@cref}{{[table][17][5]5.17}{[1][79][]80}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.4.1.1.2}Curva de Aprendizaje}{80}{paragraph.5.4.1.1.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.75}{\ignorespaces Curvas de aprendizaje del modelo GRU para cemento --- escenario sin pandemia.}}{80}{figure.caption.97}\protected@file@percent }
-\newlabel{fig:gru_cemento_curva_sc}{{5.75}{80}{Curvas de aprendizaje del modelo GRU para cemento --- escenario sin pandemia}{figure.caption.97}{}}
-\newlabel{fig:gru_cemento_curva_sc@cref}{{[figure][75][5]5.75}{[1][80][]80}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.76}{\ignorespaces Curvas de aprendizaje del modelo GRU para cemento --- escenario sin pandemia.}}{80}{figure.caption.98}\protected@file@percent }
+\newlabel{fig:gru_cemento_curva_sc}{{5.76}{80}{Curvas de aprendizaje del modelo GRU para cemento --- escenario sin pandemia}{figure.caption.98}{}}
+\newlabel{fig:gru_cemento_curva_sc@cref}{{[figure][76][5]5.76}{[1][80][]80}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.4.1.1.3}Métricas de Evaluación}{80}{paragraph.5.4.1.1.3}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.18}{\ignorespaces Desempeño del modelo GRU para cemento --- escenario sin pandemia: RMSE en train, val y test.}}{80}{table.caption.98}\protected@file@percent }
-\newlabel{tab:gru_cemento_sc_metricas}{{5.18}{80}{Desempeño del modelo GRU para cemento --- escenario sin pandemia: RMSE en train, val y test}{table.caption.98}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.18}{\ignorespaces Desempeño del modelo GRU para cemento --- escenario sin pandemia: RMSE en train, val y test.}}{80}{table.caption.99}\protected@file@percent }
+\newlabel{tab:gru_cemento_sc_metricas}{{5.18}{80}{Desempeño del modelo GRU para cemento --- escenario sin pandemia: RMSE en train, val y test}{table.caption.99}{}}
 \newlabel{tab:gru_cemento_sc_metricas@cref}{{[table][18][5]5.18}{[1][80][]80}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.4.1.1.4}Evaluación sobre el Conjunto de Prueba}{81}{paragraph.5.4.1.1.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.76}{\ignorespaces Predicción GRU vs.\ valores reales del precio del cemento --- escenario sin pandemia, conjunto de prueba.}}{81}{figure.caption.99}\protected@file@percent }
-\newlabel{fig:gru_cemento_test_sc}{{5.76}{81}{Predicción GRU vs.\ valores reales del precio del cemento --- escenario sin pandemia, conjunto de prueba}{figure.caption.99}{}}
-\newlabel{fig:gru_cemento_test_sc@cref}{{[figure][76][5]5.76}{[1][81][]81}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.77}{\ignorespaces Diagrama de dispersión: precio predicho vs.\ real del cemento --- escenario sin pandemia (GRU).}}{82}{figure.caption.100}\protected@file@percent }
-\newlabel{fig:gru_cemento_scatter_sc}{{5.77}{82}{Diagrama de dispersión: precio predicho vs.\ real del cemento --- escenario sin pandemia (GRU)}{figure.caption.100}{}}
-\newlabel{fig:gru_cemento_scatter_sc@cref}{{[figure][77][5]5.77}{[1][81][]82}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.78}{\ignorespaces Ajuste del modelo GRU del cemento sobre las tres particiones --- escenario sin pandemia.}}{82}{figure.caption.101}\protected@file@percent }
-\newlabel{fig:gru_cemento_splits_sc}{{5.78}{82}{Ajuste del modelo GRU del cemento sobre las tres particiones --- escenario sin pandemia}{figure.caption.101}{}}
-\newlabel{fig:gru_cemento_splits_sc@cref}{{[figure][78][5]5.78}{[1][81][]82}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.77}{\ignorespaces Predicción GRU vs.\ valores reales del precio del cemento --- escenario sin pandemia, conjunto de prueba.}}{81}{figure.caption.100}\protected@file@percent }
+\newlabel{fig:gru_cemento_test_sc}{{5.77}{81}{Predicción GRU vs.\ valores reales del precio del cemento --- escenario sin pandemia, conjunto de prueba}{figure.caption.100}{}}
+\newlabel{fig:gru_cemento_test_sc@cref}{{[figure][77][5]5.77}{[1][81][]81}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.78}{\ignorespaces Diagrama de dispersión: precio predicho vs.\ real del cemento --- escenario sin pandemia (GRU).}}{82}{figure.caption.101}\protected@file@percent }
+\newlabel{fig:gru_cemento_scatter_sc}{{5.78}{82}{Diagrama de dispersión: precio predicho vs.\ real del cemento --- escenario sin pandemia (GRU)}{figure.caption.101}{}}
+\newlabel{fig:gru_cemento_scatter_sc@cref}{{[figure][78][5]5.78}{[1][81][]82}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.79}{\ignorespaces Ajuste del modelo GRU del cemento sobre las tres particiones --- escenario sin pandemia.}}{82}{figure.caption.102}\protected@file@percent }
+\newlabel{fig:gru_cemento_splits_sc}{{5.79}{82}{Ajuste del modelo GRU del cemento sobre las tres particiones --- escenario sin pandemia}{figure.caption.102}{}}
+\newlabel{fig:gru_cemento_splits_sc@cref}{{[figure][79][5]5.79}{[1][81][]82}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.4.1.1.5}Análisis de Residuos}{83}{paragraph.5.4.1.1.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.79}{\ignorespaces Residuos del modelo GRU para cemento --- escenario sin pandemia, conjunto de prueba.}}{83}{figure.caption.102}\protected@file@percent }
-\newlabel{fig:gru_cemento_res_sc}{{5.79}{83}{Residuos del modelo GRU para cemento --- escenario sin pandemia, conjunto de prueba}{figure.caption.102}{}}
-\newlabel{fig:gru_cemento_res_sc@cref}{{[figure][79][5]5.79}{[1][83][]83}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.80}{\ignorespaces Histograma de residuos del modelo GRU para cemento --- escenario sin pandemia.}}{83}{figure.caption.103}\protected@file@percent }
-\newlabel{fig:gru_cemento_reshist_sc}{{5.80}{83}{Histograma de residuos del modelo GRU para cemento --- escenario sin pandemia}{figure.caption.103}{}}
-\newlabel{fig:gru_cemento_reshist_sc@cref}{{[figure][80][5]5.80}{[1][83][]83}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.81}{\ignorespaces ACF y PACF de los residuos del modelo GRU para cemento --- escenario sin pandemia.}}{84}{figure.caption.104}\protected@file@percent }
-\newlabel{fig:gru_cemento_acf_sc}{{5.81}{84}{ACF y PACF de los residuos del modelo GRU para cemento --- escenario sin pandemia}{figure.caption.104}{}}
-\newlabel{fig:gru_cemento_acf_sc@cref}{{[figure][81][5]5.81}{[1][83][]84}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.80}{\ignorespaces Residuos del modelo GRU para cemento --- escenario sin pandemia, conjunto de prueba.}}{83}{figure.caption.103}\protected@file@percent }
+\newlabel{fig:gru_cemento_res_sc}{{5.80}{83}{Residuos del modelo GRU para cemento --- escenario sin pandemia, conjunto de prueba}{figure.caption.103}{}}
+\newlabel{fig:gru_cemento_res_sc@cref}{{[figure][80][5]5.80}{[1][83][]83}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.81}{\ignorespaces Histograma de residuos del modelo GRU para cemento --- escenario sin pandemia.}}{83}{figure.caption.104}\protected@file@percent }
+\newlabel{fig:gru_cemento_reshist_sc}{{5.81}{83}{Histograma de residuos del modelo GRU para cemento --- escenario sin pandemia}{figure.caption.104}{}}
+\newlabel{fig:gru_cemento_reshist_sc@cref}{{[figure][81][5]5.81}{[1][83][]83}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.82}{\ignorespaces ACF y PACF de los residuos del modelo GRU para cemento --- escenario sin pandemia.}}{84}{figure.caption.105}\protected@file@percent }
+\newlabel{fig:gru_cemento_acf_sc}{{5.82}{84}{ACF y PACF de los residuos del modelo GRU para cemento --- escenario sin pandemia}{figure.caption.105}{}}
+\newlabel{fig:gru_cemento_acf_sc@cref}{{[figure][82][5]5.82}{[1][83][]84}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.4.1.1.6}Pronóstico a 24 Meses}{85}{paragraph.5.4.1.1.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.82}{\ignorespaces Pronóstico GRU del precio del cemento a 24 meses --- escenario sin pandemia: serie histórica y proyección.}}{85}{figure.caption.105}\protected@file@percent }
-\newlabel{fig:gru_cemento_pred_sin_covid}{{5.82}{85}{Pronóstico GRU del precio del cemento a 24 meses --- escenario sin pandemia: serie histórica y proyección}{figure.caption.105}{}}
-\newlabel{fig:gru_cemento_pred_sin_covid@cref}{{[figure][82][5]5.82}{[1][85][]85}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.83}{\ignorespaces Zoom sobre la transición entre datos observados y pronóstico GRU del cemento --- escenario sin pandemia.}}{85}{figure.caption.106}\protected@file@percent }
-\newlabel{fig:gru_cemento_zoom_sin_covid}{{5.83}{85}{Zoom sobre la transición entre datos observados y pronóstico GRU del cemento --- escenario sin pandemia}{figure.caption.106}{}}
-\newlabel{fig:gru_cemento_zoom_sin_covid@cref}{{[figure][83][5]5.83}{[1][85][]85}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.84}{\ignorespaces IC Monte Carlo Dropout del pronóstico GRU para cemento --- escenario sin pandemia.}}{86}{figure.caption.107}\protected@file@percent }
-\newlabel{fig:gru_cemento_ic_sin_covid}{{5.84}{86}{IC Monte Carlo Dropout del pronóstico GRU para cemento --- escenario sin pandemia}{figure.caption.107}{}}
-\newlabel{fig:gru_cemento_ic_sin_covid@cref}{{[figure][84][5]5.84}{[1][85][]86}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.19}{\ignorespaces Pronóstico GRU del precio del cemento (Gs.) --- escenario sin pandemia, agosto 2025 -- julio 2026.}}{86}{table.caption.108}\protected@file@percent }
-\newlabel{tab:gru_cemento_pred_sc}{{5.19}{86}{Pronóstico GRU del precio del cemento (Gs.) --- escenario sin pandemia, agosto 2025 -- julio 2026}{table.caption.108}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.83}{\ignorespaces Pronóstico GRU del precio del cemento a 24 meses --- escenario sin pandemia: serie histórica y proyección.}}{85}{figure.caption.106}\protected@file@percent }
+\newlabel{fig:gru_cemento_pred_sin_covid}{{5.83}{85}{Pronóstico GRU del precio del cemento a 24 meses --- escenario sin pandemia: serie histórica y proyección}{figure.caption.106}{}}
+\newlabel{fig:gru_cemento_pred_sin_covid@cref}{{[figure][83][5]5.83}{[1][85][]85}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.84}{\ignorespaces Zoom sobre la transición entre datos observados y pronóstico GRU del cemento --- escenario sin pandemia.}}{85}{figure.caption.107}\protected@file@percent }
+\newlabel{fig:gru_cemento_zoom_sin_covid}{{5.84}{85}{Zoom sobre la transición entre datos observados y pronóstico GRU del cemento --- escenario sin pandemia}{figure.caption.107}{}}
+\newlabel{fig:gru_cemento_zoom_sin_covid@cref}{{[figure][84][5]5.84}{[1][85][]85}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.85}{\ignorespaces IC Monte Carlo Dropout del pronóstico GRU para cemento --- escenario sin pandemia.}}{86}{figure.caption.108}\protected@file@percent }
+\newlabel{fig:gru_cemento_ic_sin_covid}{{5.85}{86}{IC Monte Carlo Dropout del pronóstico GRU para cemento --- escenario sin pandemia}{figure.caption.108}{}}
+\newlabel{fig:gru_cemento_ic_sin_covid@cref}{{[figure][85][5]5.85}{[1][85][]86}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.19}{\ignorespaces Pronóstico GRU del precio del cemento (Gs.) --- escenario sin pandemia, agosto 2025 -- julio 2026.}}{86}{table.caption.109}\protected@file@percent }
+\newlabel{tab:gru_cemento_pred_sc}{{5.19}{86}{Pronóstico GRU del precio del cemento (Gs.) --- escenario sin pandemia, agosto 2025 -- julio 2026}{table.caption.109}{}}
 \newlabel{tab:gru_cemento_pred_sc@cref}{{[table][19][5]5.19}{[1][85][]86}{}{}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {5.4.1.2}Escenario con Efecto Pandémico}{87}{subsubsection.5.4.1.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.4.1.2.1}Hiperparámetros y Arquitectura}{87}{paragraph.5.4.1.2.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.20}{\ignorespaces Hiperparámetros del modelo GRU para cemento --- escenario con pandemia.}}{87}{table.caption.109}\protected@file@percent }
-\newlabel{tab:gru_cemento_cc_arq}{{5.20}{87}{Hiperparámetros del modelo GRU para cemento --- escenario con pandemia}{table.caption.109}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.20}{\ignorespaces Hiperparámetros del modelo GRU para cemento --- escenario con pandemia.}}{87}{table.caption.110}\protected@file@percent }
+\newlabel{tab:gru_cemento_cc_arq}{{5.20}{87}{Hiperparámetros del modelo GRU para cemento --- escenario con pandemia}{table.caption.110}{}}
 \newlabel{tab:gru_cemento_cc_arq@cref}{{[table][20][5]5.20}{[1][87][]87}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.4.1.2.2}Curva de Aprendizaje}{87}{paragraph.5.4.1.2.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.85}{\ignorespaces Curvas de aprendizaje del modelo GRU para cemento --- escenario con pandemia.}}{87}{figure.caption.110}\protected@file@percent }
-\newlabel{fig:gru_cemento_curva_cc}{{5.85}{87}{Curvas de aprendizaje del modelo GRU para cemento --- escenario con pandemia}{figure.caption.110}{}}
-\newlabel{fig:gru_cemento_curva_cc@cref}{{[figure][85][5]5.85}{[1][87][]87}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.86}{\ignorespaces Curvas de aprendizaje del modelo GRU para cemento --- escenario con pandemia.}}{87}{figure.caption.111}\protected@file@percent }
+\newlabel{fig:gru_cemento_curva_cc}{{5.86}{87}{Curvas de aprendizaje del modelo GRU para cemento --- escenario con pandemia}{figure.caption.111}{}}
+\newlabel{fig:gru_cemento_curva_cc@cref}{{[figure][86][5]5.86}{[1][87][]87}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.4.1.2.3}Métricas de Evaluación}{87}{paragraph.5.4.1.2.3}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.21}{\ignorespaces Desempeño del modelo GRU para cemento --- escenario con pandemia: RMSE en train, val y test.}}{88}{table.caption.111}\protected@file@percent }
-\newlabel{tab:gru_cemento_cc_metricas}{{5.21}{88}{Desempeño del modelo GRU para cemento --- escenario con pandemia: RMSE en train, val y test}{table.caption.111}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.21}{\ignorespaces Desempeño del modelo GRU para cemento --- escenario con pandemia: RMSE en train, val y test.}}{88}{table.caption.112}\protected@file@percent }
+\newlabel{tab:gru_cemento_cc_metricas}{{5.21}{88}{Desempeño del modelo GRU para cemento --- escenario con pandemia: RMSE en train, val y test}{table.caption.112}{}}
 \newlabel{tab:gru_cemento_cc_metricas@cref}{{[table][21][5]5.21}{[1][87][]88}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.4.1.2.4}Evaluación sobre el Conjunto de Prueba}{88}{paragraph.5.4.1.2.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.86}{\ignorespaces Predicción GRU vs.\ valores reales del precio del cemento --- escenario con pandemia, conjunto de prueba.}}{88}{figure.caption.112}\protected@file@percent }
-\newlabel{fig:gru_cemento_test_cc}{{5.86}{88}{Predicción GRU vs.\ valores reales del precio del cemento --- escenario con pandemia, conjunto de prueba}{figure.caption.112}{}}
-\newlabel{fig:gru_cemento_test_cc@cref}{{[figure][86][5]5.86}{[1][87][]88}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.87}{\ignorespaces Diagrama de dispersión: precio predicho vs.\ real del cemento --- escenario con pandemia (GRU).}}{89}{figure.caption.113}\protected@file@percent }
-\newlabel{fig:gru_cemento_scatter_cc}{{5.87}{89}{Diagrama de dispersión: precio predicho vs.\ real del cemento --- escenario con pandemia (GRU)}{figure.caption.113}{}}
-\newlabel{fig:gru_cemento_scatter_cc@cref}{{[figure][87][5]5.87}{[1][88][]89}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.88}{\ignorespaces Ajuste del modelo GRU del cemento sobre las tres particiones --- escenario con pandemia.}}{89}{figure.caption.114}\protected@file@percent }
-\newlabel{fig:gru_cemento_splits_cc}{{5.88}{89}{Ajuste del modelo GRU del cemento sobre las tres particiones --- escenario con pandemia}{figure.caption.114}{}}
-\newlabel{fig:gru_cemento_splits_cc@cref}{{[figure][88][5]5.88}{[1][88][]89}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.87}{\ignorespaces Predicción GRU vs.\ valores reales del precio del cemento --- escenario con pandemia, conjunto de prueba.}}{88}{figure.caption.113}\protected@file@percent }
+\newlabel{fig:gru_cemento_test_cc}{{5.87}{88}{Predicción GRU vs.\ valores reales del precio del cemento --- escenario con pandemia, conjunto de prueba}{figure.caption.113}{}}
+\newlabel{fig:gru_cemento_test_cc@cref}{{[figure][87][5]5.87}{[1][87][]88}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.88}{\ignorespaces Diagrama de dispersión: precio predicho vs.\ real del cemento --- escenario con pandemia (GRU).}}{89}{figure.caption.114}\protected@file@percent }
+\newlabel{fig:gru_cemento_scatter_cc}{{5.88}{89}{Diagrama de dispersión: precio predicho vs.\ real del cemento --- escenario con pandemia (GRU)}{figure.caption.114}{}}
+\newlabel{fig:gru_cemento_scatter_cc@cref}{{[figure][88][5]5.88}{[1][88][]89}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.89}{\ignorespaces Ajuste del modelo GRU del cemento sobre las tres particiones --- escenario con pandemia.}}{89}{figure.caption.115}\protected@file@percent }
+\newlabel{fig:gru_cemento_splits_cc}{{5.89}{89}{Ajuste del modelo GRU del cemento sobre las tres particiones --- escenario con pandemia}{figure.caption.115}{}}
+\newlabel{fig:gru_cemento_splits_cc@cref}{{[figure][89][5]5.89}{[1][88][]89}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.4.1.2.5}Análisis de Residuos}{90}{paragraph.5.4.1.2.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.89}{\ignorespaces Residuos del modelo GRU para cemento --- escenario con pandemia, conjunto de prueba.}}{90}{figure.caption.115}\protected@file@percent }
-\newlabel{fig:gru_cemento_res_cc}{{5.89}{90}{Residuos del modelo GRU para cemento --- escenario con pandemia, conjunto de prueba}{figure.caption.115}{}}
-\newlabel{fig:gru_cemento_res_cc@cref}{{[figure][89][5]5.89}{[1][90][]90}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.90}{\ignorespaces Histograma de residuos del modelo GRU para cemento --- escenario con pandemia.}}{90}{figure.caption.116}\protected@file@percent }
-\newlabel{fig:gru_cemento_reshist_cc}{{5.90}{90}{Histograma de residuos del modelo GRU para cemento --- escenario con pandemia}{figure.caption.116}{}}
-\newlabel{fig:gru_cemento_reshist_cc@cref}{{[figure][90][5]5.90}{[1][90][]90}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.91}{\ignorespaces ACF y PACF de los residuos del modelo GRU para cemento --- escenario con pandemia.}}{91}{figure.caption.117}\protected@file@percent }
-\newlabel{fig:gru_cemento_acf_cc}{{5.91}{91}{ACF y PACF de los residuos del modelo GRU para cemento --- escenario con pandemia}{figure.caption.117}{}}
-\newlabel{fig:gru_cemento_acf_cc@cref}{{[figure][91][5]5.91}{[1][90][]91}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.90}{\ignorespaces Residuos del modelo GRU para cemento --- escenario con pandemia, conjunto de prueba.}}{90}{figure.caption.116}\protected@file@percent }
+\newlabel{fig:gru_cemento_res_cc}{{5.90}{90}{Residuos del modelo GRU para cemento --- escenario con pandemia, conjunto de prueba}{figure.caption.116}{}}
+\newlabel{fig:gru_cemento_res_cc@cref}{{[figure][90][5]5.90}{[1][90][]90}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.91}{\ignorespaces Histograma de residuos del modelo GRU para cemento --- escenario con pandemia.}}{90}{figure.caption.117}\protected@file@percent }
+\newlabel{fig:gru_cemento_reshist_cc}{{5.91}{90}{Histograma de residuos del modelo GRU para cemento --- escenario con pandemia}{figure.caption.117}{}}
+\newlabel{fig:gru_cemento_reshist_cc@cref}{{[figure][91][5]5.91}{[1][90][]90}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.92}{\ignorespaces ACF y PACF de los residuos del modelo GRU para cemento --- escenario con pandemia.}}{91}{figure.caption.118}\protected@file@percent }
+\newlabel{fig:gru_cemento_acf_cc}{{5.92}{91}{ACF y PACF de los residuos del modelo GRU para cemento --- escenario con pandemia}{figure.caption.118}{}}
+\newlabel{fig:gru_cemento_acf_cc@cref}{{[figure][92][5]5.92}{[1][90][]91}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.4.1.2.6}Pronóstico a 24 Meses}{92}{paragraph.5.4.1.2.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.92}{\ignorespaces Pronóstico GRU del precio del cemento a 24 meses --- escenario con pandemia: serie histórica y proyección.}}{92}{figure.caption.118}\protected@file@percent }
-\newlabel{fig:gru_cemento_pred_con_covid}{{5.92}{92}{Pronóstico GRU del precio del cemento a 24 meses --- escenario con pandemia: serie histórica y proyección}{figure.caption.118}{}}
-\newlabel{fig:gru_cemento_pred_con_covid@cref}{{[figure][92][5]5.92}{[1][92][]92}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.93}{\ignorespaces Zoom sobre la transición entre datos observados y pronóstico GRU del cemento --- escenario con pandemia.}}{92}{figure.caption.119}\protected@file@percent }
-\newlabel{fig:gru_cemento_zoom_con_covid}{{5.93}{92}{Zoom sobre la transición entre datos observados y pronóstico GRU del cemento --- escenario con pandemia}{figure.caption.119}{}}
-\newlabel{fig:gru_cemento_zoom_con_covid@cref}{{[figure][93][5]5.93}{[1][92][]92}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.94}{\ignorespaces IC Monte Carlo Dropout del pronóstico GRU para cemento --- escenario con pandemia.}}{93}{figure.caption.120}\protected@file@percent }
-\newlabel{fig:gru_cemento_ic_con_covid}{{5.94}{93}{IC Monte Carlo Dropout del pronóstico GRU para cemento --- escenario con pandemia}{figure.caption.120}{}}
-\newlabel{fig:gru_cemento_ic_con_covid@cref}{{[figure][94][5]5.94}{[1][92][]93}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.93}{\ignorespaces Pronóstico GRU del precio del cemento a 24 meses --- escenario con pandemia: serie histórica y proyección.}}{92}{figure.caption.119}\protected@file@percent }
+\newlabel{fig:gru_cemento_pred_con_covid}{{5.93}{92}{Pronóstico GRU del precio del cemento a 24 meses --- escenario con pandemia: serie histórica y proyección}{figure.caption.119}{}}
+\newlabel{fig:gru_cemento_pred_con_covid@cref}{{[figure][93][5]5.93}{[1][92][]92}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.94}{\ignorespaces Zoom sobre la transición entre datos observados y pronóstico GRU del cemento --- escenario con pandemia.}}{92}{figure.caption.120}\protected@file@percent }
+\newlabel{fig:gru_cemento_zoom_con_covid}{{5.94}{92}{Zoom sobre la transición entre datos observados y pronóstico GRU del cemento --- escenario con pandemia}{figure.caption.120}{}}
+\newlabel{fig:gru_cemento_zoom_con_covid@cref}{{[figure][94][5]5.94}{[1][92][]92}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.95}{\ignorespaces IC Monte Carlo Dropout del pronóstico GRU para cemento --- escenario con pandemia.}}{93}{figure.caption.121}\protected@file@percent }
+\newlabel{fig:gru_cemento_ic_con_covid}{{5.95}{93}{IC Monte Carlo Dropout del pronóstico GRU para cemento --- escenario con pandemia}{figure.caption.121}{}}
+\newlabel{fig:gru_cemento_ic_con_covid@cref}{{[figure][95][5]5.95}{[1][92][]93}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.4.2}Predicción del Precio del Ladrillo}{94}{subsection.5.4.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {5.4.2.1}Escenario sin Efecto Pandémico}{95}{subsubsection.5.4.2.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.4.2.1.1}Hiperparámetros y Arquitectura}{95}{paragraph.5.4.2.1.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.22}{\ignorespaces Hiperparámetros del modelo GRU para ladrillo --- escenario sin pandemia (Optuna: 266 ensayos, 465{,}7 min).}}{95}{table.caption.121}\protected@file@percent }
-\newlabel{tab:gru_ladrillo_sc_arq}{{5.22}{95}{Hiperparámetros del modelo GRU para ladrillo --- escenario sin pandemia (Optuna: 266 ensayos, 465{,}7 min)}{table.caption.121}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.22}{\ignorespaces Hiperparámetros del modelo GRU para ladrillo --- escenario sin pandemia (Optuna: 266 ensayos, 465{,}7 min).}}{95}{table.caption.122}\protected@file@percent }
+\newlabel{tab:gru_ladrillo_sc_arq}{{5.22}{95}{Hiperparámetros del modelo GRU para ladrillo --- escenario sin pandemia (Optuna: 266 ensayos, 465{,}7 min)}{table.caption.122}{}}
 \newlabel{tab:gru_ladrillo_sc_arq@cref}{{[table][22][5]5.22}{[1][95][]95}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.4.2.1.2}Curva de Aprendizaje}{95}{paragraph.5.4.2.1.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.4.2.1.3}Métricas de Evaluación}{95}{paragraph.5.4.2.1.3}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.23}{\ignorespaces Desempeño del modelo GRU para ladrillo --- escenario sin pandemia: RMSE en train, val y test.}}{95}{table.caption.123}\protected@file@percent }
-\newlabel{tab:gru_ladrillo_sc_metricas}{{5.23}{95}{Desempeño del modelo GRU para ladrillo --- escenario sin pandemia: RMSE en train, val y test}{table.caption.123}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.23}{\ignorespaces Desempeño del modelo GRU para ladrillo --- escenario sin pandemia: RMSE en train, val y test.}}{95}{table.caption.124}\protected@file@percent }
+\newlabel{tab:gru_ladrillo_sc_metricas}{{5.23}{95}{Desempeño del modelo GRU para ladrillo --- escenario sin pandemia: RMSE en train, val y test}{table.caption.124}{}}
 \newlabel{tab:gru_ladrillo_sc_metricas@cref}{{[table][23][5]5.23}{[1][95][]95}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.4.2.1.4}Evaluación sobre el Conjunto de Prueba}{95}{paragraph.5.4.2.1.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.95}{\ignorespaces Curvas de aprendizaje del modelo GRU para ladrillo --- escenario sin pandemia.}}{96}{figure.caption.122}\protected@file@percent }
-\newlabel{fig:gru_ladrillo_curva_sc}{{5.95}{96}{Curvas de aprendizaje del modelo GRU para ladrillo --- escenario sin pandemia}{figure.caption.122}{}}
-\newlabel{fig:gru_ladrillo_curva_sc@cref}{{[figure][95][5]5.95}{[1][95][]96}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.96}{\ignorespaces Predicción GRU vs.\ valores reales del precio del ladrillo --- escenario sin pandemia, conjunto de prueba.}}{96}{figure.caption.124}\protected@file@percent }
-\newlabel{fig:gru_ladrillo_test_sc}{{5.96}{96}{Predicción GRU vs.\ valores reales del precio del ladrillo --- escenario sin pandemia, conjunto de prueba}{figure.caption.124}{}}
-\newlabel{fig:gru_ladrillo_test_sc@cref}{{[figure][96][5]5.96}{[1][95][]96}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.97}{\ignorespaces Diagrama de dispersión: precio predicho vs.\ real del ladrillo --- escenario sin pandemia (GRU).}}{97}{figure.caption.125}\protected@file@percent }
-\newlabel{fig:gru_ladrillo_scatter_sc}{{5.97}{97}{Diagrama de dispersión: precio predicho vs.\ real del ladrillo --- escenario sin pandemia (GRU)}{figure.caption.125}{}}
-\newlabel{fig:gru_ladrillo_scatter_sc@cref}{{[figure][97][5]5.97}{[1][95][]97}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.98}{\ignorespaces Ajuste del modelo GRU del ladrillo sobre las tres particiones --- escenario sin pandemia.}}{97}{figure.caption.126}\protected@file@percent }
-\newlabel{fig:gru_ladrillo_splits_sc}{{5.98}{97}{Ajuste del modelo GRU del ladrillo sobre las tres particiones --- escenario sin pandemia}{figure.caption.126}{}}
-\newlabel{fig:gru_ladrillo_splits_sc@cref}{{[figure][98][5]5.98}{[1][95][]97}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.96}{\ignorespaces Curvas de aprendizaje del modelo GRU para ladrillo --- escenario sin pandemia.}}{96}{figure.caption.123}\protected@file@percent }
+\newlabel{fig:gru_ladrillo_curva_sc}{{5.96}{96}{Curvas de aprendizaje del modelo GRU para ladrillo --- escenario sin pandemia}{figure.caption.123}{}}
+\newlabel{fig:gru_ladrillo_curva_sc@cref}{{[figure][96][5]5.96}{[1][95][]96}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.97}{\ignorespaces Predicción GRU vs.\ valores reales del precio del ladrillo --- escenario sin pandemia, conjunto de prueba.}}{96}{figure.caption.125}\protected@file@percent }
+\newlabel{fig:gru_ladrillo_test_sc}{{5.97}{96}{Predicción GRU vs.\ valores reales del precio del ladrillo --- escenario sin pandemia, conjunto de prueba}{figure.caption.125}{}}
+\newlabel{fig:gru_ladrillo_test_sc@cref}{{[figure][97][5]5.97}{[1][95][]96}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.98}{\ignorespaces Diagrama de dispersión: precio predicho vs.\ real del ladrillo --- escenario sin pandemia (GRU).}}{97}{figure.caption.126}\protected@file@percent }
+\newlabel{fig:gru_ladrillo_scatter_sc}{{5.98}{97}{Diagrama de dispersión: precio predicho vs.\ real del ladrillo --- escenario sin pandemia (GRU)}{figure.caption.126}{}}
+\newlabel{fig:gru_ladrillo_scatter_sc@cref}{{[figure][98][5]5.98}{[1][95][]97}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.99}{\ignorespaces Ajuste del modelo GRU del ladrillo sobre las tres particiones --- escenario sin pandemia.}}{97}{figure.caption.127}\protected@file@percent }
+\newlabel{fig:gru_ladrillo_splits_sc}{{5.99}{97}{Ajuste del modelo GRU del ladrillo sobre las tres particiones --- escenario sin pandemia}{figure.caption.127}{}}
+\newlabel{fig:gru_ladrillo_splits_sc@cref}{{[figure][99][5]5.99}{[1][95][]97}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.4.2.1.5}Análisis de Residuos}{98}{paragraph.5.4.2.1.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.99}{\ignorespaces Residuos del modelo GRU para ladrillo --- escenario sin pandemia, conjunto de prueba.}}{98}{figure.caption.127}\protected@file@percent }
-\newlabel{fig:gru_ladrillo_res_sc}{{5.99}{98}{Residuos del modelo GRU para ladrillo --- escenario sin pandemia, conjunto de prueba}{figure.caption.127}{}}
-\newlabel{fig:gru_ladrillo_res_sc@cref}{{[figure][99][5]5.99}{[1][98][]98}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.100}{\ignorespaces Histograma de residuos del modelo GRU para ladrillo --- escenario sin pandemia.}}{98}{figure.caption.128}\protected@file@percent }
-\newlabel{fig:gru_ladrillo_reshist_sc}{{5.100}{98}{Histograma de residuos del modelo GRU para ladrillo --- escenario sin pandemia}{figure.caption.128}{}}
-\newlabel{fig:gru_ladrillo_reshist_sc@cref}{{[figure][100][5]5.100}{[1][98][]98}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.101}{\ignorespaces ACF y PACF de los residuos del modelo GRU para ladrillo --- escenario sin pandemia.}}{99}{figure.caption.129}\protected@file@percent }
-\newlabel{fig:gru_ladrillo_acf_sc}{{5.101}{99}{ACF y PACF de los residuos del modelo GRU para ladrillo --- escenario sin pandemia}{figure.caption.129}{}}
-\newlabel{fig:gru_ladrillo_acf_sc@cref}{{[figure][101][5]5.101}{[1][98][]99}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.100}{\ignorespaces Residuos del modelo GRU para ladrillo --- escenario sin pandemia, conjunto de prueba.}}{98}{figure.caption.128}\protected@file@percent }
+\newlabel{fig:gru_ladrillo_res_sc}{{5.100}{98}{Residuos del modelo GRU para ladrillo --- escenario sin pandemia, conjunto de prueba}{figure.caption.128}{}}
+\newlabel{fig:gru_ladrillo_res_sc@cref}{{[figure][100][5]5.100}{[1][98][]98}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.101}{\ignorespaces Histograma de residuos del modelo GRU para ladrillo --- escenario sin pandemia.}}{98}{figure.caption.129}\protected@file@percent }
+\newlabel{fig:gru_ladrillo_reshist_sc}{{5.101}{98}{Histograma de residuos del modelo GRU para ladrillo --- escenario sin pandemia}{figure.caption.129}{}}
+\newlabel{fig:gru_ladrillo_reshist_sc@cref}{{[figure][101][5]5.101}{[1][98][]98}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.102}{\ignorespaces ACF y PACF de los residuos del modelo GRU para ladrillo --- escenario sin pandemia.}}{99}{figure.caption.130}\protected@file@percent }
+\newlabel{fig:gru_ladrillo_acf_sc}{{5.102}{99}{ACF y PACF de los residuos del modelo GRU para ladrillo --- escenario sin pandemia}{figure.caption.130}{}}
+\newlabel{fig:gru_ladrillo_acf_sc@cref}{{[figure][102][5]5.102}{[1][98][]99}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.4.2.1.6}Pronóstico a 24 Meses}{100}{paragraph.5.4.2.1.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.102}{\ignorespaces Pronóstico GRU del precio del ladrillo a 24 meses --- escenario sin pandemia: serie histórica y proyección.}}{100}{figure.caption.130}\protected@file@percent }
-\newlabel{fig:gru_ladrillo_pred_sin_covid}{{5.102}{100}{Pronóstico GRU del precio del ladrillo a 24 meses --- escenario sin pandemia: serie histórica y proyección}{figure.caption.130}{}}
-\newlabel{fig:gru_ladrillo_pred_sin_covid@cref}{{[figure][102][5]5.102}{[1][100][]100}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.103}{\ignorespaces Zoom sobre la transición entre datos observados y pronóstico GRU del ladrillo --- escenario sin pandemia.}}{100}{figure.caption.131}\protected@file@percent }
-\newlabel{fig:gru_ladrillo_zoom_sin_covid}{{5.103}{100}{Zoom sobre la transición entre datos observados y pronóstico GRU del ladrillo --- escenario sin pandemia}{figure.caption.131}{}}
-\newlabel{fig:gru_ladrillo_zoom_sin_covid@cref}{{[figure][103][5]5.103}{[1][100][]100}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.104}{\ignorespaces IC Monte Carlo Dropout del pronóstico GRU para ladrillo --- escenario sin pandemia.}}{101}{figure.caption.132}\protected@file@percent }
-\newlabel{fig:gru_ladrillo_ic_sin_covid}{{5.104}{101}{IC Monte Carlo Dropout del pronóstico GRU para ladrillo --- escenario sin pandemia}{figure.caption.132}{}}
-\newlabel{fig:gru_ladrillo_ic_sin_covid@cref}{{[figure][104][5]5.104}{[1][100][]101}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.24}{\ignorespaces Pronóstico GRU del precio del ladrillo (Gs.) --- escenario sin pandemia, agosto 2025 -- julio 2026.}}{101}{table.caption.133}\protected@file@percent }
-\newlabel{tab:gru_ladrillo_pred_sc}{{5.24}{101}{Pronóstico GRU del precio del ladrillo (Gs.) --- escenario sin pandemia, agosto 2025 -- julio 2026}{table.caption.133}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.103}{\ignorespaces Pronóstico GRU del precio del ladrillo a 24 meses --- escenario sin pandemia: serie histórica y proyección.}}{100}{figure.caption.131}\protected@file@percent }
+\newlabel{fig:gru_ladrillo_pred_sin_covid}{{5.103}{100}{Pronóstico GRU del precio del ladrillo a 24 meses --- escenario sin pandemia: serie histórica y proyección}{figure.caption.131}{}}
+\newlabel{fig:gru_ladrillo_pred_sin_covid@cref}{{[figure][103][5]5.103}{[1][100][]100}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.104}{\ignorespaces Zoom sobre la transición entre datos observados y pronóstico GRU del ladrillo --- escenario sin pandemia.}}{100}{figure.caption.132}\protected@file@percent }
+\newlabel{fig:gru_ladrillo_zoom_sin_covid}{{5.104}{100}{Zoom sobre la transición entre datos observados y pronóstico GRU del ladrillo --- escenario sin pandemia}{figure.caption.132}{}}
+\newlabel{fig:gru_ladrillo_zoom_sin_covid@cref}{{[figure][104][5]5.104}{[1][100][]100}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.105}{\ignorespaces IC Monte Carlo Dropout del pronóstico GRU para ladrillo --- escenario sin pandemia.}}{101}{figure.caption.133}\protected@file@percent }
+\newlabel{fig:gru_ladrillo_ic_sin_covid}{{5.105}{101}{IC Monte Carlo Dropout del pronóstico GRU para ladrillo --- escenario sin pandemia}{figure.caption.133}{}}
+\newlabel{fig:gru_ladrillo_ic_sin_covid@cref}{{[figure][105][5]5.105}{[1][100][]101}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.24}{\ignorespaces Pronóstico GRU del precio del ladrillo (Gs.) --- escenario sin pandemia, agosto 2025 -- julio 2026.}}{101}{table.caption.134}\protected@file@percent }
+\newlabel{tab:gru_ladrillo_pred_sc}{{5.24}{101}{Pronóstico GRU del precio del ladrillo (Gs.) --- escenario sin pandemia, agosto 2025 -- julio 2026}{table.caption.134}{}}
 \newlabel{tab:gru_ladrillo_pred_sc@cref}{{[table][24][5]5.24}{[1][100][]101}{}{}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {5.4.2.2}Escenario con Efecto Pandémico}{102}{subsubsection.5.4.2.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.4.2.2.1}Hiperparámetros y Arquitectura}{102}{paragraph.5.4.2.2.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.25}{\ignorespaces Hiperparámetros del modelo GRU para ladrillo --- escenario con pandemia.}}{102}{table.caption.134}\protected@file@percent }
-\newlabel{tab:gru_ladrillo_cc_arq}{{5.25}{102}{Hiperparámetros del modelo GRU para ladrillo --- escenario con pandemia}{table.caption.134}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.25}{\ignorespaces Hiperparámetros del modelo GRU para ladrillo --- escenario con pandemia.}}{102}{table.caption.135}\protected@file@percent }
+\newlabel{tab:gru_ladrillo_cc_arq}{{5.25}{102}{Hiperparámetros del modelo GRU para ladrillo --- escenario con pandemia}{table.caption.135}{}}
 \newlabel{tab:gru_ladrillo_cc_arq@cref}{{[table][25][5]5.25}{[1][102][]102}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.4.2.2.2}Curva de Aprendizaje}{102}{paragraph.5.4.2.2.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.105}{\ignorespaces Curvas de aprendizaje del modelo GRU para ladrillo --- escenario con pandemia.}}{102}{figure.caption.135}\protected@file@percent }
-\newlabel{fig:gru_ladrillo_curva_cc}{{5.105}{102}{Curvas de aprendizaje del modelo GRU para ladrillo --- escenario con pandemia}{figure.caption.135}{}}
-\newlabel{fig:gru_ladrillo_curva_cc@cref}{{[figure][105][5]5.105}{[1][102][]102}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.106}{\ignorespaces Curvas de aprendizaje del modelo GRU para ladrillo --- escenario con pandemia.}}{102}{figure.caption.136}\protected@file@percent }
+\newlabel{fig:gru_ladrillo_curva_cc}{{5.106}{102}{Curvas de aprendizaje del modelo GRU para ladrillo --- escenario con pandemia}{figure.caption.136}{}}
+\newlabel{fig:gru_ladrillo_curva_cc@cref}{{[figure][106][5]5.106}{[1][102][]102}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.4.2.2.3}Métricas de Evaluación}{102}{paragraph.5.4.2.2.3}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.26}{\ignorespaces Desempeño del modelo GRU para ladrillo --- escenario con pandemia: RMSE en train, val y test.}}{102}{table.caption.136}\protected@file@percent }
-\newlabel{tab:gru_ladrillo_cc_metricas}{{5.26}{102}{Desempeño del modelo GRU para ladrillo --- escenario con pandemia: RMSE en train, val y test}{table.caption.136}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.26}{\ignorespaces Desempeño del modelo GRU para ladrillo --- escenario con pandemia: RMSE en train, val y test.}}{102}{table.caption.137}\protected@file@percent }
+\newlabel{tab:gru_ladrillo_cc_metricas}{{5.26}{102}{Desempeño del modelo GRU para ladrillo --- escenario con pandemia: RMSE en train, val y test}{table.caption.137}{}}
 \newlabel{tab:gru_ladrillo_cc_metricas@cref}{{[table][26][5]5.26}{[1][102][]102}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.4.2.2.4}Evaluación sobre el Conjunto de Prueba}{103}{paragraph.5.4.2.2.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.106}{\ignorespaces Predicción GRU vs.\ valores reales del precio del ladrillo --- escenario con pandemia, conjunto de prueba.}}{103}{figure.caption.137}\protected@file@percent }
-\newlabel{fig:gru_ladrillo_test_cc}{{5.106}{103}{Predicción GRU vs.\ valores reales del precio del ladrillo --- escenario con pandemia, conjunto de prueba}{figure.caption.137}{}}
-\newlabel{fig:gru_ladrillo_test_cc@cref}{{[figure][106][5]5.106}{[1][103][]103}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.107}{\ignorespaces Diagrama de dispersión: precio predicho vs.\ real del ladrillo --- escenario con pandemia (GRU).}}{104}{figure.caption.138}\protected@file@percent }
-\newlabel{fig:gru_ladrillo_scatter_cc}{{5.107}{104}{Diagrama de dispersión: precio predicho vs.\ real del ladrillo --- escenario con pandemia (GRU)}{figure.caption.138}{}}
-\newlabel{fig:gru_ladrillo_scatter_cc@cref}{{[figure][107][5]5.107}{[1][103][]104}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.108}{\ignorespaces Ajuste del modelo GRU del ladrillo sobre las tres particiones --- escenario con pandemia.}}{104}{figure.caption.139}\protected@file@percent }
-\newlabel{fig:gru_ladrillo_splits_cc}{{5.108}{104}{Ajuste del modelo GRU del ladrillo sobre las tres particiones --- escenario con pandemia}{figure.caption.139}{}}
-\newlabel{fig:gru_ladrillo_splits_cc@cref}{{[figure][108][5]5.108}{[1][103][]104}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.107}{\ignorespaces Predicción GRU vs.\ valores reales del precio del ladrillo --- escenario con pandemia, conjunto de prueba.}}{103}{figure.caption.138}\protected@file@percent }
+\newlabel{fig:gru_ladrillo_test_cc}{{5.107}{103}{Predicción GRU vs.\ valores reales del precio del ladrillo --- escenario con pandemia, conjunto de prueba}{figure.caption.138}{}}
+\newlabel{fig:gru_ladrillo_test_cc@cref}{{[figure][107][5]5.107}{[1][103][]103}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.108}{\ignorespaces Diagrama de dispersión: precio predicho vs.\ real del ladrillo --- escenario con pandemia (GRU).}}{104}{figure.caption.139}\protected@file@percent }
+\newlabel{fig:gru_ladrillo_scatter_cc}{{5.108}{104}{Diagrama de dispersión: precio predicho vs.\ real del ladrillo --- escenario con pandemia (GRU)}{figure.caption.139}{}}
+\newlabel{fig:gru_ladrillo_scatter_cc@cref}{{[figure][108][5]5.108}{[1][103][]104}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.109}{\ignorespaces Ajuste del modelo GRU del ladrillo sobre las tres particiones --- escenario con pandemia.}}{104}{figure.caption.140}\protected@file@percent }
+\newlabel{fig:gru_ladrillo_splits_cc}{{5.109}{104}{Ajuste del modelo GRU del ladrillo sobre las tres particiones --- escenario con pandemia}{figure.caption.140}{}}
+\newlabel{fig:gru_ladrillo_splits_cc@cref}{{[figure][109][5]5.109}{[1][103][]104}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.4.2.2.5}Análisis de Residuos}{105}{paragraph.5.4.2.2.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.109}{\ignorespaces Residuos del modelo GRU para ladrillo --- escenario con pandemia, conjunto de prueba.}}{105}{figure.caption.140}\protected@file@percent }
-\newlabel{fig:gru_ladrillo_res_cc}{{5.109}{105}{Residuos del modelo GRU para ladrillo --- escenario con pandemia, conjunto de prueba}{figure.caption.140}{}}
-\newlabel{fig:gru_ladrillo_res_cc@cref}{{[figure][109][5]5.109}{[1][105][]105}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.110}{\ignorespaces Histograma de residuos del modelo GRU para ladrillo --- escenario con pandemia.}}{105}{figure.caption.141}\protected@file@percent }
-\newlabel{fig:gru_ladrillo_reshist_cc}{{5.110}{105}{Histograma de residuos del modelo GRU para ladrillo --- escenario con pandemia}{figure.caption.141}{}}
-\newlabel{fig:gru_ladrillo_reshist_cc@cref}{{[figure][110][5]5.110}{[1][105][]105}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.111}{\ignorespaces ACF y PACF de los residuos del modelo GRU para ladrillo --- escenario con pandemia.}}{106}{figure.caption.142}\protected@file@percent }
-\newlabel{fig:gru_ladrillo_acf_cc}{{5.111}{106}{ACF y PACF de los residuos del modelo GRU para ladrillo --- escenario con pandemia}{figure.caption.142}{}}
-\newlabel{fig:gru_ladrillo_acf_cc@cref}{{[figure][111][5]5.111}{[1][105][]106}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.110}{\ignorespaces Residuos del modelo GRU para ladrillo --- escenario con pandemia, conjunto de prueba.}}{105}{figure.caption.141}\protected@file@percent }
+\newlabel{fig:gru_ladrillo_res_cc}{{5.110}{105}{Residuos del modelo GRU para ladrillo --- escenario con pandemia, conjunto de prueba}{figure.caption.141}{}}
+\newlabel{fig:gru_ladrillo_res_cc@cref}{{[figure][110][5]5.110}{[1][105][]105}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.111}{\ignorespaces Histograma de residuos del modelo GRU para ladrillo --- escenario con pandemia.}}{105}{figure.caption.142}\protected@file@percent }
+\newlabel{fig:gru_ladrillo_reshist_cc}{{5.111}{105}{Histograma de residuos del modelo GRU para ladrillo --- escenario con pandemia}{figure.caption.142}{}}
+\newlabel{fig:gru_ladrillo_reshist_cc@cref}{{[figure][111][5]5.111}{[1][105][]105}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.112}{\ignorespaces ACF y PACF de los residuos del modelo GRU para ladrillo --- escenario con pandemia.}}{106}{figure.caption.143}\protected@file@percent }
+\newlabel{fig:gru_ladrillo_acf_cc}{{5.112}{106}{ACF y PACF de los residuos del modelo GRU para ladrillo --- escenario con pandemia}{figure.caption.143}{}}
+\newlabel{fig:gru_ladrillo_acf_cc@cref}{{[figure][112][5]5.112}{[1][105][]106}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{\numberline {5.4.2.2.6}Pronóstico a 24 Meses}{107}{paragraph.5.4.2.2.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.112}{\ignorespaces Pronóstico GRU del precio del ladrillo a 24 meses --- escenario con pandemia: serie histórica y proyección.}}{107}{figure.caption.143}\protected@file@percent }
-\newlabel{fig:gru_ladrillo_pred_con_covid}{{5.112}{107}{Pronóstico GRU del precio del ladrillo a 24 meses --- escenario con pandemia: serie histórica y proyección}{figure.caption.143}{}}
-\newlabel{fig:gru_ladrillo_pred_con_covid@cref}{{[figure][112][5]5.112}{[1][107][]107}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.113}{\ignorespaces Zoom sobre la transición entre datos observados y pronóstico GRU del ladrillo --- escenario con pandemia.}}{107}{figure.caption.144}\protected@file@percent }
-\newlabel{fig:gru_ladrillo_zoom_con_covid}{{5.113}{107}{Zoom sobre la transición entre datos observados y pronóstico GRU del ladrillo --- escenario con pandemia}{figure.caption.144}{}}
-\newlabel{fig:gru_ladrillo_zoom_con_covid@cref}{{[figure][113][5]5.113}{[1][107][]107}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.114}{\ignorespaces IC Monte Carlo Dropout del pronóstico GRU para ladrillo --- escenario con pandemia.}}{108}{figure.caption.145}\protected@file@percent }
-\newlabel{fig:gru_ladrillo_ic_con_covid}{{5.114}{108}{IC Monte Carlo Dropout del pronóstico GRU para ladrillo --- escenario con pandemia}{figure.caption.145}{}}
-\newlabel{fig:gru_ladrillo_ic_con_covid@cref}{{[figure][114][5]5.114}{[1][107][]108}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.113}{\ignorespaces Pronóstico GRU del precio del ladrillo a 24 meses --- escenario con pandemia: serie histórica y proyección.}}{107}{figure.caption.144}\protected@file@percent }
+\newlabel{fig:gru_ladrillo_pred_con_covid}{{5.113}{107}{Pronóstico GRU del precio del ladrillo a 24 meses --- escenario con pandemia: serie histórica y proyección}{figure.caption.144}{}}
+\newlabel{fig:gru_ladrillo_pred_con_covid@cref}{{[figure][113][5]5.113}{[1][107][]107}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.114}{\ignorespaces Zoom sobre la transición entre datos observados y pronóstico GRU del ladrillo --- escenario con pandemia.}}{107}{figure.caption.145}\protected@file@percent }
+\newlabel{fig:gru_ladrillo_zoom_con_covid}{{5.114}{107}{Zoom sobre la transición entre datos observados y pronóstico GRU del ladrillo --- escenario con pandemia}{figure.caption.145}{}}
+\newlabel{fig:gru_ladrillo_zoom_con_covid@cref}{{[figure][114][5]5.114}{[1][107][]107}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.115}{\ignorespaces IC Monte Carlo Dropout del pronóstico GRU para ladrillo --- escenario con pandemia.}}{108}{figure.caption.146}\protected@file@percent }
+\newlabel{fig:gru_ladrillo_ic_con_covid}{{5.115}{108}{IC Monte Carlo Dropout del pronóstico GRU para ladrillo --- escenario con pandemia}{figure.caption.146}{}}
+\newlabel{fig:gru_ladrillo_ic_con_covid@cref}{{[figure][115][5]5.115}{[1][107][]108}{}{}{}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {6}Discusión}{109}{chapter.6}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -639,8 +640,8 @@
 \@writefile{toc}{\contentsline {section}{\numberline {6.2}Evaluaci\'{o}n del desempe\~{n}o del modelo Long Short-Term Memory (LSTM)}{110}{section.6.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {6.3}Evaluaci\'{o}n del desempe\~{n}o del modelo Gated Recurrent Unit (GRU)}{112}{section.6.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {6.4}Comparaci\'{o}n entre modelos}{113}{section.6.4}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Comparaci\'{o}n integral de los modelos evaluados para la predicci\'{o}n de precios de materiales de construcci\'{o}n.}}{113}{table.caption.146}\protected@file@percent }
-\newlabel{tab:comparacion_modelos}{{6.1}{113}{Comparaci\'{o}n integral de los modelos evaluados para la predicci\'{o}n de precios de materiales de construcci\'{o}n}{table.caption.146}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Comparaci\'{o}n integral de los modelos evaluados para la predicci\'{o}n de precios de materiales de construcci\'{o}n.}}{113}{table.caption.147}\protected@file@percent }
+\newlabel{tab:comparacion_modelos}{{6.1}{113}{Comparaci\'{o}n integral de los modelos evaluados para la predicci\'{o}n de precios de materiales de construcci\'{o}n}{table.caption.147}{}}
 \newlabel{tab:comparacion_modelos@cref}{{[table][1][6]6.1}{[1][113][]113}{}{}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {6.5}Impacto de la variable de cuarentena por COVID-19}{115}{section.6.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {6.6}Limitaciones del estudio}{116}{section.6.6}\protected@file@percent }
@@ -652,7 +653,7 @@
 \@writefile{toc}{\contentsline {section}{\numberline {7.1}Conclusiones finales}{118}{section.7.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {7.2}Trabajos futuros}{118}{section.7.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {A.1}A}{122}{section.Alph0.1}\protected@file@percent }
-\abx@aux@read@bbl@mdfivesum{28B4CA9B8696E9DFC0EEBA0E19B68D9A}
+\abx@aux@read@bbl@mdfivesum{1040FB2C27535175AC49273E647FBA9F}
 \abx@aux@defaultrefcontext{0}{castaneda2022}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{almada2022}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{newbold1983arima}{none/global//global/global/global}
@@ -668,7 +669,6 @@
 \abx@aux@defaultrefcontext{0}{lazzeri2020machine}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{mandua}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{dmh}{none/global//global/global/global}
-\abx@aux@defaultrefcontext{0}{EstudioClimaParaguay2019}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{conesa2011interpolacion}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{edylur}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{siami2018}{none/global//global/global/global}

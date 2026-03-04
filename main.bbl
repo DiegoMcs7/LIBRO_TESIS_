@@ -540,42 +540,6 @@
       \verb https://www.meteorologia.gov.py/nivel-rio/vermas_convencional.php?code=2000086218
       \endverb
     \endentry
-    \entry{EstudioClimaParaguay2019}{book}{}{}
-      \name{author}{1}{}{%
-        {{hash=86d4670d682627610ad049e8db511edb}{%
-           family={Grassi},
-           familyi={G\bibinitperiod},
-           given={Benjamín},
-           giveni={B\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Asunción, Paraguay}%
-      }
-      \list{publisher}{1}{%
-        {Ministerio del Ambiente y Desarrollo Sostenible - Secretaría Técnica de Planificación (MADES-STP)}%
-      }
-      \strng{namehash}{86d4670d682627610ad049e8db511edb}
-      \strng{fullhash}{86d4670d682627610ad049e8db511edb}
-      \strng{fullhashraw}{86d4670d682627610ad049e8db511edb}
-      \strng{bibnamehash}{86d4670d682627610ad049e8db511edb}
-      \strng{authorbibnamehash}{86d4670d682627610ad049e8db511edb}
-      \strng{authornamehash}{86d4670d682627610ad049e8db511edb}
-      \strng{authorfullhash}{86d4670d682627610ad049e8db511edb}
-      \strng{authorfullhashraw}{86d4670d682627610ad049e8db511edb}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{Informe oficial}
-      \field{title}{Estudio del Clima Paraguay 2019}
-      \field{year}{2020}
-      \verb{urlraw}
-      \verb https://transparenciaclimatica.mades.gov.py/wp-content/uploads/2025/10/Estudio-del-Clima-Paraguay-2019.pdf
-      \endverb
-      \verb{url}
-      \verb https://transparenciaclimatica.mades.gov.py/wp-content/uploads/2025/10/Estudio-del-Clima-Paraguay-2019.pdf
-      \endverb
-    \endentry
     \entry{conesa2011interpolacion}{article}{}{}
       \name{author}{1}{}{%
         {{hash=c0bf58f44127db9e1095f5065a83cd7e}{%
@@ -704,8 +668,8 @@
       \strng{authorfullhash}{d1aa634d5ae65de06ea6f2c0c199cfec}
       \strng{authorfullhashraw}{d1aa634d5ae65de06ea6f2c0c199cfec}
       \field{extraname}{1}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Hydrology and Earth System Sciences}

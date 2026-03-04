@@ -42,30 +42,30 @@
 \contentsline {subsection}{\numberline {5.1.4}Métricas de Evaluación}{25}{subsection.5.1.4}%
 \contentsline {subsection}{\numberline {5.1.5}Análisis de la Distribución de Errores}{26}{subsection.5.1.5}%
 \contentsline {subsection}{\numberline {5.1.6}Predicción del Nivel del Río a 730 Días}{26}{subsection.5.1.6}%
-\contentsline {section}{\numberline {5.2}Predicción de los Precios del Cemento y del Ladrillo Común con Seasonal Autoregressive Integrated Moving Average with Exogenous Variables (SARIMAX)}{28}{section.5.2}%
+\contentsline {section}{\numberline {5.2}Predicción de los Precios del Cemento y del Ladrillo Común con Seasonal Autoregressive Integrated Moving Average with Exogenous Variables (SARIMAX)}{29}{section.5.2}%
 \contentsline {subsection}{\numberline {5.2.1}Predicción del Precio del Cemento}{29}{subsection.5.2.1}%
 \contentsline {subsubsection}{\numberline {5.2.1.1}Serie Histórica y Análisis Exploratorio}{29}{subsubsection.5.2.1.1}%
-\contentsline {subsubsection}{\numberline {5.2.1.2}Modelo SARIMAX: Selección y Parámetros}{30}{subsubsection.5.2.1.2}%
-\contentsline {subsubsection}{\numberline {5.2.1.3}Modelo SARIMAX: Ajuste y Evaluación}{30}{subsubsection.5.2.1.3}%
-\contentsline {subsubsection}{\numberline {5.2.1.4}Modelo SARIMAX: Validación Cruzada}{32}{subsubsection.5.2.1.4}%
-\contentsline {subsubsection}{\numberline {5.2.1.5}Modelo SARIMAX: Análisis de Residuos}{32}{subsubsection.5.2.1.5}%
-\contentsline {subsubsection}{\numberline {5.2.1.6}Modelo SARIMAX: Pronóstico a 24 Meses}{33}{subsubsection.5.2.1.6}%
-\contentsline {subsubsection}{\numberline {5.2.1.7}Modelo SARIMAX: Escenarios con y sin Efecto Pandémico}{34}{subsubsection.5.2.1.7}%
-\contentsline {subsection}{\numberline {5.2.2}Predicción del Precio del Ladrillo}{34}{subsection.5.2.2}%
-\contentsline {subsubsection}{\numberline {5.2.2.1}Serie Histórica y Análisis Exploratorio}{35}{subsubsection.5.2.2.1}%
-\contentsline {subsubsection}{\numberline {5.2.2.2}Modelo SARIMAX: Selección y Parámetros}{37}{subsubsection.5.2.2.2}%
-\contentsline {subsubsection}{\numberline {5.2.2.3}Modelo SARIMAX: Ajuste y Evaluación}{37}{subsubsection.5.2.2.3}%
-\contentsline {subsubsection}{\numberline {5.2.2.4}Modelo SARIMAX: Validación Cruzada}{38}{subsubsection.5.2.2.4}%
+\contentsline {subsubsection}{\numberline {5.2.1.2}Modelo SARIMAX: Selección y Parámetros}{31}{subsubsection.5.2.1.2}%
+\contentsline {subsubsection}{\numberline {5.2.1.3}Modelo SARIMAX: Ajuste y Evaluación}{32}{subsubsection.5.2.1.3}%
+\contentsline {subsubsection}{\numberline {5.2.1.4}Modelo SARIMAX: Validación Cruzada}{33}{subsubsection.5.2.1.4}%
+\contentsline {subsubsection}{\numberline {5.2.1.5}Modelo SARIMAX: Análisis de Residuos}{33}{subsubsection.5.2.1.5}%
+\contentsline {subsubsection}{\numberline {5.2.1.6}Modelo SARIMAX: Pronóstico a 24 Meses}{34}{subsubsection.5.2.1.6}%
+\contentsline {subsubsection}{\numberline {5.2.1.7}Modelo SARIMAX: Escenarios con y sin Efecto Pandémico}{35}{subsubsection.5.2.1.7}%
+\contentsline {subsection}{\numberline {5.2.2}Predicción del Precio del Ladrillo}{36}{subsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.2.1}Serie Histórica y Análisis Exploratorio}{36}{subsubsection.5.2.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2.2}Modelo SARIMAX: Selección y Parámetros}{38}{subsubsection.5.2.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.2.3}Modelo SARIMAX: Ajuste y Evaluación}{39}{subsubsection.5.2.2.3}%
+\contentsline {subsubsection}{\numberline {5.2.2.4}Modelo SARIMAX: Validación Cruzada}{39}{subsubsection.5.2.2.4}%
 \contentsline {subsubsection}{\numberline {5.2.2.5}Modelo SARIMAX: Análisis de Residuos}{39}{subsubsection.5.2.2.5}%
-\contentsline {subsubsection}{\numberline {5.2.2.6}Modelo SARIMAX: Pronóstico a 24 Meses}{39}{subsubsection.5.2.2.6}%
-\contentsline {subsubsection}{\numberline {5.2.2.7}Modelo SARIMAX: Escenarios con y sin Efecto Pandémico}{40}{subsubsection.5.2.2.7}%
-\contentsline {section}{\numberline {5.3}Predicción de los Precios del Cemento y del Ladrillo Común con Long Short-Term Memory (LSTM)}{41}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Predicción del Precio del Cemento}{41}{subsection.5.3.1}%
-\contentsline {subsubsection}{\numberline {5.3.1.1}Análisis Exploratorio de la Serie}{42}{subsubsection.5.3.1.1}%
-\contentsline {subsubsection}{\numberline {5.3.1.2}Hiperparámetros y Arquitectura}{42}{subsubsection.5.3.1.2}%
-\contentsline {subsubsection}{\numberline {5.3.1.3}Curva de Aprendizaje}{42}{subsubsection.5.3.1.3}%
-\contentsline {subsubsection}{\numberline {5.3.1.4}Métricas de Evaluación}{43}{subsubsection.5.3.1.4}%
-\contentsline {subsubsection}{\numberline {5.3.1.5}Evaluación sobre el Conjunto de Prueba}{43}{subsubsection.5.3.1.5}%
+\contentsline {subsubsection}{\numberline {5.2.2.6}Modelo SARIMAX: Pronóstico a 24 Meses}{40}{subsubsection.5.2.2.6}%
+\contentsline {subsubsection}{\numberline {5.2.2.7}Modelo SARIMAX: Escenarios con y sin Efecto Pandémico}{41}{subsubsection.5.2.2.7}%
+\contentsline {section}{\numberline {5.3}Predicción de los Precios del Cemento y del Ladrillo Común con Long Short-Term Memory (LSTM)}{42}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Predicción del Precio del Cemento}{42}{subsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.1.1}Análisis Exploratorio de la Serie}{43}{subsubsection.5.3.1.1}%
+\contentsline {subsubsection}{\numberline {5.3.1.2}Hiperparámetros y Arquitectura}{43}{subsubsection.5.3.1.2}%
+\contentsline {subsubsection}{\numberline {5.3.1.3}Curva de Aprendizaje}{43}{subsubsection.5.3.1.3}%
+\contentsline {subsubsection}{\numberline {5.3.1.4}Métricas de Evaluación}{44}{subsubsection.5.3.1.4}%
+\contentsline {subsubsection}{\numberline {5.3.1.5}Evaluación sobre el Conjunto de Prueba}{44}{subsubsection.5.3.1.5}%
 \contentsline {subsubsection}{\numberline {5.3.1.6}Análisis de Residuos}{57}{subsubsection.5.3.1.6}%
 \contentsline {subsubsection}{\numberline {5.3.1.7}Pronóstico a 24 Meses --- Escenario sin Pandemia}{59}{subsubsection.5.3.1.7}%
 \contentsline {subsubsection}{\numberline {5.3.1.8}Pronóstico a 24 Meses --- Escenario con Efecto Pandémico}{61}{subsubsection.5.3.1.8}%
