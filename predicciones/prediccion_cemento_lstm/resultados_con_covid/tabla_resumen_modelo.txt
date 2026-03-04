@@ -1,13 +1,13 @@
 
 Tabla Resumen — Modelo LSTM Final
   Arquitectura  : TensorFlow/Keras — LSTM
-  Parametros    : 18,497
-  Split         : 95/20/22 meses (train/val/test)
-  Features      : 7 (Precio, Nivel Rio, COVID, lag1, roll3, sin, cos)
+  Parametros    : 36,481
+  Split         : 97/20/22 meses (train/val/test)
+  Features      : 6 (Precio, Nivel Rio, COVID, lag1, roll3, sin, cos)
 
   Metrica             Train        Val       Test
   ──────────────────────────────────────────────
-  RMSE (Gs.)        1828.74    4261.22    1619.75
+  RMSE (Gs.)        4744.15    3589.15    4394.96
   ──────────────────────────────────────────────
 
   Horizonte      : 24 meses (recursiva)

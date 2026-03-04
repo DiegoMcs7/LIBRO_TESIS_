@@ -1,39 +1,201 @@
 {
-  "mejor_rmse_validacion_gs": 19.52660866605762,
+  "mejor_rmse_validacion_gs": 11.412145208176113,
   "mejores_params": {
-    "lookback": 6,
+    "lookback": 3,
     "n_layers": 1,
     "hidden_size": 64,
     "bidirectional": false,
-    "dropout_rate": 0.0,
-    "recurrent_dropout": 0.0,
+    "dropout_rate": 0.05,
+    "recurrent_dropout": 0.2,
     "optimizer": "Adam",
-    "learning_rate": 0.001,
-    "weight_decay": 1e-05,
-    "batch_size": 4,
-    "scheduler": "none"
+    "learning_rate": 0.008440969369384689,
+    "weight_decay": 1.0410794633475033e-06,
+    "batch_size": 8,
+    "scheduler": "StepLR"
   },
-  "n_trials_completados": 1,
+  "n_trials_completados": 261,
   "n_trials_podados": 0,
   "n_trials_fallidos": 0,
-  "tiempo_minutos": 0.8762972156206766,
+  "tiempo_minutos": 171.1666674931844,
   "top_10": [
     {
       "rank": 1,
-      "trial": 0,
-      "rmse_gs": 19.52660866605762,
+      "trial": 291,
+      "rmse_gs": 11.412145208176113,
       "params": {
-        "lookback": 6,
+        "lookback": 3,
         "n_layers": 1,
         "hidden_size": 64,
         "bidirectional": false,
-        "dropout_rate": 0.0,
-        "recurrent_dropout": 0.0,
+        "dropout_rate": 0.05,
+        "recurrent_dropout": 0.2,
         "optimizer": "Adam",
-        "learning_rate": 0.001,
-        "weight_decay": 1e-05,
-        "batch_size": 4,
-        "scheduler": "none"
+        "learning_rate": 0.008440969369384689,
+        "weight_decay": 1.0410794633475033e-06,
+        "batch_size": 8,
+        "scheduler": "StepLR"
+      }
+    },
+    {
+      "rank": 2,
+      "trial": 89,
+      "rmse_gs": 11.439273195508399,
+      "params": {
+        "lookback": 3,
+        "n_layers": 1,
+        "hidden_size": 64,
+        "bidirectional": false,
+        "dropout_rate": 0.05,
+        "recurrent_dropout": 0.2,
+        "optimizer": "Adam",
+        "learning_rate": 0.0060461651660711,
+        "weight_decay": 0.00011873669334930621,
+        "batch_size": 8,
+        "scheduler": "CosineAnnealingLR"
+      }
+    },
+    {
+      "rank": 3,
+      "trial": 277,
+      "rmse_gs": 11.44983704282975,
+      "params": {
+        "lookback": 3,
+        "n_layers": 1,
+        "hidden_size": 64,
+        "bidirectional": false,
+        "dropout_rate": 0.05,
+        "recurrent_dropout": 0.2,
+        "optimizer": "Adam",
+        "learning_rate": 0.008096644282325158,
+        "weight_decay": 2.929529063136041e-07,
+        "batch_size": 8,
+        "scheduler": "CosineAnnealingLR"
+      }
+    },
+    {
+      "rank": 4,
+      "trial": 201,
+      "rmse_gs": 11.532516609798792,
+      "params": {
+        "lookback": 3,
+        "n_layers": 1,
+        "hidden_size": 64,
+        "bidirectional": false,
+        "dropout_rate": 0.05,
+        "recurrent_dropout": 0.2,
+        "optimizer": "Adam",
+        "learning_rate": 0.007617183509542448,
+        "weight_decay": 7.854402655020813e-05,
+        "batch_size": 8,
+        "scheduler": "CosineAnnealingLR"
+      }
+    },
+    {
+      "rank": 5,
+      "trial": 142,
+      "rmse_gs": 11.539793304489507,
+      "params": {
+        "lookback": 3,
+        "n_layers": 1,
+        "hidden_size": 64,
+        "bidirectional": false,
+        "dropout_rate": 0.05,
+        "recurrent_dropout": 0.2,
+        "optimizer": "Adam",
+        "learning_rate": 0.0071451620508753,
+        "weight_decay": 0.00018761146151873723,
+        "batch_size": 8,
+        "scheduler": "CosineAnnealingLR"
+      }
+    },
+    {
+      "rank": 6,
+      "trial": 94,
+      "rmse_gs": 11.583511413715337,
+      "params": {
+        "lookback": 3,
+        "n_layers": 1,
+        "hidden_size": 64,
+        "bidirectional": false,
+        "dropout_rate": 0.05,
+        "recurrent_dropout": 0.2,
+        "optimizer": "Adam",
+        "learning_rate": 0.006646674304065688,
+        "weight_decay": 6.200349925451485e-05,
+        "batch_size": 8,
+        "scheduler": "CosineAnnealingLR"
+      }
+    },
+    {
+      "rank": 7,
+      "trial": 199,
+      "rmse_gs": 11.58483209151577,
+      "params": {
+        "lookback": 3,
+        "n_layers": 1,
+        "hidden_size": 64,
+        "bidirectional": false,
+        "dropout_rate": 0.05,
+        "recurrent_dropout": 0.2,
+        "optimizer": "Adam",
+        "learning_rate": 0.008697361459163656,
+        "weight_decay": 9.767376817112973e-05,
+        "batch_size": 8,
+        "scheduler": "CosineAnnealingLR"
+      }
+    },
+    {
+      "rank": 8,
+      "trial": 278,
+      "rmse_gs": 11.613201884235338,
+      "params": {
+        "lookback": 3,
+        "n_layers": 1,
+        "hidden_size": 64,
+        "bidirectional": false,
+        "dropout_rate": 0.05,
+        "recurrent_dropout": 0.2,
+        "optimizer": "Adam",
+        "learning_rate": 0.009976831488771933,
+        "weight_decay": 3.0227673339501793e-07,
+        "batch_size": 8,
+        "scheduler": "CosineAnnealingLR"
+      }
+    },
+    {
+      "rank": 9,
+      "trial": 148,
+      "rmse_gs": 11.675488310598467,
+      "params": {
+        "lookback": 3,
+        "n_layers": 1,
+        "hidden_size": 64,
+        "bidirectional": false,
+        "dropout_rate": 0.05,
+        "recurrent_dropout": 0.2,
+        "optimizer": "Adam",
+        "learning_rate": 0.004773413474471758,
+        "weight_decay": 0.0001368222650829092,
+        "batch_size": 8,
+        "scheduler": "CosineAnnealingLR"
+      }
+    },
+    {
+      "rank": 10,
+      "trial": 143,
+      "rmse_gs": 11.824216655517944,
+      "params": {
+        "lookback": 3,
+        "n_layers": 1,
+        "hidden_size": 64,
+        "bidirectional": false,
+        "dropout_rate": 0.05,
+        "recurrent_dropout": 0.2,
+        "optimizer": "Adam",
+        "learning_rate": 0.007300902450055956,
+        "weight_decay": 0.0001267829837153321,
+        "batch_size": 8,
+        "scheduler": "CosineAnnealingLR"
       }
     }
   ]

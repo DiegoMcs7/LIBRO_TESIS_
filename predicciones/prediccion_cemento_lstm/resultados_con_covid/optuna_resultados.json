@@ -1,39 +1,201 @@
 {
-  "mejor_rmse_validacion_gs": 6606.604459352551,
+  "mejor_rmse_validacion_gs": 4740.062363843895,
   "mejores_params": {
-    "lookback": 6,
+    "lookback": 3,
     "n_layers": 1,
     "hidden_size": 64,
-    "bidirectional": false,
-    "dropout_rate": 0.0,
-    "recurrent_dropout": 0.0,
+    "bidirectional": true,
+    "dropout_rate": 0.15000000000000002,
+    "recurrent_dropout": 0.1,
     "optimizer": "Adam",
-    "learning_rate": 0.001,
-    "weight_decay": 1e-05,
-    "batch_size": 4,
-    "scheduler": "none"
+    "learning_rate": 0.008575462403400702,
+    "weight_decay": 1.3864710378090115e-07,
+    "batch_size": 16,
+    "scheduler": "ReduceLROnPlateau"
   },
-  "n_trials_completados": 1,
+  "n_trials_completados": 261,
   "n_trials_podados": 0,
   "n_trials_fallidos": 0,
-  "tiempo_minutos": 0.5148670196533203,
+  "tiempo_minutos": 169.39324791431426,
   "top_10": [
     {
       "rank": 1,
-      "trial": 0,
-      "rmse_gs": 6606.604459352551,
+      "trial": 235,
+      "rmse_gs": 4740.062363843895,
       "params": {
-        "lookback": 6,
+        "lookback": 3,
+        "n_layers": 1,
+        "hidden_size": 64,
+        "bidirectional": true,
+        "dropout_rate": 0.15000000000000002,
+        "recurrent_dropout": 0.1,
+        "optimizer": "Adam",
+        "learning_rate": 0.008575462403400702,
+        "weight_decay": 1.3864710378090115e-07,
+        "batch_size": 16,
+        "scheduler": "ReduceLROnPlateau"
+      }
+    },
+    {
+      "rank": 2,
+      "trial": 196,
+      "rmse_gs": 4784.190201169865,
+      "params": {
+        "lookback": 3,
         "n_layers": 1,
         "hidden_size": 64,
         "bidirectional": false,
-        "dropout_rate": 0.0,
-        "recurrent_dropout": 0.0,
+        "dropout_rate": 0.15000000000000002,
+        "recurrent_dropout": 0.1,
         "optimizer": "Adam",
-        "learning_rate": 0.001,
-        "weight_decay": 1e-05,
-        "batch_size": 4,
+        "learning_rate": 0.007980192242927718,
+        "weight_decay": 3.0413291416386783e-07,
+        "batch_size": 8,
         "scheduler": "none"
+      }
+    },
+    {
+      "rank": 3,
+      "trial": 210,
+      "rmse_gs": 4790.314604990513,
+      "params": {
+        "lookback": 3,
+        "n_layers": 1,
+        "hidden_size": 64,
+        "bidirectional": true,
+        "dropout_rate": 0.15000000000000002,
+        "recurrent_dropout": 0.1,
+        "optimizer": "Adam",
+        "learning_rate": 0.009794114420619275,
+        "weight_decay": 1.3093282470346208e-07,
+        "batch_size": 16,
+        "scheduler": "none"
+      }
+    },
+    {
+      "rank": 4,
+      "trial": 237,
+      "rmse_gs": 4810.4219045512355,
+      "params": {
+        "lookback": 3,
+        "n_layers": 1,
+        "hidden_size": 64,
+        "bidirectional": true,
+        "dropout_rate": 0.15000000000000002,
+        "recurrent_dropout": 0.1,
+        "optimizer": "Adam",
+        "learning_rate": 0.007222611682149593,
+        "weight_decay": 1.2626245688249222e-07,
+        "batch_size": 16,
+        "scheduler": "ReduceLROnPlateau"
+      }
+    },
+    {
+      "rank": 5,
+      "trial": 260,
+      "rmse_gs": 4828.670484586303,
+      "params": {
+        "lookback": 3,
+        "n_layers": 1,
+        "hidden_size": 64,
+        "bidirectional": true,
+        "dropout_rate": 0.15000000000000002,
+        "recurrent_dropout": 0.1,
+        "optimizer": "Adam",
+        "learning_rate": 0.007801227595288096,
+        "weight_decay": 1.357839183353904e-07,
+        "batch_size": 16,
+        "scheduler": "ReduceLROnPlateau"
+      }
+    },
+    {
+      "rank": 6,
+      "trial": 244,
+      "rmse_gs": 4844.5996270399255,
+      "params": {
+        "lookback": 3,
+        "n_layers": 1,
+        "hidden_size": 64,
+        "bidirectional": true,
+        "dropout_rate": 0.15000000000000002,
+        "recurrent_dropout": 0.1,
+        "optimizer": "Adam",
+        "learning_rate": 0.007039900428215209,
+        "weight_decay": 1.6669878637705814e-07,
+        "batch_size": 16,
+        "scheduler": "ReduceLROnPlateau"
+      }
+    },
+    {
+      "rank": 7,
+      "trial": 224,
+      "rmse_gs": 4853.476931995607,
+      "params": {
+        "lookback": 3,
+        "n_layers": 1,
+        "hidden_size": 64,
+        "bidirectional": true,
+        "dropout_rate": 0.15000000000000002,
+        "recurrent_dropout": 0.1,
+        "optimizer": "Adam",
+        "learning_rate": 0.008423750211328646,
+        "weight_decay": 1.3809555559616558e-07,
+        "batch_size": 16,
+        "scheduler": "ReduceLROnPlateau"
+      }
+    },
+    {
+      "rank": 8,
+      "trial": 199,
+      "rmse_gs": 4878.321354135175,
+      "params": {
+        "lookback": 3,
+        "n_layers": 1,
+        "hidden_size": 64,
+        "bidirectional": true,
+        "dropout_rate": 0.15000000000000002,
+        "recurrent_dropout": 0.1,
+        "optimizer": "Adam",
+        "learning_rate": 0.009816610152723232,
+        "weight_decay": 2.979738128897623e-07,
+        "batch_size": 16,
+        "scheduler": "none"
+      }
+    },
+    {
+      "rank": 9,
+      "trial": 295,
+      "rmse_gs": 4888.337921308591,
+      "params": {
+        "lookback": 3,
+        "n_layers": 1,
+        "hidden_size": 64,
+        "bidirectional": true,
+        "dropout_rate": 0.15000000000000002,
+        "recurrent_dropout": 0.1,
+        "optimizer": "Adam",
+        "learning_rate": 0.009939459833957264,
+        "weight_decay": 0.0009424351478653363,
+        "batch_size": 16,
+        "scheduler": "ReduceLROnPlateau"
+      }
+    },
+    {
+      "rank": 10,
+      "trial": 271,
+      "rmse_gs": 4890.9886441259105,
+      "params": {
+        "lookback": 3,
+        "n_layers": 1,
+        "hidden_size": 64,
+        "bidirectional": true,
+        "dropout_rate": 0.15000000000000002,
+        "recurrent_dropout": 0.1,
+        "optimizer": "Adam",
+        "learning_rate": 0.00995229840755026,
+        "weight_decay": 1.3818312938540383e-07,
+        "batch_size": 16,
+        "scheduler": "ReduceLROnPlateau"
       }
     }
   ]

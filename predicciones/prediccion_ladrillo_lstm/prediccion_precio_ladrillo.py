@@ -17,7 +17,7 @@ Variables del modelo:
   Target   : Precio_Promedio_Polinomial_2  (precio mensual del ladrillo, Gs.)
   Exógena  : Nivel mínimo mensual del Río Paraguay  (histórico + predicho)
   Indicador: Cuarentena_Covid              (variable binaria 0/1)
-  Lag      : lag_1 (precio mes anterior), rolling_mean_3 (media móvil 3 meses)
+  Tendencia: anio_norm                     (año normalizado — captura inflación)
   Ciclicas : mes_sin, mes_cos              (estacionalidad cíclica mensual)
 
 Horizonte de predicción: 24 meses (estrategia recursiva/iterativa)
@@ -55,13 +55,13 @@ elección arquitectural óptima por las siguientes razones:
    significativamente más lento sin ventaja alguna para datasets tan pequeños.
 
 4. VARIABLES EXÓGENAS MÚLTIPLES (COVID + NIVEL DEL RÍO + FEATURE ENGINEERING)
-   El modelo incorpora 7 features: Cuarentena_Covid, Nivel_Rio, Precio,
-   lag_1, rolling_mean_3, mes_sin y mes_cos.
+   El modelo incorpora 6 features: Cuarentena_Covid, Nivel_Rio, Precio,
+   anio_norm, mes_sin y mes_cos.
    El LSTM maneja naturalmente estas covariables multimodales en su entrada,
    actualizando su memoria celular con cada combinación de features en cada
    paso temporal. Esto refleja la causalidad real: el precio del ladrillo
    responde al nivel del río (transporte fluvial), shocks económicos (COVID),
-   inercia de precios recientes (lag/rolling) y estacionalidad cíclica (sin/cos).
+   tendencia temporal (anio_norm) y estacionalidad cíclica (sin/cos).
 
 5. LITERATURA EN PREDICCIÓN DE PRECIOS DE MATERIALES DE CONSTRUCCIÓN
    Múltiples publicaciones confirman la superioridad del LSTM para series
@@ -124,6 +124,10 @@ import time
 import random
 import math
 import warnings
+import pickle
+import subprocess
+import sys
+import textwrap
 
 import numpy as np
 import pandas as pd
@@ -227,14 +231,13 @@ OUTPUT_LENGTH  = 1      # Pasos por inferencia (predicción recursiva)
 
 # Orden y posición de features en el array del modelo
 FEATURES     = ['Cuarentena_Covid', 'Nivel_Rio', 'Precio_Promedio_Polinomial_2',
-                 'lag_1', 'rolling_mean_3', 'mes_sin', 'mes_cos']
+                 'mes_sin', 'mes_cos', 'anio_norm']
 IDX_COVID    = 0
 IDX_NIVEL    = 1
 IDX_PRECIO   = 2
-IDX_LAG1     = 3   # Precio mes anterior
-IDX_ROLL3    = 4   # Media móvil 3 meses
-IDX_MES_SIN  = 5   # Estacionalidad cíclica — seno
-IDX_MES_COS  = 6   # Estacionalidad cíclica — coseno
+IDX_MES_SIN  = 3   # Estacionalidad cíclica — seno
+IDX_MES_COS  = 4   # Estacionalidad cíclica — coseno
+IDX_ANIO     = 5   # Año normalizado — captura tendencia/inflación
 
 FECHA_INI_COVID = pd.Timestamp('2020-03-11')
 FECHA_FIN_COVID = pd.Timestamp('2022-02-22')
@@ -253,12 +256,12 @@ ETIQUETA_COVID = (
 
 # ── Parámetros de Optuna ──────────────────────────────────────────────────────
 # Nota: se probaron N_TRIALS = 300, 500 y 600. El de 300 fue el mejor resultado.
-MAX_EPOCHS_OPTUNA = 150
-PATIENCE_OPTUNA   = 15
-N_TRIALS          = 1
+MAX_EPOCHS_OPTUNA = 80
+PATIENCE_OPTUNA   = 10
+N_TRIALS          = 300
 
 # ── Walk-forward cross-validation en Optuna ───────────────────────────────────
-N_FOLDS_WF          = 3     # número de folds (3×más lento que 1 fold, pero correcto)
+N_FOLDS_WF          = 3     # 3 folds para validación cruzada robusta
 WF_MIN_TRAIN_RATIO  = 0.55  # fracción mínima de n_cv como entrenamiento en el fold 1
 
 print(f"\nRutas:")
@@ -287,7 +290,12 @@ gpus   = tf.config.list_physical_devices('GPU')
 N_GPUS = len(gpus)
 
 if N_GPUS > 0:
-    GPU_MEMORY_LIMIT_MB = 12 * 1024  # 12 GB de 16 GB disponibles
+    # Ocultar GPUs que no usamos — libera CUDA context + RAM del sistema
+    tf.config.set_visible_devices([gpus[0]], 'GPU')
+    gpus = [gpus[0]]
+    print(f"GPU visible: solo gpu:0 ({N_GPUS} detectada(s), 1 activa)")
+
+    GPU_MEMORY_LIMIT_MB = 8 * 1024  # 8 GB de 16 GB — headroom amplio para 300 trials
     try:
         tf.config.set_logical_device_configuration(
             gpus[0],
@@ -296,8 +304,7 @@ if N_GPUS > 0:
         print(f"GPU memoria limitada a {GPU_MEMORY_LIMIT_MB // 1024} GB")
     except RuntimeError as e:
         print(f"No se pudo limitar memoria GPU: {e}")
-        for gpu in gpus:
-            tf.config.experimental.set_memory_growth(gpu, True)
+        tf.config.experimental.set_memory_growth(gpus[0], True)
         print("Fallback: set_memory_growth activado")
     # Usar solo GPU:0 — entrenamiento reproducible y sin problemas de
     # distribución de batches entre múltiples GPUs (max_seq_length <= 0).
@@ -376,11 +383,15 @@ if n_nulos_rio > 0:
     df_hist['Nivel_Rio'] = df_hist['Nivel_Rio'].interpolate(method='linear')
 
 # ── Feature Engineering ────────────────────────────────────────────────────
-df_hist['lag_1']          = df_hist['Precio_Promedio_Polinomial_2'].shift(1)
-df_hist['rolling_mean_3'] = df_hist['Precio_Promedio_Polinomial_2'].rolling(3).mean()
-df_hist['mes_sin']        = np.sin(2 * np.pi * df_hist['Fecha'].dt.month / 12)
-df_hist['mes_cos']        = np.cos(2 * np.pi * df_hist['Fecha'].dt.month / 12)
-df_hist.dropna(subset=['lag_1', 'rolling_mean_3'], inplace=True)
+df_hist['mes_sin']    = np.sin(2 * np.pi * df_hist['Fecha'].dt.month / 12)
+df_hist['mes_cos']    = np.cos(2 * np.pi * df_hist['Fecha'].dt.month / 12)
+
+# Año normalizado: captura tendencia temporal (inflación) sin retroalimentación
+# En predicción futura sigue creciendo naturalmente — no colapsa a la media
+ANIO_MIN = df_hist['Fecha'].dt.year.min() + df_hist['Fecha'].dt.month.iloc[0] / 12
+ANIO_MAX = df_hist['Fecha'].dt.year.max() + df_hist['Fecha'].dt.month.iloc[-1] / 12
+df_hist['anio_norm'] = (df_hist['Fecha'].dt.year + df_hist['Fecha'].dt.month / 12 - ANIO_MIN) / (ANIO_MAX - ANIO_MIN)
+
 df_hist.reset_index(drop=True, inplace=True)
 
 print(f"\nDataset histórico combinado: {len(df_hist)} filas")
@@ -784,14 +795,11 @@ data_scaled[:, IDX_PRECIO]     = scaler_precio.transform(
     data_array[:, IDX_PRECIO].reshape(-1, 1)).flatten()
 data_scaled[:, IDX_NIVEL]      = scaler_nivel.transform(
     data_array[:, IDX_NIVEL].reshape(-1, 1)).flatten()
-# lag_1 y rolling_mean_3 son precios → usan scaler_precio (misma escala)
-data_scaled[:, IDX_LAG1]  = scaler_precio.transform(
-    data_array[:, IDX_LAG1].reshape(-1, 1)).flatten()
-data_scaled[:, IDX_ROLL3] = scaler_precio.transform(
-    data_array[:, IDX_ROLL3].reshape(-1, 1)).flatten()
 # mes_sin y mes_cos ya están en [-1, 1] → no necesitan escalado
 data_scaled[:, IDX_MES_SIN] = data_array[:, IDX_MES_SIN]
 data_scaled[:, IDX_MES_COS] = data_array[:, IDX_MES_COS]
+# anio_norm ya está en [0, 1] → no necesita escalado adicional
+data_scaled[:, IDX_ANIO]    = data_array[:, IDX_ANIO]
 # IDX_COVID permanece sin escalar
 
 print(f"\nEscalado — Precio:  min={data_scaled[:, IDX_PRECIO].min():.3f}  "
@@ -1088,62 +1096,291 @@ print("=" * 70)
 print(f"  Trials            : {N_TRIALS}")
 print(f"  Épocas máx/trial  : {MAX_EPOCHS_OPTUNA}")
 print(f"  Paciencia ES      : {PATIENCE_OPTUNA}")
-print(f"  Sampler           : TPE (n_startup_trials=20)")
-print(f"  Pruner            : MedianPruner (n_startup=10, warmup=10)")
+print(f"  Sampler           : TPE (n_startup_trials=50)")
+print(f"  Pruner            : MedianPruner (n_startup=10, warmup=5)")
 print(f"  Métrica objetivo  : RMSE_val promedio (walk-forward {N_FOLDS_WF} folds)")
 print(f"\nEspacio de búsqueda:")
 print(f"  lookback          : [3, 4, 5, 6, 8, 10, 12, 18, 24] meses")
 print(f"  n_layers          : 1 – 2")
 print(f"  hidden_size       : [16, 32, 64, 128]")
 print(f"  bidirectional     : True / False")
-print(f"  dropout_rate      : 0.0 – 0.5 (step 0.05)")
-print(f"  recurrent_dropout : 0.0 – 0.4 (step 0.05)")
+print(f"  dropout_rate      : 0.05 – 0.4 (step 0.05)")
+print(f"  recurrent_dropout : 0.05 – 0.3 (step 0.05)")
 print(f"  salida Dense      : siempre linear (relu causaba predicciones planas)")
 print(f"  optimizer         : Adam / AdamW / RMSprop")
 print(f"  learning_rate     : 1e-5 – 1e-2 (log)")
 print(f"  weight_decay      : 1e-7 – 1e-3 (log)")
-print(f"  batch_size        : [2, 4, 8, 16, 32]")
+print(f"  batch_size        : [8, 16]")
 print(f"  scheduler         : ReduceLROnPlateau / CosineAnnealingLR / StepLR / none")
 print(f"  max_params        : 50,000 (descarta modelos excesivos antes de entrenar)")
 
 
-def objective(trial: optuna.Trial) -> float:
-    """
-    Función objetivo para Optuna — Walk-Forward Cross-Validation.
+def _estimar_params(n_layers, hidden_size, bidirectional, n_features):
+    """Calcula el nº de parámetros de la red LSTM sin construir el modelo."""
+    n = 0
+    h_in = n_features
+    for i in range(n_layers):
+        lstm = 4 * hidden_size * (h_in + hidden_size + 1)
+        n += lstm * 2 if bidirectional else lstm
+        if i < n_layers - 1:  # BatchNorm en capas intermedias
+            h_out = hidden_size * 2 if bidirectional else hidden_size
+            n += 2 * h_out  # gamma + beta
+        h_in = hidden_size * 2 if bidirectional else hidden_size
+    n += h_in + 1  # Dense final
+    return n
 
-    Entrena N_FOLDS_WF modelos sobre ventanas temporales crecientes y retorna
-    el RMSE medio de validación en Gs. (a minimizar).
+def _get_rss_mb():
+    """Devuelve el RSS actual del proceso en MB (solo Linux)."""
+    try:
+        with open('/proc/self/status') as f:
+            for line in f:
+                if line.startswith('VmRSS:'):
+                    return int(line.split()[1]) / 1024  # KB → MB
+    except Exception:
+        return 0.0
+    return 0.0
 
-    Ventajas sobre split fijo:
-    - Evita sesgo hacia cualquier régimen de precios (volátil o estable).
-    - Cada fold valida sobre un período distinto del histórico.
-    - El pruner opera entre folds: corta el trial si el RMSE acumulado es malo.
 
-    El conjunto de TEST nunca se toca durante la optimización.
-    """
+# ==============================================================================
+# SECCIÓN 10 — OPTIMIZACIÓN CON OPTUNA (SQLite + subprocess batching)
+# ==============================================================================
+# Flujo anti-OOM:
+#   1. Guardar datos compartidos a disco (pickle)
+#   2. Generar script worker (_optuna_worker.py) que es un .py independiente
+#   3. Crear estudio Optuna con SQLite storage
+#   4. Para cada batch de TRIALS_PER_BATCH trials:
+#      a. Lanzar subprocess.run(python _optuna_worker.py ...)
+#      b. El subproceso importa TF de cero, carga datos, corre trials, termina
+#      c. Al terminar, TODA la memoria se libera automáticamente
+#   5. Cargar estudio final desde SQLite
+# ==============================================================================
+
+TRIALS_PER_BATCH = 50   # trials por subproceso (50 cabe en ~4GB de RAM holgado)
+STUDY_NAME       = 'ladrillo_lstm_optuna'
+STORAGE_PATH     = os.path.join(ruta_salida, 'optuna_ladrillo_lstm.db')
+STORAGE_URL      = f'sqlite:///{STORAGE_PATH}'
+
+# ── Guardar datos compartidos para los subprocesos ───────────────────────────
+_shared_data_path = os.path.join(ruta_salida, '_optuna_shared_data.pkl')
+with open(_shared_data_path, 'wb') as _f:
+    pickle.dump({
+        'data_scaled':   data_scaled,
+        'scaler_precio': scaler_precio,
+        'n_train':       n_train,
+        'n_val':         n_val,
+        'SEED':          SEED,
+        'FEATURES':      FEATURES,
+        'IDX_PRECIO':    IDX_PRECIO,
+        'N_FOLDS_WF':    N_FOLDS_WF,
+        'WF_MIN_TRAIN_RATIO': WF_MIN_TRAIN_RATIO,
+        'MAX_EPOCHS_OPTUNA':  MAX_EPOCHS_OPTUNA,
+        'PATIENCE_OPTUNA':    PATIENCE_OPTUNA,
+        'OUTPUT_LENGTH':      OUTPUT_LENGTH,
+    }, _f)
+print(f"\nDatos compartidos guardados en: {_shared_data_path}")
+
+# ── Generar script worker independiente ──────────────────────────────────────
+_WORKER_SCRIPT_PATH = os.path.join(ruta_salida, '_optuna_worker.py')
+_worker_code = textwrap.dedent(r'''
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""Worker Optuna — se ejecuta como subproceso independiente."""
+import os, gc, sys, time, math, random, warnings, pickle
+
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+os.environ['TF_FUNCTION_JIT_COMPILE_DEFAULT'] = '0'
+warnings.filterwarnings('ignore')
+
+import numpy as np
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import LSTM, Bidirectional, Dense, Dropout, BatchNormalization
+from tensorflow.keras.callbacks import (
+    EarlyStopping, ReduceLROnPlateau, TerminateOnNaN, LearningRateScheduler,
+)
+from sklearn.metrics import mean_squared_error
+import optuna
+optuna.logging.set_verbosity(optuna.logging.WARNING)
+
+# ── Argumentos de linea de comandos ──────────────────────────────────────────
+storage_url    = sys.argv[1]
+study_name     = sys.argv[2]
+n_trials_batch = int(sys.argv[3])
+shared_path    = sys.argv[4]
+gpu_mem_mb     = int(sys.argv[5])
+batch_idx      = int(sys.argv[6])
+total_trials   = int(sys.argv[7])
+
+# ── Semillas ─────────────────────────────────────────────────────────────────
+random.seed(42)
+np.random.seed(42)
+os.environ['PYTHONHASHSEED'] = '42'
+tf.random.set_seed(42)
+
+# ── GPU ──────────────────────────────────────────────────────────────────────
+gpus = tf.config.list_physical_devices('GPU')
+if gpus:
+    tf.config.set_visible_devices([gpus[0]], 'GPU')
+    try:
+        tf.config.set_logical_device_configuration(
+            gpus[0],
+            [tf.config.LogicalDeviceConfiguration(memory_limit=gpu_mem_mb)])
+    except RuntimeError:
+        tf.config.experimental.set_memory_growth(gpus[0], True)
+    estrategia = tf.distribute.OneDeviceStrategy('/gpu:0')
+else:
+    estrategia = tf.distribute.OneDeviceStrategy('/cpu:0')
+
+# ── Cargar datos ─────────────────────────────────────────────────────────────
+with open(shared_path, 'rb') as f:
+    sd = pickle.load(f)
+
+data_scaled   = sd['data_scaled']
+scaler_precio = sd['scaler_precio']
+n_train       = sd['n_train']
+n_val         = sd['n_val']
+FEATURES      = sd['FEATURES']
+IDX_PRECIO    = sd['IDX_PRECIO']
+N_FOLDS_WF    = sd['N_FOLDS_WF']
+WF_MIN_TRAIN_RATIO = sd['WF_MIN_TRAIN_RATIO']
+MAX_EPOCHS    = sd['MAX_EPOCHS_OPTUNA']
+PATIENCE      = sd['PATIENCE_OPTUNA']
+OUTPUT_LENGTH = sd['OUTPUT_LENGTH']
+
+
+# ── Funciones auxiliares ─────────────────────────────────────────────────────
+def crear_secuencias_w(data_sc, lookback):
+    X, y = [], []
+    for i in range(len(data_sc) - lookback):
+        X.append(data_sc[i : i + lookback, :])
+        y.append(data_sc[i + lookback, IDX_PRECIO])
+    return np.array(X), np.array(y).reshape(-1, 1)
+
+def rmse_real_w(y_pred_scaled, y_true_scaled, scaler):
+    yp = scaler.inverse_transform(y_pred_scaled.reshape(-1, 1)).flatten()
+    yt = scaler.inverse_transform(y_true_scaled.reshape(-1, 1)).flatten()
+    return np.sqrt(mean_squared_error(yt, yp))
+
+def _estimar_params_w(n_layers, hidden_size, bidirectional, n_features):
+    n = 0
+    h_in = n_features
+    for i in range(n_layers):
+        lstm = 4 * hidden_size * (h_in + hidden_size + 1)
+        n += lstm * 2 if bidirectional else lstm
+        if i < n_layers - 1:
+            h_out = hidden_size * 2 if bidirectional else hidden_size
+            n += 2 * h_out
+        h_in = hidden_size * 2 if bidirectional else hidden_size
+    n += h_in + 1
+    return n
+
+def construir_modelo_w(params, input_shape, estrat):
+    with estrat.scope():
+        model = Sequential()
+        n  = params['n_layers']
+        u  = params['hidden_size']
+        bi = params['bidirectional']
+        dr = params['dropout_rate']
+        rdr = params.get('recurrent_dropout', 0.0)
+        for i in range(n):
+            ret = (i < n - 1)
+            lstm_layer = LSTM(u, return_sequences=ret, recurrent_dropout=rdr)
+            if bi:
+                if i == 0:
+                    model.add(Bidirectional(lstm_layer, input_shape=input_shape))
+                else:
+                    model.add(Bidirectional(lstm_layer))
+            else:
+                if i == 0:
+                    model.add(LSTM(u, return_sequences=ret,
+                                   recurrent_dropout=rdr, input_shape=input_shape))
+                else:
+                    model.add(LSTM(u, return_sequences=ret, recurrent_dropout=rdr))
+            if ret:
+                if dr > 0.0:
+                    model.add(Dropout(dr))
+                model.add(BatchNormalization())
+        if dr > 0.0:
+            model.add(Dropout(dr))
+        model.add(Dense(OUTPUT_LENGTH, activation='linear',
+                        kernel_regularizer=tf.keras.regularizers.L2(1e-4)))
+        lr  = params['learning_rate']
+        wd  = params['weight_decay']
+        opt = params['optimizer']
+        if opt == 'Adam':
+            optimizer = tf.keras.optimizers.Adam(learning_rate=lr, clipnorm=1.0)
+        elif opt == 'AdamW':
+            optimizer = tf.keras.optimizers.AdamW(learning_rate=lr,
+                                                   weight_decay=wd, clipnorm=1.0)
+        else:
+            optimizer = tf.keras.optimizers.RMSprop(learning_rate=lr, clipnorm=1.0)
+        model.compile(optimizer=optimizer, loss='mse')
+    return model
+
+class OptunaPruningCB(tf.keras.callbacks.Callback):
+    def __init__(self, trial, monitor='val_loss'):
+        super().__init__()
+        self.trial   = trial
+        self.monitor = monitor
+        self.pruned  = False
+    def on_epoch_end(self, epoch, logs=None):
+        val = logs.get(self.monitor)
+        if val is None:
+            return
+        self.trial.report(math.sqrt(max(val, 0.0)), step=epoch)
+        if self.trial.should_prune():
+            self.pruned = True
+            self.model.stop_training = True
+
+def hacer_callbacks_w(params, max_ep, patience, trial=None):
+    es = EarlyStopping(monitor='val_loss', patience=patience,
+                       restore_best_weights=True, min_delta=1e-7, verbose=0)
+    ton = TerminateOnNaN()
+    cbs = [es, ton]
+    prune_cb = None
+    sched = params.get('scheduler', 'none')
+    lr0 = params['learning_rate']
+    if sched == 'ReduceLROnPlateau':
+        cbs.append(ReduceLROnPlateau(monitor='val_loss', factor=0.7,
+                                      patience=max(5, patience // 3),
+                                      min_lr=1e-6, verbose=0))
+    elif sched == 'CosineAnnealingLR':
+        cbs.append(LearningRateScheduler(
+            lambda ep: lr0 * 0.5 * (1 + math.cos(math.pi * ep / max_ep)),
+            verbose=0))
+    elif sched == 'StepLR':
+        cbs.append(LearningRateScheduler(
+            lambda ep: lr0 * (0.5 ** (ep // 30)),
+            verbose=0))
+    if trial is not None:
+        prune_cb = OptunaPruningCB(trial)
+        cbs.append(prune_cb)
+    return cbs, prune_cb
+
+
+# ── Función objetivo ─────────────────────────────────────────────────────────
+def objective(trial):
     tf.keras.backend.clear_session()
     gc.collect()
 
-    # ── Espacio de búsqueda ───────────────────────────────────────────────────
     lookback      = trial.suggest_categorical('lookback',
                         [3, 4, 5, 6, 8, 10, 12, 18, 24])
     n_layers      = trial.suggest_int('n_layers', 1, 2)
     hidden_size   = trial.suggest_categorical('hidden_size',
                         [16, 32, 64, 128])
     bidirectional = trial.suggest_categorical('bidirectional', [True, False])
-    dropout_rate  = trial.suggest_float('dropout_rate', 0.0, 0.5, step=0.05)
-    recurrent_dropout = trial.suggest_float('recurrent_dropout', 0.0, 0.4, step=0.05)
+    dropout_rate  = trial.suggest_float('dropout_rate', 0.05, 0.4, step=0.05)
+    recurrent_dropout = trial.suggest_float('recurrent_dropout', 0.05, 0.3,
+                                              step=0.05)
     optimizer_name = trial.suggest_categorical('optimizer',
                         ['Adam', 'AdamW', 'RMSprop'])
     learning_rate  = trial.suggest_float('learning_rate', 1e-5, 1e-2, log=True)
     weight_decay   = trial.suggest_float('weight_decay', 1e-7, 1e-3, log=True)
-    batch_size     = trial.suggest_categorical('batch_size', [2, 4, 8, 16, 32])
+    batch_size     = trial.suggest_categorical('batch_size', [8, 16])
     scheduler      = trial.suggest_categorical('scheduler',
                         ['ReduceLROnPlateau', 'CosineAnnealingLR',
                          'StepLR', 'none'])
 
-    # ── Geometría de los folds ────────────────────────────────────────────────
-    # n_cv = datos disponibles para CV (test queda intocado)
     n_cv         = n_train + n_val
     min_train_cv = int(n_cv * WF_MIN_TRAIN_RATIO)
     fold_size    = (n_cv - min_train_cv) // N_FOLDS_WF
@@ -1160,47 +1397,36 @@ def objective(trial: optuna.Trial) -> float:
         'scheduler': scheduler,
     }
 
-    # ── Restricción de parámetros máximos (~50K para 139 registros) ─────────
     MAX_PARAMS = 50000
-    _test_shape = (lookback, len(FEATURES))
-    _model_test = construir_modelo(params, _test_shape, ESTRATEGIA)
-    _n_params_test = _model_test.count_params()
-    del _model_test
-    tf.keras.backend.clear_session()
-    gc.collect()
-    if _n_params_test > MAX_PARAMS:
+    if _estimar_params_w(n_layers, hidden_size, bidirectional,
+                         len(FEATURES)) > MAX_PARAMS:
         return float('inf')
 
     rmse_folds = []
-
     try:
         for fold in range(N_FOLDS_WF):
             fold_train_end = min_train_cv + fold * fold_size
             fold_val_end   = min(fold_train_end + fold_size, n_cv)
 
-            # Secuencias de entrenamiento (solo datos hasta fold_train_end)
-            X_tr_f, y_tr_f = crear_secuencias(
+            X_tr_f, y_tr_f = crear_secuencias_w(
                 data_scaled[:fold_train_end], lookback)
-
-            # Secuencias de validación: necesita lookback de solapamiento
-            X_vl_f, y_vl_f = crear_secuencias(
+            X_vl_f, y_vl_f = crear_secuencias_w(
                 data_scaled[fold_train_end - lookback : fold_val_end], lookback)
 
             if len(X_tr_f) < 5 or len(X_vl_f) < 2:
                 del X_tr_f, y_tr_f, X_vl_f, y_vl_f
                 continue
 
-            model = construir_modelo(
-                params, (X_tr_f.shape[1], X_tr_f.shape[2]), ESTRATEGIA)
+            model = construir_modelo_w(
+                params, (X_tr_f.shape[1], X_tr_f.shape[2]), estrategia)
 
-            # Sin OptunaPruningCallback: el pruner opera entre folds (ver abajo)
-            cb_list, _ = hacer_callbacks(
-                params, MAX_EPOCHS_OPTUNA, PATIENCE_OPTUNA, trial=None)
+            cb_list, _ = hacer_callbacks_w(params, MAX_EPOCHS, PATIENCE,
+                                           trial=trial)
 
             model.fit(
                 X_tr_f, y_tr_f,
                 validation_data=(X_vl_f, y_vl_f),
-                epochs=MAX_EPOCHS_OPTUNA,
+                epochs=MAX_EPOCHS,
                 batch_size=batch_size,
                 callbacks=cb_list,
                 shuffle=False,
@@ -1208,63 +1434,45 @@ def objective(trial: optuna.Trial) -> float:
             )
 
             y_pred_f = model(X_vl_f, training=False).numpy().flatten()
-            rmse_f   = rmse_real(y_pred_f, y_vl_f.flatten(), scaler_precio)
+            rmse_f   = rmse_real_w(y_pred_f, y_vl_f.flatten(), scaler_precio)
             rmse_folds.append(rmse_f)
 
-            # Reportar RMSE acumulado al pruner después de cada fold
-            trial.report(float(np.mean(rmse_folds)), step=fold)
-
-            # ── Limpieza de memoria del fold ───────────────────────────
             del model, cb_list, X_tr_f, y_tr_f, X_vl_f, y_vl_f, y_pred_f
             tf.keras.backend.clear_session()
             gc.collect()
-
-            if trial.should_prune():
-                raise optuna.exceptions.TrialPruned()
 
         return float(np.mean(rmse_folds)) if rmse_folds else float('inf')
 
     except optuna.exceptions.TrialPruned:
         raise
-    except Exception as e:
-        if 'OOM' in str(e) or 'Resource' in str(e):
-            pass  # cleanup en finally
+    except Exception:
         return float('inf')
     finally:
-        # Limpieza garantizada al salir de cada trial (éxito, poda o error)
         tf.keras.backend.clear_session()
         gc.collect()
 
 
-# ==============================================================================
-# SECCIÓN 10 — OPTIMIZACIÓN CON OPTUNA
-# ==============================================================================
+# ── Callback de progreso ─────────────────────────────────────────────────────
+def _get_rss():
+    try:
+        with open('/proc/self/status') as f:
+            for line in f:
+                if line.startswith('VmRSS:'):
+                    return int(line.split()[1]) / 1024
+    except Exception:
+        return 0.0
+    return 0.0
 
-estudio = optuna.create_study(
-    direction='minimize',
-    sampler=TPESampler(seed=SEED, n_startup_trials=20),
-    pruner=MedianPruner(n_startup_trials=10, n_warmup_steps=10,
-                        interval_steps=1),
-)
+_t0_batch = time.time()
+_n0_batch = -1
 
-# Trial inicial = hiperparámetros razonables como punto de partida
-estudio.enqueue_trial({
-    'lookback': 6, 'n_layers': 1, 'hidden_size': 64,
-    'bidirectional': False, 'dropout_rate': 0.0,
-    'recurrent_dropout': 0.0,
-    'optimizer': 'Adam', 'learning_rate': 1e-3, 'weight_decay': 1e-5,
-    'batch_size': 4, 'scheduler': 'none',
-})
-
-print(f"\nIniciando optimización de hiperparámetros — {N_TRIALS} trials...")
-t0_optuna = time.time()
-
-def optuna_progress_callback(study, trial):
-    """Imprime progreso después de cada trial."""
-    import sys
-    n = len(study.trials)
-    elapsed = time.time() - t0_optuna
-
+def progress_cb(study, trial):
+    global _n0_batch
+    n_total = len(study.trials)
+    if _n0_batch < 0:
+        _n0_batch = n_total - 1
+    n_batch = n_total - _n0_batch
+    elapsed = time.time() - _t0_batch
     if trial.state == optuna.trial.TrialState.PRUNED:
         estado, valor = "PRUNED", "---"
     elif trial.state == optuna.trial.TrialState.FAIL:
@@ -1273,23 +1481,112 @@ def optuna_progress_callback(study, trial):
         estado, valor = "OK", f"{trial.value:.1f}"
     else:
         estado, valor = "INF", "inf"
-
     try:
         mejor = f"{study.best_value:.1f}"
     except ValueError:
         mejor = "---"
-
-    eta = (elapsed / max(n, 1)) * (N_TRIALS - n)
+    rss = _get_rss()
+    remaining = n_trials_batch - n_batch
+    eta = (elapsed / max(n_batch, 1)) * remaining
     print(
-        f"[Trial {n:>3}/{N_TRIALS}] "
+        f"  [Trial {n_total:>3}/{total_trials}] "
         f"RMSE={valor:>8s}  Estado={estado:<7s}  "
         f"Mejor={mejor:>8s}  "
         f"Tiempo={elapsed/60:>6.1f}min  "
-        f"ETA={eta/60:>6.1f}min"
+        f"ETA={eta/60:>6.1f}min  "
+        f"RAM={rss:>7.0f}MB",
+        flush=True,
     )
-    sys.stdout.flush()
 
-estudio.optimize(objective, n_trials=N_TRIALS, callbacks=[optuna_progress_callback])
+# ── Cargar estudio y correr trials ───────────────────────────────────────────
+from optuna.samplers import TPESampler
+from optuna.pruners import MedianPruner
+study = optuna.load_study(
+    study_name=study_name,
+    storage=storage_url,
+    sampler=TPESampler(seed=42, n_startup_trials=50),
+    pruner=MedianPruner(n_startup_trials=10, n_warmup_steps=5,
+                        interval_steps=1),
+)
+study.optimize(objective, n_trials=n_trials_batch, callbacks=[progress_cb])
+
+print(f"\n  Batch {batch_idx} completado: {n_trials_batch} trials OK. "
+      f"RAM final: {_get_rss():.0f} MB", flush=True)
+''').strip()
+
+with open(_WORKER_SCRIPT_PATH, 'w', encoding='utf-8') as _wf:
+    _wf.write(_worker_code)
+print(f"Worker script generado: {_WORKER_SCRIPT_PATH}")
+
+# ── Crear estudio Optuna con SQLite storage ──────────────────────────────────
+if os.path.exists(STORAGE_PATH):
+    os.remove(STORAGE_PATH)
+
+estudio = optuna.create_study(
+    study_name=STUDY_NAME,
+    storage=STORAGE_URL,
+    direction='minimize',
+    sampler=TPESampler(seed=SEED, n_startup_trials=50),
+    pruner=MedianPruner(n_startup_trials=10, n_warmup_steps=5,
+                        interval_steps=1),
+)
+
+# Trial inicial = hiperparámetros razonables como punto de partida
+estudio.enqueue_trial({
+    'lookback': 6, 'n_layers': 1, 'hidden_size': 64,
+    'bidirectional': False, 'dropout_rate': 0.1, 'recurrent_dropout': 0.1,
+    'optimizer': 'Adam', 'learning_rate': 1e-3, 'weight_decay': 1e-5,
+    'batch_size': 8, 'scheduler': 'ReduceLROnPlateau',
+})
+
+print(f"\nIniciando optimización — {N_TRIALS} trials en batches de "
+      f"{TRIALS_PER_BATCH} (subprocesos aislados)")
+print(f"SQLite storage: {STORAGE_PATH}")
+t0_optuna = time.time()
+
+# ── Loop de batches — cada batch en un proceso Python independiente ──────────
+_python_exe = sys.executable
+
+n_batches = math.ceil(N_TRIALS / TRIALS_PER_BATCH)
+for b_idx in range(n_batches):
+    batch_n = min(TRIALS_PER_BATCH, N_TRIALS - b_idx * TRIALS_PER_BATCH)
+
+    print(f"\n{'─' * 60}")
+    print(f"BATCH {b_idx + 1}/{n_batches} — {batch_n} trials "
+          f"(acumulado: {b_idx * TRIALS_PER_BATCH}/{N_TRIALS})")
+    print(f"{'─' * 60}", flush=True)
+
+    _cmd = [
+        _python_exe, _WORKER_SCRIPT_PATH,
+        STORAGE_URL, STUDY_NAME, str(batch_n), _shared_data_path,
+        str(8 * 1024), str(b_idx + 1), str(N_TRIALS),
+    ]
+    _proc = subprocess.run(_cmd, timeout=7200)
+
+    if _proc.returncode != 0:
+        print(f"  AVISO: Batch {b_idx + 1} terminó con código {_proc.returncode} "
+              f"(puede ser OOM). Continuando con el siguiente batch...")
+    else:
+        print(f"  Batch {b_idx + 1} finalizado correctamente.")
+
+    _est_tmp = optuna.load_study(study_name=STUDY_NAME, storage=STORAGE_URL)
+    _completados = len([t for t in _est_tmp.trials
+                        if t.value is not None and t.value < float('inf')])
+    try:
+        _mejor_actual = f"{_est_tmp.best_value:.1f}"
+    except ValueError:
+        _mejor_actual = "---"
+    print(f"  Progreso global: {len(_est_tmp.trials)}/{N_TRIALS} trials, "
+          f"mejor RMSE: {_mejor_actual} Gs.")
+    print(f"  RAM proceso principal: {_get_rss_mb():.0f} MB (sin leak)", flush=True)
+
+# ── Limpiar archivos temporales ──────────────────────────────────────────────
+for _tmp in [_shared_data_path, _WORKER_SCRIPT_PATH]:
+    if os.path.exists(_tmp):
+        os.remove(_tmp)
+
+# ── Cargar estudio final ─────────────────────────────────────────────────────
+estudio = optuna.load_study(study_name=STUDY_NAME, storage=STORAGE_URL)
 t_optuna = time.time() - t0_optuna
 
 # ── Resultados ────────────────────────────────────────────────────────────────
@@ -1307,6 +1604,12 @@ print(f"\nTiempo de optimización : {t_optuna / 60:.1f} min")
 print(f"Trials completados     : {len(trials_ok)}")
 print(f"Trials podados (pruned): {len(trials_podados)}")
 print(f"Trials fallidos        : {len(trials_fail)}")
+
+if not trials_ok:
+    raise RuntimeError(
+        "ERROR FATAL: Ningún trial de Optuna completó exitosamente. "
+        "Verificar logs de los subprocesos worker arriba para diagnosticar."
+    )
 
 mejores_params    = estudio.best_params
 mejor_rmse_optuna = estudio.best_value
@@ -1778,8 +2081,8 @@ def predecir_iterativamente(modelo, data_sc_completa, df_futuro_rio,
            - precio predicho (normalizado)
            - nivel del río futuro (del CSV de predicciones del río)
            - Cuarentena_Covid = 0 (post-COVID para todos los meses futuros)
-           - lag_1, rolling_mean_3 (calculados desde historial escalado)
            - mes_sin, mes_cos (estacionalidad cíclica del mes actual)
+           - anio_norm (año normalizado — crece naturalmente en el futuro)
       3. Desliza la ventana de entrada una posición hacia adelante.
       4. Repite num_pasos veces.
 
@@ -1791,9 +2094,6 @@ def predecir_iterativamente(modelo, data_sc_completa, df_futuro_rio,
     fechas_pred  = []
     precios_pred = []
     fecha_actual = ultima_fecha
-
-    # Historial de precios escalados para calcular lag y rolling en predicción
-    _hist_p = list(data_sc_completa[-3:, IDX_PRECIO])  # últimos 3 precios históricos
 
     print(f"\nPredicción iterativa ({num_pasos} pasos):")
     print(f"{'Paso':>5} | {'Fecha':>10} | {'Precio (Gs.)':>14} | {'Nivel río (m)':>14}")
@@ -1810,7 +2110,7 @@ def predecir_iterativamente(modelo, data_sc_completa, df_futuro_rio,
         precios_pred.append(pred_real)
 
         # ── Construir nuevo timestep ─────────────────────────────────────────
-        nuevo = np.zeros(len(FEATURES))  # shape (7,)
+        nuevo = np.zeros(len(FEATURES))  # shape (6,)
         nuevo[IDX_PRECIO] = pred_scaled
         nuevo[IDX_COVID]  = 1.0 if PREDICCION_CON_COVID else 0.0
 
@@ -1826,14 +2126,9 @@ def predecir_iterativamente(modelo, data_sc_completa, df_futuro_rio,
             print(f"  AVISO: sin nivel del río para "
                   f"{fecha_actual.strftime('%Y-%m')} — usando último conocido.")
 
-        # Features nuevas
-        nuevo[IDX_LAG1]    = _hist_p[-1]                   # precio escalado del mes anterior
-        nuevo[IDX_ROLL3]   = float(np.mean(_hist_p[-3:]))  # media móvil 3 meses (escalada)
         nuevo[IDX_MES_SIN] = np.sin(2 * np.pi * fecha_actual.month / 12)
         nuevo[IDX_MES_COS] = np.cos(2 * np.pi * fecha_actual.month / 12)
-
-        # Actualizar historial para el próximo paso
-        _hist_p.append(pred_scaled)
+        nuevo[IDX_ANIO]    = (fecha_actual.year + fecha_actual.month / 12 - ANIO_MIN) / (ANIO_MAX - ANIO_MIN)
 
         secuencia = np.concatenate(
             [secuencia[:, 1:, :], nuevo.reshape(1, 1, len(FEATURES))], axis=1)

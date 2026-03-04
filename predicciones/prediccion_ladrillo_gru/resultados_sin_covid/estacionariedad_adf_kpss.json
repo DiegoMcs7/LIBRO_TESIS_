@@ -1,16 +1,16 @@
 {
   "precio": {
     "nombre": "Precio Ladrillo",
-    "adf_p": 0.46173434642624983,
+    "adf_p": 0.4892518675398168,
     "kpss_p": 0.01,
-    "adf_diff_p": 5.94927703086169e-21,
+    "adf_diff_p": 2.4189272340845768e-20,
     "conclusion": "NO ESTACIONARIA (ADF+KPSS coinciden)"
   },
   "nivel": {
     "nombre": "Nivel del Rio",
-    "adf_p": 0.08925475543701228,
+    "adf_p": 0.091687556615422,
     "kpss_p": 0.01,
-    "adf_diff_p": 1.8927224742668046e-08,
+    "adf_diff_p": 9.56100252771775e-10,
     "conclusion": "NO ESTACIONARIA (ADF+KPSS coinciden)"
   }
 }

@@ -1,37 +1,36 @@
 {
   "framework": "TensorFlow 2.19.0 / Keras",
   "arquitectura": "LSTM",
-  "rmse_train_gs": 1828.74,
-  "rmse_val_gs": 4261.22,
-  "rmse_test_gs": 1619.75,
+  "rmse_train_gs": 4744.15,
+  "rmse_val_gs": 3589.15,
+  "rmse_test_gs": 4394.96,
   "rmse_vs_reales_gs": null,
-  "n_features": 7,
+  "n_features": 6,
   "features": [
     "Cuarentena_Covid",
     "Nivel_Rio",
     "Precio_Promedio_Polinomial_2",
-    "lag_1",
-    "rolling_mean_3",
     "mes_sin",
-    "mes_cos"
+    "mes_cos",
+    "anio_norm"
   ],
-  "n_parametros": 18497,
-  "epocas_entrenadas": 65,
+  "n_parametros": 36481,
+  "epocas_entrenadas": 32,
   "mejores_params_optuna": {
-    "lookback": 6,
+    "lookback": 3,
     "n_layers": 1,
     "hidden_size": 64,
-    "bidirectional": false,
-    "dropout_rate": 0.0,
-    "recurrent_dropout": 0.0,
+    "bidirectional": true,
+    "dropout_rate": 0.15000000000000002,
+    "recurrent_dropout": 0.1,
     "optimizer": "Adam",
-    "learning_rate": 0.001,
-    "weight_decay": 1e-05,
-    "batch_size": 4,
-    "scheduler": "none"
+    "learning_rate": 0.008575462403400702,
+    "weight_decay": 1.3864710378090115e-07,
+    "batch_size": 16,
+    "scheduler": "ReduceLROnPlateau"
   },
   "meses_prediccion": 24,
-  "precio_pred_min_gs": 54119,
-  "precio_pred_max_gs": 72646,
-  "hash_dataset": "2b1ad8e0a18b80feb55e82c92d9506ab"
+  "precio_pred_min_gs": 57528,
+  "precio_pred_max_gs": 73374,
+  "hash_dataset": "a260f84b94e41c84aa68cd4f055e3577"
 }

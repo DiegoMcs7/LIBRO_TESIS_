@@ -1,0 +1,1669 @@
+7.7s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+7.7s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+7.7s 3 0.00s - to python to disable frozen modules.
+7.7s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+8.3s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+8.3s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+8.3s 7 0.00s - to python to disable frozen modules.
+8.3s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+13.2s 9 2026-03-04 03:24:45.823213: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+13.2s 10 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+13.2s 11 E0000 00:00:1772594686.052175      24 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+13.2s 12 E0000 00:00:1772594686.115951      24 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+13.2s 13 W0000 00:00:1772594686.652034      24 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+13.2s 14 W0000 00:00:1772594686.652078      24 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+13.2s 15 W0000 00:00:1772594686.652081      24 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+13.2s 16 W0000 00:00:1772594686.652083      24 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+13.4s 17 2026-03-04 03:24:45.823213: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+13.4s 18 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+13.4s 19 E0000 00:00:1772594686.052175      24 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+13.4s 20 E0000 00:00:1772594686.115951      24 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+13.4s 21 W0000 00:00:1772594686.652034      24 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+13.4s 22 W0000 00:00:1772594686.652078      24 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+13.4s 23 W0000 00:00:1772594686.652081      24 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+13.4s 24 W0000 00:00:1772594686.652083      24 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+13.4s 25 
+13.4s 26 2026-03-04 03:24:45.823213: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+13.4s 27 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+13.4s 28 E0000 00:00:1772594686.052175      24 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+13.4s 29 E0000 00:00:1772594686.115951      24 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+13.4s 30 W0000 00:00:1772594686.652034      24 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+13.4s 31 W0000 00:00:1772594686.652078      24 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+13.4s 32 W0000 00:00:1772594686.652081      24 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+13.4s 33 W0000 00:00:1772594686.652083      24 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+38.9s 34 03:25:12 | INFO     | ============================================================
+38.9s 35 
+38.9s 36 03:25:12 | INFO     | ============================================================
+38.9s 37 03:25:12 | INFO     | INICIO — Predicción Precio Ladrillo
+38.9s 38 
+38.9s 39 03:25:12 | INFO     | INICIO — Predicción Precio Ladrillo
+38.9s 40 03:25:12 | INFO     | Timestamp: 2026-03-04T03:25:12.352019
+38.9s 41 
+38.9s 42 03:25:12 | INFO     | Timestamp: 2026-03-04T03:25:12.352019
+38.9s 43 03:25:12 | INFO     | ============================================================
+38.9s 44 
+38.9s 45 03:25:12 | INFO     | ============================================================
+39.8s 46 ======================================================================
+39.8s 47 PREDICCIÓN DEL PRECIO DEL LADRILLO — LSTM + OPTUNA (KAGGLE)
+39.8s 48 ======================================================================
+39.8s 49 
+39.8s 50 Rutas:
+39.8s 51 Ladrillo      : /kaggle/input/datasets/diemcs/dataset-sarimax-ladrillo/precios_ladrillo_interpolado.csv
+39.8s 52 Río           : /kaggle/input/datasets/diemcs/dataset-sarimax-ladrillo/nivel_rio_minimo_mensual.csv
+39.8s 53 Reales        : /kaggle/input/datasets/diemcs/dataset-sarimax-ladrillo/precios_reales_ladrillo.txt
+39.8s 54 Salida        : /kaggle/working/
+39.8s 55 
+39.8s 56 Configuración:
+39.8s 57 Train / Val / Test : 70% / 15% / 15%
+39.8s 58 Horizonte futuro   : 24 meses
+39.8s 59 Trials Optuna      : 300 (óptimo de 300/500/600 probados)
+39.8s 60 Épocas máx/trial   : 80
+39.8s 61 Predicción con COVID: False (sin cuarentena)
+39.8s 62 
+39.8s 63 ======================================================================
+39.8s 64 CONFIGURACIÓN DE HARDWARE
+39.8s 65 ======================================================================
+40.0s 66 I0000 00:00:1772594713.486089      24 gpu_device.cc:2019] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 8192 MB memory:  -> device: 0, name: Tesla T4, pci bus id: 0000:00:04.0, compute capability: 7.5
+40.2s 67 GPU visible: solo gpu:0 (2 detectada(s), 1 activa)
+40.2s 68 GPU memoria limitada a 8 GB
+40.2s 69 GPU utilizada: Tesla T4
+40.2s 70 Estrategia: OneDeviceStrategy (1 GPU)
+40.2s 71 Multi-GPU activo: False
+40.2s 72 
+40.2s 73 ======================================================================
+40.2s 74 CARGA Y ANÁLISIS EXPLORATORIO DE DATOS (EDA)
+40.2s 75 ======================================================================
+40.2s 76 
+40.2s 77 Precios de ladrillo cargados: 139 filas
+40.2s 78 Rango  : 2014-01-01 → 2025-07-01
+40.2s 79 Precio mín / máx : 428 / 700 Gs.
+40.2s 80 
+40.2s 81 Estadísticas descriptivas (precio):
+40.2s 82 count    139.000000
+40.2s 83 mean     592.107914
+40.2s 84 std       76.465365
+40.2s 85 min      428.000000
+40.2s 86 25%      552.000000
+40.2s 87 50%      600.000000
+40.2s 88 75%      650.000000
+40.2s 89 max      700.000000
+40.2s 90 
+40.2s 91 Nivel del río cargado: 163 filas
+40.2s 92 Rango  : 2014-01-01 → 2027-07-01
+40.2s 93 Nivel mín / máx : -1.61 / 6.97 m
+40.2s 94 
+40.2s 95 Análisis de outliers — Nivel_Rio (IQR):
+40.2s 96 Q1=0.73 m  Q3=3.46 m  IQR=2.73 m
+40.2s 97 Límites IQR: [-3.36, 7.56] m
+40.2s 98 Outliers detectados: 0
+40.2s 99 
+40.2s 100 Dataset histórico combinado: 139 filas
+40.2s 101 Fecha  Precio_Promedio_Polinomial_2  Cuarentena_Covid  Nivel_Rio       mes_sin       mes_cos  anio_norm
+40.2s 102 2025-03-01                         650.0               0.0      -0.21  1.000000e+00  6.123234e-17   0.971014
+40.2s 103 2025-04-01                         650.0               0.0       0.33  8.660254e-01 -5.000000e-01   0.978261
+40.2s 104 2025-05-01                         650.0               0.0       2.64  5.000000e-01 -8.660254e-01   0.985507
+40.2s 105 2025-06-01                         650.0               0.0       3.45  1.224647e-16 -1.000000e+00   0.992754
+40.2s 106 2025-07-01                         650.0               0.0       2.09 -5.000000e-01 -8.660254e-01   1.000000
+40.2s 107 
+40.2s 108 Hash del dataset histórico (MD5): f5a36f74a1f42bff59bbbdf7f05d9666
+40.2s 109 
+40.2s 110 Meses futuros disponibles (nivel río): 24
+40.2s 111 Rango: 2025-08-01 → 2027-07-01
+40.2s 112 Fecha  Nivel_Rio  Cuarentena_Covid
+40.2s 113 2025-08-01       1.93               0.0
+40.2s 114 2025-09-01       1.14               0.0
+40.2s 115 2025-10-01       0.85               0.0
+40.2s 116 2025-11-01       1.09               0.0
+40.2s 117 2025-12-01       1.02               0.0
+40.2s 118 
+40.2s 119 ======================================================================
+40.2s 120 GENERANDO GRÁFICOS EDA
+40.2s 121 ======================================================================
+40.2s 122 I0000 00:00:1772594713.486089      24 gpu_device.cc:2019] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 8192 MB memory:  -> device: 0, name: Tesla T4, pci bus id: 0000:00:04.0, compute capability: 7.5
+40.2s 123 
+40.2s 124 I0000 00:00:1772594713.486089      24 gpu_device.cc:2019] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 8192 MB memory:  -> device: 0, name: Tesla T4, pci bus id: 0000:00:04.0, compute capability: 7.5
+40.7s 125 Guardado: eda_01_serie_precios_ladrillo.png
+41.1s 126 Guardado: eda_02_serie_nivel_rio.png
+41.3s 127 Guardado: eda_03_correlacion_rio_precio.png
+41.3s 128 Coeficiente de Pearson: r = -0.5794
+41.6s 129 Guardado: eda_04_boxplot_precio_anual.png
+42.1s 130 Guardado: eda_05_heatmap_precio.png
+42.5s 131 Guardado: eda_06_precio_y_rio_dual.png
+42.5s 132 
+42.5s 133 Mapa de calor de correlaciones...
+42.9s 134 Guardado: /kaggle/working/eda_correlaciones_heatmap.png
+42.9s 135 Precio_Promedio_Polinomial_2  Nivel_Rio  Cuarentena_Covid
+42.9s 136 Precio_Promedio_Polinomial_2                      1.000000  -0.579383          0.259179
+42.9s 137 Nivel_Rio                                        -0.579383   1.000000         -0.400872
+42.9s 138 Cuarentena_Covid                                  0.259179  -0.400872          1.000000
+42.9s 139 
+42.9s 140 ======================================================================
+42.9s 141 ANÁLISIS DE ESTACIONARIEDAD — ADF + KPSS
+42.9s 142 ======================================================================
+43.3s 143 
+43.3s 144 Precio Ladrillo:
+43.3s 145 ADF  p-value: 0.4893  (NO estacionaria)
+43.3s 146 KPSS p-value: 0.0100  (NO estacionaria)
+43.3s 147 ADF (diff1): 0.0000  (estacionaria)
+43.3s 148 Conclusion: NO ESTACIONARIA (ADF+KPSS coinciden)
+43.3s 149 
+43.3s 150 Nivel del Rio:
+43.3s 151 ADF  p-value: 0.0917  (NO estacionaria)
+43.3s 152 KPSS p-value: 0.0100  (NO estacionaria)
+43.3s 153 ADF (diff1): 0.0000  (estacionaria)
+43.3s 154 Conclusion: NO ESTACIONARIA (ADF+KPSS coinciden)
+43.3s 155 
+43.3s 156 Guardado: /kaggle/working/estacionariedad_adf_kpss.json
+43.3s 157 
+43.3s 158 ======================================================================
+43.3s 159 DESCOMPOSICIÓN STL
+43.3s 160 ======================================================================
+44.4s 161 Guardado: /kaggle/working/eda_stl_decomposition.png
+44.4s 162 
+44.4s 163 Varianza explicada:
+44.4s 164 Tendencia     : 5547.47
+44.4s 165 Estacionalidad: 106.90
+44.4s 166 Residuo       : 381.12
+44.4s 167 
+44.4s 168 ======================================================================
+44.4s 169 ACF / PACF — PRECIO DEL LADRILLO (orientación del lookback)
+44.4s 170 ======================================================================
+45.2s 171 Guardado: /kaggle/working/eda_acf_pacf_precio_pre_modelo.png
+45.2s 172 
+45.2s 173 Umbral de significancia (95%): ±0.166
+45.2s 174 Lags ACF significativos: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36]
+45.2s 175 Sugerencia de lookback: hasta 24 meses
+45.2s 176 
+45.2s 177 ======================================================================
+45.2s 178 DIVISIÓN Y ESCALADO DE DATOS
+45.2s 179 ======================================================================
+45.2s 180 
+45.2s 181 Total registros históricos : 139
+45.2s 182 Train : 97  (69.8%)
+45.2s 183 Val   : 20   (14.4%)
+45.2s 184 Test  : 22  (15.8%)
+45.2s 185 
+45.2s 186 Escalado — Precio:  min=-1.000  max=1.000
+45.2s 187 Escalado — Nivel:   min=-1.256  max=1.298
+45.2s 188 Scalers guardados (scaler_precio, scaler_nivel).
+45.7s 189 Guardado: entrenamiento_01_particiones.png
+46.0s 190 Guardado: eda_07_distribucion_features.png
+46.0s 191 
+46.0s 192 ======================================================================
+46.0s 193 CONFIGURACIÓN DE OPTUNA
+46.0s 194 ======================================================================
+46.0s 195 Trials            : 300
+46.0s 196 Épocas máx/trial  : 80
+46.0s 197 Paciencia ES      : 10
+46.0s 198 Sampler           : TPE (n_startup_trials=50)
+46.0s 199 Pruner            : MedianPruner (n_startup=10, warmup=5)
+46.0s 200 Métrica objetivo  : RMSE_val promedio (walk-forward 3 folds)
+46.0s 201 
+46.0s 202 Espacio de búsqueda:
+46.0s 203 lookback          : [3, 4, 5, 6, 8, 10, 12, 18, 24] meses
+46.0s 204 n_layers          : 1 – 2
+46.0s 205 hidden_size       : [16, 32, 64, 128]
+46.0s 206 bidirectional     : True / False
+46.0s 207 dropout_rate      : 0.05 – 0.4 (step 0.05)
+46.0s 208 recurrent_dropout : 0.05 – 0.3 (step 0.05)
+46.0s 209 salida Dense      : siempre linear (relu causaba predicciones planas)
+46.0s 210 optimizer         : Adam / AdamW / RMSprop
+46.0s 211 learning_rate     : 1e-5 – 1e-2 (log)
+46.0s 212 weight_decay      : 1e-7 – 1e-3 (log)
+46.0s 213 batch_size        : [8, 16]
+46.0s 214 scheduler         : ReduceLROnPlateau / CosineAnnealingLR / StepLR / none
+46.0s 215 max_params        : 50,000 (descarta modelos excesivos antes de entrenar)
+46.0s 216 
+46.0s 217 Datos compartidos guardados en: /kaggle/working/_optuna_shared_data.pkl
+46.0s 218 Worker script generado: /kaggle/working/_optuna_worker.py
+47.5s 219 
+47.5s 220 Iniciando optimización — 300 trials en batches de 50 (subprocesos aislados)
+47.5s 221 SQLite storage: /kaggle/working/optuna_ladrillo_lstm.db
+47.5s 222 
+47.5s 223 ────────────────────────────────────────────────────────────
+47.5s 224 BATCH 1/6 — 50 trials (acumulado: 0/300)
+47.5s 225 ────────────────────────────────────────────────────────────
+48.0s 226 2026-03-04 03:25:21.471063: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+48.0s 227 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+48.0s 228 E0000 00:00:1772594721.492949      73 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+48.0s 229 E0000 00:00:1772594721.500266      73 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+48.0s 230 W0000 00:00:1772594721.517625      73 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+48.0s 231 W0000 00:00:1772594721.517648      73 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+48.0s 232 W0000 00:00:1772594721.517651      73 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+48.0s 233 W0000 00:00:1772594721.517653      73 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+48.2s 234 2026-03-04 03:25:21.471063: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+48.2s 235 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+48.2s 236 E0000 00:00:1772594721.492949      73 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+48.2s 237 E0000 00:00:1772594721.500266      73 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+48.2s 238 W0000 00:00:1772594721.517625      73 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+48.2s 239 W0000 00:00:1772594721.517648      73 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+48.2s 240 W0000 00:00:1772594721.517651      73 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+48.2s 241 W0000 00:00:1772594721.517653      73 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+48.2s 242 
+48.2s 243 2026-03-04 03:25:21.471063: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+48.2s 244 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+48.2s 245 E0000 00:00:1772594721.492949      73 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+48.2s 246 E0000 00:00:1772594721.500266      73 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+48.2s 247 W0000 00:00:1772594721.517625      73 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+48.2s 248 W0000 00:00:1772594721.517648      73 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+48.2s 249 W0000 00:00:1772594721.517651      73 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+48.2s 250 W0000 00:00:1772594721.517653      73 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+54.3s 251 I0000 00:00:1772594727.740974      73 gpu_device.cc:2019] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 8192 MB memory:  -> device: 0, name: Tesla T4, pci bus id: 0000:00:04.0, compute capability: 7.5
+54.5s 252 I0000 00:00:1772594727.740974      73 gpu_device.cc:2019] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 8192 MB memory:  -> device: 0, name: Tesla T4, pci bus id: 0000:00:04.0, compute capability: 7.5
+54.5s 253 
+54.5s 254 I0000 00:00:1772594727.740974      73 gpu_device.cc:2019] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 8192 MB memory:  -> device: 0, name: Tesla T4, pci bus id: 0000:00:04.0, compute capability: 7.5
+109.1s 255 [Trial   1/300] RMSE=    25.1  Estado=OK       Mejor=    25.1  Tiempo=   0.9min  ETA=  44.7min  RAM=   1399MB
+109.3s 256 [Trial   1/300] RMSE=    25.1  Estado=OK       Mejor=    25.1  Tiempo=   0.9min  ETA=  44.7min  RAM=   1399MB
+169.6s 257 [Trial   2/300] RMSE=    79.1  Estado=OK       Mejor=    25.1  Tiempo=   1.9min  ETA=  46.2min  RAM=   1488MB
+169.8s 258 [Trial   2/300] RMSE=    79.1  Estado=OK       Mejor=    25.1  Tiempo=   1.9min  ETA=  46.2min  RAM=   1488MB
+170.2s 259 [Trial   3/300] RMSE=     inf  Estado=INF      Mejor=    25.1  Tiempo=   1.9min  ETA=  30.3min  RAM=   1488MB
+170.4s 260 [Trial   3/300] RMSE=     inf  Estado=INF      Mejor=    25.1  Tiempo=   1.9min  ETA=  30.3min  RAM=   1488MB
+314.3s 261 [Trial   4/300] RMSE=    59.7  Estado=OK       Mejor=    25.1  Tiempo=   4.3min  ETA=  49.8min  RAM=   1536MB
+314.5s 262 [Trial   4/300] RMSE=    59.7  Estado=OK       Mejor=    25.1  Tiempo=   4.3min  ETA=  49.8min  RAM=   1536MB
+405.7s 263 [Trial   5/300] RMSE=    73.9  Estado=OK       Mejor=    25.1  Tiempo=   5.9min  ETA=  52.7min  RAM=   1701MB
+405.9s 264 [Trial   5/300] RMSE=    73.9  Estado=OK       Mejor=    25.1  Tiempo=   5.9min  ETA=  52.7min  RAM=   1701MB
+463.0s 265 [Trial   6/300] RMSE=    26.3  Estado=OK       Mejor=    25.1  Tiempo=   6.8min  ETA=  50.0min  RAM=   1705MB
+463.2s 266 [Trial   6/300] RMSE=    26.3  Estado=OK       Mejor=    25.1  Tiempo=   6.8min  ETA=  50.0min  RAM=   1705MB
+463.9s 267 [Trial   7/300] RMSE=     inf  Estado=INF      Mejor=    25.1  Tiempo=   6.8min  ETA=  41.9min  RAM=   1705MB
+464.1s 268 [Trial   7/300] RMSE=     inf  Estado=INF      Mejor=    25.1  Tiempo=   6.8min  ETA=  41.9min  RAM=   1705MB
+464.8s 269 [Trial   8/300] RMSE=     inf  Estado=INF      Mejor=    25.1  Tiempo=   6.8min  ETA=  35.9min  RAM=   1705MB
+465.0s 270 [Trial   8/300] RMSE=     inf  Estado=INF      Mejor=    25.1  Tiempo=   6.8min  ETA=  35.9min  RAM=   1705MB
+511.8s 271 [Trial   9/300] RMSE=    94.5  Estado=OK       Mejor=    25.1  Tiempo=   7.6min  ETA=  34.7min  RAM=   1891MB
+512.0s 272 [Trial   9/300] RMSE=    94.5  Estado=OK       Mejor=    25.1  Tiempo=   7.6min  ETA=  34.7min  RAM=   1891MB
+512.8s 273 [Trial  10/300] RMSE=     inf  Estado=INF      Mejor=    25.1  Tiempo=   7.6min  ETA=  30.6min  RAM=   1891MB
+513.0s 274 [Trial  10/300] RMSE=     inf  Estado=INF      Mejor=    25.1  Tiempo=   7.6min  ETA=  30.6min  RAM=   1891MB
+513.8s 275 [Trial  11/300] RMSE=     inf  Estado=INF      Mejor=    25.1  Tiempo=   7.7min  ETA=  27.2min  RAM=   1891MB
+514.0s 276 [Trial  11/300] RMSE=     inf  Estado=INF      Mejor=    25.1  Tiempo=   7.7min  ETA=  27.2min  RAM=   1891MB
+514.8s 277 [Trial  12/300] RMSE=     inf  Estado=INF      Mejor=    25.1  Tiempo=   7.7min  ETA=  24.3min  RAM=   1891MB
+515.0s 278 [Trial  12/300] RMSE=     inf  Estado=INF      Mejor=    25.1  Tiempo=   7.7min  ETA=  24.3min  RAM=   1891MB
+534.8s 279 [Trial  13/300] RMSE=    76.9  Estado=OK       Mejor=    25.1  Tiempo=   8.0min  ETA=  22.8min  RAM=   1888MB
+535.0s 280 [Trial  13/300] RMSE=    76.9  Estado=OK       Mejor=    25.1  Tiempo=   8.0min  ETA=  22.8min  RAM=   1888MB
+556.8s 281 [Trial  14/300] RMSE=    92.7  Estado=OK       Mejor=    25.1  Tiempo=   8.4min  ETA=  21.5min  RAM=   1950MB
+557.0s 282 [Trial  14/300] RMSE=    92.7  Estado=OK       Mejor=    25.1  Tiempo=   8.4min  ETA=  21.5min  RAM=   1950MB
+558.0s 283 [Trial  15/300] RMSE=     inf  Estado=INF      Mejor=    25.1  Tiempo=   8.4min  ETA=  19.6min  RAM=   1950MB
+558.2s 284 [Trial  15/300] RMSE=     inf  Estado=INF      Mejor=    25.1  Tiempo=   8.4min  ETA=  19.6min  RAM=   1950MB
+559.2s 285 [Trial  16/300] RMSE=     inf  Estado=INF      Mejor=    25.1  Tiempo=   8.4min  ETA=  17.9min  RAM=   1950MB
+559.4s 286 [Trial  16/300] RMSE=     inf  Estado=INF      Mejor=    25.1  Tiempo=   8.4min  ETA=  17.9min  RAM=   1950MB
+688.1s 287 [Trial  17/300] RMSE=    69.5  Estado=OK       Mejor=    25.1  Tiempo=  10.6min  ETA=  20.5min  RAM=   2039MB
+688.3s 288 [Trial  17/300] RMSE=    69.5  Estado=OK       Mejor=    25.1  Tiempo=  10.6min  ETA=  20.5min  RAM=   2039MB
+689.4s 289 [Trial  18/300] RMSE=     inf  Estado=INF      Mejor=    25.1  Tiempo=  10.6min  ETA=  18.8min  RAM=   2039MB
+689.6s 290 [Trial  18/300] RMSE=     inf  Estado=INF      Mejor=    25.1  Tiempo=  10.6min  ETA=  18.8min  RAM=   2039MB
+690.7s 291 [Trial  19/300] RMSE=     inf  Estado=INF      Mejor=    25.1  Tiempo=  10.6min  ETA=  17.3min  RAM=   2039MB
+690.9s 292 [Trial  19/300] RMSE=     inf  Estado=INF      Mejor=    25.1  Tiempo=  10.6min  ETA=  17.3min  RAM=   2039MB
+723.7s 293 [Trial  20/300] RMSE=    93.8  Estado=OK       Mejor=    25.1  Tiempo=  11.2min  ETA=  16.7min  RAM=   2193MB
+723.9s 294 [Trial  20/300] RMSE=    93.8  Estado=OK       Mejor=    25.1  Tiempo=  11.2min  ETA=  16.7min  RAM=   2193MB
+725.2s 295 [Trial  21/300] RMSE=     inf  Estado=INF      Mejor=    25.1  Tiempo=  11.2min  ETA=  15.4min  RAM=   2193MB
+725.4s 296 [Trial  21/300] RMSE=     inf  Estado=INF      Mejor=    25.1  Tiempo=  11.2min  ETA=  15.4min  RAM=   2193MB
+819.1s 297 [Trial  22/300] RMSE=    69.5  Estado=OK       Mejor=    25.1  Tiempo=  12.7min  ETA=  16.2min  RAM=   2229MB
+819.3s 298 [Trial  22/300] RMSE=    69.5  Estado=OK       Mejor=    25.1  Tiempo=  12.7min  ETA=  16.2min  RAM=   2229MB
+843.4s 299 [Trial  23/300] RMSE=    92.4  Estado=OK       Mejor=    25.1  Tiempo=  13.2min  ETA=  15.4min  RAM=   2261MB
+843.6s 300 [Trial  23/300] RMSE=    92.4  Estado=OK       Mejor=    25.1  Tiempo=  13.2min  ETA=  15.4min  RAM=   2261MB
+845.1s 301 [Trial  24/300] RMSE=     inf  Estado=INF      Mejor=    25.1  Tiempo=  13.2min  ETA=  14.3min  RAM=   2261MB
+845.3s 302 [Trial  24/300] RMSE=     inf  Estado=INF      Mejor=    25.1  Tiempo=  13.2min  ETA=  14.3min  RAM=   2261MB
+846.7s 303 [Trial  25/300] RMSE=     inf  Estado=INF      Mejor=    25.1  Tiempo=  13.2min  ETA=  13.2min  RAM=   2261MB
+846.9s 304 [Trial  25/300] RMSE=     inf  Estado=INF      Mejor=    25.1  Tiempo=  13.2min  ETA=  13.2min  RAM=   2261MB
+880.4s 305 [Trial  26/300] RMSE=    90.5  Estado=OK       Mejor=    25.1  Tiempo=  13.8min  ETA=  12.7min  RAM=   2436MB
+880.6s 306 [Trial  26/300] RMSE=    90.5  Estado=OK       Mejor=    25.1  Tiempo=  13.8min  ETA=  12.7min  RAM=   2436MB
+898.5s 307 [Trial  27/300] RMSE=    85.6  Estado=OK       Mejor=    25.1  Tiempo=  14.1min  ETA=  12.0min  RAM=   2367MB
+898.7s 308 [Trial  27/300] RMSE=    85.6  Estado=OK       Mejor=    25.1  Tiempo=  14.1min  ETA=  12.0min  RAM=   2367MB
+900.3s 309 [Trial  28/300] RMSE=     inf  Estado=INF      Mejor=    25.1  Tiempo=  14.1min  ETA=  11.1min  RAM=   2367MB
+900.5s 310 [Trial  28/300] RMSE=     inf  Estado=INF      Mejor=    25.1  Tiempo=  14.1min  ETA=  11.1min  RAM=   2367MB
+902.1s 311 [Trial  29/300] RMSE=     inf  Estado=INF      Mejor=    25.1  Tiempo=  14.1min  ETA=  10.2min  RAM=   2367MB
+902.3s 312 [Trial  29/300] RMSE=     inf  Estado=INF      Mejor=    25.1  Tiempo=  14.1min  ETA=  10.2min  RAM=   2367MB
+904.0s 313 [Trial  30/300] RMSE=     inf  Estado=INF      Mejor=    25.1  Tiempo=  14.2min  ETA=   9.4min  RAM=   2367MB
+904.2s 314 [Trial  30/300] RMSE=     inf  Estado=INF      Mejor=    25.1  Tiempo=  14.2min  ETA=   9.4min  RAM=   2367MB
+928.0s 315 [Trial  31/300] RMSE=    88.3  Estado=OK       Mejor=    25.1  Tiempo=  14.6min  ETA=   8.9min  RAM=   2459MB
+928.2s 316 [Trial  31/300] RMSE=    88.3  Estado=OK       Mejor=    25.1  Tiempo=  14.6min  ETA=   8.9min  RAM=   2459MB
+988.0s 317 [Trial  32/300] RMSE=    23.8  Estado=OK       Mejor=    23.8  Tiempo=  15.6min  ETA=   8.8min  RAM=   2529MB
+988.2s 318 [Trial  32/300] RMSE=    23.8  Estado=OK       Mejor=    23.8  Tiempo=  15.6min  ETA=   8.8min  RAM=   2529MB
+990.0s 319 [Trial  33/300] RMSE=     inf  Estado=INF      Mejor=    23.8  Tiempo=  15.6min  ETA=   8.0min  RAM=   2529MB
+990.2s 320 [Trial  33/300] RMSE=     inf  Estado=INF      Mejor=    23.8  Tiempo=  15.6min  ETA=   8.0min  RAM=   2529MB
+1016.0s 321 [Trial  34/300] RMSE=    99.7  Estado=OK       Mejor=    23.8  Tiempo=  16.0min  ETA=   7.5min  RAM=   2573MB
+1016.2s 322 [Trial  34/300] RMSE=    99.7  Estado=OK       Mejor=    23.8  Tiempo=  16.0min  ETA=   7.5min  RAM=   2573MB
+1018.0s 323 [Trial  35/300] RMSE=     inf  Estado=INF      Mejor=    23.8  Tiempo=  16.1min  ETA=   6.9min  RAM=   2573MB
+1018.2s 324 [Trial  35/300] RMSE=     inf  Estado=INF      Mejor=    23.8  Tiempo=  16.1min  ETA=   6.9min  RAM=   2573MB
+1056.4s 325 [Trial  36/300] RMSE=    21.5  Estado=OK       Mejor=    21.5  Tiempo=  16.7min  ETA=   6.5min  RAM=   2579MB
+1056.6s 326 [Trial  36/300] RMSE=    21.5  Estado=OK       Mejor=    21.5  Tiempo=  16.7min  ETA=   6.5min  RAM=   2579MB
+1058.5s 327 [Trial  37/300] RMSE=     inf  Estado=INF      Mejor=    21.5  Tiempo=  16.7min  ETA=   5.9min  RAM=   2579MB
+1058.7s 328 [Trial  37/300] RMSE=     inf  Estado=INF      Mejor=    21.5  Tiempo=  16.7min  ETA=   5.9min  RAM=   2579MB
+1060.6s 329 [Trial  38/300] RMSE=     inf  Estado=INF      Mejor=    21.5  Tiempo=  16.8min  ETA=   5.3min  RAM=   2579MB
+1060.8s 330 [Trial  38/300] RMSE=     inf  Estado=INF      Mejor=    21.5  Tiempo=  16.8min  ETA=   5.3min  RAM=   2579MB
+1080.6s 331 [Trial  39/300] RMSE=    99.5  Estado=OK       Mejor=    21.5  Tiempo=  17.1min  ETA=   4.8min  RAM=   2598MB
+1080.8s 332 [Trial  39/300] RMSE=    99.5  Estado=OK       Mejor=    21.5  Tiempo=  17.1min  ETA=   4.8min  RAM=   2598MB
+1120.3s 333 [Trial  40/300] RMSE=    21.9  Estado=OK       Mejor=    21.5  Tiempo=  17.8min  ETA=   4.4min  RAM=   2645MB
+1120.5s 334 [Trial  40/300] RMSE=    21.9  Estado=OK       Mejor=    21.5  Tiempo=  17.8min  ETA=   4.4min  RAM=   2645MB
+1206.8s 335 [Trial  41/300] RMSE=    67.4  Estado=OK       Mejor=    21.5  Tiempo=  19.2min  ETA=   4.2min  RAM=   2797MB
+1207.0s 336 [Trial  41/300] RMSE=    67.4  Estado=OK       Mejor=    21.5  Tiempo=  19.2min  ETA=   4.2min  RAM=   2797MB
+1235.4s 337 [Trial  42/300] RMSE=    86.4  Estado=OK       Mejor=    21.5  Tiempo=  19.7min  ETA=   3.7min  RAM=   2837MB
+1235.6s 338 [Trial  42/300] RMSE=    86.4  Estado=OK       Mejor=    21.5  Tiempo=  19.7min  ETA=   3.7min  RAM=   2837MB
+1237.8s 339 [Trial  43/300] RMSE=     inf  Estado=INF      Mejor=    21.5  Tiempo=  19.7min  ETA=   3.2min  RAM=   2837MB
+1238.0s 340 [Trial  43/300] RMSE=     inf  Estado=INF      Mejor=    21.5  Tiempo=  19.7min  ETA=   3.2min  RAM=   2837MB
+1263.9s 341 [Trial  44/300] RMSE=    79.0  Estado=OK       Mejor=    21.5  Tiempo=  20.2min  ETA=   2.7min  RAM=   2888MB
+1264.1s 342 [Trial  44/300] RMSE=    79.0  Estado=OK       Mejor=    21.5  Tiempo=  20.2min  ETA=   2.7min  RAM=   2888MB
+1289.6s 343 [Trial  45/300] RMSE=    82.3  Estado=OK       Mejor=    21.5  Tiempo=  20.6min  ETA=   2.3min  RAM=   2967MB
+1289.8s 344 [Trial  45/300] RMSE=    82.3  Estado=OK       Mejor=    21.5  Tiempo=  20.6min  ETA=   2.3min  RAM=   2967MB
+1329.6s 345 [Trial  46/300] RMSE=    91.4  Estado=OK       Mejor=    21.5  Tiempo=  21.3min  ETA=   1.8min  RAM=   3134MB
+1329.8s 346 [Trial  46/300] RMSE=    91.4  Estado=OK       Mejor=    21.5  Tiempo=  21.3min  ETA=   1.8min  RAM=   3134MB
+1354.3s 347 [Trial  47/300] RMSE=    91.8  Estado=OK       Mejor=    21.5  Tiempo=  21.7min  ETA=   1.4min  RAM=   3071MB
+1354.5s 348 [Trial  47/300] RMSE=    91.8  Estado=OK       Mejor=    21.5  Tiempo=  21.7min  ETA=   1.4min  RAM=   3071MB
+1394.3s 349 [Trial  48/300] RMSE=   107.4  Estado=OK       Mejor=    21.5  Tiempo=  22.3min  ETA=   0.9min  RAM=   3286MB
+1394.5s 350 [Trial  48/300] RMSE=   107.4  Estado=OK       Mejor=    21.5  Tiempo=  22.3min  ETA=   0.9min  RAM=   3286MB
+1397.3s 351 [Trial  49/300] RMSE=     inf  Estado=INF      Mejor=    21.5  Tiempo=  22.4min  ETA=   0.5min  RAM=   3286MB
+1397.5s 352 [Trial  49/300] RMSE=     inf  Estado=INF      Mejor=    21.5  Tiempo=  22.4min  ETA=   0.5min  RAM=   3286MB
+1426.9s 353 [Trial  50/300] RMSE=   102.3  Estado=OK       Mejor=    21.5  Tiempo=  22.9min  ETA=   0.0min  RAM=   3294MB
+1426.9s 354 
+1426.9s 355 Batch 1 completado: 50 trials OK. RAM final: 3294 MB
+1427.1s 356 [Trial  50/300] RMSE=   102.3  Estado=OK       Mejor=    21.5  Tiempo=  22.9min  ETA=   0.0min  RAM=   3294MB
+1427.1s 357 
+1427.1s 358 Batch 1 completado: 50 trials OK. RAM final: 3294 MB
+1437.6s 359 Batch 1 finalizado correctamente.
+1437.6s 360 Progreso global: 50/300 trials, mejor RMSE: 21.5 Gs.
+1437.6s 361 RAM proceso principal: 1254 MB (sin leak)
+1437.6s 362 
+1437.6s 363 ────────────────────────────────────────────────────────────
+1437.6s 364 BATCH 2/6 — 50 trials (acumulado: 50/300)
+1437.6s 365 ────────────────────────────────────────────────────────────
+1438.0s 366 2026-03-04 03:48:31.527074: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+1438.1s 367 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+1438.1s 368 E0000 00:00:1772596111.548167   78920 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+1438.1s 369 E0000 00:00:1772596111.554566   78920 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+1438.1s 370 W0000 00:00:1772596111.570980   78920 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+1438.1s 371 W0000 00:00:1772596111.571005   78920 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+1438.1s 372 W0000 00:00:1772596111.571008   78920 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+1438.1s 373 W0000 00:00:1772596111.571010   78920 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+1438.2s 374 2026-03-04 03:48:31.527074: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+1438.2s 375 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+1438.2s 376 E0000 00:00:1772596111.548167   78920 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+1438.2s 377 E0000 00:00:1772596111.554566   78920 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+1438.2s 378 W0000 00:00:1772596111.570980   78920 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+1438.2s 379 W0000 00:00:1772596111.571005   78920 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+1438.2s 380 W0000 00:00:1772596111.571008   78920 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+1438.2s 381 W0000 00:00:1772596111.571010   78920 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+1438.2s 382 
+1438.2s 383 2026-03-04 03:48:31.527074: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+1438.2s 384 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+1438.2s 385 E0000 00:00:1772596111.548167   78920 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+1438.2s 386 E0000 00:00:1772596111.554566   78920 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+1438.2s 387 W0000 00:00:1772596111.570980   78920 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+1438.2s 388 W0000 00:00:1772596111.571005   78920 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+1438.2s 389 W0000 00:00:1772596111.571008   78920 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+1438.2s 390 W0000 00:00:1772596111.571010   78920 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+1444.3s 391 I0000 00:00:1772596117.776657   78920 gpu_device.cc:2019] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 8192 MB memory:  -> device: 0, name: Tesla T4, pci bus id: 0000:00:04.0, compute capability: 7.5
+1444.5s 392 I0000 00:00:1772596117.776657   78920 gpu_device.cc:2019] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 8192 MB memory:  -> device: 0, name: Tesla T4, pci bus id: 0000:00:04.0, compute capability: 7.5
+1444.5s 393 
+1444.5s 394 I0000 00:00:1772596117.776657   78920 gpu_device.cc:2019] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 8192 MB memory:  -> device: 0, name: Tesla T4, pci bus id: 0000:00:04.0, compute capability: 7.5
+1489.1s 395 [Trial  51/300] RMSE=    24.4  Estado=OK       Mejor=    21.5  Tiempo=   0.7min  ETA=  36.6min  RAM=   1392MB
+1489.4s 396 [Trial  51/300] RMSE=    24.4  Estado=OK       Mejor=    21.5  Tiempo=   0.7min  ETA=  36.6min  RAM=   1392MB
+1518.8s 397 [Trial  52/300] RMSE=    23.3  Estado=OK       Mejor=    21.5  Tiempo=   1.2min  ETA=  29.8min  RAM=   1405MB
+1519.0s 398 [Trial  52/300] RMSE=    23.3  Estado=OK       Mejor=    21.5  Tiempo=   1.2min  ETA=  29.8min  RAM=   1405MB
+1574.0s 399 [Trial  53/300] RMSE=    20.3  Estado=OK       Mejor=    20.3  Tiempo=   2.2min  ETA=  33.9min  RAM=   1447MB
+1574.2s 400 [Trial  53/300] RMSE=    20.3  Estado=OK       Mejor=    20.3  Tiempo=   2.2min  ETA=  33.9min  RAM=   1447MB
+1608.6s 401 [Trial  54/300] RMSE=    18.9  Estado=OK       Mejor=    18.9  Tiempo=   2.7min  ETA=  31.5min  RAM=   1476MB
+1608.8s 402 [Trial  54/300] RMSE=    18.9  Estado=OK       Mejor=    18.9  Tiempo=   2.7min  ETA=  31.5min  RAM=   1476MB
+1652.3s 403 [Trial  55/300] RMSE=    22.1  Estado=OK       Mejor=    18.9  Tiempo=   3.5min  ETA=  31.2min  RAM=   1503MB
+1652.5s 404 [Trial  55/300] RMSE=    22.1  Estado=OK       Mejor=    18.9  Tiempo=   3.5min  ETA=  31.2min  RAM=   1503MB
+1693.7s 405 [Trial  56/300] RMSE=    21.3  Estado=OK       Mejor=    18.9  Tiempo=   4.2min  ETA=  30.5min  RAM=   1544MB
+1693.9s 406 [Trial  56/300] RMSE=    21.3  Estado=OK       Mejor=    18.9  Tiempo=   4.2min  ETA=  30.5min  RAM=   1544MB
+1730.1s 407 [Trial  57/300] RMSE=    19.9  Estado=OK       Mejor=    18.9  Tiempo=   4.8min  ETA=  29.3min  RAM=   1546MB
+1730.3s 408 [Trial  57/300] RMSE=    19.9  Estado=OK       Mejor=    18.9  Tiempo=   4.8min  ETA=  29.3min  RAM=   1546MB
+1763.4s 409 [Trial  58/300] RMSE=    17.9  Estado=OK       Mejor=    17.9  Tiempo=   5.3min  ETA=  27.9min  RAM=   1587MB
+1763.6s 410 [Trial  58/300] RMSE=    17.9  Estado=OK       Mejor=    17.9  Tiempo=   5.3min  ETA=  27.9min  RAM=   1587MB
+1794.5s 411 [Trial  59/300] RMSE=    17.8  Estado=OK       Mejor=    17.8  Tiempo=   5.8min  ETA=  26.6min  RAM=   1615MB
+1794.8s 412 [Trial  59/300] RMSE=    17.8  Estado=OK       Mejor=    17.8  Tiempo=   5.8min  ETA=  26.6min  RAM=   1615MB
+1830.6s 413 [Trial  60/300] RMSE=    17.5  Estado=OK       Mejor=    17.5  Tiempo=   6.4min  ETA=  25.8min  RAM=   1648MB
+1830.8s 414 [Trial  60/300] RMSE=    17.5  Estado=OK       Mejor=    17.5  Tiempo=   6.4min  ETA=  25.8min  RAM=   1648MB
+1859.5s 415 [Trial  61/300] RMSE=    23.0  Estado=OK       Mejor=    17.5  Tiempo=   6.9min  ETA=  24.5min  RAM=   1674MB
+1859.7s 416 [Trial  61/300] RMSE=    23.0  Estado=OK       Mejor=    17.5  Tiempo=   6.9min  ETA=  24.5min  RAM=   1674MB
+1906.1s 417 [Trial  62/300] RMSE=    16.8  Estado=OK       Mejor=    16.8  Tiempo=   7.7min  ETA=  24.4min  RAM=   1729MB
+1906.3s 418 [Trial  62/300] RMSE=    16.8  Estado=OK       Mejor=    16.8  Tiempo=   7.7min  ETA=  24.4min  RAM=   1729MB
+1936.8s 419 [Trial  63/300] RMSE=    19.8  Estado=OK       Mejor=    16.8  Tiempo=   8.2min  ETA=  23.4min  RAM=   1736MB
+1937.0s 420 [Trial  63/300] RMSE=    19.8  Estado=OK       Mejor=    16.8  Tiempo=   8.2min  ETA=  23.4min  RAM=   1736MB
+2003.1s 421 [Trial  64/300] RMSE=    15.9  Estado=OK       Mejor=    15.9  Tiempo=   9.3min  ETA=  23.9min  RAM=   1800MB
+2003.3s 422 [Trial  64/300] RMSE=    15.9  Estado=OK       Mejor=    15.9  Tiempo=   9.3min  ETA=  23.9min  RAM=   1800MB
+2033.4s 423 [Trial  65/300] RMSE=    21.4  Estado=OK       Mejor=    15.9  Tiempo=   9.8min  ETA=  22.9min  RAM=   1800MB
+2033.6s 424 [Trial  65/300] RMSE=    21.4  Estado=OK       Mejor=    15.9  Tiempo=   9.8min  ETA=  22.9min  RAM=   1800MB
+2073.8s 425 [Trial  66/300] RMSE=    18.0  Estado=OK       Mejor=    15.9  Tiempo=  10.5min  ETA=  22.3min  RAM=   1832MB
+2074.0s 426 [Trial  66/300] RMSE=    18.0  Estado=OK       Mejor=    15.9  Tiempo=  10.5min  ETA=  22.3min  RAM=   1832MB
+2121.8s 427 [Trial  67/300] RMSE=    19.4  Estado=OK       Mejor=    15.9  Tiempo=  11.3min  ETA=  21.9min  RAM=   1866MB
+2122.0s 428 [Trial  67/300] RMSE=    19.4  Estado=OK       Mejor=    15.9  Tiempo=  11.3min  ETA=  21.9min  RAM=   1866MB
+2161.6s 429 [Trial  68/300] RMSE=    21.9  Estado=OK       Mejor=    15.9  Tiempo=  12.0min  ETA=  21.3min  RAM=   1895MB
+2161.8s 430 [Trial  68/300] RMSE=    21.9  Estado=OK       Mejor=    15.9  Tiempo=  12.0min  ETA=  21.3min  RAM=   1895MB
+2192.1s 431 [Trial  69/300] RMSE=    17.2  Estado=OK       Mejor=    15.9  Tiempo=  12.5min  ETA=  20.3min  RAM=   1915MB
+2192.3s 432 [Trial  69/300] RMSE=    17.2  Estado=OK       Mejor=    15.9  Tiempo=  12.5min  ETA=  20.3min  RAM=   1915MB
+2223.0s 433 [Trial  70/300] RMSE=    19.2  Estado=OK       Mejor=    15.9  Tiempo=  13.0min  ETA=  19.5min  RAM=   1946MB
+2223.2s 434 [Trial  70/300] RMSE=    19.2  Estado=OK       Mejor=    15.9  Tiempo=  13.0min  ETA=  19.5min  RAM=   1946MB
+2253.7s 435 [Trial  71/300] RMSE=    20.3  Estado=OK       Mejor=    15.9  Tiempo=  13.5min  ETA=  18.6min  RAM=   1977MB
+2253.9s 436 [Trial  71/300] RMSE=    20.3  Estado=OK       Mejor=    15.9  Tiempo=  13.5min  ETA=  18.6min  RAM=   1977MB
+2298.9s 437 [Trial  72/300] RMSE=    20.3  Estado=OK       Mejor=    15.9  Tiempo=  14.2min  ETA=  18.1min  RAM=   2014MB
+2299.1s 438 [Trial  72/300] RMSE=    20.3  Estado=OK       Mejor=    15.9  Tiempo=  14.2min  ETA=  18.1min  RAM=   2014MB
+2330.8s 439 [Trial  73/300] RMSE=    19.7  Estado=OK       Mejor=    15.9  Tiempo=  14.8min  ETA=  17.3min  RAM=   2037MB
+2331.0s 440 [Trial  73/300] RMSE=    19.7  Estado=OK       Mejor=    15.9  Tiempo=  14.8min  ETA=  17.3min  RAM=   2037MB
+2377.4s 441 [Trial  74/300] RMSE=    17.1  Estado=OK       Mejor=    15.9  Tiempo=  15.6min  ETA=  16.8min  RAM=   2075MB
+2377.6s 442 [Trial  74/300] RMSE=    17.1  Estado=OK       Mejor=    15.9  Tiempo=  15.6min  ETA=  16.8min  RAM=   2075MB
+2409.0s 443 [Trial  75/300] RMSE=    21.1  Estado=OK       Mejor=    15.9  Tiempo=  16.1min  ETA=  16.1min  RAM=   2097MB
+2409.2s 444 [Trial  75/300] RMSE=    21.1  Estado=OK       Mejor=    15.9  Tiempo=  16.1min  ETA=  16.1min  RAM=   2097MB
+2459.8s 445 [Trial  76/300] RMSE=    19.5  Estado=OK       Mejor=    15.9  Tiempo=  16.9min  ETA=  15.6min  RAM=   2132MB
+2460.0s 446 [Trial  76/300] RMSE=    19.5  Estado=OK       Mejor=    15.9  Tiempo=  16.9min  ETA=  15.6min  RAM=   2132MB
+2514.6s 447 [Trial  77/300] RMSE=    17.5  Estado=OK       Mejor=    15.9  Tiempo=  17.8min  ETA=  15.2min  RAM=   2172MB
+2514.8s 448 [Trial  77/300] RMSE=    17.5  Estado=OK       Mejor=    15.9  Tiempo=  17.8min  ETA=  15.2min  RAM=   2172MB
+2554.3s 449 [Trial  78/300] RMSE=    18.1  Estado=OK       Mejor=    15.9  Tiempo=  18.5min  ETA=  14.5min  RAM=   2185MB
+2554.5s 450 [Trial  78/300] RMSE=    18.1  Estado=OK       Mejor=    15.9  Tiempo=  18.5min  ETA=  14.5min  RAM=   2185MB
+2587.5s 451 [Trial  79/300] RMSE=    16.4  Estado=OK       Mejor=    15.9  Tiempo=  19.1min  ETA=  13.8min  RAM=   2212MB
+2587.7s 452 [Trial  79/300] RMSE=    16.4  Estado=OK       Mejor=    15.9  Tiempo=  19.1min  ETA=  13.8min  RAM=   2212MB
+2622.1s 453 [Trial  80/300] RMSE=    24.4  Estado=OK       Mejor=    15.9  Tiempo=  19.6min  ETA=  13.1min  RAM=   2244MB
+2622.3s 454 [Trial  80/300] RMSE=    24.4  Estado=OK       Mejor=    15.9  Tiempo=  19.6min  ETA=  13.1min  RAM=   2244MB
+2664.3s 455 [Trial  81/300] RMSE=    17.8  Estado=OK       Mejor=    15.9  Tiempo=  20.3min  ETA=  12.5min  RAM=   2276MB
+2664.5s 456 [Trial  81/300] RMSE=    17.8  Estado=OK       Mejor=    15.9  Tiempo=  20.3min  ETA=  12.5min  RAM=   2276MB
+2699.7s 457 [Trial  82/300] RMSE=    20.4  Estado=OK       Mejor=    15.9  Tiempo=  20.9min  ETA=  11.8min  RAM=   2302MB
+2699.9s 458 [Trial  82/300] RMSE=    20.4  Estado=OK       Mejor=    15.9  Tiempo=  20.9min  ETA=  11.8min  RAM=   2302MB
+2738.6s 459 [Trial  83/300] RMSE=    21.5  Estado=OK       Mejor=    15.9  Tiempo=  21.6min  ETA=  11.1min  RAM=   2341MB
+2738.8s 460 [Trial  83/300] RMSE=    21.5  Estado=OK       Mejor=    15.9  Tiempo=  21.6min  ETA=  11.1min  RAM=   2341MB
+2772.8s 461 [Trial  84/300] RMSE=    18.6  Estado=OK       Mejor=    15.9  Tiempo=  22.1min  ETA=  10.4min  RAM=   2364MB
+2773.1s 462 [Trial  84/300] RMSE=    18.6  Estado=OK       Mejor=    15.9  Tiempo=  22.1min  ETA=  10.4min  RAM=   2364MB
+2808.5s 463 [Trial  85/300] RMSE=    20.6  Estado=OK       Mejor=    15.9  Tiempo=  22.7min  ETA=   9.7min  RAM=   2392MB
+2808.7s 464 [Trial  85/300] RMSE=    20.6  Estado=OK       Mejor=    15.9  Tiempo=  22.7min  ETA=   9.7min  RAM=   2392MB
+2810.5s 465 [Trial  86/300] RMSE=     inf  Estado=INF      Mejor=    15.9  Tiempo=  22.8min  ETA=   8.9min  RAM=   2392MB
+2810.7s 466 [Trial  86/300] RMSE=     inf  Estado=INF      Mejor=    15.9  Tiempo=  22.8min  ETA=   8.9min  RAM=   2392MB
+2851.8s 467 [Trial  87/300] RMSE=    21.8  Estado=OK       Mejor=    15.9  Tiempo=  23.5min  ETA=   8.2min  RAM=   2419MB
+2852.0s 468 [Trial  87/300] RMSE=    21.8  Estado=OK       Mejor=    15.9  Tiempo=  23.5min  ETA=   8.2min  RAM=   2419MB
+2896.8s 469 [Trial  88/300] RMSE=    17.4  Estado=OK       Mejor=    15.9  Tiempo=  24.2min  ETA=   7.6min  RAM=   2459MB
+2897.0s 470 [Trial  88/300] RMSE=    17.4  Estado=OK       Mejor=    15.9  Tiempo=  24.2min  ETA=   7.6min  RAM=   2459MB
+2950.4s 471 [Trial  89/300] RMSE=    20.5  Estado=OK       Mejor=    15.9  Tiempo=  25.1min  ETA=   7.1min  RAM=   2473MB
+2950.6s 472 [Trial  89/300] RMSE=    20.5  Estado=OK       Mejor=    15.9  Tiempo=  25.1min  ETA=   7.1min  RAM=   2473MB
+2986.4s 473 [Trial  90/300] RMSE=    22.4  Estado=OK       Mejor=    15.9  Tiempo=  25.7min  ETA=   6.4min  RAM=   2511MB
+2986.6s 474 [Trial  90/300] RMSE=    22.4  Estado=OK       Mejor=    15.9  Tiempo=  25.7min  ETA=   6.4min  RAM=   2511MB
+3007.2s 475 [Trial  91/300] RMSE=    71.8  Estado=OK       Mejor=    15.9  Tiempo=  26.0min  ETA=   5.7min  RAM=   2537MB
+3007.5s 476 [Trial  91/300] RMSE=    71.8  Estado=OK       Mejor=    15.9  Tiempo=  26.0min  ETA=   5.7min  RAM=   2537MB
+3049.6s 477 [Trial  92/300] RMSE=    21.4  Estado=OK       Mejor=    15.9  Tiempo=  26.8min  ETA=   5.1min  RAM=   2561MB
+3049.8s 478 [Trial  92/300] RMSE=    21.4  Estado=OK       Mejor=    15.9  Tiempo=  26.8min  ETA=   5.1min  RAM=   2561MB
+3088.0s 479 [Trial  93/300] RMSE=    19.6  Estado=OK       Mejor=    15.9  Tiempo=  27.4min  ETA=   4.5min  RAM=   2598MB
+3088.2s 480 [Trial  93/300] RMSE=    19.6  Estado=OK       Mejor=    15.9  Tiempo=  27.4min  ETA=   4.5min  RAM=   2598MB
+3123.2s 481 [Trial  94/300] RMSE=    18.1  Estado=OK       Mejor=    15.9  Tiempo=  28.0min  ETA=   3.8min  RAM=   2627MB
+3123.4s 482 [Trial  94/300] RMSE=    18.1  Estado=OK       Mejor=    15.9  Tiempo=  28.0min  ETA=   3.8min  RAM=   2627MB
+3160.9s 483 [Trial  95/300] RMSE=    16.6  Estado=OK       Mejor=    15.9  Tiempo=  28.6min  ETA=   3.2min  RAM=   2658MB
+3161.1s 484 [Trial  95/300] RMSE=    16.6  Estado=OK       Mejor=    15.9  Tiempo=  28.6min  ETA=   3.2min  RAM=   2658MB
+3195.8s 485 [Trial  96/300] RMSE=    22.1  Estado=OK       Mejor=    15.9  Tiempo=  29.2min  ETA=   2.5min  RAM=   2690MB
+3196.0s 486 [Trial  96/300] RMSE=    22.1  Estado=OK       Mejor=    15.9  Tiempo=  29.2min  ETA=   2.5min  RAM=   2690MB
+3238.4s 487 [Trial  97/300] RMSE=    14.8  Estado=OK       Mejor=    14.8  Tiempo=  29.9min  ETA=   1.9min  RAM=   2724MB
+3238.7s 488 [Trial  97/300] RMSE=    14.8  Estado=OK       Mejor=    14.8  Tiempo=  29.9min  ETA=   1.9min  RAM=   2724MB
+3288.9s 489 [Trial  98/300] RMSE=    16.8  Estado=OK       Mejor=    14.8  Tiempo=  30.7min  ETA=   1.3min  RAM=   2742MB
+3289.1s 490 [Trial  98/300] RMSE=    16.8  Estado=OK       Mejor=    14.8  Tiempo=  30.7min  ETA=   1.3min  RAM=   2742MB
+3326.4s 491 [Trial  99/300] RMSE=    23.5  Estado=OK       Mejor=    14.8  Tiempo=  31.4min  ETA=   0.6min  RAM=   2779MB
+3326.6s 492 [Trial  99/300] RMSE=    23.5  Estado=OK       Mejor=    14.8  Tiempo=  31.4min  ETA=   0.6min  RAM=   2779MB
+3369.5s 493 [Trial 100/300] RMSE=    23.6  Estado=OK       Mejor=    14.8  Tiempo=  32.1min  ETA=   0.0min  RAM=   2805MB
+3369.5s 494 
+3369.5s 495 Batch 2 completado: 50 trials OK. RAM final: 2805 MB
+3369.8s 496 [Trial 100/300] RMSE=    23.6  Estado=OK       Mejor=    14.8  Tiempo=  32.1min  ETA=   0.0min  RAM=   2805MB
+3369.8s 497 
+3369.8s 498 Batch 2 completado: 50 trials OK. RAM final: 2805 MB
+3378.6s 499 Batch 2 finalizado correctamente.
+3378.6s 500 Progreso global: 100/300 trials, mejor RMSE: 14.8 Gs.
+3378.6s 501 RAM proceso principal: 1256 MB (sin leak)
+3378.6s 502 
+3378.6s 503 ────────────────────────────────────────────────────────────
+3378.6s 504 BATCH 3/6 — 50 trials (acumulado: 100/300)
+3378.6s 505 ────────────────────────────────────────────────────────────
+3379.1s 506 2026-03-04 04:20:52.579724: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+3379.1s 507 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+3379.1s 508 E0000 00:00:1772598052.602675  230031 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+3379.1s 509 E0000 00:00:1772598052.609784  230031 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+3379.1s 510 W0000 00:00:1772598052.629899  230031 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+3379.1s 511 W0000 00:00:1772598052.629923  230031 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+3379.1s 512 W0000 00:00:1772598052.629926  230031 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+3379.1s 513 W0000 00:00:1772598052.629928  230031 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+3379.3s 514 2026-03-04 04:20:52.579724: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+3379.3s 515 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+3379.3s 516 E0000 00:00:1772598052.602675  230031 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+3379.3s 517 E0000 00:00:1772598052.609784  230031 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+3379.3s 518 W0000 00:00:1772598052.629899  230031 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+3379.3s 519 W0000 00:00:1772598052.629923  230031 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+3379.3s 520 W0000 00:00:1772598052.629926  230031 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+3379.3s 521 W0000 00:00:1772598052.629928  230031 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+3379.3s 522 
+3379.3s 523 2026-03-04 04:20:52.579724: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+3379.3s 524 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+3379.3s 525 E0000 00:00:1772598052.602675  230031 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+3379.3s 526 E0000 00:00:1772598052.609784  230031 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+3379.3s 527 W0000 00:00:1772598052.629899  230031 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+3379.3s 528 W0000 00:00:1772598052.629923  230031 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+3379.3s 529 W0000 00:00:1772598052.629926  230031 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+3379.3s 530 W0000 00:00:1772598052.629928  230031 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+3385.4s 531 I0000 00:00:1772598058.874935  230031 gpu_device.cc:2019] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 8192 MB memory:  -> device: 0, name: Tesla T4, pci bus id: 0000:00:04.0, compute capability: 7.5
+3385.6s 532 I0000 00:00:1772598058.874935  230031 gpu_device.cc:2019] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 8192 MB memory:  -> device: 0, name: Tesla T4, pci bus id: 0000:00:04.0, compute capability: 7.5
+3385.6s 533 
+3385.6s 534 I0000 00:00:1772598058.874935  230031 gpu_device.cc:2019] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 8192 MB memory:  -> device: 0, name: Tesla T4, pci bus id: 0000:00:04.0, compute capability: 7.5
+3386.4s 535 [Trial 101/300] RMSE=     inf  Estado=INF      Mejor=    14.8  Tiempo=   0.0min  ETA=   0.8min  RAM=   1095MB
+3386.6s 536 [Trial 101/300] RMSE=     inf  Estado=INF      Mejor=    14.8  Tiempo=   0.0min  ETA=   0.8min  RAM=   1095MB
+3438.5s 537 [Trial 102/300] RMSE=    18.1  Estado=OK       Mejor=    14.8  Tiempo=   0.9min  ETA=  21.3min  RAM=   1380MB
+3438.8s 538 [Trial 102/300] RMSE=    18.1  Estado=OK       Mejor=    14.8  Tiempo=   0.9min  ETA=  21.3min  RAM=   1380MB
+3467.1s 539 [Trial 103/300] RMSE=    23.7  Estado=OK       Mejor=    14.8  Tiempo=   1.4min  ETA=  21.3min  RAM=   1413MB
+3467.3s 540 [Trial 103/300] RMSE=    23.7  Estado=OK       Mejor=    14.8  Tiempo=   1.4min  ETA=  21.3min  RAM=   1413MB
+3493.4s 541 [Trial 104/300] RMSE=    17.1  Estado=OK       Mejor=    14.8  Tiempo=   1.8min  ETA=  20.7min  RAM=   1439MB
+3493.6s 542 [Trial 104/300] RMSE=    17.1  Estado=OK       Mejor=    14.8  Tiempo=   1.8min  ETA=  20.7min  RAM=   1439MB
+3526.1s 543 [Trial 105/300] RMSE=    18.8  Estado=OK       Mejor=    14.8  Tiempo=   2.3min  ETA=  21.1min  RAM=   1481MB
+3526.4s 544 [Trial 105/300] RMSE=    18.8  Estado=OK       Mejor=    14.8  Tiempo=   2.3min  ETA=  21.1min  RAM=   1481MB
+3561.4s 545 [Trial 106/300] RMSE=    20.9  Estado=OK       Mejor=    14.8  Tiempo=   2.9min  ETA=  21.5min  RAM=   1505MB
+3561.6s 546 [Trial 106/300] RMSE=    20.9  Estado=OK       Mejor=    14.8  Tiempo=   2.9min  ETA=  21.5min  RAM=   1505MB
+3602.2s 547 [Trial 107/300] RMSE=    19.5  Estado=OK       Mejor=    14.8  Tiempo=   3.6min  ETA=  22.2min  RAM=   1552MB
+3602.4s 548 [Trial 107/300] RMSE=    19.5  Estado=OK       Mejor=    14.8  Tiempo=   3.6min  ETA=  22.2min  RAM=   1552MB
+3651.4s 549 [Trial 108/300] RMSE=    16.7  Estado=OK       Mejor=    14.8  Tiempo=   4.4min  ETA=  23.3min  RAM=   1568MB
+3651.6s 550 [Trial 108/300] RMSE=    16.7  Estado=OK       Mejor=    14.8  Tiempo=   4.4min  ETA=  23.3min  RAM=   1568MB
+3681.9s 551 [Trial 109/300] RMSE=    17.2  Estado=OK       Mejor=    14.8  Tiempo=   4.9min  ETA=  22.5min  RAM=   1593MB
+3682.1s 552 [Trial 109/300] RMSE=    17.2  Estado=OK       Mejor=    14.8  Tiempo=   4.9min  ETA=  22.5min  RAM=   1593MB
+3722.4s 553 [Trial 110/300] RMSE=    16.4  Estado=OK       Mejor=    14.8  Tiempo=   5.6min  ETA=  22.5min  RAM=   1628MB
+3722.6s 554 [Trial 110/300] RMSE=    16.4  Estado=OK       Mejor=    14.8  Tiempo=   5.6min  ETA=  22.5min  RAM=   1628MB
+3749.7s 555 [Trial 111/300] RMSE=    20.2  Estado=OK       Mejor=    14.8  Tiempo=   6.1min  ETA=  21.5min  RAM=   1651MB
+3749.9s 556 [Trial 111/300] RMSE=    20.2  Estado=OK       Mejor=    14.8  Tiempo=   6.1min  ETA=  21.5min  RAM=   1651MB
+3777.2s 557 [Trial 112/300] RMSE=    22.1  Estado=OK       Mejor=    14.8  Tiempo=   6.5min  ETA=  20.7min  RAM=   1681MB
+3777.4s 558 [Trial 112/300] RMSE=    22.1  Estado=OK       Mejor=    14.8  Tiempo=   6.5min  ETA=  20.7min  RAM=   1681MB
+3817.6s 559 [Trial 113/300] RMSE=    16.5  Estado=OK       Mejor=    14.8  Tiempo=   7.2min  ETA=  20.5min  RAM=   1716MB
+3817.8s 560 [Trial 113/300] RMSE=    16.5  Estado=OK       Mejor=    14.8  Tiempo=   7.2min  ETA=  20.5min  RAM=   1716MB
+3849.8s 561 [Trial 114/300] RMSE=    18.8  Estado=OK       Mejor=    14.8  Tiempo=   7.7min  ETA=  19.9min  RAM=   1741MB
+3850.0s 562 [Trial 114/300] RMSE=    18.8  Estado=OK       Mejor=    14.8  Tiempo=   7.7min  ETA=  19.9min  RAM=   1741MB
+3889.5s 563 [Trial 115/300] RMSE=    17.0  Estado=OK       Mejor=    14.8  Tiempo=   8.4min  ETA=  19.6min  RAM=   1789MB
+3889.7s 564 [Trial 115/300] RMSE=    17.0  Estado=OK       Mejor=    14.8  Tiempo=   8.4min  ETA=  19.6min  RAM=   1789MB
+3918.0s 565 [Trial 116/300] RMSE=    15.8  Estado=OK       Mejor=    14.8  Tiempo=   8.9min  ETA=  18.9min  RAM=   1800MB
+3918.2s 566 [Trial 116/300] RMSE=    15.8  Estado=OK       Mejor=    14.8  Tiempo=   8.9min  ETA=  18.9min  RAM=   1800MB
+3960.1s 567 [Trial 117/300] RMSE=    21.6  Estado=OK       Mejor=    14.8  Tiempo=   9.6min  ETA=  18.6min  RAM=   1838MB
+3960.3s 568 [Trial 117/300] RMSE=    21.6  Estado=OK       Mejor=    14.8  Tiempo=   9.6min  ETA=  18.6min  RAM=   1838MB
+3990.3s 569 [Trial 118/300] RMSE=    22.5  Estado=OK       Mejor=    14.8  Tiempo=  10.1min  ETA=  17.9min  RAM=   1861MB
+3990.5s 570 [Trial 118/300] RMSE=    22.5  Estado=OK       Mejor=    14.8  Tiempo=  10.1min  ETA=  17.9min  RAM=   1861MB
+4006.2s 571 [Trial 119/300] RMSE=    71.8  Estado=OK       Mejor=    14.8  Tiempo=  10.3min  ETA=  16.9min  RAM=   1883MB
+4006.4s 572 [Trial 119/300] RMSE=    71.8  Estado=OK       Mejor=    14.8  Tiempo=  10.3min  ETA=  16.9min  RAM=   1883MB
+4007.5s 573 [Trial 120/300] RMSE=     inf  Estado=INF      Mejor=    14.8  Tiempo=  10.4min  ETA=  15.6min  RAM=   1883MB
+4007.7s 574 [Trial 120/300] RMSE=     inf  Estado=INF      Mejor=    14.8  Tiempo=  10.4min  ETA=  15.6min  RAM=   1883MB
+4036.8s 575 [Trial 121/300] RMSE=    18.9  Estado=OK       Mejor=    14.8  Tiempo=  10.9min  ETA=  15.0min  RAM=   1920MB
+4037.1s 576 [Trial 121/300] RMSE=    18.9  Estado=OK       Mejor=    14.8  Tiempo=  10.9min  ETA=  15.0min  RAM=   1920MB
+4066.2s 577 [Trial 122/300] RMSE=    21.6  Estado=OK       Mejor=    14.8  Tiempo=  11.3min  ETA=  14.4min  RAM=   1950MB
+4066.4s 578 [Trial 122/300] RMSE=    21.6  Estado=OK       Mejor=    14.8  Tiempo=  11.3min  ETA=  14.4min  RAM=   1950MB
+4067.5s 579 [Trial 123/300] RMSE=     inf  Estado=INF      Mejor=    14.8  Tiempo=  11.4min  ETA=  13.3min  RAM=   1950MB
+4067.7s 580 [Trial 123/300] RMSE=     inf  Estado=INF      Mejor=    14.8  Tiempo=  11.4min  ETA=  13.3min  RAM=   1950MB
+4112.4s 581 [Trial 124/300] RMSE=    16.5  Estado=OK       Mejor=    14.8  Tiempo=  12.1min  ETA=  13.1min  RAM=   1991MB
+4112.6s 582 [Trial 124/300] RMSE=    16.5  Estado=OK       Mejor=    14.8  Tiempo=  12.1min  ETA=  13.1min  RAM=   1991MB
+4142.5s 583 [Trial 125/300] RMSE=    21.4  Estado=OK       Mejor=    14.8  Tiempo=  12.6min  ETA=  12.6min  RAM=   2002MB
+4142.7s 584 [Trial 125/300] RMSE=    21.4  Estado=OK       Mejor=    14.8  Tiempo=  12.6min  ETA=  12.6min  RAM=   2002MB
+4174.9s 585 [Trial 126/300] RMSE=    14.1  Estado=OK       Mejor=    14.1  Tiempo=  13.2min  ETA=  12.1min  RAM=   2041MB
+4175.1s 586 [Trial 126/300] RMSE=    14.1  Estado=OK       Mejor=    14.1  Tiempo=  13.2min  ETA=  12.1min  RAM=   2041MB
+4217.6s 587 [Trial 127/300] RMSE=    15.9  Estado=OK       Mejor=    14.1  Tiempo=  13.9min  ETA=  11.8min  RAM=   2069MB
+4217.8s 588 [Trial 127/300] RMSE=    15.9  Estado=OK       Mejor=    14.1  Tiempo=  13.9min  ETA=  11.8min  RAM=   2069MB
+4248.6s 589 [Trial 128/300] RMSE=    18.4  Estado=OK       Mejor=    14.1  Tiempo=  14.4min  ETA=  11.3min  RAM=   2101MB
+4248.8s 590 [Trial 128/300] RMSE=    18.4  Estado=OK       Mejor=    14.1  Tiempo=  14.4min  ETA=  11.3min  RAM=   2101MB
+4290.7s 591 [Trial 129/300] RMSE=    13.8  Estado=OK       Mejor=    13.8  Tiempo=  15.1min  ETA=  10.9min  RAM=   2137MB
+4290.9s 592 [Trial 129/300] RMSE=    13.8  Estado=OK       Mejor=    13.8  Tiempo=  15.1min  ETA=  10.9min  RAM=   2137MB
+4336.1s 593 [Trial 130/300] RMSE=    19.7  Estado=OK       Mejor=    13.8  Tiempo=  15.8min  ETA=  10.6min  RAM=   2169MB
+4336.3s 594 [Trial 130/300] RMSE=    19.7  Estado=OK       Mejor=    13.8  Tiempo=  15.8min  ETA=  10.6min  RAM=   2169MB
+4378.3s 595 [Trial 131/300] RMSE=    18.5  Estado=OK       Mejor=    13.8  Tiempo=  16.5min  ETA=  10.1min  RAM=   2197MB
+4378.5s 596 [Trial 131/300] RMSE=    18.5  Estado=OK       Mejor=    13.8  Tiempo=  16.5min  ETA=  10.1min  RAM=   2197MB
+4423.5s 597 [Trial 132/300] RMSE=    18.3  Estado=OK       Mejor=    13.8  Tiempo=  17.3min  ETA=   9.7min  RAM=   2229MB
+4423.7s 598 [Trial 132/300] RMSE=    18.3  Estado=OK       Mejor=    13.8  Tiempo=  17.3min  ETA=   9.7min  RAM=   2229MB
+4457.1s 599 [Trial 133/300] RMSE=    18.7  Estado=OK       Mejor=    13.8  Tiempo=  17.9min  ETA=   9.2min  RAM=   2255MB
+4457.3s 600 [Trial 133/300] RMSE=    18.7  Estado=OK       Mejor=    13.8  Tiempo=  17.9min  ETA=   9.2min  RAM=   2255MB
+4491.2s 601 [Trial 134/300] RMSE=    19.5  Estado=OK       Mejor=    13.8  Tiempo=  18.4min  ETA=   8.7min  RAM=   2285MB
+4491.4s 602 [Trial 134/300] RMSE=    19.5  Estado=OK       Mejor=    13.8  Tiempo=  18.4min  ETA=   8.7min  RAM=   2285MB
+4546.3s 603 [Trial 135/300] RMSE=    16.6  Estado=OK       Mejor=    13.8  Tiempo=  19.3min  ETA=   8.3min  RAM=   2313MB
+4546.5s 604 [Trial 135/300] RMSE=    16.6  Estado=OK       Mejor=    13.8  Tiempo=  19.3min  ETA=   8.3min  RAM=   2313MB
+4596.1s 605 [Trial 136/300] RMSE=    16.3  Estado=OK       Mejor=    13.8  Tiempo=  20.2min  ETA=   7.8min  RAM=   2357MB
+4596.3s 606 [Trial 136/300] RMSE=    16.3  Estado=OK       Mejor=    13.8  Tiempo=  20.2min  ETA=   7.8min  RAM=   2357MB
+4650.3s 607 [Trial 137/300] RMSE=    14.2  Estado=OK       Mejor=    13.8  Tiempo=  21.1min  ETA=   7.4min  RAM=   2362MB
+4650.5s 608 [Trial 137/300] RMSE=    14.2  Estado=OK       Mejor=    13.8  Tiempo=  21.1min  ETA=   7.4min  RAM=   2362MB
+4669.9s 609 [Trial 138/300] RMSE=    86.7  Estado=OK       Mejor=    13.8  Tiempo=  21.4min  ETA=   6.8min  RAM=   2401MB
+4670.1s 610 [Trial 138/300] RMSE=    86.7  Estado=OK       Mejor=    13.8  Tiempo=  21.4min  ETA=   6.8min  RAM=   2401MB
+4733.2s 611 [Trial 139/300] RMSE=    16.5  Estado=OK       Mejor=    13.8  Tiempo=  22.5min  ETA=   6.3min  RAM=   2451MB
+4733.4s 612 [Trial 139/300] RMSE=    16.5  Estado=OK       Mejor=    13.8  Tiempo=  22.5min  ETA=   6.3min  RAM=   2451MB
+4793.2s 613 [Trial 140/300] RMSE=    14.3  Estado=OK       Mejor=    13.8  Tiempo=  23.5min  ETA=   5.9min  RAM=   2486MB
+4793.4s 614 [Trial 140/300] RMSE=    14.3  Estado=OK       Mejor=    13.8  Tiempo=  23.5min  ETA=   5.9min  RAM=   2486MB
+4831.5s 615 [Trial 141/300] RMSE=    16.2  Estado=OK       Mejor=    13.8  Tiempo=  24.1min  ETA=   5.3min  RAM=   2479MB
+4831.7s 616 [Trial 141/300] RMSE=    16.2  Estado=OK       Mejor=    13.8  Tiempo=  24.1min  ETA=   5.3min  RAM=   2479MB
+4876.8s 617 [Trial 142/300] RMSE=    14.1  Estado=OK       Mejor=    13.8  Tiempo=  24.9min  ETA=   4.7min  RAM=   2526MB
+4877.0s 618 [Trial 142/300] RMSE=    14.1  Estado=OK       Mejor=    13.8  Tiempo=  24.9min  ETA=   4.7min  RAM=   2526MB
+4917.9s 619 [Trial 143/300] RMSE=    17.7  Estado=OK       Mejor=    13.8  Tiempo=  25.5min  ETA=   4.2min  RAM=   2556MB
+4918.2s 620 [Trial 143/300] RMSE=    17.7  Estado=OK       Mejor=    13.8  Tiempo=  25.5min  ETA=   4.2min  RAM=   2556MB
+4963.0s 621 [Trial 144/300] RMSE=    15.4  Estado=OK       Mejor=    13.8  Tiempo=  26.3min  ETA=   3.6min  RAM=   2565MB
+4963.2s 622 [Trial 144/300] RMSE=    15.4  Estado=OK       Mejor=    13.8  Tiempo=  26.3min  ETA=   3.6min  RAM=   2565MB
+4983.0s 623 [Trial 145/300] RMSE=    47.4  Estado=OK       Mejor=    13.8  Tiempo=  26.6min  ETA=   3.0min  RAM=   2600MB
+4983.2s 624 [Trial 145/300] RMSE=    47.4  Estado=OK       Mejor=    13.8  Tiempo=  26.6min  ETA=   3.0min  RAM=   2600MB
+5032.9s 625 [Trial 146/300] RMSE=    13.8  Estado=OK       Mejor=    13.8  Tiempo=  27.5min  ETA=   2.4min  RAM=   2641MB
+5033.1s 626 [Trial 146/300] RMSE=    13.8  Estado=OK       Mejor=    13.8  Tiempo=  27.5min  ETA=   2.4min  RAM=   2641MB
+5053.2s 627 [Trial 147/300] RMSE=    77.9  Estado=OK       Mejor=    13.8  Tiempo=  27.8min  ETA=   1.8min  RAM=   2650MB
+5053.4s 628 [Trial 147/300] RMSE=    77.9  Estado=OK       Mejor=    13.8  Tiempo=  27.8min  ETA=   1.8min  RAM=   2650MB
+5074.1s 629 [Trial 148/300] RMSE=    32.4  Estado=OK       Mejor=    13.8  Tiempo=  28.1min  ETA=   1.2min  RAM=   2684MB
+5074.3s 630 [Trial 148/300] RMSE=    32.4  Estado=OK       Mejor=    13.8  Tiempo=  28.1min  ETA=   1.2min  RAM=   2684MB
+5076.5s 631 [Trial 149/300] RMSE=     inf  Estado=INF      Mejor=    13.8  Tiempo=  28.2min  ETA=   0.6min  RAM=   2684MB
+5076.7s 632 [Trial 149/300] RMSE=     inf  Estado=INF      Mejor=    13.8  Tiempo=  28.2min  ETA=   0.6min  RAM=   2684MB
+5131.7s 633 [Trial 150/300] RMSE=    14.3  Estado=OK       Mejor=    13.8  Tiempo=  29.1min  ETA=   0.0min  RAM=   2740MB
+5131.7s 634 
+5131.7s 635 Batch 3 completado: 50 trials OK. RAM final: 2740 MB
+5131.9s 636 [Trial 150/300] RMSE=    14.3  Estado=OK       Mejor=    13.8  Tiempo=  29.1min  ETA=   0.0min  RAM=   2740MB
+5131.9s 637 
+5131.9s 638 Batch 3 completado: 50 trials OK. RAM final: 2740 MB
+5140.4s 639 Batch 3 finalizado correctamente.
+5140.5s 640 Progreso global: 150/300 trials, mejor RMSE: 13.8 Gs.
+5140.5s 641 RAM proceso principal: 1259 MB (sin leak)
+5140.5s 642 
+5140.5s 643 ────────────────────────────────────────────────────────────
+5140.5s 644 BATCH 4/6 — 50 trials (acumulado: 150/300)
+5140.5s 645 ────────────────────────────────────────────────────────────
+5141.0s 646 2026-03-04 04:50:14.451138: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+5141.0s 647 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+5141.0s 648 E0000 00:00:1772599814.474612  380190 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+5141.0s 649 E0000 00:00:1772599814.481183  380190 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+5141.0s 650 W0000 00:00:1772599814.497896  380190 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+5141.0s 651 W0000 00:00:1772599814.497921  380190 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+5141.0s 652 W0000 00:00:1772599814.497923  380190 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+5141.0s 653 W0000 00:00:1772599814.497926  380190 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+5141.2s 654 2026-03-04 04:50:14.451138: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+5141.2s 655 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+5141.2s 656 E0000 00:00:1772599814.474612  380190 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+5141.2s 657 E0000 00:00:1772599814.481183  380190 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+5141.2s 658 W0000 00:00:1772599814.497896  380190 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+5141.2s 659 W0000 00:00:1772599814.497921  380190 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+5141.2s 660 W0000 00:00:1772599814.497923  380190 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+5141.2s 661 W0000 00:00:1772599814.497926  380190 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+5141.2s 662 
+5141.2s 663 2026-03-04 04:50:14.451138: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+5141.2s 664 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+5141.2s 665 E0000 00:00:1772599814.474612  380190 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+5141.2s 666 E0000 00:00:1772599814.481183  380190 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+5141.2s 667 W0000 00:00:1772599814.497896  380190 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+5141.2s 668 W0000 00:00:1772599814.497921  380190 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+5141.2s 669 W0000 00:00:1772599814.497923  380190 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+5141.2s 670 W0000 00:00:1772599814.497926  380190 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+5147.2s 671 I0000 00:00:1772599820.732663  380190 gpu_device.cc:2019] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 8192 MB memory:  -> device: 0, name: Tesla T4, pci bus id: 0000:00:04.0, compute capability: 7.5
+5147.4s 672 I0000 00:00:1772599820.732663  380190 gpu_device.cc:2019] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 8192 MB memory:  -> device: 0, name: Tesla T4, pci bus id: 0000:00:04.0, compute capability: 7.5
+5147.4s 673 
+5147.4s 674 I0000 00:00:1772599820.732663  380190 gpu_device.cc:2019] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 8192 MB memory:  -> device: 0, name: Tesla T4, pci bus id: 0000:00:04.0, compute capability: 7.5
+5189.6s 675 [Trial 151/300] RMSE=    15.7  Estado=OK       Mejor=    13.8  Tiempo=   0.7min  ETA=  34.6min  RAM=   1398MB
+5189.8s 676 [Trial 151/300] RMSE=    15.7  Estado=OK       Mejor=    13.8  Tiempo=   0.7min  ETA=  34.6min  RAM=   1398MB
+5230.8s 677 [Trial 152/300] RMSE=    15.4  Estado=OK       Mejor=    13.8  Tiempo=   1.4min  ETA=  33.4min  RAM=   1407MB
+5231.0s 678 [Trial 152/300] RMSE=    15.4  Estado=OK       Mejor=    13.8  Tiempo=   1.4min  ETA=  33.4min  RAM=   1407MB
+5242.8s 679 [Trial 153/300] RMSE=    43.1  Estado=OK       Mejor=    13.8  Tiempo=   1.6min  ETA=  24.9min  RAM=   1438MB
+5243.0s 680 [Trial 153/300] RMSE=    43.1  Estado=OK       Mejor=    13.8  Tiempo=   1.6min  ETA=  24.9min  RAM=   1438MB
+5289.9s 681 [Trial 154/300] RMSE=    15.1  Estado=OK       Mejor=    13.8  Tiempo=   2.4min  ETA=  27.3min  RAM=   1485MB
+5290.1s 682 [Trial 154/300] RMSE=    15.1  Estado=OK       Mejor=    13.8  Tiempo=   2.4min  ETA=  27.3min  RAM=   1485MB
+5302.0s 683 [Trial 155/300] RMSE=    53.1  Estado=OK       Mejor=    13.8  Tiempo=   2.6min  ETA=  23.2min  RAM=   1499MB
+5302.3s 684 [Trial 155/300] RMSE=    53.1  Estado=OK       Mejor=    13.8  Tiempo=   2.6min  ETA=  23.2min  RAM=   1499MB
+5314.4s 685 [Trial 156/300] RMSE=    53.5  Estado=OK       Mejor=    13.8  Tiempo=   2.8min  ETA=  20.4min  RAM=   1516MB
+5314.6s 686 [Trial 156/300] RMSE=    53.5  Estado=OK       Mejor=    13.8  Tiempo=   2.8min  ETA=  20.4min  RAM=   1516MB
+5326.9s 687 [Trial 157/300] RMSE=    59.8  Estado=OK       Mejor=    13.8  Tiempo=   3.0min  ETA=  18.4min  RAM=   1545MB
+5327.1s 688 [Trial 157/300] RMSE=    59.8  Estado=OK       Mejor=    13.8  Tiempo=   3.0min  ETA=  18.4min  RAM=   1545MB
+5339.6s 689 [Trial 158/300] RMSE=    81.2  Estado=OK       Mejor=    13.8  Tiempo=   3.2min  ETA=  16.8min  RAM=   1573MB
+5339.8s 690 [Trial 158/300] RMSE=    81.2  Estado=OK       Mejor=    13.8  Tiempo=   3.2min  ETA=  16.8min  RAM=   1573MB
+5379.6s 691 [Trial 159/300] RMSE=    17.1  Estado=OK       Mejor=    13.8  Tiempo=   3.9min  ETA=  17.6min  RAM=   1618MB
+5379.8s 692 [Trial 159/300] RMSE=    17.1  Estado=OK       Mejor=    13.8  Tiempo=   3.9min  ETA=  17.6min  RAM=   1618MB
+5416.8s 693 [Trial 160/300] RMSE=    15.1  Estado=OK       Mejor=    13.8  Tiempo=   4.5min  ETA=  18.0min  RAM=   1660MB
+5417.0s 694 [Trial 160/300] RMSE=    15.1  Estado=OK       Mejor=    13.8  Tiempo=   4.5min  ETA=  18.0min  RAM=   1660MB
+5430.2s 695 [Trial 161/300] RMSE=    73.7  Estado=OK       Mejor=    13.8  Tiempo=   4.7min  ETA=  16.7min  RAM=   1662MB
+5430.4s 696 [Trial 161/300] RMSE=    73.7  Estado=OK       Mejor=    13.8  Tiempo=   4.7min  ETA=  16.7min  RAM=   1662MB
+5474.7s 697 [Trial 162/300] RMSE=    14.4  Estado=OK       Mejor=    13.8  Tiempo=   5.5min  ETA=  17.3min  RAM=   1711MB
+5474.9s 698 [Trial 162/300] RMSE=    14.4  Estado=OK       Mejor=    13.8  Tiempo=   5.5min  ETA=  17.3min  RAM=   1711MB
+5488.5s 699 [Trial 163/300] RMSE=    48.4  Estado=OK       Mejor=    13.8  Tiempo=   5.7min  ETA=  16.2min  RAM=   1718MB
+5488.7s 700 [Trial 163/300] RMSE=    48.4  Estado=OK       Mejor=    13.8  Tiempo=   5.7min  ETA=  16.2min  RAM=   1718MB
+5523.6s 701 [Trial 164/300] RMSE=    15.7  Estado=OK       Mejor=    13.8  Tiempo=   6.3min  ETA=  16.1min  RAM=   1759MB
+5523.8s 702 [Trial 164/300] RMSE=    15.7  Estado=OK       Mejor=    13.8  Tiempo=   6.3min  ETA=  16.1min  RAM=   1759MB
+5537.9s 703 [Trial 165/300] RMSE=    69.3  Estado=OK       Mejor=    13.8  Tiempo=   6.5min  ETA=  15.2min  RAM=   1775MB
+5538.1s 704 [Trial 165/300] RMSE=    69.3  Estado=OK       Mejor=    13.8  Tiempo=   6.5min  ETA=  15.2min  RAM=   1775MB
+5552.5s 705 [Trial 166/300] RMSE=    53.7  Estado=OK       Mejor=    13.8  Tiempo=   6.8min  ETA=  14.4min  RAM=   1803MB
+5552.7s 706 [Trial 166/300] RMSE=    53.7  Estado=OK       Mejor=    13.8  Tiempo=   6.8min  ETA=  14.4min  RAM=   1803MB
+5567.0s 707 [Trial 167/300] RMSE=    71.3  Estado=OK       Mejor=    13.8  Tiempo=   7.0min  ETA=  13.6min  RAM=   1839MB
+5567.2s 708 [Trial 167/300] RMSE=    71.3  Estado=OK       Mejor=    13.8  Tiempo=   7.0min  ETA=  13.6min  RAM=   1839MB
+5605.7s 709 [Trial 168/300] RMSE=    16.7  Estado=OK       Mejor=    13.8  Tiempo=   7.6min  ETA=  13.6min  RAM=   1878MB
+5605.9s 710 [Trial 168/300] RMSE=    16.7  Estado=OK       Mejor=    13.8  Tiempo=   7.6min  ETA=  13.6min  RAM=   1878MB
+5650.1s 711 [Trial 169/300] RMSE=    14.7  Estado=OK       Mejor=    13.8  Tiempo=   8.4min  ETA=  13.7min  RAM=   1966MB
+5650.3s 712 [Trial 169/300] RMSE=    14.7  Estado=OK       Mejor=    13.8  Tiempo=   8.4min  ETA=  13.7min  RAM=   1966MB
+5697.1s 713 [Trial 170/300] RMSE=    13.9  Estado=OK       Mejor=    13.8  Tiempo=   9.2min  ETA=  13.7min  RAM=   2020MB
+5697.3s 714 [Trial 170/300] RMSE=    13.9  Estado=OK       Mejor=    13.8  Tiempo=   9.2min  ETA=  13.7min  RAM=   2020MB
+5740.9s 715 [Trial 171/300] RMSE=    15.6  Estado=OK       Mejor=    13.8  Tiempo=   9.9min  ETA=  13.7min  RAM=   2078MB
+5741.1s 716 [Trial 171/300] RMSE=    15.6  Estado=OK       Mejor=    13.8  Tiempo=   9.9min  ETA=  13.7min  RAM=   2078MB
+5761.9s 717 [Trial 172/300] RMSE=    35.3  Estado=OK       Mejor=    13.8  Tiempo=  10.2min  ETA=  13.0min  RAM=   2123MB
+5762.1s 718 [Trial 172/300] RMSE=    35.3  Estado=OK       Mejor=    13.8  Tiempo=  10.2min  ETA=  13.0min  RAM=   2123MB
+5806.1s 719 [Trial 173/300] RMSE=    14.5  Estado=OK       Mejor=    13.8  Tiempo=  11.0min  ETA=  12.9min  RAM=   2194MB
+5806.3s 720 [Trial 173/300] RMSE=    14.5  Estado=OK       Mejor=    13.8  Tiempo=  11.0min  ETA=  12.9min  RAM=   2194MB
+5870.6s 721 [Trial 174/300] RMSE=    13.3  Estado=OK       Mejor=    13.3  Tiempo=  12.1min  ETA=  13.1min  RAM=   2233MB
+5870.8s 722 [Trial 174/300] RMSE=    13.3  Estado=OK       Mejor=    13.3  Tiempo=  12.1min  ETA=  13.1min  RAM=   2233MB
+5922.4s 723 [Trial 175/300] RMSE=    13.9  Estado=OK       Mejor=    13.3  Tiempo=  12.9min  ETA=  12.9min  RAM=   2303MB
+5922.6s 724 [Trial 175/300] RMSE=    13.9  Estado=OK       Mejor=    13.3  Tiempo=  12.9min  ETA=  12.9min  RAM=   2303MB
+5944.8s 725 [Trial 176/300] RMSE=    63.4  Estado=OK       Mejor=    13.3  Tiempo=  13.3min  ETA=  12.3min  RAM=   2349MB
+5945.0s 726 [Trial 176/300] RMSE=    63.4  Estado=OK       Mejor=    13.3  Tiempo=  13.3min  ETA=  12.3min  RAM=   2349MB
+5967.3s 727 [Trial 177/300] RMSE=    70.4  Estado=OK       Mejor=    13.3  Tiempo=  13.7min  ETA=  11.6min  RAM=   2405MB
+5967.5s 728 [Trial 177/300] RMSE=    70.4  Estado=OK       Mejor=    13.3  Tiempo=  13.7min  ETA=  11.6min  RAM=   2405MB
+5990.4s 729 [Trial 178/300] RMSE=    52.3  Estado=OK       Mejor=    13.3  Tiempo=  14.1min  ETA=  11.0min  RAM=   2461MB
+5990.6s 730 [Trial 178/300] RMSE=    52.3  Estado=OK       Mejor=    13.3  Tiempo=  14.1min  ETA=  11.0min  RAM=   2461MB
+6044.2s 731 [Trial 179/300] RMSE=    14.5  Estado=OK       Mejor=    13.3  Tiempo=  14.9min  ETA=  10.8min  RAM=   2554MB
+6044.4s 732 [Trial 179/300] RMSE=    14.5  Estado=OK       Mejor=    13.3  Tiempo=  14.9min  ETA=  10.8min  RAM=   2554MB
+6068.0s 733 [Trial 180/300] RMSE=    77.1  Estado=OK       Mejor=    13.3  Tiempo=  15.3min  ETA=  10.2min  RAM=   2574MB
+6068.2s 734 [Trial 180/300] RMSE=    77.1  Estado=OK       Mejor=    13.3  Tiempo=  15.3min  ETA=  10.2min  RAM=   2574MB
+6092.3s 735 [Trial 181/300] RMSE=    44.5  Estado=OK       Mejor=    13.3  Tiempo=  15.8min  ETA=   9.7min  RAM=   2630MB
+6092.5s 736 [Trial 181/300] RMSE=    44.5  Estado=OK       Mejor=    13.3  Tiempo=  15.8min  ETA=   9.7min  RAM=   2630MB
+6142.1s 737 [Trial 182/300] RMSE=    14.5  Estado=OK       Mejor=    13.3  Tiempo=  16.6min  ETA=   9.3min  RAM=   2704MB
+6142.3s 738 [Trial 182/300] RMSE=    14.5  Estado=OK       Mejor=    13.3  Tiempo=  16.6min  ETA=   9.3min  RAM=   2704MB
+6167.1s 739 [Trial 183/300] RMSE=    44.0  Estado=OK       Mejor=    13.3  Tiempo=  17.0min  ETA=   8.8min  RAM=   2745MB
+6167.3s 740 [Trial 183/300] RMSE=    44.0  Estado=OK       Mejor=    13.3  Tiempo=  17.0min  ETA=   8.8min  RAM=   2745MB
+6169.5s 741 [Trial 184/300] RMSE=     inf  Estado=INF      Mejor=    13.3  Tiempo=  17.0min  ETA=   8.0min  RAM=   2745MB
+6169.7s 742 [Trial 184/300] RMSE=     inf  Estado=INF      Mejor=    13.3  Tiempo=  17.0min  ETA=   8.0min  RAM=   2745MB
+6224.9s 743 [Trial 185/300] RMSE=    13.9  Estado=OK       Mejor=    13.3  Tiempo=  18.0min  ETA=   7.7min  RAM=   2785MB
+6225.1s 744 [Trial 185/300] RMSE=    13.9  Estado=OK       Mejor=    13.3  Tiempo=  18.0min  ETA=   7.7min  RAM=   2785MB
+6250.5s 745 [Trial 186/300] RMSE=    85.4  Estado=OK       Mejor=    13.3  Tiempo=  18.4min  ETA=   7.2min  RAM=   2875MB
+6250.7s 746 [Trial 186/300] RMSE=    85.4  Estado=OK       Mejor=    13.3  Tiempo=  18.4min  ETA=   7.2min  RAM=   2875MB
+6253.0s 747 [Trial 187/300] RMSE=     inf  Estado=INF      Mejor=    13.3  Tiempo=  18.4min  ETA=   6.5min  RAM=   2875MB
+6253.2s 748 [Trial 187/300] RMSE=     inf  Estado=INF      Mejor=    13.3  Tiempo=  18.4min  ETA=   6.5min  RAM=   2875MB
+6279.3s 749 [Trial 188/300] RMSE=    45.2  Estado=OK       Mejor=    13.3  Tiempo=  18.9min  ETA=   6.0min  RAM=   2914MB
+6279.5s 750 [Trial 188/300] RMSE=    45.2  Estado=OK       Mejor=    13.3  Tiempo=  18.9min  ETA=   6.0min  RAM=   2914MB
+6338.7s 751 [Trial 189/300] RMSE=    19.1  Estado=OK       Mejor=    13.3  Tiempo=  19.9min  ETA=   5.6min  RAM=   2981MB
+6339.0s 752 [Trial 189/300] RMSE=    19.1  Estado=OK       Mejor=    13.3  Tiempo=  19.9min  ETA=   5.6min  RAM=   2981MB
+6386.4s 753 [Trial 190/300] RMSE=    20.3  Estado=OK       Mejor=    13.3  Tiempo=  20.7min  ETA=   5.2min  RAM=   3042MB
+6386.6s 754 [Trial 190/300] RMSE=    20.3  Estado=OK       Mejor=    13.3  Tiempo=  20.7min  ETA=   5.2min  RAM=   3042MB
+6413.2s 755 [Trial 191/300] RMSE=    59.9  Estado=OK       Mejor=    13.3  Tiempo=  21.1min  ETA=   4.6min  RAM=   3083MB
+6413.4s 756 [Trial 191/300] RMSE=    59.9  Estado=OK       Mejor=    13.3  Tiempo=  21.1min  ETA=   4.6min  RAM=   3083MB
+6462.5s 757 [Trial 192/300] RMSE=    13.6  Estado=OK       Mejor=    13.3  Tiempo=  21.9min  ETA=   4.2min  RAM=   3149MB
+6462.8s 758 [Trial 192/300] RMSE=    13.6  Estado=OK       Mejor=    13.3  Tiempo=  21.9min  ETA=   4.2min  RAM=   3149MB
+6520.6s 759 [Trial 193/300] RMSE=    15.7  Estado=OK       Mejor=    13.3  Tiempo=  22.9min  ETA=   3.7min  RAM=   3211MB
+6520.8s 760 [Trial 193/300] RMSE=    15.7  Estado=OK       Mejor=    13.3  Tiempo=  22.9min  ETA=   3.7min  RAM=   3211MB
+6548.6s 761 [Trial 194/300] RMSE=    51.3  Estado=OK       Mejor=    13.3  Tiempo=  23.4min  ETA=   3.2min  RAM=   3252MB
+6548.8s 762 [Trial 194/300] RMSE=    51.3  Estado=OK       Mejor=    13.3  Tiempo=  23.4min  ETA=   3.2min  RAM=   3252MB
+6576.9s 763 [Trial 195/300] RMSE=    98.6  Estado=OK       Mejor=    13.3  Tiempo=  23.8min  ETA=   2.6min  RAM=   3311MB
+6577.1s 764 [Trial 195/300] RMSE=    98.6  Estado=OK       Mejor=    13.3  Tiempo=  23.8min  ETA=   2.6min  RAM=   3311MB
+6605.5s 765 [Trial 196/300] RMSE=    65.3  Estado=OK       Mejor=    13.3  Tiempo=  24.3min  ETA=   2.1min  RAM=   3367MB
+6605.7s 766 [Trial 196/300] RMSE=    65.3  Estado=OK       Mejor=    13.3  Tiempo=  24.3min  ETA=   2.1min  RAM=   3367MB
+6608.6s 767 [Trial 197/300] RMSE=     inf  Estado=INF      Mejor=    13.3  Tiempo=  24.4min  ETA=   1.6min  RAM=   3367MB
+6608.9s 768 [Trial 197/300] RMSE=     inf  Estado=INF      Mejor=    13.3  Tiempo=  24.4min  ETA=   1.6min  RAM=   3367MB
+6666.9s 769 [Trial 198/300] RMSE=    13.7  Estado=OK       Mejor=    13.3  Tiempo=  25.3min  ETA=   1.1min  RAM=   3435MB
+6667.2s 770 [Trial 198/300] RMSE=    13.7  Estado=OK       Mejor=    13.3  Tiempo=  25.3min  ETA=   1.1min  RAM=   3435MB
+6727.2s 771 [Trial 199/300] RMSE=    14.7  Estado=OK       Mejor=    13.3  Tiempo=  26.3min  ETA=   0.5min  RAM=   3509MB
+6727.4s 772 [Trial 199/300] RMSE=    14.7  Estado=OK       Mejor=    13.3  Tiempo=  26.3min  ETA=   0.5min  RAM=   3509MB
+6756.9s 773 [Trial 200/300] RMSE=    56.6  Estado=OK       Mejor=    13.3  Tiempo=  26.8min  ETA=   0.0min  RAM=   3536MB
+6756.9s 774 
+6756.9s 775 Batch 4 completado: 50 trials OK. RAM final: 3536 MB
+6757.1s 776 [Trial 200/300] RMSE=    56.6  Estado=OK       Mejor=    13.3  Tiempo=  26.8min  ETA=   0.0min  RAM=   3536MB
+6757.1s 777 
+6757.1s 778 Batch 4 completado: 50 trials OK. RAM final: 3536 MB
+6768.9s 779 Batch 4 finalizado correctamente.
+6768.9s 780 Progreso global: 200/300 trials, mejor RMSE: 13.3 Gs.
+6768.9s 781 RAM proceso principal: 1261 MB (sin leak)
+6768.9s 782 
+6768.9s 783 ────────────────────────────────────────────────────────────
+6768.9s 784 BATCH 5/6 — 50 trials (acumulado: 200/300)
+6768.9s 785 ────────────────────────────────────────────────────────────
+6769.3s 786 2026-03-04 05:17:22.829151: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+6769.4s 787 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+6769.4s 788 E0000 00:00:1772601442.851584  499307 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+6769.4s 789 E0000 00:00:1772601442.858519  499307 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+6769.4s 790 W0000 00:00:1772601442.877856  499307 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+6769.4s 791 W0000 00:00:1772601442.877887  499307 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+6769.4s 792 W0000 00:00:1772601442.877890  499307 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+6769.4s 793 W0000 00:00:1772601442.877892  499307 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+6769.5s 794 2026-03-04 05:17:22.829151: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+6769.5s 795 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+6769.5s 796 E0000 00:00:1772601442.851584  499307 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+6769.5s 797 E0000 00:00:1772601442.858519  499307 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+6769.5s 798 W0000 00:00:1772601442.877856  499307 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+6769.5s 799 W0000 00:00:1772601442.877887  499307 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+6769.5s 800 W0000 00:00:1772601442.877890  499307 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+6769.5s 801 W0000 00:00:1772601442.877892  499307 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+6769.5s 802 
+6769.5s 803 2026-03-04 05:17:22.829151: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+6769.5s 804 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+6769.5s 805 E0000 00:00:1772601442.851584  499307 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+6769.5s 806 E0000 00:00:1772601442.858519  499307 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+6769.5s 807 W0000 00:00:1772601442.877856  499307 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+6769.5s 808 W0000 00:00:1772601442.877887  499307 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+6769.5s 809 W0000 00:00:1772601442.877890  499307 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+6769.5s 810 W0000 00:00:1772601442.877892  499307 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+6775.7s 811 I0000 00:00:1772601449.170701  499307 gpu_device.cc:2019] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 8192 MB memory:  -> device: 0, name: Tesla T4, pci bus id: 0000:00:04.0, compute capability: 7.5
+6775.9s 812 I0000 00:00:1772601449.170701  499307 gpu_device.cc:2019] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 8192 MB memory:  -> device: 0, name: Tesla T4, pci bus id: 0000:00:04.0, compute capability: 7.5
+6775.9s 813 
+6775.9s 814 I0000 00:00:1772601449.170701  499307 gpu_device.cc:2019] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 8192 MB memory:  -> device: 0, name: Tesla T4, pci bus id: 0000:00:04.0, compute capability: 7.5
+6829.4s 815 [Trial 201/300] RMSE=    18.9  Estado=OK       Mejor=    13.3  Tiempo=   0.9min  ETA=  43.9min  RAM=   1444MB
+6829.6s 816 [Trial 201/300] RMSE=    18.9  Estado=OK       Mejor=    13.3  Tiempo=   0.9min  ETA=  43.9min  RAM=   1444MB
+6845.5s 817 [Trial 202/300] RMSE=    48.6  Estado=OK       Mejor=    13.3  Tiempo=   1.2min  ETA=  27.9min  RAM=   1489MB
+6845.8s 818 [Trial 202/300] RMSE=    48.6  Estado=OK       Mejor=    13.3  Tiempo=   1.2min  ETA=  27.9min  RAM=   1489MB
+6862.0s 819 [Trial 203/300] RMSE=    42.2  Estado=OK       Mejor=    13.3  Tiempo=   1.4min  ETA=  22.5min  RAM=   1544MB
+6862.2s 820 [Trial 203/300] RMSE=    42.2  Estado=OK       Mejor=    13.3  Tiempo=   1.4min  ETA=  22.5min  RAM=   1544MB
+6878.8s 821 [Trial 204/300] RMSE=    52.2  Estado=OK       Mejor=    13.3  Tiempo=   1.7min  ETA=  19.8min  RAM=   1601MB
+6879.0s 822 [Trial 204/300] RMSE=    52.2  Estado=OK       Mejor=    13.3  Tiempo=   1.7min  ETA=  19.8min  RAM=   1601MB
+6896.1s 823 [Trial 205/300] RMSE=    91.5  Estado=OK       Mejor=    13.3  Tiempo=   2.0min  ETA=  18.1min  RAM=   1652MB
+6896.3s 824 [Trial 205/300] RMSE=    91.5  Estado=OK       Mejor=    13.3  Tiempo=   2.0min  ETA=  18.1min  RAM=   1652MB
+6913.6s 825 [Trial 206/300] RMSE=    56.0  Estado=OK       Mejor=    13.3  Tiempo=   2.3min  ETA=  16.9min  RAM=   1732MB
+6913.8s 826 [Trial 206/300] RMSE=    56.0  Estado=OK       Mejor=    13.3  Tiempo=   2.3min  ETA=  16.9min  RAM=   1732MB
+6931.7s 827 [Trial 207/300] RMSE=    95.5  Estado=OK       Mejor=    13.3  Tiempo=   2.6min  ETA=  16.0min  RAM=   1770MB
+6931.9s 828 [Trial 207/300] RMSE=    95.5  Estado=OK       Mejor=    13.3  Tiempo=   2.6min  ETA=  16.0min  RAM=   1770MB
+6990.1s 829 [Trial 208/300] RMSE=    14.0  Estado=OK       Mejor=    13.3  Tiempo=   3.6min  ETA=  18.8min  RAM=   1869MB
+6990.3s 830 [Trial 208/300] RMSE=    14.0  Estado=OK       Mejor=    13.3  Tiempo=   3.6min  ETA=  18.8min  RAM=   1869MB
+7009.2s 831 [Trial 209/300] RMSE=    63.8  Estado=OK       Mejor=    13.3  Tiempo=   3.9min  ETA=  17.7min  RAM=   1885MB
+7009.4s 832 [Trial 209/300] RMSE=    63.8  Estado=OK       Mejor=    13.3  Tiempo=   3.9min  ETA=  17.7min  RAM=   1885MB
+7049.4s 833 [Trial 210/300] RMSE=    15.9  Estado=OK       Mejor=    13.3  Tiempo=   4.6min  ETA=  18.2min  RAM=   1950MB
+7049.7s 834 [Trial 210/300] RMSE=    15.9  Estado=OK       Mejor=    13.3  Tiempo=   4.6min  ETA=  18.2min  RAM=   1950MB
+7050.8s 835 [Trial 211/300] RMSE=     inf  Estado=INF      Mejor=    13.3  Tiempo=   4.6min  ETA=  16.3min  RAM=   1950MB
+7051.0s 836 [Trial 211/300] RMSE=     inf  Estado=INF      Mejor=    13.3  Tiempo=   4.6min  ETA=  16.3min  RAM=   1950MB
+7095.7s 837 [Trial 212/300] RMSE=    14.7  Estado=OK       Mejor=    13.3  Tiempo=   5.3min  ETA=  16.9min  RAM=   2009MB
+7095.9s 838 [Trial 212/300] RMSE=    14.7  Estado=OK       Mejor=    13.3  Tiempo=   5.3min  ETA=  16.9min  RAM=   2009MB
+7140.6s 839 [Trial 213/300] RMSE=    15.6  Estado=OK       Mejor=    13.3  Tiempo=   6.1min  ETA=  17.3min  RAM=   2065MB
+7140.8s 840 [Trial 213/300] RMSE=    15.6  Estado=OK       Mejor=    13.3  Tiempo=   6.1min  ETA=  17.3min  RAM=   2065MB
+7199.4s 841 [Trial 214/300] RMSE=    13.7  Estado=OK       Mejor=    13.3  Tiempo=   7.1min  ETA=  18.2min  RAM=   2138MB
+7199.6s 842 [Trial 214/300] RMSE=    13.7  Estado=OK       Mejor=    13.3  Tiempo=   7.1min  ETA=  18.2min  RAM=   2138MB
+7220.2s 843 [Trial 215/300] RMSE=    50.6  Estado=OK       Mejor=    13.3  Tiempo=   7.4min  ETA=  17.3min  RAM=   2167MB
+7220.4s 844 [Trial 215/300] RMSE=    50.6  Estado=OK       Mejor=    13.3  Tiempo=   7.4min  ETA=  17.3min  RAM=   2167MB
+7241.7s 845 [Trial 216/300] RMSE=    40.3  Estado=OK       Mejor=    13.3  Tiempo=   7.8min  ETA=  16.5min  RAM=   2223MB
+7241.9s 846 [Trial 216/300] RMSE=    40.3  Estado=OK       Mejor=    13.3  Tiempo=   7.8min  ETA=  16.5min  RAM=   2223MB
+7289.7s 847 [Trial 217/300] RMSE=    15.2  Estado=OK       Mejor=    13.3  Tiempo=   8.6min  ETA=  16.6min  RAM=   2292MB
+7289.9s 848 [Trial 217/300] RMSE=    15.2  Estado=OK       Mejor=    13.3  Tiempo=   8.6min  ETA=  16.6min  RAM=   2292MB
+7336.3s 849 [Trial 218/300] RMSE=    15.0  Estado=OK       Mejor=    13.3  Tiempo=   9.3min  ETA=  16.6min  RAM=   2351MB
+7336.5s 850 [Trial 218/300] RMSE=    15.0  Estado=OK       Mejor=    13.3  Tiempo=   9.3min  ETA=  16.6min  RAM=   2351MB
+7391.3s 851 [Trial 219/300] RMSE=    14.1  Estado=OK       Mejor=    13.3  Tiempo=  10.3min  ETA=  16.7min  RAM=   2383MB
+7391.5s 852 [Trial 219/300] RMSE=    14.1  Estado=OK       Mejor=    13.3  Tiempo=  10.3min  ETA=  16.7min  RAM=   2383MB
+7414.3s 853 [Trial 220/300] RMSE=    52.9  Estado=OK       Mejor=    13.3  Tiempo=  10.6min  ETA=  16.0min  RAM=   2467MB
+7414.5s 854 [Trial 220/300] RMSE=    52.9  Estado=OK       Mejor=    13.3  Tiempo=  10.6min  ETA=  16.0min  RAM=   2467MB
+7437.2s 855 [Trial 221/300] RMSE=    57.4  Estado=OK       Mejor=    13.3  Tiempo=  11.0min  ETA=  15.2min  RAM=   2505MB
+7437.4s 856 [Trial 221/300] RMSE=    57.4  Estado=OK       Mejor=    13.3  Tiempo=  11.0min  ETA=  15.2min  RAM=   2505MB
+7489.7s 857 [Trial 222/300] RMSE=    13.7  Estado=OK       Mejor=    13.3  Tiempo=  11.9min  ETA=  15.1min  RAM=   2580MB
+7489.9s 858 [Trial 222/300] RMSE=    13.7  Estado=OK       Mejor=    13.3  Tiempo=  11.9min  ETA=  15.1min  RAM=   2580MB
+7539.7s 859 [Trial 223/300] RMSE=    14.3  Estado=OK       Mejor=    13.3  Tiempo=  12.7min  ETA=  14.9min  RAM=   2632MB
+7539.9s 860 [Trial 223/300] RMSE=    14.3  Estado=OK       Mejor=    13.3  Tiempo=  12.7min  ETA=  14.9min  RAM=   2632MB
+7587.3s 861 [Trial 224/300] RMSE=    14.2  Estado=OK       Mejor=    13.3  Tiempo=  13.5min  ETA=  14.7min  RAM=   2662MB
+7587.5s 862 [Trial 224/300] RMSE=    14.2  Estado=OK       Mejor=    13.3  Tiempo=  13.5min  ETA=  14.7min  RAM=   2662MB
+7611.9s 863 [Trial 225/300] RMSE=    76.6  Estado=OK       Mejor=    13.3  Tiempo=  13.9min  ETA=  13.9min  RAM=   2750MB
+7612.1s 864 [Trial 225/300] RMSE=    76.6  Estado=OK       Mejor=    13.3  Tiempo=  13.9min  ETA=  13.9min  RAM=   2750MB
+7638.0s 865 [Trial 226/300] RMSE=    76.8  Estado=OK       Mejor=    13.3  Tiempo=  14.4min  ETA=  13.3min  RAM=   2792MB
+7638.2s 866 [Trial 226/300] RMSE=    76.8  Estado=OK       Mejor=    13.3  Tiempo=  14.4min  ETA=  13.3min  RAM=   2792MB
+7690.1s 867 [Trial 227/300] RMSE=    15.2  Estado=OK       Mejor=    13.3  Tiempo=  15.2min  ETA=  13.0min  RAM=   2865MB
+7690.4s 868 [Trial 227/300] RMSE=    15.2  Estado=OK       Mejor=    13.3  Tiempo=  15.2min  ETA=  13.0min  RAM=   2865MB
+7692.6s 869 [Trial 228/300] RMSE=     inf  Estado=INF      Mejor=    13.3  Tiempo=  15.3min  ETA=  12.0min  RAM=   2865MB
+7692.8s 870 [Trial 228/300] RMSE=     inf  Estado=INF      Mejor=    13.3  Tiempo=  15.3min  ETA=  12.0min  RAM=   2865MB
+7718.3s 871 [Trial 229/300] RMSE=    47.3  Estado=OK       Mejor=    13.3  Tiempo=  15.7min  ETA=  11.4min  RAM=   2906MB
+7718.5s 872 [Trial 229/300] RMSE=    47.3  Estado=OK       Mejor=    13.3  Tiempo=  15.7min  ETA=  11.4min  RAM=   2906MB
+7744.5s 873 [Trial 230/300] RMSE=    42.3  Estado=OK       Mejor=    13.3  Tiempo=  16.1min  ETA=  10.8min  RAM=   2962MB
+7744.7s 874 [Trial 230/300] RMSE=    42.3  Estado=OK       Mejor=    13.3  Tiempo=  16.1min  ETA=  10.8min  RAM=   2962MB
+7824.9s 875 [Trial 231/300] RMSE=    17.7  Estado=OK       Mejor=    13.3  Tiempo=  17.5min  ETA=  10.7min  RAM=   3033MB
+7825.1s 876 [Trial 231/300] RMSE=    17.7  Estado=OK       Mejor=    13.3  Tiempo=  17.5min  ETA=  10.7min  RAM=   3033MB
+7851.6s 877 [Trial 232/300] RMSE=    56.0  Estado=OK       Mejor=    13.3  Tiempo=  17.9min  ETA=  10.1min  RAM=   3078MB
+7851.8s 878 [Trial 232/300] RMSE=    56.0  Estado=OK       Mejor=    13.3  Tiempo=  17.9min  ETA=  10.1min  RAM=   3078MB
+7878.4s 879 [Trial 233/300] RMSE=    48.6  Estado=OK       Mejor=    13.3  Tiempo=  18.4min  ETA=   9.5min  RAM=   3150MB
+7878.6s 880 [Trial 233/300] RMSE=    48.6  Estado=OK       Mejor=    13.3  Tiempo=  18.4min  ETA=   9.5min  RAM=   3150MB
+7931.9s 881 [Trial 234/300] RMSE=    14.0  Estado=OK       Mejor=    13.3  Tiempo=  19.3min  ETA=   9.1min  RAM=   3198MB
+7932.1s 882 [Trial 234/300] RMSE=    14.0  Estado=OK       Mejor=    13.3  Tiempo=  19.3min  ETA=   9.1min  RAM=   3198MB
+7988.8s 883 [Trial 235/300] RMSE=    13.7  Estado=OK       Mejor=    13.3  Tiempo=  20.2min  ETA=   8.7min  RAM=   3258MB
+7989.0s 884 [Trial 235/300] RMSE=    13.7  Estado=OK       Mejor=    13.3  Tiempo=  20.2min  ETA=   8.7min  RAM=   3258MB
+8016.7s 885 [Trial 236/300] RMSE=    47.5  Estado=OK       Mejor=    13.3  Tiempo=  20.7min  ETA=   8.0min  RAM=   3301MB
+8017.0s 886 [Trial 236/300] RMSE=    47.5  Estado=OK       Mejor=    13.3  Tiempo=  20.7min  ETA=   8.0min  RAM=   3301MB
+8019.8s 887 [Trial 237/300] RMSE=     inf  Estado=INF      Mejor=    13.3  Tiempo=  20.7min  ETA=   7.3min  RAM=   3301MB
+8020.0s 888 [Trial 237/300] RMSE=     inf  Estado=INF      Mejor=    13.3  Tiempo=  20.7min  ETA=   7.3min  RAM=   3301MB
+8072.3s 889 [Trial 238/300] RMSE=    14.9  Estado=OK       Mejor=    13.3  Tiempo=  21.6min  ETA=   6.8min  RAM=   3373MB
+8072.5s 890 [Trial 238/300] RMSE=    14.9  Estado=OK       Mejor=    13.3  Tiempo=  21.6min  ETA=   6.8min  RAM=   3373MB
+8128.1s 891 [Trial 239/300] RMSE=    14.5  Estado=OK       Mejor=    13.3  Tiempo=  22.5min  ETA=   6.4min  RAM=   3428MB
+8128.4s 892 [Trial 239/300] RMSE=    14.5  Estado=OK       Mejor=    13.3  Tiempo=  22.5min  ETA=   6.4min  RAM=   3428MB
+8179.0s 893 [Trial 240/300] RMSE=    15.1  Estado=OK       Mejor=    13.3  Tiempo=  23.4min  ETA=   5.8min  RAM=   3492MB
+8179.2s 894 [Trial 240/300] RMSE=    15.1  Estado=OK       Mejor=    13.3  Tiempo=  23.4min  ETA=   5.8min  RAM=   3492MB
+8208.4s 895 [Trial 241/300] RMSE=    64.7  Estado=OK       Mejor=    13.3  Tiempo=  23.9min  ETA=   5.2min  RAM=   3531MB
+8208.6s 896 [Trial 241/300] RMSE=    64.7  Estado=OK       Mejor=    13.3  Tiempo=  23.9min  ETA=   5.2min  RAM=   3531MB
+8271.5s 897 [Trial 242/300] RMSE=    13.5  Estado=OK       Mejor=    13.3  Tiempo=  24.9min  ETA=   4.7min  RAM=   3602MB
+8271.8s 898 [Trial 242/300] RMSE=    13.5  Estado=OK       Mejor=    13.3  Tiempo=  24.9min  ETA=   4.7min  RAM=   3602MB
+8345.8s 899 [Trial 243/300] RMSE=    13.3  Estado=OK       Mejor=    13.3  Tiempo=  26.2min  ETA=   4.3min  RAM=   3658MB
+8346.0s 900 [Trial 243/300] RMSE=    13.3  Estado=OK       Mejor=    13.3  Tiempo=  26.2min  ETA=   4.3min  RAM=   3658MB
+8401.8s 901 [Trial 244/300] RMSE=    13.8  Estado=OK       Mejor=    13.3  Tiempo=  27.1min  ETA=   3.7min  RAM=   3715MB
+8402.0s 902 [Trial 244/300] RMSE=    13.8  Estado=OK       Mejor=    13.3  Tiempo=  27.1min  ETA=   3.7min  RAM=   3715MB
+8469.1s 903 [Trial 245/300] RMSE=    14.0  Estado=OK       Mejor=    13.3  Tiempo=  28.2min  ETA=   3.1min  RAM=   3779MB
+8469.3s 904 [Trial 245/300] RMSE=    14.0  Estado=OK       Mejor=    13.3  Tiempo=  28.2min  ETA=   3.1min  RAM=   3779MB
+8529.8s 905 [Trial 246/300] RMSE=    13.1  Estado=OK       Mejor=    13.1  Tiempo=  29.2min  ETA=   2.5min  RAM=   3794MB
+8530.0s 906 [Trial 246/300] RMSE=    13.1  Estado=OK       Mejor=    13.1  Tiempo=  29.2min  ETA=   2.5min  RAM=   3794MB
+8597.3s 907 [Trial 247/300] RMSE=    14.1  Estado=OK       Mejor=    13.1  Tiempo=  30.4min  ETA=   1.9min  RAM=   3880MB
+8597.5s 908 [Trial 247/300] RMSE=    14.1  Estado=OK       Mejor=    13.1  Tiempo=  30.4min  ETA=   1.9min  RAM=   3880MB
+8629.4s 909 [Trial 248/300] RMSE=    63.0  Estado=OK       Mejor=    13.1  Tiempo=  30.9min  ETA=   1.3min  RAM=   3921MB
+8629.6s 910 [Trial 248/300] RMSE=    63.0  Estado=OK       Mejor=    13.1  Tiempo=  30.9min  ETA=   1.3min  RAM=   3921MB
+8661.7s 911 [Trial 249/300] RMSE=    59.3  Estado=OK       Mejor=    13.1  Tiempo=  31.4min  ETA=   0.6min  RAM=   3999MB
+8661.9s 912 [Trial 249/300] RMSE=    59.3  Estado=OK       Mejor=    13.1  Tiempo=  31.4min  ETA=   0.6min  RAM=   3999MB
+8694.1s 913 [Trial 250/300] RMSE=    67.2  Estado=OK       Mejor=    13.1  Tiempo=  32.0min  ETA=   0.0min  RAM=   4044MB
+8694.1s 914 
+8694.1s 915 Batch 5 completado: 50 trials OK. RAM final: 4044 MB
+8694.4s 916 [Trial 250/300] RMSE=    67.2  Estado=OK       Mejor=    13.1  Tiempo=  32.0min  ETA=   0.0min  RAM=   4044MB
+8694.4s 917 
+8694.4s 918 Batch 5 completado: 50 trials OK. RAM final: 4044 MB
+8708.7s 919 Batch 5 finalizado correctamente.
+8708.9s 920 Progreso global: 250/300 trials, mejor RMSE: 13.1 Gs.
+8708.9s 921 RAM proceso principal: 1262 MB (sin leak)
+8708.9s 922 
+8708.9s 923 ────────────────────────────────────────────────────────────
+8708.9s 924 BATCH 6/6 — 50 trials (acumulado: 250/300)
+8708.9s 925 ────────────────────────────────────────────────────────────
+8709.3s 926 2026-03-04 05:49:42.820236: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+8709.4s 927 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+8709.4s 928 E0000 00:00:1772603382.841360  631389 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+8709.4s 929 E0000 00:00:1772603382.847907  631389 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+8709.4s 930 W0000 00:00:1772603382.864928  631389 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+8709.4s 931 W0000 00:00:1772603382.864953  631389 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+8709.4s 932 W0000 00:00:1772603382.864956  631389 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+8709.4s 933 W0000 00:00:1772603382.864958  631389 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+8709.5s 934 2026-03-04 05:49:42.820236: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+8709.5s 935 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+8709.5s 936 E0000 00:00:1772603382.841360  631389 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+8709.5s 937 E0000 00:00:1772603382.847907  631389 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+8709.5s 938 W0000 00:00:1772603382.864928  631389 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+8709.5s 939 W0000 00:00:1772603382.864953  631389 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+8709.5s 940 W0000 00:00:1772603382.864956  631389 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+8709.5s 941 W0000 00:00:1772603382.864958  631389 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+8709.5s 942 
+8709.5s 943 2026-03-04 05:49:42.820236: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+8709.5s 944 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+8709.5s 945 E0000 00:00:1772603382.841360  631389 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+8709.5s 946 E0000 00:00:1772603382.847907  631389 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+8709.5s 947 W0000 00:00:1772603382.864928  631389 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+8709.5s 948 W0000 00:00:1772603382.864953  631389 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+8709.5s 949 W0000 00:00:1772603382.864956  631389 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+8709.5s 950 W0000 00:00:1772603382.864958  631389 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+8715.6s 951 I0000 00:00:1772603389.055329  631389 gpu_device.cc:2019] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 8192 MB memory:  -> device: 0, name: Tesla T4, pci bus id: 0000:00:04.0, compute capability: 7.5
+8715.8s 952 I0000 00:00:1772603389.055329  631389 gpu_device.cc:2019] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 8192 MB memory:  -> device: 0, name: Tesla T4, pci bus id: 0000:00:04.0, compute capability: 7.5
+8715.8s 953 
+8715.8s 954 I0000 00:00:1772603389.055329  631389 gpu_device.cc:2019] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 8192 MB memory:  -> device: 0, name: Tesla T4, pci bus id: 0000:00:04.0, compute capability: 7.5
+8735.6s 955 [Trial 251/300] RMSE=    54.8  Estado=OK       Mejor=    13.1  Tiempo=   0.3min  ETA=  16.3min  RAM=   1456MB
+8735.8s 956 [Trial 251/300] RMSE=    54.8  Estado=OK       Mejor=    13.1  Tiempo=   0.3min  ETA=  16.3min  RAM=   1456MB
+8751.6s 957 [Trial 252/300] RMSE=    50.0  Estado=OK       Mejor=    13.1  Tiempo=   0.6min  ETA=  14.4min  RAM=   1495MB
+8751.8s 958 [Trial 252/300] RMSE=    50.0  Estado=OK       Mejor=    13.1  Tiempo=   0.6min  ETA=  14.4min  RAM=   1495MB
+8769.3s 959 [Trial 253/300] RMSE=    45.1  Estado=OK       Mejor=    13.1  Tiempo=   0.9min  ETA=  14.0min  RAM=   1552MB
+8769.5s 960 [Trial 253/300] RMSE=    45.1  Estado=OK       Mejor=    13.1  Tiempo=   0.9min  ETA=  14.0min  RAM=   1552MB
+8786.0s 961 [Trial 254/300] RMSE=    56.3  Estado=OK       Mejor=    13.1  Tiempo=   1.2min  ETA=  13.5min  RAM=   1608MB
+8786.2s 962 [Trial 254/300] RMSE=    56.3  Estado=OK       Mejor=    13.1  Tiempo=   1.2min  ETA=  13.5min  RAM=   1608MB
+8803.2s 963 [Trial 255/300] RMSE=    60.0  Estado=OK       Mejor=    13.1  Tiempo=   1.5min  ETA=  13.1min  RAM=   1665MB
+8803.4s 964 [Trial 255/300] RMSE=    60.0  Estado=OK       Mejor=    13.1  Tiempo=   1.5min  ETA=  13.1min  RAM=   1665MB
+8821.1s 965 [Trial 256/300] RMSE=    55.3  Estado=OK       Mejor=    13.1  Tiempo=   1.8min  ETA=  12.9min  RAM=   1721MB
+8821.3s 966 [Trial 256/300] RMSE=    55.3  Estado=OK       Mejor=    13.1  Tiempo=   1.8min  ETA=  12.9min  RAM=   1721MB
+8839.8s 967 [Trial 257/300] RMSE=    88.1  Estado=OK       Mejor=    13.1  Tiempo=   2.1min  ETA=  12.7min  RAM=   1787MB
+8840.1s 968 [Trial 257/300] RMSE=    88.1  Estado=OK       Mejor=    13.1  Tiempo=   2.1min  ETA=  12.7min  RAM=   1787MB
+8890.5s 969 [Trial 258/300] RMSE=    14.3  Estado=OK       Mejor=    13.1  Tiempo=   2.9min  ETA=  15.3min  RAM=   1852MB
+8890.7s 970 [Trial 258/300] RMSE=    14.3  Estado=OK       Mejor=    13.1  Tiempo=   2.9min  ETA=  15.3min  RAM=   1852MB
+8891.6s 971 [Trial 259/300] RMSE=     inf  Estado=INF      Mejor=    13.1  Tiempo=   2.9min  ETA=  13.4min  RAM=   1852MB
+8891.8s 972 [Trial 259/300] RMSE=     inf  Estado=INF      Mejor=    13.1  Tiempo=   2.9min  ETA=  13.4min  RAM=   1852MB
+8910.1s 973 [Trial 260/300] RMSE=    75.8  Estado=OK       Mejor=    13.1  Tiempo=   3.2min  ETA=  13.0min  RAM=   1897MB
+8910.3s 974 [Trial 260/300] RMSE=    75.8  Estado=OK       Mejor=    13.1  Tiempo=   3.2min  ETA=  13.0min  RAM=   1897MB
+8929.0s 975 [Trial 261/300] RMSE=    72.6  Estado=OK       Mejor=    13.1  Tiempo=   3.6min  ETA=  12.6min  RAM=   1971MB
+8929.2s 976 [Trial 261/300] RMSE=    72.6  Estado=OK       Mejor=    13.1  Tiempo=   3.6min  ETA=  12.6min  RAM=   1971MB
+8930.3s 977 [Trial 262/300] RMSE=     inf  Estado=INF      Mejor=    13.1  Tiempo=   3.6min  ETA=  11.3min  RAM=   1971MB
+8930.5s 978 [Trial 262/300] RMSE=     inf  Estado=INF      Mejor=    13.1  Tiempo=   3.6min  ETA=  11.3min  RAM=   1971MB
+8972.3s 979 [Trial 263/300] RMSE=    14.3  Estado=OK       Mejor=    13.1  Tiempo=   4.3min  ETA=  12.2min  RAM=   2022MB
+8972.5s 980 [Trial 263/300] RMSE=    14.3  Estado=OK       Mejor=    13.1  Tiempo=   4.3min  ETA=  12.2min  RAM=   2022MB
+8993.2s 981 [Trial 264/300] RMSE=    35.4  Estado=OK       Mejor=    13.1  Tiempo=   4.6min  ETA=  11.9min  RAM=   2067MB
+8993.4s 982 [Trial 264/300] RMSE=    35.4  Estado=OK       Mejor=    13.1  Tiempo=   4.6min  ETA=  11.9min  RAM=   2067MB
+9050.7s 983 [Trial 265/300] RMSE=    13.6  Estado=OK       Mejor=    13.1  Tiempo=   5.6min  ETA=  13.0min  RAM=   2135MB
+9050.9s 984 [Trial 265/300] RMSE=    13.6  Estado=OK       Mejor=    13.1  Tiempo=   5.6min  ETA=  13.0min  RAM=   2135MB
+9072.5s 985 [Trial 266/300] RMSE=    38.5  Estado=OK       Mejor=    13.1  Tiempo=   5.9min  ETA=  12.6min  RAM=   2180MB
+9072.7s 986 [Trial 266/300] RMSE=    38.5  Estado=OK       Mejor=    13.1  Tiempo=   5.9min  ETA=  12.6min  RAM=   2180MB
+9093.2s 987 [Trial 267/300] RMSE=    52.4  Estado=OK       Mejor=    13.1  Tiempo=   6.3min  ETA=  12.2min  RAM=   2235MB
+9093.4s 988 [Trial 267/300] RMSE=    52.4  Estado=OK       Mejor=    13.1  Tiempo=   6.3min  ETA=  12.2min  RAM=   2235MB
+9115.1s 989 [Trial 268/300] RMSE=    90.0  Estado=OK       Mejor=    13.1  Tiempo=   6.7min  ETA=  11.8min  RAM=   2298MB
+9115.3s 990 [Trial 268/300] RMSE=    90.0  Estado=OK       Mejor=    13.1  Tiempo=   6.7min  ETA=  11.8min  RAM=   2298MB
+9116.8s 991 [Trial 269/300] RMSE=     inf  Estado=INF      Mejor=    13.1  Tiempo=   6.7min  ETA=  10.9min  RAM=   2298MB
+9117.0s 992 [Trial 269/300] RMSE=     inf  Estado=INF      Mejor=    13.1  Tiempo=   6.7min  ETA=  10.9min  RAM=   2298MB
+9138.3s 993 [Trial 270/300] RMSE=    55.2  Estado=OK       Mejor=    13.1  Tiempo=   7.0min  ETA=  10.6min  RAM=   2352MB
+9138.6s 994 [Trial 270/300] RMSE=    55.2  Estado=OK       Mejor=    13.1  Tiempo=   7.0min  ETA=  10.6min  RAM=   2352MB
+9140.1s 995 [Trial 271/300] RMSE=     inf  Estado=INF      Mejor=    13.1  Tiempo=   7.1min  ETA=   9.8min  RAM=   2352MB
+9140.3s 996 [Trial 271/300] RMSE=     inf  Estado=INF      Mejor=    13.1  Tiempo=   7.1min  ETA=   9.8min  RAM=   2352MB
+9198.9s 997 [Trial 272/300] RMSE=    13.1  Estado=OK       Mejor=    13.1  Tiempo=   8.1min  ETA=  10.3min  RAM=   2424MB
+9199.1s 998 [Trial 272/300] RMSE=    13.1  Estado=OK       Mejor=    13.1  Tiempo=   8.1min  ETA=  10.3min  RAM=   2424MB
+9221.3s 999 [Trial 273/300] RMSE=    65.8  Estado=OK       Mejor=    13.1  Tiempo=   8.4min  ETA=   9.9min  RAM=   2464MB
+9221.5s 1000 [Trial 273/300] RMSE=    65.8  Estado=OK       Mejor=    13.1  Tiempo=   8.4min  ETA=   9.9min  RAM=   2464MB
+9244.0s 1001 [Trial 274/300] RMSE=    50.1  Estado=OK       Mejor=    13.1  Tiempo=   8.8min  ETA=   9.5min  RAM=   2520MB
+9244.2s 1002 [Trial 274/300] RMSE=    50.1  Estado=OK       Mejor=    13.1  Tiempo=   8.8min  ETA=   9.5min  RAM=   2520MB
+9294.9s 1003 [Trial 275/300] RMSE=    13.8  Estado=OK       Mejor=    13.1  Tiempo=   9.7min  ETA=   9.7min  RAM=   2588MB
+9295.1s 1004 [Trial 275/300] RMSE=    13.8  Estado=OK       Mejor=    13.1  Tiempo=   9.7min  ETA=   9.7min  RAM=   2588MB
+9350.3s 1005 [Trial 276/300] RMSE=    20.7  Estado=OK       Mejor=    13.1  Tiempo=  10.6min  ETA=   9.8min  RAM=   2645MB
+9350.5s 1006 [Trial 276/300] RMSE=    20.7  Estado=OK       Mejor=    13.1  Tiempo=  10.6min  ETA=   9.8min  RAM=   2645MB
+9404.7s 1007 [Trial 277/300] RMSE=    13.8  Estado=OK       Mejor=    13.1  Tiempo=  11.5min  ETA=   9.8min  RAM=   2703MB
+9404.9s 1008 [Trial 277/300] RMSE=    13.8  Estado=OK       Mejor=    13.1  Tiempo=  11.5min  ETA=   9.8min  RAM=   2703MB
+9465.3s 1009 [Trial 278/300] RMSE=    13.9  Estado=OK       Mejor=    13.1  Tiempo=  12.5min  ETA=   9.8min  RAM=   2767MB
+9465.5s 1010 [Trial 278/300] RMSE=    13.9  Estado=OK       Mejor=    13.1  Tiempo=  12.5min  ETA=   9.8min  RAM=   2767MB
+9489.8s 1011 [Trial 279/300] RMSE=    63.2  Estado=OK       Mejor=    13.1  Tiempo=  12.9min  ETA=   9.3min  RAM=   2805MB
+9490.0s 1012 [Trial 279/300] RMSE=    63.2  Estado=OK       Mejor=    13.1  Tiempo=  12.9min  ETA=   9.3min  RAM=   2805MB
+9514.8s 1013 [Trial 280/300] RMSE=    70.1  Estado=OK       Mejor=    13.1  Tiempo=  13.3min  ETA=   8.9min  RAM=   2879MB
+9515.0s 1014 [Trial 280/300] RMSE=    70.1  Estado=OK       Mejor=    13.1  Tiempo=  13.3min  ETA=   8.9min  RAM=   2879MB
+9565.4s 1015 [Trial 281/300] RMSE=    13.7  Estado=OK       Mejor=    13.1  Tiempo=  14.2min  ETA=   8.7min  RAM=   2928MB
+9565.6s 1016 [Trial 281/300] RMSE=    13.7  Estado=OK       Mejor=    13.1  Tiempo=  14.2min  ETA=   8.7min  RAM=   2928MB
+9591.2s 1017 [Trial 282/300] RMSE=    53.2  Estado=OK       Mejor=    13.1  Tiempo=  14.6min  ETA=   8.2min  RAM=   2973MB
+9591.4s 1018 [Trial 282/300] RMSE=    53.2  Estado=OK       Mejor=    13.1  Tiempo=  14.6min  ETA=   8.2min  RAM=   2973MB
+9617.3s 1019 [Trial 283/300] RMSE=    66.9  Estado=OK       Mejor=    13.1  Tiempo=  15.0min  ETA=   7.7min  RAM=   3029MB
+9617.6s 1020 [Trial 283/300] RMSE=    66.9  Estado=OK       Mejor=    13.1  Tiempo=  15.0min  ETA=   7.7min  RAM=   3029MB
+9672.7s 1021 [Trial 284/300] RMSE=    14.3  Estado=OK       Mejor=    13.1  Tiempo=  16.0min  ETA=   7.5min  RAM=   3097MB
+9672.9s 1022 [Trial 284/300] RMSE=    14.3  Estado=OK       Mejor=    13.1  Tiempo=  16.0min  ETA=   7.5min  RAM=   3097MB
+9700.1s 1023 [Trial 285/300] RMSE=    70.9  Estado=OK       Mejor=    13.1  Tiempo=  16.4min  ETA=   7.0min  RAM=   3148MB
+9700.3s 1024 [Trial 285/300] RMSE=    70.9  Estado=OK       Mejor=    13.1  Tiempo=  16.4min  ETA=   7.0min  RAM=   3148MB
+9727.3s 1025 [Trial 286/300] RMSE=    56.4  Estado=OK       Mejor=    13.1  Tiempo=  16.9min  ETA=   6.6min  RAM=   3200MB
+9727.6s 1026 [Trial 286/300] RMSE=    56.4  Estado=OK       Mejor=    13.1  Tiempo=  16.9min  ETA=   6.6min  RAM=   3200MB
+9754.9s 1027 [Trial 287/300] RMSE=    80.3  Estado=OK       Mejor=    13.1  Tiempo=  17.3min  ETA=   6.1min  RAM=   3257MB
+9755.1s 1028 [Trial 287/300] RMSE=    80.3  Estado=OK       Mejor=    13.1  Tiempo=  17.3min  ETA=   6.1min  RAM=   3257MB
+9757.8s 1029 [Trial 288/300] RMSE=     inf  Estado=INF      Mejor=    13.1  Tiempo=  17.4min  ETA=   5.5min  RAM=   3257MB
+9758.0s 1030 [Trial 288/300] RMSE=     inf  Estado=INF      Mejor=    13.1  Tiempo=  17.4min  ETA=   5.5min  RAM=   3257MB
+9785.8s 1031 [Trial 289/300] RMSE=    56.7  Estado=OK       Mejor=    13.1  Tiempo=  17.8min  ETA=   5.0min  RAM=   3313MB
+9786.0s 1032 [Trial 289/300] RMSE=    56.7  Estado=OK       Mejor=    13.1  Tiempo=  17.8min  ETA=   5.0min  RAM=   3313MB
+9788.7s 1033 [Trial 290/300] RMSE=     inf  Estado=INF      Mejor=    13.1  Tiempo=  17.9min  ETA=   4.5min  RAM=   3313MB
+9789.0s 1034 [Trial 290/300] RMSE=     inf  Estado=INF      Mejor=    13.1  Tiempo=  17.9min  ETA=   4.5min  RAM=   3313MB
+9855.4s 1035 [Trial 291/300] RMSE=    13.8  Estado=OK       Mejor=    13.1  Tiempo=  19.0min  ETA=   4.2min  RAM=   3410MB
+9855.6s 1036 [Trial 291/300] RMSE=    13.8  Estado=OK       Mejor=    13.1  Tiempo=  19.0min  ETA=   4.2min  RAM=   3410MB
+9910.3s 1037 [Trial 292/300] RMSE=    14.3  Estado=OK       Mejor=    13.1  Tiempo=  19.9min  ETA=   3.8min  RAM=   3440MB
+9910.5s 1038 [Trial 292/300] RMSE=    14.3  Estado=OK       Mejor=    13.1  Tiempo=  19.9min  ETA=   3.8min  RAM=   3440MB
+9939.3s 1039 [Trial 293/300] RMSE=    58.4  Estado=OK       Mejor=    13.1  Tiempo=  20.4min  ETA=   3.3min  RAM=   3485MB
+9939.5s 1040 [Trial 293/300] RMSE=    58.4  Estado=OK       Mejor=    13.1  Tiempo=  20.4min  ETA=   3.3min  RAM=   3485MB
+10003.0s 1041 [Trial 294/300] RMSE=    14.4  Estado=OK       Mejor=    13.1  Tiempo=  21.5min  ETA=   2.9min  RAM=   3541MB
+10003.2s 1042 [Trial 294/300] RMSE=    14.4  Estado=OK       Mejor=    13.1  Tiempo=  21.5min  ETA=   2.9min  RAM=   3541MB
+10055.4s 1043 [Trial 295/300] RMSE=    14.2  Estado=OK       Mejor=    13.1  Tiempo=  22.3min  ETA=   2.5min  RAM=   3610MB
+10055.6s 1044 [Trial 295/300] RMSE=    14.2  Estado=OK       Mejor=    13.1  Tiempo=  22.3min  ETA=   2.5min  RAM=   3610MB
+10124.2s 1045 [Trial 296/300] RMSE=    13.3  Estado=OK       Mejor=    13.1  Tiempo=  23.5min  ETA=   2.0min  RAM=   3664MB
+10124.4s 1046 [Trial 296/300] RMSE=    13.3  Estado=OK       Mejor=    13.1  Tiempo=  23.5min  ETA=   2.0min  RAM=   3664MB
+10155.1s 1047 [Trial 297/300] RMSE=    77.3  Estado=OK       Mejor=    13.1  Tiempo=  24.0min  ETA=   1.5min  RAM=   3716MB
+10155.4s 1048 [Trial 297/300] RMSE=    77.3  Estado=OK       Mejor=    13.1  Tiempo=  24.0min  ETA=   1.5min  RAM=   3716MB
+10225.3s 1049 [Trial 298/300] RMSE=    17.9  Estado=OK       Mejor=    13.1  Tiempo=  25.2min  ETA=   1.0min  RAM=   3796MB
+10225.6s 1050 [Trial 298/300] RMSE=    17.9  Estado=OK       Mejor=    13.1  Tiempo=  25.2min  ETA=   1.0min  RAM=   3796MB
+10287.3s 1051 [Trial 299/300] RMSE=    13.5  Estado=OK       Mejor=    13.1  Tiempo=  26.2min  ETA=   0.5min  RAM=   3834MB
+10287.5s 1052 [Trial 299/300] RMSE=    13.5  Estado=OK       Mejor=    13.1  Tiempo=  26.2min  ETA=   0.5min  RAM=   3834MB
+10342.0s 1053 [Trial 300/300] RMSE=    20.0  Estado=OK       Mejor=    13.1  Tiempo=  27.1min  ETA=   0.0min  RAM=   3890MB
+10342.0s 1054 
+10342.0s 1055 Batch 6 completado: 50 trials OK. RAM final: 3890 MB
+10342.2s 1056 [Trial 300/300] RMSE=    20.0  Estado=OK       Mejor=    13.1  Tiempo=  27.1min  ETA=   0.0min  RAM=   3890MB
+10342.2s 1057 
+10342.2s 1058 Batch 6 completado: 50 trials OK. RAM final: 3890 MB
+10355.7s 1059 Batch 6 finalizado correctamente.
+10355.9s 1060 Progreso global: 300/300 trials, mejor RMSE: 13.1 Gs.
+10355.9s 1061 RAM proceso principal: 1265 MB (sin leak)
+10356.1s 1062 
+10356.1s 1063 ======================================================================
+10356.1s 1064 RESULTADOS DE LA OPTIMIZACIÓN OPTUNA
+10356.1s 1065 ======================================================================
+10356.5s 1066 
+10356.5s 1067 Tiempo de optimización : 171.8 min
+10356.5s 1068 Trials completados     : 261
+10356.5s 1069 Trials podados (pruned): 0
+10356.5s 1070 Trials fallidos        : 0
+10356.5s 1071 
+10356.5s 1072 Mejores hiperparámetros encontrados:
+10356.5s 1073 lookback            : 3
+10356.5s 1074 n_layers            : 1
+10356.5s 1075 hidden_size         : 64
+10356.5s 1076 bidirectional       : True
+10356.5s 1077 dropout_rate        : 0.35000000000000003
+10356.5s 1078 recurrent_dropout   : 0.2
+10356.5s 1079 optimizer           : RMSprop
+10356.5s 1080 learning_rate       : 0.0026621662365124968
+10356.5s 1081 weight_decay        : 9.632108623467832e-05
+10356.5s 1082 batch_size          : 16
+10356.5s 1083 scheduler           : StepLR
+10356.5s 1084 
+10356.5s 1085 Mejor RMSE de validación (Optuna): 13.09 Gs.
+10356.5s 1086 
+10356.5s 1087 --- Top 10 trials ---
+10356.5s 1088 Rank  1 | Trial #245 | RMSE:    13.09 Gs. | lookback= 3, hidden= 64, layers=1, bi=True , lr=2.66e-03
+10356.5s 1089 Rank  2 | Trial #271 | RMSE:    13.13 Gs. | lookback= 3, hidden= 64, layers=1, bi=True , lr=2.78e-03
+10356.5s 1090 Rank  3 | Trial #173 | RMSE:    13.30 Gs. | lookback= 3, hidden= 64, layers=1, bi=True , lr=2.85e-03
+10356.5s 1091 Rank  4 | Trial #295 | RMSE:    13.30 Gs. | lookback= 3, hidden= 64, layers=1, bi=True , lr=3.46e-03
+10356.5s 1092 Rank  5 | Trial #242 | RMSE:    13.34 Gs. | lookback= 3, hidden= 64, layers=1, bi=True , lr=2.76e-03
+10356.5s 1093 Rank  6 | Trial #241 | RMSE:    13.50 Gs. | lookback= 3, hidden= 64, layers=1, bi=True , lr=3.28e-03
+10356.5s 1094 Rank  7 | Trial #298 | RMSE:    13.50 Gs. | lookback= 3, hidden= 64, layers=1, bi=True , lr=2.22e-03
+10356.5s 1095 Rank  8 | Trial #264 | RMSE:    13.62 Gs. | lookback= 3, hidden= 64, layers=1, bi=True , lr=2.80e-03
+10356.5s 1096 Rank  9 | Trial #191 | RMSE:    13.63 Gs. | lookback= 3, hidden= 64, layers=1, bi=True , lr=3.10e-03
+10356.5s 1097 Rank 10 | Trial #213 | RMSE:    13.68 Gs. | lookback= 3, hidden= 64, layers=1, bi=True , lr=3.41e-03
+10357.0s 1098 Guardado: optuna_01_convergencia.png
+10361.8s 1099 Guardado: optuna_02_importancia_params.png
+10361.9s 1100 [W 2026-03-04 06:17:15,337] Trial 2 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1101 
+10361.9s 1102 [W 2026-03-04 06:17:15,337] Trial 2 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1103 [W 2026-03-04 06:17:15,338] Trial 6 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1104 
+10361.9s 1105 [W 2026-03-04 06:17:15,338] Trial 6 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1106 [W 2026-03-04 06:17:15,339] Trial 7 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1107 
+10361.9s 1108 [W 2026-03-04 06:17:15,339] Trial 7 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1109 [W 2026-03-04 06:17:15,340] Trial 9 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1110 
+10361.9s 1111 [W 2026-03-04 06:17:15,340] Trial 9 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1112 [W 2026-03-04 06:17:15,340] Trial 10 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1113 
+10361.9s 1114 [W 2026-03-04 06:17:15,340] Trial 10 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1115 [W 2026-03-04 06:17:15,341] Trial 11 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1116 
+10361.9s 1117 [W 2026-03-04 06:17:15,341] Trial 11 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1118 [W 2026-03-04 06:17:15,342] Trial 14 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1119 
+10361.9s 1120 [W 2026-03-04 06:17:15,342] Trial 14 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1121 [W 2026-03-04 06:17:15,343] Trial 15 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1122 
+10361.9s 1123 [W 2026-03-04 06:17:15,343] Trial 15 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1124 [W 2026-03-04 06:17:15,343] Trial 17 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1125 
+10361.9s 1126 [W 2026-03-04 06:17:15,343] Trial 17 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1127 [W 2026-03-04 06:17:15,344] Trial 18 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1128 
+10361.9s 1129 [W 2026-03-04 06:17:15,344] Trial 18 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1130 [W 2026-03-04 06:17:15,345] Trial 20 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1131 
+10361.9s 1132 [W 2026-03-04 06:17:15,345] Trial 20 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1133 [W 2026-03-04 06:17:15,345] Trial 23 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1134 
+10361.9s 1135 [W 2026-03-04 06:17:15,345] Trial 23 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1136 [W 2026-03-04 06:17:15,346] Trial 24 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1137 
+10361.9s 1138 [W 2026-03-04 06:17:15,346] Trial 24 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1139 [W 2026-03-04 06:17:15,347] Trial 27 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1140 
+10361.9s 1141 [W 2026-03-04 06:17:15,347] Trial 27 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1142 [W 2026-03-04 06:17:15,347] Trial 28 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1143 
+10361.9s 1144 [W 2026-03-04 06:17:15,347] Trial 28 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1145 [W 2026-03-04 06:17:15,348] Trial 29 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1146 
+10361.9s 1147 [W 2026-03-04 06:17:15,348] Trial 29 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1148 [W 2026-03-04 06:17:15,349] Trial 32 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1149 
+10361.9s 1150 [W 2026-03-04 06:17:15,349] Trial 32 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1151 [W 2026-03-04 06:17:15,349] Trial 34 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1152 
+10361.9s 1153 [W 2026-03-04 06:17:15,349] Trial 34 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1154 [W 2026-03-04 06:17:15,350] Trial 36 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1155 
+10361.9s 1156 [W 2026-03-04 06:17:15,350] Trial 36 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1157 [W 2026-03-04 06:17:15,351] Trial 37 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1158 
+10361.9s 1159 [W 2026-03-04 06:17:15,351] Trial 37 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1160 [W 2026-03-04 06:17:15,351] Trial 42 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1161 
+10361.9s 1162 [W 2026-03-04 06:17:15,351] Trial 42 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1163 [W 2026-03-04 06:17:15,352] Trial 48 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1164 
+10361.9s 1165 [W 2026-03-04 06:17:15,352] Trial 48 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1166 [W 2026-03-04 06:17:15,353] Trial 85 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1167 
+10361.9s 1168 [W 2026-03-04 06:17:15,353] Trial 85 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1169 [W 2026-03-04 06:17:15,354] Trial 100 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1170 
+10361.9s 1171 [W 2026-03-04 06:17:15,354] Trial 100 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1172 [W 2026-03-04 06:17:15,355] Trial 119 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1173 
+10361.9s 1174 [W 2026-03-04 06:17:15,355] Trial 119 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1175 [W 2026-03-04 06:17:15,355] Trial 122 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1176 
+10361.9s 1177 [W 2026-03-04 06:17:15,355] Trial 122 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1178 [W 2026-03-04 06:17:15,359] Trial 148 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1179 
+10361.9s 1180 [W 2026-03-04 06:17:15,359] Trial 148 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1181 [W 2026-03-04 06:17:15,359] Trial 183 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1182 
+10361.9s 1183 [W 2026-03-04 06:17:15,359] Trial 183 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1184 [W 2026-03-04 06:17:15,360] Trial 186 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1185 
+10361.9s 1186 [W 2026-03-04 06:17:15,360] Trial 186 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1187 [W 2026-03-04 06:17:15,361] Trial 196 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1188 
+10361.9s 1189 [W 2026-03-04 06:17:15,361] Trial 196 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1190 [W 2026-03-04 06:17:15,361] Trial 210 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1191 
+10361.9s 1192 [W 2026-03-04 06:17:15,361] Trial 210 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1193 [W 2026-03-04 06:17:15,362] Trial 227 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1194 
+10361.9s 1195 [W 2026-03-04 06:17:15,362] Trial 227 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1196 [W 2026-03-04 06:17:15,363] Trial 236 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1197 
+10361.9s 1198 [W 2026-03-04 06:17:15,363] Trial 236 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1199 [W 2026-03-04 06:17:15,364] Trial 258 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1200 
+10361.9s 1201 [W 2026-03-04 06:17:15,364] Trial 258 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1202 [W 2026-03-04 06:17:15,364] Trial 261 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1203 
+10361.9s 1204 [W 2026-03-04 06:17:15,364] Trial 261 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1205 [W 2026-03-04 06:17:15,365] Trial 268 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1206 
+10361.9s 1207 [W 2026-03-04 06:17:15,365] Trial 268 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1208 [W 2026-03-04 06:17:15,366] Trial 270 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1209 
+10361.9s 1210 [W 2026-03-04 06:17:15,366] Trial 270 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1211 [W 2026-03-04 06:17:15,366] Trial 287 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1212 
+10361.9s 1213 [W 2026-03-04 06:17:15,366] Trial 287 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1214 [W 2026-03-04 06:17:15,367] Trial 289 is omitted in visualization because its objective value is inf or nan.
+10361.9s 1215 
+10361.9s 1216 [W 2026-03-04 06:17:15,367] Trial 289 is omitted in visualization because its objective value is inf or nan.
+10364.2s 1217 
+10364.2s 1218 Guardado: optuna_resultados.json
+10364.2s 1219 
+10364.2s 1220 ======================================================================
+10364.2s 1221 ENTRENAMIENTO DEL MODELO FINAL
+10364.2s 1222 ======================================================================
+10364.2s 1223 
+10364.2s 1224 Lookback óptimo    : 3 meses
+10364.2s 1225 Secuencias train   : 95
+10364.2s 1226 Secuencias val     : 20
+10364.2s 1227 Secuencias test    : 21
+10364.2s 1228 Shape X_tr         : (95, 3, 6)
+10364.2s 1229 Épocas máx         : 500
+10364.2s 1230 Paciencia ES       : 30
+10365.5s 1231 Epoch 1/500
+10371.5s 1232 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m23s[0m 5s/step - loss: 0.5649[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 16ms/step - loss: 0.2797[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m6s[0m 262ms/step - loss: 0.2456 - val_loss: 0.1984 - learning_rate: 0.0027
+10371.5s 1233 Epoch 2/500
+10371.9s 1234 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 82ms/step - loss: 0.3057[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.1605[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 70ms/step - loss: 0.1408 - val_loss: 0.1006 - learning_rate: 0.0027
+10371.9s 1235 Epoch 3/500
+10372.4s 1236 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 81ms/step - loss: 0.1403[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 16ms/step - loss: 0.0819[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 70ms/step - loss: 0.0746 - val_loss: 0.0638 - learning_rate: 0.0027
+10372.4s 1237 Epoch 4/500
+10372.8s 1238 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 83ms/step - loss: 0.0857[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0517[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0485 - val_loss: 0.0277 - learning_rate: 0.0027
+10372.8s 1239 Epoch 5/500
+10373.2s 1240 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 85ms/step - loss: 0.0701[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0457[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0439 - val_loss: 0.0155 - learning_rate: 0.0027
+10373.2s 1241 Epoch 6/500
+10373.6s 1242 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 85ms/step - loss: 0.0294[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0230[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 70ms/step - loss: 0.0240 - val_loss: 0.0147 - learning_rate: 0.0027
+10373.6s 1243 Epoch 7/500
+10374.1s 1244 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 81ms/step - loss: 0.0330[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0255[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 70ms/step - loss: 0.0255 - val_loss: 0.0200 - learning_rate: 0.0027
+10374.1s 1245 Epoch 8/500
+10374.5s 1246 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 82ms/step - loss: 0.0215[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0251[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 70ms/step - loss: 0.0261 - val_loss: 0.0160 - learning_rate: 0.0027
+10374.5s 1247 Epoch 9/500
+10374.9s 1248 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 81ms/step - loss: 0.0227[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0213[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0241 - val_loss: 0.0472 - learning_rate: 0.0027
+10374.9s 1249 Epoch 10/500
+10375.4s 1250 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 81ms/step - loss: 0.0217[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0217[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 68ms/step - loss: 0.0246 - val_loss: 0.0297 - learning_rate: 0.0027
+10375.4s 1251 Epoch 11/500
+10375.8s 1252 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 84ms/step - loss: 0.0210[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0223[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0229 - val_loss: 0.0207 - learning_rate: 0.0027
+10375.8s 1253 Epoch 12/500
+10376.2s 1254 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 83ms/step - loss: 0.0266[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0250[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0260 - val_loss: 0.0233 - learning_rate: 0.0027
+10376.2s 1255 Epoch 13/500
+10376.7s 1256 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 81ms/step - loss: 0.0229[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0220[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 70ms/step - loss: 0.0240 - val_loss: 0.0216 - learning_rate: 0.0027
+10376.7s 1257 Epoch 14/500
+10377.1s 1258 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 84ms/step - loss: 0.0248[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0220[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 70ms/step - loss: 0.0227 - val_loss: 0.0293 - learning_rate: 0.0027
+10377.1s 1259 Epoch 15/500
+10377.5s 1260 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 80ms/step - loss: 0.0152[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0176[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0196 - val_loss: 0.0273 - learning_rate: 0.0027
+10377.5s 1261 Epoch 16/500
+10378.0s 1262 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 81ms/step - loss: 0.0199[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0216[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 70ms/step - loss: 0.0223 - val_loss: 0.0145 - learning_rate: 0.0027
+10378.0s 1263 Epoch 17/500
+10378.4s 1264 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 85ms/step - loss: 0.0185[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0241[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0239 - val_loss: 0.0158 - learning_rate: 0.0027
+10378.4s 1265 Epoch 18/500
+10378.8s 1266 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 82ms/step - loss: 0.0247[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0237[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0250 - val_loss: 0.0474 - learning_rate: 0.0027
+10378.8s 1267 Epoch 19/500
+10379.3s 1268 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 83ms/step - loss: 0.0259[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0234[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0238 - val_loss: 0.0136 - learning_rate: 0.0027
+10379.3s 1269 Epoch 20/500
+10379.7s 1270 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 80ms/step - loss: 0.0240[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 16ms/step - loss: 0.0243[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 70ms/step - loss: 0.0244 - val_loss: 0.0438 - learning_rate: 0.0027
+10379.7s 1271 Epoch 21/500
+10380.1s 1272 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 82ms/step - loss: 0.0247[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0231[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 70ms/step - loss: 0.0240 - val_loss: 0.0173 - learning_rate: 0.0027
+10380.1s 1273 Epoch 22/500
+10380.6s 1274 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 85ms/step - loss: 0.0329[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 16ms/step - loss: 0.0257[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 71ms/step - loss: 0.0257 - val_loss: 0.0284 - learning_rate: 0.0027
+10380.6s 1275 Epoch 23/500
+10381.0s 1276 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 85ms/step - loss: 0.0175[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0196[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 71ms/step - loss: 0.0214 - val_loss: 0.0252 - learning_rate: 0.0027
+10381.0s 1277 Epoch 24/500
+10381.5s 1278 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 104ms/step - loss: 0.0378[1m4/6[0m [32m━━━━━━━━━━━━━[0m[37m━━━━━━━[0m [1m0s[0m 19ms/step - loss: 0.0294 [1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 73ms/step - loss: 0.0266 - val_loss: 0.0191 - learning_rate: 0.0027
+10381.5s 1279 Epoch 25/500
+10381.9s 1280 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 81ms/step - loss: 0.0215[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0213[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 70ms/step - loss: 0.0224 - val_loss: 0.0252 - learning_rate: 0.0027
+10381.9s 1281 Epoch 26/500
+10382.4s 1282 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 81ms/step - loss: 0.0216[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0198[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 70ms/step - loss: 0.0208 - val_loss: 0.0435 - learning_rate: 0.0027
+10382.4s 1283 Epoch 27/500
+10382.8s 1284 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 85ms/step - loss: 0.0224[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0223[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 70ms/step - loss: 0.0240 - val_loss: 0.0279 - learning_rate: 0.0027
+10382.8s 1285 Epoch 28/500
+10383.2s 1286 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 83ms/step - loss: 0.0136[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0157[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0166 - val_loss: 0.0129 - learning_rate: 0.0027
+10383.2s 1287 Epoch 29/500
+10383.7s 1288 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 84ms/step - loss: 0.0343[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0268[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0257 - val_loss: 0.0228 - learning_rate: 0.0027
+10383.7s 1289 Epoch 30/500
+10384.1s 1290 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 83ms/step - loss: 0.0281[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0225[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0222 - val_loss: 0.0174 - learning_rate: 0.0027
+10384.1s 1291 Epoch 31/500
+10384.5s 1292 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 82ms/step - loss: 0.0160[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0158[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 70ms/step - loss: 0.0168 - val_loss: 0.0150 - learning_rate: 0.0013
+10384.5s 1293 Epoch 32/500
+10385.0s 1294 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 81ms/step - loss: 0.0203[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0163[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 70ms/step - loss: 0.0165 - val_loss: 0.0129 - learning_rate: 0.0013
+10385.0s 1295 Epoch 33/500
+10385.4s 1296 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 82ms/step - loss: 0.0152[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0157[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0169 - val_loss: 0.0106 - learning_rate: 0.0013
+10385.4s 1297 Epoch 34/500
+10385.8s 1298 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 83ms/step - loss: 0.0193[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0175[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 68ms/step - loss: 0.0178 - val_loss: 0.0108 - learning_rate: 0.0013
+10385.8s 1299 Epoch 35/500
+10386.3s 1300 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 84ms/step - loss: 0.0220[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0179[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0178 - val_loss: 0.0121 - learning_rate: 0.0013
+10386.3s 1301 Epoch 36/500
+10386.7s 1302 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 82ms/step - loss: 0.0240[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 14ms/step - loss: 0.0198[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0199 - val_loss: 0.0114 - learning_rate: 0.0013
+10386.7s 1303 Epoch 37/500
+10387.1s 1304 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 82ms/step - loss: 0.0137[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0154[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0160 - val_loss: 0.0163 - learning_rate: 0.0013
+10387.1s 1305 Epoch 38/500
+10387.6s 1306 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 81ms/step - loss: 0.0141[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0146[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0152 - val_loss: 0.0166 - learning_rate: 0.0013
+10387.6s 1307 Epoch 39/500
+10388.0s 1308 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 81ms/step - loss: 0.0208[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0181[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 70ms/step - loss: 0.0183 - val_loss: 0.0141 - learning_rate: 0.0013
+10388.0s 1309 Epoch 40/500
+10388.4s 1310 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 82ms/step - loss: 0.0168[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0164[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0164 - val_loss: 0.0104 - learning_rate: 0.0013
+10388.4s 1311 Epoch 41/500
+10388.9s 1312 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 84ms/step - loss: 0.0224[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0184[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 70ms/step - loss: 0.0182 - val_loss: 0.0188 - learning_rate: 0.0013
+10388.9s 1313 Epoch 42/500
+10389.3s 1314 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 82ms/step - loss: 0.0212[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0183[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0186 - val_loss: 0.0140 - learning_rate: 0.0013
+10389.3s 1315 Epoch 43/500
+10389.7s 1316 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 82ms/step - loss: 0.0260[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0220[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 70ms/step - loss: 0.0220 - val_loss: 0.0119 - learning_rate: 0.0013
+10389.7s 1317 Epoch 44/500
+10390.2s 1318 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 81ms/step - loss: 0.0240[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0202[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0199 - val_loss: 0.0107 - learning_rate: 0.0013
+10390.2s 1319 Epoch 45/500
+10390.6s 1320 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 81ms/step - loss: 0.0178[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0172[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0172 - val_loss: 0.0163 - learning_rate: 0.0013
+10390.6s 1321 Epoch 46/500
+10391.0s 1322 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 82ms/step - loss: 0.0149[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 16ms/step - loss: 0.0155[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0160 - val_loss: 0.0113 - learning_rate: 0.0013
+10391.0s 1323 Epoch 47/500
+10391.5s 1324 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 104ms/step - loss: 0.0125[1m4/6[0m [32m━━━━━━━━━━━━━[0m[37m━━━━━━━[0m [1m0s[0m 20ms/step - loss: 0.0152 [1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 71ms/step - loss: 0.0150 - val_loss: 0.0157 - learning_rate: 0.0013
+10391.5s 1325 Epoch 48/500
+10391.9s 1326 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 82ms/step - loss: 0.0188[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0176[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0181 - val_loss: 0.0194 - learning_rate: 0.0013
+10391.9s 1327 Epoch 49/500
+10392.3s 1328 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 82ms/step - loss: 0.0152[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0141[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0147 - val_loss: 0.0135 - learning_rate: 0.0013
+10392.3s 1329 Epoch 50/500
+10392.8s 1330 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 83ms/step - loss: 0.0157[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0153[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 70ms/step - loss: 0.0159 - val_loss: 0.0167 - learning_rate: 0.0013
+10392.8s 1331 Epoch 51/500
+10393.2s 1332 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 83ms/step - loss: 0.0145[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 16ms/step - loss: 0.0154[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 70ms/step - loss: 0.0162 - val_loss: 0.0116 - learning_rate: 0.0013
+10393.2s 1333 Epoch 52/500
+10393.6s 1334 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 81ms/step - loss: 0.0206[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0175[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 70ms/step - loss: 0.0182 - val_loss: 0.0137 - learning_rate: 0.0013
+10393.7s 1335 Epoch 53/500
+10394.1s 1336 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 86ms/step - loss: 0.0228[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0190[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0199 - val_loss: 0.0107 - learning_rate: 0.0013
+10394.1s 1337 Epoch 54/500
+10394.5s 1338 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 84ms/step - loss: 0.0127[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 16ms/step - loss: 0.0147[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 71ms/step - loss: 0.0158 - val_loss: 0.0113 - learning_rate: 0.0013
+10394.5s 1339 Epoch 55/500
+10395.0s 1340 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 83ms/step - loss: 0.0225[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0172[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 70ms/step - loss: 0.0177 - val_loss: 0.0140 - learning_rate: 0.0013
+10395.0s 1341 Epoch 56/500
+10395.4s 1342 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 82ms/step - loss: 0.0158[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0152[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0158 - val_loss: 0.0132 - learning_rate: 0.0013
+10395.4s 1343 Epoch 57/500
+10395.8s 1344 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 81ms/step - loss: 0.0136[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0156[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0163 - val_loss: 0.0117 - learning_rate: 0.0013
+10395.8s 1345 Epoch 58/500
+10396.3s 1346 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 84ms/step - loss: 0.0135[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0127[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0137 - val_loss: 0.0101 - learning_rate: 0.0013
+10396.3s 1347 Epoch 59/500
+10396.7s 1348 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 84ms/step - loss: 0.0219[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0192[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0189 - val_loss: 0.0099 - learning_rate: 0.0013
+10396.7s 1349 Epoch 60/500
+10397.1s 1350 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 83ms/step - loss: 0.0111[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0129[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 70ms/step - loss: 0.0138 - val_loss: 0.0091 - learning_rate: 0.0013
+10397.1s 1351 Epoch 61/500
+10397.6s 1352 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 82ms/step - loss: 0.0130[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0140[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 70ms/step - loss: 0.0146 - val_loss: 0.0097 - learning_rate: 6.6554e-04
+10397.6s 1353 Epoch 62/500
+10398.0s 1354 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 82ms/step - loss: 0.0188[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0178[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0176 - val_loss: 0.0095 - learning_rate: 6.6554e-04
+10398.0s 1355 Epoch 63/500
+10398.4s 1356 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 81ms/step - loss: 0.0208[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 16ms/step - loss: 0.0188[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0188 - val_loss: 0.0098 - learning_rate: 6.6554e-04
+10398.4s 1357 Epoch 64/500
+10398.9s 1358 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 81ms/step - loss: 0.0260[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 16ms/step - loss: 0.0194[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0186 - val_loss: 0.0095 - learning_rate: 6.6554e-04
+10398.9s 1359 Epoch 65/500
+10399.3s 1360 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 83ms/step - loss: 0.0166[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0149[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 68ms/step - loss: 0.0157 - val_loss: 0.0105 - learning_rate: 6.6554e-04
+10399.3s 1361 Epoch 66/500
+10399.7s 1362 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 83ms/step - loss: 0.0200[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0163[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0163 - val_loss: 0.0098 - learning_rate: 6.6554e-04
+10399.7s 1363 Epoch 67/500
+10400.2s 1364 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 81ms/step - loss: 0.0180[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 16ms/step - loss: 0.0153[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 71ms/step - loss: 0.0153 - val_loss: 0.0098 - learning_rate: 6.6554e-04
+10400.2s 1365 Epoch 68/500
+10400.6s 1366 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 82ms/step - loss: 0.0233[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0176[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0171 - val_loss: 0.0097 - learning_rate: 6.6554e-04
+10400.6s 1367 Epoch 69/500
+10401.0s 1368 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 81ms/step - loss: 0.0270[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0203[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 70ms/step - loss: 0.0196 - val_loss: 0.0098 - learning_rate: 6.6554e-04
+10401.0s 1369 Epoch 70/500
+10401.5s 1370 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 102ms/step - loss: 0.0185[1m4/6[0m [32m━━━━━━━━━━━━━[0m[37m━━━━━━━[0m [1m0s[0m 19ms/step - loss: 0.0166 [1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 71ms/step - loss: 0.0160 - val_loss: 0.0101 - learning_rate: 6.6554e-04
+10401.5s 1371 Epoch 71/500
+10401.9s 1372 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 83ms/step - loss: 0.0214[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0177[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0181 - val_loss: 0.0095 - learning_rate: 6.6554e-04
+10401.9s 1373 Epoch 72/500
+10402.3s 1374 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 82ms/step - loss: 0.0220[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0178[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0178 - val_loss: 0.0099 - learning_rate: 6.6554e-04
+10402.3s 1375 Epoch 73/500
+10402.8s 1376 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 84ms/step - loss: 0.0119[1m4/6[0m [32m━━━━━━━━━━━━━[0m[37m━━━━━━━[0m [1m0s[0m 18ms/step - loss: 0.0135[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 72ms/step - loss: 0.0139 - val_loss: 0.0101 - learning_rate: 6.6554e-04
+10402.8s 1377 Epoch 74/500
+10403.2s 1378 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 84ms/step - loss: 0.0082[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0118[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0131 - val_loss: 0.0098 - learning_rate: 6.6554e-04
+10403.2s 1379 Epoch 75/500
+10403.7s 1380 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 82ms/step - loss: 0.0147[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0150[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0157 - val_loss: 0.0101 - learning_rate: 6.6554e-04
+10403.7s 1381 Epoch 76/500
+10404.1s 1382 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 82ms/step - loss: 0.0112[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0119[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0127 - val_loss: 0.0098 - learning_rate: 6.6554e-04
+10404.1s 1383 Epoch 77/500
+10404.5s 1384 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 85ms/step - loss: 0.0207[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0153[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0156 - val_loss: 0.0096 - learning_rate: 6.6554e-04
+10404.5s 1385 Epoch 78/500
+10405.0s 1386 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 82ms/step - loss: 0.0291[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 16ms/step - loss: 0.0195[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 70ms/step - loss: 0.0190 - val_loss: 0.0110 - learning_rate: 6.6554e-04
+10405.0s 1387 Epoch 79/500
+10405.4s 1388 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 83ms/step - loss: 0.0201[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0168[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 70ms/step - loss: 0.0169 - val_loss: 0.0103 - learning_rate: 6.6554e-04
+10405.4s 1389 Epoch 80/500
+10405.8s 1390 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 80ms/step - loss: 0.0178[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0167[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 71ms/step - loss: 0.0171 - val_loss: 0.0099 - learning_rate: 6.6554e-04
+10405.8s 1391 Epoch 81/500
+10406.3s 1392 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 82ms/step - loss: 0.0187[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0161[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 70ms/step - loss: 0.0164 - val_loss: 0.0099 - learning_rate: 6.6554e-04
+10406.3s 1393 Epoch 82/500
+10406.7s 1394 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 82ms/step - loss: 0.0137[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0142[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 69ms/step - loss: 0.0150 - val_loss: 0.0102 - learning_rate: 6.6554e-04
+10406.7s 1395 Epoch 83/500
+10407.7s 1396 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m3s[0m 634ms/step - loss: 0.0112[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0128 [1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m1s[0m 70ms/step - loss: 0.0141 - val_loss: 0.0101 - learning_rate: 6.6554e-04
+10407.7s 1397 Epoch 84/500
+10408.1s 1398 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 85ms/step - loss: 0.0198[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0149[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 75ms/step - loss: 0.0153 - val_loss: 0.0098 - learning_rate: 6.6554e-04
+10408.2s 1399 Epoch 85/500
+10408.6s 1400 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 90ms/step - loss: 0.0169[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 16ms/step - loss: 0.0145[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 75ms/step - loss: 0.0144 - val_loss: 0.0100 - learning_rate: 6.6554e-04
+10408.6s 1401 Epoch 86/500
+10409.1s 1402 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 82ms/step - loss: 0.0166[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0147[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 70ms/step - loss: 0.0151 - val_loss: 0.0101 - learning_rate: 6.6554e-04
+10409.1s 1403 Epoch 87/500
+10409.5s 1404 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 83ms/step - loss: 0.0087[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0134[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 71ms/step - loss: 0.0146 - val_loss: 0.0098 - learning_rate: 6.6554e-04
+10409.5s 1405 Epoch 88/500
+10409.9s 1406 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 80ms/step - loss: 0.0117[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0137[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 70ms/step - loss: 0.0145 - val_loss: 0.0111 - learning_rate: 6.6554e-04
+10409.9s 1407 Epoch 89/500
+10410.4s 1408 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 86ms/step - loss: 0.0109[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0124[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 70ms/step - loss: 0.0138 - val_loss: 0.0098 - learning_rate: 6.6554e-04
+10410.4s 1409 Epoch 90/500
+10410.8s 1410 [1m1/6[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m0s[0m 82ms/step - loss: 0.0141[1m5/6[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 15ms/step - loss: 0.0135[1m6/6[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 71ms/step - loss: 0.0140 - val_loss: 0.0105 - learning_rate: 6.6554e-04
+10411.0s 1411 
+10411.0s 1412 Entrenamiento finalizado: 0.8 min  (90 épocas efectivas)
+10411.0s 1413 No se pudo guardar modelo: Invalid filepath extension for saving. Please add either a `.keras` extension for the native Keras format (recommended) or a `.h5` extension. Use `model.export(filepath)` if you want to export a SavedModel for use with TFLite/TFServing/etc. Received: filepath=/kaggle/working/modelo_final_savedmodel.
+10411.3s 1414 Guardado: final_01_curvas_entrenamiento.png
+10411.3s 1415 
+10411.3s 1416 ======================================================================
+10411.3s 1417 EVALUACIÓN DEL MODELO
+10411.3s 1418 ======================================================================
+10412.8s 1419 
+10412.8s 1420 ──────────────────────────────────────────────────
+10412.8s 1421 Métrica                  Train       Val      Test
+10412.8s 1422 ──────────────────────────────────────────────────
+10412.8s 1423 RMSE (Gs.)               15.69     12.87      6.62
+10412.8s 1424 ──────────────────────────────────────────────────
+10413.1s 1425 Guardado: final_02_prediccion_test_serie.png
+10413.4s 1426 Guardado: final_03_scatter_test.png
+10413.9s 1427 Guardado: final_04_residuos.png
+10414.3s 1428 Guardado: final_05_todos_splits.png
+10414.6s 1429 Guardado: /kaggle/working/diagnostico_bias_variance.png
+10414.6s 1430 
+10414.6s 1431 Gap Val-Train: -2.82 Gs.
+10414.6s 1432 Gap Test-Val : -6.26 Gs.
+10414.6s 1433 Diagnostico  : BALANCE
+10414.6s 1434 
+10414.6s 1435 ======================================================================
+10414.6s 1436 ANÁLISIS DE RESIDUOS DEL MODELO FINAL
+10414.6s 1437 ======================================================================
+10415.2s 1438 
+10415.2s 1439 Ljung-Box Test (p > 0.05 = ruido blanco = bueno):
+10415.2s 1440 
+10415.2s 1441 Train (lags 10 / 20):
+10415.2s 1442 Lag 10: p=0.0041  -> Autocorrelacion detectada
+10415.2s 1443 Lag 20: p=0.0503  -> Ruido blanco
+10415.2s 1444 
+10415.2s 1445 Test (lags 10 / 20):
+10415.2s 1446 Lag 10: p=0.0000  -> Autocorrelacion detectada
+10415.2s 1447 Lag 20: p=0.0000  -> Autocorrelacion detectada
+10415.2s 1448 
+10415.2s 1449 Estadisticas residuos:
+10415.2s 1450 Train — media:       0.15 Gs.  std:      15.69 Gs.
+10415.2s 1451 Val   — media:       0.03 Gs.  std:      12.87 Gs.
+10415.2s 1452 Test  — media:      -5.17 Gs.  std:       4.13 Gs.
+10416.2s 1453 
+10416.2s 1454 Guardado: /kaggle/working/residuos_acf_pacf.png
+10416.8s 1455 Guardado: /kaggle/working/residuos_histograma.png
+10416.8s 1456 Guardado: /kaggle/working/ljung_box_residuos.json
+10416.8s 1457 
+10416.8s 1458 ======================================================================
+10416.8s 1459 PREDICCIÓN FUTURA — 24 MESES
+10416.8s 1460 ======================================================================
+10416.8s 1461 
+10416.8s 1462 Predicción iterativa (24 pasos):
+10416.8s 1463 Paso |      Fecha |   Precio (Gs.) |  Nivel río (m)
+10416.8s 1464 -------------------------------------------------------
+10416.8s 1465 1 | 2025-08-01 |            657 |           1.93
+10417.0s 1466 2 | 2025-09-01 |            659 |           1.14
+10417.0s 1467 3 | 2025-10-01 |            661 |           0.85
+10417.0s 1468 4 | 2025-11-01 |            665 |           1.09
+10417.3s 1469 5 | 2025-12-01 |            667 |           1.02
+10417.3s 1470 6 | 2026-01-01 |            671 |           1.43
+10417.3s 1471 7 | 2026-02-01 |            675 |           1.49
+10417.5s 1472 8 | 2026-03-01 |            680 |           1.35
+10417.5s 1473 9 | 2026-04-01 |            686 |           1.69
+10417.5s 1474 10 | 2026-05-01 |            691 |           3.13
+10417.8s 1475 11 | 2026-06-01 |            692 |           3.57
+10417.8s 1476 12 | 2026-07-01 |            691 |           3.07
+10417.8s 1477 13 | 2026-08-01 |            690 |           2.46
+10418.1s 1478 14 | 2026-09-01 |            690 |           1.60
+10418.1s 1479 15 | 2026-10-01 |            691 |           1.28
+10418.1s 1480 16 | 2026-11-01 |            692 |           1.45
+10418.4s 1481 17 | 2026-12-01 |            693 |           1.38
+10418.4s 1482 18 | 2027-01-01 |            694 |           1.75
+10418.4s 1483 19 | 2027-02-01 |            696 |           1.78
+10418.6s 1484 20 | 2027-03-01 |            699 |           1.61
+10418.6s 1485 21 | 2027-04-01 |            703 |           1.94
+10418.6s 1486 22 | 2027-05-01 |            706 |           3.35
+10418.9s 1487 23 | 2027-06-01 |            706 |           3.77
+10418.9s 1488 24 | 2027-07-01 |            703 |           3.78
+10418.9s 1489 
+10418.9s 1490 Predicciones futuras generadas: 24 meses
+10418.9s 1491 Precio mín predicho: 657 Gs.
+10418.9s 1492 Precio máx predicho: 706 Gs.
+10418.9s 1493 
+10418.9s 1494 Guardado: predicciones_ladrillo.csv
+10419.4s 1495 Guardado: final_06_prediccion_futura_completa.png
+10419.9s 1496 Guardado: final_07_prediccion_zoom_dual.png
+10419.9s 1497 
+10419.9s 1498 ======================================================================
+10419.9s 1499 INTERVALOS DE CONFIANZA — MONTE CARLO DROPOUT (100 muestras)
+10419.9s 1500 ======================================================================
+10638.9s 1501 
+10638.9s 1502 Intervalos de confianza agregados a df_pred_futura
+10638.9s 1503 Muestra (primeros 3 meses):
+10638.9s 1504 2025-08-01 00:00:00:        657 Gs. [IC:        637 —        680]
+10638.9s 1505 2025-09-01 00:00:00:        659 Gs. [IC:        639 —        683]
+10638.9s 1506 2025-10-01 00:00:00:        661 Gs. [IC:        641 —        690]
+10638.9s 1507 
+10638.9s 1508 Tipo IC: empirico via Monte Carlo Dropout (N=100)
+10638.9s 1509 Nivel  : 95% (+/-1.96 sigma)
+10639.6s 1510 Guardado: /kaggle/working/forecast_ic_monte_carlo.png
+10639.6s 1511 
+10639.6s 1512 ======================================================================
+10639.6s 1513 DEGRADACIÓN DE LA INCERTIDUMBRE POR HORIZONTE
+10639.6s 1514 ======================================================================
+10640.1s 1515 Guardado: /kaggle/working/forecast_degradacion_por_paso.png
+10640.1s 1516 
+10640.1s 1517 Ancho IC — paso  1 :         43 Gs.
+10640.1s 1518 Ancho IC — paso 12 :         56 Gs.
+10640.1s 1519 Ancho IC — paso 24 :         50 Gs.
+10640.1s 1520 Factor degradación : 1.16x
+10640.1s 1521 
+10640.1s 1522 ======================================================================
+10640.1s 1523 COMPARACIÓN CON PRECIOS REALES DEL LADRILLO
+10640.1s 1524 ======================================================================
+10640.1s 1525 Archivo no encontrado: /kaggle/input/datasets/diemcs/dataset-sarimax-ladrillo/precios_reales_ladrillo.txt
+10640.1s 1526 No se pudo cargar precios_reales_ladrillo.txt — omitiendo comparación.
+10640.1s 1527 
+10640.1s 1528 ======================================================================
+10640.1s 1529 TABLA RESUMEN COMPLETA — PARA TESIS
+10640.1s 1530 ======================================================================
+10640.1s 1531 
+10640.1s 1532 Tabla Resumen — Modelo LSTM Final
+10640.1s 1533 Arquitectura  : TensorFlow/Keras — LSTM
+10640.1s 1534 Parametros    : 36,481
+10640.1s 1535 Split         : 97/20/22 meses (train/val/test)
+10640.1s 1536 Features      : 6 (Precio, Nivel Rio, COVID, lag1, roll3, sin, cos)
+10640.1s 1537 
+10640.1s 1538 Metrica             Train        Val       Test
+10640.1s 1539 ──────────────────────────────────────────────
+10640.1s 1540 RMSE (Gs.)          15.69      12.87       6.62
+10640.1s 1541 ──────────────────────────────────────────────
+10640.1s 1542 
+10640.1s 1543 Horizonte      : 24 meses (recursiva)
+10640.1s 1544 IC             : 95% Monte Carlo Dropout (N=100)
+10640.1s 1545 
+10640.1s 1546 Guardado: /kaggle/working/tabla_resumen_modelo.txt
+10640.1s 1547 Guardado: /kaggle/working/tabla_modelo_latex.txt
+10640.1s 1548 
+10640.1s 1549 ======================================================================
+10640.1s 1550 RESUMEN FINAL
+10640.1s 1551 ======================================================================
+10640.1s 1552 
+10640.1s 1553 Tiempo total              : 176.7 min
+10640.1s 1554 - Optuna (300 trials): 171.8 min
+10640.1s 1555 - Modelo final          : 0.8 min
+10640.1s 1556 
+10640.1s 1557 Mejores hiperparámetros:
+10640.1s 1558 lookback            : 3
+10640.1s 1559 n_layers            : 1
+10640.1s 1560 hidden_size         : 64
+10640.1s 1561 bidirectional       : True
+10640.1s 1562 dropout_rate        : 0.35000000000000003
+10640.1s 1563 recurrent_dropout   : 0.2
+10640.1s 1564 optimizer           : RMSprop
+10640.1s 1565 learning_rate       : 0.0026621662365124968
+10640.1s 1566 weight_decay        : 9.632108623467832e-05
+10640.1s 1567 batch_size          : 16
+10640.1s 1568 scheduler           : StepLR
+10640.1s 1569 
+10640.1s 1570 Épocas entrenadas (final) : 90
+10640.1s 1571 
+10640.1s 1572 ──────────────────────────────────────────────────────────────
+10640.1s 1573 Rendimiento del modelo (RMSE en Gs.)
+10640.1s 1574 ──────────────────────────────────────────────────────────────
+10640.1s 1575 Métrica                          Train          Val         Test
+10640.1s 1576 ──────────────────────────────────────────────────────────────
+10640.1s 1577 RMSE (Gs.)                       15.69        12.87         6.62
+10640.1s 1578 ──────────────────────────────────────────────────────────────
+10640.1s 1579 
+10640.1s 1580 Predicción futura (24 meses — valores enteros en Gs.):
+10640.1s 1581 Rango     : 2025-08-01 → 2027-07-01
+10640.1s 1582 Precio mín: 657 Gs.
+10640.1s 1583 Precio máx: 706 Gs.
+10640.1s 1584 Guardado: metricas_finales.json
+10640.1s 1585 
+10640.1s 1586 Archivos generados en: /kaggle/working/
+10640.1s 1587 EDA:
+10640.1s 1588 eda_01_serie_precios_ladrillo.png
+10640.1s 1589 eda_02_serie_nivel_rio.png
+10640.1s 1590 eda_03_correlacion_rio_precio.png
+10640.1s 1591 eda_04_boxplot_precio_anual.png
+10640.1s 1592 eda_05_heatmap_precio.png
+10640.1s 1593 eda_06_precio_y_rio_dual.png
+10640.1s 1594 eda_07_distribucion_features.png
+10640.1s 1595 Entrenamiento:
+10640.1s 1596 entrenamiento_01_particiones.png
+10640.1s 1597 Optuna:
+10640.1s 1598 optuna_01_convergencia.png
+10640.1s 1599 optuna_02_importancia_params.png
+10640.1s 1600 optuna_resultados.json
+10640.1s 1601 Modelo final:
+10640.1s 1602 final_01_curvas_entrenamiento.png
+10640.1s 1603 final_02_prediccion_test_serie.png
+10640.1s 1604 final_03_scatter_test.png
+10640.1s 1605 final_04_residuos.png
+10640.1s 1606 final_05_todos_splits.png
+10640.1s 1607 final_06_prediccion_futura_completa.png
+10640.1s 1608 final_07_prediccion_zoom_dual.png
+10640.1s 1609 final_08_comparacion_reales.png
+10640.1s 1610 predicciones_ladrillo.csv
+10640.1s 1611 metricas_finales.json
+10640.1s 1612 Scalers:
+10640.1s 1613 scaler_precio.pkl
+10640.1s 1614 scaler_nivel.pkl
+10640.1s 1615 
+10640.1s 1616 Proceso completado exitosamente.
+10640.1s 1617 
+10640.1s 1618 ======================================================================
+10640.1s 1619 LIMITACIONES DEL MODELO
+10640.1s 1620 ======================================================================
+10640.1s 1621 
+10640.1s 1622 LIMITACIONES IDENTIFICADAS:
+10640.1s 1623 
+10640.1s 1624 1. TAMANO DEL DATASET
+10640.1s 1625 - ~139 registros mensuales limitan generalizacion del modelo.
+10640.1s 1626 - Series cortas son desafiantes para LSTM profundos.
+10640.1s 1627 
+10640.1s 1628 2. HORIZONTE DE 24 MESES
+10640.1s 1629 - Predicciones de largo plazo acumulan errores en estrategia recursiva.
+10640.1s 1630 - IC via MC Dropout puede subestimar incertidumbre real.
+10640.1s 1631 
+10640.1s 1632 3. NIVEL DEL RIO COMO EXOGENO
+10640.1s 1633 - El nivel del rio futuro se asume conocido (prediccion pre-calculada).
+10640.1s 1634 - Incertidumbre del rio no se propaga a incertidumbre del precio.
+10640.1s 1635 
+10640.1s 1636 4. ESTACIONARIEDAD
+10640.1s 1637 - No se aplica diferenciacion; MinMaxScaler no corrige no-estacionariedad.
+10640.1s 1638 - Recomendacion futura: probar modelo con diferenciacion de orden 1.
+10640.1s 1639 
+10640.1s 1640 5. SIN VARIABLES MACROECONOMICAS
+10640.1s 1641 - No se incluyen tipo de cambio, salarios, inflacion, construccion.
+10640.1s 1642 
+10640.1s 1643 6. SIN BASELINE FORMAL
+10640.1s 1644 - RMSE del LSTM no se compara con ARIMA o modelos naive.
+10640.1s 1645 - Recomendacion: agregar ARIMA(1,1,1) como punto de referencia.
+10640.1s 1646 
+10640.1s 1647 RECOMENDACIONES FUTURAS:
+10640.1s 1648 - Ensemble LSTM + ARIMA + Exponential Smoothing
+10640.1s 1649 - Attention Mechanism si dataset crece
+10640.1s 1650 - Quantile Regression para IC parametricos
+10640.1s 1651 - Datos diarios para mayor resolucion
+10640.1s 1652 
+10640.1s 1653 Guardado: /kaggle/working/limitaciones_modelo.txt
+10640.1s 1654 
+10640.1s 1655 ======================================================================
+10640.1s 1656 FIN DE EJECUCION — TODOS LOS OUTPUTS GENERADOS
+10640.1s 1657 ======================================================================
+10645.7s 1658 /usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+10645.7s 1659 cells[i][c] = re.sub('\\\\\|', '|', cell)
+10645.9s 1660 /usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+10645.9s 1661 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+10646.4s 1662 /usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=["remove_papermill_header.RemovePapermillHeader"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.
+10646.4s 1663 warn(
+10646.5s 1664 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+10646.8s 1665 [NbConvertApp] Writing 284983 bytes to __notebook__.ipynb
+10649.1s 1666 /usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=["nbconvert.preprocessors.ExtractOutputPreprocessor"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.
+10649.1s 1667 warn(
+10649.1s 1668 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+10650.2s 1669 [NbConvertApp] Writing 903576 bytes to __results__.html

@@ -1,0 +1,286 @@
+7.6s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+7.6s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+7.6s 3 0.00s - to python to disable frozen modules.
+7.6s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+8.2s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+8.2s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+8.2s 7 0.00s - to python to disable frozen modules.
+8.2s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+11.9s 9 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 689.1/689.1 kB 11.8 MB/s eta 0:00:00
+12.1s 10 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 689.1/689.1 kB 11.8 MB/s eta 0:00:00
+18.5s 11 
+18.5s 12 ══════════════════════════════════════════════════════════════════════
+18.5s 13 SARIMAX — PREDICCIÓN DEL PRECIO DEL CEMENTO
+18.5s 14 Partición: 70% Train / 15% Validación / 15% Test
+18.5s 15 ══════════════════════════════════════════════════════════════════════
+18.5s 16 
+18.5s 17 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+18.5s 18 PASO 1 ▸ Cargando datos históricos
+18.5s 19 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+18.5s 20 Archivo: /kaggle/input/datasets/diemcs/dataset-sarimax-cemento/precios_cemento_interpolado.csv
+18.5s 21 ✓  139 observaciones | 2014-01 → 2025-07
+18.5s 22 
+18.5s 23 Estadísticas descriptivas:
+18.5s 24 Precio_Cemento  Cuarentena
+18.5s 25 count        139.0000    139.0000
+18.5s 26 mean       53872.3525      0.1727
+18.5s 27 std         7459.6254      0.3793
+18.5s 28 min        48000.0000      0.0000
+18.5s 29 25%        48000.0000      0.0000
+18.5s 30 50%        50000.0000      0.0000
+18.5s 31 75%        55000.0000      0.0000
+18.5s 32 max        76036.0000      1.0000
+18.5s 33 
+18.5s 34 
+18.5s 35 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+18.5s 36 PASO 2 ▸ Cargando datos del nivel del río (histórico + futuro)
+18.5s 37 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+18.5s 38 Archivo: /kaggle/input/datasets/diemcs/dataset-sarimax-cemento/nivel_rio_minimo_mensual.csv
+18.5s 39 ✓  163 registros | 2014-01 → 2027-07
+18.5s 40 
+18.5s 41 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+18.5s 42 PASO 3 ▸ Integrando nivel del río con datos históricos
+18.5s 43 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+18.5s 44 ✓  Dataset histórico integrado: 139 observaciones con Nivel_Rio
+18.5s 45 ✓  Exógenas futuras: 24 meses (2025-08 → 2027-07)
+18.5s 46 
+18.5s 47 
+18.5s 48 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+18.5s 49 PASO 4 ▸ Análisis Exploratorio de Datos (EDA)
+18.5s 50 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+18.5s 51 
+18.5s 52 Test de Estacionariedad → Precio del Cemento
+18.5s 53 ADF  | estadístico:  -1.3855  p-valor: 0.5892  → NO ESTACIONARIA ✗
+18.5s 54 KPSS | estadístico:   0.1637  p-valor: 0.0353  → NO ESTACIONARIA ✗
+18.5s 55 
+18.5s 56 Test de Estacionariedad → Nivel del Río
+18.5s 57 ADF  | estadístico:  -2.6064  p-valor: 0.0917  → NO ESTACIONARIA ✗
+18.5s 58 KPSS | estadístico:   0.0868  p-valor: 0.1000  → ESTACIONARIA ✓
+19.7s 59 ✓ Guardado: /kaggle/working/graficos/01_series_temporales.png
+20.8s 60 ✓ Guardado: /kaggle/working/graficos/02_descomposicion_estacional.png
+21.8s 61 ✓ Guardado: /kaggle/working/graficos/03_acf_pacf.png
+22.5s 62 ✓ Guardado: /kaggle/working/graficos/04_correlacion.png
+23.1s 63 ✓ Guardado: /kaggle/working/graficos/05_patron_estacional.png
+23.1s 64 
+23.1s 65 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+23.1s 66 PASO 5 ▸ División Train (70%) / Validación (15%) / Test (15%)
+23.1s 67 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+23.1s 68 Total : 139 observaciones
+23.1s 69 Train : 97 obs (70%)  (2014-01 → 2022-01)
+23.1s 70 Val   : 20 obs  (14%)  (2022-02 → 2023-09)
+23.1s 71 Test  : 22 obs  (16%)  (2023-10 → 2025-07)
+23.1s 72 
+23.1s 73 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+23.1s 74 PASO 4 ▸ Búsqueda de parámetros óptimos (auto_arima)
+23.1s 75 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+23.1s 76 Observaciones de entrenamiento : 97
+23.1s 77 Período estacional (m)         : 12
+23.1s 78 Criterio de selección          : AIC
+23.1s 79 
+23.1s 80 Performing stepwise search to minimize aic
+23.1s 81 ARIMA(0,1,0)(0,0,0)[12] intercept   : AIC=1821.637, Time=0.05 sec
+23.1s 82 ARIMA(1,1,0)(1,0,0)[12] intercept   : AIC=1825.576, Time=0.06 sec
+23.1s 83 ARIMA(0,1,1)(0,0,1)[12] intercept   : AIC=1825.657, Time=0.05 sec
+23.1s 84 ARIMA(0,1,0)(0,0,0)[12]             : AIC=1819.822, Time=0.01 sec
+23.3s 85 ARIMA(0,1,0)(1,0,0)[12] intercept   : AIC=1823.571, Time=0.04 sec
+23.3s 86 ARIMA(0,1,0)(0,0,1)[12] intercept   : AIC=1823.571, Time=0.04 sec
+23.3s 87 ARIMA(0,1,0)(1,0,1)[12] intercept   : AIC=1825.569, Time=0.14 sec
+23.5s 88 ARIMA(1,1,0)(0,0,0)[12] intercept   : AIC=1823.641, Time=0.02 sec
+23.5s 89 ARIMA(0,1,1)(0,0,0)[12] intercept   : AIC=1823.719, Time=0.03 sec
+23.5s 90 ARIMA(1,1,1)(0,0,0)[12] intercept   : AIC=1825.616, Time=0.08 sec
+23.5s 91 
+23.5s 92 Best model:  ARIMA(0,1,0)(0,0,0)[12]
+23.5s 93 Total fit time: 0.543 seconds
+23.5s 94 
+23.5s 95 ✓ Búsqueda completada en 0.5 s
+23.5s 96 Mejor orden ARIMA    : (0, 1, 0)
+23.5s 97 Mejor orden estacional: (0, 0, 0, 12)
+23.5s 98 AIC del mejor modelo : 1819.8225
+23.5s 99 
+23.5s 100 Resumen del modelo auto_arima:
+23.5s 101 SARIMAX Results
+23.5s 102 ==============================================================================
+23.5s 103 Dep. Variable:                      y   No. Observations:                   97
+23.5s 104 Model:               SARIMAX(0, 1, 0)   Log Likelihood                -908.911
+23.5s 105 Date:                Wed, 04 Mar 2026   AIC                           1819.822
+23.5s 106 Time:                        12:24:46   BIC                           1822.387
+23.5s 107 Sample:                    01-01-2014   HQIC                          1820.859
+23.5s 108 - 01-01-2022
+23.5s 109 Covariance Type:                  opg
+23.5s 110 ==============================================================================
+23.5s 111 coef    std err          z      P>|z|      [0.025      0.975]
+23.5s 112 ------------------------------------------------------------------------------
+23.5s 113 sigma2      9.697e+06   3.03e+05     32.028      0.000     9.1e+06    1.03e+07
+23.5s 114 ===================================================================================
+23.5s 115 Ljung-Box (L1) (Q):                   0.02   Jarque-Bera (JB):              6369.56
+23.5s 116 Prob(Q):                              0.89   Prob(JB):                         0.00
+23.5s 117 Heteroskedasticity (H):              77.39   Skew:                             0.83
+23.5s 118 Prob(H) (two-sided):                  0.00   Kurtosis:                        42.87
+23.5s 119 ===================================================================================
+23.5s 120 
+23.5s 121 Warnings:
+23.5s 122 [1] Covariance matrix calculated using the outer product of gradients (complex-step).
+23.5s 123 
+23.5s 124 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+23.5s 125 PASO 6 ▸ Evaluación sobre conjunto de VALIDACIÓN
+23.5s 126 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+23.5s 127 
+23.5s 128 Entrenando Modelo SARIMAX(0, 1, 0)x(0, 0, 0, 12) (train 70%)...
+23.5s 129 ✓ Entrenado en 0.1 s
+23.5s 130 AIC: 1805.6287  BIC: 1813.2903  Log-L: -899.8143
+23.5s 131 
+23.5s 132 ────────────────────────────────────────────────────
+23.5s 133 RMSE — Conjunto de Validación (15%)
+23.5s 134 ────────────────────────────────────────────────────
+23.5s 135 RMSE (Raíz Error Cuadrático Medio) :  4170.1175
+23.5s 136 ────────────────────────────────────────────────────
+23.5s 137 
+23.5s 138 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+23.5s 139 PASO 7 ▸ Re-entrenamiento (train+val 85%) → Evaluación sobre TEST
+23.5s 140 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+23.5s 141 
+23.5s 142 Entrenando Modelo SARIMAX(0, 1, 0)x(0, 0, 0, 12) (train+val 85%)...
+23.8s 143 ✓ Entrenado en 0.1 s
+23.8s 144 AIC: 2172.2653  BIC: 2180.5001  Log-L: -1083.1326
+23.8s 145 
+23.8s 146 ────────────────────────────────────────────────────
+23.8s 147 RMSE — Conjunto de Test (15%)
+23.8s 148 ────────────────────────────────────────────────────
+23.8s 149 RMSE (Raíz Error Cuadrático Medio) :  4842.3280
+23.8s 150 ────────────────────────────────────────────────────
+23.8s 151 
+23.8s 152 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+23.8s 153 PASO 8 ▸ Modelo final (re-entrenado con el 100% de los datos)
+23.8s 154 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+23.8s 155 
+23.8s 156 Entrenando Modelo Final SARIMAX(0, 1, 0)x(0, 0, 0, 12) (100%)...
+23.8s 157 ✓ Entrenado en 0.0 s
+23.8s 158 AIC: 2566.1768  BIC: 2574.9368  Log-L: -1280.0884
+23.8s 159 
+23.8s 160 SARIMAX Results
+23.8s 161 ==============================================================================
+23.8s 162 Dep. Variable:         Precio_Cemento   No. Observations:                  139
+23.8s 163 Model:               SARIMAX(0, 1, 0)   Log Likelihood               -1280.088
+23.8s 164 Date:                Wed, 04 Mar 2026   AIC                           2566.177
+23.8s 165 Time:                        12:24:46   BIC                           2574.937
+23.8s 166 Sample:                    01-01-2014   HQIC                          2569.737
+23.8s 167 - 07-01-2025
+23.8s 168 Covariance Type:                  opg
+23.8s 169 ==============================================================================
+23.8s 170 coef    std err          z      P>|z|      [0.025      0.975]
+23.8s 171 ------------------------------------------------------------------------------
+23.8s 172 Nivel_Rio    -55.3401    418.862     -0.132      0.895    -876.294     765.614
+23.8s 173 Cuarentena   -23.4816   9.49e+05  -2.47e-05      1.000   -1.86e+06    1.86e+06
+23.8s 174 sigma2        7.8e+06   2.15e+05     36.223      0.000    7.38e+06    8.22e+06
+23.8s 175 ===================================================================================
+23.8s 176 Ljung-Box (L1) (Q):                   0.39   Jarque-Bera (JB):             12342.45
+23.8s 177 Prob(Q):                              0.53   Prob(JB):                         0.00
+23.8s 178 Heteroskedasticity (H):               9.25   Skew:                             0.83
+23.8s 179 Prob(H) (two-sided):                  0.00   Kurtosis:                        49.47
+23.8s 180 ===================================================================================
+23.8s 181 
+23.8s 182 Warnings:
+23.8s 183 [1] Covariance matrix calculated using the outer product of gradients (complex-step).
+23.8s 184 
+23.8s 185 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+23.8s 186 PASO 9 ▸ Generando pronóstico de 24 meses
+23.8s 187 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+23.8s 188 
+23.8s 189 Pronóstico futuro (Sin COVID — Cuarentena=0):
+23.8s 190 Media  IC_Inferior  IC_Superior  Nivel_Rio_Exog  Cuarentena_Covid
+23.8s 191 Fecha
+23.8s 192 2025-08-01  55008.8544   49534.8422   60482.8666            1.93                 0
+23.8s 193 2025-09-01  55052.5731   47311.1508   62793.9954            1.14                 0
+23.8s 194 2025-10-01  55068.6217   45587.3544   64549.8890            0.85                 0
+23.8s 195 2025-11-01  55055.3401   44107.3157   66003.3646            1.09                 0
+23.8s 196 2025-12-01  55059.2139   42818.9505   67299.4774            1.02                 0
+23.8s 197 2026-01-01  55036.5245   41627.9877   68445.0613            1.43                 0
+23.8s 198 2026-02-01  55033.2041   40550.3290   69516.0791            1.49                 0
+23.8s 199 2026-03-01  55040.9517   39558.1070   70523.7963            1.35                 0
+23.8s 200 2026-04-01  55022.1360   38600.0994   71444.1727            1.69                 0
+23.8s 201 2026-05-01  54942.4463   37632.0997   72252.7929            3.13                 0
+23.8s 202 2026-06-01  54918.0966   36762.8520   73073.3413            3.57                 0
+23.8s 203 2026-07-01  54945.7667   35983.2321   73908.3013            3.07                 0
+23.8s 204 2026-08-01  54979.5242   35242.6924   74716.3559            2.46                 0
+23.8s 205 2026-09-01  55027.1167   34545.2384   75508.9949            1.60                 0
+23.8s 206 2026-10-01  55044.8255   33844.0673   76245.5837            1.28                 0
+23.8s 207 2026-11-01  55035.4177   33139.3688   76931.4666            1.45                 0
+23.8s 208 2026-12-01  55039.2915   32469.3609   77609.2221            1.38                 0
+23.8s 209 2027-01-01  55018.8156   31794.5487   78243.0826            1.75                 0
+23.8s 210 2027-02-01  55017.1554   31156.4893   78877.8215            1.78                 0
+23.8s 211 2027-03-01  55026.5633   30546.0364   79507.0901            1.61                 0
+23.8s 212 2027-04-01  55008.3010   29923.2256   80093.3764            1.94                 0
+23.8s 213 2027-05-01  54930.2715   29254.8783   80605.6647            3.35                 0
+23.8s 214 2027-06-01  54907.0286   28654.5882   81159.4690            3.77                 0
+23.8s 215 2027-07-01  54906.4752   28089.4016   81723.5488            3.78                 0
+23.8s 216 
+23.8s 217 Pronóstico futuro (Con COVID — Cuarentena=1):
+23.8s 218 Media  IC_Inferior  IC_Superior  Nivel_Rio_Exog  Cuarentena_Covid
+23.8s 219 Fecha
+23.8s 220 2025-08-01  54985.3728   49511.3606   60459.3850            1.93                 1
+23.8s 221 2025-09-01  55029.0915   47287.6691   62770.5138            1.14                 1
+23.8s 222 2025-10-01  55045.1401   45563.8728   64526.4074            0.85                 1
+23.8s 223 2025-11-01  55031.8585   44083.8340   65979.8829            1.09                 1
+23.8s 224 2025-12-01  55035.7323   42795.4688   67275.9957            1.02                 1
+23.8s 225 2026-01-01  55013.0428   41604.5060   68421.5796            1.43                 1
+23.8s 226 2026-02-01  55009.7224   40526.8474   69492.5975            1.49                 1
+23.8s 227 2026-03-01  55017.4700   39534.6254   70500.3147            1.35                 1
+23.8s 228 2026-04-01  54998.6544   38576.6177   71420.6911            1.69                 1
+23.8s 229 2026-05-01  54918.9647   37608.6181   72229.3112            3.13                 1
+23.8s 230 2026-06-01  54894.6150   36739.3704   73049.8597            3.57                 1
+23.8s 231 2026-07-01  54922.2851   35959.7505   73884.8197            3.07                 1
+23.8s 232 2026-08-01  54956.0425   35219.2108   74692.8743            2.46                 1
+23.8s 233 2026-09-01  55003.6350   34521.7568   75485.5133            1.60                 1
+23.8s 234 2026-10-01  55021.3439   33820.5857   76222.1020            1.28                 1
+23.8s 235 2026-11-01  55011.9360   33115.8871   76907.9849            1.45                 1
+23.8s 236 2026-12-01  55015.8098   32445.8793   77585.7404            1.38                 1
+23.8s 237 2027-01-01  54995.3340   31771.0670   78219.6010            1.75                 1
+23.8s 238 2027-02-01  54993.6738   31133.0077   78854.3399            1.78                 1
+23.8s 239 2027-03-01  55003.0816   30522.5547   79483.6085            1.61                 1
+23.8s 240 2027-04-01  54984.8194   29899.7440   80069.8948            1.94                 1
+23.8s 241 2027-05-01  54906.7898   29231.3966   80582.1830            3.35                 1
+23.8s 242 2027-06-01  54883.5470   28631.1066   81135.9874            3.77                 1
+23.8s 243 2027-07-01  54882.9936   28065.9200   81700.0672            3.78                 1
+23.8s 244 
+23.8s 245 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+23.8s 246 PASO 11 ▸ Generando gráficos de resultados
+23.8s 247 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+24.9s 248 ✓ Guardado: /kaggle/working/graficos/06_pronostico_completo.png
+26.2s 249 ✓ Guardado: /kaggle/working/graficos/07_diagnostico_residuos.png
+26.8s 250 ✓ Guardado: /kaggle/working/graficos/08_comparacion_real_predicho.png
+27.7s 251 ✓ Guardado: /kaggle/working/graficos/09a_pronostico_sin_covid.png
+28.4s 252 ✓ Guardado: /kaggle/working/graficos/09b_pronostico_con_covid.png
+28.4s 253 
+28.4s 254 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+28.4s 255 PASO 12 ▸ Exportando resultados
+28.4s 256 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+28.4s 257 ✓ Pronóstico (Sin COVID) guardado : /kaggle/working/pronostico_futuro_cemento.csv
+28.4s 258 ✓ Escenarios COVID guardados      : /kaggle/working/pronostico_escenarios_covid.csv
+28.4s 259 ✓ Predicciones prueba : /kaggle/working/prediccion_conjunto_prueba.csv
+28.4s 260 
+28.4s 261 RMSE del conjunto de prueba: 4842.3280
+28.4s 262 
+28.4s 263 ══════════════════════════════════════════════════════════════════════
+28.4s 264 PIPELINE COMPLETADO EXITOSAMENTE
+28.4s 265 ══════════════════════════════════════════════════════════════════════
+28.4s 266 Partición       : 70% Train / 15% Val / 15% Test
+28.4s 267 Modelo          : SARIMAX(0, 1, 0)x(0, 0, 0, 12)
+28.4s 268 RMSE (validación): 4170.1175
+28.4s 269 RMSE (test)      : 4842.3280
+28.4s 270 Tiempo total     : 10.1 s (0.2 min)
+28.4s 271 Gráficos en      : /kaggle/working/graficos
+28.4s 272 Resultados en    : /kaggle/working/
+28.4s 273 ══════════════════════════════════════════════════════════════════════
+28.4s 274 
+30.9s 275 /usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+30.9s 276 cells[i][c] = re.sub('\\\\\|', '|', cell)
+31.0s 277 /usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+31.0s 278 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+31.6s 279 /usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=["remove_papermill_header.RemovePapermillHeader"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.
+31.6s 280 warn(
+31.6s 281 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+31.9s 282 [NbConvertApp] Writing 80090 bytes to __notebook__.ipynb
+34.2s 283 /usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=["nbconvert.preprocessors.ExtractOutputPreprocessor"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.
+34.2s 284 warn(
+34.2s 285 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+35.1s 286 [NbConvertApp] Writing 518606 bytes to __results__.html

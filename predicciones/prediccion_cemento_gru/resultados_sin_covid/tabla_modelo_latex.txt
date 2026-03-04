@@ -7,7 +7,7 @@
 \toprule
 \textbf{Metrica} & \textbf{Train} & \textbf{Val} & \textbf{Test} \\
 \midrule
-RMSE (Gs.) & 4911.67 & 2862.84 & 2709.13 \\
+RMSE (Gs.) & 6330.42 & 3264.19 & 4964.27 \\
 \bottomrule
 \end{tabular}
 \end{table}
