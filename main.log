@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.16)  5 MAR 2026 09:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.16)  5 MAR 2026 10:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1223,119 +1223,119 @@ Package pdftex.def Info: predicciones/prediccion_cemento_lstm/resultados_sin_cov
 <predicciones/prediccion_cemento_lstm/resultados_sin_covid/final_02_prediccion_test_serie.png, id=984, 1002.6258pt x 423.5022pt>
 File: predicciones/prediccion_cemento_lstm/resultados_sin_covid/final_02_prediccion_test_serie.png Graphic file (type png)
 <use predicciones/prediccion_cemento_lstm/resultados_sin_covid/final_02_prediccion_test_serie.png>
-Package pdftex.def Info: predicciones/prediccion_cemento_lstm/resultados_sin_covid/final_02_prediccion_test_serie.png  used on input line 110.
+Package pdftex.def Info: predicciones/prediccion_cemento_lstm/resultados_sin_covid/final_02_prediccion_test_serie.png  used on input line 111.
 (pdftex.def)             Requested size: 483.69687pt x 204.31267pt.
 <predicciones/prediccion_cemento_lstm/resultados_sin_covid/final_05_todos_splits.png, id=985, 1146.684pt x 423.5022pt>
 File: predicciones/prediccion_cemento_lstm/resultados_sin_covid/final_05_todos_splits.png Graphic file (type png)
 <use predicciones/prediccion_cemento_lstm/resultados_sin_covid/final_05_todos_splits.png>
-Package pdftex.def Info: predicciones/prediccion_cemento_lstm/resultados_sin_covid/final_05_todos_splits.png  used on input line 117.
+Package pdftex.def Info: predicciones/prediccion_cemento_lstm/resultados_sin_covid/final_05_todos_splits.png  used on input line 118.
 (pdftex.def)             Requested size: 483.69687pt x 178.64516pt.
  [41 <./predicciones/prediccion_cemento_lstm/resultados_sin_covid/final_02_prediccion_test_serie.png>]
 <predicciones/prediccion_cemento_lstm/resultados_sin_covid/final_06_prediccion_futura_completa.png, id=995, 1145.7204pt x 423.5022pt>
 File: predicciones/prediccion_cemento_lstm/resultados_sin_covid/final_06_prediccion_futura_completa.png Graphic file (type png)
 <use predicciones/prediccion_cemento_lstm/resultados_sin_covid/final_06_prediccion_futura_completa.png>
-Package pdftex.def Info: predicciones/prediccion_cemento_lstm/resultados_sin_covid/final_06_prediccion_futura_completa.png  used on input line 135.
+Package pdftex.def Info: predicciones/prediccion_cemento_lstm/resultados_sin_covid/final_06_prediccion_futura_completa.png  used on input line 136.
 (pdftex.def)             Requested size: 483.69687pt x 178.79378pt.
 <predicciones/prediccion_cemento_lstm/resultados_sin_covid/final_07_prediccion_zoom_dual.png, id=996, 1002.6258pt x 423.5022pt>
 File: predicciones/prediccion_cemento_lstm/resultados_sin_covid/final_07_prediccion_zoom_dual.png Graphic file (type png)
 <use predicciones/prediccion_cemento_lstm/resultados_sin_covid/final_07_prediccion_zoom_dual.png>
-Package pdftex.def Info: predicciones/prediccion_cemento_lstm/resultados_sin_covid/final_07_prediccion_zoom_dual.png  used on input line 142.
+Package pdftex.def Info: predicciones/prediccion_cemento_lstm/resultados_sin_covid/final_07_prediccion_zoom_dual.png  used on input line 143.
 (pdftex.def)             Requested size: 483.69687pt x 204.31267pt.
  [42 <./predicciones/prediccion_cemento_lstm/resultados_sin_covid/final_05_todos_splits.png> <./predicciones/prediccion_cemento_lstm/resultados_sin_covid/final_06_prediccion_futura_completa.png>] [43 <./predicciones/prediccion_cemento_lstm/resultados_sin_covid/final_07_prediccion_zoom_dual.png>]
 <predicciones/prediccion_cemento_lstm/resultados_con_covid/final_01_curvas_entrenamiento.png, id=1015, 858.5676pt x 351.714pt>
 File: predicciones/prediccion_cemento_lstm/resultados_con_covid/final_01_curvas_entrenamiento.png Graphic file (type png)
 <use predicciones/prediccion_cemento_lstm/resultados_con_covid/final_01_curvas_entrenamiento.png>
-Package pdftex.def Info: predicciones/prediccion_cemento_lstm/resultados_con_covid/final_01_curvas_entrenamiento.png  used on input line 214.
+Package pdftex.def Info: predicciones/prediccion_cemento_lstm/resultados_con_covid/final_01_curvas_entrenamiento.png  used on input line 215.
 (pdftex.def)             Requested size: 411.14528pt x 168.42366pt.
  [44 <./predicciones/prediccion_cemento_lstm/resultados_con_covid/final_01_curvas_entrenamiento.png>]
 <predicciones/prediccion_cemento_lstm/resultados_con_covid/final_02_prediccion_test_serie.png, id=1026, 1002.6258pt x 423.5022pt>
 File: predicciones/prediccion_cemento_lstm/resultados_con_covid/final_02_prediccion_test_serie.png Graphic file (type png)
 <use predicciones/prediccion_cemento_lstm/resultados_con_covid/final_02_prediccion_test_serie.png>
-Package pdftex.def Info: predicciones/prediccion_cemento_lstm/resultados_con_covid/final_02_prediccion_test_serie.png  used on input line 247.
+Package pdftex.def Info: predicciones/prediccion_cemento_lstm/resultados_con_covid/final_02_prediccion_test_serie.png  used on input line 248.
 (pdftex.def)             Requested size: 483.69687pt x 204.31267pt.
 <predicciones/prediccion_cemento_lstm/resultados_con_covid/final_05_todos_splits.png, id=1027, 1146.684pt x 423.5022pt>
 File: predicciones/prediccion_cemento_lstm/resultados_con_covid/final_05_todos_splits.png Graphic file (type png)
 <use predicciones/prediccion_cemento_lstm/resultados_con_covid/final_05_todos_splits.png>
-Package pdftex.def Info: predicciones/prediccion_cemento_lstm/resultados_con_covid/final_05_todos_splits.png  used on input line 254.
+Package pdftex.def Info: predicciones/prediccion_cemento_lstm/resultados_con_covid/final_05_todos_splits.png  used on input line 255.
 (pdftex.def)             Requested size: 483.69687pt x 178.64516pt.
  [45 <./predicciones/prediccion_cemento_lstm/resultados_con_covid/final_02_prediccion_test_serie.png> <./predicciones/prediccion_cemento_lstm/resultados_con_covid/final_05_todos_splits.png>]
 <predicciones/prediccion_cemento_lstm/resultados_con_covid/final_06_prediccion_futura_completa.png, id=1039, 1145.7204pt x 423.5022pt>
 File: predicciones/prediccion_cemento_lstm/resultados_con_covid/final_06_prediccion_futura_completa.png Graphic file (type png)
 <use predicciones/prediccion_cemento_lstm/resultados_con_covid/final_06_prediccion_futura_completa.png>
-Package pdftex.def Info: predicciones/prediccion_cemento_lstm/resultados_con_covid/final_06_prediccion_futura_completa.png  used on input line 272.
+Package pdftex.def Info: predicciones/prediccion_cemento_lstm/resultados_con_covid/final_06_prediccion_futura_completa.png  used on input line 273.
 (pdftex.def)             Requested size: 483.69687pt x 178.79378pt.
 <predicciones/prediccion_cemento_lstm/resultados_con_covid/final_07_prediccion_zoom_dual.png, id=1040, 1002.6258pt x 423.5022pt>
 File: predicciones/prediccion_cemento_lstm/resultados_con_covid/final_07_prediccion_zoom_dual.png Graphic file (type png)
 <use predicciones/prediccion_cemento_lstm/resultados_con_covid/final_07_prediccion_zoom_dual.png>
-Package pdftex.def Info: predicciones/prediccion_cemento_lstm/resultados_con_covid/final_07_prediccion_zoom_dual.png  used on input line 279.
+Package pdftex.def Info: predicciones/prediccion_cemento_lstm/resultados_con_covid/final_07_prediccion_zoom_dual.png  used on input line 280.
 (pdftex.def)             Requested size: 483.69687pt x 204.31267pt.
  [46 <./predicciones/prediccion_cemento_lstm/resultados_con_covid/final_06_prediccion_futura_completa.png> <./predicciones/prediccion_cemento_lstm/resultados_con_covid/final_07_prediccion_zoom_dual.png>]
 <predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/eda_01_serie_precios_ladrillo.png, id=1050, 1002.144pt x 351.714pt>
 File: predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/eda_01_serie_precios_ladrillo.png Graphic file (type png)
 <use predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/eda_01_serie_precios_ladrillo.png>
-Package pdftex.def Info: predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/eda_01_serie_precios_ladrillo.png  used on input line 327.
+Package pdftex.def Info: predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/eda_01_serie_precios_ladrillo.png  used on input line 328.
 (pdftex.def)             Requested size: 483.69687pt x 169.75998pt.
 <predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/eda_stl_decomposition.png, id=1051, 1003.8303pt x 640.794pt>
 File: predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/eda_stl_decomposition.png Graphic file (type png)
 <use predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/eda_stl_decomposition.png>
-Package pdftex.def Info: predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/eda_stl_decomposition.png  used on input line 334.
+Package pdftex.def Info: predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/eda_stl_decomposition.png  used on input line 335.
 (pdftex.def)             Requested size: 483.69687pt x 308.77051pt.
  [47 <./predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/eda_01_serie_precios_ladrillo.png>] [48 <./predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/eda_stl_decomposition.png>]
 <predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_01_curvas_entrenamiento.png, id=1067, 858.5676pt x 351.714pt>
 File: predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_01_curvas_entrenamiento.png Graphic file (type png)
 <use predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_01_curvas_entrenamiento.png>
-Package pdftex.def Info: predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_01_curvas_entrenamiento.png  used on input line 379.
+Package pdftex.def Info: predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_01_curvas_entrenamiento.png  used on input line 380.
 (pdftex.def)             Requested size: 411.14528pt x 168.42366pt.
  [49 <./predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_01_curvas_entrenamiento.png>]
 <predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_02_prediccion_test_serie.png, id=1080, 1002.144pt x 423.5022pt>
 File: predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_02_prediccion_test_serie.png Graphic file (type png)
 <use predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_02_prediccion_test_serie.png>
-Package pdftex.def Info: predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_02_prediccion_test_serie.png  used on input line 412.
+Package pdftex.def Info: predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_02_prediccion_test_serie.png  used on input line 413.
 (pdftex.def)             Requested size: 483.69687pt x 204.4096pt.
 <predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_05_todos_splits.png, id=1081, 1146.684pt x 423.5022pt>
 File: predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_05_todos_splits.png Graphic file (type png)
 <use predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_05_todos_splits.png>
-Package pdftex.def Info: predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_05_todos_splits.png  used on input line 419.
+Package pdftex.def Info: predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_05_todos_splits.png  used on input line 420.
 (pdftex.def)             Requested size: 483.69687pt x 178.64516pt.
 <predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_06_prediccion_futura_completa.png, id=1085, 1145.2386pt x 423.5022pt>
 File: predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_06_prediccion_futura_completa.png Graphic file (type png)
 <use predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_06_prediccion_futura_completa.png>
-Package pdftex.def Info: predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_06_prediccion_futura_completa.png  used on input line 437.
+Package pdftex.def Info: predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_06_prediccion_futura_completa.png  used on input line 438.
 (pdftex.def)             Requested size: 483.69687pt x 178.86487pt.
  [50 <./predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_02_prediccion_test_serie.png> <./predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_05_todos_splits.png>]
 <predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_07_prediccion_zoom_dual.png, id=1094, 1002.6258pt x 423.5022pt>
 File: predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_07_prediccion_zoom_dual.png Graphic file (type png)
 <use predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_07_prediccion_zoom_dual.png>
-Package pdftex.def Info: predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_07_prediccion_zoom_dual.png  used on input line 444.
+Package pdftex.def Info: predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_07_prediccion_zoom_dual.png  used on input line 445.
 (pdftex.def)             Requested size: 483.69687pt x 204.31267pt.
  [51 <./predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_06_prediccion_futura_completa.png> <./predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_07_prediccion_zoom_dual.png>]
 <predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_01_curvas_entrenamiento.png, id=1103, 858.5676pt x 351.714pt>
 File: predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_01_curvas_entrenamiento.png Graphic file (type png)
 <use predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_01_curvas_entrenamiento.png>
-Package pdftex.def Info: predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_01_curvas_entrenamiento.png  used on input line 516.
+Package pdftex.def Info: predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_01_curvas_entrenamiento.png  used on input line 517.
 (pdftex.def)             Requested size: 411.14528pt x 168.42366pt.
  [52]
 <predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_02_prediccion_test_serie.png, id=1114, 1002.144pt x 423.5022pt>
 File: predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_02_prediccion_test_serie.png Graphic file (type png)
 <use predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_02_prediccion_test_serie.png>
-Package pdftex.def Info: predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_02_prediccion_test_serie.png  used on input line 549.
+Package pdftex.def Info: predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_02_prediccion_test_serie.png  used on input line 550.
 (pdftex.def)             Requested size: 483.69687pt x 204.4096pt.
  [53 <./predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_01_curvas_entrenamiento.png>]
 <predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_05_todos_splits.png, id=1122, 1146.684pt x 423.5022pt>
 File: predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_05_todos_splits.png Graphic file (type png)
 <use predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_05_todos_splits.png>
-Package pdftex.def Info: predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_05_todos_splits.png  used on input line 556.
+Package pdftex.def Info: predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_05_todos_splits.png  used on input line 557.
 (pdftex.def)             Requested size: 483.69687pt x 178.64516pt.
 <predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_06_prediccion_futura_completa.png, id=1126, 1145.2386pt x 423.5022pt>
 File: predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_06_prediccion_futura_completa.png Graphic file (type png)
 <use predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_06_prediccion_futura_completa.png>
-Package pdftex.def Info: predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_06_prediccion_futura_completa.png  used on input line 574.
+Package pdftex.def Info: predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_06_prediccion_futura_completa.png  used on input line 575.
 (pdftex.def)             Requested size: 483.69687pt x 178.86487pt.
  [54 <./predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_02_prediccion_test_serie.png> <./predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_05_todos_splits.png>]
 <predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_07_prediccion_zoom_dual.png, id=1135, 1002.6258pt x 423.5022pt>
 File: predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_07_prediccion_zoom_dual.png Graphic file (type png)
 <use predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_07_prediccion_zoom_dual.png>
-Package pdftex.def Info: predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_07_prediccion_zoom_dual.png  used on input line 581.
+Package pdftex.def Info: predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_07_prediccion_zoom_dual.png  used on input line 582.
 (pdftex.def)             Requested size: 483.69687pt x 204.31267pt.
  [55 <./predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_06_prediccion_futura_completa.png> <./predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_07_prediccion_zoom_dual.png>]) (resultados_gru.tex [56]
 <predicciones/prediccion_cemento_gru/prediccion_sin_covid/final_01_curvas_entrenamiento.png, id=1150, 858.5676pt x 351.714pt>
@@ -1374,80 +1374,80 @@ Package pdftex.def Info: predicciones/prediccion_cemento_gru/resultados_con_covi
 <predicciones/prediccion_cemento_gru/resultados_con_covid/final_02_prediccion_test_serie.png, id=1188, 1002.6258pt x 423.5022pt>
 File: predicciones/prediccion_cemento_gru/resultados_con_covid/final_02_prediccion_test_serie.png Graphic file (type png)
 <use predicciones/prediccion_cemento_gru/resultados_con_covid/final_02_prediccion_test_serie.png>
-Package pdftex.def Info: predicciones/prediccion_cemento_gru/resultados_con_covid/final_02_prediccion_test_serie.png  used on input line 204.
+Package pdftex.def Info: predicciones/prediccion_cemento_gru/resultados_con_covid/final_02_prediccion_test_serie.png  used on input line 206.
 (pdftex.def)             Requested size: 483.69687pt x 204.31267pt.
 <predicciones/prediccion_cemento_gru/resultados_con_covid/final_05_todos_splits.png, id=1189, 1146.684pt x 423.5022pt>
 File: predicciones/prediccion_cemento_gru/resultados_con_covid/final_05_todos_splits.png Graphic file (type png)
 <use predicciones/prediccion_cemento_gru/resultados_con_covid/final_05_todos_splits.png>
-Package pdftex.def Info: predicciones/prediccion_cemento_gru/resultados_con_covid/final_05_todos_splits.png  used on input line 211.
+Package pdftex.def Info: predicciones/prediccion_cemento_gru/resultados_con_covid/final_05_todos_splits.png  used on input line 213.
 (pdftex.def)             Requested size: 483.69687pt x 178.64516pt.
  [61 <./predicciones/prediccion_cemento_gru/resultados_con_covid/final_01_curvas_entrenamiento.png> <./predicciones/prediccion_cemento_gru/resultados_con_covid/final_02_prediccion_test_serie.png>]
 <predicciones/prediccion_cemento_gru/resultados_con_covid/final_06_prediccion_futura_completa.png, id=1199, 1145.7204pt x 423.5022pt>
 File: predicciones/prediccion_cemento_gru/resultados_con_covid/final_06_prediccion_futura_completa.png Graphic file (type png)
 <use predicciones/prediccion_cemento_gru/resultados_con_covid/final_06_prediccion_futura_completa.png>
-Package pdftex.def Info: predicciones/prediccion_cemento_gru/resultados_con_covid/final_06_prediccion_futura_completa.png  used on input line 226.
+Package pdftex.def Info: predicciones/prediccion_cemento_gru/resultados_con_covid/final_06_prediccion_futura_completa.png  used on input line 228.
 (pdftex.def)             Requested size: 483.69687pt x 178.79378pt.
 <predicciones/prediccion_cemento_gru/resultados_con_covid/final_07_prediccion_zoom_dual.png, id=1200, 1002.6258pt x 423.5022pt>
 File: predicciones/prediccion_cemento_gru/resultados_con_covid/final_07_prediccion_zoom_dual.png Graphic file (type png)
 <use predicciones/prediccion_cemento_gru/resultados_con_covid/final_07_prediccion_zoom_dual.png>
-Package pdftex.def Info: predicciones/prediccion_cemento_gru/resultados_con_covid/final_07_prediccion_zoom_dual.png  used on input line 233.
+Package pdftex.def Info: predicciones/prediccion_cemento_gru/resultados_con_covid/final_07_prediccion_zoom_dual.png  used on input line 235.
 (pdftex.def)             Requested size: 483.69687pt x 204.31267pt.
  [62 <./predicciones/prediccion_cemento_gru/resultados_con_covid/final_05_todos_splits.png> <./predicciones/prediccion_cemento_gru/resultados_con_covid/final_06_prediccion_futura_completa.png>] [63 <./predicciones/prediccion_cemento_gru/resultados_con_covid/final_07_prediccion_zoom_dual.png>]
 <predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_01_curvas_entrenamiento.png, id=1218, 858.5676pt x 351.714pt>
 File: predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_01_curvas_entrenamiento.png Graphic file (type png)
 <use predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_01_curvas_entrenamiento.png>
-Package pdftex.def Info: predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_01_curvas_entrenamiento.png  used on input line 310.
+Package pdftex.def Info: predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_01_curvas_entrenamiento.png  used on input line 312.
 (pdftex.def)             Requested size: 483.69687pt x 198.14455pt.
  [64 <./predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_01_curvas_entrenamiento.png>]
 <predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_02_prediccion_test_serie.png, id=1225, 1002.144pt x 423.5022pt>
 File: predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_02_prediccion_test_serie.png Graphic file (type png)
 <use predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_02_prediccion_test_serie.png>
-Package pdftex.def Info: predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_02_prediccion_test_serie.png  used on input line 337.
+Package pdftex.def Info: predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_02_prediccion_test_serie.png  used on input line 339.
 (pdftex.def)             Requested size: 483.69687pt x 204.4096pt.
 <predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_05_todos_splits.png, id=1226, 1146.684pt x 423.5022pt>
 File: predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_05_todos_splits.png Graphic file (type png)
 <use predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_05_todos_splits.png>
-Package pdftex.def Info: predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_05_todos_splits.png  used on input line 344.
+Package pdftex.def Info: predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_05_todos_splits.png  used on input line 346.
 (pdftex.def)             Requested size: 483.69687pt x 178.64516pt.
 <predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_06_prediccion_futura_completa.png, id=1227, 1145.2386pt x 423.5022pt>
 File: predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_06_prediccion_futura_completa.png Graphic file (type png)
 <use predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_06_prediccion_futura_completa.png>
-Package pdftex.def Info: predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_06_prediccion_futura_completa.png  used on input line 359.
+Package pdftex.def Info: predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_06_prediccion_futura_completa.png  used on input line 361.
 (pdftex.def)             Requested size: 483.69687pt x 178.86487pt.
 <predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_07_prediccion_zoom_dual.png, id=1228, 1002.6258pt x 423.5022pt>
 File: predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_07_prediccion_zoom_dual.png Graphic file (type png)
 <use predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_07_prediccion_zoom_dual.png>
-Package pdftex.def Info: predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_07_prediccion_zoom_dual.png  used on input line 366.
+Package pdftex.def Info: predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_07_prediccion_zoom_dual.png  used on input line 368.
 (pdftex.def)             Requested size: 483.69687pt x 204.31267pt.
  [65 <./predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_02_prediccion_test_serie.png> <./predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_05_todos_splits.png>] [66 <./predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_06_prediccion_futura_completa.png> <./predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_07_prediccion_zoom_dual.png>]
 <predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_01_curvas_entrenamiento.png, id=1245, 858.5676pt x 351.714pt>
 File: predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_01_curvas_entrenamiento.png Graphic file (type png)
 <use predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_01_curvas_entrenamiento.png>
-Package pdftex.def Info: predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_01_curvas_entrenamiento.png  used on input line 431.
+Package pdftex.def Info: predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_01_curvas_entrenamiento.png  used on input line 434.
 (pdftex.def)             Requested size: 483.69687pt x 198.14455pt.
  [67 <./predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_01_curvas_entrenamiento.png>]
 <predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_02_prediccion_test_serie.png, id=1256, 1002.144pt x 423.5022pt>
 File: predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_02_prediccion_test_serie.png Graphic file (type png)
 <use predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_02_prediccion_test_serie.png>
-Package pdftex.def Info: predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_02_prediccion_test_serie.png  used on input line 458.
+Package pdftex.def Info: predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_02_prediccion_test_serie.png  used on input line 462.
 (pdftex.def)             Requested size: 483.69687pt x 204.4096pt.
 <predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_05_todos_splits.png, id=1257, 1146.684pt x 423.5022pt>
 File: predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_05_todos_splits.png Graphic file (type png)
 <use predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_05_todos_splits.png>
-Package pdftex.def Info: predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_05_todos_splits.png  used on input line 465.
+Package pdftex.def Info: predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_05_todos_splits.png  used on input line 469.
 (pdftex.def)             Requested size: 483.69687pt x 178.64516pt.
  [68 <./predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_02_prediccion_test_serie.png> <./predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_05_todos_splits.png>]
-<predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_06_prediccion_futura_completa.png, id=1266, 1145.2386pt x 423.5022pt>
+<predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_06_prediccion_futura_completa.png, id=1265, 1145.2386pt x 423.5022pt>
 File: predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_06_prediccion_futura_completa.png Graphic file (type png)
 <use predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_06_prediccion_futura_completa.png>
-Package pdftex.def Info: predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_06_prediccion_futura_completa.png  used on input line 480.
+Package pdftex.def Info: predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_06_prediccion_futura_completa.png  used on input line 484.
 (pdftex.def)             Requested size: 483.69687pt x 178.86487pt.
-<predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_07_prediccion_zoom_dual.png, id=1267, 1002.6258pt x 423.5022pt>
+<predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_07_prediccion_zoom_dual.png, id=1266, 1002.6258pt x 423.5022pt>
 File: predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_07_prediccion_zoom_dual.png Graphic file (type png)
 <use predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_07_prediccion_zoom_dual.png>
-Package pdftex.def Info: predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_07_prediccion_zoom_dual.png  used on input line 487.
+Package pdftex.def Info: predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_07_prediccion_zoom_dual.png  used on input line 491.
 (pdftex.def)             Requested size: 483.69687pt x 204.31267pt.
-)) [69 <./predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_06_prediccion_futura_completa.png> <./predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_07_prediccion_zoom_dual.png>] [70]
+ [69 <./predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_06_prediccion_futura_completa.png> <./predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_07_prediccion_zoom_dual.png>])) [70]
 Cap\'{\i }tulo 6.
 (discusion.tex [71
 
@@ -1488,7 +1488,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  68i,11n,70p,1937b,2939s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/lasy10.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (96 pages, 11126026 bytes).
+Output written on main.pdf (96 pages, 11125994 bytes).
 PDF statistics:
  1503 PDF objects out of 1728 (max. 8388607)
  371 named destinations out of 1000 (max. 500000)

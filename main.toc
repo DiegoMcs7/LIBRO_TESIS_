@@ -61,7 +61,7 @@
 \contentsline {subsubsection}{\numberline {5.3.1.2}Escenario sin Efecto Pandémico}{40}{subsubsection.5.3.1.2}%
 \contentsline {paragraph}{\numberline {5.3.1.2.1}Hiperparámetros y Arquitectura}{40}{paragraph.5.3.1.2.1}%
 \contentsline {paragraph}{\numberline {5.3.1.2.2}Curva de Aprendizaje}{40}{paragraph.5.3.1.2.2}%
-\contentsline {paragraph}{\numberline {5.3.1.2.3}Métricas de Evaluación}{40}{paragraph.5.3.1.2.3}%
+\contentsline {paragraph}{\numberline {5.3.1.2.3}Métricas de Evaluación}{41}{paragraph.5.3.1.2.3}%
 \contentsline {paragraph}{\numberline {5.3.1.2.4}Evaluación sobre el Conjunto de Prueba}{41}{paragraph.5.3.1.2.4}%
 \contentsline {paragraph}{\numberline {5.3.1.2.5}Análisis de Residuos}{42}{paragraph.5.3.1.2.5}%
 \contentsline {paragraph}{\numberline {5.3.1.2.6}Pronóstico a 24 Meses}{42}{paragraph.5.3.1.2.6}%
