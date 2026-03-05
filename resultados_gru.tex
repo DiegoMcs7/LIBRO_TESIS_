@@ -87,13 +87,6 @@ El RMSE de validación (Gs.~3.264,19) es inferior al de prueba (Gs.~4.964,27) y 
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{predicciones/prediccion_cemento_gru/prediccion_sin_covid/final_03_scatter_test.png}
-    \caption{Diagrama de dispersión: precio predicho vs.\ real del cemento --- escenario sin pandemia (GRU).}
-    \label{fig:gru_cemento_scatter_sc}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_gru/prediccion_sin_covid/final_05_todos_splits.png}
     \caption{Ajuste del modelo GRU del cemento sobre las tres particiones --- escenario sin pandemia.}
     \label{fig:gru_cemento_splits_sc}
@@ -101,27 +94,6 @@ El RMSE de validación (Gs.~3.264,19) es inferior al de prueba (Gs.~4.964,27) y 
 
 \clearpage
 \paragraph{Análisis de Residuos}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_gru/prediccion_sin_covid/final_04_residuos.png}
-    \caption{Residuos del modelo GRU para cemento --- escenario sin pandemia, conjunto de prueba.}
-    \label{fig:gru_cemento_res_sc}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.8\textwidth]{predicciones/prediccion_cemento_gru/prediccion_sin_covid/residuos_histograma.png}
-    \caption{Histograma de residuos del modelo GRU para cemento --- escenario sin pandemia.}
-    \label{fig:gru_cemento_reshist_sc}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_gru/prediccion_sin_covid/residuos_acf_pacf.png}
-    \caption{ACF y PACF de los residuos del modelo GRU para cemento --- escenario sin pandemia.}
-    \label{fig:gru_cemento_acf_sc}
-\end{figure}
 
 \justify
 El test de Ljung-Box sobre los residuos del conjunto de prueba arroja un $p$-valor de 0,055 a 10 rezagos y de 0,170 a 20 rezagos, ambos superiores al umbral de 0,05. Este resultado indica que los residuos se comportan como ruido blanco, confirmando que el modelo GRU ha capturado adecuadamente la estructura temporal de la serie del cemento.
@@ -143,12 +115,29 @@ El test de Ljung-Box sobre los residuos del conjunto de prueba arroja un $p$-val
     \label{fig:gru_cemento_zoom_sin_covid}
 \end{figure}
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_gru/prediccion_sin_covid/forecast_ic_monte_carlo.png}
-    \caption{IC Monte Carlo Dropout del pronóstico GRU para cemento --- escenario sin pandemia.}
-    \label{fig:gru_cemento_ic_sin_covid}
-\end{figure}
+\begin{table}[htbp]
+\centering
+\caption{Pronóstico GRU a 24 meses del precio del cemento (Gs.) --- escenario sin pandemia.}
+\label{tab:gru_cemento_pred_sin_covid}
+\begin{tabular}{lr|lr}
+\toprule
+\textbf{Mes} & \textbf{Precio (Gs.)} & \textbf{Mes} & \textbf{Precio (Gs.)} \\
+\midrule
+Agosto 2025      & 59.825 & Agosto 2026      & 62.721 \\
+Septiembre 2025  & 60.732 & Septiembre 2026  & 63.161 \\
+Octubre 2025     & 61.866 & Octubre 2026     & 63.574 \\
+Noviembre 2025   & 62.715 & Noviembre 2026   & 63.850 \\
+Diciembre 2025   & 63.087 & Diciembre 2026   & 63.812 \\
+Enero 2026       & 62.910 & Enero 2027       & 63.427 \\
+Febrero 2026     & 62.493 & Febrero 2027     & 62.839 \\
+Marzo 2026       & 61.975 & Marzo 2027       & 62.208 \\
+Abril 2026       & 61.701 & Abril 2027       & 61.859 \\
+Mayo 2026        & 61.758 & Mayo 2027        & 61.865 \\
+Junio 2026       & 61.923 & Junio 2027       & 61.991 \\
+Julio 2026       & 62.252 & Julio 2027       & 62.285 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \justify
 El modelo GRU proyecta, bajo el escenario sin pandemia, un rango de precios del cemento de Gs.~59.825 a Gs.~63.850 a lo largo del horizonte de 24 meses. La proyección muestra una trayectoria relativamente estable, dentro de una banda contenida respecto al nivel histórico reciente.
@@ -220,13 +209,6 @@ El RMSE de prueba del escenario con pandemia (Gs.~4.964{,}27) es idéntico al de
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{predicciones/prediccion_cemento_gru/resultados_con_covid/final_03_scatter_test.png}
-    \caption{Diagrama de dispersión: precio predicho vs.\ real del cemento --- escenario con pandemia (GRU).}
-    \label{fig:gru_cemento_scatter_cc}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_gru/resultados_con_covid/final_05_todos_splits.png}
     \caption{Ajuste del modelo GRU del cemento sobre las tres particiones --- escenario con pandemia.}
     \label{fig:gru_cemento_splits_cc}
@@ -234,27 +216,6 @@ El RMSE de prueba del escenario con pandemia (Gs.~4.964{,}27) es idéntico al de
 
 \clearpage
 \paragraph{Análisis de Residuos}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_gru/resultados_con_covid/final_04_residuos.png}
-    \caption{Residuos del modelo GRU para cemento --- escenario con pandemia, conjunto de prueba.}
-    \label{fig:gru_cemento_res_cc}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.8\textwidth]{predicciones/prediccion_cemento_gru/resultados_con_covid/residuos_histograma.png}
-    \caption{Histograma de residuos del modelo GRU para cemento --- escenario con pandemia.}
-    \label{fig:gru_cemento_reshist_cc}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_gru/resultados_con_covid/residuos_acf_pacf.png}
-    \caption{ACF y PACF de los residuos del modelo GRU para cemento --- escenario con pandemia.}
-    \label{fig:gru_cemento_acf_cc}
-\end{figure}
 
 \justify
 El test de Ljung-Box sobre los residuos del conjunto de prueba arroja un $p$-valor de 0,055 a 10 rezagos y de 0,170 a 20 rezagos, valores idénticos a los del escenario sin pandemia. Ambos superan el umbral de 0,05, confirmando que los residuos se comportan como ruido blanco. La coincidencia de estos valores con los del escenario sin pandemia es esperable, dado que la búsqueda de Optuna convergió a la misma configuración en ambos escenarios.
@@ -276,12 +237,29 @@ El test de Ljung-Box sobre los residuos del conjunto de prueba arroja un $p$-val
     \label{fig:gru_cemento_zoom_con_covid}
 \end{figure}
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_gru/resultados_con_covid/forecast_ic_monte_carlo.png}
-    \caption{IC Monte Carlo Dropout del pronóstico GRU para cemento --- escenario con pandemia.}
-    \label{fig:gru_cemento_ic_con_covid}
-\end{figure}
+\begin{table}[htbp]
+\centering
+\caption{Pronóstico GRU a 24 meses del precio del cemento (Gs.) --- escenario con pandemia.}
+\label{tab:gru_cemento_pred_con_covid}
+\begin{tabular}{lr|lr}
+\toprule
+\textbf{Mes} & \textbf{Precio (Gs.)} & \textbf{Mes} & \textbf{Precio (Gs.)} \\
+\midrule
+Agosto 2025      & 59.825 & Agosto 2026      & 64.176 \\
+Septiembre 2025  & 61.804 & Septiembre 2026  & 64.626 \\
+Octubre 2025     & 63.107 & Octubre 2026     & 65.051 \\
+Noviembre 2025   & 63.991 & Noviembre 2026   & 65.334 \\
+Diciembre 2025   & 64.405 & Diciembre 2026   & 65.304 \\
+Enero 2026       & 64.317 & Enero 2027       & 64.933 \\
+Febrero 2026     & 63.926 & Febrero 2027     & 64.348 \\
+Marzo 2026       & 63.432 & Marzo 2027       & 63.720 \\
+Abril 2026       & 63.172 & Abril 2027       & 63.370 \\
+Mayo 2026        & 63.228 & Mayo 2027        & 63.361 \\
+Junio 2026       & 63.375 & Junio 2027       & 63.461 \\
+Julio 2026       & 63.699 & Julio 2027       & 63.744 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \justify
 Bajo el escenario con efecto pandémico, el modelo GRU proyecta para el cemento un rango de precios de Gs.~59.825 a Gs.~65.334 a lo largo del horizonte de 24 meses. Esta proyección es levemente superior al límite máximo del escenario sin pandemia (Gs.~63.850), lo que sugiere que la variable pandémica empuja marginalmente los precios al alza en el largo plazo según la interpretación del modelo. La diferencia entre escenarios es acotada, lo que indica que el GRU capturó el efecto pandémico sobre el cemento como un factor de impacto moderado.
@@ -365,13 +343,6 @@ El RMSE de validación (Gs.~11{,}53) y el de prueba (Gs.~11{,}88) son coherentes
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_03_scatter_test.png}
-    \caption{Diagrama de dispersión: precio predicho vs.\ real del ladrillo --- escenario sin pandemia (GRU).}
-    \label{fig:gru_ladrillo_scatter_sc}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_05_todos_splits.png}
     \caption{Ajuste del modelo GRU del ladrillo sobre las tres particiones --- escenario sin pandemia.}
     \label{fig:gru_ladrillo_splits_sc}
@@ -379,27 +350,6 @@ El RMSE de validación (Gs.~11{,}53) y el de prueba (Gs.~11{,}88) son coherentes
 
 \clearpage
 \paragraph{Análisis de Residuos}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\textwidth]{predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_04_residuos.png}
-    \caption{Residuos del modelo GRU para ladrillo --- escenario sin pandemia, conjunto de prueba.}
-    \label{fig:gru_ladrillo_res_sc}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.8\textwidth]{predicciones/prediccion_ladrillo_gru/resultados_sin_covid/residuos_histograma.png}
-    \caption{Histograma de residuos del modelo GRU para ladrillo --- escenario sin pandemia.}
-    \label{fig:gru_ladrillo_reshist_sc}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\textwidth]{predicciones/prediccion_ladrillo_gru/resultados_sin_covid/residuos_acf_pacf.png}
-    \caption{ACF y PACF de los residuos del modelo GRU para ladrillo --- escenario sin pandemia.}
-    \label{fig:gru_ladrillo_acf_sc}
-\end{figure}
 
 \justify
 El test de Ljung-Box sobre los residuos del conjunto de prueba arroja un $p$-valor de 0,011 a 10 rezagos (rechaza $H_0$) y de 0,119 a 20 rezagos (no rechaza $H_0$). Este resultado mixto indica que existe cierta autocorrelación residual en los primeros rezagos que el modelo no logra absorber completamente, aunque la estructura de dependencia se diluye al considerar horizontes más amplios.
@@ -421,12 +371,29 @@ El test de Ljung-Box sobre los residuos del conjunto de prueba arroja un $p$-val
     \label{fig:gru_ladrillo_zoom_sin_covid}
 \end{figure}
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\textwidth]{predicciones/prediccion_ladrillo_gru/resultados_sin_covid/forecast_ic_monte_carlo.png}
-    \caption{IC Monte Carlo Dropout del pronóstico GRU para ladrillo --- escenario sin pandemia.}
-    \label{fig:gru_ladrillo_ic_sin_covid}
-\end{figure}
+\begin{table}[htbp]
+\centering
+\caption{Pronóstico GRU a 24 meses del precio del ladrillo (Gs.) --- escenario sin pandemia.}
+\label{tab:gru_ladrillo_pred_sin_covid}
+\begin{tabular}{lr|lr}
+\toprule
+\textbf{Mes} & \textbf{Precio (Gs.)} & \textbf{Mes} & \textbf{Precio (Gs.)} \\
+\midrule
+Agosto 2025      & 661 & Agosto 2026      & 704 \\
+Septiembre 2025  & 668 & Septiembre 2026  & 704 \\
+Octubre 2025     & 676 & Octubre 2026     & 706 \\
+Noviembre 2025   & 683 & Noviembre 2026   & 710 \\
+Diciembre 2025   & 690 & Diciembre 2026   & 713 \\
+Enero 2026       & 696 & Enero 2027       & 717 \\
+Febrero 2026     & 701 & Febrero 2027     & 719 \\
+Marzo 2026       & 705 & Marzo 2027       & 721 \\
+Abril 2026       & 709 & Abril 2027       & 724 \\
+Mayo 2026        & 712 & Mayo 2027        & 726 \\
+Junio 2026       & 709 & Junio 2027       & 722 \\
+Julio 2026       & 705 & Julio 2027       & 716 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \justify
 El modelo GRU proyecta, bajo el escenario sin pandemia, un precio del ladrillo en el rango de Gs.~661 a Gs.~726 a lo largo del horizonte de 24 meses. La amplitud del intervalo refleja la incertidumbre acumulada en las predicciones recursivas, aunque su magnitud sigue siendo moderada para una proyección de dos años.
@@ -498,13 +465,6 @@ El RMSE de prueba del escenario con pandemia (Gs.~11{,}11) es inferior al del es
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_03_scatter_test.png}
-    \caption{Diagrama de dispersión: precio predicho vs.\ real del ladrillo --- escenario con pandemia (GRU).}
-    \label{fig:gru_ladrillo_scatter_cc}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_05_todos_splits.png}
     \caption{Ajuste del modelo GRU del ladrillo sobre las tres particiones --- escenario con pandemia.}
     \label{fig:gru_ladrillo_splits_cc}
@@ -512,27 +472,6 @@ El RMSE de prueba del escenario con pandemia (Gs.~11{,}11) es inferior al del es
 
 \clearpage
 \paragraph{Análisis de Residuos}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\textwidth]{predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_04_residuos.png}
-    \caption{Residuos del modelo GRU para ladrillo --- escenario con pandemia, conjunto de prueba.}
-    \label{fig:gru_ladrillo_res_cc}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.8\textwidth]{predicciones/prediccion_ladrillo_gru/resultados_con_covid/residuos_histograma.png}
-    \caption{Histograma de residuos del modelo GRU para ladrillo --- escenario con pandemia.}
-    \label{fig:gru_ladrillo_reshist_cc}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\textwidth]{predicciones/prediccion_ladrillo_gru/resultados_con_covid/residuos_acf_pacf.png}
-    \caption{ACF y PACF de los residuos del modelo GRU para ladrillo --- escenario con pandemia.}
-    \label{fig:gru_ladrillo_acf_cc}
-\end{figure}
 
 \justify
 El test de Ljung-Box sobre los residuos del conjunto de prueba arroja un $p$-valor de 0,003 a 10 rezagos y de 0,012 a 20 rezagos, ambos rechazando la hipótesis nula de ausencia de autocorrelación. A diferencia del escenario sin pandemia ---donde el rechazo se limitaba a 10 rezagos---, en este escenario la autocorrelación persiste también a 20 rezagos, lo que sugiere que la configuración con menor \textit{dropout} recurrente deja mayor estructura temporal sin capturar en los residuos.
@@ -554,12 +493,29 @@ El test de Ljung-Box sobre los residuos del conjunto de prueba arroja un $p$-val
     \label{fig:gru_ladrillo_zoom_con_covid}
 \end{figure}
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\textwidth]{predicciones/prediccion_ladrillo_gru/resultados_con_covid/forecast_ic_monte_carlo.png}
-    \caption{IC Monte Carlo Dropout del pronóstico GRU para ladrillo --- escenario con pandemia.}
-    \label{fig:gru_ladrillo_ic_con_covid}
-\end{figure}
+\begin{table}[htbp]
+\centering
+\caption{Pronóstico GRU a 24 meses del precio del ladrillo (Gs.) --- escenario con pandemia.}
+\label{tab:gru_ladrillo_pred_con_covid}
+\begin{tabular}{lr|lr}
+\toprule
+\textbf{Mes} & \textbf{Precio (Gs.)} & \textbf{Mes} & \textbf{Precio (Gs.)} \\
+\midrule
+Agosto 2025      & 659 & Agosto 2026      & 742 \\
+Septiembre 2025  & 670 & Septiembre 2026  & 742 \\
+Octubre 2025     & 684 & Octubre 2026     & 744 \\
+Noviembre 2025   & 697 & Noviembre 2026   & 747 \\
+Diciembre 2025   & 707 & Diciembre 2026   & 749 \\
+Enero 2026       & 715 & Enero 2027       & 752 \\
+Febrero 2026     & 723 & Febrero 2027     & 753 \\
+Marzo 2026       & 730 & Marzo 2027       & 755 \\
+Abril 2026       & 738 & Abril 2027       & 759 \\
+Mayo 2026        & 746 & Mayo 2027        & 763 \\
+Junio 2026       & 746 & Junio 2027       & 760 \\
+Julio 2026       & 744 & Julio 2027       & 755 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \justify
 Bajo el escenario con efecto pandémico, el rango de precios proyectado para el ladrillo se sitúa entre Gs.~659 y Gs.~763. El límite superior es mayor que en el escenario sin pandemia (Gs.~726), lo que indica que el modelo captura un efecto alcista acumulado de la variable pandémica sobre el precio del ladrillo hacia el final del horizonte de predicción.

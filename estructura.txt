@@ -44,10 +44,10 @@ Acrónimos
 
 Referencia
 
-Primeramente verificame todo el proyecto y lo que diga cuadro cambiame a tabla. Es decir si vez cuadro 5.5 eso debe ser tabla 5.5
-Quiero que borres del libro todas estas figuras de sarimax tanto del cemento como del ladrillo
-06_pronostico_completo.png; 03_acf_pacf.png; 04_correlacion.png; 05_patron_estacional.png; 08_comparacion_real_predicho.png; 07_diagnostico_residuos.png
-Tambien el cuadro 5.5 necesito que sea completo no solo los primeros 10 Los resultados en las sección Predicción de los Precios del Cemento y del Ladrillo Común con Seasonal Autoregressive Integrated Moving Average with Exogenous Variables (SARIMAX)
-estan mal hechos, las figuras no estan bien referenciadas, no hay un orden concreto. Es decir, tenes que mencionar las figuras y Luego abajo deben ir las figuras con un titulo pequeqño debajo de la figura
-Debes de rehacer todo basarte en estas carpetas ya que estas contienen los resultados."C:\Users\usuario\Desktop\facultad\Tesis\libro_tesis\predicciones\prediccion_sarimax_cemento" "C:\Users\usuario\Desktop\facultad\Tesis\libro_tesis\predicciones\prediccion_sarimax_ladrillo"
-Primero cemento con y sin covid. Luego ladrillo con y sin covid. Haz nuevamente un analisis global para que no quede  nada inconsitente en cualquier sección del documento.
+Primeramente verificame todo el proyecto y lo que diga cuadro cambiame a tabla. Es decir si vez cuadro 5.5 eso debe ser tabla 5.5.
+Cuadro 5.1: ESto esta incorrecto debe ser asi Tabla 5.1:   Esta prohibido usar la palabra Cuadro
+Quiero que borres del libro todas estas figuras y sus referencias tanto en las secciones del cemento como del ladrillo sin y con covid
+eda_correlaciones_heatmap.png; final_03_scatter_test.png; final_04_residuos.png; residuos_histograma.png; residuos_acf_pacf.png
+MUCHO OJO CON ESTO en vez de la figura forecast_ic_monte_carlo.png quiero un tabla que tenga las predicciones con 24 meses
+Haz nuevamente un analisis global para que no quede  nada inconsitente. La referencias a las figuras deben de ser correctar
+haz esa verificacion uno por uno. DEbe haber sentido luego de cada presenteacion abajo debe estar la figura o el cuadro
