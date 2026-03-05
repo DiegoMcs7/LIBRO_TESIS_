@@ -131,7 +131,7 @@ El RMSE de validación (4.170~Gs.) refleja el período de mayor volatilidad de p
 \end{figure}
 
 \justify
-La Figura \ref{fig:sarimax_residuos} presenta el diagnóstico completo de los residuos del modelo final. El test de Ljung-Box al primer rezago no rechaza la hipótesis nula de ausencia de autocorrelación serial ($Q = 0{,}39$, $p = 0{,}53$), lo que indica que los residuos se comportan como ruido blanco y que el modelo capturó la estructura dinámica de la serie. El test de Jarque-Bera rechaza la normalidad de los residuos ($JB = 12342{,}45$, $p < 0{,}001$), resultado atribuible a valores extremos durante el período pandémico que generan una curtosis de 49{,}47 y una asimetría positiva de 0{,}83. Esta no normalidad no invalida las estimaciones puntuales del modelo, aunque sí impone cautela en la interpretación de los intervalos de confianza calculados bajo supuesto gaussiano.
+La Figura \ref{fig:sarimax_residuos} presenta el diagnóstico completo de los residuos del modelo final. El test de Ljung-Box al primer rezago no rechaza la hipótesis nula de ausencia de autocorrelación serial ($Q = 0{,}39$, $p = 0{,}53$), lo que indica que los residuos se comportan como ruido blanco y que el modelo capturó la estructura dinámica de la serie. El test de Jarque-Bera rechaza la normalidad de los residuos ($JB = 12341{,}92$, $p < 0{,}001$), resultado atribuible a valores extremos durante el período pandémico que generan una curtosis de 49{,}47 y una asimetría positiva de 0{,}83. Esta no normalidad no invalida las estimaciones puntuales del modelo, aunque sí impone cautela en la interpretación de los intervalos de confianza calculados bajo supuesto gaussiano.
 
 \subsubsection{Modelo SARIMAX: Pronóstico a 24 Meses}
 
