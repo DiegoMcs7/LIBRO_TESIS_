@@ -25,7 +25,7 @@ El trabajo se desarrolló en tres etapas principales:
 El conjunto de datos para los precios del cemento y el ladrillo común comprenden el período enero de 2014 a julio de 2025. Este intervalo se definió debido a que la Revista Técnica Mandu'a \cite{mandua} pone a disposición registros históricos únicamente desde el año 2014 en su sitio web.
 
 \justify
-En cuanto al nivel del río Paraguay en el puerto de Asunción, se utilizaron registros diarios desde enero de 2014 hasta julio de 2025. El archivo original contiene 8.001 registros, de los cuales se obtuvieron 4.177 observaciones únicas tras la eliminación de duplicados. Los 29 días faltantes dentro del período fueron completados mediante interpolación lineal.
+En cuanto al nivel del río Paraguay en el puerto de Asunción, se utilizaron 4.177 registros diarios únicos, abarcando desde enero de 2014 hasta julio de 2025. Los 29 días faltantes dentro del período fueron completados mediante interpolación lineal.
 
 \justify
 Durante la recolección de los datos de precios se identificó que, para algunos meses, no se disponía del valor promedio correspondiente. Con el fin de garantizar la continuidad temporal de las series y permitir la correcta aplicación de los modelos predictivos, se evaluaron distintos métodos de interpolación \cite{conesa2011interpolacion} para el tratamiento de los datos faltantes utilizando la función interpolate de la librería pandas, entre ellos:
@@ -94,6 +94,9 @@ Como arquitectura complementaria al LSTM, se evaluó la GRU (\textit{Gated Recur
 
 \justify
 Los modelos GRU se entrenaron sobre los mismos datos, con las mismas variables de entrada, la misma partición temporal y la misma metodología de búsqueda de hiperparámetros con Optuna que se describió para los modelos LSTM. Las 6 \textit{features} de entrada son idénticas, y la implementación también se realizó con TensorFlow 2.19.0 / Keras.
+
+\justify
+Todos los modelos de aprendizaje profundo (LSTM y GRU) fueron entrenados en la plataforma Kaggle, utilizando dos GPUs Tesla T4 bajo la estrategia \texttt{MirroredStrategy} de TensorFlow.
 
 % ============================================================
 \section{Escenarios de experimentación}

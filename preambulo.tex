@@ -26,6 +26,7 @@
 	list=true
 ]{subcaption} % To add subfigures
 \usepackage{booktabs} % To change weight of table lines
+\usepackage{float} % For [H] float placement
 \usepackage{longtable} % For tables that span multiple pages
 \usepackage{imakeidx} % To make index
 \usepackage{geometry} % To set margin and page size
@@ -75,6 +76,11 @@
 % --- page format and numbering ---
 % ---------------------------------
 \pagestyle{plain}
+\raggedbottom
+\renewcommand{\floatpagefraction}{.8}
+\renewcommand{\topfraction}{.9}
+\renewcommand{\bottomfraction}{.8}
+\renewcommand{\textfraction}{.1}
 
 % -----------------------
 % --- interline space ---

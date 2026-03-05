@@ -6,7 +6,7 @@ Antes de construir los modelos de predicción de precios, se necesitaba contar c
 \subsection{Serie Histórica y Partición de los Datos}
 
 \justify
-La serie contiene registros diarios del nivel del río Paraguay en el Puerto de Asunción, abarcando el período de enero de 2014 a julio de 2025. El archivo original tenía 8.001 filas por haberse obtenido mediante scraping de múltiples páginas, de las cuales 3.824 eran duplicados de fecha. Tras su eliminación quedaron 4.177 registros únicos. Los 29 días faltantes dentro del rango fueron imputados por interpolación lineal, resultando en una serie continua de 4.206 observaciones.
+La serie contiene 4.177 registros diarios únicos del nivel del río Paraguay en el Puerto de Asunción, abarcando el período de enero de 2014 a julio de 2025. Los 29 días faltantes dentro del rango fueron imputados por interpolación lineal, resultando en una serie continua de 4.206 observaciones.
 
 \justify
 Las estadísticas descriptivas de la variable muestran una media de 2,63 m y una desviación estándar de 2,17 m, con valores entre $-1{,}61$ m y $7{,}88$ m. La Figura \ref{fig:serie_historica} muestra la serie completa, donde se aprecia la alternancia entre períodos de crecida y estiaje con amplitudes marcadamente distintas entre años.
