@@ -13,7 +13,7 @@ En esta sección se presentan los resultados de aplicar una red LSTM (\textit{Lo
 \subsection{Predicción del Precio del Cemento}
 
 \justify
-Para el cemento, la búsqueda con Optuna convergió a configuraciones distintas en cada escenario: el sin pandemia resultó en una arquitectura LSTM unidireccional, mientras que el con pandemia convergió a una LSTM bidireccional. Dado que los modelos difieren en arquitectura y métricas, cada escenario se describe de forma independiente.
+Para el cemento, la búsqueda con Optuna convergió a la misma arquitectura LSTM bidireccional en ambos escenarios. Las diferencias entre escenarios se manifiestan exclusivamente en el pronóstico a 24 meses, ya que el valor de la variable pandémica diverge durante la predicción futura. A continuación se describe cada escenario por separado.
 
 \subsubsection{Análisis Exploratorio de la Serie}
 
@@ -45,11 +45,11 @@ Para el cemento, la búsqueda con Optuna convergió a configuraciones distintas 
 \paragraph{Hiperparámetros y Arquitectura}
 
 \justify
-La búsqueda con Optuna (182 ensayos, 121,3 min) identificó una arquitectura LSTM unidireccional con 64 unidades ocultas y 18.241 parámetros entrenables. El optimizador AdamW con $\eta=0{,}008689$ y \textit{weight decay} $3{,}10 \times 10^{-7}$ resultó la configuración más eficiente, junto con \textit{dropout} de 0,05, \textit{dropout} recurrente de 0,3, \textit{lookback} de 4 meses, \textit{batch size} de 8 y sin \textit{scheduler} de tasa de aprendizaje. La Tabla~\ref{tab:lstm_cemento_sc_hiper} detalla estos parámetros.
+La búsqueda con Optuna (300 ensayos, 178,5 min) identificó una arquitectura LSTM \textbf{bidireccional} con 64 unidades ocultas y 36.481 parámetros entrenables. El optimizador Adam con $\eta=0{,}008575$ y \textit{weight decay} $1{,}39 \times 10^{-7}$, \textit{dropout} de 0,15, \textit{dropout} recurrente de 0,1, \textit{lookback} de 3 meses, \textit{batch size} de 16 y \textit{scheduler} ReduceLROnPlateau resultaron la configuración óptima. La Tabla~\ref{tab:lstm_cemento_sc_hiper} detalla estos parámetros.
 
 \begin{table}[htbp]
 \centering
-\caption{Hiperparámetros del modelo LSTM para cemento --- escenario sin pandemia (Optuna: 182 ensayos).}
+\caption{Hiperparámetros del modelo LSTM para cemento --- escenario sin pandemia (Optuna: 300 ensayos).}
 \label{tab:lstm_cemento_sc_hiper}
 \begin{tabular}{ll}
 \toprule
@@ -57,16 +57,16 @@ La búsqueda con Optuna (182 ensayos, 121,3 min) identificó una arquitectura LS
 \midrule
 Capas LSTM          & 1 \\
 Unidades ocultas    & 64 \\
-Bidireccional       & No \\
-Dropout             & 0,05 \\
-Dropout recurrente  & 0,3 \\
-Optimizador         & AdamW \\
-Tasa de aprendizaje & 0,008689 \\
-Weight decay        & $3{,}10 \times 10^{-7}$ \\
-Lookback            & 4 meses \\
-Batch size          & 8 \\
-Scheduler           & Ninguno \\
-Parámetros entrenables & 18.241 \\
+Bidireccional       & Sí \\
+Dropout             & 0,15 \\
+Dropout recurrente  & 0,1 \\
+Optimizador         & Adam \\
+Tasa de aprendizaje & 0,008575 \\
+Weight decay        & $1{,}39 \times 10^{-7}$ \\
+Lookback            & 3 meses \\
+Batch size          & 16 \\
+Scheduler           & ReduceLROnPlateau \\
+Parámetros entrenables & 36.481 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -74,7 +74,7 @@ Parámetros entrenables & 18.241 \\
 \paragraph{Curva de Aprendizaje}
 
 \justify
-El modelo convergió en 31 épocas con \textit{early stopping}. La Figura~\ref{fig:lstm_cemento_curva_sc} muestra la evolución del error en ambas particiones. Ambas curvas descienden de forma conjunta sin mostrar divergencia significativa.
+El modelo convergió en 32 épocas con \textit{early stopping}. La Figura~\ref{fig:lstm_cemento_curva_sc} muestra la evolución del error en ambas particiones. Ambas curvas descienden de forma conjunta sin mostrar divergencia significativa.
 
 \begin{figure}[htbp]
     \centering
@@ -93,13 +93,13 @@ El modelo convergió en 31 épocas con \textit{early stopping}. La Figura~\ref{f
 \toprule
 \textbf{Métrica} & \textbf{Train} & \textbf{Val} & \textbf{Test} \\
 \midrule
-RMSE (Gs.) & 6.446{,}81 & 3.409{,}77 & 5.432{,}05 \\
+RMSE (Gs.) & 4.744{,}15 & 3.589{,}15 & 4.394{,}96 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \justify
-El RMSE de validación (Gs.~3.409,77) es el valor más bajo de los tres conjuntos, mientras que el de prueba (Gs.~5.432,05) se sitúa entre el de validación y el de entrenamiento. Considerando que el precio del cemento oscila en el rango histórico de Gs.~48.000 a Gs.~76.036, el RMSE de prueba representa aproximadamente el 19,4\,\% del rango, lo que refleja la dificultad de predecir esta serie de tendencia pronunciada.
+El RMSE de validación (Gs.~3.589,15) es el valor más bajo de los tres conjuntos, mientras que el de prueba (Gs.~4.394,96) se sitúa entre el de validación y el de entrenamiento. Considerando que el precio del cemento oscila en el rango histórico de Gs.~48.000 a Gs.~76.036, el RMSE de prueba representa aproximadamente el 15,7\,\% del rango, resultado que refleja la capacidad de la arquitectura bidireccional para modelar la tendencia de esta serie.
 
 \paragraph{Evaluación sobre el Conjunto de Prueba}
 
@@ -149,7 +149,7 @@ El RMSE de validación (Gs.~3.409,77) es el valor más bajo de los tres conjunto
 \end{figure}
 
 \justify
-El test de Ljung-Box sobre los residuos del conjunto de prueba arrojó un $p$-valor de 0,026 a 10 rezagos y de 0,0035 a 20 rezagos, ambos por debajo del umbral de 0,05. Esto indica la presencia de autocorrelación residual estadísticamente significativa. El rechazo más fuerte a 20 rezagos sugiere patrones de dependencia en rezagos distantes que el modelo no logra absorber completamente.
+El test de Ljung-Box sobre los residuos del conjunto de prueba arrojó un $p$-valor de $5{,}69 \times 10^{-5}$ a 10 rezagos y de 0,0037 a 20 rezagos, ambos por debajo del umbral de 0,05. Esto indica la presencia de autocorrelación residual estadísticamente significativa en ambos horizontes. El rechazo más intenso a 10 rezagos señala que la dependencia se concentra principalmente en los rezagos cortos, aunque persiste de forma significativa también en los más distantes.
 
 \clearpage
 \paragraph{Pronóstico a 24 Meses}
@@ -176,7 +176,7 @@ El test de Ljung-Box sobre los residuos del conjunto de prueba arrojó un $p$-va
 \end{figure}
 
 \justify
-Bajo el escenario sin pandemia, el rango de precios predicho se sitúa entre Gs.~59.107 y Gs.~62.197 a lo largo del horizonte de 24 meses. La proyección muestra una trayectoria estable dentro de un rango contenido respecto al nivel histórico reciente.
+Bajo el escenario sin pandemia, el rango de precios predicho se sitúa entre Gs.~57.372 y Gs.~62.992 a lo largo del horizonte de 24 meses. La proyección refleja una tendencia a la baja desde los niveles actuales hacia mediados de 2026, seguida de una ligera recuperación, dentro de una banda de amplitud moderada.
 
 % ------ CEMENTO CON COVID ------
 \clearpage
@@ -185,11 +185,11 @@ Bajo el escenario sin pandemia, el rango de precios predicho se sitúa entre Gs.
 \paragraph{Hiperparámetros y Arquitectura}
 
 \justify
-Para el escenario con pandemia, la búsqueda con Optuna (261 ensayos, 169,4 min) convergió a una arquitectura LSTM \textbf{bidireccional} con 64 unidades ocultas y 36.481 parámetros entrenables. Se incorporaron \textit{dropout} de 0,15 y \textit{dropout} recurrente de 0,1, el optimizador Adam con $\eta=0{,}008575$ y \textit{weight decay} $1{,}39 \times 10^{-7}$, \textit{lookback} de 3 meses, \textit{batch size} de 16 y \textit{scheduler} ReduceLROnPlateau. La Tabla~\ref{tab:lstm_cemento_cc_hiper} detalla estos parámetros.
+Para el escenario con pandemia, la búsqueda con Optuna (300 ensayos, 172,3 min) convergió a la misma arquitectura LSTM \textbf{bidireccional} que el escenario sin pandemia: 64 unidades ocultas, 36.481 parámetros entrenables, optimizador Adam con $\eta=0{,}008575$ y \textit{weight decay} $1{,}39 \times 10^{-7}$, \textit{dropout} de 0,15, \textit{dropout} recurrente de 0,1, \textit{lookback} de 3 meses, \textit{batch size} de 16 y \textit{scheduler} ReduceLROnPlateau. La Tabla~\ref{tab:lstm_cemento_cc_hiper} detalla estos parámetros.
 
 \begin{table}[htbp]
 \centering
-\caption{Hiperparámetros del modelo LSTM para cemento --- escenario con pandemia (Optuna: 261 ensayos).}
+\caption{Hiperparámetros del modelo LSTM para cemento --- escenario con pandemia (Optuna: 300 ensayos).}
 \label{tab:lstm_cemento_cc_hiper}
 \begin{tabular}{ll}
 \toprule
@@ -221,7 +221,7 @@ Parámetros entrenables & 36.481 \\
 \end{figure}
 
 \justify
-El modelo convergió en 32 épocas con \textit{early stopping}. La arquitectura bidireccional y el mayor número de parámetros respecto al escenario sin pandemia no derivaron en sobreajuste visible durante el entrenamiento.
+El modelo convergió en 32 épocas con \textit{early stopping}. La arquitectura bidireccional, idéntica a la del escenario sin pandemia, mantiene la misma dinámica de convergencia sin signos de sobreajuste.
 
 \paragraph{Métricas de Evaluación}
 
@@ -239,7 +239,7 @@ RMSE (Gs.) & 4.744{,}15 & 3.589{,}15 & 4.394{,}96 \\
 \end{table}
 
 \justify
-El RMSE de prueba del escenario con pandemia (Gs.~4.394,96) es inferior al del escenario sin pandemia (Gs.~5.432,05), lo que indica que la arquitectura bidireccional con información pandémica en el entrenamiento mejora el ajuste sobre el período de evaluación. El RMSE de entrenamiento (Gs.~4.744,15) también es considerablemente menor que en el escenario anterior.
+El RMSE de prueba de Gs.~4.394,96 es idéntico al del escenario sin pandemia, resultado consistente con que Optuna seleccionó la misma configuración en ambos casos. Los tres valores de RMSE (entrenamiento, validación y prueba) coinciden plenamente con los del escenario anterior, lo que confirma la robustez de la arquitectura LSTM bidireccional para el cemento independientemente del escenario.
 
 \paragraph{Evaluación sobre el Conjunto de Prueba}
 
@@ -289,7 +289,7 @@ El RMSE de prueba del escenario con pandemia (Gs.~4.394,96) es inferior al del e
 \end{figure}
 
 \justify
-El test de Ljung-Box sobre los residuos del conjunto de prueba arrojó un $p$-valor de $5{,}69 \times 10^{-5}$ a 10 rezagos y de 0,0037 a 20 rezagos, ambos por debajo del umbral de 0,05. Esto indica la presencia de autocorrelación residual estadísticamente significativa en ambos horizontes de rezagos, un resultado incluso más pronunciado que el del escenario sin pandemia a 10 rezagos. El modelo bidireccional, pese a su mayor complejidad, no logra eliminar la estructura temporal de los residuos.
+El test de Ljung-Box sobre los residuos del conjunto de prueba arrojó un $p$-valor de $5{,}69 \times 10^{-5}$ a 10 rezagos y de 0,0037 a 20 rezagos, valores que coinciden con los del escenario sin pandemia. Ambos se ubican por debajo del umbral de 0,05, confirmando la presencia de autocorrelación residual estadísticamente significativa. Esta concordancia es esperable dado que la arquitectura subyacente es idéntica en ambos escenarios, y la estructura de dependencia temporal de los residuos no varía con el valor de la variable pandémica.
 
 \clearpage
 \paragraph{Pronóstico a 24 Meses}
@@ -316,7 +316,7 @@ El test de Ljung-Box sobre los residuos del conjunto de prueba arrojó un $p$-va
 \end{figure}
 
 \justify
-Bajo el escenario con efecto pandémico, el rango de precios predicho se sitúa entre Gs.~57.528 y Gs.~73.374, con una amplitud considerablemente mayor que la del escenario sin pandemia (Gs.~59.107--62.197). El límite superior de Gs.~73.374 supera en un 17,3\,\% al máximo del escenario sin pandemia, lo que refleja que el modelo LSTM asigna un efecto alcista considerable a la variable de cuarentena sobre el precio del cemento.
+Bajo el escenario con efecto pandémico, el rango de precios predicho se sitúa entre Gs.~57.372 y Gs.~73.366, con una amplitud marcadamente mayor que la del escenario sin pandemia (Gs.~57.372--62.992). El límite superior de Gs.~73.366 supera en un 16,5\,\% al máximo del escenario sin pandemia, lo que pone de manifiesto el efecto alcista que el modelo LSTM bidireccional asocia a la variable de cuarentena sobre el precio del cemento.
 
 % ============================================================
 %  LADRILLO

@@ -24,7 +24,7 @@ Para el cemento, la búsqueda con Optuna convergió a la misma configuración en
 \paragraph{Hiperparámetros y Arquitectura}
 
 \justify
-La búsqueda con Optuna (261 ensayos, 154,3 min) para el escenario sin pandemia seleccionó una capa GRU unidireccional con 64 unidades ocultas, ventana de entrada (\textit{lookback}) de 4 meses, optimizador AdamW con tasa de aprendizaje $\eta = 0{,}006946$ y \textit{weight decay} de $2{,}26 \times 10^{-4}$, \textit{batch size} de 8, \textit{dropout} de 0{,}1, \textit{dropout} recurrente de 0{,}1, y \textit{scheduler} ReduceLROnPlateau. La arquitectura resultante totaliza 13.889 parámetros entrenables. La Tabla~\ref{tab:gru_cemento_sc_arq} resume los hiperparámetros seleccionados.
+La búsqueda con Optuna (300 ensayos, 154,1 min) para el escenario sin pandemia seleccionó una capa GRU unidireccional con 64 unidades ocultas, ventana de entrada (\textit{lookback}) de 4 meses, optimizador AdamW con tasa de aprendizaje $\eta = 0{,}006946$ y \textit{weight decay} de $2{,}26 \times 10^{-4}$, \textit{batch size} de 8, \textit{dropout} de 0{,}1, \textit{dropout} recurrente de 0{,}1, y \textit{scheduler} ReduceLROnPlateau. La arquitectura resultante totaliza 13.889 parámetros entrenables. La Tabla~\ref{tab:gru_cemento_sc_arq} resume los hiperparámetros seleccionados.
 
 \begin{table}[htbp]
     \centering
@@ -53,7 +53,7 @@ El modelo GRU del cemento para el escenario sin pandemia convergió en 31 época
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_gru/resultados_sin_covid/final_01_curvas_entrenamiento.png}
+    \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_gru/prediccion_sin_covid/final_01_curvas_entrenamiento.png}
     \caption{Curvas de aprendizaje del modelo GRU para cemento --- escenario sin pandemia.}
     \label{fig:gru_cemento_curva_sc}
 \end{figure}
@@ -74,27 +74,27 @@ El modelo GRU del cemento para el escenario sin pandemia convergió en 31 época
 \end{table}
 
 \justify
-El RMSE de validación (Gs.~3.264,19) es inferior al de prueba (Gs.~4.964,27) y al de entrenamiento (Gs.~6.330,42), lo que sugiere que el período de prueba presenta una variabilidad similar a la de validación. En términos relativos al rango histórico de la serie (Gs.~48.000--76.036), el RMSE de prueba representa aproximadamente el 17,7\,\% del rango, resultado comparable al obtenido por el modelo LSTM del mismo escenario (RMSE test: Gs.~5.432,05).
+El RMSE de validación (Gs.~3.264,19) es inferior al de prueba (Gs.~4.964,27) y al de entrenamiento (Gs.~6.330,42), lo que sugiere que el período de prueba presenta una variabilidad similar a la de validación. En términos relativos al rango histórico de la serie (Gs.~48.000--76.036), el RMSE de prueba representa aproximadamente el 17,7\,\% del rango, resultado comparable al obtenido por el modelo LSTM del mismo escenario (RMSE test: Gs.~4.394,96).
 
 \paragraph{Evaluación sobre el Conjunto de Prueba}
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_gru/resultados_sin_covid/final_02_prediccion_test_serie.png}
+    \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_gru/prediccion_sin_covid/final_02_prediccion_test_serie.png}
     \caption{Predicción GRU vs.\ valores reales del precio del cemento --- escenario sin pandemia, conjunto de prueba.}
     \label{fig:gru_cemento_test_sc}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{predicciones/prediccion_cemento_gru/resultados_sin_covid/final_03_scatter_test.png}
+    \includegraphics[width=0.8\textwidth]{predicciones/prediccion_cemento_gru/prediccion_sin_covid/final_03_scatter_test.png}
     \caption{Diagrama de dispersión: precio predicho vs.\ real del cemento --- escenario sin pandemia (GRU).}
     \label{fig:gru_cemento_scatter_sc}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_gru/resultados_sin_covid/final_05_todos_splits.png}
+    \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_gru/prediccion_sin_covid/final_05_todos_splits.png}
     \caption{Ajuste del modelo GRU del cemento sobre las tres particiones --- escenario sin pandemia.}
     \label{fig:gru_cemento_splits_sc}
 \end{figure}
@@ -104,21 +104,21 @@ El RMSE de validación (Gs.~3.264,19) es inferior al de prueba (Gs.~4.964,27) y 
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_gru/resultados_sin_covid/final_04_residuos.png}
+    \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_gru/prediccion_sin_covid/final_04_residuos.png}
     \caption{Residuos del modelo GRU para cemento --- escenario sin pandemia, conjunto de prueba.}
     \label{fig:gru_cemento_res_sc}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{predicciones/prediccion_cemento_gru/resultados_sin_covid/residuos_histograma.png}
+    \includegraphics[width=0.8\textwidth]{predicciones/prediccion_cemento_gru/prediccion_sin_covid/residuos_histograma.png}
     \caption{Histograma de residuos del modelo GRU para cemento --- escenario sin pandemia.}
     \label{fig:gru_cemento_reshist_sc}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_gru/resultados_sin_covid/residuos_acf_pacf.png}
+    \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_gru/prediccion_sin_covid/residuos_acf_pacf.png}
     \caption{ACF y PACF de los residuos del modelo GRU para cemento --- escenario sin pandemia.}
     \label{fig:gru_cemento_acf_sc}
 \end{figure}
@@ -131,27 +131,27 @@ El test de Ljung-Box sobre los residuos del conjunto de prueba arroja un $p$-val
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_gru/resultados_sin_covid/final_06_prediccion_futura_completa.png}
+    \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_gru/prediccion_sin_covid/final_06_prediccion_futura_completa.png}
     \caption{Pronóstico GRU del precio del cemento a 24 meses --- escenario sin pandemia: serie histórica y proyección.}
     \label{fig:gru_cemento_pred_sin_covid}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_gru/resultados_sin_covid/final_07_prediccion_zoom_dual.png}
+    \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_gru/prediccion_sin_covid/final_07_prediccion_zoom_dual.png}
     \caption{Zoom sobre la transición entre datos observados y pronóstico GRU del cemento --- escenario sin pandemia.}
     \label{fig:gru_cemento_zoom_sin_covid}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_gru/resultados_sin_covid/forecast_ic_monte_carlo.png}
+    \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_gru/prediccion_sin_covid/forecast_ic_monte_carlo.png}
     \caption{IC Monte Carlo Dropout del pronóstico GRU para cemento --- escenario sin pandemia.}
     \label{fig:gru_cemento_ic_sin_covid}
 \end{figure}
 
 \justify
-El modelo GRU proyecta, bajo el escenario sin pandemia, un rango de precios del cemento de Gs.~59.915 a Gs.~63.852 a lo largo del horizonte de 24 meses. La proyección muestra una trayectoria relativamente estable, dentro de una banda contenida respecto al nivel histórico reciente.
+El modelo GRU proyecta, bajo el escenario sin pandemia, un rango de precios del cemento de Gs.~59.825 a Gs.~63.850 a lo largo del horizonte de 24 meses. La proyección muestra una trayectoria relativamente estable, dentro de una banda contenida respecto al nivel histórico reciente.
 
 % ------ CEMENTO GRU CON COVID ------
 \clearpage
@@ -160,7 +160,7 @@ El modelo GRU proyecta, bajo el escenario sin pandemia, un rango de precios del 
 \paragraph{Hiperparámetros y Arquitectura}
 
 \justify
-Para el escenario con efecto pandémico, la búsqueda con Optuna (261 ensayos, 151,75 min) convergió a la misma configuración que el escenario sin pandemia: una capa GRU unidireccional con 64 unidades ocultas, ventana de entrada (\textit{lookback}) de 4 meses, optimizador AdamW con tasa de aprendizaje $\eta = 0{,}006946$ y \textit{weight decay} de $2{,}26 \times 10^{-4}$, \textit{batch size} de 8, \textit{dropout} de 0{,}1, \textit{dropout} recurrente de 0{,}1 y \textit{scheduler} ReduceLROnPlateau. Los 13.889 parámetros entrenables son idénticos al escenario sin pandemia. La Tabla~\ref{tab:gru_cemento_cc_arq} resume estos parámetros.
+Para el escenario con efecto pandémico, la búsqueda con Optuna (300 ensayos, 176,8 min) convergió a la misma configuración que el escenario sin pandemia: una capa GRU unidireccional con 64 unidades ocultas, ventana de entrada (\textit{lookback}) de 4 meses, optimizador AdamW con tasa de aprendizaje $\eta = 0{,}006946$ y \textit{weight decay} de $2{,}26 \times 10^{-4}$, \textit{batch size} de 8, \textit{dropout} de 0{,}1, \textit{dropout} recurrente de 0{,}1 y \textit{scheduler} ReduceLROnPlateau. Los 13.889 parámetros entrenables son idénticos al escenario sin pandemia. La Tabla~\ref{tab:gru_cemento_cc_arq} resume estos parámetros.
 
 \begin{table}[htbp]
     \centering
@@ -284,7 +284,7 @@ El test de Ljung-Box sobre los residuos del conjunto de prueba arroja un $p$-val
 \end{figure}
 
 \justify
-Bajo el escenario con efecto pandémico, el modelo GRU proyecta para el cemento un rango de precios de Gs.~59.915 a Gs.~65.337 a lo largo del horizonte de 24 meses. Esta proyección es levemente superior al límite máximo del escenario sin pandemia (Gs.~63.852), lo que sugiere que la variable pandémica empuja marginalmente los precios al alza en el largo plazo según la interpretación del modelo. La diferencia entre escenarios es acotada, lo que indica que el GRU capturó el efecto pandémico sobre el cemento como un factor de impacto moderado.
+Bajo el escenario con efecto pandémico, el modelo GRU proyecta para el cemento un rango de precios de Gs.~59.825 a Gs.~65.334 a lo largo del horizonte de 24 meses. Esta proyección es levemente superior al límite máximo del escenario sin pandemia (Gs.~63.850), lo que sugiere que la variable pandémica empuja marginalmente los precios al alza en el largo plazo según la interpretación del modelo. La diferencia entre escenarios es acotada, lo que indica que el GRU capturó el efecto pandémico sobre el cemento como un factor de impacto moderado.
 
 % ============================================================
 % 4.4.2 — LADRILLO GRU
@@ -565,4 +565,4 @@ El test de Ljung-Box sobre los residuos del conjunto de prueba arroja un $p$-val
 Bajo el escenario con efecto pandémico, el rango de precios proyectado para el ladrillo se sitúa entre Gs.~659 y Gs.~763. El límite superior es mayor que en el escenario sin pandemia (Gs.~726), lo que indica que el modelo captura un efecto alcista acumulado de la variable pandémica sobre el precio del ladrillo hacia el final del horizonte de predicción.
 
 \justify
-Una observación relevante al comparar los modelos GRU del cemento y del ladrillo es que el efecto pandémico fue interpretado de forma distinta para cada material. Para el cemento, la inclusión de la variable pandémica desplaza marginalmente el pronóstico al alza (Gs.~59.915--65.337 con pandemia versus Gs.~59.915--63.852 sin pandemia); para el ladrillo, el efecto también es alcista aunque levemente mayor (Gs.~659--763 con pandemia versus Gs.~661--726 sin pandemia). En ambos casos, el modelo GRU capturó la señal pandémica como un impulso moderado de precios hacia el final del horizonte de predicción.
+Una observación relevante al comparar los modelos GRU del cemento y del ladrillo es que el efecto pandémico fue interpretado de forma distinta para cada material. Para el cemento, la inclusión de la variable pandémica desplaza marginalmente el pronóstico al alza (Gs.~59.825--65.334 con pandemia versus Gs.~59.825--63.850 sin pandemia); para el ladrillo, el efecto también es alcista aunque levemente mayor (Gs.~659--763 con pandemia versus Gs.~661--726 sin pandemia). En ambos casos, el modelo GRU capturó la señal pandémica como un impulso moderado de precios hacia el final del horizonte de predicción.
