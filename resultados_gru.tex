@@ -97,7 +97,7 @@ El RMSE de validación (Gs.~3.264,19) es inferior al de prueba (Gs.~4.964,27) y 
 \justify
 El test de Ljung-Box sobre los residuos del conjunto de prueba arroja un $p$-valor de 0,055 a 10 rezagos y de 0,170 a 20 rezagos, ambos superiores al umbral de 0,05. Este resultado indica que los residuos se comportan como ruido blanco, confirmando que el modelo GRU ha capturado adecuadamente la estructura temporal de la serie del cemento.
 
-\clearpage
+
 \paragraph{Pronóstico a 24 Meses}
 
 \begin{figure}[htbp]
@@ -142,7 +142,7 @@ Julio 2026       & 62.252 & Julio 2027       & 62.285 \\
 El modelo GRU proyecta, bajo el escenario sin pandemia, un rango de precios del cemento de Gs.~59.825 a Gs.~63.850 a lo largo del horizonte de 24 meses. La proyección muestra una trayectoria relativamente estable, dentro de una banda contenida respecto al nivel histórico reciente.
 
 % ------ CEMENTO GRU CON COVID ------
-\clearpage
+
 \subsubsection{Escenario con Efecto Pandémico}
 
 \paragraph{Hiperparámetros y Arquitectura}
@@ -218,7 +218,7 @@ El RMSE de prueba del escenario con pandemia (Gs.~4.964{,}27) es idéntico al de
 \justify
 El test de Ljung-Box sobre los residuos del conjunto de prueba arroja un $p$-valor de 0,055 a 10 rezagos y de 0,170 a 20 rezagos, valores idénticos a los del escenario sin pandemia. Ambos superan el umbral de 0,05, confirmando que los residuos se comportan como ruido blanco. La coincidencia de estos valores con los del escenario sin pandemia es esperable, dado que la búsqueda de Optuna convergió a la misma configuración en ambos escenarios.
 
-\clearpage
+
 \paragraph{Pronóstico a 24 Meses}
 
 \begin{figure}[htbp]
@@ -265,14 +265,14 @@ Bajo el escenario con efecto pandémico, el modelo GRU proyecta para el cemento 
 % ============================================================
 % 4.4.2 — LADRILLO GRU
 % ============================================================
-\clearpage
+
 \subsection{Predicción del Precio del Ladrillo}
 
 \justify
 Para el ladrillo, la búsqueda con Optuna fue realizada de forma independiente en cada escenario. A diferencia del cemento, cada escenario convergió a una configuración distinta, ambas con una GRU unidireccional de 64 unidades ocultas y 13.889 parámetros entrenables pero con diferencias en la regularización y el optimizador. A continuación se presenta cada escenario por separado.
 
 % ------ LADRILLO GRU SIN COVID ------
-\clearpage
+
 \subsubsection{Escenario sin Efecto Pandémico}
 
 \paragraph{Hiperparámetros y Arquitectura}
@@ -351,7 +351,7 @@ El RMSE de validación (Gs.~11{,}53) y el de prueba (Gs.~11{,}88) son coherentes
 \justify
 El test de Ljung-Box sobre los residuos del conjunto de prueba arroja un $p$-valor de 0,011 a 10 rezagos (rechaza $H_0$) y de 0,119 a 20 rezagos (no rechaza $H_0$). Este resultado mixto indica que existe cierta autocorrelación residual en los primeros rezagos que el modelo no logra absorber completamente, aunque la estructura de dependencia se diluye al considerar horizontes más amplios.
 
-\clearpage
+
 \paragraph{Pronóstico a 24 Meses}
 
 \begin{figure}[htbp]
@@ -396,7 +396,7 @@ Julio 2026       & 705 & Julio 2027       & 716 \\
 El modelo GRU proyecta, bajo el escenario sin pandemia, un precio del ladrillo en el rango de Gs.~661 a Gs.~726 a lo largo del horizonte de 24 meses. La amplitud del intervalo refleja la incertidumbre acumulada en las predicciones recursivas, aunque su magnitud sigue siendo moderada para una proyección de dos años.
 
 % ------ LADRILLO GRU CON COVID ------
-\clearpage
+
 \subsubsection{Escenario con Efecto Pandémico}
 
 \paragraph{Hiperparámetros y Arquitectura}
@@ -472,7 +472,7 @@ El RMSE de prueba del escenario con pandemia (Gs.~11{,}11) es inferior al del es
 \justify
 El test de Ljung-Box sobre los residuos del conjunto de prueba arroja un $p$-valor de 0,003 a 10 rezagos y de 0,012 a 20 rezagos, ambos rechazando la hipótesis nula de ausencia de autocorrelación. A diferencia del escenario sin pandemia ---donde el rechazo se limitaba a 10 rezagos---, en este escenario la autocorrelación persiste también a 20 rezagos, lo que sugiere que la configuración con menor \textit{dropout} recurrente deja mayor estructura temporal sin capturar en los residuos.
 
-\clearpage
+
 \paragraph{Pronóstico a 24 Meses}
 
 \begin{figure}[htbp]

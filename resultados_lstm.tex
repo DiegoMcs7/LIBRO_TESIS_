@@ -20,14 +20,14 @@ Para el cemento, la búsqueda con Optuna convergió a la misma arquitectura LSTM
 \justify
 La Figura~\ref{fig:lstm_cemento_eda_serie} presenta la serie histórica del precio del cemento y la Figura~\ref{fig:lstm_cemento_eda_stl} muestra su descomposición STL en componentes de tendencia, estacionalidad y residuo.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_lstm/resultados_sin_covid/eda_01_serie_precios_cemento.png}
     \caption{Serie histórica mensual del precio del cemento (Gs.), período 2014--2025.}
     \label{fig:lstm_cemento_eda_serie}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_lstm/resultados_sin_covid/eda_stl_decomposition.png}
     \caption{Descomposición STL de la serie del precio del cemento: tendencia, estacionalidad y residuo.}
@@ -35,7 +35,7 @@ La Figura~\ref{fig:lstm_cemento_eda_serie} presenta la serie histórica del prec
 \end{figure}
 
 % ------ CEMENTO SIN COVID ------
-\clearpage
+
 \subsubsection{Escenario sin Efecto Pandémico}
 
 \paragraph{Hiperparámetros y Arquitectura}
@@ -43,7 +43,7 @@ La Figura~\ref{fig:lstm_cemento_eda_serie} presenta la serie histórica del prec
 \justify
 La búsqueda con Optuna (300 ensayos, 178,5 min) identificó una arquitectura LSTM \textbf{bidireccional} con 64 unidades ocultas y 36.481 parámetros entrenables. El optimizador Adam con $\eta=0{,}008575$ y \textit{weight decay} $1{,}39 \times 10^{-7}$, \textit{dropout} de 0,15, \textit{dropout} recurrente de 0,1, \textit{lookback} de 3 meses, \textit{batch size} de 16 y \textit{scheduler} ReduceLROnPlateau resultaron la configuración óptima. La Tabla~\ref{tab:lstm_cemento_sc_hiper} detalla estos parámetros.
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
 \caption{Hiperparámetros del modelo LSTM para cemento --- escenario sin pandemia (Optuna: 300 ensayos).}
 \label{tab:lstm_cemento_sc_hiper}
@@ -72,7 +72,7 @@ Parámetros entrenables & 36.481 \\
 \justify
 El modelo convergió en 32 épocas con \textit{early stopping}. La Figura~\ref{fig:lstm_cemento_curva_sc} muestra la evolución del error en ambas particiones. Ambas curvas descienden de forma conjunta sin mostrar divergencia significativa.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{predicciones/prediccion_cemento_lstm/resultados_sin_covid/final_01_curvas_entrenamiento.png}
     \caption{Curva de aprendizaje del modelo LSTM para cemento --- escenario sin pandemia.}
@@ -84,7 +84,7 @@ El modelo convergió en 32 épocas con \textit{early stopping}. La Figura~\ref{f
 \justify
 La Tabla~\ref{tab:lstm_cemento_sc_metricas} resume las métricas de evaluación del modelo.
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
 \caption{Desempeño del modelo LSTM para cemento --- escenario sin pandemia: RMSE en train, val y test.}
 \label{tab:lstm_cemento_sc_metricas}
@@ -105,14 +105,14 @@ El RMSE de validación (Gs.~3.589,15) es el valor más bajo de los tres conjunto
 \justify
 La Figura~\ref{fig:lstm_cemento_test_sc} compara la predicción del modelo con los valores reales sobre el conjunto de prueba, y la Figura~\ref{fig:lstm_cemento_splits_sc} presenta el ajuste sobre las tres particiones.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_lstm/resultados_sin_covid/final_02_prediccion_test_serie.png}
     \caption{Predicción LSTM vs.\ valores reales del precio del cemento --- escenario sin pandemia, conjunto de prueba.}
     \label{fig:lstm_cemento_test_sc}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_lstm/resultados_sin_covid/final_05_todos_splits.png}
     \caption{Ajuste del modelo LSTM del cemento sobre las tres particiones --- escenario sin pandemia.}
@@ -124,27 +124,27 @@ La Figura~\ref{fig:lstm_cemento_test_sc} compara la predicción del modelo con l
 \justify
 El test de Ljung-Box sobre los residuos del conjunto de prueba arrojó un $p$-valor de $5{,}69 \times 10^{-5}$ a 10 rezagos y de 0,0037 a 20 rezagos, ambos por debajo del umbral de 0,05. Esto indica la presencia de autocorrelación residual estadísticamente significativa en ambos horizontes. El rechazo más intenso a 10 rezagos señala que la dependencia se concentra principalmente en los rezagos cortos, aunque persiste de forma significativa también en los más distantes.
 
-\clearpage
+
 \paragraph{Pronóstico a 24 Meses}
 
 \justify
 Las Figuras~\ref{fig:lstm_cemento_pred_sin_covid} y \ref{fig:lstm_cemento_zoom_sin_covid} presentan el pronóstico a 24 meses y el detalle de la transición, y la Tabla~\ref{tab:lstm_cemento_pred_sin_covid} detalla los valores mensuales predichos.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_lstm/resultados_sin_covid/final_06_prediccion_futura_completa.png}
     \caption{Pronóstico LSTM a 24 meses del precio del cemento --- escenario sin pandemia, con IC al 95\,\%.}
     \label{fig:lstm_cemento_pred_sin_covid}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_lstm/resultados_sin_covid/final_07_prediccion_zoom_dual.png}
     \caption{Detalle de la transición histórico--pronóstico LSTM del cemento --- escenario sin pandemia.}
     \label{fig:lstm_cemento_zoom_sin_covid}
 \end{figure}
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
 \caption{Pronóstico LSTM a 24 meses del precio del cemento (Gs.) --- escenario sin pandemia.}
 \label{tab:lstm_cemento_pred_sin_covid}
@@ -172,7 +172,7 @@ Julio 2026       & 59.336 & Julio 2027       & 59.093 \\
 Bajo el escenario sin pandemia, el rango de precios predicho se sitúa entre Gs.~57.372 y Gs.~62.992 a lo largo del horizonte de 24 meses. La proyección refleja una tendencia a la baja desde los niveles actuales hacia mediados de 2026, seguida de una ligera recuperación, dentro de una banda de amplitud moderada.
 
 % ------ CEMENTO CON COVID ------
-\clearpage
+
 \subsubsection{Escenario con Efecto Pandémico}
 
 \paragraph{Hiperparámetros y Arquitectura}
@@ -180,7 +180,7 @@ Bajo el escenario sin pandemia, el rango de precios predicho se sitúa entre Gs.
 \justify
 Para el escenario con pandemia, la búsqueda con Optuna (300 ensayos, 172,3 min) convergió a la misma arquitectura LSTM \textbf{bidireccional} que el escenario sin pandemia: 64 unidades ocultas, 36.481 parámetros entrenables, optimizador Adam con $\eta=0{,}008575$ y \textit{weight decay} $1{,}39 \times 10^{-7}$, \textit{dropout} de 0,15, \textit{dropout} recurrente de 0,1, \textit{lookback} de 3 meses, \textit{batch size} de 16 y \textit{scheduler} ReduceLROnPlateau. La Tabla~\ref{tab:lstm_cemento_cc_hiper} detalla estos parámetros.
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
 \caption{Hiperparámetros del modelo LSTM para cemento --- escenario con pandemia (Optuna: 300 ensayos).}
 \label{tab:lstm_cemento_cc_hiper}
@@ -209,7 +209,7 @@ Parámetros entrenables & 36.481 \\
 \justify
 El modelo convergió en 32 épocas con \textit{early stopping}. La Figura~\ref{fig:lstm_cemento_curva_cc} muestra la evolución del error. La arquitectura bidireccional, idéntica a la del escenario sin pandemia, mantiene la misma dinámica de convergencia sin signos de sobreajuste.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{predicciones/prediccion_cemento_lstm/resultados_con_covid/final_01_curvas_entrenamiento.png}
     \caption{Curva de aprendizaje del modelo LSTM para cemento --- escenario con pandemia.}
@@ -221,7 +221,7 @@ El modelo convergió en 32 épocas con \textit{early stopping}. La Figura~\ref{f
 \justify
 La Tabla~\ref{tab:lstm_cemento_cc_metricas} resume las métricas de evaluación del modelo.
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
 \caption{Desempeño del modelo LSTM para cemento --- escenario con pandemia: RMSE en train, val y test.}
 \label{tab:lstm_cemento_cc_metricas}
@@ -242,14 +242,14 @@ El RMSE de prueba de Gs.~4.394,96 es idéntico al del escenario sin pandemia, re
 \justify
 La Figura~\ref{fig:lstm_cemento_test_cc} compara la predicción del modelo con los valores reales sobre el conjunto de prueba, y la Figura~\ref{fig:lstm_cemento_splits_cc} presenta el ajuste sobre las tres particiones.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_lstm/resultados_con_covid/final_02_prediccion_test_serie.png}
     \caption{Predicción LSTM vs.\ valores reales del precio del cemento --- escenario con pandemia, conjunto de prueba.}
     \label{fig:lstm_cemento_test_cc}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_lstm/resultados_con_covid/final_05_todos_splits.png}
     \caption{Ajuste del modelo LSTM del cemento sobre las tres particiones --- escenario con pandemia.}
@@ -261,27 +261,27 @@ La Figura~\ref{fig:lstm_cemento_test_cc} compara la predicción del modelo con l
 \justify
 El test de Ljung-Box sobre los residuos del conjunto de prueba arrojó un $p$-valor de $5{,}69 \times 10^{-5}$ a 10 rezagos y de 0,0037 a 20 rezagos, valores que coinciden con los del escenario sin pandemia. Ambos se ubican por debajo del umbral de 0,05, confirmando la presencia de autocorrelación residual estadísticamente significativa. Esta concordancia es esperable dado que la arquitectura subyacente es idéntica en ambos escenarios, y la estructura de dependencia temporal de los residuos no varía con el valor de la variable pandémica.
 
-\clearpage
+
 \paragraph{Pronóstico a 24 Meses}
 
 \justify
 Las Figuras~\ref{fig:lstm_cemento_pred_con_covid} y \ref{fig:lstm_cemento_zoom_con_covid} presentan el pronóstico a 24 meses y el detalle de la transición, y la Tabla~\ref{tab:lstm_cemento_pred_con_covid} detalla los valores mensuales predichos.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_lstm/resultados_con_covid/final_06_prediccion_futura_completa.png}
     \caption{Pronóstico LSTM a 24 meses del precio del cemento --- escenario con pandemia, con IC al 95\,\%.}
     \label{fig:lstm_cemento_pred_con_covid}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_cemento_lstm/resultados_con_covid/final_07_prediccion_zoom_dual.png}
     \caption{Detalle de la transición histórico--pronóstico LSTM del cemento --- escenario con pandemia.}
     \label{fig:lstm_cemento_zoom_con_covid}
 \end{figure}
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
 \caption{Pronóstico LSTM a 24 meses del precio del cemento (Gs.) --- escenario con pandemia.}
 \label{tab:lstm_cemento_pred_con_covid}
@@ -311,7 +311,7 @@ Bajo el escenario con efecto pandémico, el rango de precios predicho se sitúa 
 % ============================================================
 %  LADRILLO
 % ============================================================
-\clearpage
+
 \subsection{Predicción del Precio del Ladrillo}
 
 \justify
@@ -322,14 +322,14 @@ Para el ladrillo, la búsqueda con Optuna fue ejecutada de forma independiente e
 \justify
 La Figura~\ref{fig:lstm_ladrillo_eda_serie} presenta la serie histórica del precio del ladrillo y la Figura~\ref{fig:lstm_ladrillo_eda_stl} muestra su descomposición STL en componentes de tendencia, estacionalidad y residuo.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/eda_01_serie_precios_ladrillo.png}
     \caption{Serie histórica mensual del precio del ladrillo (Gs.), período 2014--2025.}
     \label{fig:lstm_ladrillo_eda_serie}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/eda_stl_decomposition.png}
     \caption{Descomposición STL de la serie del precio del ladrillo: tendencia, estacionalidad y residuo.}
@@ -337,7 +337,7 @@ La Figura~\ref{fig:lstm_ladrillo_eda_serie} presenta la serie histórica del pre
 \end{figure}
 
 % ------ LADRILLO SIN COVID ------
-\clearpage
+
 \subsubsection{Escenario sin Efecto Pandémico}
 
 \paragraph{Hiperparámetros y Arquitectura}
@@ -345,7 +345,7 @@ La Figura~\ref{fig:lstm_ladrillo_eda_serie} presenta la serie histórica del pre
 \justify
 La búsqueda con Optuna (300 ensayos, 161,4 min) identificó una arquitectura LSTM \textbf{unidireccional} con una capa de 64 unidades ocultas. Se utilizaron \textit{dropout} de 0,05 y \textit{dropout} recurrente de 0,05, el optimizador AdamW con $\eta=0{,}008599$ y \textit{weight decay} $5{,}03 \times 10^{-4}$, \textit{lookback} de 6 meses, \textit{batch size} de 8 y sin planificador de tasa de aprendizaje. La Tabla~\ref{tab:lstm_ladrillo_sc_hiper} detalla estos parámetros.
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
 \caption{Hiperparámetros óptimos del modelo LSTM para ladrillo --- escenario sin pandemia (Optuna: 300 ensayos).}
 \label{tab:lstm_ladrillo_sc_hiper}
@@ -374,7 +374,7 @@ Parámetros entrenables & 18.241 \\
 \justify
 La Figura~\ref{fig:lstm_ladrillo_curva_sc} muestra la evolución del error durante el entrenamiento del modelo.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_01_curvas_entrenamiento.png}
     \caption{Curva de aprendizaje del modelo LSTM para ladrillo --- escenario sin pandemia.}
@@ -386,7 +386,7 @@ La Figura~\ref{fig:lstm_ladrillo_curva_sc} muestra la evolución del error duran
 \justify
 La Tabla~\ref{tab:lstm_ladrillo_sc_metricas} resume las métricas de evaluación del modelo.
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
 \caption{Desempeño del modelo LSTM para ladrillo --- escenario sin pandemia: RMSE en train, val y test.}
 \label{tab:lstm_ladrillo_sc_metricas}
@@ -407,14 +407,14 @@ El RMSE de prueba de 7,68~Gs.\ representa un error relativo del 2,8\,\% del rang
 \justify
 La Figura~\ref{fig:lstm_ladrillo_test_sc} compara la predicción del modelo con los valores reales sobre el conjunto de prueba, y la Figura~\ref{fig:lstm_ladrillo_splits_sc} presenta el ajuste sobre las tres particiones.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_02_prediccion_test_serie.png}
     \caption{Predicción LSTM vs.\ valores reales del precio del ladrillo --- escenario sin pandemia, conjunto de prueba.}
     \label{fig:lstm_ladrillo_test_sc}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_05_todos_splits.png}
     \caption{Ajuste del modelo LSTM del ladrillo sobre las tres particiones --- escenario sin pandemia.}
@@ -426,27 +426,27 @@ La Figura~\ref{fig:lstm_ladrillo_test_sc} compara la predicción del modelo con 
 \justify
 El test de Ljung-Box sobre los residuos del conjunto de prueba arrojó un $p$-valor de $1{,}5 \times 10^{-8}$ a 10 rezagos y de $7{,}6 \times 10^{-15}$ a 20 rezagos, ambos rechazando fuertemente la hipótesis nula de ausencia de autocorrelación. Este resultado indica que los residuos presentan una autocorrelación severa en ambos horizontes de rezagos, lo que sugiere la presencia de patrones temporales sistemáticos que el modelo no logra capturar, posiblemente asociados a la dinámica escalonada del precio del ladrillo.
 
-\clearpage
+
 \paragraph{Pronóstico a 24 Meses}
 
 \justify
 Las Figuras~\ref{fig:lstm_ladrillo_pred_sin_covid} y \ref{fig:lstm_ladrillo_zoom_sin_covid} presentan el pronóstico a 24 meses y el detalle de la transición, y la Tabla~\ref{tab:lstm_ladrillo_pred_sin_covid} detalla los valores mensuales predichos.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_06_prediccion_futura_completa.png}
     \caption{Pronóstico LSTM a 24 meses del precio del ladrillo --- escenario sin pandemia, con IC al 95\,\%.}
     \label{fig:lstm_ladrillo_pred_sin_covid}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_07_prediccion_zoom_dual.png}
     \caption{Detalle de la transición histórico--pronóstico LSTM del ladrillo --- escenario sin pandemia.}
     \label{fig:lstm_ladrillo_zoom_sin_covid}
 \end{figure}
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
 \caption{Pronóstico LSTM a 24 meses del precio del ladrillo (Gs.) --- escenario sin pandemia.}
 \label{tab:lstm_ladrillo_pred_sin_covid}
@@ -474,7 +474,7 @@ Julio 2026       & 659 & Julio 2027       & 675 \\
 Bajo el escenario sin pandemia, el rango de precios predicho se sitúa entre Gs.~646 y Gs.~686 a lo largo del horizonte de 24 meses. La proyección refleja una tendencia moderada al alza respecto al último valor observado, dentro de una banda relativamente contenida que es consistente con la estabilidad histórica de este mercado.
 
 % ------ LADRILLO CON COVID ------
-\clearpage
+
 \subsubsection{Escenario con Efecto Pandémico}
 
 \paragraph{Hiperparámetros y Arquitectura}
@@ -482,7 +482,7 @@ Bajo el escenario sin pandemia, el rango de precios predicho se sitúa entre Gs.
 \justify
 Para el escenario con efecto pandémico, la búsqueda con Optuna (300 ensayos, 186,8 min) convergió a una arquitectura LSTM \textbf{bidireccional} con 64 unidades ocultas y 36.481 parámetros entrenables. A diferencia del escenario sin pandemia, Optuna seleccionó tasas de regularización más agresivas: \textit{dropout} de 0,35 y \textit{dropout} recurrente de 0,2. El optimizador fue RMSprop con $\eta=0{,}002662$ y \textit{weight decay} $9{,}63 \times 10^{-5}$, \textit{lookback} de 3 meses, \textit{batch size} de 16 y planificador StepLR. La Tabla~\ref{tab:lstm_ladrillo_cc_hiper} detalla estos parámetros.
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
 \caption{Hiperparámetros del modelo LSTM para ladrillo --- escenario con pandemia.}
 \label{tab:lstm_ladrillo_cc_hiper}
@@ -511,7 +511,7 @@ Parámetros entrenables & 36.481 \\
 \justify
 La Figura~\ref{fig:lstm_ladrillo_curva_cc} muestra la evolución del error durante el entrenamiento del modelo.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_01_curvas_entrenamiento.png}
     \caption{Curva de aprendizaje del modelo LSTM para ladrillo --- escenario con pandemia.}
@@ -523,7 +523,7 @@ La Figura~\ref{fig:lstm_ladrillo_curva_cc} muestra la evolución del error duran
 \justify
 La Tabla~\ref{tab:lstm_ladrillo_cc_metricas} resume las métricas de evaluación del modelo.
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
 \caption{Desempeño del modelo LSTM para ladrillo --- escenario con pandemia: RMSE en train, val y test.}
 \label{tab:lstm_ladrillo_cc_metricas}
@@ -544,14 +544,14 @@ El RMSE de prueba de 6,62~Gs.\ es inferior al del escenario sin pandemia (7,68~G
 \justify
 La Figura~\ref{fig:lstm_ladrillo_test_cc} compara la predicción del modelo con los valores reales sobre el conjunto de prueba, y la Figura~\ref{fig:lstm_ladrillo_splits_cc} presenta el ajuste sobre las tres particiones.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_02_prediccion_test_serie.png}
     \caption{Predicción LSTM vs.\ valores reales del precio del ladrillo --- escenario con pandemia, conjunto de prueba.}
     \label{fig:lstm_ladrillo_test_cc}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_05_todos_splits.png}
     \caption{Ajuste del modelo LSTM del ladrillo sobre las tres particiones --- escenario con pandemia.}
@@ -563,27 +563,27 @@ La Figura~\ref{fig:lstm_ladrillo_test_cc} compara la predicción del modelo con 
 \justify
 El test de Ljung-Box sobre los residuos del conjunto de prueba arrojó un $p$-valor de $2{,}8 \times 10^{-10}$ a 10 rezagos y de $5{,}5 \times 10^{-10}$ a 20 rezagos, ambos rechazando fuertemente la hipótesis nula. Al igual que en el escenario sin pandemia, los residuos presentan autocorrelación severa en ambos horizontes de rezagos, confirmando que el modelo LSTM del ladrillo ---independientemente del escenario--- deja estructura temporal significativa sin capturar.
 
-\clearpage
+
 \paragraph{Pronóstico a 24 Meses}
 
 \justify
 Las Figuras~\ref{fig:lstm_ladrillo_pred_con_covid} y \ref{fig:lstm_ladrillo_zoom_con_covid} presentan el pronóstico a 24 meses y el detalle de la transición, y la Tabla~\ref{tab:lstm_ladrillo_pred_con_covid} detalla los valores mensuales predichos.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_06_prediccion_futura_completa.png}
     \caption{Pronóstico LSTM a 24 meses del precio del ladrillo --- escenario con pandemia, con IC al 95\,\%.}
     \label{fig:lstm_ladrillo_pred_con_covid}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_07_prediccion_zoom_dual.png}
     \caption{Detalle de la transición histórico--pronóstico LSTM del ladrillo --- escenario con pandemia.}
     \label{fig:lstm_ladrillo_zoom_con_covid}
 \end{figure}
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
 \caption{Pronóstico LSTM a 24 meses del precio del ladrillo (Gs.) --- escenario con pandemia.}
 \label{tab:lstm_ladrillo_pred_con_covid}
