@@ -16,7 +16,7 @@
 \contentsline {table}{\numberline {5.10}{\ignorespaces Desempeño del modelo LSTM para cemento --- escenario sin pandemia: RMSE en train, val y test.}}{49}{table.caption.48}%
 \contentsline {table}{\numberline {5.11}{\ignorespaces Hiperparámetros del modelo LSTM para cemento --- escenario con pandemia (Optuna: 261 ensayos).}}{55}{table.caption.58}%
 \contentsline {table}{\numberline {5.12}{\ignorespaces Desempeño del modelo LSTM para cemento --- escenario con pandemia: RMSE en train, val y test.}}{56}{table.caption.60}%
-\contentsline {table}{\numberline {5.13}{\ignorespaces Hiperparámetros óptimos del modelo LSTM para ladrillo --- escenario sin pandemia (Optuna: 261 ensayos).}}{65}{table.caption.73}%
+\contentsline {table}{\numberline {5.13}{\ignorespaces Hiperparámetros óptimos del modelo LSTM para ladrillo --- escenario sin pandemia (Optuna: 300 ensayos).}}{65}{table.caption.73}%
 \contentsline {table}{\numberline {5.14}{\ignorespaces Desempeño del modelo LSTM para ladrillo --- escenario sin pandemia: RMSE en train, val y test.}}{66}{table.caption.75}%
 \contentsline {table}{\numberline {5.15}{\ignorespaces Hiperparámetros del modelo LSTM para ladrillo --- escenario con pandemia.}}{72}{table.caption.85}%
 \contentsline {table}{\numberline {5.16}{\ignorespaces Desempeño del modelo LSTM para ladrillo --- escenario con pandemia: RMSE en train, val y test.}}{73}{table.caption.87}%

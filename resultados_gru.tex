@@ -293,7 +293,7 @@ Bajo el escenario con efecto pandémico, el modelo GRU proyecta para el cemento 
 \subsection{Predicción del Precio del Ladrillo}
 
 \justify
-Para el ladrillo, la búsqueda con Optuna fue realizada de forma independiente en cada escenario y ambos convergieron a la misma configuración GRU unidireccional con 64 unidades ocultas y 13.889 parámetros entrenables. A continuación se presenta cada escenario por separado.
+Para el ladrillo, la búsqueda con Optuna fue realizada de forma independiente en cada escenario. A diferencia del cemento, cada escenario convergió a una configuración distinta, ambas con una GRU unidireccional de 64 unidades ocultas y 13.889 parámetros entrenables pero con diferencias en la regularización y el optimizador. A continuación se presenta cada escenario por separado.
 
 % ------ LADRILLO GRU SIN COVID ------
 \clearpage
@@ -429,7 +429,7 @@ El test de Ljung-Box sobre los residuos del conjunto de prueba arroja un $p$-val
 \end{figure}
 
 \justify
-El modelo GRU proyecta, bajo el escenario sin pandemia, un precio del ladrillo en el rango de Gs.~662 a Gs.~726 a lo largo del horizonte de 24 meses. La amplitud del intervalo refleja la incertidumbre acumulada en las predicciones recursivas, aunque su magnitud sigue siendo moderada para una proyección de dos años.
+El modelo GRU proyecta, bajo el escenario sin pandemia, un precio del ladrillo en el rango de Gs.~661 a Gs.~726 a lo largo del horizonte de 24 meses. La amplitud del intervalo refleja la incertidumbre acumulada en las predicciones recursivas, aunque su magnitud sigue siendo moderada para una proyección de dos años.
 
 % ------ LADRILLO GRU CON COVID ------
 \clearpage
@@ -438,7 +438,7 @@ El modelo GRU proyecta, bajo el escenario sin pandemia, un precio del ladrillo e
 \paragraph{Hiperparámetros y Arquitectura}
 
 \justify
-Para el escenario con pandemia, la búsqueda con Optuna (261 ensayos, 171,2 min) convergió a la misma configuración que el escenario sin pandemia: una GRU unidireccional con 64 unidades ocultas, Adam con $\eta = 0{,}008441$ y \textit{weight decay} $1{,}04 \times 10^{-6}$, \textit{lookback} de 3 meses, \textit{batch size} de 8, \textit{dropout} de 0{,}05, \textit{dropout} recurrente de 0{,}2 y \textit{scheduler} StepLR. Los 13.889 parámetros entrenables son idénticos al escenario sin pandemia. La Tabla~\ref{tab:gru_ladrillo_cc_arq} resume estos parámetros.
+Para el escenario con pandemia, la búsqueda con Optuna (300 ensayos, 159,9 min) convergió a una configuración diferente: una GRU unidireccional con 64 unidades ocultas, Adam con $\eta = 0{,}009764$ y \textit{weight decay} $3{,}55 \times 10^{-4}$, \textit{lookback} de 3 meses, \textit{batch size} de 8, \textit{dropout} de 0{,}05, \textit{dropout} recurrente de 0{,}05 y sin planificador de tasa de aprendizaje. Los 13.889 parámetros entrenables coinciden con el escenario sin pandemia. La Tabla~\ref{tab:gru_ladrillo_cc_arq} resume estos parámetros.
 
 \begin{table}[htbp]
     \centering
@@ -451,10 +451,10 @@ Para el escenario con pandemia, la búsqueda con Optuna (261 ensayos, 171,2 min)
         Capas GRU              & 1 (unidireccional) \\
         Unidades ocultas       & 64 \\
         Lookback               & 3 meses \\
-        Optimizador            & Adam ($\eta=0{,}008441$, WD $=1{,}04 \times 10^{-6}$) \\
+        Optimizador            & Adam ($\eta=0{,}009764$, WD $=3{,}55 \times 10^{-4}$) \\
         Batch size             & 8 \\
-        Dropout / Rec.\ dropout & 0{,}05 / 0{,}2 \\
-        Scheduler              & StepLR \\
+        Dropout / Rec.\ dropout & 0{,}05 / 0{,}05 \\
+        Scheduler              & Ninguno \\
         Parámetros entrenables & 13.889 \\
         \bottomrule
     \end{tabular}
@@ -479,13 +479,13 @@ Para el escenario con pandemia, la búsqueda con Optuna (261 ensayos, 171,2 min)
         \toprule
         \textbf{Métrica} & \textbf{Train} & \textbf{Val} & \textbf{Test} \\
         \midrule
-        RMSE (Gs.) & 15{,}56 & 11{,}53 & 11{,}88 \\
+        RMSE (Gs.) & 15{,}50 & 11{,}54 & 11{,}11 \\
         \bottomrule
     \end{tabular}
 \end{table}
 
 \justify
-El RMSE de prueba del escenario con pandemia (Gs.~11{,}88) es idéntico al del escenario sin pandemia, resultado esperable dado que la búsqueda de hiperparámetros convergió a la misma configuración. El RMSE de validación de Gs.~11{,}53 también coincide, confirmando que ambos modelos son funcionalmente equivalentes salvo por el valor de la variable indicadora de pandemia durante la predicción futura.
+El RMSE de prueba del escenario con pandemia (Gs.~11{,}11) es inferior al del escenario sin pandemia (Gs.~11{,}88), lo que indica que la configuración seleccionada por Optuna para este escenario ---con menor \textit{dropout} recurrente y mayor \textit{weight decay}--- captura mejor la dinámica de precios cuando se incluye la señal pandémica.
 
 \paragraph{Evaluación sobre el Conjunto de Prueba}
 
@@ -535,7 +535,7 @@ El RMSE de prueba del escenario con pandemia (Gs.~11{,}88) es idéntico al del e
 \end{figure}
 
 \justify
-El test de Ljung-Box sobre los residuos del conjunto de prueba arroja un $p$-valor de 0,011 a 10 rezagos (rechaza $H_0$) y de 0,119 a 20 rezagos (no rechaza $H_0$), valores idénticos a los del escenario sin pandemia. Este resultado mixto es esperable, dado que la búsqueda de Optuna convergió a la misma configuración en ambos escenarios. La autocorrelación a 10 rezagos indica cierta estructura temporal residual de corto plazo que el modelo no logra absorber completamente.
+El test de Ljung-Box sobre los residuos del conjunto de prueba arroja un $p$-valor de 0,003 a 10 rezagos y de 0,012 a 20 rezagos, ambos rechazando la hipótesis nula de ausencia de autocorrelación. A diferencia del escenario sin pandemia ---donde el rechazo se limitaba a 10 rezagos---, en este escenario la autocorrelación persiste también a 20 rezagos, lo que sugiere que la configuración con menor \textit{dropout} recurrente deja mayor estructura temporal sin capturar en los residuos.
 
 \clearpage
 \paragraph{Pronóstico a 24 Meses}
@@ -562,7 +562,7 @@ El test de Ljung-Box sobre los residuos del conjunto de prueba arroja un $p$-val
 \end{figure}
 
 \justify
-Bajo el escenario con efecto pandémico, el rango de precios proyectado para el ladrillo se sitúa entre Gs.~662 y Gs.~761. El límite superior es ligeramente mayor que en el escenario sin pandemia (Gs.~726), lo que indica que el modelo captura un efecto alcista acumulado de la variable pandémica sobre el precio del ladrillo hacia el final del horizonte de predicción.
+Bajo el escenario con efecto pandémico, el rango de precios proyectado para el ladrillo se sitúa entre Gs.~659 y Gs.~763. El límite superior es mayor que en el escenario sin pandemia (Gs.~726), lo que indica que el modelo captura un efecto alcista acumulado de la variable pandémica sobre el precio del ladrillo hacia el final del horizonte de predicción.
 
 \justify
-Una observación relevante al comparar los modelos GRU del cemento y del ladrillo es que el efecto pandémico fue interpretado de forma distinta para cada material. Para el cemento, la inclusión de la variable pandémica desplaza marginalmente el pronóstico al alza (Gs.~59.915--65.337 con pandemia versus Gs.~59.915--63.852 sin pandemia); para el ladrillo, el efecto también es alcista aunque levemente mayor (Gs.~662--761 con pandemia versus Gs.~662--726 sin pandemia). En ambos casos, el modelo GRU capturó la señal pandémica como un impulso moderado de precios hacia el final del horizonte de predicción.
+Una observación relevante al comparar los modelos GRU del cemento y del ladrillo es que el efecto pandémico fue interpretado de forma distinta para cada material. Para el cemento, la inclusión de la variable pandémica desplaza marginalmente el pronóstico al alza (Gs.~59.915--65.337 con pandemia versus Gs.~59.915--63.852 sin pandemia); para el ladrillo, el efecto también es alcista aunque levemente mayor (Gs.~659--763 con pandemia versus Gs.~661--726 sin pandemia). En ambos casos, el modelo GRU capturó la señal pandémica como un impulso moderado de precios hacia el final del horizonte de predicción.

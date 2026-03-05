@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.16)  4 MAR 2026 21:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.16)  4 MAR 2026 21:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1508,20 +1508,20 @@ File: predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_01_curvas
 <use predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_01_curvas_entrenamiento.png>
 Package pdftex.def Info: predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_01_curvas_entrenamiento.png  used on input line 390.
 (pdftex.def)             Requested size: 411.14528pt x 168.42366pt.
- [65
-
- <./predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_01_curvas_entrenamiento.png>]
-<predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_02_prediccion_test_serie.png, id=1330, 1002.144pt x 423.5022pt>
+<predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_02_prediccion_test_serie.png, id=1321, 1002.144pt x 423.5022pt>
 File: predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_02_prediccion_test_serie.png Graphic file (type png)
 <use predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_02_prediccion_test_serie.png>
 Package pdftex.def Info: predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_02_prediccion_test_serie.png  used on input line 417.
 (pdftex.def)             Requested size: 483.69687pt x 204.4096pt.
-<predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_03_scatter_test.png, id=1331, 497.2176pt x 495.2904pt>
+ [65
+
+ <./predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_01_curvas_entrenamiento.png>]
+<predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_03_scatter_test.png, id=1332, 497.2176pt x 495.2904pt>
 File: predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_03_scatter_test.png Graphic file (type png)
 <use predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_03_scatter_test.png>
 Package pdftex.def Info: predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_03_scatter_test.png  used on input line 424.
 (pdftex.def)             Requested size: 338.58632pt x 337.29181pt.
-<predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_05_todos_splits.png, id=1332, 1146.684pt x 423.5022pt>
+<predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_05_todos_splits.png, id=1333, 1146.684pt x 423.5022pt>
 File: predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_05_todos_splits.png Graphic file (type png)
 <use predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_05_todos_splits.png>
 Package pdftex.def Info: predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_05_todos_splits.png  used on input line 431.
@@ -1568,20 +1568,20 @@ File: predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_01_curvas
 <use predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_01_curvas_entrenamiento.png>
 Package pdftex.def Info: predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_01_curvas_entrenamiento.png  used on input line 527.
 (pdftex.def)             Requested size: 411.14528pt x 168.42366pt.
- [72
-
- <./predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_01_curvas_entrenamiento.png>]
-<predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_02_prediccion_test_serie.png, id=1388, 1002.144pt x 423.5022pt>
+<predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_02_prediccion_test_serie.png, id=1378, 1002.144pt x 423.5022pt>
 File: predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_02_prediccion_test_serie.png Graphic file (type png)
 <use predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_02_prediccion_test_serie.png>
 Package pdftex.def Info: predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_02_prediccion_test_serie.png  used on input line 554.
 (pdftex.def)             Requested size: 483.69687pt x 204.4096pt.
-<predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_03_scatter_test.png, id=1389, 497.2176pt x 495.2904pt>
+ [72
+
+ <./predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_01_curvas_entrenamiento.png>]
+<predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_03_scatter_test.png, id=1390, 497.2176pt x 495.2904pt>
 File: predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_03_scatter_test.png Graphic file (type png)
 <use predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_03_scatter_test.png>
 Package pdftex.def Info: predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_03_scatter_test.png  used on input line 561.
 (pdftex.def)             Requested size: 338.58632pt x 337.29181pt.
-<predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_05_todos_splits.png, id=1390, 1146.684pt x 423.5022pt>
+<predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_05_todos_splits.png, id=1391, 1146.684pt x 423.5022pt>
 File: predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_05_todos_splits.png Graphic file (type png)
 <use predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_05_todos_splits.png>
 Package pdftex.def Info: predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_05_todos_splits.png  used on input line 568.
@@ -1972,7 +1972,7 @@ Overfull \hbox (4.45888pt too wide) in paragraph at lines 5--5
 [112
 
 ] [113] [114] [115]
-Overfull \hbox (51.87263pt too wide) in paragraph at lines 81--101
+Overfull \hbox (58.40034pt too wide) in paragraph at lines 81--102
  [][] 
  []
 
@@ -2015,9 +2015,9 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  68i,11n,70p,1937b,2939s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/lasy10.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (144 pages, 18627326 bytes).
+Output written on main.pdf (144 pages, 18628427 bytes).
 PDF statistics:
- 1975 PDF objects out of 2073 (max. 8388607)
+ 1977 PDF objects out of 2073 (max. 8388607)
  469 named destinations out of 1000 (max. 500000)
  1004 words of extra memory for PDF output out of 10000 (max. 10000000)
 

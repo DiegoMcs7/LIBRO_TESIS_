@@ -357,11 +357,11 @@ Para el ladrillo, la búsqueda con Optuna fue ejecutada de forma independiente e
 \paragraph{Hiperparámetros y Arquitectura}
 
 \justify
-La búsqueda con Optuna (261 ensayos, 171,8 min) identificó una arquitectura LSTM \textbf{bidireccional} con una capa de 64 unidades ocultas. El procesamiento en ambas direcciones dentro de la ventana de entrada permite capturar dependencias temporales en ambos sentidos. Se utilizaron \textit{dropout} de 0,35 y \textit{dropout} recurrente de 0,2, el optimizador RMSprop con $\eta=0{,}002662$ y \textit{weight decay} $9{,}63 \times 10^{-5}$, \textit{lookback} de 3 meses, \textit{batch size} de 16 y \textit{scheduler} StepLR. La Tabla~\ref{tab:lstm_ladrillo_sc_hiper} detalla estos parámetros.
+La búsqueda con Optuna (300 ensayos, 161,4 min) identificó una arquitectura LSTM \textbf{unidireccional} con una capa de 64 unidades ocultas. Se utilizaron \textit{dropout} de 0,05 y \textit{dropout} recurrente de 0,05, el optimizador AdamW con $\eta=0{,}008599$ y \textit{weight decay} $5{,}03 \times 10^{-4}$, \textit{lookback} de 6 meses, \textit{batch size} de 8 y sin planificador de tasa de aprendizaje. La Tabla~\ref{tab:lstm_ladrillo_sc_hiper} detalla estos parámetros.
 
 \begin{table}[htbp]
 \centering
-\caption{Hiperparámetros óptimos del modelo LSTM para ladrillo --- escenario sin pandemia (Optuna: 261 ensayos).}
+\caption{Hiperparámetros óptimos del modelo LSTM para ladrillo --- escenario sin pandemia (Optuna: 300 ensayos).}
 \label{tab:lstm_ladrillo_sc_hiper}
 \begin{tabular}{ll}
 \toprule
@@ -369,16 +369,16 @@ La búsqueda con Optuna (261 ensayos, 171,8 min) identificó una arquitectura LS
 \midrule
 Capas LSTM          & 1 \\
 Unidades ocultas    & 64 \\
-Bidireccional       & Sí \\
-Dropout             & 0,35 \\
-Dropout recurrente  & 0,2 \\
-Optimizador         & RMSprop \\
-Tasa de aprendizaje & 0,002662 \\
-Weight decay        & $9{,}63 \times 10^{-5}$ \\
-Lookback            & 3 meses \\
-Batch size          & 16 \\
-Scheduler           & StepLR \\
-Parámetros entrenables & 36.481 \\
+Bidireccional       & No \\
+Dropout             & 0,05 \\
+Dropout recurrente  & 0,05 \\
+Optimizador         & AdamW \\
+Tasa de aprendizaje & 0,008599 \\
+Weight decay        & $5{,}03 \times 10^{-4}$ \\
+Lookback            & 6 meses \\
+Batch size          & 8 \\
+Scheduler           & Ninguno \\
+Parámetros entrenables & 18.241 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -402,13 +402,13 @@ Parámetros entrenables & 36.481 \\
 \toprule
 \textbf{Métrica} & \textbf{Train} & \textbf{Val} & \textbf{Test} \\
 \midrule
-RMSE (Gs.) & 15,69 & 12,87 & 6,62 \\
+RMSE (Gs.) & 14,41 & 14,26 & 7,68 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \justify
-El RMSE de prueba de 6,62~Gs.\ representa un error relativo inferior al 2,5\,\% del rango histórico de la serie (Gs.~428--700), lo que refleja una capacidad predictiva sólida. El resultado de entrenamiento (15,69~Gs.) es considerablemente mayor, lo que indica que el período de prueba es más estable y menos volátil que el período de entrenamiento.
+El RMSE de prueba de 7,68~Gs.\ representa un error relativo del 2,8\,\% del rango histórico de la serie (Gs.~428--700). El RMSE de entrenamiento (14,41~Gs.) y el de validación (14,26~Gs.) son prácticamente idénticos, lo que indica un buen equilibrio entre capacidad de ajuste y generalización, sin evidencia de sobreajuste.
 
 \paragraph{Evaluación sobre el Conjunto de Prueba}
 
@@ -458,7 +458,7 @@ El RMSE de prueba de 6,62~Gs.\ representa un error relativo inferior al 2,5\,\% 
 \end{figure}
 
 \justify
-El test de Ljung-Box sobre los residuos del conjunto de prueba arrojó un $p$-valor de $2{,}8 \times 10^{-10}$ a 10 rezagos y de $5{,}5 \times 10^{-10}$ a 20 rezagos, ambos rechazando fuertemente la hipótesis nula de ausencia de autocorrelación. Este resultado indica que los residuos presentan una autocorrelación severa en ambos horizontes de rezagos, lo que sugiere la presencia de patrones temporales sistemáticos que el modelo no logra capturar, posiblemente asociados a la dinámica escalonada del precio del ladrillo.
+El test de Ljung-Box sobre los residuos del conjunto de prueba arrojó un $p$-valor de $1{,}5 \times 10^{-8}$ a 10 rezagos y de $7{,}6 \times 10^{-15}$ a 20 rezagos, ambos rechazando fuertemente la hipótesis nula de ausencia de autocorrelación. Este resultado indica que los residuos presentan una autocorrelación severa en ambos horizontes de rezagos, lo que sugiere la presencia de patrones temporales sistemáticos que el modelo no logra capturar, posiblemente asociados a la dinámica escalonada del precio del ladrillo.
 
 \clearpage
 \paragraph{Pronóstico a 24 Meses}
@@ -485,7 +485,7 @@ El test de Ljung-Box sobre los residuos del conjunto de prueba arrojó un $p$-va
 \end{figure}
 
 \justify
-Bajo el escenario sin pandemia, el rango de precios predicho se sitúa entre Gs.~657 y Gs.~706 a lo largo del horizonte de 24 meses. La proyección refleja una tendencia alcista moderada respecto al último valor observado, dentro de una banda relativamente contenida que es consistente con la estabilidad histórica de este mercado.
+Bajo el escenario sin pandemia, el rango de precios predicho se sitúa entre Gs.~646 y Gs.~686 a lo largo del horizonte de 24 meses. La proyección refleja una tendencia alcista moderada respecto al último valor observado, dentro de una banda relativamente contenida que es consistente con la estabilidad histórica de este mercado.
 
 % ------ LADRILLO CON COVID ------
 \clearpage
@@ -494,7 +494,7 @@ Bajo el escenario sin pandemia, el rango de precios predicho se sitúa entre Gs.
 \paragraph{Hiperparámetros y Arquitectura}
 
 \justify
-Para el escenario con efecto pandémico, la búsqueda con Optuna (249 ensayos, 170,9 min) también convergió a una arquitectura LSTM \textbf{bidireccional} con 64 unidades ocultas y 36.481 parámetros entrenables. Las tasas de regularización son menores que en el escenario sin pandemia: \textit{dropout} de 0,25 y \textit{dropout} recurrente de 0,05. El optimizador fue RMSprop con $\eta=0{,}002375$ y \textit{weight decay} $7{,}45 \times 10^{-7}$, \textit{lookback} de 3 meses, \textit{batch size} de 16, sin planificador de tasa de aprendizaje. La Tabla~\ref{tab:lstm_ladrillo_cc_hiper} detalla estos parámetros.
+Para el escenario con efecto pandémico, la búsqueda con Optuna (300 ensayos, 186,8 min) convergió a una arquitectura LSTM \textbf{bidireccional} con 64 unidades ocultas y 36.481 parámetros entrenables. A diferencia del escenario sin pandemia, Optuna seleccionó tasas de regularización más agresivas: \textit{dropout} de 0,35 y \textit{dropout} recurrente de 0,2. El optimizador fue RMSprop con $\eta=0{,}002662$ y \textit{weight decay} $9{,}63 \times 10^{-5}$, \textit{lookback} de 3 meses, \textit{batch size} de 16 y planificador StepLR. La Tabla~\ref{tab:lstm_ladrillo_cc_hiper} detalla estos parámetros.
 
 \begin{table}[htbp]
 \centering
@@ -507,14 +507,14 @@ Para el escenario con efecto pandémico, la búsqueda con Optuna (249 ensayos, 1
 Capas LSTM          & 1 \\
 Unidades ocultas    & 64 \\
 Bidireccional       & Sí \\
-Dropout             & 0,25 \\
-Dropout recurrente  & 0,05 \\
+Dropout             & 0,35 \\
+Dropout recurrente  & 0,2 \\
 Optimizador         & RMSprop \\
-Tasa de aprendizaje & 0,002375 \\
-Weight decay        & $7{,}45 \times 10^{-7}$ \\
+Tasa de aprendizaje & 0,002662 \\
+Weight decay        & $9{,}63 \times 10^{-5}$ \\
 Lookback            & 3 meses \\
 Batch size          & 16 \\
-Scheduler           & Ninguno \\
+Scheduler           & StepLR \\
 Parámetros entrenables & 36.481 \\
 \bottomrule
 \end{tabular}
@@ -539,13 +539,13 @@ Parámetros entrenables & 36.481 \\
 \toprule
 \textbf{Métrica} & \textbf{Train} & \textbf{Val} & \textbf{Test} \\
 \midrule
-RMSE (Gs.) & 15,54 & 13,36 & 6,22 \\
+RMSE (Gs.) & 15,69 & 12,87 & 6,62 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \justify
-El RMSE de prueba de 6,22~Gs.\ es ligeramente inferior al del escenario sin pandemia (6,62~Gs.), lo que indica que incorporar la información del período pandémico en el entrenamiento mejora marginalmente el ajuste. El RMSE de validación (13,36~Gs.) también se mantiene en un nivel comparable al del escenario anterior (12,87~Gs.), lo que confirma la consistencia entre ambos modelos.
+El RMSE de prueba de 6,62~Gs.\ es inferior al del escenario sin pandemia (7,68~Gs.), lo que indica que la arquitectura bidireccional seleccionada por Optuna para este escenario captura mejor la dinámica del precio del ladrillo. El RMSE de validación (12,87~Gs.) es también inferior al del escenario anterior (14,26~Gs.), confirmando una mejora consistente en todas las particiones.
 
 \paragraph{Evaluación sobre el Conjunto de Prueba}
 
@@ -595,7 +595,7 @@ El RMSE de prueba de 6,22~Gs.\ es ligeramente inferior al del escenario sin pand
 \end{figure}
 
 \justify
-El test de Ljung-Box sobre los residuos del conjunto de prueba arrojó un $p$-valor de $2{,}4 \times 10^{-11}$ a 10 rezagos y de $7{,}5 \times 10^{-13}$ a 20 rezagos, ambos rechazando fuertemente la hipótesis nula. Al igual que en el escenario sin pandemia, los residuos presentan autocorrelación severa en ambos horizontes de rezagos, confirmando que el modelo LSTM del ladrillo ---independientemente del escenario--- deja estructura temporal significativa sin capturar.
+El test de Ljung-Box sobre los residuos del conjunto de prueba arrojó un $p$-valor de $2{,}8 \times 10^{-10}$ a 10 rezagos y de $5{,}5 \times 10^{-10}$ a 20 rezagos, ambos rechazando fuertemente la hipótesis nula. Al igual que en el escenario sin pandemia, los residuos presentan autocorrelación severa en ambos horizontes de rezagos, confirmando que el modelo LSTM del ladrillo ---independientemente del escenario--- deja estructura temporal significativa sin capturar.
 
 \clearpage
 \paragraph{Pronóstico a 24 Meses}
@@ -622,4 +622,4 @@ El test de Ljung-Box sobre los residuos del conjunto de prueba arrojó un $p$-va
 \end{figure}
 
 \justify
-Bajo el escenario con efecto pandémico, el rango de precios predicho se sitúa entre Gs.~659 y Gs.~757 para el horizonte de 24 meses. Comparado con el escenario sin pandemia (Gs.~657--706), el límite superior sube de Gs.~706 a Gs.~757, un incremento del 7,2\,\% que el modelo atribuye al efecto acumulado de la variable pandémica en la dinámica del precio del ladrillo.
+Bajo el escenario con efecto pandémico, el rango de precios predicho se sitúa entre Gs.~656 y Gs.~758 para el horizonte de 24 meses. Comparado con el escenario sin pandemia (Gs.~646--686), el límite superior sube de Gs.~686 a Gs.~758, un incremento del 10,5\,\% que el modelo atribuye al efecto acumulado de la variable pandémica en la dinámica del precio del ladrillo.
