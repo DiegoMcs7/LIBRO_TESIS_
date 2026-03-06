@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.16)  6 MAR 2026 09:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.16)  6 MAR 2026 09:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1096,12 +1096,16 @@ Cap\'{\i }tulo 4.
 ] [18] [19]) [20]
 Cap\'{\i }tulo 5.
 (resultados.tex (resultados_rio.tex
+Overfull \hbox (21.18289pt too wide) in paragraph at lines 1--1
+|[]\OT1/cmr/bx/n/17.28 Predicci^^Son del Ni-vel del R^^S^^Po Pa-ra-guay me-dian-te LSTM| 
+ []
+
 <predicciones/prediccion_nivel_rio/resultados/grafico_00_serie_historica.png, id=813, 1292.1876pt x 496.254pt>
 File: predicciones/prediccion_nivel_rio/resultados/grafico_00_serie_historica.png Graphic file (type png)
 <use predicciones/prediccion_nivel_rio/resultados/grafico_00_serie_historica.png>
 Package pdftex.def Info: predicciones/prediccion_nivel_rio/resultados/grafico_00_serie_historica.png  used on input line 16.
 (pdftex.def)             Requested size: 483.69687pt x 185.76161pt.
- [21
+[21
 
 ]
 <predicciones/prediccion_nivel_rio/resultados/grafico_01_particiones.png, id=819, 1292.1876pt x 496.7358pt>
@@ -1471,7 +1475,7 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2025-10-24>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 9CD41A582FFA583F067A036322064A00;10505.
+(rerunfilecheck)             Checksum: A37C9FDD53DB8ED1703DC2CCF773DAF3;10605.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
@@ -1485,7 +1489,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  68i,11n,70p,1937b,2966s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/lasy10.pfb><C:/Users/usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (97 pages, 10883935 bytes).
+Output written on main.pdf (97 pages, 10884100 bytes).
 PDF statistics:
  1529 PDF objects out of 1728 (max. 8388607)
  369 named destinations out of 1000 (max. 500000)
