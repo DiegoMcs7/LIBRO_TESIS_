@@ -44,7 +44,7 @@ Todos los modelos (SARIMAX, LSTM y GRU) fueron implementados y entrenados en la 
 \section{Modelos para predicción del nivel del río}
 % ============================================================
 
-\subsection{Long Short-Term Memory (LSTM)}
+\subsection{LSTM}
 \justify
 Se eligió un modelo LSTM para proyectar el nivel diario del río Paraguay. Estudios muestran que LSTM supera a modelos clásicos como ARIMA, reduciendo errores hasta en un 87\,\% en series no lineales \cite{siami2018}, y presenta alta precisión en predicciones fluviales \cite{kratzert2018, kratzert2019}. Frente a GRU, LSTM resulta más efectivo en dependencias de largo plazo \cite{YUNITA2025103462}, y también supera a arquitecturas Transformer en métricas como NSE y KGE para predicción diaria \cite{liu2023}.
 
@@ -63,7 +63,7 @@ Una vez entrenado el modelo, se generaron predicciones diarias a 730 días. De e
 \justify
 Con la proyección del nivel del río Paraguay disponible, se procedió a construir los modelos de predicción de precios de materiales de construcción. Se aplicaron tres enfoques complementarios: el modelo estadístico clásico SARIMAX y las dos arquitecturas de redes neuronales recurrentes LSTM y GRU. Esta comparación permitió evaluar tanto la capacidad interpretativa del modelo econométrico como la flexibilidad no lineal de los modelos de aprendizaje profundo.
 
-\subsection{Seasonal AutoRegressive Integrated Moving Average with eXogenous variables (SARIMAX)}
+\subsection{SARIMAX}
 \justify
 Se aplicó el modelo SARIMAX para predecir los precios mensuales del cemento y del ladrillo común, considerando como variables exógenas el mínimo mensual del nivel del río Paraguay, estimado previamente mediante el modelo LSTM univariado, y la variable binaria de cuarentena por COVID-19, que representa los períodos de restricción sanitaria durante el confinamiento por COVID-19.
 
@@ -73,7 +73,7 @@ El conjunto de datos de cada material se particionó en 70\,\% para entrenamient
 \justify
 Adicionalmente, se realizó una validación cruzada por ventana deslizante (\textit{rolling forecast}) para obtener una estimación más robusta del desempeño real del modelo a lo largo de todo el período histórico disponible.
 
-\subsection{Long Short-Term Memory (LSTM)}
+\subsection{LSTM}
 \justify
 Para la predicción de los precios mensuales del cemento y del ladrillo común se implementaron modelos basados en la arquitectura LSTM. Estos modelos son ampliamente utilizados en el tratamiento de series temporales no lineales, ya que permiten capturar dependencias de largo y corto plazo en los datos.
 
@@ -83,7 +83,7 @@ Los modelos reciben como entrada las siguientes 6 variables: precio promedio pol
 \justify
 Los datos fueron divididos cronológicamente: 97 meses para entrenamiento, 20 meses para validación y 22 meses para prueba. La búsqueda de hiperparámetros se realizó con Optuna, y los intervalos de confianza al 95\% se estimaron mediante Monte Carlo Dropout ($N=100$ simulaciones).
 
-\subsection{Gated Recurrent Unit (GRU)}
+\subsection{GRU}
 \justify
 Como arquitectura complementaria al LSTM, se evaluó la GRU (\textit{Gated Recurrent Unit}), propuesta por Cho et al.\ (2014) como una simplificación de la celda LSTM. Mientras que la LSTM emplea tres compuertas (entrada, olvido y salida), la GRU utiliza únicamente dos: la compuerta de actualización (\textit{update gate}) y la compuerta de reinicio (\textit{reset gate}), lo que reduce el número de parámetros entrenables y puede favorecer la convergencia en datasets de tamaño moderado.
 
@@ -103,7 +103,7 @@ Para evaluar el efecto del confinamiento por COVID-19 sobre los precios de los m
 \end{itemize}
 
 \justify
-Dado que cada escenario implica una distribución de datos de entrenamiento distinta, los hiperparámetros fueron optimizados de forma independiente para cada combinación escenario--modelo--material mediante Optuna, resultando en arquitecturas potencialmente diferentes para cada caso. Esta separación garantiza que los resultados de cada escenario reflejen fielmente la dinámica aprendida bajo las condiciones específicas de ese escenario, sin cruzar información entre ellos.
+Dado que cada escenario implica una distribución de datos de entrenamiento distinta, los hiperparámetros fueron optimizados de forma independiente para cada combinación escenario--modelo--material mediante Optuna, manteniendo el mismo espacio de búsqueda en todos los casos, lo que puede resultar en arquitecturas diferentes para cada caso. Esta separación garantiza que los resultados de cada escenario reflejen fielmente la dinámica aprendida bajo las condiciones específicas de ese escenario, sin cruzar información entre ellos.
 
 \justify
 En el caso del modelo SARIMAX, la comparación entre escenarios se realizó a través del coeficiente estimado para la variable \texttt{Cuarentena}, que cuantifica directamente el efecto lineal del período de confinamiento por COVID-19 sobre el precio en el marco del modelo estadístico.

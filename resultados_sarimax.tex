@@ -1,4 +1,4 @@
-\section{Predicción de los Precios del Cemento y del Ladrillo Común con Seasonal Autoregressive Integrated Moving Average with Exogenous Variables (SARIMAX)}
+\section{Predicción de los Precios del Cemento y del Ladrillo Común con SARIMAX}
 \vspace{0.3cm}
 \justify
 En esta sección se presentan los resultados de aplicar el modelo SARIMAX a la predicción de los precios del cemento y del ladrillo común. Para ambos materiales, las variables exógenas incorporadas son el mínimo mensual del nivel del río Paraguay (\texttt{Nivel\_Rio}), derivado de las predicciones del modelo LSTM descrito en la sección anterior, y una variable binaria de cuarentena (\texttt{Cuarentena}) que captura el período de confinamiento por COVID-19. El modelo fue implementado con \texttt{statsmodels} y el orden óptimo se determinó mediante \texttt{auto\_arima} minimizando el criterio AIC.
