@@ -37,16 +37,6 @@ La partición del dataset siguió un criterio estrictamente cronológico. El con
 La búsqueda de hiperparámetros se realizó con Optuna, usando el sampler TPE (\textit{Tree-structured Parzen Estimator}) y poda de trials con \textit{MedianPruner} para descartar tempranamente las configuraciones claramente inferiores. Se evaluaron 300 trials en Kaggle con dos GPUs Tesla T4 bajo la estrategia \texttt{MirroredStrategy}, proceso que demandó 278 minutos en total. El mejor RMSE de validación obtenido fue de 0,0371 m.
 
 \justify
-La Figura \ref{fig:optuna_historia} presenta la evolución del RMSE de validación a lo largo de los 300 trials y la importancia relativa de cada hiperparámetro. El número de capas (\texttt{n\_layers}) resultó el factor más influyente, seguido por la estrategia de predicción y la tasa de aprendizaje.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{predicciones/prediccion_nivel_rio/resultados/grafico_03_optuna_historia.png}
-    \caption{Historia de optimización de Optuna (izquierda) e importancia relativa de hiperparámetros (derecha).}
-    \label{fig:optuna_historia}
-\end{figure}
-
-\justify
 Los hiperparámetros óptimos se resumen en la Tabla \ref{tab:hiperparametros_lstm_rio}.
 
 \begin{table}[H]
@@ -113,31 +103,6 @@ La Tabla \ref{tab:metricas_lstm_rio} presenta el RMSE en los tres subconjuntos, 
 
 \justify
 El error en el conjunto de prueba es de 4,57 cm, sobre una variable que oscila entre $-1{,}61$ m y $7{,}88$ m. Este nivel de precisión, inferior a 5 cm sobre un rango de casi 10 metros, confirma la capacidad del modelo LSTM para reproducir la dinámica hidrológica del río Paraguay con alta fidelidad.
-
-\justify
-Dado que el modelo emplea una estrategia recursiva unistep, cada predicción corresponde a un único paso adelante ($t+1$). La Figura \ref{fig:rmse_por_paso} ilustra este punto de evaluación en el conjunto de prueba, con un RMSE de 0,0457 m.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{predicciones/prediccion_nivel_rio/resultados/grafico_05_rmse_por_paso.png}
-    \caption{RMSE por paso de predicción ($t+1$) en el conjunto de prueba.}
-    \label{fig:rmse_por_paso}
-\end{figure}
-
-\subsection{Análisis de la Distribución de Errores}
-
-\justify
-Se analizaron los residuos sobre el conjunto de validación para evaluar el sesgo y la distribución estadística de los errores. La Figura \ref{fig:distribucion_errores} presenta el histograma de errores y el gráfico Q-Q de normalidad.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{predicciones/prediccion_nivel_rio/resultados/grafico_06_distribucion_errores.png}
-    \caption{Distribución de errores del modelo LSTM en validación: histograma (izquierda) y gráfico Q-Q (derecha).}
-    \label{fig:distribucion_errores}
-\end{figure}
-
-\justify
-El histograma muestra una distribución aproximadamente centrada en cero, sin sesgo sistemático apreciable. La mayor parte de los errores se concentra en un intervalo estrecho alrededor del origen, con una leve asimetría positiva que indica que el modelo tiende a subestimar el nivel en algunos periodos. El gráfico Q-Q muestra que los residuos se aproximan razonablemente a una distribución normal, con desviaciones en las colas que corresponden a eventos hidrológicos extremos de difícil predicción.
 
 \subsection{Predicción del Nivel del Río a 730 Días}
 

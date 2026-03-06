@@ -5,7 +5,7 @@
 \section{Evaluación del modelo SARIMAX}
 
 \justify
-La búsqueda exhaustiva por AIC seleccionó, para ambos materiales, el orden $(0,1,0)(0,0,0)_{12}$, equivalente a un paseo aleatorio con variables exógenas. La ausencia de términos autorregresivos y de media móvil indica que, una vez diferenciada, la serie se comporta como ruido blanco sin estructura temporal adicional. Este hallazgo es consistente con la dinámica de los mercados de insumos de construcción en Paraguay, donde los ajustes de precios son infrecuentes y tienden a mantenerse estables durante períodos prolongados.
+La búsqueda exhaustiva por AIC seleccionó, para ambos materiales, el orden $(0,1,0)(0,0,0)_{12}$, equivalente a un paseo aleatorio con variables exógenas. La ausencia de términos autorregresivos y de media móvil indica que, una vez diferenciada, la serie se comporta como ruido blanco sin estructura temporal adicional. Este hallazgo es consistente con la dinámica de los mercados de materiales de construcción en Paraguay, donde los ajustes de precios son infrecuentes y tienden a mantenerse estables durante períodos prolongados.
 
 \justify
 El desempeño difirió entre materiales (Tablas~\ref{tab:sarimax_metricas} y \ref{tab:sarimax_ladrillo_metricas}). Para el ladrillo, el RMSE de prueba fue de apenas Gs.~4,55, ya que el precio se mantuvo constante en Gs.~650 durante los 22 meses de evaluación. Para el cemento, el precio cayó de Gs.~60.000 a Gs.~55.000 en enero de 2024, salto que el modelo no anticipó, resultando en un RMSE de Gs.~4.840,06.
@@ -23,7 +23,7 @@ La predicción del nivel diario del río Paraguay alcanzó un RMSE de prueba de 
 Para el cemento, Optuna convergió a la misma arquitectura LSTM bidireccional en ambos escenarios (36.481 parámetros), alcanzando un RMSE de prueba de 4.394{,}96~Gs.\ ---el mejor resultado individual para este material---. Sin embargo, los residuos presentaron autocorrelación significativa ($p=5{,}69 \times 10^{-5}$ a 10 rezagos), indicando estructura temporal sin capturar.
 
 \justify
-Para el ladrillo, Optuna seleccionó configuraciones distintas: una LSTM unidireccional (18.241 parámetros) sin pandemia y una bidireccional (36.481 parámetros) con pandemia. Los RMSE de prueba fueron de 7{,}68 y 6{,}62~Gs.\ respectivamente, con error relativo inferior al 3\,\% del rango histórico. La selección de bidireccionalidad solo con señal pandémica sugiere que esa dinámica más compleja requiere mayor capacidad de representación.
+Para el ladrillo, Optuna seleccionó configuraciones distintas: una LSTM unidireccional (18.241 parámetros) sin confinamiento y una bidireccional (36.481 parámetros) con confinamiento. Los RMSE de prueba fueron de 7{,}68 y 6{,}62~Gs.\ respectivamente, con error relativo inferior al 3\,\% del rango histórico. La selección de bidireccionalidad solo con señal de confinamiento por COVID-19 sugiere que esa dinámica más compleja requiere mayor capacidad de representación.
 
 \justify
 En la diferenciación de escenarios, bajo cuarentena activa el límite superior del pronóstico del cemento subió de 62.992 a 73.366~Gs.\ (+16{,}5\,\%), y el del ladrillo de 686 a 758~Gs.\ (+10{,}5\,\%), consistente con los incrementos observados durante 2020--2022.
@@ -35,10 +35,10 @@ En la diferenciación de escenarios, bajo cuarentena activa el límite superior 
 Para el cemento, Optuna seleccionó una GRU unidireccional de 13.889 parámetros (Tabla~\ref{tab:gru_cemento_sc_arq}), con RMSE de prueba de 4.964{,}27~Gs.\ ---superior al de la LSTM---. Sus residuos, sin embargo, se comportaron como ruido blanco ($p>0{,}05$), otorgando mayor fiabilidad a sus intervalos de confianza.
 
 \justify
-Para el ladrillo, el RMSE de prueba fue de 11{,}88~Gs.\ sin pandemia y 11{,}11~Gs.\ con pandemia, inferior tanto a la LSTM como al SARIMAX. La dinámica escalonada del ladrillo representa un desafío particular para esta arquitectura.
+Para el ladrillo, el RMSE de prueba fue de 11{,}88~Gs.\ sin confinamiento y 11{,}11~Gs.\ con confinamiento, inferior tanto a la LSTM como al SARIMAX. La dinámica escalonada del ladrillo representa un desafío particular para esta arquitectura.
 
 \justify
-Bajo el escenario pandémico, la GRU proyectó incrementos de +2{,}3\,\% para el cemento y +5{,}1\,\% para el ladrillo, en la misma dirección que la LSTM, reforzando la hipótesis de que la variable de cuarentena actúa como señal de presión ascendente sobre los precios.
+Bajo el escenario con confinamiento por COVID-19, la GRU proyectó incrementos de +2{,}3\,\% para el cemento y +5{,}1\,\% para el ladrillo, en la misma dirección que la LSTM, reforzando la hipótesis de que la variable de cuarentena actúa como señal de presión ascendente sobre los precios.
 
 % ============================================================
 \section{Comparación entre modelos}
@@ -59,50 +59,36 @@ La Tabla~\ref{tab:comparacion_modelos} presenta la síntesis comparativa de los 
         GRU     & Cemento  & 4.964{,}27~Gs.        & 13.889 & \textit{Dropout}=0{,}1 \\
         \midrule
         SARIMAX & Ladrillo & 4{,}55~Gs.$^{a}$      & 3      & Paseo aleatorio \\
-        LSTM    & Ladrillo & 6{,}62~Gs.$^{c}$      & 36.481 & Con pandemia; bidireccional \\
-        GRU     & Ladrillo & 11{,}11~Gs.$^{d}$     & 13.889 & Con pandemia; unidireccional \\
+        LSTM    & Ladrillo & 6{,}62~Gs.$^{c}$      & 36.481 & Con confinamiento; bidireccional \\
+        GRU     & Ladrillo & 11{,}11~Gs.$^{d}$     & 13.889 & Con confinamiento; unidireccional \\
         \midrule
         LSTM    & Nivel río & 0{,}0457~m        & 1.075.713 & Unidireccional; 512 uds. \\
         \bottomrule
         \multicolumn{5}{l}{\footnotesize $^{a}$ RMSE sobre conjunto de prueba (22 meses).} \\
         \multicolumn{5}{l}{\footnotesize $^{b}$ Ambos escenarios alcanzan el mismo RMSE.} \\
-        \multicolumn{5}{l}{\footnotesize $^{c}$ RMSE sin pandemia: 7{,}68~Gs.} \\
-        \multicolumn{5}{l}{\footnotesize $^{d}$ RMSE sin pandemia: 11{,}88~Gs.}
+        \multicolumn{5}{l}{\footnotesize $^{c}$ RMSE sin confinamiento: 7{,}68~Gs.} \\
+        \multicolumn{5}{l}{\footnotesize $^{d}$ RMSE sin confinamiento: 11{,}88~Gs.}
     \end{tabular}
 \end{table}
 
 \justify
-\textbf{Para el cemento}, la LSTM obtuvo el menor RMSE (4.394{,}96~Gs.), seguida por el SARIMAX (4.840{,}06~Gs.) y la GRU (4.964{,}27~Gs.). La LSTM supera al SARIMAX en un 9{,}2\,\% de reducción de error, aunque presenta autocorrelación residual; la GRU, con RMSE ligeramente superior, logra residuos limpios.
+\textbf{SARIMAX.} La búsqueda por AIC seleccionó el orden $(0,1,0)(0,0,0)_{12}$ para ambos materiales, lo que equivale a un paseo aleatorio con drift: el pronóstico de cada mes es esencialmente el valor del mes anterior más una constante. Si bien este comportamiento produce RMSE de prueba competitivos cuando la serie es estable ---como ocurrió con el ladrillo durante 2023--2025 (RMSE = 4{,}55~Gs.)---, el modelo carece de estructura predictiva real: no captura estacionalidad, no responde a las variables exógenas (ambas no significativas, $p > 0{,}29$) y genera pronósticos futuros que convergen a una línea recta. Por estas razones, el SARIMAX se descarta como herramienta de pronóstico a mediano plazo y la comparación sustantiva se centra en las dos arquitecturas de aprendizaje profundo.
 
 \justify
-\textbf{Para el ladrillo}, el SARIMAX fue el más preciso (4{,}55~Gs.), seguido por la LSTM (6{,}62~Gs.) y la GRU (11{,}11~Gs.). La superioridad del SARIMAX se explica porque el precio se mantuvo constante durante todo el período de evaluación, contexto ideal para el paseo aleatorio.
+\textbf{LSTM vs GRU --- Cemento.} La LSTM alcanzó el menor RMSE de prueba (4.394{,}96~Gs.), superando a la GRU (4.964{,}27~Gs.) en un 11{,}5\,\%. Sin embargo, los residuos de la LSTM presentaron autocorrelación significativa ($p = 5{,}69 \times 10^{-5}$), mientras que los de la GRU se comportaron como ruido blanco, lo que otorga mayor fiabilidad estadística a sus intervalos de confianza. En términos de eficiencia, la GRU logró un desempeño comparable con 13.889 parámetros frente a los 36.481 de la LSTM bidireccional.
 
 \justify
-\textbf{Ningún modelo único domina ambos materiales}, resultado consistente con el principio del \textit{No Free Lunch}. Un aspecto diferenciador fundamental es que, mientras el SARIMAX fue insensible a la variable de cuarentena, los modelos de aprendizaje profundo generaron diferencias sustanciales entre escenarios, funcionalidad esencial para la gestión de riesgo en presupuestos de obra.
+\textbf{LSTM vs GRU --- Ladrillo.} La LSTM obtuvo RMSE de prueba de 7{,}68~Gs.\ (sin confinamiento) y 6{,}62~Gs.\ (con confinamiento), inferiores a los 11{,}88 y 11{,}11~Gs.\ de la GRU. La selección de arquitectura bidireccional para el escenario con confinamiento sugiere que la LSTM aprovecha mejor la señal de cuarentena. Ambos modelos generaron pronósticos con variabilidad y estructura temporal realistas, a diferencia del SARIMAX.
+
+\justify
+\textbf{Síntesis.} La LSTM alcanzó el mejor RMSE de prueba en ambos materiales, mientras que la GRU ofreció residuos sin autocorrelación con una arquitectura más compacta. Frente al SARIMAX, ambos modelos recurrentes presentan la ventaja decisiva de generar pronósticos con estructura temporal y capacidad de diferenciar escenarios, lo que los hace aplicables a la planificación de costos de construcción.
 
 % ============================================================
 \section{Impacto de la variable de cuarentena por COVID-19}
 
 \justify
-El SARIMAX fue insensible a la variable pandémica (diferencias inferiores al 0{,}05\,\% del nivel de precios). La LSTM proyectó incrementos consistentes bajo cuarentena (+16{,}5\,\% para cemento, +10{,}5\,\% para ladrillo), coherentes con las disrupciones reales de 2020--2022. La GRU mostró la misma dirección, con magnitudes menores (+2{,}3\,\% y +5{,}1\,\%).
+El SARIMAX fue insensible a la variable de confinamiento por COVID-19 (diferencias inferiores al 0{,}05\,\% del nivel de precios). La LSTM proyectó incrementos consistentes bajo cuarentena (+16{,}5\,\% para cemento, +10{,}5\,\% para ladrillo), coherentes con las disrupciones reales de 2020--2022. La GRU mostró la misma dirección, con magnitudes menores (+2{,}3\,\% y +5{,}1\,\%).
 
 \justify
-La coincidencia en la dirección del efecto entre LSTM y GRU para ambos materiales otorga credibilidad a estos resultados: ambas arquitecturas procesaron la variable de cuarentena como una señal de presión ascendente sobre los precios. No obstante, la representación binaria del \textit{shock} pandémico sigue siendo una simplificación, ya que una variable dicotómica no puede capturar simultáneamente los distintos canales de transmisión que caracterizaron la pandemia.
+La coincidencia en la dirección del efecto entre LSTM y GRU para ambos materiales otorga credibilidad a estos resultados: ambas arquitecturas procesaron la variable de cuarentena como una señal de presión ascendente sobre los precios. No obstante, la representación binaria del \textit{shock} del confinamiento por COVID-19 sigue siendo una simplificación, ya que una variable dicotómica no puede capturar simultáneamente los distintos canales de transmisión que caracterizaron el confinamiento.
 
-% ============================================================
-\section{Limitaciones del estudio}
-
-\justify
-\textbf{Tamaño reducido de las series.} Con 139 observaciones mensuales, el \textit{dataset} limita la profundidad de las arquitecturas explorables, como lo evidencia la selección de modelos con una sola capa en todos los casos.
-
-\justify
-\textbf{Representación simplificada del efecto pandémico.} La variable binaria no diferencia entre los múltiples canales de transmisión de la pandemia. Futuras investigaciones podrían incorporar variables continuas como índices de movilidad o volúmenes de importación.
-
-\justify
-\textbf{Propagación de errores.} La predicción del nivel del río se utilizó como variable exógena en todos los modelos de precios. Aunque el error es pequeño (RMSE de 0{,}0457~m), la incertidumbre acumulada a 730 días no se refleja en los intervalos de confianza de los modelos de precios.
-
-\justify
-\textbf{Heterogeneidad en la comparación de escenarios.} Las optimizaciones independientes de Optuna para cada escenario implican que las diferencias entre pronósticos pueden deberse tanto a la variable de cuarentena como a la configuración del modelo.
-
-\justify
-\textbf{Limitaciones de los intervalos de confianza.} Los intervalos estimados mediante Monte Carlo Dropout ($N=100$) pueden subestimar la incertidumbre real cuando los residuos presentan autocorrelación, como ocurre con la LSTM del cemento y del ladrillo.

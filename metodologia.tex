@@ -70,7 +70,7 @@ Con la proyección del nivel del río Paraguay disponible, se procedió a constr
 
 \subsection{Seasonal AutoRegressive Integrated Moving Average with eXogenous variables (SARIMAX)}
 \justify
-Se aplicó el modelo SARIMAX para predecir los precios mensuales del cemento y del ladrillo común, considerando como variables exógenas el nivel mensual del río Paraguay —estimado previamente mediante el modelo LSTM univariado— y la variable binaria de cuarentena por COVID-19, que representa los períodos de restricción sanitaria durante la pandemia.
+Se aplicó el modelo SARIMAX para predecir los precios mensuales del cemento y del ladrillo común, considerando como variables exógenas el nivel mensual del río Paraguay —estimado previamente mediante el modelo LSTM univariado— y la variable binaria de cuarentena por COVID-19, que representa los períodos de restricción sanitaria durante el confinamiento por COVID-19.
 
 \justify
 Para cada material de construcción, el conjunto de datos se dividió en entrenamiento y prueba, utilizando los últimos 15 meses como segmento de evaluación. La selección de los parámetros óptimos $(p, d, q)(P, D, Q, s)$ se realizó mediante la función \texttt{pmdarima.auto\_arima}, que efectúa una búsqueda iterativa de combinaciones de órdenes con el fin de minimizar el AIC y optimizar el desempeño del modelo.
@@ -83,7 +83,7 @@ Adicionalmente, se realizó una validación cruzada por ventana deslizante (\tex
 Para la predicción de los precios mensuales del cemento y del ladrillo común se implementaron modelos basados en la arquitectura LSTM. Estos modelos son ampliamente utilizados en el tratamiento de series temporales no lineales, ya que permiten capturar dependencias de largo y corto plazo en los datos.
 
 \justify
-Los modelos reciben como entrada las siguientes 6 variables: precio promedio polinomial de grado 2, nivel mensual del río Paraguay, indicador de cuarentena COVID-19, las componentes sinusoidal y cosenoidal del mes (\textit{mes\_sin}, \textit{mes\_cos}) y el año normalizado (\textit{anio\_norm}). Las series se escalaron en el rango $[-1, 1]$ mediante MinMaxScaler.
+Los modelos reciben como entrada las siguientes 6 variables: precio promedio polinomial de grado 2, nivel mensual del río Paraguay, indicador de confinamiento por COVID-19, las componentes sinusoidal y cosenoidal del mes (\textit{mes\_sin}, \textit{mes\_cos}) y el año normalizado (\textit{anio\_norm}). Las series se escalaron en el rango $[-1, 1]$ mediante MinMaxScaler.
 
 \justify
 Los datos fueron divididos cronológicamente: 97 meses para entrenamiento, 20 meses para validación y 22 meses para prueba. La búsqueda de hiperparámetros se realizó con Optuna, y los intervalos de confianza al 95\% se estimaron mediante Monte Carlo Dropout ($N=100$ simulaciones).
@@ -102,16 +102,16 @@ Todos los modelos de aprendizaje profundo (LSTM y GRU) fueron entrenados en la p
 \section{Escenarios de experimentación}
 % ============================================================
 \justify
-Para evaluar el efecto del shock pandémico sobre los precios de los materiales de construcción, se definieron dos escenarios de experimentación que se aplicaron de manera independiente a cada combinación modelo--material:
+Para evaluar el efecto del confinamiento por COVID-19 sobre los precios de los materiales de construcción, se definieron dos escenarios de experimentación que se aplicaron de manera independiente a cada combinación modelo--material:
 
 \begin{itemize}
-\item \textbf{Escenario sin efecto pandémico}: la variable exógena binaria \texttt{Cuarentena\_Covid} se fija en 0 durante todo el horizonte de pronóstico a 24 meses, simulando condiciones normales de mercado sin disrupciones sanitarias. En este escenario, el modelo también fue entrenado sin la señal pandémica activa, buscando optimizar los hiperparámetros para la dinámica de precios en condiciones estables.
+\item \textbf{Escenario sin confinamiento}: la variable exógena binaria \texttt{Cuarentena\_Covid} se fija en 0 durante todo el horizonte de pronóstico a 24 meses, simulando condiciones normales de mercado sin disrupciones sanitarias. En este escenario, el modelo también fue entrenado sin la señal de confinamiento activa, buscando optimizar los hiperparámetros para la dinámica de precios en condiciones estables.
 
-\item \textbf{Escenario con efecto pandémico}: la variable exógena \texttt{Cuarentena\_Covid} se activa (valor 1) tanto durante el entrenamiento del modelo como durante todo el horizonte de pronóstico a 24 meses. Este escenario hipotético permite evaluar la respuesta del modelo ante disrupciones prolongadas de tipo pandémico y comparar las proyecciones con las del escenario base.
+\item \textbf{Escenario con confinamiento}: la variable exógena \texttt{Cuarentena\_Covid} se activa (valor 1) tanto durante el entrenamiento del modelo como durante todo el horizonte de pronóstico a 24 meses. Este escenario hipotético permite evaluar la respuesta del modelo ante disrupciones prolongadas de confinamiento por COVID-19 y comparar las proyecciones con las del escenario base.
 \end{itemize}
 
 \justify
 Dado que cada escenario implica una distribución de datos de entrenamiento distinta, los hiperparámetros fueron optimizados de forma independiente para cada combinación escenario--modelo--material mediante Optuna, resultando en arquitecturas potencialmente diferentes para cada caso. Esta separación garantiza que los resultados de cada escenario reflejen fielmente la dinámica aprendida bajo las condiciones específicas de ese escenario, sin cruzar información entre ellos.
 
 \justify
-En el caso del modelo SARIMAX, la comparación entre escenarios se realizó a través del coeficiente estimado para la variable \texttt{Cuarentena}, que cuantifica directamente el efecto lineal del período pandémico sobre el precio en el marco del modelo estadístico.
+En el caso del modelo SARIMAX, la comparación entre escenarios se realizó a través del coeficiente estimado para la variable \texttt{Cuarentena}, que cuantifica directamente el efecto lineal del período de confinamiento por COVID-19 sobre el precio en el marco del modelo estadístico.
