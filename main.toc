@@ -32,7 +32,7 @@
 \contentsline {section}{\numberline {4.3}Modelos de predicción de precios}{19}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Seasonal AutoRegressive Integrated Moving Average with eXogenous variables (SARIMAX)}{19}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}Long Short-Term Memory (LSTM)}{19}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Gated Recurrent Unit (GRU)}{19}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.3}Gated Recurrent Unit (GRU)}{20}{subsection.4.3.3}%
 \contentsline {section}{\numberline {4.4}Escenarios de experimentación}{20}{section.4.4}%
 \contentsline {chapter}{\numberline {5}Resultados}{21}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Predicción del Nivel del Río Paraguay con Long Short-Term Memory (LSTM)}{21}{section.5.1}%

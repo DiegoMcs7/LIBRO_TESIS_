@@ -19,9 +19,6 @@ El trabajo se desarrolló en tres etapas principales:
 \end{itemize}
 
 \justify
-Todos los modelos (SARIMAX, LSTM y GRU) fueron implementados y entrenados en la plataforma Kaggle, utilizando dos GPUs T4 bajo la estrategia \texttt{MirroredStrategy} de TensorFlow para los modelos de aprendizaje profundo.
-
-\justify
 Los registros diarios del nivel del río Paraguay en el puerto de Asunción abarcan el período enero de 2014 a julio de 2025.
 
 \justify
@@ -39,6 +36,9 @@ Durante la recolección de los datos de precios se identificó que, para algunos
 
 \justify
 Una vez realizado el análisis comparativo de los métodos de interpolación, se seleccionó la interpolación polinómica cuadrática para el tratamiento de los precios faltantes, dado que este método mostró la mejor aproximación a los valores reales proporcionados por la empresa de compra y venta de materiales de construcción Edylur \cite{edylur}. Esta técnica permitió preservar la suavidad de la serie y capturar adecuadamente las tendencias locales sin generar variaciones abruptas, asegurando así la coherencia y estabilidad de las series temporales utilizadas por los modelos SARIMAX, LSTM y GRU en las etapas posteriores del estudio.
+
+\justify
+Todos los modelos (SARIMAX, LSTM y GRU) fueron implementados y entrenados en la plataforma Kaggle, utilizando GPU T4 $\times$ 2.
 
 % ============================================================
 \section{Modelos para predicción del nivel del río}
@@ -88,7 +88,7 @@ Los datos fueron divididos cronológicamente: 97 meses para entrenamiento, 20 me
 Como arquitectura complementaria al LSTM, se evaluó la GRU (\textit{Gated Recurrent Unit}), propuesta por Cho et al.\ (2014) como una simplificación de la celda LSTM. Mientras que la LSTM emplea tres compuertas (entrada, olvido y salida), la GRU utiliza únicamente dos: la compuerta de actualización (\textit{update gate}) y la compuerta de reinicio (\textit{reset gate}), lo que reduce el número de parámetros entrenables y puede favorecer la convergencia en datasets de tamaño moderado.
 
 \justify
-Los modelos GRU se entrenaron sobre los mismos datos, con las mismas variables de entrada, la misma partición temporal y la misma metodología de búsqueda de hiperparámetros con Optuna que se describió para los modelos LSTM. Las 6 \textit{features} de entrada son idénticas, y la implementación también se realizó con TensorFlow 2.19.0 / Keras.
+Los modelos GRU se entrenaron con los mismos datos, variables de entrada y partición temporal descritos para el LSTM, y la búsqueda de hiperparámetros también se realizó con Optuna. Al mantener las mismas condiciones experimentales, la comparación entre ambas arquitecturas queda sujeta únicamente a sus diferencias estructurales.
 
 % ============================================================
 \section{Escenarios de experimentación}
