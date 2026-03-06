@@ -95,7 +95,7 @@ El test de Ljung-Box al primer rezago no rechaza la hipótesis nula de ausencia 
 Una vez validado, el modelo fue reentrenado con el 100\,\% de las observaciones para generar el pronóstico mensual del precio del cemento desde agosto de 2025 hasta julio de 2027. Con el objetivo de cuantificar la influencia de la variable \texttt{Cuarentena} sobre el pronóstico, se generaron dos proyecciones paralelas: una con \texttt{Cuarentena} = 0 para todo el horizonte (escenario sin confinamiento, Figura \ref{fig:sarimax_cemento_sin_covid}) y otra con \texttt{Cuarentena} = 1 (escenario con confinamiento por COVID-19 activo, Figura \ref{fig:sarimax_cemento_con_covid}).
 
 \justify
-El pronóstico puntual converge hacia un valor estable de aproximadamente Gs.~55.000, consistente con la naturaleza del modelo SARIMAX$(0,1,0)$. El intervalo de confianza al 95\,\% se amplía progresivamente: en agosto de 2025 el rango es Gs.~[49.556; 60.504], mientras que en julio de 2027 se extiende hasta Gs.~[28.111; 81.746]. La diferencia entre ambos escenarios es de apenas Gs.~23{,}67 por mes, un valor prácticamente nulo frente al nivel de precios (Gs.~55.000), coherente con el coeficiente no significativo de \texttt{Cuarentena} ($p = 1{,}000$). El modelo lineal integrado no captura el efecto estructural del confinamiento por COVID-19 sobre los precios, dado que ese impacto queda absorbido por la diferenciación de la serie ($d = 1$). La Tabla \ref{tab:sarimax_pronostico} detalla el pronóstico completo para los 24 meses.
+El pronóstico puntual converge hacia un valor estable de aproximadamente Gs.~55.000, consistente con la naturaleza del modelo SARIMAX$(0,1,0)$. El intervalo de confianza al 95\,\% se amplía progresivamente: en agosto de 2025 el rango es Gs.~[49.556; 60.504], mientras que en julio de 2027 se extiende hasta Gs.~[28.111; 81.746]. La diferencia entre ambos escenarios es de apenas Gs.~23{,}67 por mes, un valor prácticamente nulo frente al nivel de precios (Gs.~55.000), coherente con el coeficiente no significativo de \texttt{Cuarentena} ($p = 1{,}000$). El modelo lineal integrado no captura el efecto estructural del confinamiento por COVID-19 sobre los precios, dado que ese impacto queda absorbido por la diferenciación de la serie ($d = 1$). La Tabla \ref{tab:sarimax_pronostico} detalla el pronóstico de ambos escenarios para los 24 meses.
 
 \begin{figure}[H]
     \centering
@@ -113,36 +113,36 @@ El pronóstico puntual converge hacia un valor estable de aproximadamente Gs.~55
 
 \begin{table}[H]
     \centering
-    \caption{Pronóstico mensual del precio del cemento (Gs.) para el período agosto 2025 a julio 2027, con intervalo de confianza al 95\,\%.}
+    \caption{Pronóstico mensual del precio del cemento (Gs.) para el período agosto 2025 a julio 2027: escenarios sin y con confinamiento por COVID-19.}
     \label{tab:sarimax_pronostico}
-    \begin{tabular}{lccc}
+    \begin{tabular}{lcc}
         \toprule
-        \textbf{Mes} & \textbf{Pronóstico (Gs.)} & \textbf{IC Inferior} & \textbf{IC Superior} \\
+        \textbf{Mes} & \textbf{Sin confinamiento (Gs.)} & \textbf{Con confinamiento (Gs.)} \\
         \midrule
-        Agosto 2025      & 55.030 & 49.556 & 60.504 \\
-        Septiembre 2025  & 55.074 & 47.332 & 62.815 \\
-        Octubre 2025     & 55.090 & 45.609 & 64.572 \\
-        Noviembre 2025   & 55.078 & 44.130 & 66.026 \\
-        Diciembre 2025   & 55.082 & 42.842 & 67.322 \\
-        Enero 2026       & 55.060 & 41.651 & 68.468 \\
-        Febrero 2026     & 55.056 & 40.573 & 69.539 \\
-        Marzo 2026       & 55.064 & 39.581 & 70.547 \\
-        Abril 2026       & 55.045 & 38.623 & 71.467 \\
-        Mayo 2026        & 54.965 & 37.654 & 72.275 \\
-        Junio 2026       & 54.940 & 36.785 & 73.096 \\
-        Julio 2026       & 54.968 & 36.006 & 73.931 \\
-        Agosto 2026      & 55.002 & 35.265 & 74.739 \\
-        Septiembre 2026  & 55.050 & 34.568 & 75.532 \\
-        Octubre 2026     & 55.068 & 33.867 & 76.269 \\
-        Noviembre 2026   & 55.059 & 33.162 & 76.955 \\
-        Diciembre 2026   & 55.062 & 32.492 & 77.632 \\
-        Enero 2027       & 55.042 & 31.818 & 78.266 \\
-        Febrero 2027     & 55.040 & 31.179 & 78.901 \\
-        Marzo 2027       & 55.050 & 30.569 & 79.530 \\
-        Abril 2027       & 55.031 & 29.946 & 80.116 \\
-        Mayo 2027        & 54.953 & 29.277 & 80.628 \\
-        Junio 2027       & 54.929 & 28.677 & 81.182 \\
-        Julio 2027       & 54.929 & 28.111 & 81.746 \\
+        Agosto 2025      & 55.030 & 55.006 \\
+        Septiembre 2025  & 55.074 & 55.050 \\
+        Octubre 2025     & 55.090 & 55.067 \\
+        Noviembre 2025   & 55.078 & 55.054 \\
+        Diciembre 2025   & 55.082 & 55.058 \\
+        Enero 2026       & 55.060 & 55.036 \\
+        Febrero 2026     & 55.056 & 55.033 \\
+        Marzo 2026       & 55.064 & 55.040 \\
+        Abril 2026       & 55.045 & 55.022 \\
+        Mayo 2026        & 54.965 & 54.941 \\
+        Junio 2026       & 54.940 & 54.917 \\
+        Julio 2026       & 54.968 & 54.945 \\
+        Agosto 2026      & 55.002 & 54.979 \\
+        Septiembre 2026  & 55.050 & 55.027 \\
+        Octubre 2026     & 55.068 & 55.044 \\
+        Noviembre 2026   & 55.059 & 55.035 \\
+        Diciembre 2026   & 55.062 & 55.039 \\
+        Enero 2027       & 55.042 & 55.018 \\
+        Febrero 2027     & 55.040 & 55.016 \\
+        Marzo 2027       & 55.050 & 55.026 \\
+        Abril 2027       & 55.031 & 55.008 \\
+        Mayo 2027        & 54.953 & 54.929 \\
+        Junio 2027       & 54.929 & 54.905 \\
+        Julio 2027       & 54.929 & 54.905 \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -239,7 +239,7 @@ El test de Ljung-Box al primer rezago no rechaza la hipótesis nula de ausencia 
 El modelo reentrenado con el 100\,\% de las observaciones generó el pronóstico mensual del precio del ladrillo desde agosto de 2025 hasta julio de 2027. Al igual que para el cemento, se generaron dos proyecciones paralelas bajo escenarios alternativos de confinamiento por COVID-19: escenario sin confinamiento (Figura \ref{fig:sarimax_ladrillo_sin_covid}) y escenario con confinamiento activo (Figura \ref{fig:sarimax_ladrillo_con_covid}).
 
 \justify
-El pronóstico puntual converge hacia un valor estable de aproximadamente Gs.~651. El intervalo de confianza al 95\,\% se amplía con el horizonte: en agosto de 2025 el rango es Gs.~[624; 678] y en julio de 2027 se extiende a Gs.~[517; 778]. La diferencia entre ambos escenarios es de apenas Gs.~0{,}83 por mes, aún más reducida que la del cemento y completamente despreciable frente al nivel de precios (Gs.~651). Este resultado es coherente con el coeficiente estimado para \texttt{Cuarentena} ($-0{,}826$ Gs., $p = 0{,}999$). La insensibilidad ante el \textit{shock} del confinamiento por COVID-19 se repite en ambos materiales, lo que confirma que la estructura lineal integrada del SARIMAX captura adecuadamente la tendencia general pero carece de la flexibilidad necesaria para representar perturbaciones externas de efecto no lineal o asimétrico sobre los precios. La Tabla \ref{tab:sarimax_ladrillo_pronostico} detalla el pronóstico completo para los 24 meses.
+El pronóstico puntual converge hacia un valor estable de aproximadamente Gs.~651. El intervalo de confianza al 95\,\% se amplía con el horizonte: en agosto de 2025 el rango es Gs.~[624; 678] y en julio de 2027 se extiende a Gs.~[517; 778]. La diferencia entre ambos escenarios es de apenas Gs.~0{,}83 por mes, aún más reducida que la del cemento y completamente despreciable frente al nivel de precios (Gs.~651). Este resultado es coherente con el coeficiente estimado para \texttt{Cuarentena} ($-0{,}826$ Gs., $p = 0{,}999$). La insensibilidad ante el \textit{shock} del confinamiento por COVID-19 se repite en ambos materiales, lo que confirma que la estructura lineal integrada del SARIMAX captura adecuadamente la tendencia general pero carece de la flexibilidad necesaria para representar perturbaciones externas de efecto no lineal o asimétrico sobre los precios. La Tabla \ref{tab:sarimax_ladrillo_pronostico} detalla el pronóstico de ambos escenarios para los 24 meses.
 
 \begin{figure}[H]
     \centering
@@ -257,36 +257,36 @@ El pronóstico puntual converge hacia un valor estable de aproximadamente Gs.~65
 
 \begin{table}[H]
     \centering
-    \caption{Pronóstico mensual del precio del ladrillo (Gs.) para el período agosto 2025 a julio 2027, con intervalo de confianza al 95\,\%.}
+    \caption{Pronóstico mensual del precio del ladrillo (Gs.) para el período agosto 2025 a julio 2027: escenarios sin y con confinamiento por COVID-19.}
     \label{tab:sarimax_ladrillo_pronostico}
-    \begin{tabular}{lccc}
+    \begin{tabular}{lcc}
         \toprule
-        \textbf{Mes} & \textbf{Pronóstico (Gs.)} & \textbf{IC Inferior} & \textbf{IC Superior} \\
+        \textbf{Mes} & \textbf{Sin confinamiento (Gs.)} & \textbf{Con confinamiento (Gs.)} \\
         \midrule
-        Agosto 2025      & 651 & 624 & 678 \\
-        Septiembre 2025  & 653 & 615 & 690 \\
-        Octubre 2025     & 653 & 607 & 699 \\
-        Noviembre 2025   & 653 & 599 & 706 \\
-        Diciembre 2025   & 653 & 593 & 712 \\
-        Enero 2026       & 652 & 587 & 717 \\
-        Febrero 2026     & 652 & 582 & 722 \\
-        Marzo 2026       & 652 & 577 & 728 \\
-        Abril 2026       & 652 & 572 & 731 \\
-        Mayo 2026        & 649 & 565 & 733 \\
-        Junio 2026       & 648 & 560 & 736 \\
-        Julio 2026       & 649 & 557 & 741 \\
-        Agosto 2026      & 650 & 554 & 746 \\
-        Septiembre 2026  & 652 & 552 & 751 \\
-        Octubre 2026     & 652 & 549 & 755 \\
-        Noviembre 2026   & 652 & 546 & 759 \\
-        Diciembre 2026   & 652 & 542 & 762 \\
-        Enero 2027       & 651 & 539 & 764 \\
-        Febrero 2027     & 651 & 535 & 767 \\
-        Marzo 2027       & 652 & 533 & 771 \\
-        Abril 2027       & 651 & 529 & 773 \\
-        Mayo 2027        & 648 & 524 & 773 \\
-        Junio 2027       & 648 & 520 & 775 \\
-        Julio 2027       & 648 & 517 & 778 \\
+        Agosto 2025      & 651 & 650 \\
+        Septiembre 2025  & 653 & 652 \\
+        Octubre 2025     & 653 & 652 \\
+        Noviembre 2025   & 653 & 652 \\
+        Diciembre 2025   & 653 & 652 \\
+        Enero 2026       & 652 & 651 \\
+        Febrero 2026     & 652 & 651 \\
+        Marzo 2026       & 652 & 651 \\
+        Abril 2026       & 652 & 651 \\
+        Mayo 2026        & 649 & 648 \\
+        Junio 2026       & 648 & 647 \\
+        Julio 2026       & 649 & 648 \\
+        Agosto 2026      & 650 & 649 \\
+        Septiembre 2026  & 652 & 651 \\
+        Octubre 2026     & 652 & 652 \\
+        Noviembre 2026   & 652 & 651 \\
+        Diciembre 2026   & 652 & 651 \\
+        Enero 2027       & 651 & 651 \\
+        Febrero 2027     & 651 & 651 \\
+        Marzo 2027       & 652 & 651 \\
+        Abril 2027       & 651 & 650 \\
+        Mayo 2027        & 648 & 648 \\
+        Junio 2027       & 648 & 647 \\
+        Julio 2027       & 648 & 647 \\
         \bottomrule
     \end{tabular}
 \end{table}

@@ -8,10 +8,10 @@
 \contentsline {table}{\numberline {5.2}{\ignorespaces Métricas de evaluación RMSE del modelo LSTM en los conjuntos de entrenamiento, validación y prueba.}}{24}{table.caption.10}%
 \contentsline {table}{\numberline {5.3}{\ignorespaces Parámetros estimados del modelo SARIMAX$(0,1,0)(0,0,0)_{12}$ para el precio del cemento (modelo final, 139 obs.).}}{30}{table.caption.16}%
 \contentsline {table}{\numberline {5.4}{\ignorespaces RMSE del modelo SARIMAX para el precio del cemento en los conjuntos de validación y prueba.}}{30}{table.caption.17}%
-\contentsline {table}{\numberline {5.5}{\ignorespaces Pronóstico mensual del precio del cemento (Gs.) para el período agosto 2025 a julio 2027, con intervalo de confianza al 95\,\%.}}{32}{table.caption.20}%
+\contentsline {table}{\numberline {5.5}{\ignorespaces Pronóstico mensual del precio del cemento (Gs.) para el período agosto 2025 a julio 2027: escenarios sin y con confinamiento por COVID-19.}}{32}{table.caption.20}%
 \contentsline {table}{\numberline {5.6}{\ignorespaces Parámetros estimados del modelo SARIMAX$(0,1,0)(0,0,0)_{12}$ para el precio del ladrillo (modelo final, 139 obs.).}}{35}{table.caption.23}%
 \contentsline {table}{\numberline {5.7}{\ignorespaces RMSE del modelo SARIMAX para el precio del ladrillo en los conjuntos de validación y prueba.}}{35}{table.caption.24}%
-\contentsline {table}{\numberline {5.8}{\ignorespaces Pronóstico mensual del precio del ladrillo (Gs.) para el período agosto 2025 a julio 2027, con intervalo de confianza al 95\,\%.}}{37}{table.caption.27}%
+\contentsline {table}{\numberline {5.8}{\ignorespaces Pronóstico mensual del precio del ladrillo (Gs.) para el período agosto 2025 a julio 2027: escenarios sin y con confinamiento por COVID-19.}}{37}{table.caption.27}%
 \contentsline {table}{\numberline {5.9}{\ignorespaces Hiperparámetros del modelo LSTM para cemento --- escenario sin confinamiento (Optuna: 261 ensayos).}}{39}{table.caption.30}%
 \contentsline {table}{\numberline {5.10}{\ignorespaces Desempeño del modelo LSTM para cemento --- escenario sin confinamiento: RMSE en train, val y test.}}{40}{table.caption.32}%
 \contentsline {table}{\numberline {5.11}{\ignorespaces Pronóstico LSTM a 24 meses del precio del cemento (Gs.) --- escenario sin confinamiento.}}{42}{table.caption.37}%
