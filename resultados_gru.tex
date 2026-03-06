@@ -5,10 +5,10 @@
 \vspace{0.3cm}
 
 \justify
-Como alternativa al modelo LSTM, se evaluó la arquitectura \textit{Gated Recurrent Unit} (GRU), propuesta por Cho et al.\ (2014) como una simplificación de las redes LSTM. A diferencia de la celda LSTM, que emplea tres compuertas (entrada, olvido y salida), la celda GRU utiliza únicamente dos ---la de actualización (\textit{update gate}) y la de reinicio (\textit{reset gate})---, lo que reduce el número de parámetros entrenables y puede favorecer la convergencia en \textit{datasets} de tamaño moderado.
+Como alternativa al modelo LSTM, se evaluó la arquitectura \textit{Gated Recurrent Unit} (GRU) \cite{cho2014learning}, una simplificación de las redes LSTM. A diferencia de la celda LSTM, que emplea tres compuertas (entrada, olvido y salida), la celda GRU utiliza únicamente dos ---la de actualización (\textit{update gate}) y la de reinicio (\textit{reset gate})---, lo que reduce el número de parámetros entrenables y puede favorecer la convergencia en \textit{datasets} de tamaño moderado.
 
 \justify
-Al igual que para el LSTM, para cada material se entrenaron dos modelos GRU independientes: uno para el escenario sin efecto del confinamiento por COVID-19 y otro para el escenario con efecto del confinamiento por COVID-19. Los hiperparámetros de cada modelo fueron optimizados de forma independiente con Optuna. La implementación se realizó con TensorFlow 2.19.0 / Keras, con la misma partición temporal (97 / 20 / 22 meses), las mismas 6 variables de entrada y los mismos intervalos de confianza al 95\,\% estimados por Monte Carlo Dropout ($N=100$ simulaciones). Dado que cada escenario puede resultar en arquitecturas distintas, los resultados de cada uno se presentan por separado.
+Al igual que para el LSTM, para cada material se entrenaron dos modelos GRU independientes: uno para el escenario sin efecto del confinamiento por COVID-19 y otro para el escenario con efecto del confinamiento por COVID-19. Los hiperparámetros de cada modelo fueron optimizados de forma independiente con Optuna. Se utilizó la misma partición temporal (97 / 20 / 22 meses), las mismas 6 variables de entrada y los mismos intervalos de confianza al 95\,\% estimados por Monte Carlo Dropout ($N=100$ simulaciones). Dado que cada escenario puede resultar en arquitecturas distintas, los resultados de cada uno se presentan por separado.
 
 % ============================================================
 % 4.4.1 — CEMENTO GRU

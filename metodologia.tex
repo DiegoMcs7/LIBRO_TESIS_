@@ -37,9 +37,6 @@ Durante la recolección de los datos de precios se identificó que, para algunos
 \justify
 Una vez realizado el análisis comparativo de los métodos de interpolación, se seleccionó la interpolación polinómica cuadrática para el tratamiento de los precios faltantes, dado que este método mostró la mejor aproximación a los valores reales proporcionados por la empresa de compra y venta de materiales de construcción Edylur \cite{edylur}. Esta técnica permitió preservar la suavidad de la serie y capturar adecuadamente las tendencias locales sin generar variaciones abruptas, asegurando así la coherencia y estabilidad de las series temporales utilizadas por los modelos SARIMAX, LSTM y GRU en las etapas posteriores del estudio.
 
-\justify
-Todos los modelos (SARIMAX, LSTM y GRU) fueron implementados y entrenados en la plataforma Kaggle, utilizando GPU T4 $\times$ 2.
-
 % ============================================================
 \section{Modelos para predicción del nivel del río}
 % ============================================================
@@ -85,7 +82,7 @@ Los datos fueron divididos cronológicamente: 97 meses para entrenamiento, 20 me
 
 \subsection{GRU}
 \justify
-Como arquitectura complementaria al LSTM, se evaluó la GRU (\textit{Gated Recurrent Unit}), propuesta por Cho et al.\ (2014) como una simplificación de la celda LSTM. Mientras que la LSTM emplea tres compuertas (entrada, olvido y salida), la GRU utiliza únicamente dos: la compuerta de actualización (\textit{update gate}) y la compuerta de reinicio (\textit{reset gate}), lo que reduce el número de parámetros entrenables y puede favorecer la convergencia en datasets de tamaño moderado.
+Como arquitectura complementaria al LSTM, se evaluó la GRU (\textit{Gated Recurrent Unit}) \cite{cho2014learning}, una simplificación de la celda LSTM. Mientras que la LSTM emplea tres compuertas (entrada, olvido y salida), la GRU utiliza únicamente dos: la compuerta de actualización (\textit{update gate}) y la compuerta de reinicio (\textit{reset gate}), lo que reduce el número de parámetros entrenables y puede favorecer la convergencia en datasets de tamaño moderado.
 
 \justify
 Los modelos GRU se entrenaron con los mismos datos, variables de entrada y partición temporal descritos para el LSTM, y la búsqueda de hiperparámetros también se realizó con Optuna. Al mantener las mismas condiciones experimentales, la comparación entre ambas arquitecturas queda sujeta únicamente a sus diferencias estructurales.
@@ -107,3 +104,16 @@ Dado que cada escenario implica una distribución de datos de entrenamiento dist
 
 \justify
 En el caso del modelo SARIMAX, la comparación entre escenarios se realizó a través del coeficiente estimado para la variable \texttt{Cuarentena}, que cuantifica directamente el efecto lineal del período de confinamiento por COVID-19 sobre el precio en el marco del modelo estadístico.
+
+% ============================================================
+\section{Entorno de implementación}
+% ============================================================
+\justify
+Todos los modelos fueron desarrollados en Python y ejecutados en la plataforma Kaggle, utilizando GPU T4 $\times$ 2. Las principales librerías empleadas se detallan a continuación:
+
+\begin{itemize}
+\item \textbf{Modelos LSTM y GRU:} implementados con TensorFlow 2.19.0 / Keras.
+\item \textbf{Modelo SARIMAX:} implementado con \texttt{statsmodels} y \texttt{pmdarima} (función \texttt{auto\_arima} para la selección automática de órdenes por AIC).
+\item \textbf{Optimización de hiperparámetros:} Optuna, con el sampler TPE (\textit{Tree-structured Parzen Estimator}) y poda mediante \textit{MedianPruner}.
+\item \textbf{Preprocesamiento y escalado:} pandas para la manipulación de datos y tratamiento de valores faltantes; scikit-learn para las transformaciones MinMaxScaler y RobustScaler.
+\end{itemize}

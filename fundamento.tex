@@ -46,7 +46,7 @@ De manera compacta, un ARIMA(p,d,q) se representa como:
 
 \subsection{SARIMA}
 \justify
-El modelo SARIMA (Seasonal AutoRegressive Integrated Moving Average), también conocido como modelo ARIMA estacional, es una extensión del enfoque Box–Jenkins, diseñada para capturar patrones estacionales o periódicos en las series temporales \cite{vagropoulos2016comparison}.
+El modelo SARIMA (Seasonal AutoRegressive Integrated Moving Average), también conocido como modelo ARIMA estacional, es una extensión del enfoque Box-Jenkins, diseñada para capturar patrones estacionales o periódicos en las series temporales \cite{vagropoulos2016comparison}.
 
 \justify
 Mientras que el modelo $ARIMA(p, d, q)$ aborda las relaciones no estacionales (tendencias y dependencias de corto plazo), el modelo $SARIMA(p, d, q)(P, D, Q)_s$ incorpora componentes adicionales que permiten representar comportamientos repetitivos a intervalos regulares, como meses, trimestres o años.
@@ -122,7 +122,7 @@ El ML puede clasificarse en tres categorías principales:
 \begin{itemize}
 \item Aprendizaje supervisado: es un enfoque del ML en el cual el modelo se entrena utilizando un conjunto de datos etiquetado, es decir, donde las entradas están asociadas con sus salidas correspondientes. Durante el proceso de entrenamiento, el algoritmo aprende a relacionar las variables de entrada con las salidas esperadas, con el objetivo de generalizar ese conocimiento a nuevos datos. Uno de los problemas más comunes dentro del aprendizaje supervisado es la clasificación \cite{murphy2012machine}.
 
-\item Aprendizaje no supervisado: se caracteriza porque los datos de entrenamiento no poseen etiquetas o salidas conocidas. En este enfoque, el modelo busca descubrir patrones o estructuras ocultas dentro del conjunto de datos sin intervención externa. Las técnicas más comunes incluyen \textit{clustering}, \textit{clustering} jerárquico, K-means y \textit{association rule mining} \cite{murphy2012machine}. En estos casos, los algoritmos agrupan los datos en función de su similitud, permitiendo desarrollar marcos de análisis basados en la información observada.
+\item Aprendizaje no supervisado: se caracteriza porque los datos de entrenamiento no poseen etiquetas o salidas conocidas. En este enfoque, el modelo busca descubrir patrones o estructuras ocultas dentro del conjunto de datos sin intervención externa. Las técnicas más comunes incluyen \textit{clustering} jerárquico, K-means y \textit{association rule mining} \cite{murphy2012machine}. En estos casos, los algoritmos agrupan los datos en función de su similitud, permitiendo desarrollar marcos de análisis basados en la información observada.
 
 \item Aprendizaje por refuerzo: es un enfoque en el que un agente, generalmente representado por un programa informático, interactúa con un entorno dinámico con el objetivo de alcanzar una meta específica. A medida que ejecuta acciones, el agente recibe retroalimentación en forma de recompensas o penalizaciones, lo que le permite aprender una política óptima que maximiza la recompensa acumulada a lo largo del tiempo \cite{kaelbling1996reinforcement}.
 \end{itemize}
@@ -276,7 +276,7 @@ La compuerta de entrada controla cuánta información nueva proveniente de la en
 
 \subsection{Gated Recurrent Unit (GRU)}
 \justify
-Las redes GRU fueron introducidas por Cho et al. \cite{cho2014learning} como una simplificación del modelo LSTM. El objetivo fue conservar la capacidad de las redes recurrentes para modelar dependencias a largo plazo, reduciendo al mismo tiempo la complejidad computacional y el número de parámetros.
+Las redes GRU fueron introducidas \cite{cho2014learning} como una simplificación del modelo LSTM. El objetivo fue conservar la capacidad de las redes recurrentes para modelar dependencias a largo plazo, reduciendo al mismo tiempo la complejidad computacional y el número de parámetros.
 \justify
 A diferencia de las LSTM, las GRU fusionan el estado de la celda y el estado oculto en una única representación, lo que las hace más eficientes sin sacrificar desempeño en la mayoría de los problemas de predicción secuencial.
 \subsubsection{Estructura general}

@@ -32,8 +32,9 @@
 \contentsline {section}{\numberline {4.3}Modelos de predicción de precios}{19}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}SARIMAX}{19}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}LSTM}{19}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}GRU}{20}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.3}GRU}{19}{subsection.4.3.3}%
 \contentsline {section}{\numberline {4.4}Escenarios de experimentación}{20}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Entorno de implementación}{20}{section.4.5}%
 \contentsline {chapter}{\numberline {5}Resultados}{21}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Predicción del Nivel del Río Paraguay mediante LSTM}{21}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}Serie Histórica y Partición de los Datos}{21}{subsection.5.1.1}%
