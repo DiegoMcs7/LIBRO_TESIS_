@@ -6,7 +6,7 @@ Antes de construir los modelos de predicción de precios, se necesitaba contar c
 \subsection{Serie Histórica y Partición de los Datos}
 
 \justify
-La serie contiene 4.177 registros diarios únicos del nivel del río Paraguay en el Puerto de Asunción, abarcando el período de enero de 2014 a julio de 2025. Los 29 días faltantes dentro del rango fueron imputados por interpolación lineal, resultando en una serie continua de 4.206 observaciones.
+La serie contiene registros diarios del nivel del río Paraguay en el Puerto de Asunción, abarcando el período de enero de 2014 a julio de 2025.
 
 \justify
 Las estadísticas descriptivas de la variable muestran una media de 2,63 m y una desviación estándar de 2,17 m, con valores entre $-1{,}61$ m y $7{,}88$ m. La Figura \ref{fig:serie_historica} muestra la serie completa, donde se aprecia la alternancia entre períodos de crecida y estiaje con amplitudes marcadamente distintas entre años.
@@ -34,7 +34,7 @@ La partición del dataset siguió un criterio estrictamente cronológico. El con
 \subsection{Optimización de Hiperparámetros con Optuna}
 
 \justify
-La búsqueda de hiperparámetros se realizó con Optuna, usando el sampler TPE (\textit{Tree-structured Parzen Estimator}) y poda de trials con \textit{MedianPruner} para descartar tempranamente las configuraciones claramente inferiores. Se evaluaron 300 trials en Kaggle con dos GPUs Tesla T4 bajo la estrategia \texttt{MirroredStrategy}, proceso que demandó 278 minutos en total. El mejor RMSE de validación obtenido fue de 0,0371 m.
+La búsqueda de hiperparámetros se realizó con Optuna, usando el sampler TPE (\textit{Tree-structured Parzen Estimator}) y poda de trials con \textit{MedianPruner} para descartar tempranamente las configuraciones claramente inferiores. Se evaluaron 300 trials, proceso que demandó 278 minutos en total. El mejor RMSE de validación obtenido fue de 0,0371 m.
 
 \justify
 Los hiperparámetros óptimos se resumen en la Tabla \ref{tab:hiperparametros_lstm_rio}.

@@ -70,8 +70,12 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Revista UNIDA Científica}
+      \field{number}{1}
       \field{title}{Variación de precios de materiales e insumos para la construcción en Ciudad del Este, 2022}
-      \field{year}{2022}
+      \field{volume}{8}
+      \field{year}{2024}
+      \field{pages}{8\bibrangedash 14}
+      \range{pages}{7}
       \verb{urlraw}
       \verb https://revistacientifica.unida.edu.py/publicaciones/index.php/cientifica/article/view/207/161
       \endverb
@@ -154,7 +158,7 @@
       \verb https://doi.org/10.1007/s41060-023-00439-z
       \endverb
     \endentry
-    \entry{castaneda2022}{article}{}{}
+    \entry{castaneda2022}{thesis}{}{}
       \name{author}{2}{}{%
         {{hash=9437fb4b99b6366da7a364af5b994518}{%
            family={Castañeda\bibnamedelima Vargas},
@@ -168,7 +172,7 @@
            giveni={F\bibinitperiod}}}%
       }
       \list{institution}{1}{%
-        {Universidad de San Buenaventura}%
+        {Universidad de San Buenaventura Medellín, Extensión Armenia}%
       }
       \strng{namehash}{b4a0c3b681ae6bdd27c9818a6026dbd2}
       \strng{fullhash}{b4a0c3b681ae6bdd27c9818a6026dbd2}
@@ -183,6 +187,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Análisis de variabilidad de precios en materiales e insumos para la construcción: Caso de estudio departamento Valle del Cauca año 2022}
+      \field{type}{Trabajo de grado de especialización}
       \field{year}{2022}
       \verb{urlraw}
       \verb https://bibliotecadigital.usb.edu.co/server/api/core/bitstreams/feafeb7d-f783-4ccf-a6bb-2475283da2f2/content
@@ -359,72 +364,6 @@
       \field{labeltitlesource}{title}
       \field{title}{Deep learning with Python}
       \field{year}{2021}
-    \endentry
-    \entry{allix2003epistemology}{article}{}{}
-      \true{moreauthor}
-      \true{morelabelname}
-      \name{author}{1}{}{%
-        {{hash=d5fe3b74b81dfadf246d49c38c73107c}{%
-           family={Allix},
-           familyi={A\bibinitperiod},
-           given={Nicholas\bibnamedelima M},
-           giveni={N\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
-      }
-      \strng{namehash}{8c2c5e4a58ade313d97c7855abe686ba}
-      \strng{fullhash}{8c2c5e4a58ade313d97c7855abe686ba}
-      \strng{fullhashraw}{8c2c5e4a58ade313d97c7855abe686ba}
-      \strng{bibnamehash}{8c2c5e4a58ade313d97c7855abe686ba}
-      \strng{authorbibnamehash}{8c2c5e4a58ade313d97c7855abe686ba}
-      \strng{authornamehash}{8c2c5e4a58ade313d97c7855abe686ba}
-      \strng{authorfullhash}{8c2c5e4a58ade313d97c7855abe686ba}
-      \strng{authorfullhashraw}{8c2c5e4a58ade313d97c7855abe686ba}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of knowledge Management practice}
-      \field{number}{1}
-      \field{title}{Epistemology and knowledge management concepts and practices}
-      \field{volume}{4}
-      \field{year}{2003}
-      \field{pages}{1\bibrangedash 24}
-      \range{pages}{24}
-    \endentry
-    \entry{mathur1999socialization}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=4e810056cd72c8a6f040967175e6cbb1}{%
-           family={Mathur},
-           familyi={M\bibinitperiod},
-           given={Anil},
-           giveni={A\bibinitperiod}}}%
-        {{hash=e829d34337a98cb922480218397b97b9}{%
-           family={Moschis},
-           familyi={M\bibinitperiod},
-           given={George\bibnamedelima P},
-           giveni={G\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {MCB UP Ltd}%
-      }
-      \strng{namehash}{2f2da85dc690a2c485e893f0ae090a52}
-      \strng{fullhash}{2f2da85dc690a2c485e893f0ae090a52}
-      \strng{fullhashraw}{2f2da85dc690a2c485e893f0ae090a52}
-      \strng{bibnamehash}{2f2da85dc690a2c485e893f0ae090a52}
-      \strng{authorbibnamehash}{2f2da85dc690a2c485e893f0ae090a52}
-      \strng{authornamehash}{2f2da85dc690a2c485e893f0ae090a52}
-      \strng{authorfullhash}{2f2da85dc690a2c485e893f0ae090a52}
-      \strng{authorfullhashraw}{2f2da85dc690a2c485e893f0ae090a52}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of Marketing Practice: Applied Marketing Science}
-      \field{number}{6/7/8}
-      \field{title}{Socialization influences on preparation for later life}
-      \field{volume}{5}
-      \field{year}{1999}
-      \field{pages}{163\bibrangedash 176}
-      \range{pages}{14}
     \endentry
     \entry{kaelbling1996reinforcement}{article}{}{}
       \name{author}{3}{}{%

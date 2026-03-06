@@ -9,63 +9,63 @@
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Estructura interna de una celda de memoria GRU.}}{16}{figure.caption.5}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Serie histórica completa del nivel diario del río Paraguay (2014--2025).}}{23}{figure.caption.6}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Partición cronológica de la serie: entrenamiento (azul), validación (naranja) y prueba (verde).}}{23}{figure.caption.7}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Curva de aprendizaje del modelo LSTM: RMSE de entrenamiento y validación por época.}}{25}{figure.caption.9}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Serie histórica del nivel del río Paraguay y predicción LSTM a 730 días (julio 2025 -- julio 2027).}}{26}{figure.caption.11}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Zoom en la transición entre datos reales y predicción LSTM: últimos 6 meses reales y primeros 6 meses proyectados.}}{27}{figure.caption.12}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Comparación entre la predicción LSTM a 730 días y la climatología histórica de referencia estacional.}}{27}{figure.caption.13}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Series temporales del precio mensual del cemento (Gs.) y del mínimo mensual del nivel del río Paraguay (m), período 2014--2025.}}{29}{figure.caption.14}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Descomposición estacional de la serie de precio del cemento: tendencia, estacionalidad y componente residual.}}{30}{figure.caption.15}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Pronóstico SARIMAX del precio del cemento a 24 meses, escenario sin confinamiento.}}{32}{figure.caption.18}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Pronóstico SARIMAX del precio del cemento a 24 meses, escenario con confinamiento.}}{33}{figure.caption.19}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Series temporales del precio mensual del ladrillo (Gs.) y del mínimo mensual del nivel del río Paraguay (m), período 2014--2025.}}{34}{figure.caption.21}%
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Descomposición estacional de la serie de precio del ladrillo: tendencia, estacionalidad y componente residual.}}{35}{figure.caption.22}%
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Pronóstico SARIMAX del precio del ladrillo a 24 meses, escenario sin confinamiento.}}{37}{figure.caption.25}%
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Pronóstico SARIMAX del precio del ladrillo a 24 meses, escenario con confinamiento.}}{37}{figure.caption.26}%
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Serie histórica mensual del precio del cemento (Gs.), período 2014--2025.}}{39}{figure.caption.28}%
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Descomposición STL de la serie del precio del cemento: tendencia, estacionalidad y residuo.}}{39}{figure.caption.29}%
-\contentsline {figure}{\numberline {5.17}{\ignorespaces Curva de aprendizaje del modelo LSTM para cemento --- escenario sin confinamiento.}}{40}{figure.caption.31}%
-\contentsline {figure}{\numberline {5.18}{\ignorespaces Predicción LSTM vs.\ valores reales del precio del cemento --- escenario sin confinamiento, conjunto de prueba.}}{41}{figure.caption.33}%
-\contentsline {figure}{\numberline {5.19}{\ignorespaces Ajuste del modelo LSTM del cemento sobre las tres particiones --- escenario sin confinamiento.}}{42}{figure.caption.34}%
-\contentsline {figure}{\numberline {5.20}{\ignorespaces Pronóstico LSTM a 24 meses del precio del cemento --- escenario sin confinamiento, con IC al 95\,\%.}}{42}{figure.caption.35}%
-\contentsline {figure}{\numberline {5.21}{\ignorespaces Detalle de la transición histórico--pronóstico LSTM del cemento --- escenario sin confinamiento.}}{43}{figure.caption.36}%
-\contentsline {figure}{\numberline {5.22}{\ignorespaces Curva de aprendizaje del modelo LSTM para cemento --- escenario con confinamiento.}}{44}{figure.caption.39}%
-\contentsline {figure}{\numberline {5.23}{\ignorespaces Predicción LSTM vs.\ valores reales del precio del cemento --- escenario con confinamiento, conjunto de prueba.}}{45}{figure.caption.41}%
-\contentsline {figure}{\numberline {5.24}{\ignorespaces Ajuste del modelo LSTM del cemento sobre las tres particiones --- escenario con confinamiento.}}{45}{figure.caption.42}%
-\contentsline {figure}{\numberline {5.25}{\ignorespaces Pronóstico LSTM a 24 meses del precio del cemento --- escenario con confinamiento, con IC al 95\,\%.}}{46}{figure.caption.43}%
-\contentsline {figure}{\numberline {5.26}{\ignorespaces Detalle de la transición histórico--pronóstico LSTM del cemento --- escenario con confinamiento.}}{46}{figure.caption.44}%
-\contentsline {figure}{\numberline {5.27}{\ignorespaces Serie histórica mensual del precio del ladrillo (Gs.), período 2014--2025.}}{47}{figure.caption.46}%
-\contentsline {figure}{\numberline {5.28}{\ignorespaces Descomposición STL de la serie del precio del ladrillo: tendencia, estacionalidad y residuo.}}{48}{figure.caption.47}%
-\contentsline {figure}{\numberline {5.29}{\ignorespaces Curva de aprendizaje del modelo LSTM para ladrillo --- escenario sin confinamiento.}}{49}{figure.caption.49}%
-\contentsline {figure}{\numberline {5.30}{\ignorespaces Predicción LSTM vs.\ valores reales del precio del ladrillo --- escenario sin confinamiento, conjunto de prueba.}}{50}{figure.caption.51}%
-\contentsline {figure}{\numberline {5.31}{\ignorespaces Ajuste del modelo LSTM del ladrillo sobre las tres particiones --- escenario sin confinamiento.}}{50}{figure.caption.52}%
-\contentsline {figure}{\numberline {5.32}{\ignorespaces Pronóstico LSTM a 24 meses del precio del ladrillo --- escenario sin confinamiento, con IC al 95\,\%.}}{51}{figure.caption.53}%
-\contentsline {figure}{\numberline {5.33}{\ignorespaces Detalle de la transición histórico--pronóstico LSTM del ladrillo --- escenario sin confinamiento.}}{51}{figure.caption.54}%
-\contentsline {figure}{\numberline {5.34}{\ignorespaces Curva de aprendizaje del modelo LSTM para ladrillo --- escenario con confinamiento.}}{53}{figure.caption.57}%
-\contentsline {figure}{\numberline {5.35}{\ignorespaces Predicción LSTM vs.\ valores reales del precio del ladrillo --- escenario con confinamiento, conjunto de prueba.}}{54}{figure.caption.59}%
-\contentsline {figure}{\numberline {5.36}{\ignorespaces Ajuste del modelo LSTM del ladrillo sobre las tres particiones --- escenario con confinamiento.}}{55}{figure.caption.60}%
-\contentsline {figure}{\numberline {5.37}{\ignorespaces Pronóstico LSTM a 24 meses del precio del ladrillo --- escenario con confinamiento, con IC al 95\,\%.}}{55}{figure.caption.61}%
-\contentsline {figure}{\numberline {5.38}{\ignorespaces Detalle de la transición histórico--pronóstico LSTM del ladrillo --- escenario con confinamiento.}}{56}{figure.caption.62}%
-\contentsline {figure}{\numberline {5.39}{\ignorespaces Curvas de aprendizaje del modelo GRU para cemento --- escenario sin confinamiento.}}{58}{figure.caption.65}%
-\contentsline {figure}{\numberline {5.40}{\ignorespaces Predicción GRU vs.\ valores reales del precio del cemento --- escenario sin confinamiento, conjunto de prueba.}}{59}{figure.caption.67}%
-\contentsline {figure}{\numberline {5.41}{\ignorespaces Ajuste del modelo GRU del cemento sobre las tres particiones --- escenario sin confinamiento.}}{59}{figure.caption.68}%
-\contentsline {figure}{\numberline {5.42}{\ignorespaces Pronóstico GRU del precio del cemento a 24 meses --- escenario sin confinamiento: serie histórica y proyección.}}{60}{figure.caption.69}%
-\contentsline {figure}{\numberline {5.43}{\ignorespaces Zoom sobre la transición entre datos observados y pronóstico GRU del cemento --- escenario sin confinamiento.}}{60}{figure.caption.70}%
-\contentsline {figure}{\numberline {5.44}{\ignorespaces Curvas de aprendizaje del modelo GRU para cemento --- escenario con confinamiento.}}{62}{figure.caption.73}%
-\contentsline {figure}{\numberline {5.45}{\ignorespaces Predicción GRU vs.\ valores reales del precio del cemento --- escenario con confinamiento, conjunto de prueba.}}{63}{figure.caption.75}%
-\contentsline {figure}{\numberline {5.46}{\ignorespaces Ajuste del modelo GRU del cemento sobre las tres particiones --- escenario con confinamiento.}}{63}{figure.caption.76}%
-\contentsline {figure}{\numberline {5.47}{\ignorespaces Pronóstico GRU del precio del cemento a 24 meses --- escenario con confinamiento: serie histórica y proyección.}}{64}{figure.caption.77}%
-\contentsline {figure}{\numberline {5.48}{\ignorespaces Zoom sobre la transición entre datos observados y pronóstico GRU del cemento --- escenario con confinamiento.}}{65}{figure.caption.78}%
-\contentsline {figure}{\numberline {5.49}{\ignorespaces Curvas de aprendizaje del modelo GRU para ladrillo --- escenario sin confinamiento.}}{66}{figure.caption.81}%
-\contentsline {figure}{\numberline {5.50}{\ignorespaces Predicción GRU vs.\ valores reales del precio del ladrillo --- escenario sin confinamiento, conjunto de prueba.}}{67}{figure.caption.83}%
-\contentsline {figure}{\numberline {5.51}{\ignorespaces Ajuste del modelo GRU del ladrillo sobre las tres particiones --- escenario sin confinamiento.}}{67}{figure.caption.84}%
-\contentsline {figure}{\numberline {5.52}{\ignorespaces Pronóstico GRU del precio del ladrillo a 24 meses --- escenario sin confinamiento: serie histórica y proyección.}}{68}{figure.caption.85}%
-\contentsline {figure}{\numberline {5.53}{\ignorespaces Zoom sobre la transición entre datos observados y pronóstico GRU del ladrillo --- escenario sin confinamiento.}}{68}{figure.caption.86}%
-\contentsline {figure}{\numberline {5.54}{\ignorespaces Curvas de aprendizaje del modelo GRU para ladrillo --- escenario con confinamiento.}}{70}{figure.caption.89}%
-\contentsline {figure}{\numberline {5.55}{\ignorespaces Predicción GRU vs.\ valores reales del precio del ladrillo --- escenario con confinamiento, conjunto de prueba.}}{71}{figure.caption.91}%
-\contentsline {figure}{\numberline {5.56}{\ignorespaces Ajuste del modelo GRU del ladrillo sobre las tres particiones --- escenario con confinamiento.}}{71}{figure.caption.92}%
-\contentsline {figure}{\numberline {5.57}{\ignorespaces Pronóstico GRU del precio del ladrillo a 24 meses --- escenario con confinamiento: serie histórica y proyección.}}{72}{figure.caption.93}%
-\contentsline {figure}{\numberline {5.58}{\ignorespaces Zoom sobre la transición entre datos observados y pronóstico GRU del ladrillo --- escenario con confinamiento.}}{72}{figure.caption.94}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Serie histórica completa del nivel diario del río Paraguay (2014--2025).}}{22}{figure.caption.6}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Partición cronológica de la serie: entrenamiento (azul), validación (naranja) y prueba (verde).}}{22}{figure.caption.7}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Curva de aprendizaje del modelo LSTM: RMSE de entrenamiento y validación por época.}}{24}{figure.caption.9}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Serie histórica del nivel del río Paraguay y predicción LSTM a 730 días (julio 2025 -- julio 2027).}}{25}{figure.caption.11}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Zoom en la transición entre datos reales y predicción LSTM: últimos 6 meses reales y primeros 6 meses proyectados.}}{26}{figure.caption.12}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Comparación entre la predicción LSTM a 730 días y la climatología histórica de referencia estacional.}}{26}{figure.caption.13}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Series temporales del precio mensual del cemento (Gs.) y del mínimo mensual del nivel del río Paraguay (m), período 2014--2025.}}{28}{figure.caption.14}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Descomposición estacional de la serie de precio del cemento: tendencia, estacionalidad y componente residual.}}{29}{figure.caption.15}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Pronóstico SARIMAX del precio del cemento a 24 meses, escenario sin confinamiento.}}{31}{figure.caption.18}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Pronóstico SARIMAX del precio del cemento a 24 meses, escenario con confinamiento.}}{32}{figure.caption.19}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Series temporales del precio mensual del ladrillo (Gs.) y del mínimo mensual del nivel del río Paraguay (m), período 2014--2025.}}{33}{figure.caption.21}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Descomposición estacional de la serie de precio del ladrillo: tendencia, estacionalidad y componente residual.}}{34}{figure.caption.22}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Pronóstico SARIMAX del precio del ladrillo a 24 meses, escenario sin confinamiento.}}{36}{figure.caption.25}%
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Pronóstico SARIMAX del precio del ladrillo a 24 meses, escenario con confinamiento.}}{36}{figure.caption.26}%
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Serie histórica mensual del precio del cemento (Gs.), período 2014--2025.}}{38}{figure.caption.28}%
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Descomposición STL de la serie del precio del cemento: tendencia, estacionalidad y residuo.}}{38}{figure.caption.29}%
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Curva de aprendizaje del modelo LSTM para cemento --- escenario sin confinamiento.}}{39}{figure.caption.31}%
+\contentsline {figure}{\numberline {5.18}{\ignorespaces Predicción LSTM vs.\ valores reales del precio del cemento --- escenario sin confinamiento, conjunto de prueba.}}{40}{figure.caption.33}%
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Ajuste del modelo LSTM del cemento sobre las tres particiones --- escenario sin confinamiento.}}{41}{figure.caption.34}%
+\contentsline {figure}{\numberline {5.20}{\ignorespaces Pronóstico LSTM a 24 meses del precio del cemento --- escenario sin confinamiento, con IC al 95\,\%.}}{41}{figure.caption.35}%
+\contentsline {figure}{\numberline {5.21}{\ignorespaces Detalle de la transición histórico--pronóstico LSTM del cemento --- escenario sin confinamiento.}}{42}{figure.caption.36}%
+\contentsline {figure}{\numberline {5.22}{\ignorespaces Curva de aprendizaje del modelo LSTM para cemento --- escenario con confinamiento.}}{43}{figure.caption.39}%
+\contentsline {figure}{\numberline {5.23}{\ignorespaces Predicción LSTM vs.\ valores reales del precio del cemento --- escenario con confinamiento, conjunto de prueba.}}{44}{figure.caption.41}%
+\contentsline {figure}{\numberline {5.24}{\ignorespaces Ajuste del modelo LSTM del cemento sobre las tres particiones --- escenario con confinamiento.}}{44}{figure.caption.42}%
+\contentsline {figure}{\numberline {5.25}{\ignorespaces Pronóstico LSTM a 24 meses del precio del cemento --- escenario con confinamiento, con IC al 95\,\%.}}{45}{figure.caption.43}%
+\contentsline {figure}{\numberline {5.26}{\ignorespaces Detalle de la transición histórico--pronóstico LSTM del cemento --- escenario con confinamiento.}}{45}{figure.caption.44}%
+\contentsline {figure}{\numberline {5.27}{\ignorespaces Serie histórica mensual del precio del ladrillo (Gs.), período 2014--2025.}}{46}{figure.caption.46}%
+\contentsline {figure}{\numberline {5.28}{\ignorespaces Descomposición STL de la serie del precio del ladrillo: tendencia, estacionalidad y residuo.}}{47}{figure.caption.47}%
+\contentsline {figure}{\numberline {5.29}{\ignorespaces Curva de aprendizaje del modelo LSTM para ladrillo --- escenario sin confinamiento.}}{48}{figure.caption.49}%
+\contentsline {figure}{\numberline {5.30}{\ignorespaces Predicción LSTM vs.\ valores reales del precio del ladrillo --- escenario sin confinamiento, conjunto de prueba.}}{49}{figure.caption.51}%
+\contentsline {figure}{\numberline {5.31}{\ignorespaces Ajuste del modelo LSTM del ladrillo sobre las tres particiones --- escenario sin confinamiento.}}{49}{figure.caption.52}%
+\contentsline {figure}{\numberline {5.32}{\ignorespaces Pronóstico LSTM a 24 meses del precio del ladrillo --- escenario sin confinamiento, con IC al 95\,\%.}}{50}{figure.caption.53}%
+\contentsline {figure}{\numberline {5.33}{\ignorespaces Detalle de la transición histórico--pronóstico LSTM del ladrillo --- escenario sin confinamiento.}}{50}{figure.caption.54}%
+\contentsline {figure}{\numberline {5.34}{\ignorespaces Curva de aprendizaje del modelo LSTM para ladrillo --- escenario con confinamiento.}}{52}{figure.caption.57}%
+\contentsline {figure}{\numberline {5.35}{\ignorespaces Predicción LSTM vs.\ valores reales del precio del ladrillo --- escenario con confinamiento, conjunto de prueba.}}{53}{figure.caption.59}%
+\contentsline {figure}{\numberline {5.36}{\ignorespaces Ajuste del modelo LSTM del ladrillo sobre las tres particiones --- escenario con confinamiento.}}{54}{figure.caption.60}%
+\contentsline {figure}{\numberline {5.37}{\ignorespaces Pronóstico LSTM a 24 meses del precio del ladrillo --- escenario con confinamiento, con IC al 95\,\%.}}{54}{figure.caption.61}%
+\contentsline {figure}{\numberline {5.38}{\ignorespaces Detalle de la transición histórico--pronóstico LSTM del ladrillo --- escenario con confinamiento.}}{55}{figure.caption.62}%
+\contentsline {figure}{\numberline {5.39}{\ignorespaces Curvas de aprendizaje del modelo GRU para cemento --- escenario sin confinamiento.}}{57}{figure.caption.65}%
+\contentsline {figure}{\numberline {5.40}{\ignorespaces Predicción GRU vs.\ valores reales del precio del cemento --- escenario sin confinamiento, conjunto de prueba.}}{58}{figure.caption.67}%
+\contentsline {figure}{\numberline {5.41}{\ignorespaces Ajuste del modelo GRU del cemento sobre las tres particiones --- escenario sin confinamiento.}}{58}{figure.caption.68}%
+\contentsline {figure}{\numberline {5.42}{\ignorespaces Pronóstico GRU del precio del cemento a 24 meses --- escenario sin confinamiento: serie histórica y proyección.}}{59}{figure.caption.69}%
+\contentsline {figure}{\numberline {5.43}{\ignorespaces Zoom sobre la transición entre datos observados y pronóstico GRU del cemento --- escenario sin confinamiento.}}{59}{figure.caption.70}%
+\contentsline {figure}{\numberline {5.44}{\ignorespaces Curvas de aprendizaje del modelo GRU para cemento --- escenario con confinamiento.}}{61}{figure.caption.73}%
+\contentsline {figure}{\numberline {5.45}{\ignorespaces Predicción GRU vs.\ valores reales del precio del cemento --- escenario con confinamiento, conjunto de prueba.}}{62}{figure.caption.75}%
+\contentsline {figure}{\numberline {5.46}{\ignorespaces Ajuste del modelo GRU del cemento sobre las tres particiones --- escenario con confinamiento.}}{62}{figure.caption.76}%
+\contentsline {figure}{\numberline {5.47}{\ignorespaces Pronóstico GRU del precio del cemento a 24 meses --- escenario con confinamiento: serie histórica y proyección.}}{63}{figure.caption.77}%
+\contentsline {figure}{\numberline {5.48}{\ignorespaces Zoom sobre la transición entre datos observados y pronóstico GRU del cemento --- escenario con confinamiento.}}{64}{figure.caption.78}%
+\contentsline {figure}{\numberline {5.49}{\ignorespaces Curvas de aprendizaje del modelo GRU para ladrillo --- escenario sin confinamiento.}}{65}{figure.caption.81}%
+\contentsline {figure}{\numberline {5.50}{\ignorespaces Predicción GRU vs.\ valores reales del precio del ladrillo --- escenario sin confinamiento, conjunto de prueba.}}{66}{figure.caption.83}%
+\contentsline {figure}{\numberline {5.51}{\ignorespaces Ajuste del modelo GRU del ladrillo sobre las tres particiones --- escenario sin confinamiento.}}{66}{figure.caption.84}%
+\contentsline {figure}{\numberline {5.52}{\ignorespaces Pronóstico GRU del precio del ladrillo a 24 meses --- escenario sin confinamiento: serie histórica y proyección.}}{67}{figure.caption.85}%
+\contentsline {figure}{\numberline {5.53}{\ignorespaces Zoom sobre la transición entre datos observados y pronóstico GRU del ladrillo --- escenario sin confinamiento.}}{67}{figure.caption.86}%
+\contentsline {figure}{\numberline {5.54}{\ignorespaces Curvas de aprendizaje del modelo GRU para ladrillo --- escenario con confinamiento.}}{69}{figure.caption.89}%
+\contentsline {figure}{\numberline {5.55}{\ignorespaces Predicción GRU vs.\ valores reales del precio del ladrillo --- escenario con confinamiento, conjunto de prueba.}}{70}{figure.caption.91}%
+\contentsline {figure}{\numberline {5.56}{\ignorespaces Ajuste del modelo GRU del ladrillo sobre las tres particiones --- escenario con confinamiento.}}{70}{figure.caption.92}%
+\contentsline {figure}{\numberline {5.57}{\ignorespaces Pronóstico GRU del precio del ladrillo a 24 meses --- escenario con confinamiento: serie histórica y proyección.}}{71}{figure.caption.93}%
+\contentsline {figure}{\numberline {5.58}{\ignorespaces Zoom sobre la transición entre datos observados y pronóstico GRU del ladrillo --- escenario con confinamiento.}}{71}{figure.caption.94}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

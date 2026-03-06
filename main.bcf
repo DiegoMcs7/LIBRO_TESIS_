@@ -2383,8 +2383,8 @@
     <bcf:citekey order="7" intorder="1">vagropoulos2016comparison</bcf:citekey>
     <bcf:citekey order="8" intorder="1">murphy2012machine</bcf:citekey>
     <bcf:citekey order="9" intorder="1">chollet2021deep</bcf:citekey>
-    <bcf:citekey order="10" intorder="1">allix2003epistemology</bcf:citekey>
-    <bcf:citekey order="11" intorder="1">mathur1999socialization</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">murphy2012machine</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">murphy2012machine</bcf:citekey>
     <bcf:citekey order="12" intorder="1">kaelbling1996reinforcement</bcf:citekey>
     <bcf:citekey order="13" intorder="1">martinez2014metodologia</bcf:citekey>
     <bcf:citekey order="14" intorder="1">villada2016redes</bcf:citekey>
@@ -2398,9 +2398,9 @@
     <bcf:citekey order="22" intorder="1">edylur</bcf:citekey>
     <bcf:citekey order="23" intorder="1">siami2018</bcf:citekey>
     <bcf:citekey order="24" intorder="1">kratzert2018</bcf:citekey>
-    <bcf:citekey order="25" intorder="1">kratzert2019</bcf:citekey>
-    <bcf:citekey order="26" intorder="1">YUNITA2025103462</bcf:citekey>
-    <bcf:citekey order="27" intorder="1">liu2023</bcf:citekey>
+    <bcf:citekey order="24" intorder="2">kratzert2019</bcf:citekey>
+    <bcf:citekey order="25" intorder="1">YUNITA2025103462</bcf:citekey>
+    <bcf:citekey order="26" intorder="1">liu2023</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

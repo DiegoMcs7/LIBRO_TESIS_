@@ -28,102 +28,102 @@
 \contentsline {chapter}{\numberline {4}Metodología}{17}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Recolección y preprocesamiento de datos}{17}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Modelos para predicción del nivel del río}{18}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Long Short-Term Memory (LSTM)}{19}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.1}Long Short-Term Memory (LSTM)}{18}{subsection.4.2.1}%
 \contentsline {section}{\numberline {4.3}Modelos de predicción de precios}{19}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Seasonal AutoRegressive Integrated Moving Average with eXogenous variables (SARIMAX)}{19}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Long Short-Term Memory (LSTM)}{20}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Gated Recurrent Unit (GRU)}{20}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.2}Long Short-Term Memory (LSTM)}{19}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Gated Recurrent Unit (GRU)}{19}{subsection.4.3.3}%
 \contentsline {section}{\numberline {4.4}Escenarios de experimentación}{20}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Resultados}{22}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Predicción del Nivel del Río Paraguay con Long Short-Term Memory (LSTM)}{22}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Serie Histórica y Partición de los Datos}{22}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Optimización de Hiperparámetros con Optuna}{24}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Entrenamiento del Modelo Final}{24}{subsection.5.1.3}%
-\contentsline {subsection}{\numberline {5.1.4}Métricas de Evaluación}{25}{subsection.5.1.4}%
-\contentsline {subsection}{\numberline {5.1.5}Predicción del Nivel del Río a 730 Días}{25}{subsection.5.1.5}%
-\contentsline {section}{\numberline {5.2}Predicción de los Precios del Cemento y del Ladrillo Común con Seasonal Autoregressive Integrated Moving Average with Exogenous Variables (SARIMAX)}{28}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Predicción del Precio del Cemento}{28}{subsection.5.2.1}%
-\contentsline {subsubsection}{\numberline {5.2.1.1}Serie Histórica y Análisis Exploratorio}{28}{subsubsection.5.2.1.1}%
-\contentsline {subsubsection}{\numberline {5.2.1.2}Modelo SARIMAX: Selección y Parámetros}{30}{subsubsection.5.2.1.2}%
-\contentsline {subsubsection}{\numberline {5.2.1.3}Modelo SARIMAX: Evaluación}{31}{subsubsection.5.2.1.3}%
-\contentsline {subsubsection}{\numberline {5.2.1.4}Modelo SARIMAX: Análisis de Residuos}{31}{subsubsection.5.2.1.4}%
-\contentsline {subsubsection}{\numberline {5.2.1.5}Modelo SARIMAX: Pronóstico a 24 Meses}{32}{subsubsection.5.2.1.5}%
-\contentsline {subsection}{\numberline {5.2.2}Predicción del Precio del Ladrillo}{34}{subsection.5.2.2}%
-\contentsline {subsubsection}{\numberline {5.2.2.1}Serie Histórica y Análisis Exploratorio}{34}{subsubsection.5.2.2.1}%
-\contentsline {subsubsection}{\numberline {5.2.2.2}Modelo SARIMAX: Selección y Parámetros}{35}{subsubsection.5.2.2.2}%
-\contentsline {subsubsection}{\numberline {5.2.2.3}Modelo SARIMAX: Evaluación}{36}{subsubsection.5.2.2.3}%
-\contentsline {subsubsection}{\numberline {5.2.2.4}Modelo SARIMAX: Análisis de Residuos}{36}{subsubsection.5.2.2.4}%
-\contentsline {subsubsection}{\numberline {5.2.2.5}Modelo SARIMAX: Pronóstico a 24 Meses}{36}{subsubsection.5.2.2.5}%
-\contentsline {section}{\numberline {5.3}Predicción de los Precios del Cemento y del Ladrillo Común con Long Short-Term Memory (LSTM)}{38}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Predicción del Precio del Cemento}{38}{subsection.5.3.1}%
-\contentsline {subsubsection}{\numberline {5.3.1.1}Análisis Exploratorio de la Serie}{39}{subsubsection.5.3.1.1}%
-\contentsline {subsubsection}{\numberline {5.3.1.2}Escenario sin Confinamiento}{40}{subsubsection.5.3.1.2}%
-\contentsline {paragraph}{\numberline {5.3.1.2.1}Hiperparámetros y Arquitectura}{40}{paragraph.5.3.1.2.1}%
-\contentsline {paragraph}{\numberline {5.3.1.2.2}Curva de Aprendizaje}{40}{paragraph.5.3.1.2.2}%
-\contentsline {paragraph}{\numberline {5.3.1.2.3}Métricas de Evaluación}{41}{paragraph.5.3.1.2.3}%
-\contentsline {paragraph}{\numberline {5.3.1.2.4}Evaluación sobre el Conjunto de Prueba}{41}{paragraph.5.3.1.2.4}%
-\contentsline {paragraph}{\numberline {5.3.1.2.5}Análisis de Residuos}{42}{paragraph.5.3.1.2.5}%
-\contentsline {paragraph}{\numberline {5.3.1.2.6}Pronóstico a 24 Meses}{42}{paragraph.5.3.1.2.6}%
-\contentsline {subsubsection}{\numberline {5.3.1.3}Escenario con Confinamiento}{43}{subsubsection.5.3.1.3}%
-\contentsline {paragraph}{\numberline {5.3.1.3.1}Hiperparámetros y Arquitectura}{43}{paragraph.5.3.1.3.1}%
-\contentsline {paragraph}{\numberline {5.3.1.3.2}Curva de Aprendizaje}{44}{paragraph.5.3.1.3.2}%
-\contentsline {paragraph}{\numberline {5.3.1.3.3}Métricas de Evaluación}{44}{paragraph.5.3.1.3.3}%
-\contentsline {paragraph}{\numberline {5.3.1.3.4}Evaluación sobre el Conjunto de Prueba}{45}{paragraph.5.3.1.3.4}%
-\contentsline {paragraph}{\numberline {5.3.1.3.5}Análisis de Residuos}{45}{paragraph.5.3.1.3.5}%
-\contentsline {paragraph}{\numberline {5.3.1.3.6}Pronóstico a 24 Meses}{46}{paragraph.5.3.1.3.6}%
-\contentsline {subsection}{\numberline {5.3.2}Predicción del Precio del Ladrillo}{47}{subsection.5.3.2}%
-\contentsline {subsubsection}{\numberline {5.3.2.1}Análisis Exploratorio de la Serie}{47}{subsubsection.5.3.2.1}%
-\contentsline {subsubsection}{\numberline {5.3.2.2}Escenario sin Confinamiento}{48}{subsubsection.5.3.2.2}%
-\contentsline {paragraph}{\numberline {5.3.2.2.1}Hiperparámetros y Arquitectura}{48}{paragraph.5.3.2.2.1}%
-\contentsline {paragraph}{\numberline {5.3.2.2.2}Curva de Aprendizaje}{49}{paragraph.5.3.2.2.2}%
-\contentsline {paragraph}{\numberline {5.3.2.2.3}Métricas de Evaluación}{49}{paragraph.5.3.2.2.3}%
-\contentsline {paragraph}{\numberline {5.3.2.2.4}Evaluación sobre el Conjunto de Prueba}{50}{paragraph.5.3.2.2.4}%
-\contentsline {paragraph}{\numberline {5.3.2.2.5}Análisis de Residuos}{50}{paragraph.5.3.2.2.5}%
-\contentsline {paragraph}{\numberline {5.3.2.2.6}Pronóstico a 24 Meses}{51}{paragraph.5.3.2.2.6}%
-\contentsline {subsubsection}{\numberline {5.3.2.3}Escenario con Confinamiento}{53}{subsubsection.5.3.2.3}%
-\contentsline {paragraph}{\numberline {5.3.2.3.1}Hiperparámetros y Arquitectura}{53}{paragraph.5.3.2.3.1}%
-\contentsline {paragraph}{\numberline {5.3.2.3.2}Curva de Aprendizaje}{53}{paragraph.5.3.2.3.2}%
-\contentsline {paragraph}{\numberline {5.3.2.3.3}Métricas de Evaluación}{53}{paragraph.5.3.2.3.3}%
-\contentsline {paragraph}{\numberline {5.3.2.3.4}Evaluación sobre el Conjunto de Prueba}{54}{paragraph.5.3.2.3.4}%
-\contentsline {paragraph}{\numberline {5.3.2.3.5}Análisis de Residuos}{55}{paragraph.5.3.2.3.5}%
-\contentsline {paragraph}{\numberline {5.3.2.3.6}Pronóstico a 24 Meses}{55}{paragraph.5.3.2.3.6}%
-\contentsline {section}{\numberline {5.4}Predicción de los Precios del Cemento y del Ladrillo Común con Gated Recurrent Unit (GRU)}{56}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Predicción del Precio del Cemento}{57}{subsection.5.4.1}%
-\contentsline {subsubsection}{\numberline {5.4.1.1}Escenario sin Confinamiento}{57}{subsubsection.5.4.1.1}%
-\contentsline {paragraph}{\numberline {5.4.1.1.1}Hiperparámetros y Arquitectura}{57}{paragraph.5.4.1.1.1}%
-\contentsline {paragraph}{\numberline {5.4.1.1.2}Curva de Aprendizaje}{57}{paragraph.5.4.1.1.2}%
-\contentsline {paragraph}{\numberline {5.4.1.1.3}Métricas de Evaluación}{58}{paragraph.5.4.1.1.3}%
-\contentsline {paragraph}{\numberline {5.4.1.1.4}Evaluación sobre el Conjunto de Prueba}{58}{paragraph.5.4.1.1.4}%
-\contentsline {paragraph}{\numberline {5.4.1.1.5}Análisis de Residuos}{59}{paragraph.5.4.1.1.5}%
-\contentsline {paragraph}{\numberline {5.4.1.1.6}Pronóstico a 24 Meses}{59}{paragraph.5.4.1.1.6}%
-\contentsline {subsubsection}{\numberline {5.4.1.2}Escenario con Confinamiento}{61}{subsubsection.5.4.1.2}%
-\contentsline {paragraph}{\numberline {5.4.1.2.1}Hiperparámetros y Arquitectura}{61}{paragraph.5.4.1.2.1}%
-\contentsline {paragraph}{\numberline {5.4.1.2.2}Curva de Aprendizaje}{61}{paragraph.5.4.1.2.2}%
-\contentsline {paragraph}{\numberline {5.4.1.2.3}Métricas de Evaluación}{62}{paragraph.5.4.1.2.3}%
-\contentsline {paragraph}{\numberline {5.4.1.2.4}Evaluación sobre el Conjunto de Prueba}{63}{paragraph.5.4.1.2.4}%
-\contentsline {paragraph}{\numberline {5.4.1.2.5}Análisis de Residuos}{64}{paragraph.5.4.1.2.5}%
-\contentsline {paragraph}{\numberline {5.4.1.2.6}Pronóstico a 24 Meses}{64}{paragraph.5.4.1.2.6}%
-\contentsline {subsection}{\numberline {5.4.2}Predicción del Precio del Ladrillo}{65}{subsection.5.4.2}%
-\contentsline {subsubsection}{\numberline {5.4.2.1}Escenario sin Confinamiento}{65}{subsubsection.5.4.2.1}%
-\contentsline {paragraph}{\numberline {5.4.2.1.1}Hiperparámetros y Arquitectura}{65}{paragraph.5.4.2.1.1}%
-\contentsline {paragraph}{\numberline {5.4.2.1.2}Curva de Aprendizaje}{66}{paragraph.5.4.2.1.2}%
-\contentsline {paragraph}{\numberline {5.4.2.1.3}Métricas de Evaluación}{66}{paragraph.5.4.2.1.3}%
-\contentsline {paragraph}{\numberline {5.4.2.1.4}Evaluación sobre el Conjunto de Prueba}{67}{paragraph.5.4.2.1.4}%
-\contentsline {paragraph}{\numberline {5.4.2.1.5}Análisis de Residuos}{67}{paragraph.5.4.2.1.5}%
-\contentsline {paragraph}{\numberline {5.4.2.1.6}Pronóstico a 24 Meses}{68}{paragraph.5.4.2.1.6}%
-\contentsline {subsubsection}{\numberline {5.4.2.2}Escenario con Confinamiento}{69}{subsubsection.5.4.2.2}%
-\contentsline {paragraph}{\numberline {5.4.2.2.1}Hiperparámetros y Arquitectura}{69}{paragraph.5.4.2.2.1}%
-\contentsline {paragraph}{\numberline {5.4.2.2.2}Curva de Aprendizaje}{70}{paragraph.5.4.2.2.2}%
-\contentsline {paragraph}{\numberline {5.4.2.2.3}Métricas de Evaluación}{70}{paragraph.5.4.2.2.3}%
-\contentsline {paragraph}{\numberline {5.4.2.2.4}Evaluación sobre el Conjunto de Prueba}{71}{paragraph.5.4.2.2.4}%
-\contentsline {paragraph}{\numberline {5.4.2.2.5}Análisis de Residuos}{71}{paragraph.5.4.2.2.5}%
-\contentsline {paragraph}{\numberline {5.4.2.2.6}Pronóstico a 24 Meses}{72}{paragraph.5.4.2.2.6}%
-\contentsline {chapter}{\numberline {6}Discusión}{74}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Evaluación del modelo SARIMAX}{74}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Evaluación del modelo LSTM}{74}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Evaluación del modelo GRU}{75}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Comparación entre modelos}{75}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Impacto de la variable de cuarentena por COVID-19}{76}{section.6.5}%
-\contentsline {chapter}{\numberline {7}Conclusiones y Trabajos Futuros}{77}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Conclusiones finales}{77}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Trabajos futuros}{78}{section.7.2}%
+\contentsline {chapter}{\numberline {5}Resultados}{21}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Predicción del Nivel del Río Paraguay con Long Short-Term Memory (LSTM)}{21}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Serie Histórica y Partición de los Datos}{21}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Optimización de Hiperparámetros con Optuna}{23}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Entrenamiento del Modelo Final}{23}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Métricas de Evaluación}{24}{subsection.5.1.4}%
+\contentsline {subsection}{\numberline {5.1.5}Predicción del Nivel del Río a 730 Días}{24}{subsection.5.1.5}%
+\contentsline {section}{\numberline {5.2}Predicción de los Precios del Cemento y del Ladrillo Común con Seasonal Autoregressive Integrated Moving Average with Exogenous Variables (SARIMAX)}{27}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Predicción del Precio del Cemento}{27}{subsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.1.1}Serie Histórica y Análisis Exploratorio}{27}{subsubsection.5.2.1.1}%
+\contentsline {subsubsection}{\numberline {5.2.1.2}Modelo SARIMAX: Selección y Parámetros}{29}{subsubsection.5.2.1.2}%
+\contentsline {subsubsection}{\numberline {5.2.1.3}Modelo SARIMAX: Evaluación}{30}{subsubsection.5.2.1.3}%
+\contentsline {subsubsection}{\numberline {5.2.1.4}Modelo SARIMAX: Análisis de Residuos}{30}{subsubsection.5.2.1.4}%
+\contentsline {subsubsection}{\numberline {5.2.1.5}Modelo SARIMAX: Pronóstico a 24 Meses}{31}{subsubsection.5.2.1.5}%
+\contentsline {subsection}{\numberline {5.2.2}Predicción del Precio del Ladrillo}{33}{subsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.2.1}Serie Histórica y Análisis Exploratorio}{33}{subsubsection.5.2.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2.2}Modelo SARIMAX: Selección y Parámetros}{34}{subsubsection.5.2.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.2.3}Modelo SARIMAX: Evaluación}{35}{subsubsection.5.2.2.3}%
+\contentsline {subsubsection}{\numberline {5.2.2.4}Modelo SARIMAX: Análisis de Residuos}{35}{subsubsection.5.2.2.4}%
+\contentsline {subsubsection}{\numberline {5.2.2.5}Modelo SARIMAX: Pronóstico a 24 Meses}{35}{subsubsection.5.2.2.5}%
+\contentsline {section}{\numberline {5.3}Predicción de los Precios del Cemento y del Ladrillo Común con Long Short-Term Memory (LSTM)}{37}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Predicción del Precio del Cemento}{37}{subsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.1.1}Análisis Exploratorio de la Serie}{38}{subsubsection.5.3.1.1}%
+\contentsline {subsubsection}{\numberline {5.3.1.2}Escenario sin Confinamiento}{39}{subsubsection.5.3.1.2}%
+\contentsline {paragraph}{\numberline {5.3.1.2.1}Hiperparámetros y Arquitectura}{39}{paragraph.5.3.1.2.1}%
+\contentsline {paragraph}{\numberline {5.3.1.2.2}Curva de Aprendizaje}{39}{paragraph.5.3.1.2.2}%
+\contentsline {paragraph}{\numberline {5.3.1.2.3}Métricas de Evaluación}{40}{paragraph.5.3.1.2.3}%
+\contentsline {paragraph}{\numberline {5.3.1.2.4}Evaluación sobre el Conjunto de Prueba}{40}{paragraph.5.3.1.2.4}%
+\contentsline {paragraph}{\numberline {5.3.1.2.5}Análisis de Residuos}{41}{paragraph.5.3.1.2.5}%
+\contentsline {paragraph}{\numberline {5.3.1.2.6}Pronóstico a 24 Meses}{41}{paragraph.5.3.1.2.6}%
+\contentsline {subsubsection}{\numberline {5.3.1.3}Escenario con Confinamiento}{42}{subsubsection.5.3.1.3}%
+\contentsline {paragraph}{\numberline {5.3.1.3.1}Hiperparámetros y Arquitectura}{42}{paragraph.5.3.1.3.1}%
+\contentsline {paragraph}{\numberline {5.3.1.3.2}Curva de Aprendizaje}{43}{paragraph.5.3.1.3.2}%
+\contentsline {paragraph}{\numberline {5.3.1.3.3}Métricas de Evaluación}{43}{paragraph.5.3.1.3.3}%
+\contentsline {paragraph}{\numberline {5.3.1.3.4}Evaluación sobre el Conjunto de Prueba}{44}{paragraph.5.3.1.3.4}%
+\contentsline {paragraph}{\numberline {5.3.1.3.5}Análisis de Residuos}{44}{paragraph.5.3.1.3.5}%
+\contentsline {paragraph}{\numberline {5.3.1.3.6}Pronóstico a 24 Meses}{45}{paragraph.5.3.1.3.6}%
+\contentsline {subsection}{\numberline {5.3.2}Predicción del Precio del Ladrillo}{46}{subsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.2.1}Análisis Exploratorio de la Serie}{46}{subsubsection.5.3.2.1}%
+\contentsline {subsubsection}{\numberline {5.3.2.2}Escenario sin Confinamiento}{47}{subsubsection.5.3.2.2}%
+\contentsline {paragraph}{\numberline {5.3.2.2.1}Hiperparámetros y Arquitectura}{47}{paragraph.5.3.2.2.1}%
+\contentsline {paragraph}{\numberline {5.3.2.2.2}Curva de Aprendizaje}{48}{paragraph.5.3.2.2.2}%
+\contentsline {paragraph}{\numberline {5.3.2.2.3}Métricas de Evaluación}{48}{paragraph.5.3.2.2.3}%
+\contentsline {paragraph}{\numberline {5.3.2.2.4}Evaluación sobre el Conjunto de Prueba}{49}{paragraph.5.3.2.2.4}%
+\contentsline {paragraph}{\numberline {5.3.2.2.5}Análisis de Residuos}{49}{paragraph.5.3.2.2.5}%
+\contentsline {paragraph}{\numberline {5.3.2.2.6}Pronóstico a 24 Meses}{50}{paragraph.5.3.2.2.6}%
+\contentsline {subsubsection}{\numberline {5.3.2.3}Escenario con Confinamiento}{52}{subsubsection.5.3.2.3}%
+\contentsline {paragraph}{\numberline {5.3.2.3.1}Hiperparámetros y Arquitectura}{52}{paragraph.5.3.2.3.1}%
+\contentsline {paragraph}{\numberline {5.3.2.3.2}Curva de Aprendizaje}{52}{paragraph.5.3.2.3.2}%
+\contentsline {paragraph}{\numberline {5.3.2.3.3}Métricas de Evaluación}{52}{paragraph.5.3.2.3.3}%
+\contentsline {paragraph}{\numberline {5.3.2.3.4}Evaluación sobre el Conjunto de Prueba}{53}{paragraph.5.3.2.3.4}%
+\contentsline {paragraph}{\numberline {5.3.2.3.5}Análisis de Residuos}{54}{paragraph.5.3.2.3.5}%
+\contentsline {paragraph}{\numberline {5.3.2.3.6}Pronóstico a 24 Meses}{54}{paragraph.5.3.2.3.6}%
+\contentsline {section}{\numberline {5.4}Predicción de los Precios del Cemento y del Ladrillo Común con Gated Recurrent Unit (GRU)}{55}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Predicción del Precio del Cemento}{56}{subsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.1.1}Escenario sin Confinamiento}{56}{subsubsection.5.4.1.1}%
+\contentsline {paragraph}{\numberline {5.4.1.1.1}Hiperparámetros y Arquitectura}{56}{paragraph.5.4.1.1.1}%
+\contentsline {paragraph}{\numberline {5.4.1.1.2}Curva de Aprendizaje}{56}{paragraph.5.4.1.1.2}%
+\contentsline {paragraph}{\numberline {5.4.1.1.3}Métricas de Evaluación}{57}{paragraph.5.4.1.1.3}%
+\contentsline {paragraph}{\numberline {5.4.1.1.4}Evaluación sobre el Conjunto de Prueba}{57}{paragraph.5.4.1.1.4}%
+\contentsline {paragraph}{\numberline {5.4.1.1.5}Análisis de Residuos}{58}{paragraph.5.4.1.1.5}%
+\contentsline {paragraph}{\numberline {5.4.1.1.6}Pronóstico a 24 Meses}{58}{paragraph.5.4.1.1.6}%
+\contentsline {subsubsection}{\numberline {5.4.1.2}Escenario con Confinamiento}{60}{subsubsection.5.4.1.2}%
+\contentsline {paragraph}{\numberline {5.4.1.2.1}Hiperparámetros y Arquitectura}{60}{paragraph.5.4.1.2.1}%
+\contentsline {paragraph}{\numberline {5.4.1.2.2}Curva de Aprendizaje}{60}{paragraph.5.4.1.2.2}%
+\contentsline {paragraph}{\numberline {5.4.1.2.3}Métricas de Evaluación}{61}{paragraph.5.4.1.2.3}%
+\contentsline {paragraph}{\numberline {5.4.1.2.4}Evaluación sobre el Conjunto de Prueba}{62}{paragraph.5.4.1.2.4}%
+\contentsline {paragraph}{\numberline {5.4.1.2.5}Análisis de Residuos}{63}{paragraph.5.4.1.2.5}%
+\contentsline {paragraph}{\numberline {5.4.1.2.6}Pronóstico a 24 Meses}{63}{paragraph.5.4.1.2.6}%
+\contentsline {subsection}{\numberline {5.4.2}Predicción del Precio del Ladrillo}{64}{subsection.5.4.2}%
+\contentsline {subsubsection}{\numberline {5.4.2.1}Escenario sin Confinamiento}{64}{subsubsection.5.4.2.1}%
+\contentsline {paragraph}{\numberline {5.4.2.1.1}Hiperparámetros y Arquitectura}{64}{paragraph.5.4.2.1.1}%
+\contentsline {paragraph}{\numberline {5.4.2.1.2}Curva de Aprendizaje}{65}{paragraph.5.4.2.1.2}%
+\contentsline {paragraph}{\numberline {5.4.2.1.3}Métricas de Evaluación}{65}{paragraph.5.4.2.1.3}%
+\contentsline {paragraph}{\numberline {5.4.2.1.4}Evaluación sobre el Conjunto de Prueba}{66}{paragraph.5.4.2.1.4}%
+\contentsline {paragraph}{\numberline {5.4.2.1.5}Análisis de Residuos}{66}{paragraph.5.4.2.1.5}%
+\contentsline {paragraph}{\numberline {5.4.2.1.6}Pronóstico a 24 Meses}{67}{paragraph.5.4.2.1.6}%
+\contentsline {subsubsection}{\numberline {5.4.2.2}Escenario con Confinamiento}{68}{subsubsection.5.4.2.2}%
+\contentsline {paragraph}{\numberline {5.4.2.2.1}Hiperparámetros y Arquitectura}{68}{paragraph.5.4.2.2.1}%
+\contentsline {paragraph}{\numberline {5.4.2.2.2}Curva de Aprendizaje}{69}{paragraph.5.4.2.2.2}%
+\contentsline {paragraph}{\numberline {5.4.2.2.3}Métricas de Evaluación}{69}{paragraph.5.4.2.2.3}%
+\contentsline {paragraph}{\numberline {5.4.2.2.4}Evaluación sobre el Conjunto de Prueba}{70}{paragraph.5.4.2.2.4}%
+\contentsline {paragraph}{\numberline {5.4.2.2.5}Análisis de Residuos}{70}{paragraph.5.4.2.2.5}%
+\contentsline {paragraph}{\numberline {5.4.2.2.6}Pronóstico a 24 Meses}{71}{paragraph.5.4.2.2.6}%
+\contentsline {chapter}{\numberline {6}Discusión}{73}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Evaluación del modelo SARIMAX}{73}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Evaluación del modelo LSTM}{73}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Evaluación del modelo GRU}{74}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Comparación entre modelos}{74}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Impacto de la variable de cuarentena por COVID-19}{75}{section.6.5}%
+\contentsline {chapter}{\numberline {7}Conclusiones y Trabajos Futuros}{76}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Conclusiones finales}{76}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Trabajos futuros}{77}{section.7.2}%

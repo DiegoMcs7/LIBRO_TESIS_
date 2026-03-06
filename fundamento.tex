@@ -1,5 +1,5 @@
 \justify
-Predecir series temporales con influencias externas no es trivial. Dos familias de modelos han demostrado ser especialmente útiles en ese contexto: los métodos estadísticos de la familia ARIMA —en particular su extensión SARIMAX, que incorpora variables exógenas— y las redes neuronales recurrentes, representadas aquí por las arquitecturas LSTM y GRU. Cada una tiene fortalezas distintas y limitaciones propias; entender su funcionamiento es indispensable para interpretar los resultados del capítulo siguiente.
+Predecir series temporales con influencias externas no es trivial. Dos familias de modelos han demostrado ser especialmente útiles en ese contexto: los métodos estadísticos de la familia ARIMA, en particular su extensión SARIMAX que incorpora variables exógenas, y las redes neuronales recurrentes, representadas aquí por las arquitecturas LSTM y GRU. Cada una tiene fortalezas distintas y limitaciones propias; entender su funcionamiento es indispensable para interpretar los resultados del capítulo siguiente.
 
 \justify
 SARIMAX parte de un supuesto de linealidad y requiere que la serie sea estacionaria, lo que implica pasos de preprocesamiento explícitos (diferenciación, pruebas de raíz unitaria). Su ventaja es la interpretabilidad: los coeficientes tienen significado estadístico directo. LSTM y GRU, en cambio, aprenden representaciones no lineales de forma automática, a costa de una mayor demanda computacional y menor transparencia en la interpretación de sus parámetros internos.
@@ -28,7 +28,7 @@ ARIMA combina tres componentes principales:
 \begin{equation}
  \nabla^d Y_t = (1-B)^d Y_t
 \end{equation}
- donde $B$ es el operador de rezago $(B Y_t = Y_{t-1})$ y $\nabla^d Y_t$ se utiliza para estabilizar la media y la varianza de la serie.
+ donde $B$ es el operador de rezago $(B Y_t = Y_{t-1})$ y $\nabla^d Y_t$ se utiliza para estabilizar la media de la serie, eliminando la tendencia.
 
 \item MA (media móvil, $q$): modela la dependencia de la variable con los errores pasados. Un modelo MA de orden $q$ se define como:
 \begin{equation}
@@ -46,10 +46,10 @@ De manera compacta, un ARIMA(p,d,q) se representa como:
 
 \subsection{SARIMA}
 \justify
-El modelo SARIMA (Seasonal AutoRegressive Integrated Moving Average), también conocido como modelo ARIMA estacional, es una extensión del enfoque Box–Jenkins, diseñada para capturar patrones estacionales o periódicos en las series temporales.\cite{vagropoulos2016comparison}
+El modelo SARIMA (Seasonal AutoRegressive Integrated Moving Average), también conocido como modelo ARIMA estacional, es una extensión del enfoque Box–Jenkins, diseñada para capturar patrones estacionales o periódicos en las series temporales \cite{vagropoulos2016comparison}.
 
 \justify
-Mientras que el modelo $ARIMA(p, d, q)$ aborda las relaciones no estacionales —tendencias y dependencias de corto plazo—, el modelo $SARIMA(p, d, q)(P, D, Q)_s$ incorpora componentes adicionales que permiten representar comportamientos repetitivos a intervalos regulares, como meses, trimestres o años.
+Mientras que el modelo $ARIMA(p, d, q)$ aborda las relaciones no estacionales (tendencias y dependencias de corto plazo), el modelo $SARIMA(p, d, q)(P, D, Q)_s$ incorpora componentes adicionales que permiten representar comportamientos repetitivos a intervalos regulares, como meses, trimestres o años.
 
 \justify
 Los parámetros del modelo tienen la siguiente interpretación:
@@ -114,15 +114,15 @@ donde:
 Una definición concisa de Machine Learning (ML) es la de Murphy \cite{murphy2012machine}: métodos capaces de identificar patrones en los datos de manera automática y usar esos patrones para predecir o decidir bajo incertidumbre. Lo que hace interesante a esta definición es que el énfasis está en \textit{aprender de los datos}, no en seguir reglas codificadas por un experto.
 
 \justify
-Dentro del ML, el aprendizaje profundo (Deep Learning, DL) ocupa un lugar particular. Es, en esencia, una subrama que trabaja con redes neuronales de múltiples capas, capaces de representar relaciones muy complejas sin que el investigador tenga que definirlas explícitamente \cite{chollet2021deep}. La diferencia práctica es relevante: mientras un modelo de ML clásico suele requerir que el analista seleccione y construya las características más informativas, un modelo de DL puede derivarlas directamente de los datos crudos. Esa autonomía tiene un costo — más datos, más cómputo, menos interpretabilidad — pero en series temporales complejas y no lineales, como las de precios de materiales de construcción, esa capacidad de abstracción resulta valiosa.
+Dentro del ML, el aprendizaje profundo (Deep Learning, DL) ocupa un lugar particular. Es, en esencia, una subrama que trabaja con redes neuronales de múltiples capas, capaces de representar relaciones muy complejas sin que el investigador tenga que definirlas explícitamente \cite{chollet2021deep}. La diferencia práctica es relevante: mientras un modelo de ML clásico suele requerir que el analista seleccione y construya las características más informativas, un modelo de DL puede derivarlas directamente de los datos brutos. Esa autonomía tiene un costo: más datos, más cómputo y menor interpretabilidad; pero en series temporales complejas y no lineales, como las de precios de materiales de construcción, esa capacidad de abstracción resulta valiosa.
 
 \justify
-El ML puede clasificarse en 3 categorías principales:
+El ML puede clasificarse en tres categorías principales:
 
 \begin{itemize}
-\item Aprendizaje supervisado: es un enfoque del ML en el cual el modelo se entrena utilizando un conjunto de datos etiquetado, es decir, donde las entradas están asociadas con sus salidas correspondientes. Durante el proceso de entrenamiento, el algoritmo aprende a relacionar las variables de entrada con las salidas esperadas, con el objetivo de generalizar ese conocimiento a nuevos datos. Uno de los problemas más comunes dentro del aprendizaje supervisado es la clasificación \cite{allix2003epistemology}.
+\item Aprendizaje supervisado: es un enfoque del ML en el cual el modelo se entrena utilizando un conjunto de datos etiquetado, es decir, donde las entradas están asociadas con sus salidas correspondientes. Durante el proceso de entrenamiento, el algoritmo aprende a relacionar las variables de entrada con las salidas esperadas, con el objetivo de generalizar ese conocimiento a nuevos datos. Uno de los problemas más comunes dentro del aprendizaje supervisado es la clasificación \cite{murphy2012machine}.
 
-\item Aprendizaje no supervisado: se caracteriza porque los datos de entrenamiento no poseen etiquetas o salidas conocidas. En este enfoque, el modelo busca descubrir patrones o estructuras ocultas dentro del conjunto de datos sin intervención externa. Las técnicas más comunes incluyen clustering, fuzzy clustering, clustering jerárquico, K-means y association rule mining \cite{mathur1999socialization}. En estos casos, los algoritmos agrupan los datos en función de su similitud, permitiendo desarrollar marcos de análisis basados en la información observada.
+\item Aprendizaje no supervisado: se caracteriza porque los datos de entrenamiento no poseen etiquetas o salidas conocidas. En este enfoque, el modelo busca descubrir patrones o estructuras ocultas dentro del conjunto de datos sin intervención externa. Las técnicas más comunes incluyen \textit{clustering}, \textit{clustering} jerárquico, K-means y \textit{association rule mining} \cite{murphy2012machine}. En estos casos, los algoritmos agrupan los datos en función de su similitud, permitiendo desarrollar marcos de análisis basados en la información observada.
 
 \item Aprendizaje por refuerzo: es un enfoque en el que un agente, generalmente representado por un programa informático, interactúa con un entorno dinámico con el objetivo de alcanzar una meta específica. A medida que ejecuta acciones, el agente recibe retroalimentación en forma de recompensas o penalizaciones, lo que le permite aprender una política óptima que maximiza la recompensa acumulada a lo largo del tiempo \cite{kaelbling1996reinforcement}.
 \end{itemize}
@@ -153,7 +153,7 @@ Una ANN está compuesta por nodos llamados neuronas, que se conectan entre sí m
 Cada neurona se conecta con otras a través de sinapsis cuyo peso, representado por $W_{ji}$, refleja la fuerza o importancia de la conexión. La Ecuación~\ref{eq:neurona_salida} expresa matemáticamente cómo se calcula la salida de una neurona: las entradas $x_n$ son ponderadas por los pesos $W_{ji}$ y transformadas mediante la función de activación $\varphi$. Además, cada neurona posee un valor umbral que ajusta su nivel de respuesta.
 
 \begin{equation}
-    y_{i} = \varphi \left( \sum_{i=0}^{n} W_{ji}x_{i} \right)
+    y_{j} = \varphi \left( \sum_{i=0}^{n} W_{ji}x_{i} \right)
     \label{eq:neurona_salida}
 \end{equation}
 
@@ -197,7 +197,7 @@ Este fenómeno impide que las RNN aprendan eficazmente relaciones entre eventos 
 El modelo LSTM introduce una unidad de memoria interna, denominada celda, que puede mantener información constante a lo largo de múltiples pasos temporales, resolviendo de manera efectiva el problema del desvanecimiento del gradiente.
 Cada celda incluye un estado interno $C_t$ y un estado oculto $H_t$, junto con un conjunto de compuertas multiplicativas que regulan el flujo de información.
 \justify
-El principio clave es que el estado interno posee una autoconexión de peso fijo igual a 1, lo cual garantiza que los gradientes puedan fluir a través del tiempo sin desaparecer, manteniendo la información relevante.
+El principio clave es que el estado interno se actualiza de forma aditiva, regulado por la compuerta de olvido, lo cual permite que los gradientes fluyan a través del tiempo sin desaparecer, manteniendo la información relevante.
 \subsubsection{Compuertas del LSTM}
 \justify
 Cada celda LSTM cuenta con tres compuertas principales: entrada, olvido y salida.
@@ -226,7 +226,7 @@ O_t = \sigma(X_t W_{xo} + H_{t-1} W_{ho} + b_o)
 \end{equation}
 
 \justify
-donde $W_{xi}, W_{xf}, W_{xo} \in \mathbb{R}^{d \times h}$ y $W_{hi}, W_{hf}, W_{ho} \in \mathbb{R}^{h \times h}$ son las matrices de pesos asociados a la entrada y al estado oculto previo respectivamente, mientras que $b_{i}, b_{f}, b_{o} \in \mathbb{R}^{1 \times h}$ representa los sesgos.
+donde $W_{xi}, W_{xf}, W_{xo} \in \mathbb{R}^{d \times h}$ y $W_{hi}, W_{hf}, W_{ho} \in \mathbb{R}^{h \times h}$ son las matrices de pesos asociados a la entrada y al estado oculto previo respectivamente, mientras que $b_{i}, b_{f}, b_{o} \in \mathbb{R}^{1 \times h}$ representan los sesgos.
 
 \subsubsection{Estado candidato y actualización del estado interno}
 \justify

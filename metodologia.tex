@@ -11,9 +11,6 @@ Los datos fueron obtenidos de la revista técnica Mandu'a \cite{mandua}, especia
 Adicionalmente, se incorporó como variable exógena el nivel del río Paraguay, cuyos registros diarios fueron extraídos de la página oficial de la Dirección de Meteorología e Hidrología \cite{dmh}.
 
 \justify
-Tras la recopilación de los datos diarios, se extrajo para cada mes el nivel mínimo registrado, generando así una serie mensual del nivel del río que mantiene correspondencia temporal con la serie mensual de precios de los materiales de construcción.
-
-\justify
 El trabajo se desarrolló en tres etapas principales:
 \begin{itemize}
 \item Recolección y preprocesamiento de datos, que incluyó la integración, limpieza y tratamiento de valores faltantes.
@@ -22,10 +19,13 @@ El trabajo se desarrolló en tres etapas principales:
 \end{itemize}
 
 \justify
-El conjunto de datos para los precios del cemento y el ladrillo común comprenden el período enero de 2014 a julio de 2025. Este intervalo se definió debido a que la Revista Técnica Mandu'a \cite{mandua} pone a disposición registros históricos únicamente desde el año 2014 en su sitio web.
+Todos los modelos (SARIMAX, LSTM y GRU) fueron implementados y entrenados en la plataforma Kaggle, utilizando dos GPUs T4 bajo la estrategia \texttt{MirroredStrategy} de TensorFlow para los modelos de aprendizaje profundo.
 
 \justify
-En cuanto al nivel del río Paraguay en el puerto de Asunción, se utilizaron 4.177 registros diarios únicos, abarcando desde enero de 2014 hasta julio de 2025. Los 29 días faltantes dentro del período fueron completados mediante interpolación lineal.
+Los registros diarios del nivel del río Paraguay en el puerto de Asunción abarcan el período enero de 2014 a julio de 2025.
+
+\justify
+El conjunto de datos para los precios del cemento y el ladrillo común comprende el período enero de 2014 a julio de 2025. Este intervalo se definió debido a que la Revista Técnica Mandu'a \cite{mandua} pone a disposición registros históricos únicamente desde el año 2014 en su sitio web.
 
 \justify
 Durante la recolección de los datos de precios se identificó que, para algunos meses, no se disponía del valor promedio correspondiente. Con el fin de garantizar la continuidad temporal de las series y permitir la correcta aplicación de los modelos predictivos, se evaluaron distintos métodos de interpolación \cite{conesa2011interpolacion} para el tratamiento de los datos faltantes utilizando la función interpolate de la librería pandas, entre ellos:
@@ -43,24 +43,19 @@ Una vez realizado el análisis comparativo de los métodos de interpolación, se
 % ============================================================
 \section{Modelos para predicción del nivel del río}
 % ============================================================
-\justify
-El problema de predicción que aborda este trabajo tiene una particularidad que condiciona las decisiones metodológicas: las series de precios son cortas (poco más de 130 observaciones mensuales), no lineales, y están influenciadas por variables externas de naturaleza distinta, una hidrológica y otra socioeconómica. Esa combinación descarta algunos enfoques sencillos y justifica el uso paralelo de un modelo estadístico clásico y dos arquitecturas de redes neuronales recurrentes.
-
-\justify
-La estrategia adoptada fue secuencial: primero se proyectó el nivel del río Paraguay a través de un LSTM, aprovechando la serie histórica diaria desde 2014, y luego esa proyección se incorporó como variable exógena en los modelos de predicción de precios. Esta cadena permite que la información hidrológica sea explícita en el proceso de pronóstico, en lugar de quedar implícita o ignorada.
 
 \subsection{Long Short-Term Memory (LSTM)}
 \justify
-Para predecir el nivel diario del río Paraguay se utilizó un modelo LSTM, reconocido por su eficacia en series temporales hidrológicas. Estudios muestran que LSTM supera a modelos clásicos como ARIMA, reduciendo errores hasta en un 87\% en series no lineales \cite{siami2018}, y presenta alta precisión en predicciones fluviales \cite{kratzert2018}\cite{kratzert2019}. Frente a GRU, LSTM es más efectivo en dependencias de largo plazo \cite{YUNITA2025103462}, y también supera a arquitecturas Transformer en métricas como NSE y KGE para predicción diaria \cite{liu2023}. Con 4.177 observaciones diarias y un horizonte de 24 meses, LSTM ofrece un balance adecuado entre precisión y robustez para este dominio.
+Se eligió un modelo LSTM para proyectar el nivel diario del río Paraguay. Estudios muestran que LSTM supera a modelos clásicos como ARIMA, reduciendo errores hasta en un 87\,\% en series no lineales \cite{siami2018}, y presenta alta precisión en predicciones fluviales \cite{kratzert2018, kratzert2019}. Frente a GRU, LSTM resulta más efectivo en dependencias de largo plazo \cite{YUNITA2025103462}, y también supera a arquitecturas Transformer en métricas como NSE y KGE para predicción diaria \cite{liu2023}.
 
 \justify
-Los datos se escalaron en el rango $[-1, 1]$ mediante el método MinMaxScaler, con el objetivo de mejorar la estabilidad numérica y favorecer la convergencia durante el entrenamiento.
+Los valores del nivel del río se escalaron mediante RobustScaler, que utiliza la mediana y el rango intercuartílico en lugar de la media y la desviación estándar, lo que lo hace resistente a los valores extremos de crecida. A partir de la serie escalada se armaron secuencias supervisadas con una ventana deslizante, donde cada entrada corresponde a los últimos $n$ días y la salida es el nivel del día siguiente.
 
 \justify
-Se generaron secuencias supervisadas utilizando una ventana deslizante, lo que permitió al modelo capturar los patrones de dependencia temporal del nivel del río. Finalmente, los datos se dividieron cronológicamente en tres subconjuntos: 80\% para entrenamiento, 10\% para validación y 10\% para prueba, asegurando que el conjunto de prueba representara las observaciones más recientes de la serie.
+La serie se dividió cronológicamente en 70\,\% para entrenamiento, 15\,\% para validación y 15\,\% para prueba, de modo que el conjunto de prueba contiene siempre las observaciones más recientes. La selección de hiperparámetros (número de neuronas, tasa de aprendizaje, tamaño de ventana, entre otros) se realizó con Optuna, minimizando el RMSE de validación.
 
 \justify
-Los hiperparámetros del modelo, incluyendo el número de neuronas, la tasa de aprendizaje y el número de épocas, fueron seleccionados mediante la librería Optuna, que permite realizar una búsqueda automática y eficiente del conjunto de parámetros que minimiza el error de validación.
+Una vez entrenado el modelo, se generaron predicciones diarias a 730 días. De esas predicciones se extrajo el mínimo mensual del nivel del río, que fue incorporado como variable exógena en los modelos de precios de materiales de construcción. Se optó por el mínimo mensual porque las bajantes representan las condiciones más restrictivas para el transporte fluvial y, por tanto, las de mayor repercusión sobre los costos logísticos.
 
 % ============================================================
 \section{Modelos de predicción de precios}
@@ -70,10 +65,10 @@ Con la proyección del nivel del río Paraguay disponible, se procedió a constr
 
 \subsection{Seasonal AutoRegressive Integrated Moving Average with eXogenous variables (SARIMAX)}
 \justify
-Se aplicó el modelo SARIMAX para predecir los precios mensuales del cemento y del ladrillo común, considerando como variables exógenas el nivel mensual del río Paraguay —estimado previamente mediante el modelo LSTM univariado— y la variable binaria de cuarentena por COVID-19, que representa los períodos de restricción sanitaria durante el confinamiento por COVID-19.
+Se aplicó el modelo SARIMAX para predecir los precios mensuales del cemento y del ladrillo común, considerando como variables exógenas el mínimo mensual del nivel del río Paraguay, estimado previamente mediante el modelo LSTM univariado, y la variable binaria de cuarentena por COVID-19, que representa los períodos de restricción sanitaria durante el confinamiento por COVID-19.
 
 \justify
-Para cada material de construcción, el conjunto de datos se dividió en entrenamiento y prueba, utilizando los últimos 15 meses como segmento de evaluación. La selección de los parámetros óptimos $(p, d, q)(P, D, Q, s)$ se realizó mediante la función \texttt{pmdarima.auto\_arima}, que efectúa una búsqueda iterativa de combinaciones de órdenes con el fin de minimizar el AIC y optimizar el desempeño del modelo.
+El conjunto de datos de cada material se particionó en 70\,\% para entrenamiento (97 observaciones), 15\,\% para validación (20 observaciones) y 15\,\% para prueba (22 observaciones). La selección de los parámetros óptimos $(p, d, q)(P, D, Q, s)$ se realizó mediante la función \texttt{pmdarima.auto\_arima}, que efectúa una búsqueda iterativa de combinaciones de órdenes con el fin de minimizar el AIC.
 
 \justify
 Adicionalmente, se realizó una validación cruzada por ventana deslizante (\textit{rolling forecast}) para obtener una estimación más robusta del desempeño real del modelo a lo largo de todo el período histórico disponible.
@@ -83,20 +78,17 @@ Adicionalmente, se realizó una validación cruzada por ventana deslizante (\tex
 Para la predicción de los precios mensuales del cemento y del ladrillo común se implementaron modelos basados en la arquitectura LSTM. Estos modelos son ampliamente utilizados en el tratamiento de series temporales no lineales, ya que permiten capturar dependencias de largo y corto plazo en los datos.
 
 \justify
-Los modelos reciben como entrada las siguientes 6 variables: precio promedio polinomial de grado 2, nivel mensual del río Paraguay, indicador de confinamiento por COVID-19, las componentes sinusoidal y cosenoidal del mes (\textit{mes\_sin}, \textit{mes\_cos}) y el año normalizado (\textit{anio\_norm}). Las series se escalaron en el rango $[-1, 1]$ mediante MinMaxScaler.
+Los modelos reciben como entrada las siguientes 6 variables: precio promedio polinomial de grado 2, mínimo mensual del nivel del río Paraguay, indicador de confinamiento por COVID-19, las componentes sinusoidal y cosenoidal del mes (\textit{mes\_sin}, \textit{mes\_cos}) y el año normalizado (\textit{anio\_norm}). El precio se escaló en el rango $[-1, 1]$ con MinMaxScaler, mientras que el nivel del río se escaló con RobustScaler por su resistencia a valores extremos.
 
 \justify
 Los datos fueron divididos cronológicamente: 97 meses para entrenamiento, 20 meses para validación y 22 meses para prueba. La búsqueda de hiperparámetros se realizó con Optuna, y los intervalos de confianza al 95\% se estimaron mediante Monte Carlo Dropout ($N=100$ simulaciones).
 
 \subsection{Gated Recurrent Unit (GRU)}
 \justify
-Como arquitectura complementaria al LSTM, se evaluó la GRU (\textit{Gated Recurrent Unit}), propuesta por Cho et al.\ (2014) como una simplificación de la celda LSTM. Mientras que la LSTM emplea tres compuertas (entrada, olvido y salida), la GRU utiliza únicamente dos —la compuerta de actualización (\textit{update gate}) y la compuerta de reinicio (\textit{reset gate})—, lo que reduce el número de parámetros entrenables y puede favorecer la convergencia en datasets de tamaño moderado.
+Como arquitectura complementaria al LSTM, se evaluó la GRU (\textit{Gated Recurrent Unit}), propuesta por Cho et al.\ (2014) como una simplificación de la celda LSTM. Mientras que la LSTM emplea tres compuertas (entrada, olvido y salida), la GRU utiliza únicamente dos: la compuerta de actualización (\textit{update gate}) y la compuerta de reinicio (\textit{reset gate}), lo que reduce el número de parámetros entrenables y puede favorecer la convergencia en datasets de tamaño moderado.
 
 \justify
 Los modelos GRU se entrenaron sobre los mismos datos, con las mismas variables de entrada, la misma partición temporal y la misma metodología de búsqueda de hiperparámetros con Optuna que se describió para los modelos LSTM. Las 6 \textit{features} de entrada son idénticas, y la implementación también se realizó con TensorFlow 2.19.0 / Keras.
-
-\justify
-Todos los modelos de aprendizaje profundo (LSTM y GRU) fueron entrenados en la plataforma Kaggle, utilizando dos GPUs Tesla T4 bajo la estrategia \texttt{MirroredStrategy} de TensorFlow.
 
 % ============================================================
 \section{Escenarios de experimentación}

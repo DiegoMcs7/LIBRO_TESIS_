@@ -41,11 +41,11 @@ La Figura~\ref{fig:lstm_cemento_eda_serie} presenta la serie histórica del prec
 \paragraph{Hiperparámetros y Arquitectura}
 
 \justify
-La búsqueda con Optuna (300 ensayos, 178,5 min) identificó una arquitectura LSTM \textbf{bidireccional} con 64 unidades ocultas y 36.481 parámetros entrenables. El optimizador Adam con $\eta=0{,}008575$ y \textit{weight decay} $1{,}39 \times 10^{-7}$, \textit{dropout} de 0,15, \textit{dropout} recurrente de 0,1, \textit{lookback} de 3 meses, \textit{batch size} de 16 y \textit{scheduler} ReduceLROnPlateau resultaron la configuración óptima. La Tabla~\ref{tab:lstm_cemento_sc_hiper} detalla estos parámetros.
+La búsqueda con Optuna (261 ensayos, 178,5 min) identificó una arquitectura LSTM \textbf{bidireccional} con 64 unidades ocultas y 36.481 parámetros entrenables. El optimizador Adam con $\eta=0{,}008575$ y \textit{weight decay} $1{,}39 \times 10^{-7}$, \textit{dropout} de 0,15, \textit{dropout} recurrente de 0,1, \textit{lookback} de 3 meses, \textit{batch size} de 16 y \textit{scheduler} ReduceLROnPlateau resultaron la configuración óptima. La Tabla~\ref{tab:lstm_cemento_sc_hiper} detalla estos parámetros.
 
 \begin{table}[H]
 \centering
-\caption{Hiperparámetros del modelo LSTM para cemento --- escenario sin confinamiento (Optuna: 300 ensayos).}
+\caption{Hiperparámetros del modelo LSTM para cemento --- escenario sin confinamiento (Optuna: 261 ensayos).}
 \label{tab:lstm_cemento_sc_hiper}
 \begin{tabular}{ll}
 \toprule
@@ -175,11 +175,11 @@ Julio 2026       & 59.336 & Julio 2027       & 59.093 \\
 \paragraph{Hiperparámetros y Arquitectura}
 
 \justify
-Para el escenario con confinamiento, la búsqueda con Optuna (300 ensayos, 172,3 min) convergió a la misma arquitectura LSTM \textbf{bidireccional} que el escenario sin confinamiento: 64 unidades ocultas, 36.481 parámetros entrenables, optimizador Adam con $\eta=0{,}008575$ y \textit{weight decay} $1{,}39 \times 10^{-7}$, \textit{dropout} de 0,15, \textit{dropout} recurrente de 0,1, \textit{lookback} de 3 meses, \textit{batch size} de 16 y \textit{scheduler} ReduceLROnPlateau. La Tabla~\ref{tab:lstm_cemento_cc_hiper} detalla estos parámetros.
+Para el escenario con confinamiento, la búsqueda con Optuna (261 ensayos, 172,3 min) convergió a la misma arquitectura LSTM \textbf{bidireccional} que el escenario sin confinamiento: 64 unidades ocultas, 36.481 parámetros entrenables, optimizador Adam con $\eta=0{,}008575$ y \textit{weight decay} $1{,}39 \times 10^{-7}$, \textit{dropout} de 0,15, \textit{dropout} recurrente de 0,1, \textit{lookback} de 3 meses, \textit{batch size} de 16 y \textit{scheduler} ReduceLROnPlateau. La Tabla~\ref{tab:lstm_cemento_cc_hiper} detalla estos parámetros.
 
 \begin{table}[H]
 \centering
-\caption{Hiperparámetros del modelo LSTM para cemento --- escenario con confinamiento (Optuna: 300 ensayos).}
+\caption{Hiperparámetros del modelo LSTM para cemento --- escenario con confinamiento (Optuna: 261 ensayos).}
 \label{tab:lstm_cemento_cc_hiper}
 \begin{tabular}{ll}
 \toprule
@@ -337,11 +337,11 @@ La Figura~\ref{fig:lstm_ladrillo_eda_serie} presenta la serie histórica del pre
 \paragraph{Hiperparámetros y Arquitectura}
 
 \justify
-La búsqueda con Optuna (300 ensayos, 161,4 min) identificó una arquitectura LSTM \textbf{unidireccional} con una capa de 64 unidades ocultas. Se utilizaron \textit{dropout} de 0,05 y \textit{dropout} recurrente de 0,05, el optimizador AdamW con $\eta=0{,}008599$ y \textit{weight decay} $5{,}03 \times 10^{-4}$, \textit{lookback} de 6 meses, \textit{batch size} de 8 y sin planificador de tasa de aprendizaje. La Tabla~\ref{tab:lstm_ladrillo_sc_hiper} detalla estos parámetros.
+La búsqueda con Optuna (245 ensayos, 161,4 min) identificó una arquitectura LSTM \textbf{unidireccional} con una capa de 64 unidades ocultas. Se utilizaron \textit{dropout} de 0,05 y \textit{dropout} recurrente de 0,05, el optimizador AdamW con $\eta=0{,}008599$ y \textit{weight decay} $5{,}03 \times 10^{-4}$, \textit{lookback} de 6 meses, \textit{batch size} de 8 y sin planificador de tasa de aprendizaje. La Tabla~\ref{tab:lstm_ladrillo_sc_hiper} detalla estos parámetros.
 
 \begin{table}[H]
 \centering
-\caption{Hiperparámetros óptimos del modelo LSTM para ladrillo --- escenario sin confinamiento (Optuna: 300 ensayos).}
+\caption{Hiperparámetros óptimos del modelo LSTM para ladrillo --- escenario sin confinamiento (Optuna: 245 ensayos).}
 \label{tab:lstm_ladrillo_sc_hiper}
 \begin{tabular}{ll}
 \toprule
@@ -472,7 +472,7 @@ Julio 2026       & 659 & Julio 2027       & 675 \\
 \paragraph{Hiperparámetros y Arquitectura}
 
 \justify
-Para el escenario con confinamiento, la búsqueda con Optuna (300 ensayos, 186,8 min) convergió a una arquitectura LSTM \textbf{bidireccional} con 64 unidades ocultas y 36.481 parámetros entrenables. A diferencia del escenario sin confinamiento, Optuna seleccionó tasas de regularización más agresivas: \textit{dropout} de 0,35 y \textit{dropout} recurrente de 0,2. El optimizador fue RMSprop con $\eta=0{,}002662$ y \textit{weight decay} $9{,}63 \times 10^{-5}$, \textit{lookback} de 3 meses, \textit{batch size} de 16 y planificador StepLR. La Tabla~\ref{tab:lstm_ladrillo_cc_hiper} detalla estos parámetros.
+Para el escenario con confinamiento, la búsqueda con Optuna (261 ensayos, 186,8 min) convergió a una arquitectura LSTM \textbf{bidireccional} con 64 unidades ocultas y 36.481 parámetros entrenables. A diferencia del escenario sin confinamiento, Optuna seleccionó tasas de regularización más agresivas: \textit{dropout} de 0,35 y \textit{dropout} recurrente de 0,2. El optimizador fue RMSprop con $\eta=0{,}002662$ y \textit{weight decay} $9{,}63 \times 10^{-5}$, \textit{lookback} de 3 meses, \textit{batch size} de 16 y planificador StepLR. La Tabla~\ref{tab:lstm_ladrillo_cc_hiper} detalla estos parámetros.
 
 \begin{table}[H]
 \centering

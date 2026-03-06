@@ -24,7 +24,7 @@ Para el cemento, la búsqueda con Optuna convergió a la misma configuración en
 \paragraph{Hiperparámetros y Arquitectura}
 
 \justify
-La búsqueda con Optuna (300 ensayos, 154,1 min) para el escenario sin confinamiento seleccionó una capa GRU unidireccional con 64 unidades ocultas, ventana de entrada (\textit{lookback}) de 4 meses, optimizador AdamW con tasa de aprendizaje $\eta = 0{,}006946$ y \textit{weight decay} de $2{,}26 \times 10^{-4}$, \textit{batch size} de 8, \textit{dropout} de 0{,}1, \textit{dropout} recurrente de 0{,}1, y \textit{scheduler} ReduceLROnPlateau. La arquitectura resultante totaliza 13.889 parámetros entrenables. La Tabla~\ref{tab:gru_cemento_sc_arq} resume los hiperparámetros seleccionados.
+La búsqueda con Optuna (261 ensayos, 154,1 min) para el escenario sin confinamiento seleccionó una capa GRU unidireccional con 64 unidades ocultas, ventana de entrada (\textit{lookback}) de 4 meses, optimizador AdamW con tasa de aprendizaje $\eta = 0{,}006946$ y \textit{weight decay} de $2{,}26 \times 10^{-4}$, \textit{batch size} de 8, \textit{dropout} de 0{,}1, \textit{dropout} recurrente de 0{,}1, y \textit{scheduler} ReduceLROnPlateau. La arquitectura resultante totaliza 13.889 parámetros entrenables. La Tabla~\ref{tab:gru_cemento_sc_arq} resume los hiperparámetros seleccionados.
 
 \begin{table}[H]
     \centering
@@ -154,7 +154,7 @@ Julio 2026       & 62.252 & Julio 2027       & 62.285 \\
 \paragraph{Hiperparámetros y Arquitectura}
 
 \justify
-Para el escenario con efecto del confinamiento por COVID-19, la búsqueda con Optuna (300 ensayos, 176,8 min) convergió a la misma configuración que el escenario sin confinamiento: una capa GRU unidireccional con 64 unidades ocultas, ventana de entrada (\textit{lookback}) de 4 meses, optimizador AdamW con tasa de aprendizaje $\eta = 0{,}006946$ y \textit{weight decay} de $2{,}26 \times 10^{-4}$, \textit{batch size} de 8, \textit{dropout} de 0{,}1, \textit{dropout} recurrente de 0{,}1 y \textit{scheduler} ReduceLROnPlateau. Los 13.889 parámetros entrenables son idénticos al escenario sin confinamiento. La Tabla~\ref{tab:gru_cemento_cc_arq} resume estos parámetros.
+Para el escenario con efecto del confinamiento por COVID-19, la búsqueda con Optuna (261 ensayos, 176,8 min) convergió a la misma configuración que el escenario sin confinamiento: una capa GRU unidireccional con 64 unidades ocultas, ventana de entrada (\textit{lookback}) de 4 meses, optimizador AdamW con tasa de aprendizaje $\eta = 0{,}006946$ y \textit{weight decay} de $2{,}26 \times 10^{-4}$, \textit{batch size} de 8, \textit{dropout} de 0{,}1, \textit{dropout} recurrente de 0{,}1 y \textit{scheduler} ReduceLROnPlateau. Los 13.889 parámetros entrenables son idénticos al escenario sin confinamiento. La Tabla~\ref{tab:gru_cemento_cc_arq} resume estos parámetros.
 
 \begin{table}[H]
     \centering
@@ -295,11 +295,11 @@ Para el ladrillo, la búsqueda con Optuna fue realizada de forma independiente e
 \paragraph{Hiperparámetros y Arquitectura}
 
 \justify
-La búsqueda con Optuna (261 ensayos, 194,9 min) identificó una arquitectura GRU unidireccional con 64 unidades ocultas y ventana de entrada (\textit{lookback}) de 3 meses. El optimizador Adam con $\eta = 0{,}008441$ y \textit{weight decay} de $1{,}04 \times 10^{-6}$ resultó la configuración más eficiente, junto con \textit{batch size} de 8, \textit{dropout} de 0{,}05, \textit{dropout} recurrente de 0{,}2 y \textit{scheduler} StepLR. La arquitectura totaliza 13.889 parámetros entrenables. La Tabla~\ref{tab:gru_ladrillo_sc_arq} resume los hiperparámetros.
+La búsqueda con Optuna (261 ensayos, 186,6 min) identificó una arquitectura GRU unidireccional con 64 unidades ocultas y ventana de entrada (\textit{lookback}) de 3 meses. El optimizador Adam con $\eta = 0{,}008441$ y \textit{weight decay} de $1{,}04 \times 10^{-6}$ resultó la configuración más eficiente, junto con \textit{batch size} de 8, \textit{dropout} de 0{,}05, \textit{dropout} recurrente de 0{,}2 y \textit{scheduler} StepLR. La arquitectura totaliza 13.889 parámetros entrenables. La Tabla~\ref{tab:gru_ladrillo_sc_arq} resume los hiperparámetros.
 
 \begin{table}[H]
     \centering
-    \caption{Hiperparámetros del modelo GRU para ladrillo --- escenario sin confinamiento (Optuna: 261 ensayos, 194{,}9 min).}
+    \caption{Hiperparámetros del modelo GRU para ladrillo --- escenario sin confinamiento (Optuna: 261 ensayos, 186{,}6 min).}
     \label{tab:gru_ladrillo_sc_arq}
     \begin{tabular}{ll}
         \toprule
@@ -425,7 +425,7 @@ Julio 2026       & 705 & Julio 2027       & 716 \\
 \paragraph{Hiperparámetros y Arquitectura}
 
 \justify
-Para el escenario con confinamiento, la búsqueda con Optuna (300 ensayos, 159,9 min) convergió a una configuración diferente: una GRU unidireccional con 64 unidades ocultas, Adam con $\eta = 0{,}009764$ y \textit{weight decay} $3{,}55 \times 10^{-4}$, \textit{lookback} de 3 meses, \textit{batch size} de 8, \textit{dropout} de 0{,}05, \textit{dropout} recurrente de 0{,}05 y sin planificador de tasa de aprendizaje. Los 13.889 parámetros entrenables coinciden con el escenario sin confinamiento. La Tabla~\ref{tab:gru_ladrillo_cc_arq} resume estos parámetros.
+Para el escenario con confinamiento, la búsqueda con Optuna (220 ensayos, 159,9 min) convergió a una configuración diferente: una GRU unidireccional con 64 unidades ocultas, Adam con $\eta = 0{,}009764$ y \textit{weight decay} $3{,}55 \times 10^{-4}$, \textit{lookback} de 3 meses, \textit{batch size} de 8, \textit{dropout} de 0{,}05, \textit{dropout} recurrente de 0{,}05 y sin planificador de tasa de aprendizaje. Los 13.889 parámetros entrenables coinciden con el escenario sin confinamiento. La Tabla~\ref{tab:gru_ladrillo_cc_arq} resume estos parámetros.
 
 \begin{table}[H]
     \centering
