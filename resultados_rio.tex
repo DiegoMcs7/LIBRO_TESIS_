@@ -11,7 +11,7 @@ La serie contiene 4.177 registros diarios únicos del nivel del río Paraguay en
 \justify
 Las estadísticas descriptivas de la variable muestran una media de 2,63 m y una desviación estándar de 2,17 m, con valores entre $-1{,}61$ m y $7{,}88$ m. La Figura \ref{fig:serie_historica} muestra la serie completa, donde se aprecia la alternancia entre períodos de crecida y estiaje con amplitudes marcadamente distintas entre años.
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_nivel_rio/resultados/grafico_00_serie_historica.png}
     \caption{Serie histórica completa del nivel diario del río Paraguay (2014--2025).}
@@ -24,7 +24,7 @@ El modelo recibe 12 variables de entrada por paso de tiempo: el nivel del río m
 \justify
 La partición del dataset siguió un criterio estrictamente cronológico. El conjunto de entrenamiento comprende desde el 1 de enero de 2014 hasta el 22 de enero de 2022 (2.944 observaciones, aproximadamente el 70\% del total); el de validación, desde el 23 de enero de 2022 hasta el 14 de octubre de 2023 (630 observaciones, el 15\%); y el de prueba, desde el 15 de octubre de 2023 hasta el 7 de julio de 2025 (632 observaciones, el 15\% restante). Al aplicar la ventana de lookback de 30 días al conjunto de entrenamiento, el número efectivo de secuencias se reduce a 2.914. Esta proporción fue seleccionada por ser la que produjo el mejor resultado en experimentos previos con distintas configuraciones de partición. La Figura \ref{fig:particiones} muestra la distribución temporal de los tres subconjuntos.
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_nivel_rio/resultados/grafico_01_particiones.png}
     \caption{Partición cronológica de la serie: entrenamiento (azul), validación (naranja) y prueba (verde).}
@@ -39,7 +39,7 @@ La búsqueda de hiperparámetros se realizó con Optuna, usando el sampler TPE (
 \justify
 La Figura \ref{fig:optuna_historia} presenta la evolución del RMSE de validación a lo largo de los 300 trials y la importancia relativa de cada hiperparámetro. El número de capas (\texttt{n\_layers}) resultó el factor más influyente, seguido por la estrategia de predicción y la tasa de aprendizaje.
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_nivel_rio/resultados/grafico_03_optuna_historia.png}
     \caption{Historia de optimización de Optuna (izquierda) e importancia relativa de hiperparámetros (derecha).}
@@ -49,7 +49,7 @@ La Figura \ref{fig:optuna_historia} presenta la evolución del RMSE de validaci�
 \justify
 Los hiperparámetros óptimos se resumen en la Tabla \ref{tab:hiperparametros_lstm_rio}.
 
-\begin{table}[ht]
+\begin{table}[H]
     \centering
     \caption{Hiperparámetros óptimos del modelo LSTM para la predicción del nivel del río Paraguay.}
     \label{tab:hiperparametros_lstm_rio}
@@ -81,7 +81,7 @@ La configuración óptima corresponde a una sola capa LSTM con 512 unidades ocul
 \justify
 El modelo final fue entrenado durante 99 épocas con los hiperparámetros óptimos, una ventana de lookback de 30 días y una paciencia de 30 épocas para la detención temprana. La Figura \ref{fig:curva_aprendizaje} presenta la evolución del error de entrenamiento y validación a lo largo del proceso.
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{predicciones/prediccion_nivel_rio/resultados/grafico_04_curva_aprendizaje.png}
     \caption{Curva de aprendizaje del modelo LSTM: RMSE de entrenamiento y validación por época.}
@@ -96,7 +96,7 @@ Durante las primeras épocas, la pérdida cae rápidamente desde valores en torn
 \justify
 La Tabla \ref{tab:metricas_lstm_rio} presenta el RMSE en los tres subconjuntos, tanto en escala normalizada como en metros.
 
-\begin{table}[ht]
+\begin{table}[H]
     \centering
     \caption{Métricas de evaluación RMSE del modelo LSTM en los conjuntos de entrenamiento, validación y prueba.}
     \label{tab:metricas_lstm_rio}
@@ -117,7 +117,7 @@ El error en el conjunto de prueba es de 4,57 cm, sobre una variable que oscila e
 \justify
 Dado que el modelo emplea una estrategia recursiva unistep, cada predicción corresponde a un único paso adelante ($t+1$). La Figura \ref{fig:rmse_por_paso} ilustra este punto de evaluación en el conjunto de prueba, con un RMSE de 0,0457 m.
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{predicciones/prediccion_nivel_rio/resultados/grafico_05_rmse_por_paso.png}
     \caption{RMSE por paso de predicción ($t+1$) en el conjunto de prueba.}
@@ -129,7 +129,7 @@ Dado que el modelo emplea una estrategia recursiva unistep, cada predicción cor
 \justify
 Se analizaron los residuos sobre el conjunto de validación para evaluar el sesgo y la distribución estadística de los errores. La Figura \ref{fig:distribucion_errores} presenta el histograma de errores y el gráfico Q-Q de normalidad.
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_nivel_rio/resultados/grafico_06_distribucion_errores.png}
     \caption{Distribución de errores del modelo LSTM en validación: histograma (izquierda) y gráfico Q-Q (derecha).}
@@ -147,7 +147,7 @@ Concluida la evaluación, se generó la predicción del nivel diario para un hor
 \justify
 La Figura \ref{fig:historico_prediccion} muestra la serie histórica completa junto con la predicción generada y la climatología histórica como referencia estacional.
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_nivel_rio/resultados/grafico_08_historico_mas_prediccion.png}
     \caption{Serie histórica del nivel del río Paraguay y predicción LSTM a 730 días (julio 2025 -- julio 2027).}
@@ -157,7 +157,7 @@ La Figura \ref{fig:historico_prediccion} muestra la serie histórica completa ju
 \justify
 La Figura \ref{fig:zoom_transicion} muestra en detalle la transición entre datos reales (últimos 6 meses, en azul) y el inicio de la predicción (primeros 6 meses proyectados, en rojo). A partir del 8 de julio de 2025, el modelo proyecta un descenso progresivo desde los 3,08 m iniciales hasta un mínimo de aproximadamente 0,88 m hacia mediados de octubre de 2025, seguido de una recuperación que alcanza los 2,31 m hacia fines de diciembre de 2025, patrón consistente con el ciclo estacional del río.
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_nivel_rio/resultados/grafico_09_zoom_transicion.png}
     \caption{Zoom en la transición entre datos reales y predicción LSTM: últimos 6 meses reales y primeros 6 meses proyectados.}
@@ -167,7 +167,7 @@ La Figura \ref{fig:zoom_transicion} muestra en detalle la transición entre dato
 \justify
 La Figura \ref{fig:climatologia_prediccion} compara la predicción a 730 días con la climatología histórica tanto en la vista temporal de la proyección como en el ciclo estacional anual suavizado.
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_nivel_rio/resultados/grafico_11_climatologia_prediccion.png}
     \caption{Comparación entre la predicción LSTM a 730 días y la climatología histórica de referencia estacional.}

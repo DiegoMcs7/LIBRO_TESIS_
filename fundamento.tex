@@ -18,38 +18,31 @@ El modelo ARIMA (AutoRegressive Integrated Moving Average) es una técnica estad
 ARIMA combina tres componentes principales:
  
 \begin{itemize}
-\item AR (autoregresivo, p): supone que la variable $(Y_t)$ depende linealmente de sus valores anteriores. Por ejemplo, un modelo AR de orden (p) se define como: 
+\item AR (autoregresivo, $p$): supone que la variable $Y_t$ depende linealmente de sus valores anteriores. Por ejemplo, un modelo AR de orden $p$ se define como:
 \begin{equation}
- [
- Y_t = \alpha_1 Y_{t-1} + \alpha_2 Y_{t-2} + \dots + \alpha_p Y_{t-p} + \varepsilon_t
- ]
- \end{equation}
- donde $(\varepsilon_t)$ es ruido blanco y $(\alpha_i)$ son los coeficientes autoregresivos.
-
-\item I (integrado, d): captura la no estacionariedad de la serie mediante diferencias sucesivas. La diferenciación de orden (d) se expresa como:
-\begin{equation}
- [
- \nabla^d Y_t = (1-B)^d Y_t
- ]
- \end{equation}
- donde (B) es el operador de rezago $((B Y_t = Y_{t-1}))$ y $(\nabla^d Y_t)$ se utiliza para estabilizar la media y la varianza de la serie.
-
-\item MA (media móvil, q): modela la dependencia de la variable con los errores pasados. Un modelo MA de orden (q) se define como:
-\begin{equation}
- [
- Y_t = \varepsilon_t + \theta_1 \varepsilon_{t-1} + \dots + \theta_q \varepsilon_{t-q}
- ]
+ Y_t = \phi_1 Y_{t-1} + \phi_2 Y_{t-2} + \dots + \phi_p Y_{t-p} + \varepsilon_t
 \end{equation}
- donde $(\theta_j)'$ son los coeficientes de la media móvil.
+ donde $\varepsilon_t$ es ruido blanco y $\phi_i$ son los coeficientes autoregresivos.
 
+\item I (integrado, $d$): captura la no estacionariedad de la serie mediante diferencias sucesivas. La diferenciación de orden $d$ se expresa como:
+\begin{equation}
+ \nabla^d Y_t = (1-B)^d Y_t
+\end{equation}
+ donde $B$ es el operador de rezago $(B Y_t = Y_{t-1})$ y $\nabla^d Y_t$ se utiliza para estabilizar la media y la varianza de la serie.
+
+\item MA (media móvil, $q$): modela la dependencia de la variable con los errores pasados. Un modelo MA de orden $q$ se define como:
+\begin{equation}
+ Y_t = \varepsilon_t + \theta_1 \varepsilon_{t-1} + \dots + \theta_q \varepsilon_{t-q}
+\end{equation}
+ donde $\theta_j$ son los coeficientes de la media móvil.
+
+\end{itemize}
+
+\justify
 De manera compacta, un ARIMA(p,d,q) se representa como:
 \begin{equation}
- [
  (1 - \phi_1 B - \dots - \phi_p B^p)(1 - B)^d Y_t = (1 + \theta_1 B + \dots + \theta_q B^q) \varepsilon_t
- ]
 \end{equation}
- 
-\end{itemize}
 
 \subsection{SARIMA}
 \justify
@@ -60,37 +53,35 @@ Mientras que el modelo $ARIMA(p, d, q)$ aborda las relaciones no estacionales �
 
 \justify
 Los parámetros del modelo tienen la siguiente interpretación:
-p: orden del componente autoregresivo (AR) no estacional, que mide la influencia de valores pasados sobre el actual.
 
 \begin{itemize}
-\item d: número de diferencias no estacionales necesarias para lograr estacionariedad en la serie.
-\item q: orden del componente media móvil (MA) no estacional, que modela la dependencia respecto a errores pasados.
-\item P: orden del componente autoregresivo estacional (SAR).
-\item D: número de diferencias estacionales aplicadas para eliminar la tendencia o estacionalidad.
-\item Q: orden del componente media móvil estacional (SMA).
-\item s: longitud del ciclo estacional (por ejemplo, (s = 12) para datos mensuales o (s = 4) para datos trimestrales).
+\item $p$: orden del componente autoregresivo (AR) no estacional, que mide la influencia de valores pasados sobre el actual.
+\item $d$: número de diferencias no estacionales necesarias para lograr estacionariedad en la serie.
+\item $q$: orden del componente media móvil (MA) no estacional, que modela la dependencia respecto a errores pasados.
+\item $P$: orden del componente autoregresivo estacional (SAR).
+\item $D$: número de diferencias estacionales aplicadas para eliminar la tendencia o estacionalidad.
+\item $Q$: orden del componente media móvil estacional (SMA).
+\item $s$: longitud del ciclo estacional (por ejemplo, $s = 12$ para datos mensuales o $s = 4$ para datos trimestrales).
 
 \end{itemize}
 
 \justify
 La formulación general del modelo se expresa como:
 \begin{equation}
- [
- \Phi_P(B^s),\phi_p(B),(1 - B)^d,(1 - B^s)^D,Y_t
- = \Theta_Q(B^s),\theta_q(B),\varepsilon_t
- ]
+ \Phi_P(B^s)\,\phi_p(B)\,(1 - B)^d\,(1 - B^s)^D\,Y_t
+ = \Theta_Q(B^s)\,\theta_q(B)\,\varepsilon_t
 \end{equation}
 
 \justify
 donde:
 \begin{itemize}
-\item  (B) es el operador de rezago $((B Y_t = Y_{t-1}))$,
+\item  $B$ es el operador de rezago $(B Y_t = Y_{t-1})$,
 
-\item  $(\phi_p(B))$ y $(\theta_q(B))$ son los polinomios no estacionales de los componentes AR y MA,
+\item  $\phi_p(B)$ y $\theta_q(B)$ son los polinomios no estacionales de los componentes AR y MA,
 
-\item  $(\Phi_P(B^s))$ y $(\Theta_Q(B^s))$ son los polinomios estacionales de los componentes SAR y SMA, y
+\item  $\Phi_P(B^s)$ y $\Theta_Q(B^s)$ son los polinomios estacionales de los componentes SAR y SMA, y
 
-\item  $(\varepsilon_t)$ representa un proceso de ruido blanco.
+\item  $\varepsilon_t$ representa un proceso de ruido blanco.
 \end{itemize}
 
 \subsection{SARIMAX}
@@ -99,25 +90,23 @@ El modelo SARIMAX (Seasonal AutoRegressive Integrated Moving Average with eXogen
 Matemáticamente, el modelo puede expresarse como:
 
 \begin{equation}
-[
- \Phi_P(B^s),\phi_p(B),(1 - B)^d,(1 - B^s)^D,Y_t
- = \beta X_t + \Theta_Q(B^s),\theta_q(B),\varepsilon_t
- ]
+ \Phi_P(B^s)\,\phi_p(B)\,(1 - B)^d\,(1 - B^s)^D\,Y_t
+ = \beta X_t + \Theta_Q(B^s)\,\theta_q(B)\,\varepsilon_t
 \end{equation}
 
 \justify
 donde:
 \begin{itemize}
-\item $(Y_t)$: variable dependiente o serie temporal a modelar.
-\item $(X_t)$: vector de variables exógenas observadas en el tiempo (t).
-\item $(\beta)$: vector de coeficientes asociados a las variables exógenas.
-\item (B): operador de rezago $((B Y_t = Y_{t-1}))$.
-\item $(\phi_p(B))$ y $(\theta_q(B))$: polinomios no estacionales de los componentes autoregresivo (AR) y de media móvil (MA), respectivamente.
-\item $(\Phi_P(B^s))$ y $(\Theta_Q(B^s))$: polinomios estacionales de los componentes autoregresivo (SAR) y de media móvil (SMA).
-\item (d): número de diferencias no estacionales necesarias para eliminar la tendencia.
-\item (D): número de diferencias estacionales necesarias para eliminar la periodicidad.
-\item (s): longitud del ciclo estacional.
-\item $(\varepsilon_t)$: término de error aleatorio o ruido blanco, $(\varepsilon_t$ $\sim N(0,$ $\sigma^2))$.
+\item $Y_t$: variable dependiente o serie temporal a modelar.
+\item $X_t$: vector de variables exógenas observadas en el tiempo $t$.
+\item $\beta$: vector de coeficientes asociados a las variables exógenas.
+\item $B$: operador de rezago $(B Y_t = Y_{t-1})$.
+\item $\phi_p(B)$ y $\theta_q(B)$: polinomios no estacionales de los componentes autoregresivo (AR) y de media móvil (MA), respectivamente.
+\item $\Phi_P(B^s)$ y $\Theta_Q(B^s)$: polinomios estacionales de los componentes autoregresivo (SAR) y de media móvil (SMA).
+\item $d$: número de diferencias no estacionales necesarias para eliminar la tendencia.
+\item $D$: número de diferencias estacionales necesarias para eliminar la periodicidad.
+\item $s$: longitud del ciclo estacional.
+\item $\varepsilon_t$: término de error aleatorio o ruido blanco, $\varepsilon_t \sim N(0, \sigma^2)$.
 \end{itemize}
 
 \section{Machine Learning}
@@ -128,7 +117,7 @@ Una definición concisa de Machine Learning (ML) es la de Murphy \cite{murphy201
 Dentro del ML, el aprendizaje profundo (Deep Learning, DL) ocupa un lugar particular. Es, en esencia, una subrama que trabaja con redes neuronales de múltiples capas, capaces de representar relaciones muy complejas sin que el investigador tenga que definirlas explícitamente \cite{chollet2021deep}. La diferencia práctica es relevante: mientras un modelo de ML clásico suele requerir que el analista seleccione y construya las características más informativas, un modelo de DL puede derivarlas directamente de los datos crudos. Esa autonomía tiene un costo — más datos, más cómputo, menos interpretabilidad — pero en series temporales complejas y no lineales, como las de precios de materiales de construcción, esa capacidad de abstracción resulta valiosa.
 
 \justify
-El ML puede clasificarse en 3 categorias principales:
+El ML puede clasificarse en 3 categorías principales:
 
 \begin{itemize}
 \item Aprendizaje supervisado: es un enfoque del ML en el cual el modelo se entrena utilizando un conjunto de datos etiquetado, es decir, donde las entradas están asociadas con sus salidas correspondientes. Durante el proceso de entrenamiento, el algoritmo aprende a relacionar las variables de entrada con las salidas esperadas, con el objetivo de generalizar ese conocimiento a nuevos datos. Uno de los problemas más comunes dentro del aprendizaje supervisado es la clasificación \cite{allix2003epistemology}.
@@ -149,9 +138,9 @@ De esta forma, las ANNs reproducen el comportamiento de sistemas complejos, perm
 Las neuronas artificiales se estructuran en capas jerárquicas, clasificadas en tres tipos: capa de entrada, capas ocultas y capa de salida.
 La capa de entrada recibe los datos del entorno; las capas ocultas procesan la información y extraen patrones complejos, siendo su número y tamaño variables según el problema; finalmente, la capa de salida produce la respuesta del modelo, adaptada al tipo de tarea (una neurona para regresión o varias para clasificación).
 El flujo de información se produce de forma secuencial desde la entrada hasta la salida, donde cada neurona transmite su salida como entrada a las neuronas de la capa siguiente.
-La Figura \ref{fig:rna} Muestra la estructura general que presenta una red neuronal.
+La Figura \ref{fig:rna} muestra la estructura general que presenta una red neuronal.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{images/rna.png}
     \caption{Estructura general de una Red Neuronal Artificial}
@@ -176,7 +165,7 @@ Las RNNs son un tipo de red que mantiene información de pasos anteriores median
 Mientras que las redes tradicionales aprenden únicamente de los datos actuales, las RNNs integran el estado oculto como una forma de memoria que se actualiza con cada nueva entrada.
 Esta memoria, almacenada en un vector, se combina con el nuevo dato de entrada para producir una salida (Y) y actualizar el estado interno, como se muestra en la Figura \ref{fig:rnn}.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.4\textwidth]{images/rnn.png}
     \caption{Estructura de una Red Neuronal Recurrente (RNN)}
@@ -186,7 +175,7 @@ Esta memoria, almacenada en un vector, se combina con el nuevo dato de entrada p
 \justify
 Las unidades de una RNN se denominan \textit{unidades recurrentes} porque el valor actual depende de manera recurrente de los eventos previos. Este comportamiento puede interpretarse como la existencia de múltiples copias del mismo nodo, cada una transmitiendo información de forma secuencial hacia su sucesor. Esta relación recursiva se ilustra en la Figura~\ref{fig:rnn_arc}.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{images/rnn_arc.png}
     \caption{Arquitectura de una Red Neuronal Recurrente (RNN)}
@@ -201,12 +190,12 @@ Cada unidad cuenta con tres conjuntos de pesos: uno para las entradas ($X$), otr
 
 \subsection{Long Short-Term Memory (LSTM)}
 \justify
-Las redes LSTM, introducidas por Hochreiter y Schmidhuber (1997), constituyen una variante de las RNNs desarrollada con el propósito de superar las limitaciones de estas últimas al aprender dependencias de largo plazo en secuencias.
+Las redes LSTM, introducidas por Hochreiter y Schmidhuber \cite{hochreiter1997long}, constituyen una variante de las RNNs desarrollada con el propósito de superar las limitaciones de estas últimas al aprender dependencias de largo plazo en secuencias.
 En los modelos RNN convencionales, la información se transmite a través de los estados ocultos a lo largo del tiempo, pero durante el proceso de entrenamiento basado en retropropagación a través del tiempo (BPTT) los gradientes tienden a desvanecerse o explotar.
 Este fenómeno impide que las RNN aprendan eficazmente relaciones entre eventos temporalmente distantes.
 \justify
 El modelo LSTM introduce una unidad de memoria interna, denominada celda, que puede mantener información constante a lo largo de múltiples pasos temporales, resolviendo de manera efectiva el problema del desvanecimiento del gradiente.
-Cada celda incluye un estado interno $(C_t)$ y un estado oculto $(H_t)$, junto con un conjunto de compuertas multiplicativas que regulan el flujo de información.
+Cada celda incluye un estado interno $C_t$ y un estado oculto $H_t$, junto con un conjunto de compuertas multiplicativas que regulan el flujo de información.
 \justify
 El principio clave es que el estado interno posee una autoconexión de peso fijo igual a 1, lo cual garantiza que los gradientes puedan fluir a través del tiempo sin desaparecer, manteniendo la información relevante.
 \subsubsection{Compuertas del LSTM}
@@ -216,13 +205,13 @@ Cada celda LSTM cuenta con tres compuertas principales: entrada, olvido y salida
 Estas compuertas controlan de manera diferenciada cómo se actualiza y utiliza la información almacenada en la celda:
 
 \begin{itemize}
-\item Puerta de entrada $(I_t)$: regula cuánta información nueva proveniente de la entrada actual $(X_t)$ se incorpora al estado interno.
-\item  Puerta de olvido $(F_t)$: decide qué fracción del estado anterior $C_{t-1}$ se conserva o se descarta.
-\item  Puerta de salida $(O_t)$: determina cuánto del estado interno actualizado influirá en la salida del modelo $(H_t)$.
+\item Puerta de entrada $I_t$: regula cuánta información nueva proveniente de la entrada actual $X_t$ se incorpora al estado interno.
+\item  Puerta de olvido $F_t$: decide qué fracción del estado anterior $C_{t-1}$ se conserva o se descarta.
+\item  Puerta de salida $O_t$: determina cuánto del estado interno actualizado influirá en la salida del modelo $H_t$.
 \end{itemize}
 
 \justify
-Cada una de estas compuertas se calcula mediante una capa completamente conectada seguida de una función sigmoide, que restringe los valores al intervalo (0, 1). Matemáticamente, para un conjunto de (n) observaciones y (h) unidades ocultas, las compuertas se definen como:
+Cada una de estas compuertas se calcula mediante una capa completamente conectada seguida de una función sigmoide, que restringe los valores al intervalo (0, 1). Matemáticamente, para un conjunto de $n$ observaciones y $h$ unidades ocultas, las compuertas se definen como:
 
 \begin{equation}
 I_t = \sigma(X_t W_{xi} + H_{t-1} W_{hi} + b_i) \
@@ -278,7 +267,7 @@ La Figura \ref{fig:lstmcell} ilustra la estructura interna de una celda de memor
 \justify
 La compuerta de entrada controla cuánta información nueva proveniente de la entrada $X_t$ se incorpora, mientras que la compuerta de olvido determina qué parte del estado previo $C_{t-1}$ debe descartarse. Finalmente, la compuerta de salida define qué proporción del estado interno actualizado influye en la salida del modelo $H_t$.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{images/lstm_cell.png}
     \caption{Estructura interna de una celda de memoria LSTM.} 
@@ -287,7 +276,7 @@ La compuerta de entrada controla cuánta información nueva proveniente de la en
 
 \subsection{Gated Recurrent Unit (GRU)}
 \justify
-Las redes GRU fueron introducidas por Cho et al. (2014) como una simplificación del modelo LSTM. El objetivo fue conservar la capacidad de las redes recurrentes para modelar dependencias a largo plazo, reduciendo al mismo tiempo la complejidad computacional y el número de parámetros.
+Las redes GRU fueron introducidas por Cho et al. \cite{cho2014learning} como una simplificación del modelo LSTM. El objetivo fue conservar la capacidad de las redes recurrentes para modelar dependencias a largo plazo, reduciendo al mismo tiempo la complejidad computacional y el número de parámetros.
 \justify
 A diferencia de las LSTM, las GRU fusionan el estado de la celda y el estado oculto en una única representación, lo que las hace más eficientes sin sacrificar desempeño en la mayoría de los problemas de predicción secuencial.
 \subsubsection{Estructura general}
@@ -302,11 +291,11 @@ Ambas compuertas se activan mediante funciones sigmoides, lo que restringe sus v
 
 \subsubsection{Compuertas de reinicio y actualización}
 \justify
-Sea $X_t \in \mathbb{R}^{n \times d}$ el vector de entrada en el instante ($t$), donde ($n$) representa el tamaño del lote y ($d$) la dimensión de las variables de entrada.
+Sea $X_t \in \mathbb{R}^{n \times d}$ el vector de entrada en el instante $t$, donde $n$ representa el tamaño del lote y $d$ la dimensión de las variables de entrada.
 \justify
 Sea además $H_{t-1} \in \mathbb{R}^{n \times h}$ el estado oculto proveniente del paso temporal anterior, con $h$ unidades ocultas.
 \justify
-La compuerta de reinicio $R_t \in \mathbb{R}^{n \times d}$ y la compuerta de actualización $Z_t \in \mathbb{R}^{n \times d}$ se calculan como:
+La compuerta de reinicio $R_t \in \mathbb{R}^{n \times h}$ y la compuerta de actualización $Z_t \in \mathbb{R}^{n \times h}$ se calculan como:
 
 \begin{equation}
 R_t = \sigma(X_t W_{xr} + H_{t-1} W_{hr} + b_r)
@@ -317,7 +306,7 @@ Z_t = \sigma(X_t W_{xz} + H_{t-1} W_{hz} + b_z)
 \end{equation}
 
 \justify
-donde $W_{xr}, W_{xz} \in \mathbb{R}^{d \times h}$ y $W_{hr}, W_{hz} \in \mathbb{R}^{h \times h}$ son matrices de pesos, mientras que $b_r, b_z \in \mathbb{R}^{1 \times h}$ son los términos de sesgo $bias$.
+donde $W_{xr}, W_{xz} \in \mathbb{R}^{d \times h}$ y $W_{hr}, W_{hz} \in \mathbb{R}^{h \times h}$ son matrices de pesos, mientras que $b_r, b_z \in \mathbb{R}^{1 \times h}$ son los términos de sesgo (\textit{bias}).
 \justify
 Las funciones sigmoides $\sigma(\cdot)$ garantizan que cada componente de las compuertas adopte valores entre 0 y 1, controlando el grado de influencia de la información anterior y la nueva.
 
@@ -325,7 +314,7 @@ Las funciones sigmoides $\sigma(\cdot)$ garantizan que cada componente de las co
 Intuitivamente:
 \begin{itemize}
 \item Cuando $R_t$ toma valores cercanos a 0, la red tiende a olvidar información previa, reiniciando parte del estado.
-\item Cuando $Z_t$ se aproxima a 1, la red preserva el estado anterior, evitando que la nueva entrada lo modifique significativamente.
+\item Cuando $Z_t$ se aproxima a 1, la red adopta el nuevo estado candidato, actualizando la información con la entrada actual.
 \end{itemize}
 
 \subsubsection{Estado oculto candidato}
@@ -336,11 +325,11 @@ La compuerta de reinicio regula la combinación entre la información previa y l
 Integrando este comportamiento, se define un estado oculto candidato $\tilde{H}_t \in \mathbb{R}^{n \times h}$ como:
 
 \begin{equation}
-\tilde{H_t} = \tanh(X_t W_{xh} + (R_t \odot H_{t-1}) W_{hh} + b_h)
+\tilde{H}_t = \tanh(X_t W_{xh} + (R_t \odot H_{t-1}) W_{hh} + b_h)
 \end{equation}
 
 \justify
-donde $W_{xh} \in \mathbb{R}^{d \times h}$ y $W_{hh} \in \mathbb{R}^{h \times h}$ son matrices de pesos, $b_h \in \mathbb{R}^{1 \times h}$ son los términos de sesgo $bias$, el símbolo $\odot$ indica el producto de Hadamard, es decir, una multiplicación elemento a elemento y y la función de activación $tanh$ limita los valores del estado candidato al intervalo (-1,1).
+donde $W_{xh} \in \mathbb{R}^{d \times h}$ y $W_{hh} \in \mathbb{R}^{h \times h}$ son matrices de pesos, $b_h \in \mathbb{R}^{1 \times h}$ son los términos de sesgo (\textit{bias}), el símbolo $\odot$ indica el producto de Hadamard, es decir, una multiplicación elemento a elemento, y la función de activación $\tanh$ limita los valores del estado candidato al intervalo $(-1,1)$.
 
 \justify
 En este paso, la compuerta $R_t$ decide cuánto del estado oculto previo $H_{t-1}$ debe combinarse con la nueva información $X_t$.
@@ -361,8 +350,8 @@ H_t = (1 - Z_t) \odot H_{t-1} + Z_t \odot \tilde{H}_t
 donde $Z_t$ actúa como un mecanismo de interpolación entre el pasado y el presente.
 
 \begin{itemize}
-\item Si $Z_t \approx 1$, el modelo mantiene la memoria previa $H_{t-1}$, ignorando la entrada actual.
-\item Si $Z_t \approx 0$, el modelo adopta completamente el nuevo estado $\tilde{H}_t$, actualizando la información.
+\item Si $Z_t \approx 1$, el modelo adopta completamente el nuevo estado candidato $\tilde{H}_t$, actualizando la información.
+\item Si $Z_t \approx 0$, el modelo mantiene la memoria previa $H_{t-1}$, ignorando la entrada actual.
 \end{itemize}
 
 \justify

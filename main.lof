@@ -18,57 +18,57 @@
 \contentsline {figure}{\numberline {5.7}{\ignorespaces Serie histórica del nivel del río Paraguay y predicción LSTM a 730 días (julio 2025 -- julio 2027).}}{27}{figure.caption.14}%
 \contentsline {figure}{\numberline {5.8}{\ignorespaces Zoom en la transición entre datos reales y predicción LSTM: últimos 6 meses reales y primeros 6 meses proyectados.}}{28}{figure.caption.15}%
 \contentsline {figure}{\numberline {5.9}{\ignorespaces Comparación entre la predicción LSTM a 730 días y la climatología histórica de referencia estacional.}}{28}{figure.caption.16}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Series temporales del precio mensual del cemento (Gs.) y del mínimo mensual del nivel del río Paraguay (m), período 2014--2025.}}{29}{figure.caption.17}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Descomposición estacional de la serie de precio del cemento: tendencia, estacionalidad y componente residual.}}{30}{figure.caption.18}%
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Pronóstico SARIMAX del precio del cemento a 24 meses, escenario sin efecto pandémico.}}{32}{figure.caption.21}%
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Pronóstico SARIMAX del precio del cemento a 24 meses, escenario con efecto pandémico.}}{32}{figure.caption.22}%
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Series temporales del precio mensual del ladrillo (Gs.) y del mínimo mensual del nivel del río Paraguay (m), período 2014--2025.}}{34}{figure.caption.24}%
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Descomposición estacional de la serie de precio del ladrillo: tendencia, estacionalidad y componente residual.}}{35}{figure.caption.25}%
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Pronóstico SARIMAX del precio del ladrillo a 24 meses, escenario sin efecto pandémico.}}{36}{figure.caption.28}%
-\contentsline {figure}{\numberline {5.17}{\ignorespaces Pronóstico SARIMAX del precio del ladrillo a 24 meses, escenario con efecto pandémico.}}{37}{figure.caption.29}%
-\contentsline {figure}{\numberline {5.18}{\ignorespaces Serie histórica mensual del precio del cemento (Gs.), período 2014--2025.}}{39}{figure.caption.31}%
-\contentsline {figure}{\numberline {5.19}{\ignorespaces Descomposición STL de la serie del precio del cemento: tendencia, estacionalidad y residuo.}}{39}{figure.caption.32}%
-\contentsline {figure}{\numberline {5.20}{\ignorespaces Curva de aprendizaje del modelo LSTM para cemento --- escenario sin pandemia.}}{40}{figure.caption.34}%
-\contentsline {figure}{\numberline {5.21}{\ignorespaces Predicción LSTM vs.\ valores reales del precio del cemento --- escenario sin pandemia, conjunto de prueba.}}{41}{figure.caption.36}%
-\contentsline {figure}{\numberline {5.22}{\ignorespaces Ajuste del modelo LSTM del cemento sobre las tres particiones --- escenario sin pandemia.}}{42}{figure.caption.37}%
-\contentsline {figure}{\numberline {5.23}{\ignorespaces Pronóstico LSTM a 24 meses del precio del cemento --- escenario sin pandemia, con IC al 95\,\%.}}{42}{figure.caption.38}%
-\contentsline {figure}{\numberline {5.24}{\ignorespaces Detalle de la transición histórico--pronóstico LSTM del cemento --- escenario sin pandemia.}}{43}{figure.caption.39}%
-\contentsline {figure}{\numberline {5.25}{\ignorespaces Curva de aprendizaje del modelo LSTM para cemento --- escenario con pandemia.}}{44}{figure.caption.42}%
-\contentsline {figure}{\numberline {5.26}{\ignorespaces Predicción LSTM vs.\ valores reales del precio del cemento --- escenario con pandemia, conjunto de prueba.}}{45}{figure.caption.44}%
-\contentsline {figure}{\numberline {5.27}{\ignorespaces Ajuste del modelo LSTM del cemento sobre las tres particiones --- escenario con pandemia.}}{45}{figure.caption.45}%
-\contentsline {figure}{\numberline {5.28}{\ignorespaces Pronóstico LSTM a 24 meses del precio del cemento --- escenario con pandemia, con IC al 95\,\%.}}{46}{figure.caption.46}%
-\contentsline {figure}{\numberline {5.29}{\ignorespaces Detalle de la transición histórico--pronóstico LSTM del cemento --- escenario con pandemia.}}{46}{figure.caption.47}%
-\contentsline {figure}{\numberline {5.30}{\ignorespaces Serie histórica mensual del precio del ladrillo (Gs.), período 2014--2025.}}{47}{figure.caption.49}%
-\contentsline {figure}{\numberline {5.31}{\ignorespaces Descomposición STL de la serie del precio del ladrillo: tendencia, estacionalidad y residuo.}}{48}{figure.caption.50}%
-\contentsline {figure}{\numberline {5.32}{\ignorespaces Curva de aprendizaje del modelo LSTM para ladrillo --- escenario sin pandemia.}}{49}{figure.caption.52}%
-\contentsline {figure}{\numberline {5.33}{\ignorespaces Predicción LSTM vs.\ valores reales del precio del ladrillo --- escenario sin pandemia, conjunto de prueba.}}{50}{figure.caption.54}%
-\contentsline {figure}{\numberline {5.34}{\ignorespaces Ajuste del modelo LSTM del ladrillo sobre las tres particiones --- escenario sin pandemia.}}{50}{figure.caption.55}%
-\contentsline {figure}{\numberline {5.35}{\ignorespaces Pronóstico LSTM a 24 meses del precio del ladrillo --- escenario sin pandemia, con IC al 95\,\%.}}{51}{figure.caption.56}%
-\contentsline {figure}{\numberline {5.36}{\ignorespaces Detalle de la transición histórico--pronóstico LSTM del ladrillo --- escenario sin pandemia.}}{51}{figure.caption.57}%
-\contentsline {figure}{\numberline {5.37}{\ignorespaces Curva de aprendizaje del modelo LSTM para ladrillo --- escenario con pandemia.}}{53}{figure.caption.60}%
-\contentsline {figure}{\numberline {5.38}{\ignorespaces Predicción LSTM vs.\ valores reales del precio del ladrillo --- escenario con pandemia, conjunto de prueba.}}{54}{figure.caption.62}%
-\contentsline {figure}{\numberline {5.39}{\ignorespaces Ajuste del modelo LSTM del ladrillo sobre las tres particiones --- escenario con pandemia.}}{54}{figure.caption.63}%
-\contentsline {figure}{\numberline {5.40}{\ignorespaces Pronóstico LSTM a 24 meses del precio del ladrillo --- escenario con pandemia, con IC al 95\,\%.}}{55}{figure.caption.64}%
-\contentsline {figure}{\numberline {5.41}{\ignorespaces Detalle de la transición histórico--pronóstico LSTM del ladrillo --- escenario con pandemia.}}{55}{figure.caption.65}%
-\contentsline {figure}{\numberline {5.42}{\ignorespaces Curvas de aprendizaje del modelo GRU para cemento --- escenario sin pandemia.}}{57}{figure.caption.68}%
-\contentsline {figure}{\numberline {5.43}{\ignorespaces Predicción GRU vs.\ valores reales del precio del cemento --- escenario sin pandemia, conjunto de prueba.}}{58}{figure.caption.70}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Series temporales del precio mensual del cemento (Gs.) y del mínimo mensual del nivel del río Paraguay (m), período 2014--2025.}}{30}{figure.caption.17}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Descomposición estacional de la serie de precio del cemento: tendencia, estacionalidad y componente residual.}}{31}{figure.caption.18}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Pronóstico SARIMAX del precio del cemento a 24 meses, escenario sin efecto pandémico.}}{33}{figure.caption.21}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Pronóstico SARIMAX del precio del cemento a 24 meses, escenario con efecto pandémico.}}{34}{figure.caption.22}%
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Series temporales del precio mensual del ladrillo (Gs.) y del mínimo mensual del nivel del río Paraguay (m), período 2014--2025.}}{35}{figure.caption.24}%
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Descomposición estacional de la serie de precio del ladrillo: tendencia, estacionalidad y componente residual.}}{36}{figure.caption.25}%
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Pronóstico SARIMAX del precio del ladrillo a 24 meses, escenario sin efecto pandémico.}}{38}{figure.caption.28}%
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Pronóstico SARIMAX del precio del ladrillo a 24 meses, escenario con efecto pandémico.}}{38}{figure.caption.29}%
+\contentsline {figure}{\numberline {5.18}{\ignorespaces Serie histórica mensual del precio del cemento (Gs.), período 2014--2025.}}{40}{figure.caption.31}%
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Descomposición STL de la serie del precio del cemento: tendencia, estacionalidad y residuo.}}{40}{figure.caption.32}%
+\contentsline {figure}{\numberline {5.20}{\ignorespaces Curva de aprendizaje del modelo LSTM para cemento --- escenario sin pandemia.}}{41}{figure.caption.34}%
+\contentsline {figure}{\numberline {5.21}{\ignorespaces Predicción LSTM vs.\ valores reales del precio del cemento --- escenario sin pandemia, conjunto de prueba.}}{42}{figure.caption.36}%
+\contentsline {figure}{\numberline {5.22}{\ignorespaces Ajuste del modelo LSTM del cemento sobre las tres particiones --- escenario sin pandemia.}}{43}{figure.caption.37}%
+\contentsline {figure}{\numberline {5.23}{\ignorespaces Pronóstico LSTM a 24 meses del precio del cemento --- escenario sin pandemia, con IC al 95\,\%.}}{43}{figure.caption.38}%
+\contentsline {figure}{\numberline {5.24}{\ignorespaces Detalle de la transición histórico--pronóstico LSTM del cemento --- escenario sin pandemia.}}{44}{figure.caption.39}%
+\contentsline {figure}{\numberline {5.25}{\ignorespaces Curva de aprendizaje del modelo LSTM para cemento --- escenario con pandemia.}}{45}{figure.caption.42}%
+\contentsline {figure}{\numberline {5.26}{\ignorespaces Predicción LSTM vs.\ valores reales del precio del cemento --- escenario con pandemia, conjunto de prueba.}}{46}{figure.caption.44}%
+\contentsline {figure}{\numberline {5.27}{\ignorespaces Ajuste del modelo LSTM del cemento sobre las tres particiones --- escenario con pandemia.}}{46}{figure.caption.45}%
+\contentsline {figure}{\numberline {5.28}{\ignorespaces Pronóstico LSTM a 24 meses del precio del cemento --- escenario con pandemia, con IC al 95\,\%.}}{47}{figure.caption.46}%
+\contentsline {figure}{\numberline {5.29}{\ignorespaces Detalle de la transición histórico--pronóstico LSTM del cemento --- escenario con pandemia.}}{47}{figure.caption.47}%
+\contentsline {figure}{\numberline {5.30}{\ignorespaces Serie histórica mensual del precio del ladrillo (Gs.), período 2014--2025.}}{48}{figure.caption.49}%
+\contentsline {figure}{\numberline {5.31}{\ignorespaces Descomposición STL de la serie del precio del ladrillo: tendencia, estacionalidad y residuo.}}{49}{figure.caption.50}%
+\contentsline {figure}{\numberline {5.32}{\ignorespaces Curva de aprendizaje del modelo LSTM para ladrillo --- escenario sin pandemia.}}{50}{figure.caption.52}%
+\contentsline {figure}{\numberline {5.33}{\ignorespaces Predicción LSTM vs.\ valores reales del precio del ladrillo --- escenario sin pandemia, conjunto de prueba.}}{51}{figure.caption.54}%
+\contentsline {figure}{\numberline {5.34}{\ignorespaces Ajuste del modelo LSTM del ladrillo sobre las tres particiones --- escenario sin pandemia.}}{51}{figure.caption.55}%
+\contentsline {figure}{\numberline {5.35}{\ignorespaces Pronóstico LSTM a 24 meses del precio del ladrillo --- escenario sin pandemia, con IC al 95\,\%.}}{52}{figure.caption.56}%
+\contentsline {figure}{\numberline {5.36}{\ignorespaces Detalle de la transición histórico--pronóstico LSTM del ladrillo --- escenario sin pandemia.}}{52}{figure.caption.57}%
+\contentsline {figure}{\numberline {5.37}{\ignorespaces Curva de aprendizaje del modelo LSTM para ladrillo --- escenario con pandemia.}}{54}{figure.caption.60}%
+\contentsline {figure}{\numberline {5.38}{\ignorespaces Predicción LSTM vs.\ valores reales del precio del ladrillo --- escenario con pandemia, conjunto de prueba.}}{55}{figure.caption.62}%
+\contentsline {figure}{\numberline {5.39}{\ignorespaces Ajuste del modelo LSTM del ladrillo sobre las tres particiones --- escenario con pandemia.}}{55}{figure.caption.63}%
+\contentsline {figure}{\numberline {5.40}{\ignorespaces Pronóstico LSTM a 24 meses del precio del ladrillo --- escenario con pandemia, con IC al 95\,\%.}}{56}{figure.caption.64}%
+\contentsline {figure}{\numberline {5.41}{\ignorespaces Detalle de la transición histórico--pronóstico LSTM del ladrillo --- escenario con pandemia.}}{56}{figure.caption.65}%
+\contentsline {figure}{\numberline {5.42}{\ignorespaces Curvas de aprendizaje del modelo GRU para cemento --- escenario sin pandemia.}}{58}{figure.caption.68}%
+\contentsline {figure}{\numberline {5.43}{\ignorespaces Predicción GRU vs.\ valores reales del precio del cemento --- escenario sin pandemia, conjunto de prueba.}}{59}{figure.caption.70}%
 \contentsline {figure}{\numberline {5.44}{\ignorespaces Ajuste del modelo GRU del cemento sobre las tres particiones --- escenario sin pandemia.}}{59}{figure.caption.71}%
-\contentsline {figure}{\numberline {5.45}{\ignorespaces Pronóstico GRU del precio del cemento a 24 meses --- escenario sin pandemia: serie histórica y proyección.}}{59}{figure.caption.72}%
-\contentsline {figure}{\numberline {5.46}{\ignorespaces Zoom sobre la transición entre datos observados y pronóstico GRU del cemento --- escenario sin pandemia.}}{59}{figure.caption.73}%
-\contentsline {figure}{\numberline {5.47}{\ignorespaces Curvas de aprendizaje del modelo GRU para cemento --- escenario con pandemia.}}{61}{figure.caption.76}%
-\contentsline {figure}{\numberline {5.48}{\ignorespaces Predicción GRU vs.\ valores reales del precio del cemento --- escenario con pandemia, conjunto de prueba.}}{61}{figure.caption.78}%
-\contentsline {figure}{\numberline {5.49}{\ignorespaces Ajuste del modelo GRU del cemento sobre las tres particiones --- escenario con pandemia.}}{62}{figure.caption.79}%
-\contentsline {figure}{\numberline {5.50}{\ignorespaces Pronóstico GRU del precio del cemento a 24 meses --- escenario con pandemia: serie histórica y proyección.}}{62}{figure.caption.80}%
-\contentsline {figure}{\numberline {5.51}{\ignorespaces Zoom sobre la transición entre datos observados y pronóstico GRU del cemento --- escenario con pandemia.}}{63}{figure.caption.81}%
-\contentsline {figure}{\numberline {5.52}{\ignorespaces Curvas de aprendizaje del modelo GRU para ladrillo --- escenario sin pandemia.}}{64}{figure.caption.84}%
-\contentsline {figure}{\numberline {5.53}{\ignorespaces Predicción GRU vs.\ valores reales del precio del ladrillo --- escenario sin pandemia, conjunto de prueba.}}{65}{figure.caption.86}%
-\contentsline {figure}{\numberline {5.54}{\ignorespaces Ajuste del modelo GRU del ladrillo sobre las tres particiones --- escenario sin pandemia.}}{65}{figure.caption.87}%
-\contentsline {figure}{\numberline {5.55}{\ignorespaces Pronóstico GRU del precio del ladrillo a 24 meses --- escenario sin pandemia: serie histórica y proyección.}}{66}{figure.caption.88}%
-\contentsline {figure}{\numberline {5.56}{\ignorespaces Zoom sobre la transición entre datos observados y pronóstico GRU del ladrillo --- escenario sin pandemia.}}{66}{figure.caption.89}%
-\contentsline {figure}{\numberline {5.57}{\ignorespaces Curvas de aprendizaje del modelo GRU para ladrillo --- escenario con pandemia.}}{67}{figure.caption.92}%
-\contentsline {figure}{\numberline {5.58}{\ignorespaces Predicción GRU vs.\ valores reales del precio del ladrillo --- escenario con pandemia, conjunto de prueba.}}{68}{figure.caption.94}%
-\contentsline {figure}{\numberline {5.59}{\ignorespaces Ajuste del modelo GRU del ladrillo sobre las tres particiones --- escenario con pandemia.}}{68}{figure.caption.95}%
-\contentsline {figure}{\numberline {5.60}{\ignorespaces Pronóstico GRU del precio del ladrillo a 24 meses --- escenario con pandemia: serie histórica y proyección.}}{69}{figure.caption.96}%
-\contentsline {figure}{\numberline {5.61}{\ignorespaces Zoom sobre la transición entre datos observados y pronóstico GRU del ladrillo --- escenario con pandemia.}}{69}{figure.caption.97}%
+\contentsline {figure}{\numberline {5.45}{\ignorespaces Pronóstico GRU del precio del cemento a 24 meses --- escenario sin pandemia: serie histórica y proyección.}}{60}{figure.caption.72}%
+\contentsline {figure}{\numberline {5.46}{\ignorespaces Zoom sobre la transición entre datos observados y pronóstico GRU del cemento --- escenario sin pandemia.}}{60}{figure.caption.73}%
+\contentsline {figure}{\numberline {5.47}{\ignorespaces Curvas de aprendizaje del modelo GRU para cemento --- escenario con pandemia.}}{62}{figure.caption.76}%
+\contentsline {figure}{\numberline {5.48}{\ignorespaces Predicción GRU vs.\ valores reales del precio del cemento --- escenario con pandemia, conjunto de prueba.}}{63}{figure.caption.78}%
+\contentsline {figure}{\numberline {5.49}{\ignorespaces Ajuste del modelo GRU del cemento sobre las tres particiones --- escenario con pandemia.}}{63}{figure.caption.79}%
+\contentsline {figure}{\numberline {5.50}{\ignorespaces Pronóstico GRU del precio del cemento a 24 meses --- escenario con pandemia: serie histórica y proyección.}}{64}{figure.caption.80}%
+\contentsline {figure}{\numberline {5.51}{\ignorespaces Zoom sobre la transición entre datos observados y pronóstico GRU del cemento --- escenario con pandemia.}}{65}{figure.caption.81}%
+\contentsline {figure}{\numberline {5.52}{\ignorespaces Curvas de aprendizaje del modelo GRU para ladrillo --- escenario sin pandemia.}}{66}{figure.caption.84}%
+\contentsline {figure}{\numberline {5.53}{\ignorespaces Predicción GRU vs.\ valores reales del precio del ladrillo --- escenario sin pandemia, conjunto de prueba.}}{67}{figure.caption.86}%
+\contentsline {figure}{\numberline {5.54}{\ignorespaces Ajuste del modelo GRU del ladrillo sobre las tres particiones --- escenario sin pandemia.}}{67}{figure.caption.87}%
+\contentsline {figure}{\numberline {5.55}{\ignorespaces Pronóstico GRU del precio del ladrillo a 24 meses --- escenario sin pandemia: serie histórica y proyección.}}{68}{figure.caption.88}%
+\contentsline {figure}{\numberline {5.56}{\ignorespaces Zoom sobre la transición entre datos observados y pronóstico GRU del ladrillo --- escenario sin pandemia.}}{68}{figure.caption.89}%
+\contentsline {figure}{\numberline {5.57}{\ignorespaces Curvas de aprendizaje del modelo GRU para ladrillo --- escenario con pandemia.}}{70}{figure.caption.92}%
+\contentsline {figure}{\numberline {5.58}{\ignorespaces Predicción GRU vs.\ valores reales del precio del ladrillo --- escenario con pandemia, conjunto de prueba.}}{71}{figure.caption.94}%
+\contentsline {figure}{\numberline {5.59}{\ignorespaces Ajuste del modelo GRU del ladrillo sobre las tres particiones --- escenario con pandemia.}}{71}{figure.caption.95}%
+\contentsline {figure}{\numberline {5.60}{\ignorespaces Pronóstico GRU del precio del ladrillo a 24 meses --- escenario con pandemia: serie histórica y proyección.}}{72}{figure.caption.96}%
+\contentsline {figure}{\numberline {5.61}{\ignorespaces Zoom sobre la transición entre datos observados y pronóstico GRU del ladrillo --- escenario con pandemia.}}{72}{figure.caption.97}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

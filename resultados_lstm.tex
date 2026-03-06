@@ -79,7 +79,6 @@ El modelo convergió en 32 épocas con \textit{early stopping}. La Figura~\ref{f
     \label{fig:lstm_cemento_curva_sc}
 \end{figure}
 
-\
 \paragraph{Métricas de Evaluación}
 
 \justify
@@ -129,7 +128,7 @@ El test de Ljung-Box sobre los residuos del conjunto de prueba arrojó un $p$-va
 \paragraph{Pronóstico a 24 Meses}
 
 \justify
-Las Figuras~\ref{fig:lstm_cemento_pred_sin_covid} y \ref{fig:lstm_cemento_zoom_sin_covid} presentan el pronóstico a 24 meses y el detalle de la transición, y la Tabla~\ref{tab:lstm_cemento_pred_sin_covid} detalla los valores mensuales predichos.
+Bajo el escenario sin pandemia, el rango de precios predicho se sitúa entre Gs.~57.372 y Gs.~62.992 a lo largo del horizonte de 24 meses. La proyección refleja una tendencia a la baja desde los niveles actuales hacia mediados de 2026, seguida de una ligera recuperación, dentro de una banda de amplitud moderada. Las Figuras~\ref{fig:lstm_cemento_pred_sin_covid} y \ref{fig:lstm_cemento_zoom_sin_covid} presentan el pronóstico a 24 meses y el detalle de la transición, y la Tabla~\ref{tab:lstm_cemento_pred_sin_covid} detalla los valores mensuales predichos.
 
 \begin{figure}[H]
     \centering
@@ -168,9 +167,6 @@ Julio 2026       & 59.336 & Julio 2027       & 59.093 \\
 \bottomrule
 \end{tabular}
 \end{table}
-
-\justify
-Bajo el escenario sin pandemia, el rango de precios predicho se sitúa entre Gs.~57.372 y Gs.~62.992 a lo largo del horizonte de 24 meses. La proyección refleja una tendencia a la baja desde los niveles actuales hacia mediados de 2026, seguida de una ligera recuperación, dentro de una banda de amplitud moderada.
 
 % ------ CEMENTO CON COVID ------
 
@@ -266,7 +262,7 @@ El test de Ljung-Box sobre los residuos del conjunto de prueba arrojó un $p$-va
 \paragraph{Pronóstico a 24 Meses}
 
 \justify
-Las Figuras~\ref{fig:lstm_cemento_pred_con_covid} y \ref{fig:lstm_cemento_zoom_con_covid} presentan el pronóstico a 24 meses y el detalle de la transición, y la Tabla~\ref{tab:lstm_cemento_pred_con_covid} detalla los valores mensuales predichos.
+Bajo el escenario con efecto pandémico, el rango de precios predicho se sitúa entre Gs.~57.372 y Gs.~73.366, con una amplitud marcadamente mayor que la del escenario sin pandemia (Gs.~57.372--62.992). El límite superior de Gs.~73.366 supera en un 16,5\,\% al máximo del escenario sin pandemia, lo que pone de manifiesto el efecto al alza que el modelo LSTM bidireccional asocia a la variable de cuarentena sobre el precio del cemento. Las Figuras~\ref{fig:lstm_cemento_pred_con_covid} y \ref{fig:lstm_cemento_zoom_con_covid} presentan el pronóstico a 24 meses y el detalle de la transición, y la Tabla~\ref{tab:lstm_cemento_pred_con_covid} detalla los valores mensuales predichos.
 
 \begin{figure}[H]
     \centering
@@ -306,9 +302,6 @@ Julio 2026       & 67.920 & Julio 2027       & 68.255 \\
 \end{tabular}
 \end{table}
 
-\justify
-Bajo el escenario con efecto pandémico, el rango de precios predicho se sitúa entre Gs.~57.372 y Gs.~73.366, con una amplitud marcadamente mayor que la del escenario sin pandemia (Gs.~57.372--62.992). El límite superior de Gs.~73.366 supera en un 16,5\,\% al máximo del escenario sin pandemia, lo que pone de manifiesto el efecto al alza que el modelo LSTM bidireccional asocia a la variable de cuarentena sobre el precio del cemento.
-
 % ============================================================
 %  LADRILLO
 % ============================================================
@@ -316,7 +309,7 @@ Bajo el escenario con efecto pandémico, el rango de precios predicho se sitúa 
 \subsection{Predicción del Precio del Ladrillo}
 
 \justify
-Para el ladrillo, la búsqueda con Optuna fue ejecutada de forma independiente en cada escenario. Ambos convergieron a arquitecturas LSTM bidireccionales con 64 unidades ocultas y 36.481 parámetros entrenables, aunque con configuraciones de regularización distintas. Dado que los hiperparámetros difieren entre escenarios, cada uno se describe de forma separada.
+Para el ladrillo, la búsqueda con Optuna fue ejecutada de forma independiente en cada escenario. A diferencia del cemento, los dos escenarios convergieron a arquitecturas distintas: una LSTM unidireccional con 18.241 parámetros para el escenario sin pandemia y una bidireccional con 36.481 parámetros para el escenario con pandemia, ambas con 64 unidades ocultas. Dado que los hiperparámetros difieren entre escenarios, cada uno se describe de forma separada.
 
 \subsubsection{Análisis Exploratorio de la Serie}
 
@@ -431,7 +424,7 @@ El test de Ljung-Box sobre los residuos del conjunto de prueba arrojó un $p$-va
 \paragraph{Pronóstico a 24 Meses}
 
 \justify
-Las Figuras~\ref{fig:lstm_ladrillo_pred_sin_covid} y \ref{fig:lstm_ladrillo_zoom_sin_covid} presentan el pronóstico a 24 meses y el detalle de la transición, y la Tabla~\ref{tab:lstm_ladrillo_pred_sin_covid} detalla los valores mensuales predichos.
+Bajo el escenario sin pandemia, el rango de precios predicho se sitúa entre Gs.~646 y Gs.~686 a lo largo del horizonte de 24 meses. La proyección refleja una tendencia moderada al alza respecto al último valor observado, dentro de una banda relativamente contenida que es consistente con la estabilidad histórica de este mercado. Las Figuras~\ref{fig:lstm_ladrillo_pred_sin_covid} y \ref{fig:lstm_ladrillo_zoom_sin_covid} presentan el pronóstico a 24 meses y el detalle de la transición, y la Tabla~\ref{tab:lstm_ladrillo_pred_sin_covid} detalla los valores mensuales predichos.
 
 \begin{figure}[H]
     \centering
@@ -471,11 +464,9 @@ Julio 2026       & 659 & Julio 2027       & 675 \\
 \end{tabular}
 \end{table}
 
-\justify
-Bajo el escenario sin pandemia, el rango de precios predicho se sitúa entre Gs.~646 y Gs.~686 a lo largo del horizonte de 24 meses. La proyección refleja una tendencia moderada al alza respecto al último valor observado, dentro de una banda relativamente contenida que es consistente con la estabilidad histórica de este mercado.
-
 % ------ LADRILLO CON COVID ------
 
+\clearpage
 \subsubsection{Escenario con Efecto Pandémico}
 
 \paragraph{Hiperparámetros y Arquitectura}
@@ -568,7 +559,7 @@ El test de Ljung-Box sobre los residuos del conjunto de prueba arrojó un $p$-va
 \paragraph{Pronóstico a 24 Meses}
 
 \justify
-Las Figuras~\ref{fig:lstm_ladrillo_pred_con_covid} y \ref{fig:lstm_ladrillo_zoom_con_covid} presentan el pronóstico a 24 meses y el detalle de la transición, y la Tabla~\ref{tab:lstm_ladrillo_pred_con_covid} detalla los valores mensuales predichos.
+Bajo el escenario con efecto pandémico, el rango de precios predicho se sitúa entre Gs.~656 y Gs.~758 para el horizonte de 24 meses. Comparado con el escenario sin pandemia (Gs.~646--686), el límite superior sube de Gs.~686 a Gs.~758, un incremento del 10,5\,\% que el modelo atribuye al efecto acumulado de la variable pandémica en la dinámica del precio del ladrillo. Las Figuras~\ref{fig:lstm_ladrillo_pred_con_covid} y \ref{fig:lstm_ladrillo_zoom_con_covid} presentan el pronóstico a 24 meses y el detalle de la transición, y la Tabla~\ref{tab:lstm_ladrillo_pred_con_covid} detalla los valores mensuales predichos.
 
 \begin{figure}[H]
     \centering
@@ -607,6 +598,3 @@ Julio 2026       & 738 & Julio 2027       & 755 \\
 \bottomrule
 \end{tabular}
 \end{table}
-
-\justify
-Bajo el escenario con efecto pandémico, el rango de precios predicho se sitúa entre Gs.~656 y Gs.~758 para el horizonte de 24 meses. Comparado con el escenario sin pandemia (Gs.~646--686), el límite superior sube de Gs.~686 a Gs.~758, un incremento del 10,5\,\% que el modelo atribuye al efecto acumulado de la variable pandémica en la dinámica del precio del ladrillo.

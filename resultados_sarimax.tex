@@ -12,7 +12,7 @@ En esta sección se presentan los resultados de aplicar el modelo SARIMAX a la p
 \justify
 La serie comprende registros mensuales del precio del cemento en Guaraníes desde enero de 2014 hasta julio de 2025, con 139 observaciones en total. Los estadísticos descriptivos son: mínimo Gs.~48.000, máximo Gs.~76.036, media Gs.~53.872 y desviación estándar Gs.~7.460. La Figura \ref{fig:sarimax_series} muestra la evolución conjunta del precio del cemento y del nivel del río Paraguay. El precio del cemento presenta una tendencia ascendente sostenida con una aceleración marcada a partir de 2020, mientras que el nivel del río exhibe la variabilidad estacional interanual característica del río Paraguay.
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_sarimax_cemento/resultados_sarimax_cemento/graficos/01_series_temporales.png}
     \caption{Series temporales del precio mensual del cemento (Gs.) y del mínimo mensual del nivel del río Paraguay (m), período 2014--2025.}
@@ -22,7 +22,7 @@ La serie comprende registros mensuales del precio del cemento en Guaraníes desd
 \justify
 La Figura \ref{fig:sarimax_descomposicion} presenta la descomposición clásica de la serie. La componente de tendencia confirma el crecimiento sostenido, en particular el salto registrado entre 2020 y 2022. La componente estacional muestra patrones de amplitud moderada con período anual, y los residuos no presentan estructura sistemática evidente.
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_sarimax_cemento/resultados_sarimax_cemento/graficos/02_descomposicion_estacional.png}
     \caption{Descomposición estacional de la serie de precio del cemento: tendencia, estacionalidad y componente residual.}
@@ -40,7 +40,7 @@ La partición del dataset siguió el criterio 70\,\%/15\,\%/15\,\%: entrenamient
 \justify
 El modelo final, reentrenado con el 100\,\% de los datos, obtuvo AIC = 2566{,}18, BIC = 2574{,}94 y log-verosimilitud = $-1280{,}09$. Sus parámetros estimados se presentan en la Tabla \ref{tab:sarimax_params}.
 
-\begin{table}[ht]
+\begin{table}[H]
     \centering
     \caption{Parámetros estimados del modelo SARIMAX$(0,1,0)(0,0,0)_{12}$ para el precio del cemento (modelo final, 139 obs.).}
     \label{tab:sarimax_params}
@@ -67,7 +67,7 @@ El coeficiente de \texttt{Nivel\_Rio} resultó negativo ($-55{,}79$ Gs./m) pero 
 \justify
 El modelo fue evaluado sobre el conjunto de validación (reentrenado con el 70\,\% de los datos) y sobre el conjunto de prueba (reentrenado con el 85\,\%). La Tabla \ref{tab:sarimax_metricas} resume los RMSE obtenidos en cada etapa.
 
-\begin{table}[ht]
+\begin{table}[H]
     \centering
     \caption{RMSE del modelo SARIMAX para el precio del cemento en los conjuntos de validación y prueba.}
     \label{tab:sarimax_metricas}
@@ -94,24 +94,24 @@ El test de Ljung-Box al primer rezago no rechaza la hipótesis nula de ausencia 
 \justify
 Una vez validado, el modelo fue reentrenado con el 100\,\% de las observaciones para generar el pronóstico mensual del precio del cemento desde agosto de 2025 hasta julio de 2027. Con el objetivo de cuantificar la influencia de la variable \texttt{Cuarentena} sobre el pronóstico, se generaron dos proyecciones paralelas: una con \texttt{Cuarentena} = 0 para todo el horizonte (escenario sin pandemia, Figura \ref{fig:sarimax_cemento_sin_covid}) y otra con \texttt{Cuarentena} = 1 (escenario con efecto pandémico activo, Figura \ref{fig:sarimax_cemento_con_covid}).
 
-\begin{figure}[ht]
+\justify
+El pronóstico puntual converge hacia un valor estable de aproximadamente Gs.~55.000, consistente con la naturaleza del modelo SARIMAX$(0,1,0)$. El intervalo de confianza al 95\,\% se amplía progresivamente: en agosto de 2025 el rango es Gs.~[49.556; 60.504], mientras que en julio de 2027 se extiende hasta Gs.~[28.111; 81.746]. La diferencia entre ambos escenarios es de apenas Gs.~23{,}67 por mes, un valor prácticamente nulo frente al nivel de precios (Gs.~55.000), coherente con el coeficiente no significativo de \texttt{Cuarentena} ($p = 1{,}000$). El modelo lineal integrado no captura el efecto estructural de la pandemia sobre los precios, dado que ese impacto queda absorbido por la diferenciación de la serie ($d = 1$). La Tabla \ref{tab:sarimax_pronostico} detalla el pronóstico completo para los 24 meses.
+
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_sarimax_cemento/resultados_sarimax_cemento/graficos/09a_pronostico_sin_covid.png}
     \caption{Pronóstico SARIMAX del precio del cemento a 24 meses, escenario sin efecto pandémico.}
     \label{fig:sarimax_cemento_sin_covid}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_sarimax_cemento/resultados_sarimax_cemento/graficos/09b_pronostico_con_covid.png}
     \caption{Pronóstico SARIMAX del precio del cemento a 24 meses, escenario con efecto pandémico.}
     \label{fig:sarimax_cemento_con_covid}
 \end{figure}
 
-\justify
-El pronóstico puntual converge hacia un valor estable de aproximadamente Gs.~55.000, consistente con la naturaleza del modelo SARIMAX$(0,1,0)$. El intervalo de confianza al 95\,\% se amplía progresivamente: en agosto de 2025 el rango es Gs.~[49.556; 60.504], mientras que en julio de 2027 se extiende hasta Gs.~[28.111; 81.746]. La diferencia entre ambos escenarios es de apenas Gs.~23{,}67 por mes, un valor prácticamente nulo frente al nivel de precios (Gs.~55.000), coherente con el coeficiente no significativo de \texttt{Cuarentena} ($p = 1{,}000$). El modelo lineal integrado no captura el efecto estructural de la pandemia sobre los precios, dado que ese impacto queda absorbido por la diferenciación de la serie ($d = 1$). La Tabla \ref{tab:sarimax_pronostico} detalla el pronóstico completo para los 24 meses.
-
-\begin{table}[ht]
+\begin{table}[H]
     \centering
     \caption{Pronóstico mensual del precio del cemento (Gs.) para el período agosto 2025 a julio 2027, con intervalo de confianza al 95\,\%.}
     \label{tab:sarimax_pronostico}
@@ -156,7 +156,7 @@ El pronóstico puntual converge hacia un valor estable de aproximadamente Gs.~55
 \justify
 La serie comprende registros mensuales del precio del ladrillo en Guaraníes desde enero de 2014 hasta julio de 2025, con 139 observaciones. Los estadísticos descriptivos son: mínimo Gs.~428, máximo Gs.~700, media Gs.~592 y desviación estándar Gs.~76{,}47. La Figura \ref{fig:sarimax_ladrillo_series} muestra la evolución conjunta del precio del ladrillo y del nivel del río Paraguay. El precio del ladrillo exhibe una tendencia ascendente con incrementos escalonados, pasando de aproximadamente Gs.~428 en 2014 a Gs.~700 hacia el final del período.
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_sarimax_ladrillo/resultados_sarimax_ladrillo/graficos/01_series_temporales.png}
     \caption{Series temporales del precio mensual del ladrillo (Gs.) y del mínimo mensual del nivel del río Paraguay (m), período 2014--2025.}
@@ -166,7 +166,7 @@ La serie comprende registros mensuales del precio del ladrillo en Guaraníes des
 \justify
 La Figura \ref{fig:sarimax_ladrillo_descomposicion} presenta la descomposición de la serie. La tendencia confirma el crecimiento sostenido, con una aceleración a partir de 2020. La estacionalidad muestra variaciones de amplitud moderada y los residuos no revelan estructura sistemática.
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_sarimax_ladrillo/resultados_sarimax_ladrillo/graficos/02_descomposicion_estacional.png}
     \caption{Descomposición estacional de la serie de precio del ladrillo: tendencia, estacionalidad y componente residual.}
@@ -184,7 +184,7 @@ La partición del dataset fue idéntica a la del cemento: 70\,\%/15\,\%/15\,\%, 
 \justify
 El modelo final, reentrenado con el 100\,\% de los datos, obtuvo AIC = 1109{,}55, BIC = 1118{,}31 y log-verosimilitud = $-551{,}77$. Sus parámetros estimados se presentan en la Tabla \ref{tab:sarimax_ladrillo_params}.
 
-\begin{table}[ht]
+\begin{table}[H]
     \centering
     \caption{Parámetros estimados del modelo SARIMAX$(0,1,0)(0,0,0)_{12}$ para el precio del ladrillo (modelo final, 139 obs.).}
     \label{tab:sarimax_ladrillo_params}
@@ -211,7 +211,7 @@ El coeficiente de \texttt{Nivel\_Rio} resultó negativo ($-1{,}947$ Gs./m) y no 
 \justify
 El modelo fue evaluado en validación (reentrenado con el 70\,\% de los datos) y en prueba (reentrenado con el 85\,\%). Los RMSE obtenidos en cada etapa se resumen en la Tabla \ref{tab:sarimax_ladrillo_metricas}.
 
-\begin{table}[ht]
+\begin{table}[H]
     \centering
     \caption{RMSE del modelo SARIMAX para el precio del ladrillo en los conjuntos de validación y prueba.}
     \label{tab:sarimax_ladrillo_metricas}
@@ -238,22 +238,22 @@ El test de Ljung-Box al primer rezago no rechaza la hipótesis nula de ausencia 
 \justify
 El modelo reentrenado con el 100\,\% de las observaciones generó el pronóstico mensual del precio del ladrillo desde agosto de 2025 hasta julio de 2027. Al igual que para el cemento, se generaron dos proyecciones paralelas bajo escenarios alternativos de pandemia: escenario sin efecto pandémico (Figura \ref{fig:sarimax_ladrillo_sin_covid}) y escenario con efecto pandémico activo (Figura \ref{fig:sarimax_ladrillo_con_covid}).
 
-\begin{figure}[ht]
+\justify
+El pronóstico puntual converge hacia un valor estable de aproximadamente Gs.~651. El intervalo de confianza al 95\,\% se amplía con el horizonte: en agosto de 2025 el rango es Gs.~[624; 678] y en julio de 2027 se extiende a Gs.~[517; 778]. La diferencia entre ambos escenarios es de apenas Gs.~0{,}83 por mes, aún más reducida que la del cemento y completamente despreciable frente al nivel de precios (Gs.~651). Este resultado es coherente con el coeficiente estimado para \texttt{Cuarentena} ($-0{,}826$ Gs., $p = 0{,}999$). La insensibilidad ante el \textit{shock} pandémico se repite en ambos materiales, lo que confirma que la estructura lineal integrada del SARIMAX captura adecuadamente la tendencia general pero carece de la flexibilidad necesaria para representar perturbaciones externas de efecto no lineal o asimétrico sobre los precios. La Tabla \ref{tab:sarimax_ladrillo_pronostico} detalla el pronóstico completo para los 24 meses.
+
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_sarimax_ladrillo/resultados_sarimax_ladrillo/graficos/09a_pronostico_sin_covid.png}
     \caption{Pronóstico SARIMAX del precio del ladrillo a 24 meses, escenario sin efecto pandémico.}
     \label{fig:sarimax_ladrillo_sin_covid}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{predicciones/prediccion_sarimax_ladrillo/resultados_sarimax_ladrillo/graficos/09b_pronostico_con_covid.png}
     \caption{Pronóstico SARIMAX del precio del ladrillo a 24 meses, escenario con efecto pandémico.}
     \label{fig:sarimax_ladrillo_con_covid}
 \end{figure}
-
-\justify
-El pronóstico puntual converge hacia un valor estable de aproximadamente Gs.~651. El intervalo de confianza al 95\,\% se amplía con el horizonte: en agosto de 2025 el rango es Gs.~[624; 678] y en julio de 2027 se extiende a Gs.~[517; 778]. La diferencia entre ambos escenarios es de apenas Gs.~0{,}83 por mes, aún más reducida que la del cemento y completamente despreciable frente al nivel de precios (Gs.~651). Este resultado es coherente con el coeficiente estimado para \texttt{Cuarentena} ($-0{,}826$ Gs., $p = 0{,}999$). La insensibilidad ante el \textit{shock} pandémico se repite en ambos materiales, lo que confirma que la estructura lineal integrada del SARIMAX captura adecuadamente la tendencia general pero carece de la flexibilidad necesaria para representar perturbaciones externas de efecto no lineal o asimétrico sobre los precios. La Tabla \ref{tab:sarimax_ladrillo_pronostico} detalla el pronóstico completo para los 24 meses.
 
 \begin{table}[H]
     \centering
