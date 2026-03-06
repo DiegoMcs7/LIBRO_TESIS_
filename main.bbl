@@ -19,43 +19,6 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global/global}
-    \entry{castaneda2022}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=9437fb4b99b6366da7a364af5b994518}{%
-           family={Castañeda\bibnamedelima Vargas},
-           familyi={C\bibinitperiod\bibinitdelim V\bibinitperiod},
-           given={F.},
-           giveni={F\bibinitperiod}}}%
-        {{hash=b7b5e1a73a54fd2cc09c85788b154f06}{%
-           family={Aguirre\bibnamedelima Cuartas},
-           familyi={A\bibinitperiod\bibinitdelim C\bibinitperiod},
-           given={F.},
-           giveni={F\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {Universidad de San Buenaventura}%
-      }
-      \strng{namehash}{b4a0c3b681ae6bdd27c9818a6026dbd2}
-      \strng{fullhash}{b4a0c3b681ae6bdd27c9818a6026dbd2}
-      \strng{fullhashraw}{b4a0c3b681ae6bdd27c9818a6026dbd2}
-      \strng{bibnamehash}{b4a0c3b681ae6bdd27c9818a6026dbd2}
-      \strng{authorbibnamehash}{b4a0c3b681ae6bdd27c9818a6026dbd2}
-      \strng{authornamehash}{b4a0c3b681ae6bdd27c9818a6026dbd2}
-      \strng{authorfullhash}{b4a0c3b681ae6bdd27c9818a6026dbd2}
-      \strng{authorfullhashraw}{b4a0c3b681ae6bdd27c9818a6026dbd2}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Análisis de variabilidad de precios en materiales e insumos para la construcción: Caso de estudio departamento Valle del Cauca año 2022}
-      \field{year}{2022}
-      \verb{urlraw}
-      \verb https://bibliotecadigital.usb.edu.co/server/api/core/bitstreams/feafeb7d-f783-4ccf-a6bb-2475283da2f2/content
-      \endverb
-      \verb{url}
-      \verb https://bibliotecadigital.usb.edu.co/server/api/core/bitstreams/feafeb7d-f783-4ccf-a6bb-2475283da2f2/content
-      \endverb
-    \endentry
     \entry{almada2022}{article}{}{}
       \name{author}{7}{}{%
         {{hash=7fdd81c8285892ec75dd3c60fafa6972}{%
@@ -102,8 +65,8 @@
       \strng{authornamehash}{ef9b9b8c7230195ef3dbae5d7dcca7e3}
       \strng{authorfullhash}{12deeca4d8bc4cfce32726a9e50b2fb8}
       \strng{authorfullhashraw}{12deeca4d8bc4cfce32726a9e50b2fb8}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Revista UNIDA Científica}
@@ -114,6 +77,118 @@
       \endverb
       \verb{url}
       \verb https://revistacientifica.unida.edu.py/publicaciones/index.php/cientifica/article/view/207/161
+      \endverb
+    \endentry
+    \entry{lanacion_inc_bajante_2021}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=9d9c3be5d79161a4ee6086ac4e113e7b}{%
+           family={{La Nación}},
+           familyi={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{9d9c3be5d79161a4ee6086ac4e113e7b}
+      \strng{fullhash}{9d9c3be5d79161a4ee6086ac4e113e7b}
+      \strng{fullhashraw}{9d9c3be5d79161a4ee6086ac4e113e7b}
+      \strng{bibnamehash}{9d9c3be5d79161a4ee6086ac4e113e7b}
+      \strng{authorbibnamehash}{9d9c3be5d79161a4ee6086ac4e113e7b}
+      \strng{authornamehash}{9d9c3be5d79161a4ee6086ac4e113e7b}
+      \strng{authorfullhash}{9d9c3be5d79161a4ee6086ac4e113e7b}
+      \strng{authorfullhashraw}{9d9c3be5d79161a4ee6086ac4e113e7b}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{05}
+      \field{note}{Accedido: 6 mar. 2026}
+      \field{title}{INC sufre sobrecosto por bajante del río, pero afirma que aún hay margen para sostener el precio}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://www.lanacion.com.py/negocios/2021/05/08/inc-sufre-sobrecosto-por-bajante-del-rio-pero-afirma-que-aun-hay-margen-para-sostener-el-precio/
+      \endverb
+      \verb{url}
+      \verb https://www.lanacion.com.py/negocios/2021/05/08/inc-sufre-sobrecosto-por-bajante-del-rio-pero-afirma-que-aun-hay-margen-para-sostener-el-precio/
+      \endverb
+    \endentry
+    \entry{Sosa-Cabrera2024}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=129efa7dffa507656a030b82e66970e2}{%
+           family={Sosa-Cabrera\bibnamedelima Gustavo},
+           familyi={S\bibinithyphendelim C\bibinitperiod\bibinitdelim G\bibinitperiod},
+           given={García-Torres\bibnamedelima Miguel},
+           giveni={G\bibinithyphendelim T\bibinitperiod\bibinitdelim M\bibinitperiod},
+           suffix={Gómez-Guerrero\bibnamedelima Santiago},
+           suffixi={G\bibinithyphendelim G\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=daaa5411c67787cef0fe1f53df9c64fb}{%
+           family={Schaerer},
+           familyi={S\bibinitperiod},
+           given={Christian\bibnamedelima E.},
+           giveni={C\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{0c2d79f657e3ee2524d289603b92aa0f}
+      \strng{fullhash}{0c2d79f657e3ee2524d289603b92aa0f}
+      \strng{fullhashraw}{0c2d79f657e3ee2524d289603b92aa0f}
+      \strng{bibnamehash}{0c2d79f657e3ee2524d289603b92aa0f}
+      \strng{authorbibnamehash}{0c2d79f657e3ee2524d289603b92aa0f}
+      \strng{authornamehash}{0c2d79f657e3ee2524d289603b92aa0f}
+      \strng{authorfullhash}{0c2d79f657e3ee2524d289603b92aa0f}
+      \strng{authorfullhashraw}{0c2d79f657e3ee2524d289603b92aa0f}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{High-dimensional datasets depict a challenge for learning tasks in data mining and machine learning. Feature selection is an effective technique in dealing with dimensionality reduction. It is often an essential data processing step prior to applying a learning algorithm. Over the decades, filter feature selection methods have evolved from simple univariate relevance ranking algorithms to more sophisticated relevance-redundancy trade-offs and to multivariate dependencies-based approaches in recent years. This tendency to capture multivariate dependence aims at obtaining unique information about the class from the intercooperation among features. This paper presents a comprehensive survey of the state-of-the-art work on filter feature selection methods assisted by feature intercooperation, and summarizes the contributions of different approaches found in the literature. Furthermore, current issues and challenges are introduced to identify promising future research and development.}
+      \field{issn}{2364-4168}
+      \field{journaltitle}{International Journal of Data Science and Analytics}
+      \field{number}{2}
+      \field{title}{Feature Selection: A Perspective on Inter-Attribute Cooperation}
+      \field{volume}{17}
+      \field{year}{2024}
+      \field{pages}{139\bibrangedash 151}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1007/s41060-023-00439-z
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s41060-023-00439-z
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s41060-023-00439-z
+      \endverb
+    \endentry
+    \entry{castaneda2022}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=9437fb4b99b6366da7a364af5b994518}{%
+           family={Castañeda\bibnamedelima Vargas},
+           familyi={C\bibinitperiod\bibinitdelim V\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=b7b5e1a73a54fd2cc09c85788b154f06}{%
+           family={Aguirre\bibnamedelima Cuartas},
+           familyi={A\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Universidad de San Buenaventura}%
+      }
+      \strng{namehash}{b4a0c3b681ae6bdd27c9818a6026dbd2}
+      \strng{fullhash}{b4a0c3b681ae6bdd27c9818a6026dbd2}
+      \strng{fullhashraw}{b4a0c3b681ae6bdd27c9818a6026dbd2}
+      \strng{bibnamehash}{b4a0c3b681ae6bdd27c9818a6026dbd2}
+      \strng{authorbibnamehash}{b4a0c3b681ae6bdd27c9818a6026dbd2}
+      \strng{authornamehash}{b4a0c3b681ae6bdd27c9818a6026dbd2}
+      \strng{authorfullhash}{b4a0c3b681ae6bdd27c9818a6026dbd2}
+      \strng{authorfullhashraw}{b4a0c3b681ae6bdd27c9818a6026dbd2}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Análisis de variabilidad de precios en materiales e insumos para la construcción: Caso de estudio departamento Valle del Cauca año 2022}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://bibliotecadigital.usb.edu.co/server/api/core/bitstreams/feafeb7d-f783-4ccf-a6bb-2475283da2f2/content
+      \endverb
+      \verb{url}
+      \verb https://bibliotecadigital.usb.edu.co/server/api/core/bitstreams/feafeb7d-f783-4ccf-a6bb-2475283da2f2/content
       \endverb
     \endentry
     \entry{newbold1983arima}{article}{}{}
@@ -135,8 +210,8 @@
       \strng{authornamehash}{22ddadabe7942d404c287252f9388594}
       \strng{authorfullhash}{22ddadabe7942d404c287252f9388594}
       \strng{authorfullhashraw}{22ddadabe7942d404c287252f9388594}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of forecasting}
@@ -171,8 +246,8 @@
       \strng{authornamehash}{2ca560a6c7f3ef36162c02f8f080280a}
       \strng{authorfullhash}{2ca560a6c7f3ef36162c02f8f080280a}
       \strng{authorfullhashraw}{2ca560a6c7f3ef36162c02f8f080280a}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Expert Systems with Applications}
@@ -222,8 +297,8 @@
       \strng{authornamehash}{7655bedd4412994d021785e9c95cb5a3}
       \strng{authorfullhash}{aa8a807c0044cdaa92053dcfc0c1afc5}
       \strng{authorfullhashraw}{aa8a807c0044cdaa92053dcfc0c1afc5}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2016 IEEE international energy conference (ENERGYCON)}
@@ -251,8 +326,8 @@
       \strng{authornamehash}{99413be56c82adf72b6474dcdf8d3023}
       \strng{authorfullhash}{99413be56c82adf72b6474dcdf8d3023}
       \strng{authorfullhashraw}{99413be56c82adf72b6474dcdf8d3023}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Machine learning: a probabilistic perspective}
@@ -278,8 +353,8 @@
       \strng{authornamehash}{5836fc1fa037e340c8b5591da3207608}
       \strng{authorfullhash}{5836fc1fa037e340c8b5591da3207608}
       \strng{authorfullhashraw}{5836fc1fa037e340c8b5591da3207608}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Deep learning with Python}
@@ -303,8 +378,8 @@
       \strng{authornamehash}{8c2c5e4a58ade313d97c7855abe686ba}
       \strng{authorfullhash}{8c2c5e4a58ade313d97c7855abe686ba}
       \strng{authorfullhashraw}{8c2c5e4a58ade313d97c7855abe686ba}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of knowledge Management practice}
@@ -339,8 +414,8 @@
       \strng{authornamehash}{2f2da85dc690a2c485e893f0ae090a52}
       \strng{authorfullhash}{2f2da85dc690a2c485e893f0ae090a52}
       \strng{authorfullhashraw}{2f2da85dc690a2c485e893f0ae090a52}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Marketing Practice: Applied Marketing Science}
@@ -377,8 +452,8 @@
       \strng{authornamehash}{1f7c44e9457ba86dd71b2dd3eaa61346}
       \strng{authorfullhash}{1f7c44e9457ba86dd71b2dd3eaa61346}
       \strng{authorfullhashraw}{1f7c44e9457ba86dd71b2dd3eaa61346}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of artificial intelligence research}
@@ -646,8 +721,8 @@
       \strng{authornamehash}{c0bf58f44127db9e1095f5065a83cd7e}
       \strng{authorfullhash}{c0bf58f44127db9e1095f5065a83cd7e}
       \strng{authorfullhashraw}{c0bf58f44127db9e1095f5065a83cd7e}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Tecnicas de Cálculo en Ingeniería Química}
@@ -668,8 +743,8 @@
       \strng{authornamehash}{b282c3ef27e72c9469dae95a7d7a38e2}
       \strng{authorfullhash}{b282c3ef27e72c9469dae95a7d7a38e2}
       \strng{authorfullhashraw}{b282c3ef27e72c9469dae95a7d7a38e2}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Consultado en octubre de 2025}
