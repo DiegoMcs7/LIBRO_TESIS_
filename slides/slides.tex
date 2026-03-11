@@ -21,18 +21,30 @@
 \definecolor{rojoclaro}{RGB}{255,220,220}
 \definecolor{amarilloclaro}{RGB}{255,245,200}
 
-% --- Logos ---
+% --- Logos en car\'atula: simétricos con instituto ---
 \titlegraphic{%
-  \includegraphics[height=1.5cm]{../images/logo_universidad_nacional.png}%
-  \hspace{2cm}%
-  \includegraphics[height=1.5cm]{../images/logo_fpuna.png}%
+  \vspace{-1.5cm}%
+  \begin{columns}[c]
+    \begin{column}{0.15\textwidth}
+      \centering
+      \includegraphics[height=1.5cm]{../images/logo_universidad_nacional.png}
+    \end{column}
+    \begin{column}{0.70\textwidth}
+      \centering
+      {\small Universidad Nacional de Asunci\'on\\Facultad Polit\'ecnica\\Ingenier\'ia en Inform\'atica}
+    \end{column}
+    \begin{column}{0.15\textwidth}
+      \centering
+      \includegraphics[height=1.5cm]{../images/logo_fpuna.png}
+    \end{column}
+  \end{columns}%
 }
 \logo{\includegraphics[height=0.8cm]{../images/logo_fpuna.png}}
 
 % --- Info ---
-\title[Predicci\'on de Precios]{Din\'amica de los Precios en el Sector de Materiales de Construcci\'on: Patrones y Predicciones Basados en Datos}
+\title[Din\'amica de Precios de Materiales de Construcci\'on]{Din\'amica de los Precios en el Sector de Materiales de Construcci\'on: Patrones y Predicciones Basados en Datos}
 \author[Esp\'inola, S\'anchez]{Diego Milciades Esp\'inola Alvarenga \and Mat\'ias Rub\'en S\'anchez S\'anchez\\[0.3cm] \small Tutor: Gustavo Sosa-Cabrera}
-\institute[FPUNA]{Universidad Nacional de Asunci\'on\\Facultad Polit\'ecnica\\Ingenier\'ia en Inform\'atica}
+\institute[FPUNA]{}
 \date{2026}
 
 % --- Ruta de figuras ---
@@ -43,9 +55,12 @@
 % ============================================================
 % PORTADA
 % ============================================================
+{
+\setbeamertemplate{logo}{}
 \begin{frame}
   \titlepage
 \end{frame}
+}
 
 % ============================================================
 % CONTENIDO

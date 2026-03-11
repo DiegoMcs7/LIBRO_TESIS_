@@ -12,7 +12,8 @@
       "Read(//c/Users/usuario/Desktop/facultad/Tesis/libro_tesis/**)",
       "Bash(done)",
       "Bash(rm:*)",
-      "Bash(do pdflatex:*)"
+      "Bash(do pdflatex:*)",
+      "Bash(tasklist:*)"
     ]
   }
 }
