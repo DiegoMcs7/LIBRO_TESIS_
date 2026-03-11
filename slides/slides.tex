@@ -39,31 +39,29 @@
 \definecolor{rojoclaro}{RGB}{255,220,220}
 \definecolor{amarilloclaro}{RGB}{255,245,200}
 
-% --- Logos en car\'atula: simétricos con instituto ---
-\titlegraphic{%
-  \vspace{-1.5cm}%
-  \begin{columns}[c]
-    \begin{column}{0.18\textwidth}
-      \centering
-      \includegraphics[height=1.5cm]{../images/logo_universidad_nacional.png}
-    \end{column}
-    \begin{column}{0.64\textwidth}
-      \centering
-      {\small Universidad Nacional de Asunci\'on\\Facultad Polit\'ecnica\\Ingenier\'ia en Inform\'atica\\[0.15cm] 2026}
-    \end{column}
-    \begin{column}{0.18\textwidth}
-      \centering
-      \includegraphics[height=1.5cm]{../images/logo_fpuna.png}
-    \end{column}
-  \end{columns}%
-}
+% --- Logo en slides normales ---
 \logo{\includegraphics[height=0.8cm]{../images/logo_fpuna.png}}
 
 % --- Info ---
 \title[Din\'amica de Precios de Materiales de Construcci\'on]{Din\'amica de los Precios en el Sector de Materiales de Construcci\'on: Patrones y Predicciones Basados en Datos}
 \author[Esp\'inola, S\'anchez]{Diego Milciades Esp\'inola Alvarenga \and Mat\'ias Rub\'en S\'anchez S\'anchez\\[0.3cm] \small Tutor: Gustavo Sosa-Cabrera}
-\institute[FPUNA]{}
-\date{}
+\institute[FPUNA]{%
+  \begin{columns}[c]
+    \begin{column}{0.18\textwidth}
+      \centering
+      \includegraphics[height=1.3cm]{../images/logo_universidad_nacional.png}
+    \end{column}
+    \begin{column}{0.64\textwidth}
+      \centering
+      {\small Universidad Nacional de Asunci\'on\\Facultad Polit\'ecnica\\Ingenier\'ia en Inform\'atica}
+    \end{column}
+    \begin{column}{0.18\textwidth}
+      \centering
+      \includegraphics[height=1.3cm]{../images/logo_fpuna.png}
+    \end{column}
+  \end{columns}%
+}
+\date{2026}
 
 % --- Ruta de figuras ---
 \graphicspath{{../images/}{../predicciones/}}
