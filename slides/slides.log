@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.16)  10 MAR 2026 23:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.16)  10 MAR 2026 23:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -879,7 +879,7 @@ merounded.sty)
 meinfolines.sty))
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 46.
+(hyperref)                removing `\\' on input line 64.
 
 
 (C:\Users\usuario\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-p
@@ -894,24 +894,24 @@ Package babel Info: 'spanish' activates 'spanish' shorthands.
 )
 \openout1 = `slides.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -973,63 +973,63 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 .cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 53.
+Package hyperref Info: Link coloring OFF on input line 71.
  (slides.out) (slides.out)
 \@outlinefile=\write5
 \openout5 = `slides.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 53.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 71.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 53.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 71.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 53.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 53.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 71.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 71.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 53.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 71.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 53.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 53.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 71.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 71.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 53.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 71.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 53.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 53.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 71.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 71.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 53.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 71.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 53.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 53.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 71.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 71.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 53.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 71.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 53.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 71.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 53.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 71.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 53.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 71.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 53.
+(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 71.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 53.
+(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 71.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 53.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 71.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 53.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 71.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 53.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 53.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 71.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 71.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 5
-3.
+(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 7
+1.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 5
-3.
+(Font)                  OT1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 7
+1.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 53.
+ut line 71.
 
 (C:\Users\usuario\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator
 -basic-dictionary-English.dict
@@ -1055,29 +1055,29 @@ Dictionary: translator-numbers-dictionary, Language: English
 -theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \. on input line 53.
-LaTeX Info: Redefining \% on input line 53.
+LaTeX Info: Redefining \. on input line 71.
+LaTeX Info: Redefining \% on input line 71.
  (slides.nav)
 <../images/logo_universidad_nacional.png, id=66, 131.49126pt x 131.49126pt>
 File: ../images/logo_universidad_nacional.png Graphic file (type png)
 <use ../images/logo_universidad_nacional.png>
 Package pdftex.def Info: ../images/logo_universidad_nacional.png  used on input
- line 62.
+ line 80.
 (pdftex.def)             Requested size: 42.67996pt x 42.67912pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 62.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 80.
 
 
 (C:\Users\usuario\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 62.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 80.
 
 
 (C:\Users\usuario\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
-ut line 62.
+ut line 80.
 
 (C:\Users\usuario\AppData\Local\Programs\MiKTeX\tex/latex/sansmathaccent\ot1mat
 hkerncmss.fd
@@ -1087,7 +1087,7 @@ thkerncmss.
 <../images/logo_fpuna.png, id=67, 239.89626pt x 359.3425pt>
 File: ../images/logo_fpuna.png Graphic file (type png)
 <use ../images/logo_fpuna.png>
-Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 62.
+Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 80.
 (pdftex.def)             Requested size: 28.48979pt x 42.67912pt.
  [1
 
@@ -1099,63 +1099,63 @@ LaTeX Info: Redefining \% on input line 1.
 )
 File: ../images/logo_fpuna.png Graphic file (type png)
 <use ../images/logo_fpuna.png>
-Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 70.
+Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 88.
 (pdftex.def)             Requested size: 15.1948pt x 22.76228pt.
  [2
 
 ]
 File: ../images/logo_fpuna.png Graphic file (type png)
 <use ../images/logo_fpuna.png>
-Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 84.
+Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 102.
 (pdftex.def)             Requested size: 15.1948pt x 22.76228pt.
  [3
 
 ]
 File: ../images/logo_fpuna.png Graphic file (type png)
 <use ../images/logo_fpuna.png>
-Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 112.
+Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 130.
 (pdftex.def)             Requested size: 15.1948pt x 22.76228pt.
  [4
 
 ]
 File: ../images/logo_fpuna.png Graphic file (type png)
 <use ../images/logo_fpuna.png>
-Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 130.
+Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 148.
 (pdftex.def)             Requested size: 15.1948pt x 22.76228pt.
  [5
 
 ]
 File: ../images/logo_fpuna.png Graphic file (type png)
 <use ../images/logo_fpuna.png>
-Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 155.
+Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 173.
 (pdftex.def)             Requested size: 15.1948pt x 22.76228pt.
  [6
 
 ]
 File: ../images/logo_fpuna.png Graphic file (type png)
 <use ../images/logo_fpuna.png>
-Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 172.
+Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 190.
 (pdftex.def)             Requested size: 15.1948pt x 22.76228pt.
  [7
 
 ]
 File: ../images/logo_fpuna.png Graphic file (type png)
 <use ../images/logo_fpuna.png>
-Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 199.
+Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 217.
 (pdftex.def)             Requested size: 15.1948pt x 22.76228pt.
  [8
 
 ]
 File: ../images/logo_fpuna.png Graphic file (type png)
 <use ../images/logo_fpuna.png>
-Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 229.
+Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 247.
 (pdftex.def)             Requested size: 15.1948pt x 22.76228pt.
  [9
 
 ]
 File: ../images/logo_fpuna.png Graphic file (type png)
 <use ../images/logo_fpuna.png>
-Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 266.
+Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 284.
 (pdftex.def)             Requested size: 15.1948pt x 22.76228pt.
  [10
 
@@ -1167,11 +1167,11 @@ g Graphic file (type png)
 <use ../predicciones/prediccion_nivel_rio/resultados/grafico_01_particiones.png
 >
 Package pdftex.def Info: ../predicciones/prediccion_nivel_rio/resultados/grafic
-o_01_particiones.png  used on input line 272.
+o_01_particiones.png  used on input line 290.
 (pdftex.def)             Requested size: 354.0335pt x 136.09114pt.
 File: ../images/logo_fpuna.png Graphic file (type png)
 <use ../images/logo_fpuna.png>
-Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 272.
+Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 290.
 (pdftex.def)             Requested size: 15.1948pt x 22.76228pt.
  [11
 
@@ -1183,11 +1183,11 @@ prediccion.png Graphic file (type png)
 <use ../predicciones/prediccion_nivel_rio/resultados/grafico_08_historico_mas_p
 rediccion.png>
 Package pdftex.def Info: ../predicciones/prediccion_nivel_rio/resultados/grafic
-o_08_historico_mas_prediccion.png  used on input line 281.
+o_08_historico_mas_prediccion.png  used on input line 299.
 (pdftex.def)             Requested size: 354.0335pt x 156.02301pt.
 File: ../images/logo_fpuna.png Graphic file (type png)
 <use ../images/logo_fpuna.png>
-Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 281.
+Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 299.
 (pdftex.def)             Requested size: 15.1948pt x 22.76228pt.
  [12
 
@@ -1195,7 +1195,7 @@ Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 281.
 iccion.png>]
 File: ../images/logo_fpuna.png Graphic file (type png)
 <use ../images/logo_fpuna.png>
-Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 302.
+Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 320.
 (pdftex.def)             Requested size: 15.1948pt x 22.76228pt.
  [13
 
@@ -1207,15 +1207,15 @@ ficos/06_pronostico_completo.png Graphic file (type png)
 <use ../predicciones/prediccion_sarimax_cemento/resultados_sarimax_cemento/graf
 icos/06_pronostico_completo.png>
 Package pdftex.def Info: ../predicciones/prediccion_sarimax_cemento/resultados_
-sarimax_cemento/graficos/06_pronostico_completo.png  used on input line 324.
+sarimax_cemento/graficos/06_pronostico_completo.png  used on input line 342.
 (pdftex.def)             Requested size: 336.76004pt x 270.94801pt.
 
-Overfull \vbox (100.68561pt too high) detected at line 324
+Overfull \vbox (101.68561pt too high) detected at line 342
  []
 
 File: ../images/logo_fpuna.png Graphic file (type png)
 <use ../images/logo_fpuna.png>
-Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 324.
+Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 342.
 (pdftex.def)             Requested size: 15.1948pt x 22.76228pt.
 [14
 
@@ -1228,15 +1228,15 @@ raficos/06_pronostico_completo.png Graphic file (type png)
 <use ../predicciones/prediccion_sarimax_ladrillo/resultados_sarimax_ladrillo/gr
 aficos/06_pronostico_completo.png>
 Package pdftex.def Info: ../predicciones/prediccion_sarimax_ladrillo/resultados
-_sarimax_ladrillo/graficos/06_pronostico_completo.png  used on input line 346.
+_sarimax_ladrillo/graficos/06_pronostico_completo.png  used on input line 364.
 (pdftex.def)             Requested size: 336.76004pt x 270.94801pt.
 
-Overfull \vbox (100.68561pt too high) detected at line 346
+Overfull \vbox (101.68561pt too high) detected at line 364
  []
 
 File: ../images/logo_fpuna.png Graphic file (type png)
 <use ../images/logo_fpuna.png>
-Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 346.
+Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 364.
 (pdftex.def)             Requested size: 15.1948pt x 22.76228pt.
 [15
 
@@ -1249,11 +1249,11 @@ o_01_particiones.png Graphic file (type png)
 <use ../predicciones/prediccion_cemento_lstm/resultados_con_covid/entrenamiento
 _01_particiones.png>
 Package pdftex.def Info: ../predicciones/prediccion_cemento_lstm/resultados_con
-_covid/entrenamiento_01_particiones.png  used on input line 359.
+_covid/entrenamiento_01_particiones.png  used on input line 377.
 (pdftex.def)             Requested size: 336.76004pt x 118.13216pt.
 File: ../images/logo_fpuna.png Graphic file (type png)
 <use ../images/logo_fpuna.png>
-Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 359.
+Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 377.
 (pdftex.def)             Requested size: 15.1948pt x 22.76228pt.
  [16
 
@@ -1266,11 +1266,11 @@ diccion_futura_completa.png Graphic file (type png)
 <use ../predicciones/prediccion_cemento_lstm/resultados_sin_covid/final_06_pred
 iccion_futura_completa.png>
 Package pdftex.def Info: ../predicciones/prediccion_cemento_lstm/resultados_sin
-_covid/final_06_prediccion_futura_completa.png  used on input line 383.
+_covid/final_06_prediccion_futura_completa.png  used on input line 401.
 (pdftex.def)             Requested size: 323.80824pt x 119.69128pt.
 File: ../images/logo_fpuna.png Graphic file (type png)
 <use ../images/logo_fpuna.png>
-Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 383.
+Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 401.
 (pdftex.def)             Requested size: 15.1948pt x 22.76228pt.
  [17
 
@@ -1283,11 +1283,11 @@ diccion_futura_completa.png Graphic file (type png)
 <use ../predicciones/prediccion_cemento_lstm/resultados_con_covid/final_06_pred
 iccion_futura_completa.png>
 Package pdftex.def Info: ../predicciones/prediccion_cemento_lstm/resultados_con
-_covid/final_06_prediccion_futura_completa.png  used on input line 407.
+_covid/final_06_prediccion_futura_completa.png  used on input line 425.
 (pdftex.def)             Requested size: 323.80824pt x 119.69128pt.
 File: ../images/logo_fpuna.png Graphic file (type png)
 <use ../images/logo_fpuna.png>
-Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 407.
+Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 425.
 (pdftex.def)             Requested size: 15.1948pt x 22.76228pt.
  [18
 
@@ -1300,11 +1300,11 @@ ediccion_futura_completa.png Graphic file (type png)
 <use ../predicciones/prediccion_ladrillo_lstm/resultados_sin_covid/final_06_pre
 diccion_futura_completa.png>
 Package pdftex.def Info: ../predicciones/prediccion_ladrillo_lstm/resultados_si
-n_covid/final_06_prediccion_futura_completa.png  used on input line 431.
+n_covid/final_06_prediccion_futura_completa.png  used on input line 449.
 (pdftex.def)             Requested size: 323.80824pt x 119.74298pt.
 File: ../images/logo_fpuna.png Graphic file (type png)
 <use ../images/logo_fpuna.png>
-Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 431.
+Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 449.
 (pdftex.def)             Requested size: 15.1948pt x 22.76228pt.
  [19
 
@@ -1317,11 +1317,11 @@ ediccion_futura_completa.png Graphic file (type png)
 <use ../predicciones/prediccion_ladrillo_lstm/resultados_con_covid/final_06_pre
 diccion_futura_completa.png>
 Package pdftex.def Info: ../predicciones/prediccion_ladrillo_lstm/resultados_co
-n_covid/final_06_prediccion_futura_completa.png  used on input line 455.
+n_covid/final_06_prediccion_futura_completa.png  used on input line 473.
 (pdftex.def)             Requested size: 323.80824pt x 119.74298pt.
 File: ../images/logo_fpuna.png Graphic file (type png)
 <use ../images/logo_fpuna.png>
-Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 455.
+Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 473.
 (pdftex.def)             Requested size: 15.1948pt x 22.76228pt.
  [20
 
@@ -1334,11 +1334,11 @@ iccion_futura_completa.png Graphic file (type png)
 <use ../predicciones/prediccion_cemento_gru/prediccion_sin_covid/final_06_predi
 ccion_futura_completa.png>
 Package pdftex.def Info: ../predicciones/prediccion_cemento_gru/prediccion_sin_
-covid/final_06_prediccion_futura_completa.png  used on input line 482.
+covid/final_06_prediccion_futura_completa.png  used on input line 500.
 (pdftex.def)             Requested size: 323.80824pt x 119.69128pt.
 File: ../images/logo_fpuna.png Graphic file (type png)
 <use ../images/logo_fpuna.png>
-Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 482.
+Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 500.
 (pdftex.def)             Requested size: 15.1948pt x 22.76228pt.
  [21
 
@@ -1351,11 +1351,11 @@ iccion_futura_completa.png Graphic file (type png)
 <use ../predicciones/prediccion_cemento_gru/resultados_con_covid/final_06_predi
 ccion_futura_completa.png>
 Package pdftex.def Info: ../predicciones/prediccion_cemento_gru/resultados_con_
-covid/final_06_prediccion_futura_completa.png  used on input line 506.
+covid/final_06_prediccion_futura_completa.png  used on input line 524.
 (pdftex.def)             Requested size: 323.80824pt x 119.69128pt.
 File: ../images/logo_fpuna.png Graphic file (type png)
 <use ../images/logo_fpuna.png>
-Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 506.
+Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 524.
 (pdftex.def)             Requested size: 15.1948pt x 22.76228pt.
  [22
 
@@ -1368,11 +1368,11 @@ diccion_futura_completa.png Graphic file (type png)
 <use ../predicciones/prediccion_ladrillo_gru/resultados_sin_covid/final_06_pred
 iccion_futura_completa.png>
 Package pdftex.def Info: ../predicciones/prediccion_ladrillo_gru/resultados_sin
-_covid/final_06_prediccion_futura_completa.png  used on input line 530.
+_covid/final_06_prediccion_futura_completa.png  used on input line 548.
 (pdftex.def)             Requested size: 323.80824pt x 119.74298pt.
 File: ../images/logo_fpuna.png Graphic file (type png)
 <use ../images/logo_fpuna.png>
-Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 530.
+Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 548.
 (pdftex.def)             Requested size: 15.1948pt x 22.76228pt.
 
 [23
@@ -1386,11 +1386,11 @@ diccion_futura_completa.png Graphic file (type png)
 <use ../predicciones/prediccion_ladrillo_gru/resultados_con_covid/final_06_pred
 iccion_futura_completa.png>
 Package pdftex.def Info: ../predicciones/prediccion_ladrillo_gru/resultados_con
-_covid/final_06_prediccion_futura_completa.png  used on input line 554.
+_covid/final_06_prediccion_futura_completa.png  used on input line 572.
 (pdftex.def)             Requested size: 323.80824pt x 119.74298pt.
 File: ../images/logo_fpuna.png Graphic file (type png)
 <use ../images/logo_fpuna.png>
-Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 554.
+Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 572.
 (pdftex.def)             Requested size: 15.1948pt x 22.76228pt.
  [24
 
@@ -1398,28 +1398,28 @@ Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 554.
 ion_futura_completa.png>]
 File: ../images/logo_fpuna.png Graphic file (type png)
 <use ../images/logo_fpuna.png>
-Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 586.
+Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 604.
 (pdftex.def)             Requested size: 15.1948pt x 22.76228pt.
  [25
 
 ]
 File: ../images/logo_fpuna.png Graphic file (type png)
 <use ../images/logo_fpuna.png>
-Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 615.
+Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 633.
 (pdftex.def)             Requested size: 15.1948pt x 22.76228pt.
  [26
 
 ]
 File: ../images/logo_fpuna.png Graphic file (type png)
 <use ../images/logo_fpuna.png>
-Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 634.
+Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 652.
 (pdftex.def)             Requested size: 15.1948pt x 22.76228pt.
  [27
 
 ]
 File: ../images/logo_fpuna.png Graphic file (type png)
 <use ../images/logo_fpuna.png>
-Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 656.
+Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 674.
 (pdftex.def)             Requested size: 15.1948pt x 22.76228pt.
 
 [28
@@ -1427,30 +1427,33 @@ Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 656.
 ]
 File: ../images/logo_fpuna.png Graphic file (type png)
 <use ../images/logo_fpuna.png>
-Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 672.
+Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 690.
 (pdftex.def)             Requested size: 15.1948pt x 22.76228pt.
  [29
 
 ]
+Overfull \vbox (1.06094pt too high) detected at line 710
+ []
+
 File: ../images/logo_fpuna.png Graphic file (type png)
 <use ../images/logo_fpuna.png>
-Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 692.
+Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 710.
 (pdftex.def)             Requested size: 15.1948pt x 22.76228pt.
- [30
+[30
 
 ]
 File: ../images/logo_universidad_nacional.png Graphic file (type png)
 <use ../images/logo_universidad_nacional.png>
 Package pdftex.def Info: ../images/logo_universidad_nacional.png  used on input
- line 714.
+ line 732.
 (pdftex.def)             Requested size: 34.14278pt x 34.14322pt.
 File: ../images/logo_fpuna.png Graphic file (type png)
 <use ../images/logo_fpuna.png>
-Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 714.
+Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 732.
 (pdftex.def)             Requested size: 22.79404pt x 34.14322pt.
 File: ../images/logo_fpuna.png Graphic file (type png)
 <use ../images/logo_fpuna.png>
-Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 714.
+Package pdftex.def Info: ../images/logo_fpuna.png  used on input line 732.
 (pdftex.def)             Requested size: 15.1948pt x 22.76228pt.
  [31
 
@@ -1476,10 +1479,10 @@ Package rerunfilecheck Info: File `slides.out' has not changed.
 (rerunfilecheck)             Checksum: A7F9F8EB58D1206DC463665DB13767D5;1383.
  ) 
 Here is how much of TeX's memory you used:
- 23928 strings out of 467870
- 474634 string characters out of 5417386
- 851073 words of memory out of 5000000
- 52246 multiletter control sequences out of 15000+600000
+ 23915 strings out of 467870
+ 474182 string characters out of 5417386
+ 850957 words of memory out of 5000000
+ 52233 multiletter control sequences out of 15000+600000
  641084 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,16n,123p,383b,1010s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1498,7 +1501,7 @@ type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/usuario/AppData/Local/Programs/Mi
 KTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/usuario/AppData/Local/P
 rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/usuario/AppD
 ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on slides.pdf (31 pages, 2286901 bytes).
+Output written on slides.pdf (31 pages, 2285772 bytes).
 PDF statistics:
  514 PDF objects out of 1000 (max. 8388607)
  73 named destinations out of 1000 (max. 500000)

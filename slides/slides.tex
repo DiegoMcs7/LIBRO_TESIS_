@@ -16,6 +16,24 @@
 % --- Quitar navegacion ---
 \setbeamertemplate{navigation symbols}{}
 
+% --- Pie de p\'agina con 2026 fijo ---
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.333\paperwidth,ht=2.5ex,dp=1.125ex,center]{author in head/foot}%
+      \usebeamerfont{author in head/foot}\insertshortauthor
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.334\paperwidth,ht=2.5ex,dp=1.125ex,center]{title in head/foot}%
+      \usebeamerfont{title in head/foot}\insertshorttitle
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.333\paperwidth,ht=2.5ex,dp=1.125ex,right]{date in head/foot}%
+      \usebeamerfont{date in head/foot}2026\hspace*{2em}
+      \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+    \end{beamercolorbox}%
+  }%
+  \vskip0pt%
+}
+
 % --- Colores para tablas ---
 \definecolor{verdeclaro}{RGB}{220,240,220}
 \definecolor{rojoclaro}{RGB}{255,220,220}
@@ -31,7 +49,7 @@
     \end{column}
     \begin{column}{0.64\textwidth}
       \centering
-      {\small Universidad Nacional de Asunci\'on\\Facultad Polit\'ecnica\\Ingenier\'ia en Inform\'atica\\[0.2cm] \normalsize 2026}
+      {\small Universidad Nacional de Asunci\'on\\Facultad Polit\'ecnica\\Ingenier\'ia en Inform\'atica\\[0.15cm] 2026}
     \end{column}
     \begin{column}{0.18\textwidth}
       \centering
@@ -45,7 +63,7 @@
 \title[Din\'amica de Precios de Materiales de Construcci\'on]{Din\'amica de los Precios en el Sector de Materiales de Construcci\'on: Patrones y Predicciones Basados en Datos}
 \author[Esp\'inola, S\'anchez]{Diego Milciades Esp\'inola Alvarenga \and Mat\'ias Rub\'en S\'anchez S\'anchez\\[0.3cm] \small Tutor: Gustavo Sosa-Cabrera}
 \institute[FPUNA]{}
-\date{2026}
+\date{}
 
 % --- Ruta de figuras ---
 \graphicspath{{../images/}{../predicciones/}}
