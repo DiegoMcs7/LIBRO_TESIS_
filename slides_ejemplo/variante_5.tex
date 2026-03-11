@@ -1,0 +1,103 @@
+\documentclass[12pt, aspectratio=169]{beamer}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+
+% === Madrid + whale ===
+\usetheme{Madrid}
+\usecolortheme{whale}
+\setbeamertemplate{navigation symbols}{}
+
+% --- Colores ---
+\definecolor{azulUNA}{RGB}{0, 51, 102}
+
+% --- Logo en esquina superior derecha: ambos logos ---
+\logo{%
+  \includegraphics[height=0.7cm]{../images/logo_universidad_nacional.png}%
+  \hspace{0.3cm}%
+  \includegraphics[height=0.7cm]{../images/logo_fpuna.png}%
+  \hspace{0.3cm}%
+}
+
+% --- FOOTER VARIANTE 5: Barra azul con secci\'on actual + n\'umero ---
+\setbeamertemplate{footline}{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1ex]{palette primary}%
+    \hspace{1em}%
+    \usebeamerfont{title in head/foot}\textcolor{white}{\insertsection}%
+    \hfill%
+    \textcolor{white}{\insertframenumber{} / \inserttotalframenumber}%
+    \hspace{1em}%
+  \end{beamercolorbox}%
+}
+
+\graphicspath{{../images/}}
+
+\begin{document}
+
+% === CARATULA (layout CACIC) ===
+{
+\setbeamertemplate{logo}{}
+\setbeamertemplate{footline}{}
+\begin{frame}[plain]
+\vspace{0.3cm}
+\begin{columns}[c]
+  \begin{column}{0.15\textwidth}
+    \centering
+    \includegraphics[height=1.8cm]{../images/logo_universidad_nacional.png}
+  \end{column}
+  \begin{column}{0.70\textwidth}
+    \centering
+    {\small UNIVERSIDAD NACIONAL DE ASUNCI\'ON\\
+    FACULTAD POLIT\'ECNICA\\
+    INGENIER\'IA EN INFORM\'ATICA}
+  \end{column}
+  \begin{column}{0.15\textwidth}
+    \centering
+    \includegraphics[height=1.8cm]{../images/logo_fpuna.png}
+  \end{column}
+\end{columns}
+
+\vspace{0.8cm}
+
+\begin{center}
+  {\Large\bfseries\textcolor{azulUNA}{%
+    Din\'amica de los Precios en el Sector de Materiales de Construcci\'on: Patrones y Predicciones Basados en Datos}}
+\end{center}
+
+\vspace{0.6cm}
+
+\begin{columns}[T]
+  \begin{column}{0.25\textwidth}
+    \raggedleft
+    {\textcolor{azulUNA}{Autores:}}
+  \end{column}
+  \begin{column}{0.55\textwidth}
+    \centering
+    Mat\'ias Rub\'en S\'anchez S\'anchez,\\
+    Diego Milciades Esp\'inola Alvarenga,\\
+    Gustavo Sosa-Cabrera
+  \end{column}
+\end{columns}
+
+\vfill
+\noindent\makebox[\linewidth]{\textcolor{azulUNA}{\rule{\paperwidth}{8pt}}}
+\end{frame}
+}
+
+% === SLIDE DE EJEMPLO ===
+\section{Introducci\'on}
+\begin{frame}{Slide de Ejemplo}
+\begin{itemize}
+  \item \textbf{Footer:} Barra azul con \textbf{secci\'on actual} izq + n\'umero der.
+  \item La secci\'on cambia din\'amicamente (Introducci\'on, Metodolog\'ia, etc.).
+  \item \textbf{Ambos logos} (UNA + FPUNA) en esquina superior derecha.
+\end{itemize}
+\begin{block}{Variante 5}
+  Footer = barra azul + secci\'on din\'amica + nro. Ambos logos en esquina.
+\end{block}
+\end{frame}
+
+\end{document}

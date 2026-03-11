@@ -10,7 +10,9 @@
       "Bash(for file in metodologia.tex fundamento.tex trabajos_relacionados.tex discusion.tex conclusion.tex)",
       "Bash(do echo \"=== $file ===\")",
       "Read(//c/Users/usuario/Desktop/facultad/Tesis/libro_tesis/**)",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(rm:*)",
+      "Bash(do pdflatex:*)"
     ]
   }
 }
