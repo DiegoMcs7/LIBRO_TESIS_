@@ -29,7 +29,7 @@ Una serie temporal es un proceso estocastico {Y_t : t pertenece a T}, donde T es
 **Definicion formal de estacionariedad debil (covarianza-estacionariedad):**
 Un proceso {Y_t} es debilmente estacionario si:
 1. E[Y_t] = mu para todo t (media constante)
-2. Var(Y_t) = sigma^2 < infinito para todo t (varianza finita y constante)
+2. Var(Y_t) = σ^2 < infinito para todo t (varianza finita y constante)
 3. Cov(Y_t, Y_{t+h}) = gamma(h) para todo t (la autocovarianza depende solo del lag h, no de t)
 
 **Estacionariedad estricta (fuerte):**
@@ -56,9 +56,9 @@ donde P(.) denota la proyeccion lineal.
 **Teorema de descomposicion de Wold (1938):**
 Todo proceso estacionario debil de media cero puede escribirse como:
 ```
-Y_t = sum_{j=0}^{infinito} psi_j * epsilon_{t-j} + eta_t
+Y_t = sum_{j=0}^{infinito} psi_j * ε_{t-j} + eta_t
 ```
-donde epsilon_t es ruido blanco, psi_0 = 1, sum(psi_j^2) < infinito, y eta_t es un proceso deterministico. Este teorema justifica el uso de modelos MA(infinito) y, por extension, ARMA finitos como aproximaciones.
+donde ε_t es ruido blanco, psi_0 = 1, sum(psi_j^2) < infinito, y eta_t es un proceso deterministico. Este teorema justifica el uso de modelos MA(infinito) y, por extension, ARMA finitos como aproximaciones.
 
 ---
 
@@ -113,69 +113,69 @@ ACELERACION:  I=2 (diferenciar velocidad -> aceleracion):
 
 **Representacion en forma de operador:**
 ```
-phi(B) Y_t = epsilon_t
-donde phi(B) = 1 - phi_1*B - phi_2*B^2 - ... - phi_p*B^p
+φ(B) Y_t = ε_t
+donde φ(B) = 1 - φ_1*B - φ_2*B^2 - ... - φ_p*B^p
 ```
 
 **Condicion de estacionariedad:**
-El proceso AR(p) es estacionario si y solo si todas las raices del polinomio caracteristico phi(z) = 0 estan **fuera** del circulo unitario en el plano complejo (|z_i| > 1 para todo i).
+El proceso AR(p) es estacionario si y solo si todas las raices del polinomio caracteristico φ(z) = 0 estan **fuera** del circulo unitario en el plano complejo (|z_i| > 1 para todo i).
 
 **Ejemplo AR(1):**
 ```
-phi(z) = 1 - phi_1*z = 0  =>  z = 1/phi_1
-Estacionario si |1/phi_1| > 1  =>  |phi_1| < 1
+φ(z) = 1 - φ_1*z = 0  =>  z = 1/φ_1
+Estacionario si |1/φ_1| > 1  =>  |φ_1| < 1
 ```
-Esto es intuitivo: si |phi_1| >= 1, cada valor depende tanto o mas del anterior, y la serie diverge.
+Esto es intuitivo: si |φ_1| >= 1, cada valor depende tanto o mas del anterior, y la serie diverge.
 
 **Representacion MA(infinito) de un AR(p) estacionario:**
-Si phi(B) tiene raices fuera del circulo unitario, podemos invertir:
+Si φ(B) tiene raices fuera del circulo unitario, podemos invertir:
 ```
-Y_t = phi(B)^{-1} * epsilon_t = sum_{j=0}^{infinito} psi_j * epsilon_{t-j}
+Y_t = φ(B)^{-1} * ε_t = sum_{j=0}^{infinito} psi_j * ε_{t-j}
 ```
-donde los coeficientes psi_j se obtienen de la expansion en serie de potencias de 1/phi(z).
+donde los coeficientes psi_j se obtienen de la expansion en serie de potencias de 1/φ(z).
 
-**Para AR(1): psi_j = phi_1^j**, asi que:
+**Para AR(1): psi_j = φ_1^j**, asi que:
 ```
-Y_t = epsilon_t + phi_1*epsilon_{t-1} + phi_1^2*epsilon_{t-2} + ...
+Y_t = ε_t + φ_1*ε_{t-1} + φ_1^2*ε_{t-2} + ...
 ```
 Esto muestra que un AR(1) estacionario tiene memoria geometricamente decreciente de los shocks pasados.
 
 **Funcion de autocovarianza de AR(1):**
 ```
-gamma(h) = sigma^2 * phi_1^h / (1 - phi_1^2)
-rho(h) = phi_1^h
+gamma(h) = σ^2 * φ_1^h / (1 - φ_1^2)
+rho(h) = φ_1^h
 ```
 La autocorrelacion decae geometricamente, lo que explica el patron de "decaimiento gradual" del ACF de un AR.
 
 **Ecuaciones de Yule-Walker:**
 Para un AR(p), los parametros se pueden estimar resolviendo:
 ```
-[gamma(0)   gamma(1)  ... gamma(p-1)] [phi_1]   [gamma(1)]
-[gamma(1)   gamma(0)  ... gamma(p-2)] [phi_2] = [gamma(2)]
+[gamma(0)   gamma(1)  ... gamma(p-1)] [φ_1]   [gamma(1)]
+[gamma(1)   gamma(0)  ... gamma(p-2)] [φ_2] = [gamma(2)]
 [...                              ...] [...]     [...]
-[gamma(p-1) gamma(p-2)... gamma(0)  ] [phi_p]   [gamma(p)]
+[gamma(p-1) gamma(p-2)... gamma(0)  ] [φ_p]   [gamma(p)]
 ```
-En notacion compacta: Gamma * phi = gamma, y phi_hat = Gamma_hat^{-1} * gamma_hat (estimadores de momentos).
+En notacion compacta: Gamma * φ = gamma, y φ_hat = Gamma_hat^{-1} * gamma_hat (estimadores de momentos).
 
 ### 2.2 Teoria de Procesos MA(q)
 
 **Representacion:**
 ```
-Y_t = theta(B) * epsilon_t = epsilon_t + theta_1*epsilon_{t-1} + ... + theta_q*epsilon_{t-q}
+Y_t = θ(B) * ε_t = ε_t + θ_1*ε_{t-1} + ... + θ_q*ε_{t-q}
 ```
 
 **Propiedad clave:** Todo MA(q) es **siempre estacionario** (es una suma finita de ruido blanco, que tiene media y varianza finitas y constantes).
 
 **Condicion de invertibilidad:**
-El proceso MA(q) es invertible si todas las raices de theta(z) = 0 estan fuera del circulo unitario. La invertibilidad garantiza que el modelo puede reescribirse como un AR(infinito) y que los parametros son unicos.
+El proceso MA(q) es invertible si todas las raices de θ(z) = 0 estan fuera del circulo unitario. La invertibilidad garantiza que el modelo puede reescribirse como un AR(infinito) y que los parametros son unicos.
 
 **Ejemplo MA(1):**
 ```
-Y_t = epsilon_t + theta_1 * epsilon_{t-1}
+Y_t = ε_t + θ_1 * ε_{t-1}
 
 Autocorrelacion:
    rho(0) = 1
-   rho(1) = theta_1 / (1 + theta_1^2)
+   rho(1) = θ_1 / (1 + θ_1^2)
    rho(h) = 0 para h >= 2   <-- SE CORTA abruptamente
 
 PACF: decae gradualmente (patron inverso al AR)
@@ -191,14 +191,14 @@ MA(q) invertible   <---> AR(infinito)
 
 **Combinacion de AR y MA:**
 ```
-phi(B) Y_t = theta(B) epsilon_t
-(1 - phi_1*B - ... - phi_p*B^p) Y_t = (1 + theta_1*B + ... + theta_q*B^q) epsilon_t
+φ(B) Y_t = θ(B) ε_t
+(1 - φ_1*B - ... - φ_p*B^p) Y_t = (1 + θ_1*B + ... + θ_q*B^q) ε_t
 ```
 
 **Condiciones:**
-- Estacionariedad: raices de phi(z) fuera del circulo unitario
-- Invertibilidad: raices de theta(z) fuera del circulo unitario
-- Ademas, phi(z) y theta(z) no deben tener raices comunes (cancelacion de parametros)
+- Estacionariedad: raices de φ(z) fuera del circulo unitario
+- Invertibilidad: raices de θ(z) fuera del circulo unitario
+- Ademas, φ(z) y θ(z) no deben tener raices comunes (cancelacion de parametros)
 
 **ACF y PACF de ARMA(p,q):**
 - ACF: decaimiento mixto (combinacion de exponenciales/sinusoidales amortiguadas) despues del lag q
@@ -212,7 +212,7 @@ Una serie Y_t es I(d) si necesita d diferenciaciones para volverse estacionaria,
 
 **ARIMA(p,d,q):**
 ```
-phi(B) (1-B)^d Y_t = theta(B) epsilon_t
+φ(B) (1-B)^d Y_t = θ(B) ε_t
 ```
 
 **Ejemplo de diferenciacion de orden 2:**
@@ -224,9 +224,9 @@ Esto es la "aceleracion" (segunda diferencia): elimina tendencias lineales Y cua
 ### 2.5 Estimacion de Parametros: Maxima Verosimilitud
 
 **Funcion de verosimilitud para ARMA gaussiano:**
-Dado que epsilon_t ~ N(0, sigma^2), la verosimilitud conjunta de Y_1, ..., Y_n es:
+Dado que ε_t ~ N(0, σ^2), la verosimilitud conjunta de Y_1, ..., Y_n es:
 ```
-L(phi, theta, sigma^2 | Y) = (2*pi*sigma^2)^{-n/2} * |V|^{-1/2} * exp(-1/(2*sigma^2) * (Y-mu)' V^{-1} (Y-mu))
+L(φ, θ, σ^2 | Y) = (2*pi*σ^2)^{-n/2} * |V|^{-1/2} * exp(-1/(2*σ^2) * (Y-mu)' V^{-1} (Y-mu))
 ```
 donde V es la matriz de covarianza n x n.
 
@@ -287,7 +287,7 @@ Y_hat_{t+h|t} = E[Y_{t+h} | Y_1, ..., Y_t]
 
 **Intervalo de prediccion al (1-alpha)% de confianza:**
 ```
-Y_hat_{t+h|t} +/- z_{alpha/2} * sqrt(sigma^2 * sum_{j=0}^{h-1} psi_j^2)
+Y_hat_{t+h|t} +/- z_{alpha/2} * sqrt(σ^2 * sum_{j=0}^{h-1} psi_j^2)
 ```
 donde psi_j son los coeficientes de la representacion MA(infinito).
 
@@ -315,9 +315,9 @@ PASO 1: IDENTIFICACION
    Candidatos: ARIMA(1,1,0), ARIMA(0,1,1), ARIMA(1,1,1)
 
 PASO 2: ESTIMACION (ejemplo con ARIMA(1,1,1))
-   phi_1 = 0.35 (p-valor = 0.04, significativo)
-   theta_1 = -0.42 (p-valor = 0.03, significativo)
-   sigma^2 = 2.1
+   φ_1 = 0.35 (p-valor = 0.04, significativo)
+   θ_1 = -0.42 (p-valor = 0.03, significativo)
+   σ^2 = 2.1
    AIC = 42.3, BIC = 43.1
 
    Comparar:
@@ -331,7 +331,7 @@ PASO 3: DIAGNOSTICO
    Modelo validado.
 
 PREDICCION (mes 13):
-   Y_13 = 1.35*Y_12 - 0.35*Y_11 + epsilon_13 - 0.42*epsilon_12
+   Y_13 = 1.35*Y_12 - 0.35*Y_11 + ε_13 - 0.42*ε_12
    Y_13 = 1.35*60 - 0.35*59 + 0 - 0.42*residuo_12
    (asumiendo residuo_12 = Y_12 - Y_hat_12 ≈ 0.5)
    Y_13 = 81 - 20.65 - 0.21 ≈ 60.14 miles de Gs
@@ -392,43 +392,43 @@ La clave de SARIMA es la **multiplicacion** de los polinomios estacionales con l
 
 **Expansion del modelo SARIMA(1,1,1)(1,1,1)_12:**
 ```
-(1 - phi_1*B)(1 - Phi_1*B^12)(1-B)(1-B^12) Y_t = (1 + theta_1*B)(1 + Theta_1*B^12) epsilon_t
+(1 - φ_1*B)(1 - Φ_1*B^12)(1-B)(1-B^12) Y_t = (1 + θ_1*B)(1 + Θ_1*B^12) ε_t
 ```
 
 Expandiendo el lado izquierdo paso a paso:
 
 ```
-Paso 1: (1 - phi_1*B)(1 - Phi_1*B^12) = 1 - phi_1*B - Phi_1*B^12 + phi_1*Phi_1*B^13
+Paso 1: (1 - φ_1*B)(1 - Φ_1*B^12) = 1 - φ_1*B - Φ_1*B^12 + φ_1*Φ_1*B^13
 
 Paso 2: (1-B)(1-B^12) = 1 - B - B^12 + B^13
 
 Paso 3: Multiplicar resultados del Paso 1 y Paso 2:
-   (1 - phi_1*B - Phi_1*B^12 + phi_1*Phi_1*B^13)(1 - B - B^12 + B^13) Y_t
+   (1 - φ_1*B - Φ_1*B^12 + φ_1*Φ_1*B^13)(1 - B - B^12 + B^13) Y_t
 
 Expandiendo completamente (16 terminos):
    Y_t
-   - (1+phi_1)*Y_{t-1}
-   + phi_1*Y_{t-2}
-   - (Phi_1)*Y_{t-12}
-   + (Phi_1 + phi_1*Phi_1)*Y_{t-13}
-   - phi_1*Phi_1*Y_{t-14}
-   + Phi_1*Y_{t-12}      [termino de la diferenciacion estacional]
+   - (1+φ_1)*Y_{t-1}
+   + φ_1*Y_{t-2}
+   - (Φ_1)*Y_{t-12}
+   + (Φ_1 + φ_1*Φ_1)*Y_{t-13}
+   - φ_1*Φ_1*Y_{t-14}
+   + Φ_1*Y_{t-12}      [termino de la diferenciacion estacional]
    ... (muchos terminos cruzados)
 ```
 
 **Lado derecho:**
 ```
-(1 + theta_1*B)(1 + Theta_1*B^12) epsilon_t
-= epsilon_t + theta_1*epsilon_{t-1} + Theta_1*epsilon_{t-12} + theta_1*Theta_1*epsilon_{t-13}
+(1 + θ_1*B)(1 + Θ_1*B^12) ε_t
+= ε_t + θ_1*ε_{t-1} + Θ_1*ε_{t-12} + θ_1*Θ_1*ε_{t-13}
 ```
 
-**Observacion crucial:** El modelo multiplicativo genera **terminos de interaccion** (como phi_1*Phi_1*B^13) que un modelo aditivo no tendria. Esto permite capturar la interaccion entre la dinamica de corto plazo y la estacional.
+**Observacion crucial:** El modelo multiplicativo genera **terminos de interaccion** (como φ_1*Φ_1*B^13) que un modelo aditivo no tendria. Esto permite capturar la interaccion entre la dinamica de corto plazo y la estacional.
 
 ### 3.2 Diferenciacion Estacional: Interpretacion Formal
 
 La diferenciacion estacional (1-B^s) elimina la componente periodica:
 ```
-nabla_s Y_t = (1-B^s) Y_t = Y_t - Y_{t-s}
+∇_s Y_t = (1-B^s) Y_t = Y_t - Y_{t-s}
 ```
 
 Esto es equivalente a medir el **cambio interanual** (para s=12 mensual):
@@ -436,7 +436,7 @@ Esto es equivalente a medir el **cambio interanual** (para s=12 mensual):
 
 **Doble diferenciacion (d=1, D=1):**
 ```
-nabla nabla_s Y_t = (1-B)(1-B^s) Y_t
+∇ ∇_s Y_t = (1-B)(1-B^s) Y_t
 = Y_t - Y_{t-1} - Y_{t-s} + Y_{t-s-1}
 
 Para s=12:
@@ -560,12 +560,12 @@ Y_t = beta' X_t + N_t
 ```
 donde N_t sigue un proceso SARIMA:
 ```
-phi(B) Phi(B^s) (1-B)^d (1-B^s)^D N_t = theta(B) Theta(B^s) epsilon_t
+φ(B) Phi(B^s) (1-B)^d (1-B^s)^D N_t = θ(B) Theta(B^s) ε_t
 ```
 
 Equivalentemente:
 ```
-phi(B) Phi(B^s) (1-B)^d (1-B^s)^D [Y_t - beta' X_t] = theta(B) Theta(B^s) epsilon_t
+φ(B) Phi(B^s) (1-B)^d (1-B^s)^D [Y_t - beta' X_t] = θ(B) Theta(B^s) ε_t
 ```
 
 **Nota importante sobre la formulacion:** Existen DOS formas de incluir exogenas:
@@ -589,7 +589,7 @@ El algoritmo de Kalman filter se usa para calcular eficientemente las innovacion
 Todo modelo SARIMAX puede reescribirse como:
 ```
 Estado:      alpha_{t+1} = T * alpha_t + R * eta_t     (ecuacion de transicion)
-Observacion: Y_t = Z * alpha_t + beta' X_t + epsilon_t (ecuacion de observacion)
+Observacion: Y_t = Z * alpha_t + beta' X_t + ε_t (ecuacion de observacion)
 ```
 donde alpha_t es el vector de estado, T es la matriz de transicion, Z es el vector de observacion, y eta_t es la perturbacion del estado.
 
@@ -667,9 +667,9 @@ PASO 1: Identificacion
 
 PASO 2: Modelo candidato SARIMAX(1,1,1)(0,1,1)_12
    Despues de estimar por MLE:
-   phi_1 = 0.40 (p=0.02)    <-- significativo
-   theta_1 = -0.25 (p=0.04) <-- significativo
-   Theta_1 = -0.55 (p=0.01) <-- significativo
+   φ_1 = 0.40 (p=0.02)    <-- significativo
+   θ_1 = -0.25 (p=0.04) <-- significativo
+   Θ_1 = -0.55 (p=0.01) <-- significativo
    beta_TC = 3.2 (p=0.03)   <-- significativo
 
    Interpretacion de beta_TC = 3.2:
@@ -732,7 +732,7 @@ El test ADF evalua la hipotesis de raiz unitaria contra estacionariedad.
 
 **Modelo base:**
 ```
-Delta Y_t = alpha + beta*t + gamma*Y_{t-1} + sum_{i=1}^{p} delta_i*Delta Y_{t-i} + epsilon_t
+Delta Y_t = alpha + beta*t + gamma*Y_{t-1} + sum_{i=1}^{p} delta_i*Delta Y_{t-i} + ε_t
 ```
 
 **Hipotesis:**
@@ -761,7 +761,7 @@ Se puede seleccionar por:
 
 **Modelo:**
 ```
-Y_t = xi*t + r_t + epsilon_t
+Y_t = xi*t + r_t + ε_t
 donde r_t = r_{t-1} + u_t  (random walk)
 ```
 
@@ -773,7 +773,7 @@ H1: Var(u_t) > 0  (r_t es random walk -> Y_t no es estacionaria)
 
 **Estadistico:**
 ```
-KPSS = (1/T^2) * sum_{t=1}^{T} S_t^2 / sigma_hat^2
+KPSS = (1/T^2) * sum_{t=1}^{T} S_t^2 / σ_hat^2
 donde S_t = sum_{i=1}^{t} e_i  (sumas parciales de residuos)
 ```
 
@@ -876,14 +876,14 @@ Se calcula resolviendo las ecuaciones de Yule-Walker o via el algoritmo de Durbi
 
 ```
 Algoritmo de Durbin-Levinson:
-   phi_11 = rho(1)
+   φ_11 = rho(1)
    Para k = 2, 3, ...:
-      phi_kk = [rho(k) - sum_{j=1}^{k-1} phi_{k-1,j} * rho(k-j)] /
-               [1 - sum_{j=1}^{k-1} phi_{k-1,j} * rho(j)]
-      phi_kj = phi_{k-1,j} - phi_kk * phi_{k-1,k-j}   para j=1,...,k-1
+      φ_kk = [rho(k) - sum_{j=1}^{k-1} φ_{k-1,j} * rho(k-j)] /
+               [1 - sum_{j=1}^{k-1} φ_{k-1,j} * rho(j)]
+      φ_kj = φ_{k-1,j} - φ_kk * φ_{k-1,k-j}   para j=1,...,k-1
 ```
 
-La PACF muestral phi_kk tiene distribucion asintotica N(0, 1/n) bajo H0 para lags mayores que el orden verdadero.
+La PACF muestral φ_kk tiene distribucion asintotica N(0, 1/n) bajo H0 para lags mayores que el orden verdadero.
 
 ---
 
@@ -908,7 +908,7 @@ La PACF muestral phi_kk tiene distribucion asintotica N(0, 1/n) bajo H0 para lag
 
 Para un ARMA(p,q) gaussiano con datos Y = (Y_1, ..., Y_n):
 ```
-L(phi, theta, sigma^2) = (2*pi)^{-n/2} * |Sigma|^{-1/2} * exp(-1/2 * Y' Sigma^{-1} Y)
+L(φ, θ, σ^2) = (2*pi)^{-n/2} * |Sigma|^{-1/2} * exp(-1/2 * Y' Sigma^{-1} Y)
 ```
 donde Sigma es la matriz de covarianza n x n del proceso. Calcular |Sigma| y Sigma^{-1} directamente es O(n^3), costoso para n grande.
 
@@ -933,8 +933,8 @@ Bajo condiciones de regularidad, los MLE son:
 
 La matriz de informacion de Fisher proporciona los errores estandar asintoticos:
 ```
-I(theta) = -E[d^2 ln L / d theta d theta']
-Var(theta_hat) ≈ I(theta)^{-1} / n
+I(θ) = -E[d^2 ln L / d θ d θ']
+Var(θ_hat) ≈ I(θ)^{-1} / n
 ```
 
 Esto permite construir intervalos de confianza para los parametros y tests de significancia (t-test, Wald test).

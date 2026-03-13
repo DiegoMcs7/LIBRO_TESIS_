@@ -19,18 +19,18 @@ R: Seria terrible. Con 100 coeficientes, el modelo memorizaria el ruido (sobreaj
 **P3: Explica el operador de rezago B como si fuera una maquina del tiempo.**
 R: B es una maquina del tiempo que retrocede 1 paso. Si estas parado en junio 2025 (Y_t), aplicas B y viajas a mayo 2025 (Y_{t-1}). Si aplicas B dos veces (B^2), viajas a abril 2025 (Y_{t-2}). Es solo una notacion para "mirar hacia atras".
 
-**P4: Cual es la diferencia entre un modelo AR(1) con phi=0.9 y uno con phi=0.1?**
-R: Con phi=0.9, el valor actual depende fuertemente del anterior (90% de influencia). La serie es "persistente" - los valores cambian lentamente. Con phi=0.1, el valor actual apenas depende del anterior (10%). La serie es casi aleatoria, con poca memoria.
+**P4: Cual es la diferencia entre un modelo AR(1) con φ=0.9 y uno con φ=0.1?**
+R: Con φ=0.9, el valor actual depende fuertemente del anterior (90% de influencia). La serie es "persistente" - los valores cambian lentamente. Con φ=0.1, el valor actual apenas depende del anterior (10%). La serie es casi aleatoria, con poca memoria.
 ```
-phi=0.9:  100, 90, 81, 73, 66... (decae lentamente)
-phi=0.1:  100, 10, 1, 0.1, 0.01... (decae rapidamente)
+φ=0.9:  100, 90, 81, 73, 66... (decae lentamente)
+φ=0.1:  100, 10, 1, 0.1, 0.01... (decae rapidamente)
 ```
 
-**P5: Que pasa si phi=1 exactamente?**
+**P5: Que pasa si φ=1 exactamente?**
 R: Obtienes un "random walk" (caminata aleatoria): Y_t = Y_{t-1} + ruido. La serie no es estacionaria porque la varianza crece sin limite. Esto es muy comun en precios financieros - el mejor predictor del precio de maniana es el precio de hoy.
 
-**P6: Puede phi ser negativo? Que significa?**
-R: Si. phi negativo significa que la serie oscila. Si phi=-0.8:
+**P6: Puede φ ser negativo? Que significa?**
+R: Si. φ negativo significa que la serie oscila. Si φ=-0.8:
 ```
 Y_1 = 100
 Y_2 = -0.8*100 + ruido = -80 + ruido
@@ -45,8 +45,8 @@ R: Es un nombre historico confuso. NO es el promedio movil de los datos (como el
 **P8: Puedo tener un ARIMA con p=0 y q=0?**
 R: Si, seria ARIMA(0,d,0). Si d=1, es un random walk: Y_t = Y_{t-1} + ruido. Si d=0, la serie es simplemente ruido blanco. No es util como modelo predictivo porque no captura ningun patron.
 
-**P9: Como se estiman los coeficientes phi y theta?**
-R: Se usan metodos de maxima verosimilitud (Maximum Likelihood Estimation - MLE). La idea es encontrar los valores de phi y theta que hacen que los datos observados sean "mas probables" bajo el modelo. Es un proceso iterativo de optimizacion numerica.
+**P9: Como se estiman los coeficientes φ y θ?**
+R: Se usan metodos de maxima verosimilitud (Maximum Likelihood Estimation - MLE). La idea es encontrar los valores de φ y θ que hacen que los datos observados sean "mas probables" bajo el modelo. Es un proceso iterativo de optimizacion numerica.
 
 **P10: Que son los criterios AIC y BIC? Como se usan?**
 R: AIC (Akaike Information Criterion) y BIC (Bayesian Information Criterion) son medidas que equilibran la bondad de ajuste con la complejidad del modelo.
@@ -294,10 +294,10 @@ R: Viola el supuesto de exogeneidad, lo que causa estimaciones sesgadas. Ejemplo
 **P48: Que significado economico tienen los coeficientes de SARIMAX?**
 R: Cada coeficiente tiene interpretacion directa:
 ```
-phi_1 = 0.6:   "El 60% del precio del mes anterior persiste en el actual"
-Phi_1 = 0.3:   "El 30% del precio del mismo mes del anio pasado influye hoy"
+φ_1 = 0.6:   "El 60% del precio del mes anterior persiste en el actual"
+Φ_1 = 0.3:   "El 30% del precio del mismo mes del anio pasado influye hoy"
 beta_TC = 200:  "Por cada unidad que sube el tipo de cambio, el cemento sube 200 Gs"
-theta_1 = 0.4:  "El 40% del error del mes pasado corrige la prediccion actual"
+θ_1 = 0.4:  "El 40% del error del mes pasado corrige la prediccion actual"
 ```
 Esta interpretabilidad es la GRAN ventaja de SARIMAX sobre las redes neuronales.
 
@@ -361,7 +361,7 @@ Patron no lineal:   "El precio sube poco cuando la inflacion es baja, pero
 ```
 
 **P57: Que es un hiperparametro vs un parametro?**
-R: Parametro: lo aprende el modelo automaticamente (pesos de la red neuronal, coeficientes phi/theta). Hiperparametro: lo define el investigador antes del entrenamiento (learning rate, numero de capas, dropout). Analogia: parametro = lo que aprende un estudiante. Hiperparametro = el plan de estudio que el profesor disenia.
+R: Parametro: lo aprende el modelo automaticamente (pesos de la red neuronal, coeficientes φ/θ). Hiperparametro: lo define el investigador antes del entrenamiento (learning rate, numero de capas, dropout). Analogia: parametro = lo que aprende un estudiante. Hiperparametro = el plan de estudio que el profesor disenia.
 
 **P58: Que es la funcion de perdida (loss function)?**
 R: Es la medida de "que tan mal" esta prediciendo el modelo. Durante el entrenamiento, el modelo intenta MINIMIZAR esta funcion. Para regresion se usa tipicamente MSE:
@@ -779,7 +779,7 @@ PASO 1: Llegan X_t y H_{t-1}
 PASO 2: Se calculan las 3 compuertas en PARALELO
    +--------+  +--------+  +--------+  +--------+
    |Forget  |  |Input   |  |Output  |  |Candidat|
-   |sigma() |  |sigma() |  |sigma() |  |tanh()  |
+   |σ() |  |σ() |  |σ() |  |tanh()  |
    |= F_t   |  |= I_t   |  |= O_t   |  |= C~   |
    +--------+  +--------+  +--------+  +--------+
       (0-1)       (0-1)       (0-1)      (-1,1)
@@ -809,8 +809,8 @@ La celda LSTM puede aprender a:
 **P110: Que es peephole connection en LSTM?**
 R: Es una variante donde las compuertas tambien "miran" el estado de celda C_{t-1}:
 ```
-Standard:  F_t = sigma(X_t*W + H_{t-1}*W + b)
-Peephole:  F_t = sigma(X_t*W + H_{t-1}*W + C_{t-1}*W_c + b)
+Standard:  F_t = σ(X_t*W + H_{t-1}*W + b)
+Peephole:  F_t = σ(X_t*W + H_{t-1}*W + C_{t-1}*W_c + b)
                                               ^^^^^^^^^^^
                                               Nuevo termino
 ```
@@ -1467,8 +1467,8 @@ R: Es la capacidad del modelo de funcionar bien con datos NUEVOS que nunca vio d
 R:
 ```
 Parametrico: tiene una forma funcional fija con parametros a estimar.
-   ARIMA: Y = phi*Y_{t-1} + theta*e_{t-1} + ...
-   Forma fija, solo estimar phi y theta.
+   ARIMA: Y = φ*Y_{t-1} + θ*e_{t-1} + ...
+   Forma fija, solo estimar φ y θ.
 
 No parametrico: no asume forma funcional.
    Redes neuronales: "la funcion puede ser cualquier cosa"

@@ -51,31 +51,31 @@ Pensalo como un estudiante que estudia para un examen:
 El modelo AR(p) expresa el valor actual como una combinacion lineal de los `p` valores anteriores:
 
 ```
-Y_t = phi_1 * Y_{t-1} + phi_2 * Y_{t-2} + ... + phi_p * Y_{t-p} + epsilon_t
+Y_t = φ_1 * Y_{t-1} + φ_2 * Y_{t-2} + ... + φ_p * Y_{t-p} + ε_t
 ```
 
 Donde:
 - `Y_t` = valor de la serie en el tiempo t
-- `phi_i` = coeficientes autoregresivos (se estiman del dato)
-- `epsilon_t` = ruido blanco (error aleatorio con media 0 y varianza constante)
+- `φ_i` = coeficientes autoregresivos (se estiman del dato)
+- `ε_t` = ruido blanco (error aleatorio con media 0 y varianza constante)
 - `p` = numero de rezagos (lags) incluidos
 
-**Interpretacion de los coeficientes phi:**
-- Si `phi_1 = 0.8`, significa que el valor de hoy tiene un 80% de influencia del valor de ayer.
-- Si `phi_2 = -0.3`, hay una correccion negativa basada en el valor de hace 2 periodos.
+**Interpretacion de los coeficientes φ:**
+- Si `φ_1 = 0.8`, significa que el valor de hoy tiene un 80% de influencia del valor de ayer.
+- Si `φ_2 = -0.3`, hay una correccion negativa basada en el valor de hace 2 periodos.
 
 ### Componente I (Integrado de orden d)
 
 La diferenciacion transforma una serie no estacionaria en estacionaria:
 
 ```
-nabla Y_t = Y_t - Y_{t-1}          (diferenciacion de orden 1)
-nabla^2 Y_t = nabla(Y_t - Y_{t-1})  (diferenciacion de orden 2)
+∇ Y_t = Y_t - Y_{t-1}          (diferenciacion de orden 1)
+∇^2 Y_t = ∇(Y_t - Y_{t-1})  (diferenciacion de orden 2)
 ```
 
 Con el operador de rezago B (backshift):
 ```
-nabla^d Y_t = (1 - B)^d Y_t
+∇^d Y_t = (1 - B)^d Y_t
 donde B Y_t = Y_{t-1}
 ```
 
@@ -84,17 +84,17 @@ donde B Y_t = Y_{t-1}
 ### Componente MA (Media Movil de orden q)
 
 ```
-Y_t = epsilon_t + theta_1 * epsilon_{t-1} + theta_2 * epsilon_{t-2} + ... + theta_q * epsilon_{t-q}
+Y_t = ε_t + θ_1 * ε_{t-1} + θ_2 * ε_{t-2} + ... + θ_q * ε_{t-q}
 ```
 
 Donde:
-- `theta_j` = coeficientes de media movil
-- `epsilon_{t-j}` = errores pasados del modelo
+- `θ_j` = coeficientes de media movil
+- `ε_{t-j}` = errores pasados del modelo
 
 ### Formulacion compacta ARIMA(p,d,q)
 
 ```
-(1 - phi_1*B - ... - phi_p*B^p)(1 - B)^d Y_t = (1 + theta_1*B + ... + theta_q*B^q) epsilon_t
+(1 - φ_1*B - ... - φ_p*B^p)(1 - B)^d Y_t = (1 + θ_1*B + ... + θ_q*B^q) ε_t
 ```
 
 Esto se lee como:
@@ -106,10 +106,10 @@ Esto se lee como:
 ### Ejemplo 1: ARIMA(1,0,0) - AR puro
 
 ```
-Y_t = 0.7 * Y_{t-1} + epsilon_t
+Y_t = 0.7 * Y_{t-1} + ε_t
 
 Si Y_99 = 100:
-   Y_100 = 0.7 * 100 + epsilon = 70 + ruido
+   Y_100 = 0.7 * 100 + ε = 70 + ruido
 
 Interpretacion: El valor actual es el 70% del valor anterior mas ruido.
 ```
@@ -117,9 +117,9 @@ Interpretacion: El valor actual es el 70% del valor anterior mas ruido.
 ### Ejemplo 2: ARIMA(0,1,0) - Solo diferenciacion (Random Walk)
 
 ```
-(1-B) Y_t = epsilon_t
-Y_t - Y_{t-1} = epsilon_t
-Y_t = Y_{t-1} + epsilon_t
+(1-B) Y_t = ε_t
+Y_t - Y_{t-1} = ε_t
+Y_t = Y_{t-1} + ε_t
 
 Si Y_99 = 55000 Gs (precio cemento):
    Y_100 = 55000 + ruido aleatorio
@@ -130,16 +130,16 @@ Interpretacion: La mejor prediccion del futuro es el valor actual (caminata alea
 ### Ejemplo 3: ARIMA(1,1,1) - Modelo completo
 
 ```
-(1 - 0.5*B)(1-B) Y_t = (1 + 0.3*B) epsilon_t
+(1 - 0.5*B)(1-B) Y_t = (1 + 0.3*B) ε_t
 
 Expandiendo:
-   Y_t - Y_{t-1} - 0.5*(Y_{t-1} - Y_{t-2}) = epsilon_t + 0.3*epsilon_{t-1}
-   Y_t = 1.5*Y_{t-1} - 0.5*Y_{t-2} + epsilon_t + 0.3*epsilon_{t-1}
+   Y_t - Y_{t-1} - 0.5*(Y_{t-1} - Y_{t-2}) = ε_t + 0.3*ε_{t-1}
+   Y_t = 1.5*Y_{t-1} - 0.5*Y_{t-2} + ε_t + 0.3*ε_{t-1}
 
-Si Y_98 = 54000, Y_99 = 55000, epsilon_99 = 200:
-   Y_100 = 1.5*55000 - 0.5*54000 + epsilon_100 + 0.3*200
-   Y_100 = 82500 - 27000 + epsilon_100 + 60
-   Y_100 = 55560 + epsilon_100
+Si Y_98 = 54000, Y_99 = 55000, ε_99 = 200:
+   Y_100 = 1.5*55000 - 0.5*54000 + ε_100 + 0.3*200
+   Y_100 = 82500 - 27000 + ε_100 + 60
+   Y_100 = 55560 + ε_100
 ```
 
 ### Ejemplo 4: Como elegir p, d, q en la practica
@@ -216,7 +216,7 @@ R: Si p o q son muy altos, el modelo se sobreajusta (memoriza el ruido en vez de
 **P7: ARIMA puede capturar patrones no lineales?**
 R: No. ARIMA es un modelo intrinsecamente lineal: los valores se expresan como sumas ponderadas (combinaciones lineales) de valores y errores pasados. Para patrones no lineales se necesitan modelos como redes neuronales (LSTM, GRU) o extensiones no lineales de ARIMA.
 
-**P8: Que es el ruido blanco (epsilon_t)?**
+**P8: Que es el ruido blanco (ε_t)?**
 R: Es una secuencia de valores aleatorios con media 0, varianza constante, y sin correlacion entre ellos. Representa lo que el modelo no puede explicar: la aleatoriedad pura. Si los residuos de un ARIMA ajustado son ruido blanco, el modelo capturo bien toda la estructura de la serie.
 
 ---
@@ -251,14 +251,14 @@ Parametros **estacionales** (NUEVOS):
 ### Formulacion matematica
 
 ```
-Phi_P(B^s) * phi_p(B) * (1-B)^d * (1-B^s)^D * Y_t = Theta_Q(B^s) * theta_q(B) * epsilon_t
+Φ_P(B^s) * φ_p(B) * (1-B)^d * (1-B^s)^D * Y_t = Θ_Q(B^s) * θ_q(B) * ε_t
 ```
 
 Donde:
-- `phi_p(B)` = polinomio AR no estacional: `(1 - phi_1*B - ... - phi_p*B^p)`
-- `theta_q(B)` = polinomio MA no estacional: `(1 + theta_1*B + ... + theta_q*B^q)`
-- `Phi_P(B^s)` = polinomio AR estacional: `(1 - Phi_1*B^s - ... - Phi_P*B^{Ps})`
-- `Theta_Q(B^s)` = polinomio MA estacional: `(1 + Theta_1*B^s + ... + Theta_Q*B^{Qs})`
+- `φ_p(B)` = polinomio AR no estacional: `(1 - φ_1*B - ... - φ_p*B^p)`
+- `θ_q(B)` = polinomio MA no estacional: `(1 + θ_1*B + ... + θ_q*B^q)`
+- `Φ_P(B^s)` = polinomio AR estacional: `(1 - Φ_1*B^s - ... - Φ_P*B^{Ps})`
+- `Θ_Q(B^s)` = polinomio MA estacional: `(1 + Θ_1*B^s + ... + Θ_Q*B^{Qs})`
 - `(1-B)^d` = diferenciacion no estacional
 - `(1-B^s)^D` = diferenciacion estacional
 
@@ -267,10 +267,10 @@ Donde:
 ### Ejemplo 1: SARIMA(1,0,0)(1,0,0)_12 para datos mensuales
 
 ```
-Y_t = phi_1 * Y_{t-1} + Phi_1 * Y_{t-12} - phi_1*Phi_1 * Y_{t-13} + epsilon_t
+Y_t = φ_1 * Y_{t-1} + Φ_1 * Y_{t-12} - φ_1*Φ_1 * Y_{t-13} + ε_t
 
-Con phi_1=0.5, Phi_1=0.8:
-Y_t = 0.5*Y_{t-1} + 0.8*Y_{t-12} - 0.4*Y_{t-13} + epsilon_t
+Con φ_1=0.5, Φ_1=0.8:
+Y_t = 0.5*Y_{t-1} + 0.8*Y_{t-12} - 0.4*Y_{t-13} + ε_t
 
 Interpretacion:
 - Y_t depende del mes anterior (0.5 * valor de hace 1 mes)
@@ -279,9 +279,9 @@ Interpretacion:
 
 Ejemplo numerico - prediciendo el precio de enero 2026:
    Y_{dic2025} = 55000, Y_{ene2025} = 50000, Y_{dic2024} = 49000
-   Y_{ene2026} = 0.5*55000 + 0.8*50000 - 0.4*49000 + epsilon
-   Y_{ene2026} = 27500 + 40000 - 19600 + epsilon
-   Y_{ene2026} = 47900 + epsilon
+   Y_{ene2026} = 0.5*55000 + 0.8*50000 - 0.4*49000 + ε
+   Y_{ene2026} = 27500 + 40000 - 19600 + ε
+   Y_{ene2026} = 47900 + ε
 ```
 
 ### Ejemplo 2: SARIMA(0,1,1)(0,1,1)_12 - "Modelo Airline"
@@ -289,7 +289,7 @@ Ejemplo numerico - prediciendo el precio de enero 2026:
 Este es el modelo clasico de Box-Jenkins para datos mensuales:
 
 ```
-(1-B)(1-B^12) Y_t = (1 + theta_1*B)(1 + Theta_1*B^12) epsilon_t
+(1-B)(1-B^12) Y_t = (1 + θ_1*B)(1 + Θ_1*B^12) ε_t
 
 Expandiendo el lado izquierdo:
    Y_t - Y_{t-1} - Y_{t-12} + Y_{t-13}
@@ -307,10 +307,10 @@ Esto significa: la prediccion se basa en tres valores historicos:
 Serie original (ventas mensuales): 100, 120, 90, 100, 130, 95, 110, 140, 100, ...
 
 Diferenciacion estacional con s=12:
-   nabla_12 Y_t = Y_t - Y_{t-12}
+   ∇_12 Y_t = Y_t - Y_{t-12}
 
 Si Y_ene2025 = 55000 y Y_ene2024 = 50000:
-   nabla_12 Y_ene2025 = 55000 - 50000 = 5000
+   ∇_12 Y_ene2025 = 55000 - 50000 = 5000
 
 Interpretacion: "En enero 2025 el precio fue 5000 mas que en enero 2024"
 Esto elimina el patron estacional y deja solo la tendencia interanual.
@@ -390,7 +390,7 @@ En tu tesis, para predecir el precio del cemento:
 ### Formulacion
 
 ```
-Phi_P(B^s) * phi_p(B) * (1-B)^d * (1-B^s)^D * Y_t = beta * X_t + Theta_Q(B^s) * theta_q(B) * epsilon_t
+Φ_P(B^s) * φ_p(B) * (1-B)^d * (1-B^s)^D * Y_t = beta * X_t + Θ_Q(B^s) * θ_q(B) * ε_t
 ```
 
 La **unica diferencia** con SARIMA es el termino `beta * X_t`:
@@ -423,14 +423,14 @@ Si `beta_1 = 500` para la variable "tipo de cambio":
 ```
 Supongamos que predecimos precio del cemento (Y) usando tipo de cambio (X):
 
-(1 - phi_1*B)(1 - Phi_1*B^12)(1-B)(1-B^12) Y_t = beta*X_t + (1+theta_1*B)(1+Theta_1*B^12) epsilon_t
+(1 - φ_1*B)(1 - Φ_1*B^12)(1-B)(1-B^12) Y_t = beta*X_t + (1+θ_1*B)(1+Θ_1*B^12) ε_t
 
-Con phi_1=0.3, Phi_1=0.5, theta_1=0.2, Theta_1=0.4, beta=200:
+Con φ_1=0.3, Φ_1=0.5, θ_1=0.2, Θ_1=0.4, beta=200:
 
 La prediccion combina:
-- 30% de influencia del mes anterior (phi_1)
-- 50% de influencia del mismo mes del anio pasado (Phi_1)
-- Correccion por errores recientes (theta_1, Theta_1)
+- 30% de influencia del mes anterior (φ_1)
+- 50% de influencia del mismo mes del anio pasado (Φ_1)
+- Correccion por errores recientes (θ_1, Θ_1)
 - 200 Gs por cada unidad de tipo de cambio (beta)
 ```
 
@@ -479,8 +479,8 @@ incorpora factores externos que afectan el precio.
 |  Componente SARIMA    +   Componente Exogeno |
 |  (patrones internos)      (factores externos)|
 |                                              |
-|  phi_p, theta_q,          beta * X_t         |
-|  Phi_P, Theta_Q,                             |
+|  φ_p, θ_q,          beta * X_t         |
+|  Φ_P, Θ_Q,                             |
 |  d, D, s                                     |
 +----------------------------------------------+
                     |
@@ -720,13 +720,13 @@ Entrada 3 (x3) ----[peso w3]---/
 La salida de una neurona j se calcula como:
 
 ```
-y_j = phi( sum(W_ji * x_i) )   para i = 0 hasta n
+y_j = φ( sum(W_ji * x_i) )   para i = 0 hasta n
 ```
 
 Donde:
 - `x_i`: entradas a la neurona
 - `W_ji`: peso de la conexion entre la entrada i y la neurona j
-- `phi`: funcion de activacion (sigmoid, tanh, ReLU, etc.)
+- `φ`: funcion de activacion (sigmoid, tanh, ReLU, etc.)
 - La suma incluye un termino de sesgo (bias)
 
 ### Capas de la red
@@ -748,7 +748,7 @@ CAPA DE ENTRADA          CAPAS OCULTAS           CAPA DE SALIDA
 ### Funciones de activacion comunes
 
 ```
-Sigmoid:  sigma(x) = 1 / (1 + e^(-x))       Rango: (0, 1)
+Sigmoid:  σ(x) = 1 / (1 + e^(-x))       Rango: (0, 1)
 Tanh:     tanh(x) = (e^x - e^(-x)) / (e^x + e^(-x))   Rango: (-1, 1)
 ReLU:     f(x) = max(0, x)                   Rango: [0, infinito)
 ```
@@ -980,7 +980,7 @@ Esto es la clave: la RNN clasica solo tiene `H_t`. LSTM agrega `C_t` que es una 
 #### 1. Puerta de Olvido (Forget Gate) - F_t
 
 ```
-F_t = sigma(X_t * W_xf + H_{t-1} * W_hf + b_f)
+F_t = σ(X_t * W_xf + H_{t-1} * W_hf + b_f)
 ```
 
 - Produce valores entre 0 y 1 para cada elemento del estado de celda
@@ -991,7 +991,7 @@ F_t = sigma(X_t * W_xf + H_{t-1} * W_hf + b_f)
 #### 2. Puerta de Entrada (Input Gate) - I_t
 
 ```
-I_t = sigma(X_t * W_xi + H_{t-1} * W_hi + b_i)
+I_t = σ(X_t * W_xi + H_{t-1} * W_hi + b_i)
 ```
 
 - Controla cuanta informacion nueva se agrega al estado de celda
@@ -1001,7 +1001,7 @@ I_t = sigma(X_t * W_xi + H_{t-1} * W_hi + b_i)
 #### 3. Puerta de Salida (Output Gate) - O_t
 
 ```
-O_t = sigma(X_t * W_xo + H_{t-1} * W_ho + b_o)
+O_t = σ(X_t * W_xo + H_{t-1} * W_ho + b_o)
 ```
 
 - Controla cuanta informacion del estado de celda se expone como salida
@@ -1061,11 +1061,11 @@ Supongamos una celda LSTM con 1 unidad oculta (simplificado):
 Paso t, entrada X_t = 0.5, H_{t-1} = 0.3, C_{t-1} = 0.8
 
 1. Puerta de olvido:
-   F_t = sigma(0.5*0.2 + 0.3*0.4 + 0.1) = sigma(0.1 + 0.12 + 0.1) = sigma(0.32) = 0.58
+   F_t = σ(0.5*0.2 + 0.3*0.4 + 0.1) = σ(0.1 + 0.12 + 0.1) = σ(0.32) = 0.58
    "Retener 58% del estado anterior"
 
 2. Puerta de entrada:
-   I_t = sigma(0.5*0.3 + 0.3*0.1 + 0.05) = sigma(0.15 + 0.03 + 0.05) = sigma(0.23) = 0.56
+   I_t = σ(0.5*0.3 + 0.3*0.1 + 0.05) = σ(0.15 + 0.03 + 0.05) = σ(0.23) = 0.56
    "Aceptar 56% de la informacion nueva"
 
 3. Estado candidato:
@@ -1077,7 +1077,7 @@ Paso t, entrada X_t = 0.5, H_{t-1} = 0.3, C_{t-1} = 0.8
    "El nuevo estado combina 46.4% del pasado + 6.2% de lo nuevo"
 
 5. Puerta de salida:
-   O_t = sigma(0.5*0.25 + 0.3*0.15 + 0.02) = sigma(0.195) = 0.549
+   O_t = σ(0.5*0.25 + 0.3*0.15 + 0.02) = σ(0.195) = 0.549
 
 6. Estado oculto (salida):
    H_t = 0.549 * tanh(0.526) = 0.549 * 0.483 = 0.265
@@ -1190,7 +1190,7 @@ R: C_t = 1 * C_{t-1} + 0 * C_tilde = C_{t-1}. La celda retiene integramente la i
 **P5: Que pasa si F_t = 0 y I_t = 1?**
 R: C_t = 0 * C_{t-1} + 1 * C_tilde = C_tilde. La celda borra toda la informacion anterior y la reemplaza completamente con informacion nueva. Esto ocurre en cambios de regimen o shocks (como un cambio abrupto de precio).
 
-**P6: Por que se usa sigma para las compuertas y tanh para el candidato?**
+**P6: Por que se usa σ para las compuertas y tanh para el candidato?**
 R: Sigma produce valores entre 0 y 1, lo que funciona como un "interruptor" (0=cerrado, 1=abierto). Es ideal para las compuertas que controlan el flujo de informacion. Tanh produce valores entre -1 y 1, lo que permite que la nueva informacion sea positiva o negativa. El candidato necesita poder representar aumentos (+) y disminuciones (-).
 
 **P7: Cuantos parametros tiene una capa LSTM?**
@@ -1245,7 +1245,7 @@ GRU es como una **version simplificada de LSTM**. Hace basicamente lo mismo pero
 #### 1. Compuerta de Reinicio (Reset Gate) - R_t
 
 ```
-R_t = sigma(X_t * W_xr + H_{t-1} * W_hr + b_r)
+R_t = σ(X_t * W_xr + H_{t-1} * W_hr + b_r)
 ```
 
 - Controla cuanto del estado oculto anterior se usa para calcular el nuevo candidato
@@ -1256,7 +1256,7 @@ R_t = sigma(X_t * W_xr + H_{t-1} * W_hr + b_r)
 #### 2. Compuerta de Actualizacion (Update Gate) - Z_t
 
 ```
-Z_t = sigma(X_t * W_xz + H_{t-1} * W_hz + b_z)
+Z_t = σ(X_t * W_xz + H_{t-1} * W_hz + b_z)
 ```
 
 - Controla el balance entre conservar el estado anterior y adoptar el nuevo
@@ -1291,9 +1291,9 @@ H_t = (1 - Z_t) (x) H_{t-1} + Z_t (x) H_tilde
 
 ```
 LSTM:
-   F_t = sigma(X_t*W_xf + H_{t-1}*W_hf + b_f)     <- Forget gate
-   I_t = sigma(X_t*W_xi + H_{t-1}*W_hi + b_i)     <- Input gate
-   O_t = sigma(X_t*W_xo + H_{t-1}*W_ho + b_o)     <- Output gate
+   F_t = σ(X_t*W_xf + H_{t-1}*W_hf + b_f)     <- Forget gate
+   I_t = σ(X_t*W_xi + H_{t-1}*W_hi + b_i)     <- Input gate
+   O_t = σ(X_t*W_xo + H_{t-1}*W_ho + b_o)     <- Output gate
    C_tilde = tanh(X_t*W_xc + H_{t-1}*W_hc + b_c)  <- Candidato
    C_t = F_t * C_{t-1} + I_t * C_tilde             <- Estado celda
    H_t = O_t * tanh(C_t)                            <- Estado oculto
@@ -1301,8 +1301,8 @@ LSTM:
    Total: 4 conjuntos de pesos (4 * (d*h + h*h + h))
 
 GRU:
-   R_t = sigma(X_t*W_xr + H_{t-1}*W_hr + b_r)      <- Reset gate
-   Z_t = sigma(X_t*W_xz + H_{t-1}*W_hz + b_z)      <- Update gate
+   R_t = σ(X_t*W_xr + H_{t-1}*W_hr + b_r)      <- Reset gate
+   Z_t = σ(X_t*W_xz + H_{t-1}*W_hz + b_z)      <- Update gate
    H_tilde = tanh(X_t*W_xh + (R_t*H_{t-1})*W_hh + b_h)  <- Candidato
    H_t = (1-Z_t) * H_{t-1} + Z_t * H_tilde          <- Estado oculto
 
@@ -1317,11 +1317,11 @@ GRU:
 Entrada X_t = 0.5, H_{t-1} = 0.3
 
 1. Compuerta de reinicio:
-   R_t = sigma(0.5*0.2 + 0.3*0.4 + 0.1) = sigma(0.32) = 0.58
+   R_t = σ(0.5*0.2 + 0.3*0.4 + 0.1) = σ(0.32) = 0.58
    "Usar 58% del estado anterior para el candidato"
 
 2. Compuerta de actualizacion:
-   Z_t = sigma(0.5*0.3 + 0.3*0.5 + 0.05) = sigma(0.35) = 0.587
+   Z_t = σ(0.5*0.3 + 0.3*0.5 + 0.05) = σ(0.35) = 0.587
    "Actualizar 58.7% con info nueva, conservar 41.3% del pasado"
 
 3. Estado candidato:
@@ -1606,7 +1606,7 @@ R: Si, por varias razones: (1) Comparacion empirica: demuestra cual funciona mej
 
 **Tecnico:** Una serie {Y_t} es estacionaria en sentido debil si:
 1. E[Y_t] = mu (media constante para todo t)
-2. Var(Y_t) = sigma^2 (varianza constante para todo t)
+2. Var(Y_t) = σ^2 (varianza constante para todo t)
 3. Cov(Y_t, Y_{t+k}) depende solo de k, no de t (autocorrelacion estable)
 
 **Tests comunes:**
@@ -1624,14 +1624,14 @@ Serie NO estacionaria:  [50, 55, 60, 65, 70, 75, 80, 85, 90, 95]  (tendencia cre
 **Simple:** Es una funcion que "aplasta" cualquier numero al rango (0, 1). Numeros muy negativos van a 0, numeros muy positivos van a 1.
 
 ```
-sigma(x) = 1 / (1 + e^(-x))
+σ(x) = 1 / (1 + e^(-x))
 
 Ejemplos:
-   sigma(-10) ≈ 0.00005  (casi 0)
-   sigma(-2)  ≈ 0.12
-   sigma(0)   = 0.5       (punto medio)
-   sigma(2)   ≈ 0.88
-   sigma(10)  ≈ 0.99995  (casi 1)
+   σ(-10) ≈ 0.00005  (casi 0)
+   σ(-2)  ≈ 0.12
+   σ(0)   = 0.5       (punto medio)
+   σ(2)   ≈ 0.88
+   σ(10)  ≈ 0.99995  (casi 1)
 ```
 
 **En LSTM/GRU:** Se usa en las compuertas porque necesitan valores entre 0 y 1 para actuar como "interruptores" (0=cerrado, 1=abierto).
@@ -1777,7 +1777,7 @@ Fuentes adicionales consultadas para elaborar este documento:
 2. **Domina las ecuaciones clave:**
    - Actualizacion del estado de celda LSTM: `C_t = F_t * C_{t-1} + I_t * C_tilde`
    - Actualizacion del estado GRU: `H_t = (1-Z_t) * H_{t-1} + Z_t * H_tilde`
-   - SARIMAX: `Phi(B^s) phi(B) (1-B)^d (1-B^s)^D Y_t = beta*X_t + Theta(B^s) theta(B) epsilon_t`
+   - SARIMAX: `Φ(B^s) φ(B) (1-B)^d (1-B^s)^D Y_t = beta*X_t + Θ(B^s) θ(B) ε_t`
 
 3. **Ten claras las diferencias:**
    - LSTM vs GRU: 3 compuertas vs 2, 2 estados vs 1, mas parametros vs menos

@@ -68,8 +68,8 @@ segun lo que sea util para la prediccion.
 
 **Ecuaciones GRU:**
 ```
-r_t = sigma(W_r * [h_{t-1}, x_t] + b_r)
-z_t = sigma(W_z * [h_{t-1}, x_t] + b_z)
+r_t = σ(W_r * [h_{t-1}, x_t] + b_r)
+z_t = σ(W_z * [h_{t-1}, x_t] + b_z)
 h_tilde_t = tanh(W_h * [r_t * h_{t-1}, x_t] + b_h)
 h_t = (1-z_t) * h_{t-1} + z_t * h_tilde_t
 ```
@@ -279,7 +279,7 @@ Hiperparametros: lookback L, batch_size B, epochs E, lr, dropout p
 
 1. PREPROCESAMIENTO:
    a. Dividir: Y_train, Y_val, Y_test (cronologicamente)
-   b. Calcular scaler en train: mu_train, sigma_train (o min/max)
+   b. Calcular scaler en train: mu_train, σ_train (o min/max)
    c. Normalizar TODOS los datos con estadisticas de TRAIN
       (prevenir data leakage)
    d. Crear ventanas:
@@ -364,7 +364,7 @@ PROBLEMA: Error acumulativo
 
 SOLUCION PARCIAL: Intervalos de confianza via Monte Carlo
    Repetir N veces:
-      Agregar ruido a cada prediccion: y_hat + epsilon ~ N(0, sigma^2_residuos)
+      Agregar ruido a cada prediccion: y_hat + ε ~ N(0, σ^2_residuos)
       Propagar recursivamente
    Resultado: N trayectorias futuras
    IC 95%: percentiles 2.5% y 97.5% de las N trayectorias

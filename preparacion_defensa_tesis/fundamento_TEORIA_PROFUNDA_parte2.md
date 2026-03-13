@@ -74,13 +74,13 @@ El entrenamiento es como un chef aprendiendo:
 
 El perceptron de Rosenblatt (1958) es el bloque fundamental:
 ```
-y = sigma(w' x + b) = sigma(sum_{i=1}^{d} w_i * x_i + b)
+y = σ(w' x + b) = σ(sum_{i=1}^{d} w_i * x_i + b)
 ```
 donde:
 - x en R^d: vector de entrada
 - w en R^d: vector de pesos
 - b en R: sesgo (bias)
-- sigma: funcion de activacion
+- σ: funcion de activacion
 
 **Interpretacion geometrica:** El perceptron define un hiperplano w'x + b = 0 que divide el espacio de entrada en dos regiones. La funcion de activacion "suaviza" esta division.
 
@@ -89,9 +89,9 @@ donde:
 **Enunciado informal:** Una red neuronal feedforward con una sola capa oculta y suficientes neuronas puede aproximar cualquier funcion continua en un dominio compacto con precision arbitraria.
 
 **Enunciado formal (Hornik et al., 1989):**
-Sea sigma una funcion de activacion no constante, acotada y continua. Para cualquier funcion continua f: R^d -> R, cualquier compacto K en R^d, y cualquier epsilon > 0, existen N, w_i, alpha_i, b_i tales que:
+Sea σ una funcion de activacion no constante, acotada y continua. Para cualquier funcion continua f: R^d -> R, cualquier compacto K en R^d, y cualquier ε > 0, existen N, w_i, alpha_i, b_i tales que:
 ```
-|f(x) - sum_{i=1}^{N} alpha_i * sigma(w_i' x + b_i)| < epsilon   para todo x en K
+|f(x) - sum_{i=1}^{N} alpha_i * σ(w_i' x + b_i)| < ε   para todo x en K
 ```
 
 **Implicaciones:**
@@ -103,20 +103,20 @@ Sea sigma una funcion de activacion no constante, acotada y continua. Para cualq
 
 #### Sigmoide
 ```
-sigma(x) = 1 / (1 + e^{-x})
+σ(x) = 1 / (1 + e^{-x})
 
-Derivada: sigma'(x) = sigma(x) * (1 - sigma(x))
+Derivada: σ'(x) = σ(x) * (1 - σ(x))
 
 Propiedades:
    - Rango: (0, 1)
-   - sigma(0) = 0.5
+   - σ(0) = 0.5
    - Monotona creciente
-   - Derivada maxima: sigma'(0) = 0.25
+   - Derivada maxima: σ'(0) = 0.25
    - Problema: saturacion en los extremos (gradientes muy pequenios)
    - Salida NO centrada en cero (sesga las actualizaciones)
 ```
 
-**Grafico ASCII de sigma:**
+**Grafico ASCII de σ:**
 ```
   1.0 |                          ___________
       |                      ___/
@@ -131,7 +131,7 @@ Propiedades:
 
 #### Tangente Hiperbolica (tanh)
 ```
-tanh(x) = (e^x - e^{-x}) / (e^x + e^{-x}) = 2*sigma(2x) - 1
+tanh(x) = (e^x - e^{-x}) / (e^x + e^{-x}) = 2*σ(2x) - 1
 
 Derivada: tanh'(x) = 1 - tanh(x)^2
 
@@ -139,8 +139,8 @@ Propiedades:
    - Rango: (-1, 1)
    - tanh(0) = 0 (centrada en cero!)
    - Monotona creciente
-   - Derivada maxima: tanh'(0) = 1 (mejor que sigma para gradientes)
-   - Aun satura en extremos pero menos que sigma
+   - Derivada maxima: tanh'(0) = 1 (mejor que σ para gradientes)
+   - Aun satura en extremos pero menos que σ
 ```
 
 **Grafico ASCII de tanh:**
@@ -197,7 +197,7 @@ ELU:           f(x) = { x                    si x > 0
 GELU:          f(x) = x * Phi(x)     (Phi = CDF normal)
    Usado en Transformers (BERT, GPT). Suave y diferenciable.
 
-Swish:         f(x) = x * sigma(x)
+Swish:         f(x) = x * σ(x)
    Descubierta por busqueda automatica (Google). Auto-gate.
 ```
 
@@ -205,7 +205,7 @@ Swish:         f(x) = x * sigma(x)
 
 **Red de 2 capas:**
 ```
-Capa 1 (oculta):  h = sigma(W_1 * x + b_1)    h en R^m
+Capa 1 (oculta):  h = σ(W_1 * x + b_1)    h en R^m
 Capa 2 (salida):  y = W_2 * h + b_2             y en R^1
 Perdida:          L = (1/2) * (y - y_target)^2   (MSE para un ejemplo)
 ```
@@ -213,7 +213,7 @@ Perdida:          L = (1/2) * (y - y_target)^2   (MSE para un ejemplo)
 **Forward pass:**
 ```
 z_1 = W_1 * x + b_1          (pre-activacion capa 1)
-h   = sigma(z_1)              (activacion capa 1)
+h   = σ(z_1)              (activacion capa 1)
 z_2 = W_2 * h + b_2          (pre-activacion capa 2, = salida)
 y   = z_2                     (activacion lineal en salida)
 L   = (1/2) * (y - t)^2      (perdida)
@@ -234,9 +234,9 @@ dL/dh   = dL/dy * dy/dz_2 * dz_2/dh
         = (y-t) * W_2                    (error propagado hacia atras)
 
 dL/dW_1 = dL/dh * dh/dz_1 * dz_1/dW_1
-        = (y-t) * W_2 * sigma'(z_1) * x'  (gradiente de W_1)
+        = (y-t) * W_2 * σ'(z_1) * x'  (gradiente de W_1)
 
-dL/db_1 = (y-t) * W_2 * sigma'(z_1)     (gradiente de b_1)
+dL/db_1 = (y-t) * W_2 * σ'(z_1)     (gradiente de b_1)
 ```
 
 **Actualizacion de pesos (SGD):**
@@ -252,11 +252,11 @@ b_1 <- b_1 - lr * dL/db_1
 x = [2, 3], t = 1, lr = 0.1
 W_1 = [[0.1, 0.2], [0.3, 0.4]], b_1 = [0, 0]
 W_2 = [0.5, 0.6], b_2 = 0
-Activacion: sigma (sigmoide)
+Activacion: σ (sigmoide)
 
 FORWARD:
    z_1 = [0.1*2+0.2*3, 0.3*2+0.4*3] = [0.8, 1.8]
-   h = [sigma(0.8), sigma(1.8)] = [0.69, 0.86]
+   h = [σ(0.8), σ(1.8)] = [0.69, 0.86]
    z_2 = 0.5*0.69 + 0.6*0.86 + 0 = 0.345 + 0.516 = 0.861
    y = 0.861
    L = (1/2)*(0.861-1)^2 = 0.0097
@@ -268,7 +268,7 @@ BACKWARD:
    dL/db_2 = -0.139
 
    delta_h = -0.139 * [0.5, 0.6] = [-0.070, -0.083]
-   sigma'(z_1) = [0.69*(1-0.69), 0.86*(1-0.86)] = [0.214, 0.120]
+   σ'(z_1) = [0.69*(1-0.69), 0.86*(1-0.86)] = [0.214, 0.120]
    delta_z1 = [-0.070*0.214, -0.083*0.120] = [-0.015, -0.010]
 
    dL/dW_1 = [[-0.015*2, -0.015*3], [-0.010*2, -0.010*3]]
@@ -478,9 +478,9 @@ sin que se degrade. La billetera (H_t) tiene lo que necesitas ahora.
 
 Las ecuaciones LSTM:
 ```
-f_t = sigma(W_f * [h_{t-1}, x_t] + b_f)
-i_t = sigma(W_i * [h_{t-1}, x_t] + b_i)
-o_t = sigma(W_o * [h_{t-1}, x_t] + b_o)
+f_t = σ(W_f * [h_{t-1}, x_t] + b_f)
+i_t = σ(W_i * [h_{t-1}, x_t] + b_i)
+o_t = σ(W_o * [h_{t-1}, x_t] + b_o)
 c_tilde = tanh(W_c * [h_{t-1}, x_t] + b_c)
 c_t = f_t * c_{t-1} + i_t * c_tilde
 h_t = o_t * tanh(c_t)
@@ -532,9 +532,9 @@ LSTM con f_t = 0.95 en cada paso:
 Inicializar b_f con un valor positivo (tipicamente 1 o 2) para que f_t empiece cercano a 1. Esto asegura que al inicio del entrenamiento, la celda retiene informacion (no olvida prematuramente).
 
 ```
-Sin inicializacion especial: f_t = sigma(~0) = 0.5 (olvida la mitad!)
-Con b_f = 1: f_t = sigma(~1) = 0.73 (retiene mas)
-Con b_f = 2: f_t = sigma(~2) = 0.88 (retiene mucho)
+Sin inicializacion especial: f_t = σ(~0) = 0.5 (olvida la mitad!)
+Con b_f = 1: f_t = σ(~1) = 0.73 (retiene mas)
+Con b_f = 2: f_t = σ(~2) = 0.88 (retiene mucho)
 ```
 
 ### 3.3 Conteo Detallado de Parametros LSTM
@@ -567,9 +567,9 @@ Total bidireccional: 35840 + 129 ≈ 35969
 
 **LSTM con Peephole Connections (Gers & Schmidhuber, 2000):**
 ```
-f_t = sigma(W_f * [h_{t-1}, x_t] + W_cf * c_{t-1} + b_f)   <-- c_{t-1} aparece
-i_t = sigma(W_i * [h_{t-1}, x_t] + W_ci * c_{t-1} + b_i)
-o_t = sigma(W_o * [h_{t-1}, x_t] + W_co * c_t + b_o)       <-- c_t aparece
+f_t = σ(W_f * [h_{t-1}, x_t] + W_cf * c_{t-1} + b_f)   <-- c_{t-1} aparece
+i_t = σ(W_i * [h_{t-1}, x_t] + W_ci * c_{t-1} + b_i)
+o_t = σ(W_o * [h_{t-1}, x_t] + W_co * c_t + b_o)       <-- c_t aparece
 ```
 Las compuertas "espian" el estado de celda directamente.
 
@@ -652,7 +652,7 @@ TERRENO (funcion de perdida):
 
 ```
 v_t = beta * v_{t-1} + (1-beta) * g_t        (velocidad: promedio movil de gradientes)
-theta_t = theta_{t-1} - lr * v_t              (actualizacion de parametros)
+θ_t = θ_{t-1} - lr * v_t              (actualizacion de parametros)
 
 Tipicamente beta = 0.9 (se "acuerda" del 90% del gradiente anterior)
 ```
@@ -668,9 +668,9 @@ m_hat_t = m_t / (1 - beta_1^t)
 v_hat_t = v_t / (1 - beta_2^t)
 
 Actualizacion:
-theta_t = theta_{t-1} - lr * m_hat_t / (sqrt(v_hat_t) + epsilon)
+θ_t = θ_{t-1} - lr * m_hat_t / (sqrt(v_hat_t) + ε)
 
-Hiperparametros tipicos: beta_1=0.9, beta_2=0.999, epsilon=1e-8
+Hiperparametros tipicos: beta_1=0.9, beta_2=0.999, ε=1e-8
 ```
 
 **Interpretacion:**
@@ -684,14 +684,14 @@ Hiperparametros tipicos: beta_1=0.9, beta_2=0.999, epsilon=1e-8
 
 En Adam clasico, el weight decay se implementa como L2 regularization sumada al gradiente:
 ```
-g_t = nabla L(theta) + lambda * theta   (peso se suma al gradiente)
+g_t = ∇ L(θ) + lambda * θ   (peso se suma al gradiente)
 ```
 
 El problema es que Adam escala el gradiente adaptivamente, lo que tambien escala el weight decay de forma indeseable.
 
 AdamW desacopla el weight decay:
 ```
-theta_t = theta_{t-1} - lr * m_hat_t / (sqrt(v_hat_t) + epsilon) - lr * lambda * theta_{t-1}
+θ_t = θ_{t-1} - lr * m_hat_t / (sqrt(v_hat_t) + ε) - lr * lambda * θ_{t-1}
                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^   ^^^^^^^^^^^^^^^^^^^^^^^^
                         Actualizacion de Adam (sin WD)              WD directo (no escalado)
 ```
@@ -700,7 +700,7 @@ theta_t = theta_{t-1} - lr * m_hat_t / (sqrt(v_hat_t) + epsilon) - lr * lambda *
 
 ```
 v_t = beta * v_{t-1} + (1-beta) * g_t^2
-theta_t = theta_{t-1} - lr * g_t / (sqrt(v_t) + epsilon)
+θ_t = θ_{t-1} - lr * g_t / (sqrt(v_t) + ε)
 
 Similar a Adam pero sin el termino de momentum (m_t).
 ```

@@ -85,11 +85,11 @@ H_{t-1} = [0.2, -0.1, 0.4]  (3 unidades ocultas)
 C_{t-1} = [0.8, -0.3, 0.5]  (estado de celda anterior)
 
 === PASO 1: FORGET GATE ===
-F_t = sigma(X_t * W_xf + H_{t-1} * W_hf + b_f)
+F_t = σ(X_t * W_xf + H_{t-1} * W_hf + b_f)
 
 Supongamos que despues de la multiplicacion matricial y suma:
    pre_F = [0.7, -0.2, 1.5]
-   F_t = sigma([0.7, -0.2, 1.5]) = [0.67, 0.45, 0.82]
+   F_t = σ([0.7, -0.2, 1.5]) = [0.67, 0.45, 0.82]
 
 Interpretacion:
    Dimension 1: retener 67% del estado anterior
@@ -97,10 +97,10 @@ Interpretacion:
    Dimension 3: retener 82% (casi todo)
 
 === PASO 2: INPUT GATE ===
-I_t = sigma(X_t * W_xi + H_{t-1} * W_hi + b_i)
+I_t = σ(X_t * W_xi + H_{t-1} * W_hi + b_i)
 
    pre_I = [1.2, 0.5, -0.3]
-   I_t = sigma([1.2, 0.5, -0.3]) = [0.77, 0.62, 0.43]
+   I_t = σ([1.2, 0.5, -0.3]) = [0.77, 0.62, 0.43]
 
 Interpretacion:
    Dimension 1: agregar 77% de la nueva informacion
@@ -123,10 +123,10 @@ C_t = F_t * C_{t-1} + I_t * C_tilde
    C_t = [0.759, -0.650, 0.694]
 
 === PASO 5: OUTPUT GATE ===
-O_t = sigma(X_t * W_xo + H_{t-1} * W_ho + b_o)
+O_t = σ(X_t * W_xo + H_{t-1} * W_ho + b_o)
 
    pre_O = [0.9, 0.1, 0.5]
-   O_t = sigma([0.9, 0.1, 0.5]) = [0.71, 0.52, 0.62]
+   O_t = σ([0.9, 0.1, 0.5]) = [0.71, 0.52, 0.62]
 
 === PASO 6: ESTADO OCULTO (SALIDA) ===
 H_t = O_t * tanh(C_t)
@@ -168,7 +168,7 @@ X_t = [0.5, 0.3]
 H_{t-1} = [0.2, -0.1, 0.4]
 
 === PASO 1: RESET GATE ===
-R_t = sigma(X_t * W_xr + H_{t-1} * W_hr + b_r)
+R_t = σ(X_t * W_xr + H_{t-1} * W_hr + b_r)
 
    R_t = [0.58, 0.72, 0.35]
 
@@ -176,7 +176,7 @@ R_t = sigma(X_t * W_xr + H_{t-1} * W_hr + b_r)
    Dimension 3: usar solo 35% (casi "resetear")
 
 === PASO 2: UPDATE GATE ===
-Z_t = sigma(X_t * W_xz + H_{t-1} * W_hz + b_z)
+Z_t = σ(X_t * W_xz + H_{t-1} * W_hz + b_z)
 
    Z_t = [0.65, 0.40, 0.80]
 
@@ -542,22 +542,22 @@ Practica respondiendo estas en secuencia rapida:
 
 ```
 === ARIMA(p,d,q) ===
-(1-phi_1*B-...-phi_p*B^p)(1-B)^d Y_t = (1+theta_1*B+...+theta_q*B^q) epsilon_t
+(1-φ_1*B-...-φ_p*B^p)(1-B)^d Y_t = (1+θ_1*B+...+θ_q*B^q) ε_t
 
 === SARIMAX ===
-Phi_P(B^s) phi_p(B) (1-B)^d (1-B^s)^D Y_t = beta*X_t + Theta_Q(B^s) theta_q(B) epsilon_t
+Φ_P(B^s) φ_p(B) (1-B)^d (1-B^s)^D Y_t = beta*X_t + Θ_Q(B^s) θ_q(B) ε_t
 
 === LSTM ===
-F_t = sigma(X_t*W_xf + H_{t-1}*W_hf + b_f)           [Forget]
-I_t = sigma(X_t*W_xi + H_{t-1}*W_hi + b_i)           [Input]
-O_t = sigma(X_t*W_xo + H_{t-1}*W_ho + b_o)           [Output]
+F_t = σ(X_t*W_xf + H_{t-1}*W_hf + b_f)           [Forget]
+I_t = σ(X_t*W_xi + H_{t-1}*W_hi + b_i)           [Input]
+O_t = σ(X_t*W_xo + H_{t-1}*W_ho + b_o)           [Output]
 C~ = tanh(X_t*W_xc + H_{t-1}*W_hc + b_c)             [Candidato]
 C_t = F_t * C_{t-1} + I_t * C~                        [Estado celda]
 H_t = O_t * tanh(C_t)                                  [Salida]
 
 === GRU ===
-R_t = sigma(X_t*W_xr + H_{t-1}*W_hr + b_r)           [Reset]
-Z_t = sigma(X_t*W_xz + H_{t-1}*W_hz + b_z)           [Update]
+R_t = σ(X_t*W_xr + H_{t-1}*W_hr + b_r)           [Reset]
+Z_t = σ(X_t*W_xz + H_{t-1}*W_hz + b_z)           [Update]
 H~ = tanh(X_t*W_xh + (R_t*H_{t-1})*W_hh + b_h)      [Candidato]
 H_t = (1-Z_t)*H_{t-1} + Z_t*H~                        [Salida]
 
